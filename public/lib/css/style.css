@@ -1,3 +1,7 @@
+body {
+
+}
+
 #ifram iframe {
   width: 100%!important;
   height: 440px!important;
@@ -8,6 +12,7 @@ body .modal-dialog { /* Width */
     max-width: 100%;
     width: auto !important;
     display: inline-block;
+
 }
 
 /* Project Menu */
@@ -674,6 +679,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .cta {
   background-color: #3742fa;
   padding: 25px 0;
+  color: #fff;
 }
 
 .cta h2 {
@@ -682,7 +688,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .cta h2,
 .cta p {
-  color: #fff;
 }
 
 .cta p {

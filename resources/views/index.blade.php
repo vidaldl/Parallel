@@ -33,7 +33,7 @@ margin-bottom: 0px;
 @section('content')
 
 @foreach($contenidosection1s as $contenidosection1)
-  <section class="hero" id="inicio" style="background-image: url({{ '/storage/' . $contenidosection1->background_image }});">
+  <section class="hero {{ $contenidosection1->display == '0' ? 'd-none' : '' }}" id="inicio" style="background-image: url({{ '/storage/' . $contenidosection1->background_image }});">
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
@@ -93,7 +93,8 @@ margin-bottom: 0px;
 
   <!-- Servicios -->
 @foreach($contenidosection2s as $contenidosection2)
-  <section class="features" id="servicios">
+
+  <section class="features {{ $contenidosection2->display == '0' ? 'd-none' : '' }}" id="servicios">
     <div class="container">
       <h2 class="text-center">
           {{$contenidosection2->title}}
@@ -123,7 +124,7 @@ margin-bottom: 0px;
   <!-- /Features -->
   <!-- Call to Action -->
 @foreach($contenidosection3s as $contenidosection3)
-  <section class="cta" id="acercas">
+  <section class="cta {{ $contenidosection3->display == '0' ? 'd-none' : '' }}" id="acercas" style="{{ $contenidosection2->display == '0' ? 'color: black;background-color: #FFFFFF;' : '' }}">
     <div class="container">
       <div class="row">
         <div class="col-lg-9 col-sm-12 text-lg-left text-center">
@@ -131,13 +132,13 @@ margin-bottom: 0px;
               {{$contenidosection3->title}}
             </h2>
 
-          <p style="color:white;">
+          <p style="{{ $contenidosection2->display == '0' ? 'color: black;' : 'color: #fff;' }}">
             {!! $contenidosection3->contenido !!}
           </p>
         </div>
 
         <div id="articuloss" class="col-lg-3 col-sm-12 text-lg-right text-center align-self-center">
-          <a class="btn btn-ghost " href="/about">{{$contenidosection3->button}}</a>
+          <a class="btn {{ $contenidosection2->display == '0' ? 'btn-full' : 'btn-ghost' }}" href="/about">{{$contenidosection3->button}}&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
     </div>
@@ -148,7 +149,7 @@ margin-bottom: 0px;
 @foreach($contenidosection4s as $contenidosection4)
   <!-- Articulos -->
 
-  <section class="portfolio" id="articulos">
+  <section class="portfolio {{ $contenidosection4->display == '0' ? 'd-none' : '' }}" id="articulos">
     <div class="container text-center">
       <h2>
           {{$contenidosection4->title}}
@@ -179,7 +180,7 @@ margin-bottom: 0px;
             </div>
           </div>
           @endforeach
-        <a href="/blog" class="btn mx-auto mt-4">{{$contenidosection4->button}}&nbsp;<i class="fas fa-chevron-down"></i></a>
+        <a href="/blog" class="btn mx-auto mt-4 mb-3">{{$contenidosection4->button}}&nbsp;<i class="fas fa-chevron-down"></i></a>
       </div>
   </section>
 @endforeach
@@ -221,7 +222,7 @@ margin-bottom: 0px;
   <!-- /Portfolio -->
 
 @foreach($contenidosection5s as $contenidosection5)
-  <section id="contact">
+  <section class="{{ $contenidosection5->display == '0' ? 'd-none' : '' }}" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
@@ -287,7 +288,7 @@ margin-bottom: 0px;
 
   @section('footer')
   @foreach($contenidosectionfooters as $contenidosectionfooter)
-  <footer class="site-footer" id="footer">
+  <footer class="site-footer {{ $contenidosectionfooter->display == '0' ? 'd-none' : '' }}" id="footer">
     <div class="bottom">
       <div class="container">
         <div class="row">

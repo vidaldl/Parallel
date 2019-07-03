@@ -17,16 +17,16 @@ class ContenidoSeeder extends Seeder
      */
     public function run()
     {
-        $section1 = ContenidoSection1::create([
-          'logo' => 'logo-hidalgo.png',
-          'title' => 'Grupo Hidalgo & Asociados, S.R.L.',
-          'tagline' => 'Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.',
-          'button' => 'Conoce Nuestros Servicios'
-        ]);
-
-        $section2 = ContenidoSection2::create([
-          'title' => 'Servicios'
-        ]);
+        // $section1 = ContenidoSection1::create([
+        //   'logo' => 'logo-hidalgo.png',
+        //   'title' => 'Grupo Hidalgo & Asociados, S.R.L.',
+        //   'tagline' => 'Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.',
+        //   'button' => 'Conoce Nuestros Servicios'
+        // ]);
+        //
+        // $section2 = ContenidoSection2::create([
+        //   'title' => 'Servicios'
+        // ]);
 
         $section3 = ContenidoSection3::create([
           'title' => 'Acerca de Nosotros',
@@ -34,25 +34,25 @@ class ContenidoSeeder extends Seeder
           'button' => 'Más Sobre Nosotros'
         ]);
 
-        $section4 = ContenidoSection4::create([
-          'title' => 'Artículos',
-          'tagline' => 'Mantente al tanto con nosotros!',
-          'button' => 'Más Articulos <i class="fas fa-chevron-down"></i>'
-        ]);
-
-        $section5 = ContenidoSection5::create([
-          'title' => 'Contáctanos',
-          'address' => 'Calle Republica Dominicana Santo Domingo, Rep Dom 535022',
-          'email' => 'info@ejemplo.com',
-          'number' => '+1(809)-123-4567'
-        ]);
-
-        $sectionFooter = ContenidoSectionFooter::create([
-          'copy' => 'Grupo Hidalgo',
-          'facebook_link' => 'https://www.facebook.com/SiscopsystemsSRL',
-          'instagram_link' => 'https://www.instagram.com/siscopsystems/',
-          'twitter_link' => 'https://www.twitter.com'
-
-        ]);
+        // $section4 = ContenidoSection4::create([
+        //   'title' => 'Artículos',
+        //   'tagline' => 'Mantente al tanto con nosotros!',
+        //   'button' => 'Más Articulos <i class="fas fa-chevron-down"></i>'
+        // ]);
+        //
+        // $section5 = ContenidoSection5::create([
+        //   'title' => 'Contáctanos',
+        //   'address' => 'Calle Republica Dominicana Santo Domingo, Rep Dom 535022',
+        //   'email' => 'info@ejemplo.com',
+        //   'number' => '+1(809)-123-4567'
+        // ]);
+        //
+        // $sectionFooter = ContenidoSectionFooter::create([
+        //   'copy' => 'Grupo Hidalgo',
+        //   'facebook_link' => 'https://www.facebook.com/SiscopsystemsSRL',
+        //   'instagram_link' => 'https://www.instagram.com/siscopsystems/',
+        //   'twitter_link' => 'https://www.twitter.com'
+        //
+        // ]);
     }
 }

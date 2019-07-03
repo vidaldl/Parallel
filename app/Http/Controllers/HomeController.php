@@ -122,19 +122,19 @@ class HomeController extends Controller
           $random = rand();
           $originalPath = public_path().'/storage/content/original/';
           $finalPath = public_path().'/storage/content/';
-          $finalImage->save($originalPath.$random.$background->getClientOriginalName());
+          $finalImage->save($finalPath.$random.$background->getClientOriginalName());
           $finalDummy = $finalImage->basename;
           $finalDummyName = 'content/original/'.$finalDummy;
           //moment of transformation
           $width = NULL;
           $height = '100vh';
 
-          $finalImage->resize($width, $height, function ($constraint) {
-              $constraint->aspectRatio();
-          });
+          // $finalImage->resize($width, $height, function ($constraint) {
+          //     $constraint->aspectRatio();
+          // });
           // $finalImage->resize(150,150);
-          $finalImage->save($finalPath.$random.$background->getClientOriginalName());
-          Storage::delete($finalDummyName);
+          // $finalImage->save($finalPath.$random.$background->getClientOriginalName());
+          // Storage::delete($finalDummyName);
           Storage::delete($logoOld->background_image);
 
           $finalDataName = 'content/'.$finalImage->basename;
@@ -163,6 +163,14 @@ class HomeController extends Controller
 
     }
 
+    public function section1Display(Request $request, $id) {
+      $display = $request->input('section1');
+      $data=array("display"=>$display);
+      DB::table('contenido_section1s')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
     /*SECTION 2 -------------------------------------------------------------------------------->*/
     public function section2Edit($id) {
       return view('updateIndex/section2')->with('contenidosection2s', ContenidoSection2::all());
@@ -172,6 +180,14 @@ class HomeController extends Controller
       $title = $request->input('title');
 
       $data=array("title"=>$title);
+      DB::table('contenido_section2s')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+    public function section2Display(Request $request, $id) {
+      $display = $request->input('section2');
+      $data=array("display"=>$display);
       DB::table('contenido_section2s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -196,6 +212,15 @@ class HomeController extends Controller
       return redirect()->back();
     }
 
+    public function section3Display(Request $request, $id) {
+      $display = $request->input('section3');
+      $data=array("display"=>$display);
+      DB::table('contenido_section3s')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
 
     /*SECTION 4 -------------------------------------------------------------------------------->*/
     public function section4Edit($id) {
@@ -207,6 +232,15 @@ class HomeController extends Controller
       $button = $request->input('button');
 
       $data=array("title"=>$title, "tagline"=>$tagline, "button"=>$button);
+      DB::table('contenido_section4s')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function section4Display(Request $request, $id) {
+      $display = $request->input('section4');
+      $data=array("display"=>$display);
       DB::table('contenido_section4s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -232,6 +266,16 @@ class HomeController extends Controller
       return redirect()->back();
     }
 
+    public function section5Display(Request $request, $id) {
+      $display = $request->input('section5');
+      $data=array("display"=>$display);
+      DB::table('contenido_section5s')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+
 
     /*SECTION Footer -------------------------------------------------------------------------------->*/
     public function sectionFooterEdit($id) {
@@ -251,6 +295,14 @@ class HomeController extends Controller
       return redirect()->back();
     }
 
+    public function sectionFooterDisplay(Request $request, $id) {
+      $display = $request->input('sectionFooter');
+      $data=array("display"=>$display);
+      DB::table('contenido_section_footers')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
 
 
 

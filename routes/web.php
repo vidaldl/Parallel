@@ -27,21 +27,27 @@ Route::middleware(['auth'])->group(function () {
 //Section1
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
 Route::post('/updatesection1/{id}', 'HomeController@section1Update')->name('section1.update');
+Route::post('/displaysection1/{id}', 'HomeController@section1Display')->name('section1.display');
 //Section2
 Route::get('/editsection2/{id}', 'HomeController@section2Edit')->name('section2.edit');
 Route::post('/updatesection2/{id}', 'HomeController@section2Update')->name('section2.update');
+Route::post('/displaysection2/{id}', 'HomeController@section2Display')->name('section2.display');
 //Section3
 Route::get('/editsection3/{id}', 'HomeController@section3Edit')->name('section3.edit');
 Route::post('/updatesection3/{id}', 'HomeController@section3Update')->name('section3.update');
+Route::post('/displaysection3/{id}', 'HomeController@section3Display')->name('section3.display');
 //Section4
 Route::get('/editsection4/{id}', 'HomeController@section4Edit')->name('section4.edit');
 Route::post('/updatesection4/{id}', 'HomeController@section4Update')->name('section4.update');
+Route::post('/displaysection4/{id}', 'HomeController@section4Display')->name('section4.display');
 //Section5
 Route::get('/editsection5/{id}', 'HomeController@section5Edit')->name('section5.edit');
 Route::post('/updatesection5/{id}', 'HomeController@section5Update')->name('section5.update');
+Route::post('/displaysection5/{id}', 'HomeController@section5Display')->name('section5.display');
 //Section Footer
 Route::get('/editsectionFooter/{id}', 'HomeController@sectionFooterEdit')->name('sectionFooter.edit');
 Route::post('/updatesectionFooter/{id}', 'HomeController@sectionFooterUpdate')->name('sectionFooter.update');
+Route::post('/displaysectionFooter/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 //Abut Page
 Route::get('/edit-about/{id}', 'HomeController@aboutEdit')->name('about.edit');
 Route::post('/update-about/{id}', 'HomeController@aboutUpdate')->name('about.update');

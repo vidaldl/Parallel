@@ -43,7 +43,8 @@ class UsersController extends Controller
       $user = auth()->user();
 
       $user->update([
-        'username' => $request->username
+        'username' => $request->username,
+        'email' => $request->email,
       ]);
 
       session()->flash('success', 'El usuario ha sido actualizado exitosamente.');

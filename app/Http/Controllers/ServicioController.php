@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Servicios\UpdateServiciosRequest;
+use App\Http\Requests\UpdateServicios;
 use App\Http\Requests\Servicios\CreateServiciosRequest;
 use App\Servicio;
 
@@ -80,7 +80,7 @@ class ServicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Servicio $servicio)
     {
 
         return view('servicios.create')->with('servicio', $servicio);
@@ -93,7 +93,7 @@ class ServicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateServiciosRequest $request, Servicio $servicio)
+    public function update(UpdateServicios $request, Servicio $servicio)
     {
         $data = $request->only(['icon', 'title', 'contenido']);
         $servicio->update($data);

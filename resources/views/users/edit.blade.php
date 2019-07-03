@@ -29,24 +29,29 @@
             @enderror
           </div>
         </div>
-        </form>
-        <div class="form-group mt-3">
-          <label>Password</label><br>
-          <a href="#" onclick="event.preventDefault();
-                        document.getElementById('logout-form2').submit();" class="btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-lock fa-sm "></i></span><span class="text"> &nbsp;Cambiar Password<span></a>
+        <div class="form-group">
+          <label for="email" class="">Email</label>
+          <input name="email" id="email" type="text" class="form-control @error('email') is-invalid @enderror" value="{{ $user->email }}">
         </div>
-        <form id="logout-form" action="{{ route('logout.reset') }}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-primary">Cambiar Password</button>
-        </form>
-
-
         <div class="form-group">
           <button type="submit" class="btn btn-success float-right">
             Actualizar
           </button>
         </div>
+        </form>
 
+
+
+
+
+
+        <div class="form-group mt-3">
+          <label>Password</label><br>
+          <form id="logout-form" action="{{ route('logout.reset') }}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-primary">Cambiar Password</button>
+          </form>
+        </div>
 
     </div>
   </div>

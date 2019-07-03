@@ -18,7 +18,7 @@
                 <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/section2.png')}}">
               </div>
               <div class="form-group">
-                <label for="title" class="col-form-label">Titulo</label>
+                <label for="title" class="col-md-12 col-form-label">Titulo</label>
                 <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $contenidosection2s[0]->title }}">
                   @error('title')
                     <span class="invalid-feedback" role="alert">
@@ -27,6 +27,7 @@
                   @enderror
               </div>
               <div class="form-group">
+                <a class="btn btn-primary float-left" href="{{ route('servicios.index') }}"><i class="fas fa-newspaper"></i> &nbsp; Editar Servicios</a>
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
           </form>
