@@ -40,7 +40,8 @@ class IndexController extends Controller
       ->with('categories', Category::all())->with('tags', Tag::all())
       ->with('posts', Post::paginate(16))
       ->with('contenidosection5s', ContenidoSection5::all())
-      ->with('contenidosectionfooters', ContenidoSectionFooter::all());
+      ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('styles', Style::all());
 
     }
 
@@ -48,6 +49,7 @@ class IndexController extends Controller
       return view('about')
       ->with('contenidosection5s', ContenidoSection5::all())
       ->with('contenidoabouts', ContenidoAbout::all())
-      ->with('contenidosectionfooters', ContenidoSectionFooter::all());
+      ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('styles', Style::all());
     }
 }

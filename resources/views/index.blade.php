@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('style')
-@foreach($styles as $style)
+
 <style>
     .portfolio h2 {
     color: #3742fa;
@@ -30,85 +30,85 @@
     }
     /* BUTTON STYLE */
     .btn {
-      background-color: {{$style->button_primary}};
+      background-color: {{$styles[0]->button_primary}};
     }
 
     .btn:hover {
-      background-color: {{$style->button_secondary}};
+      background-color: {{$styles[0]->button_secondary}};
     }
     #contact .form button[type="submit"] {
-      background: {{$style->button_primary}};
+      background: {{$styles[0]->button_primary}};
     }
     #contact .form button[type="submit"]:hover {
-      background: {{$style->button_secondary}};
+      background: {{$styles[0]->button_secondary}};
     }
 
     /* PRIMARY COLOR STYLES */
     .h1color {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
 
     .btn-ghost:hover {
 
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     .scrolltop {
-      background: {{$style->primary_color}};
+      background: {{$styles[0]->primary_color}};
     }
     #header {
-      background: {{$style->primary_color}};
+      background: {{$styles[0]->primary_color}};
     }
     .nav-menu ul li:hover {
-      background: {{$style->primary_color}};
+      background: {{$styles[0]->primary_color}};
     }
     #mobile-nav ul .menu-has-children i.fa-chevron-up {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     #mobile-nav ul .menu-item-active {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     .stats-col .circle {
-      border: 6px solid {{$style->primary_color}};
+      border: 6px solid {{$styles[0]->primary_color}};
     }
     .features h2 {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     .feature-col .feature-icon {
-      background: {{$style->primary_color}};
+      background: {{$styles[0]->primary_color}};
     }
     .feature-col h3 {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     .cta {
-      background-color: {{$style->primary_color}};
+      background-color: {{$styles[0]->primary_color}};
     }
     .portfolio h1 {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     .team h2 {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     .team .card:hover .card-title-wrap {
-      background-color: {{$style->primary_color}};
+      background-color: {{$styles[0]->primary_color}};
     }
     #contact h2 {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     #contact .info i {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     #contact .form #sendmessage {
-      color: {{$style->primary_color}};
-      border-color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
+      border-color: {{$styles[0]->primary_color}};
     }
     .site-footer .bottom .list-inline a:hover {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
     .site-footer .credits a {
-      color: {{$style->primary_color}};
+      color: {{$styles[0]->primary_color}};
     }
 </style>
-@endforeach
+
 @endsection
 
 @section('content')
