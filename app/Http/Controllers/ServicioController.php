@@ -38,7 +38,6 @@ class ServicioController extends Controller
     public function store(CreateServiciosRequest $request, Servicio $servicio)
     {
 
-      if ($servicio->count() < 6) {
         // code...
 
       $servicioCreate = $servicio::create([
@@ -51,15 +50,6 @@ class ServicioController extends Controller
       session()->flash('success', 'El post fue creado!');
       //redirect user
       return redirect(route('servicios.index'));
-    } else {
-
-      // flash message
-      session()->flash('error', 'El número de servicios creados ha llegado al máximo');
-      //redirect user
-      return redirect(route('servicios.index'));
-    }
-
-
 
     }
 

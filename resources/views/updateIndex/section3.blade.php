@@ -63,7 +63,7 @@
 </div>
 @endsection
 @section('script')
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+<script src="{{ asset('lib/summernote/summernote.js') }}"></script>
 <script>
 $(document).ready(function() {
 $('#contenido').summernote({
@@ -85,7 +85,7 @@ $("#contenido").summernote("backColor", "red");
 </script>
 @endsection
 @section('css')
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+<link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
 <style>
 .note-editable { background-color: #3742FA!important; color: white; }
 </style>

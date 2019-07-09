@@ -1,61 +1,223 @@
 @extends('layouts.index')
 
 @section('style')
+@foreach($styles as $style)
 <style>
-.portfolio h2 {
-color: #3742fa;
-margin-bottom: 25px;
-}
+    .portfolio h2 {
+    color: #3742fa;
+    margin-bottom: 25px;
+    }
 
-.portfolio-grid {
-margin-top: 65px;
-}
+    .portfolio-grid {
+    margin-top: 65px;
+    }
 
-.portfolio-grid .row {
-margin: 0;
-}
+    .portfolio-grid .row {
+    margin: 0;
+    }
 
-.portfolio-grid .row > div {
-padding: 0;
-}
+    .portfolio-grid .row > div {
+    padding: 0;
+    }
 
-.portfolio-grid .row > div .card img {
-width: 100%;
+    .portfolio-grid .row > div .card img {
+    width: 100%;
 
-}
-.portfolio-grid .row > div .card {
+    }
+    .portfolio-grid .row > div .card {
 
-margin-bottom: 0px;
-}
+    margin-bottom: 0px;
+    }
+    /* BUTTON STYLE */
+    .btn {
+      background-color: {{$style->button_primary}};
+    }
+
+    .btn:hover {
+      background-color: {{$style->button_secondary}};
+    }
+    #contact .form button[type="submit"] {
+      background: {{$style->button_primary}};
+    }
+    #contact .form button[type="submit"]:hover {
+      background: {{$style->button_secondary}};
+    }
+
+    /* PRIMARY COLOR STYLES */
+    .h1color {
+      color: {{$style->primary_color}};
+    }
+
+    .btn-ghost:hover {
+
+      color: {{$style->primary_color}};
+    }
+    .scrolltop {
+      background: {{$style->primary_color}};
+    }
+    #header {
+      background: {{$style->primary_color}};
+    }
+    .nav-menu ul li:hover {
+      background: {{$style->primary_color}};
+    }
+    #mobile-nav ul .menu-has-children i.fa-chevron-up {
+      color: {{$style->primary_color}};
+    }
+    #mobile-nav ul .menu-item-active {
+      color: {{$style->primary_color}};
+    }
+    .stats-col .circle {
+      border: 6px solid {{$style->primary_color}};
+    }
+    .features h2 {
+      color: {{$style->primary_color}};
+    }
+    .feature-col .feature-icon {
+      background: {{$style->primary_color}};
+    }
+    .feature-col h3 {
+      color: {{$style->primary_color}};
+    }
+    .cta {
+      background-color: {{$style->primary_color}};
+    }
+    .portfolio h1 {
+      color: {{$style->primary_color}};
+    }
+    .team h2 {
+      color: {{$style->primary_color}};
+    }
+    .team .card:hover .card-title-wrap {
+      background-color: {{$style->primary_color}};
+    }
+    #contact h2 {
+      color: {{$style->primary_color}};
+    }
+    #contact .info i {
+      color: {{$style->primary_color}};
+    }
+    #contact .form #sendmessage {
+      color: {{$style->primary_color}};
+      border-color: {{$style->primary_color}};
+    }
+    .site-footer .bottom .list-inline a:hover {
+      color: {{$style->primary_color}};
+    }
+    .site-footer .credits a {
+      color: {{$style->primary_color}};
+    }
 </style>
+@endforeach
 @endsection
 
 @section('content')
 
-@foreach($contenidosection1s as $contenidosection1)
-  <section class="hero {{ $contenidosection1->display == '0' ? 'd-none' : '' }}" id="inicio" style="background-image: url({{ '/storage/' . $contenidosection1->background_image }});">
+
+<div id="carousel-example-generic2" class="carousel slide carousel-fade carousel-fullscreen {{ $contenidosection1s[0]->carousel == 0 ? 'd-none' : '' }}" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active" style="background-image: url({{ '/storage/' . $contenidosection1s[1]->background_image }});">
+            <div class="overlay"></div>
+            <div class="carousel-caption text-center style="top: 50%;transform: translateY(-40%);"">
+              <div class="row">
+                <div class="col-md-12">
+                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <h1>
+                  {{$contenidosection1s[1]->title}}
+                </h1>
+                <p class="tagline">
+                  {{$contenidosection1s[1]->tagline}}
+                </p>
+                <a class="btn btn-full" href="#servicios">{{$contenidosection1s[1]->button}}</a>
+              </div>
+            </div>
+        </div>
+        <!-- /SLIDE 1 -->
+        <!-- SLIDE 2 -->
+          <div class="carousel-item" style="background-image: url({{ '/storage/' . $contenidosection1s[2]->background_image }});">
+              <div class="overlay"></div>
+              <div class="carousel-caption" >
+                <div class="row">
+                  <div class="" >
+                    <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img height="100%" width="350px"  src="{{'/storage/' . $contenidosection1s[2]->logo}}"></a>
+                  </div>
+                </div>
+                <div class="row">
+                <div class="col-md-4">
+                  <h1  style="text-align:left;">
+                    {{$contenidosection1s[2]->title}}
+                    </h1>
+                </div>
+                <div class="col-md-8" style="text-align:right;">
+                  <p class="tagline mb-1" style="margin-top: 12px;">
+                    {{$contenidosection1s[2]->tagline}}
+                  </p>
+                  <a class="btn btn-full " style="border-radius: 3px" href="#servicios">{{$contenidosection1s[2]->button}}</a>
+                </div>
+                </div>
+              </div>
+          </div>
+        <!-- /SLIDE 2 -->
+        <!-- SLIDE 3 -->
+          <div class="carousel-item" style="background-image: url({{ '/storage/' . $contenidosection1s[3]->background_image }});">
+              <div class="overlay"></div>
+              <div class="carousel-caption" style="top: 45%;transform: translateY(-40%);">
+                <div class="row">
+                  <div class="col-md-6" style="text-align: left;">
+                    <h1  style="text-align:left;">
+                      {{$contenidosection1s[3]->title}}
+                    </h1>
+                    <p class="tagline mb-1 " style="margin-top: 12px;">
+                      {{$contenidosection1s[3]->tagline}}
+                    </p>
+                    <a class="btn btn-full mt-4" style="border-radius: 3px" href="#servicios">{{$contenidosection1s[3]->button}}</a>
+                  </div>
+
+                  <div class="col-md-6 " >
+                    <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;"  src="{{'/storage/' . $contenidosection1s[3]->logo}}"></a><!-- <img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;" src="{{asset('img/world.png')}}"> -->
+                  </div>
+                </div>
+                </div>
+              </div>
+          </div>
+        <!-- /SLIDE 3 -->
+</div>
+
+
+  <section class="hero {{ $contenidosection1s[0]->display == '0' ? 'd-none' : '' }} {{ $contenidosection1s[0]->carousel == 1 ? 'd-none' : '' }}" id="inicio" style="background-image: url({{ '/storage/' . $contenidosection1s[0]->background_image }});">
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
-          <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1->logo}}"></a>
+          <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[0]->logo}}"></a>
         </div>
       </div>
 
       <div class="col-md-12">
         <h1>
-          {{$contenidosection1->title}}
+          {{$contenidosection1s[0]->title}}
           </h1>
 
         <p class="tagline">
-          {{$contenidosection1->tagline}}
+          {{$contenidosection1s[0]->tagline}}
         </p>
-        <a class="btn btn-full" href="#servicios">{{$contenidosection1->button}}</a>
+        <a class="btn btn-full" href="#servicios">{{$contenidosection1s[0]->button}}</a>
       </div>
     </div>
 
   </section>
   <!-- /Hero -->
-@endforeach
+
   <!-- Header -->
   <header id="header">
     <div class="container">
@@ -163,10 +325,10 @@ margin-bottom: 0px;
 
     <div class="portfolio-grid" >
       <div class="row">
-        @foreach($posts as $post)
-          <div class="col-lg-3 col-sm-6 col-xs-12">
+        @foreach($posts->sortByDesc('created_at') as $post)
+          <div class="col-lg-3 col-sm-4 col-xs-12">
             <div class="card card-block card-image-div">
-              <a href="#" data-toggle="modal" data-target="#modal{{ $post->id }}"><img alt="" src="{{ '/storage/' . $post->image }}">
+              <a href="#" data-toggle="modal" data-target="#modal{{ $post->id }}"><img class="img-thumbnail" alt="" src="{{ '/storage/' . $post->image }}">
                 <div class="portfolio-over">
                   <div>
                     <h3 class="card-title">
@@ -325,11 +487,17 @@ margin-bottom: 0px;
                 <a href="#contact">Contacto</a>
               </li>
               <li class="list-inline-item">
-                <a target="_blank" href="{{$contenidosectionfooter->twitter_link}}"><i class="fab fa-twitter"></i></a> <a target="_blank" href="{{$contenidosectionfooter->facebook_link}}"><i class="fab fa-facebook"></i></a> <a target="_blank" href="{{$contenidosectionfooter->instagram_link}}"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" href="{{$contenidosectionfooter->twitter_link}}"><i class="fab fa-twitter"></i></a>
+                <a target="_blank" href="{{$contenidosectionfooter->facebook_link}}"><i class="fab fa-facebook"></i></a>
+                <a target="_blank" href="{{$contenidosectionfooter->instagram_link}}"><i class="fab fa-instagram"></i></a>
               </li>
             </ul>
 
+            <ul class="list-inline">
+              <li class="list-inline-item"><a target="_blank" href="/login">Admin&nbsp;&nbsp;<i class="fas fa-user"></i></li></a>
+            </ul>
           </div>
+
 
         </div>
       </div>

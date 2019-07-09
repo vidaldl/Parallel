@@ -3,11 +3,9 @@
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Servicios</h1>
-  @if($servicios->count() < 6)
+
     <a href="{{ route('servicios.create')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-plus fa-sm "></i></span><span class="text"> &nbsp;Nuevo Servicio<span></a>
-  @else
-    <button class="d-none d-sm-inline-block btn disabled btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-lock fa-sm "></i></span><span class="text"> &nbsp;Max: Servicios<span></button>
-  @endif
+
 
 </div>
 @if($servicios->count() > 0)

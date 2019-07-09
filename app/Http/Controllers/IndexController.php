@@ -13,6 +13,7 @@ use App\ContenidoSection4;
 use App\ContenidoSection5;
 use App\ContenidoSectionFooter;
 use App\ContenidoAbout;
+use App\Style;
 
 
 
@@ -28,7 +29,8 @@ class IndexController extends Controller
       ->with('contenidosection4s', ContenidoSection4::all())
       ->with('contenidosection5s', ContenidoSection5::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
-      ->with('servicios', Servicio::all());
+      ->with('servicios', Servicio::all())
+      ->with('styles', Style::all());
 
     }
 

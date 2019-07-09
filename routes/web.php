@@ -21,6 +21,7 @@ Auth::routes();
 
 
 Route::get('home', 'HomeController@index')->name('home');
+Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
 
 Route::middleware(['auth'])->group(function () {
 // EditSections
@@ -28,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
 Route::post('/updatesection1/{id}', 'HomeController@section1Update')->name('section1.update');
 Route::post('/displaysection1/{id}', 'HomeController@section1Display')->name('section1.display');
+Route::post('/carouselsection1/{id}', 'HomeController@section1Carousel')->name('section1.carousel');
 //Section2
 Route::get('/editsection2/{id}', 'HomeController@section2Edit')->name('section2.edit');
 Route::post('/updatesection2/{id}', 'HomeController@section2Update')->name('section2.update');

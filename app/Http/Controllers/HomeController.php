@@ -12,6 +12,7 @@ use App\ContenidoSection4;
 use App\ContenidoSection5;
 use App\ContenidoSectionFooter;
 use App\ContenidoAbout;
+use App\Style;
 use Image;
 class HomeController extends Controller
 {
@@ -39,8 +40,24 @@ class HomeController extends Controller
         ->with('contenidosection4s', ContenidoSection4::all())
         ->with('contenidosection5s', ContenidoSection5::all())
         ->with('contenidosectionfooters', ContenidoSectionFooter::all())
-        ->with('contenidoabouts', ContenidoAbout::all());
+        ->with('contenidoabouts', ContenidoAbout::all())
+        ->with('styles', Style::all());
     }
+
+    /*Styles Update -------------------------------------------------------------------------------->*/
+    public function styleUpdate (Request $request, $id) {
+      $primary_color = $request->input('primary_color');
+      $button_primary = $request->input('button_primary');
+      $button_secondary = $request->input('button_secondary');
+
+      $data = array("primary_color"=>$primary_color,"button_primary"=>$button_primary,"button_secondary"=>$button_secondary);
+      DB::table('styles')->update($data);
+      session()->flash('success', 'El Color ha sido Cambiado');
+      //redirect
+      return redirect()->back();
+    }
+
+
 
     /*About Page -------------------------------------------------------------------------------->*/
     public function aboutEdit($id) {
@@ -62,6 +79,14 @@ class HomeController extends Controller
 
 
     /*SECTION 1 -------------------------------------------------------------------------------->*/
+    public function section1Carousel(Request $request, $id) {
+      $carousel = $request->input('carousel');
+      $data=array("carousel"=>$carousel);
+      DB::table('contenido_section1s')->where('id', $id)->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
     public function section1Edit($id) {
       return view('updateIndex/section1')->with('contenidosection1s', ContenidoSection1::all());
     }
@@ -80,30 +105,30 @@ class HomeController extends Controller
          ]);
         $logoOld = DB::table('contenido_section1s')->where('id', $id)->first();
         //upload it
-        $logo = $request->file('logo'); //->store('content');
+        $logo = $request->file('logo')->store('content');
         //Image Intervention
-        $finalImage = Image::make($logo);
-        $random = rand();
-        $originalPath = public_path().'/storage/content/original/';
-        $finalPath = public_path().'/storage/content/';
-        $finalImage->save($originalPath.$random.$logo->getClientOriginalName());
-        $finalDummy = $finalImage->basename;
-        $finalDummyName = 'content/original/'.$finalDummy;
+        // $finalImage = Image::make($logo);
+        // $random = rand();
+        // $originalPath = public_path().'/storage/content/original/';
+        // $finalPath = public_path().'/storage/content/';
+        // $finalImage->save($originalPath.$random.$logo->getClientOriginalName());
+        // $finalDummy = $logo->basename;
+        // $finalDummyName = 'content/original/'.$finalDummy;
         //moment of transformation
-        $width = 350;
-        $height = 250;
-        $finalImage->width() > $finalImage->height() ? $width=null : $height=null;
-        $finalImage->resize($width, $height, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+        // $width = 350;
+        // $height = 250;
+        // $finalImage->width() > $finalImage->height() ? $width=null : $height=null;
+        // $finalImage->resize($width, $height, function ($constraint) {
+        //     $constraint->aspectRatio();
+        // });
         // $finalImage->resize(150,150);
-        $finalImage->save($finalPath.$random.$logo->getClientOriginalName());
-        Storage::delete($finalDummyName);
+        // $logo->save($finalPath.$random.$logo->getClientOriginalName());
+        // Storage::delete($finalDummyName);
         Storage::delete($logoOld->logo);
 
-        $finalDataName = 'content/'.$finalImage->basename;
-        $data=array('logo'=>$finalDataName);
-        DB::table('contenido_section1s')->update($data);
+        // $finalDataName = 'content/'.$logo;
+        $data=array('logo'=>$logo);
+        DB::table('contenido_section1s')->where('id', $id)->update($data);
 
         session()->flash('success', 'La sección fue actualizada con la imagen');
         //redirect
@@ -139,7 +164,7 @@ class HomeController extends Controller
 
           $finalDataName = 'content/'.$finalImage->basename;
           $data=array('background_image'=>$finalDataName);
-          DB::table('contenido_section1s')->update($data);
+          DB::table('contenido_section1s')->where('id', $id)->update($data);
 
           session()->flash('success', 'La Imagen de Fondo fue actualizada');
           //redirect
@@ -148,7 +173,7 @@ class HomeController extends Controller
         }
         else {
         $data=array("title"=>$title,"tagline"=>$tagline,"button"=>$button);
-        DB::table('contenido_section1s')->update($data);
+        DB::table('contenido_section1s')->where('id', $id)->update($data);
         session()->flash('success', 'La sección fue actualizada');
         //redirect
         return redirect()->back();
@@ -166,7 +191,7 @@ class HomeController extends Controller
     public function section1Display(Request $request, $id) {
       $display = $request->input('section1');
       $data=array("display"=>$display);
-      DB::table('contenido_section1s')->update($data);
+      DB::table('contenido_section1s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();

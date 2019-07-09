@@ -85,10 +85,10 @@
        <div class="portfolio-grid">
          <div class="container">
            <div class="row">
-           @foreach($posts as $post)
+           @foreach($posts->sortByDesc('created_at') as $post)
              <div class="col-lg-4 col-sm-12 col-xs-12 item {{$post->category->name}}">
                  <div class="card card-block">
-                   <a href="#" data-toggle="modal" data-target="#modal{{$post->id}}"><img alt="" src="{{ '/storage/' . $post->image }}">
+                   <a href="#" data-toggle="modal" data-target="#modal{{$post->id}}"><img class="img-thumbnail" alt="" src="{{ '/storage/' . $post->image }}">
                      <div class="portfolio-over">
                        <div>
                          <h3 class="card-title">

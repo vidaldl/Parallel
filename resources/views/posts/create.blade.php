@@ -42,7 +42,7 @@
             </select>
           </div>
         </div>
-        
+
         <div class="form-group">
           <label for="description" class="col-form-label">Descripcion del Post</label>
           <textarea id="description" name="description" cols="5" rows="1" class="form-control @error('description') is-invalid @enderror" >{{ isset($post) ? $post->description : '' }}</textarea>
@@ -104,7 +104,7 @@
 
 
 @section('script')
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+  <script src="{{ asset('lib/summernote/summernote.js') }}"></script>
   <script>
   $(document).ready(function() {
   $('#contenido').summernote({
@@ -134,7 +134,7 @@
 @endsection
 
 @section('css')
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+  <link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 @endsection
