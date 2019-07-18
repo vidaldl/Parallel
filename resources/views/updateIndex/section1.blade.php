@@ -245,6 +245,7 @@
                   <button id="back" type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
                 </div>
                 </form>
+
               </div>
             </div>
           </div>
@@ -741,8 +742,8 @@
         buttonConfirm.addEventListener('click', function() {
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 256,
-             height: 256
+             width: 3500,
+             height: 2625
            });
            // Turn the canvas into a Blob (file object without a name)
            canvas.toBlob(function(blob) {
@@ -771,12 +772,12 @@
        editor.appendChild(image);
 
        // Create Cropper.js
-       var cropper = new Cropper(image, { aspectRatio: 1 });
+       var cropper = new Cropper(image, { aspectRatio: 4/3 });
 
      }
   };
 
-  $('#modalLogo').on('hidden.bs.modal', function () {
+  $('.modal').on('hidden.bs.modal', function () {
    location.reload();
   })
 </script>
