@@ -79,8 +79,10 @@ class HomeController extends Controller
     }
 
     public function deleteSliderImage (InfoSliderImage $slide, $id) {
-      $image = InfoSliderImage::where('id', $id)->first()->delete();
-
+      Storage::delete($slide->image);
+      $image = InfoSliderImage::where('id', $id)->first();
+      Storage::delete($image->image);
+      $image->delete();
       session()->flash('error', 'Se ha borrado la imagen');
       //redirect
       return redirect()->back();
