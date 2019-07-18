@@ -2,6 +2,12 @@ body {
 
 }
 
+
+.contenidoStyle p{
+  color: white;
+}
+
+
 #ifram iframe {
   width: 100%!important;
   height: 440px!important;
@@ -253,7 +259,7 @@ a:hover {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 /* overlay for better readibility of the caption  */
 .overlay {

@@ -108,7 +108,7 @@
 </style>
 @endsection
 @section('content')
-<section class="hero" id="inicio" style="background-image: url({{asset('img/bground.jpeg')}});height:100px;background-position:center;">
+<section class="hero" id="inicio" style="background-image: url({{ '/storage/' . $contenidosection1s[0]->background_image }});height:100px;background-position:center;">
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">

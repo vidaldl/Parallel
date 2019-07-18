@@ -34,6 +34,13 @@ Route::post('/carouselsection1/{id}', 'HomeController@section1Carousel')->name('
 Route::get('/editsection2/{id}', 'HomeController@section2Edit')->name('section2.edit');
 Route::post('/updatesection2/{id}', 'HomeController@section2Update')->name('section2.update');
 Route::post('/displaysection2/{id}', 'HomeController@section2Display')->name('section2.display');
+//Slider information
+Route::get('/editInfoSlider/{id}', 'HomeController@infoSliderEdit')->name('info-slider-text.edit');
+Route::post('/updateInfoSlider/{id}', 'HomeController@infoSliderUpdate')->name('infoSlider.update');
+Route::post('/displayInfoSlider/{id}', 'HomeController@infoSliderDisplay')->name('infoSlider.display');
+Route::post('/store-slider-image', 'HomeController@storeSliderImage')->name('store.sliderImage');
+Route::post('/update-slider-image/{id}', 'HomeController@updateSliderImage')->name('update.sliderImage');
+Route::delete('/delete-slider-image/{id}', 'HomeController@deleteSliderImage')->name('delete.sliderImage');
 //Section3
 Route::get('/editsection3/{id}', 'HomeController@section3Edit')->name('section3.edit');
 Route::post('/updatesection3/{id}', 'HomeController@section3Update')->name('section3.update');

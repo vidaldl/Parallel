@@ -5,7 +5,6 @@ use App\Post;
 use App\Category;
 use App\Tag;
 use App\Servicio;
-
 use App\ContenidoSection1;
 use App\ContenidoSection2;
 use App\ContenidoSection3;
@@ -14,6 +13,8 @@ use App\ContenidoSection5;
 use App\ContenidoSectionFooter;
 use App\ContenidoAbout;
 use App\Style;
+use App\InfoSliderImage;
+use App\InfoSliderText;
 
 
 
@@ -30,13 +31,16 @@ class IndexController extends Controller
       ->with('contenidosection5s', ContenidoSection5::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
       ->with('servicios', Servicio::all())
-      ->with('styles', Style::all());
+      ->with('styles', Style::all())
+      ->with('info_slider_images', InfoSliderImage::all())
+      ->with('info_slider_texts', InfoSliderText::all());
 
     }
 
     public function blog() {
 
       return view('blog')
+      ->with('contenidosection1s', ContenidoSection1::all())
       ->with('categories', Category::all())->with('tags', Tag::all())
       ->with('posts', Post::paginate(16))
       ->with('contenidosection5s', ContenidoSection5::all())

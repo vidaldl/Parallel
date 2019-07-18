@@ -35,7 +35,7 @@
 
   <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.css">
 
 
   <!-- Main Stylesheet File -->
@@ -68,11 +68,11 @@
 <script src="{{ asset('lib/parallax/parallax.js') }}"></script>
 <script src="{{ asset('lib/lockfixed/lockfixed.min.js') }}"></script>
 <script src="{{ asset('lib/isotope/isotope.pkgd.js') }}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider.js"></script>
+@yield('script')
 <!-- CUSTOM JS -->
 <script src="{{ asset('lib/js/custom.js') }}"></script>
 
-<script src="contactform/contactform.js"></script>
 
 </body>
 </html>

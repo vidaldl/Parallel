@@ -239,7 +239,6 @@
           </ul>
         <!-- Slide 1 -->
         <div id="slide1" class="tabdiv" style="padding: 10px; background-color: #E5E5E5!important;">
-        <!-- Static Form -->
           <form id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
             <div class="row">
               @csrf
@@ -273,8 +272,12 @@
 
                 <div class="form-group col-md-6">
 
-                    <label for="image" class="col-form-label">Imagen de Logo</label><br>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide1">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                    <label for="image" class="col-form-label">Imagen</label><br>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide1">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                    <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
+                      <option value="0" {{ $contenidosection1s[1]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
+                      <option value="1" {{ $contenidosection1s[1]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
+                    </select>
                     @error('logo')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -383,7 +386,6 @@
 
         <!-- Slide 2 -->
         <div id="slide2" class="tabdiv" style="padding: 10px; background-color: #E5E5E5!important;">
-          <!-- Static Form -->
             <form id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
               <div class="row">
                 @csrf
@@ -417,8 +419,12 @@
 
                   <div class="form-group col-md-6">
 
-                      <label for="image" class="col-form-label">Imagen de Logo</label><br>
+                      <label for="image" class="col-form-label">Imagen</label><br>
                       <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide2">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
+                        <option value="0" {{ $contenidosection1s[2]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
+                        <option value="1" {{ $contenidosection1s[2]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
+                      </select>
                       @error('logo')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -527,8 +533,7 @@
 
         <!-- Slide 3 -->
         <div id="slide3" class="tabdiv" style="padding: 10px; background-color: #E5E5E5!important;">
-          <!-- Static Form -->
-            <form id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
+            <form id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
               <div class="row">
                 @csrf
                   <div class="form-group col-md-6">
@@ -561,8 +566,12 @@
 
                   <div class="form-group col-md-6">
 
-                      <label for="image" class="col-form-label">Imagen de Logo</label><br>
+                      <label for="image" class="col-form-label">Imagen</label><br>
                       <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide3">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
+                        <option value="0" {{ $contenidosection1s[3]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
+                        <option value="1" {{ $contenidosection1s[3]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
+                      </select>
                       @error('logo')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>

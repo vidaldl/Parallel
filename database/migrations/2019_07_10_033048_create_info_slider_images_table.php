@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContenidoAboutsTable extends Migration
+class CreateInfoSliderImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateContenidoAboutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contenido_abouts', function (Blueprint $table) {
+        Schema::create('info_slider_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('mision')->nullable();
-            $table->text('vision')->nullable();
-            $table->text('valores')->nullable();
-            $table->text('map')->nullable();
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateContenidoAboutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contenido_abouts');
+        Schema::dropIfExists('info_slider_images');
     }
 }

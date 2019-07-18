@@ -26,7 +26,7 @@
           <tr>
               <td>
                 <div class="feature-icon">
-                  <span class="fa fa-{{ $servicio->icon }}"></span>
+                  <span class="{{ $servicio->icon }}"></span>
                 </div>
               </td>
               <td>

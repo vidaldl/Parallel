@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateSection1Request;
+use App\Http\Requests\SliderImageRequest;
 use App\ContenidoSection1;
 use App\ContenidoSection2;
 use App\ContenidoSection3;
@@ -13,6 +14,8 @@ use App\ContenidoSection5;
 use App\ContenidoSectionFooter;
 use App\ContenidoAbout;
 use App\Style;
+use App\InfoSliderImage;
+use App\InfoSliderText;
 use Image;
 class HomeController extends Controller
 {
@@ -41,8 +44,79 @@ class HomeController extends Controller
         ->with('contenidosection5s', ContenidoSection5::all())
         ->with('contenidosectionfooters', ContenidoSectionFooter::all())
         ->with('contenidoabouts', ContenidoAbout::all())
-        ->with('styles', Style::all());
+        ->with('styles', Style::all())
+        ->with('info_slider_images', InfoSliderImage::all())
+        ->with('info_slider_texts', InfoSliderText::all());
     }
+
+    /*Info Slider Image -------------------------------------------------------------------------------->*/
+    public function storeSliderImage (SliderImageRequest $request) {
+       $slide = $request->slide->store('slides');
+       $post = InfoSliderImage::create([
+         'image' => $slide
+       ]);
+       // flash message
+       session()->flash('success', 'La imagen fué subida');
+       //redirect user
+       return redirect()->back();
+    }
+
+    public function updateSliderImage (Request $request, $id) {
+      $this->validate($request, [
+          'slide' => 'image|required|mimes:png,jpg,jpeg,svg'
+       ]);
+      $slideOld = DB::table('info_slider_images')->where('id', $id)->first();
+      //upload it
+      $slide = $request->file('slide')->store('slides');
+      Storage::delete($slideOld->image);
+      // $finalDataName = 'content/'.$logo;
+      $data=array('image'=>$slide);
+      DB::table('info_slider_images')->where('id', $id)->update($data);
+
+      session()->flash('success', 'La imagen ha sido actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function deleteSliderImage (InfoSliderImage $slide, $id) {
+      $image = InfoSliderImage::where('id', $id)->first()->delete();
+
+      session()->flash('error', 'Se ha borrado la imagen');
+      //redirect
+      return redirect()->back();
+    }
+
+
+
+
+    /*Info Slider Text -------------------------------------------------------------------------------->*/
+    public function infoSliderEdit ($id) {
+      return view('updateIndex/infoslider')
+      ->with('info_slider_images', InfoSliderImage::all())
+      ->with('info_slider_texts', InfoSliderText::all());
+    }
+
+    public function infoSliderUpdate(Request $request, $id) {
+      $title = $request->input('title');
+      $contenido = $request->input('contenido');
+      $button = $request->input('button');
+
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button);
+      DB::table('info_slider_texts')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function infoSliderDisplay(Request $request, $id) {
+      $display = $request->input('infoSlider');
+      $data=array("display"=>$display);
+      DB::table('info_slider_texts')->where('id', $id)->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
 
     /*Styles Update -------------------------------------------------------------------------------->*/
     public function styleUpdate (Request $request, $id) {
@@ -95,6 +169,7 @@ class HomeController extends Controller
       $title = $request->input('title');
       $tagline = $request->input('tagline');
       $button = $request->input('button');
+      $displayImage = $request->input('displayImage');
       $logo = NULL;
 
 
@@ -104,6 +179,7 @@ class HomeController extends Controller
             'logo' => 'image|required|mimes:png,svg'
          ]);
         $logoOld = DB::table('contenido_section1s')->where('id', $id)->first();
+
         //upload it
         $logo = $request->file('logo')->store('content');
         //Image Intervention
@@ -126,6 +202,7 @@ class HomeController extends Controller
         // Storage::delete($finalDummyName);
         Storage::delete($logoOld->logo);
 
+
         // $finalDataName = 'content/'.$logo;
         $data=array('logo'=>$logo);
         DB::table('contenido_section1s')->where('id', $id)->update($data);
@@ -141,18 +218,18 @@ class HomeController extends Controller
               'background' => 'image|required|mimes:jpeg,png,jpg,gif,svg'
            ]);
          $logoOld = DB::table('contenido_section1s')->where('id', $id)->first();
-         $background = $request->file('background'); //->store('content');
+         $background = $request->file('background')->store('content');
 
-          $finalImage = Image::make($background);
-          $random = rand();
-          $originalPath = public_path().'/storage/content/original/';
-          $finalPath = public_path().'/storage/content/';
-          $finalImage->save($finalPath.$random.$background->getClientOriginalName());
-          $finalDummy = $finalImage->basename;
-          $finalDummyName = 'content/original/'.$finalDummy;
-          //moment of transformation
-          $width = NULL;
-          $height = '100vh';
+          // $finalImage = Image::make($background);
+          // $random = rand();
+          // $originalPath = public_path().'/storage/content/original/';
+          // $finalPath = public_path().'/storage/content/';
+          // $finalImage->save($finalPath.$random.$background->getClientOriginalName());
+          // $finalDummy = $finalImage->basename;
+          // $finalDummyName = 'content/original/'.$finalDummy;
+          // //moment of transformation
+          // $width = NULL;
+          // $height = '100vh';
 
           // $finalImage->resize($width, $height, function ($constraint) {
           //     $constraint->aspectRatio();
@@ -162,8 +239,8 @@ class HomeController extends Controller
           // Storage::delete($finalDummyName);
           Storage::delete($logoOld->background_image);
 
-          $finalDataName = 'content/'.$finalImage->basename;
-          $data=array('background_image'=>$finalDataName);
+          // $finalDataName = 'content/'.$finalImage->basename;
+          $data=array('background_image'=>$background);
           DB::table('contenido_section1s')->where('id', $id)->update($data);
 
           session()->flash('success', 'La Imagen de Fondo fue actualizada');
@@ -172,7 +249,7 @@ class HomeController extends Controller
 
         }
         else {
-        $data=array("title"=>$title,"tagline"=>$tagline,"button"=>$button);
+        $data=array("title"=>$title,"tagline"=>$tagline,"button"=>$button, "carousel"=>$displayImage);
         DB::table('contenido_section1s')->where('id', $id)->update($data);
         session()->flash('success', 'La sección fue actualizada');
         //redirect

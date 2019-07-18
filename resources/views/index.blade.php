@@ -85,6 +85,11 @@
     .portfolio h1 {
       color: {{$styles[0]->primary_color}};
     }
+    .infoSlider h2 {
+      margin-bottom: 25px;
+      color: {{$styles[0]->primary_color}};
+
+    }
     .team h2 {
       color: {{$styles[0]->primary_color}};
     }
@@ -128,8 +133,9 @@
             <div class="overlay"></div>
             <div class="carousel-caption text-center style="top: 50%;transform: translateY(-40%);"">
               <div class="row">
-                <div class="col-md-12">
-                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                <div class="col-md-12" style="{{ $contenidosection1s[1]->carousel == 0 ? 'visibility: hidden;' : '' }}">
+                  <a class="hero-brand " href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+
                 </div>
               </div>
               <div class="col-md-12">
@@ -149,7 +155,7 @@
               <div class="overlay"></div>
               <div class="carousel-caption" >
                 <div class="row">
-                  <div class="" >
+                  <div class="" style="{{ $contenidosection1s[2]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                     <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img height="100%" width="350px"  src="{{'/storage/' . $contenidosection1s[2]->logo}}"></a>
                   </div>
                 </div>
@@ -184,7 +190,7 @@
                     <a class="btn btn-full mt-4" style="border-radius: 3px" href="#servicios">{{$contenidosection1s[3]->button}}</a>
                   </div>
 
-                  <div class="col-md-6 " >
+                  <div class="col-md-6 " style="{{ $contenidosection1s[3]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                     <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;"  src="{{'/storage/' . $contenidosection1s[3]->logo}}"></a><!-- <img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;" src="{{asset('img/world.png')}}"> -->
                   </div>
                 </div>
@@ -199,14 +205,18 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
-          <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[0]->logo}}"></a>
+          @if(empty($contenidosection1s[0]->title))
+          <a class="hero-brand " href="{{redirect('home')}}" title="Home"><img height="100%" width="600px;" src="{{'/storage/' . $contenidosection1s[0]->logo}}"></a>
+          @else
+          <a class="hero-brand " href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[0]->logo}}"></a>
+          @endif
         </div>
       </div>
 
       <div class="col-md-12">
         <h1>
           {{$contenidosection1s[0]->title}}
-          </h1>
+        </h1>
 
         <p class="tagline">
           {{$contenidosection1s[0]->tagline}}
@@ -268,7 +278,7 @@
           <div class="card card-block text-center">
             <div>
               <div class="feature-icon ">
-                <span class="fa fa-{{ $servicio->icon }}"></span>
+                <span class="{{ $servicio->icon }}"></span>
               </div>
             </div>
             <div>
@@ -284,6 +294,40 @@
     </div>
   </section>
   <!-- /Features -->
+
+<!-- Info Slider -->
+
+<section id="infoSlider" class="infoSlider {{$info_slider_texts[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 2px solid {{$styles[0]->primary_color}};">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <div id="textHeight" class="col-md-12">
+            <h2>{!! $info_slider_texts[0]->title !!}</h2>
+            <p>{!! $info_slider_texts[0]->contenido !!}</p>
+          </div>
+          <div id="btnH"class="mb-5 mx-auto">
+            <a class="btn" style="color:#ffff;">{{ $info_slider_texts[0]->button }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 " id="imageH" style="overflow: hidden;">
+        <div class="flexslider">
+          <ul class="slides">
+            @foreach($info_slider_images as $images)
+            <li>
+              <img src="{{ 'storage/' . $images->image }}" />
+            </li>
+            @endforeach
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--/Info Slider -->
+
   <!-- Call to Action -->
 @foreach($contenidosection3s as $contenidosection3)
   <section class="cta {{ $contenidosection3->display == '0' ? 'd-none' : '' }}" id="acercas" style="{{ $contenidosection2->display == '0' ? 'color: black;background-color: #FFFFFF;' : '' }}">
@@ -293,10 +337,11 @@
           <h2 class="mb-3">
               {{$contenidosection3->title}}
             </h2>
+        <div class="contenidoStyle" style="{{ $contenidosection2->display == '0' ? 'color: black;' : 'color: #fff;' }}">
 
-          <p style="{{ $contenidosection2->display == '0' ? 'color: black;' : 'color: #fff;' }}">
             {!! $contenidosection3->contenido !!}
-          </p>
+
+        </div>
         </div>
 
         <div id="articuloss" class="col-lg-3 col-sm-12 text-lg-right text-center align-self-center">
@@ -504,4 +549,29 @@
     </div>
   </footer>
   @endforeach
+  @endsection
+
+  @section('script')
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      $('.flexslider').flexslider({
+    animation: "slide"
+  });
+    });
+
+    $(window).load(function() {
+      var height1 = $('#imageH').height();
+      var height2 = $('#btnH').height();
+      var sum = height1 - height2 - height2;
+      $('#textHeight').css('min-height', sum + 'px');
+      console.log($(window).width());
+      var windowWidth = $(window).width();
+
+      if (windowWidth < 768) {
+        $('#btnH').addClass('mt-5')
+      }
+    });
+
+  </script>
   @endsection

@@ -63,7 +63,7 @@
 </div>
 @endsection
 @section('script')
-<script src="{{ asset('lib/summernote/summernote.js') }}"></script>
+<!-- <script src="{{ asset('lib/summernote/summernote.js') }}"></script>
 <script>
 $(document).ready(function() {
 $('#contenido').summernote({
@@ -79,14 +79,23 @@ $('#contenido').summernote({
      //['view', ['fullscreen', 'codeview', 'help']]
   ]
 });
-$("#contenido").summernote("foreColor", "blue");
-$("#contenido").summernote("backColor", "red");
+
 });
+</script> -->
+<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<script>
+ClassicEditor.create( document.querySelector( '#contenido' ), {
+      removePlugins: [ 'Heading', 'Link' ],
+      toolbar: [ 'bold', 'italic', 'mediaEmbed']
+    }).then( editor => {
+        console.log( Array.from( editor.ui.componentFactory.names() ) );
+    } )
+    .catch( error => {
+        console.error( error );
+    } );
+console.log(ClassicEditor.builtinPlugins.map( plugin => plugin.pluginName ));
 </script>
 @endsection
 @section('css')
-<link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
-<style>
-.note-editable { background-color: #3742FA!important; color: white; }
-</style>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
 @endsection

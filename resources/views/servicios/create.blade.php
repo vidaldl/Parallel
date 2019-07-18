@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+@section('css')
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{asset('lib/iconpicker/css/fontawesome-iconpicker.css')}}">
+@endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">{{isset($servicio) ? 'Editar Servicio' : 'Nuevo Servicio'}}</h1>
@@ -9,7 +13,7 @@
 
 <div class="row justify-content-center">
   <div class="card col-md-8 mb-5">
-    <div class="card-body">
+    <div class="card-body" style="height: 500px;">
       <form autocomplete="off" method="POST" action="{{ isset($servicio) ? route('servicios.update', $servicio->id) : route('servicios.store') }}">
         @csrf
         @if(isset($servicio))
@@ -19,7 +23,19 @@
 
           <div class="form-group">
             <label for="icon" class="col-form-label">Ícono</label>
-            <input id="icon" type="text" class="form-control @error('icon') is-invalid @enderror" name="icon" value="{{isset($servicio) ? $servicio->icon : ''}}">
+            <div class="input-group">
+              <input id="icon" type="text" data-placement="bottomRight" class="form-control @error('icon') is-invalid @enderror"  name="icon" value="{{isset($servicio) ? $servicio->icon : ''}}">
+              <div class="btn-group">
+                 <button type="button" class="btn btn-primary iconpicker-component"><i
+                         class="{{ $servicio->icon }}"></i></button>
+                 <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
+                         data-selected="fa-car" data-toggle="dropdown">
+                     <span class="caret"></span>
+                     <span class="sr-only">Toggle Dropdown</span>
+                 </button>
+                 <div class="dropdown-menu"></div>
+             </div>
+
             @error('icon')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -27,7 +43,7 @@
             @enderror
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-5">
             <label for="title" class="col-form-label">Titulo del Post</label>
             <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{isset($servicio) ? $servicio->title : ''}}">
             @error('title')
@@ -37,9 +53,9 @@
             @enderror
           </div>
 
-        <div class="form-group">
+        <div class="form-group mt-5">
           <label for="contenido" class="col-form-label">Descripcion del Post</label>
-          <input id="contenido" name="contenido" cols="5" rows="1" class="form-control @error('contenido') is-invalid @enderror" value="{{ isset($servicio) ? $servicio->contenido : '' }}">
+          <input id="contenido" name="contenido" class="form-control @error('contenido') is-invalid @enderror" value="{{ isset($servicio) ? $servicio->contenido : '' }}">
           @error('contenido')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -47,7 +63,7 @@
           @enderror
         </div>
 
-        <div class="form-group">
+        <div class="form-group mt-5">
           <button type="submit" class="btn btn-success float-right">
             {{ isset($post) ? 'Guardar' : 'Publicar' }}
           </button>
@@ -57,44 +73,39 @@
   </div>
 </div>
 </div>
-
+</div>
 
 @endsection
 
 
 
 @section('script')
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
-  <!-- <script>
-  $(document).ready(function() {
-  $('#contenido').summernote({
-    toolbar: [
-      // [groupName, [list of button]]
-      //['style', ['style']],
-       ['font', ['bold', 'underline']],
-       //['fontname', ['fontname']],
-       ['color', ['color']],
-       //['para', ['ul', 'ol', 'paragraph']],
-       //['table', ['table']],
-       ['insert', ['link', 'picture', 'video']],
-       //['view', ['fullscreen', 'codeview', 'help']]
-    ]
-  });
-  $("#contenido").summernote("foreColor", "blue");
-  $("#contenido").summernote("backColor", "red");
-  });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script type="text/javascript">
-    defaultDate: new Date()
-    flatpickr('#published_at', {
-      defaultDate: new Date()
-    })
-  </script> -->
-@endsection
+<script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
+<script>
+$(document).ready(function () {
+  $('.icp-dd').iconpicker({
+       // title: 'Dropdown with picker',
+       // component:'.btn > i'
+     });
 
-@section('css')
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+
+})
+$('.icp').on('iconpickerSelected', function (e) {
+    $('#icon').get(0).value = e.iconpickerInstance.options.fullClassFormatter(e.iconpickerValue);
+  });
+</script>
+<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<script>
+ClassicEditor.create( document.querySelector( '#contenido' ), {
+      removePlugins: [ 'Heading', 'Link' ],
+      toolbar: [ 'bold', 'italic',]
+    }).then( editor => {
+        console.log( Array.from( editor.ui.componentFactory.names() ) );
+    } )
+    .catch( error => {
+        console.error( error );
+    } );
+console.log(ClassicEditor.builtinPlugins.map( plugin => plugin.pluginName ));
+</script>
+
 @endsection
