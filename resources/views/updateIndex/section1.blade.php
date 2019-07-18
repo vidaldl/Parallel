@@ -59,6 +59,8 @@
   }
 
   </style>
+<link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
+<link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -161,7 +163,28 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                <form id="log" method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
+
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                        <label for="logo" class="col-form-label">Imagen de Logo</label>
+                        <form id="logo" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
+                          @csrf
+                        </form>
+                        @error('logo')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded">
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- <form id="log" method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
                   @csrf
                   <div class="row">
                     <div class="col-md-4">
@@ -183,7 +206,7 @@
                 <div class="modal-footer" style="background-color:#4066D4;">
                   <button type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
                 </div>
-                </form>
+                </form> -->
               </div>
             </div>
           </div>
@@ -684,6 +707,79 @@
 </div>
 @endsection
 @section('script')
+<script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
+<script src="{{asset('lib/cropper/cropper.js')}}">
+
+</script>
+<script>
+  Dropzone.options.logo = {
+     paramName: "logo",
+     addRemoveLinks: true,
+     transformFile: function(file, done) {
+        // Create Dropzone reference for use in confirm button click handler
+        var myDropZone = this;
+
+        // Create the image editor overlay
+        var editor = document.createElement('div');
+        editor.style.position = 'fixed';
+        editor.style.left = 0;
+        editor.style.right = 0;
+        editor.style.top = 0;
+        editor.style.bottom = 0;
+        editor.style.zIndex = 9999;
+        editor.style.backgroundColor = '#000';
+        document.body.appendChild(editor);
+
+        // Create confirm button at the top left of the viewport
+        var buttonConfirm = document.createElement('button');
+        buttonConfirm.style.position = 'absolute';
+        buttonConfirm.style.left = '10px';
+        buttonConfirm.style.top = '10px';
+        buttonConfirm.style.zIndex = 9999;
+        buttonConfirm.textContent = 'Confirm';
+        editor.appendChild(buttonConfirm);
+        buttonConfirm.addEventListener('click', function() {
+          // Get the canvas with image data from Cropper.js
+           var canvas = cropper.getCroppedCanvas({
+             width: 256,
+             height: 256
+           });
+           // Turn the canvas into a Blob (file object without a name)
+           canvas.toBlob(function(blob) {
+             // Create a new Dropzone file thumbnail
+              myDropZone.createThumbnail(
+                blob,
+                myDropZone.options.thumbnailWidth,
+                myDropZone.options.thumbnailHeight,
+                myDropZone.options.thumbnailMethod,
+                false,
+                function(dataURL) {
+
+                  // Update the Dropzone file thumbnail
+                  myDropZone.emit('thumbnail', file, dataURL);
+                  // Return the file to Dropzone
+                  done(blob);
+              });
+           });
+
+          // Remove the editor from the view
+          document.body.removeChild(editor);
+        });
+        // Create an image node for Cropper.js
+       var image = new Image();
+       image.src = URL.createObjectURL(file);
+       editor.appendChild(image);
+
+       // Create Cropper.js
+       var cropper = new Cropper(image, { aspectRatio: 1 });
+
+     }
+  };
+
+  $('#modalLogo').on('hidden.bs.modal', function () {
+   location.reload();
+  })
+</script>
 <!-- <script>
 $('#back').click(function() {
   $('#section1').submit();
