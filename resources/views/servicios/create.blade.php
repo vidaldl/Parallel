@@ -27,7 +27,7 @@
               <input id="icon" type="text" data-placement="bottomRight" class="form-control @error('icon') is-invalid @enderror"  name="icon" value="{{isset($servicio) ? $servicio->icon : ''}}">
               <div class="btn-group">
                  <button type="button" class="btn btn-primary iconpicker-component"><i
-                         class="{{ $servicio->icon }}"></i></button>
+                         class="{{ isset($servicio) ? $servicio->icon : 'fab fa-font-awesome-alt' }}"></i></button>
                  <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
                          data-selected="fa-car" data-toggle="dropdown">
                      <span class="caret"></span>
