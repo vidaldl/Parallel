@@ -165,10 +165,10 @@
                 <div class="modal-body">
 
                     <div class="row">
-                      <div class="col-md-8">
+                      <div class="col-md-4">
                         <div class="form-group">
                         <label for="logo" class="col-form-label">Imagen de Logo</label>
-                        <form id="logo" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
+                        <form id="logo{{ $contenidosection1s[0]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
                           @csrf
                         </form>
                         @error('logo')
@@ -178,35 +178,16 @@
                         @enderror
                         </div>
                       </div>
-                      <div class="col-md-4">
-                        <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded">
+                      <div class="col-md-8">
+                        <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
+                      <div class="editador{{ $contenidosection1s[0]->id }}" style="height:450px; background-color: #000;">
+                      </div>
                       </div>
                     </div>
-                  </div>
-
-                <!-- <form id="log" method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
-                  @csrf
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group">
-                      <label for="logo" class="col-form-label">Imagen de Logo</label>
-                      <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo">
-                      @error('logo')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror
-                      </div>
-                    </div>
-                    <div class="col-md-8">
-                      <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="height:100%;width:100%;" class="img-fluid img-thumbnail rounded">
-                    </div>
-                  </div>
                 </div>
-                <div class="modal-footer" style="background-color:#4066D4;">
-                  <button type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
+                <div class="modal-footer buttons">
+                  <button class="buttonConfirm{{ $contenidosection1s[0]->id }} btn btn-primary">Confirmar</button>
                 </div>
-                </form> -->
               </div>
             </div>
           </div>
@@ -222,7 +203,31 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                <form method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
+                  <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label for="background" class="col-form-label">Imagen de Fondo</label>
+                    <form id="background{{ $contenidosection1s[0]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
+                      @csrf
+                    </form>
+                    @error('logo')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="editadorBack{{ $contenidosection1s[0]->id }}" style="height:450px; background-color: #000;">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button class="buttonConfirmBack{{ $contenidosection1s[0]->id }} btn btn-primary">Confirmar</button>
+              </div>
+                <!-- <form method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
                   @csrf
                   <div class="row">
                     <div class="col-md-4">
@@ -244,11 +249,11 @@
                 <div class="modal-footer" style="background-color:#4066D4;">
                   <button id="back" type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
                 </div>
-                </form>
-
+                </form> -->
               </div>
             </div>
           </div>
+        </div>
           <!-- End modal background-image -->
 
         <!-- END static form -->
@@ -338,29 +343,29 @@
                   </button>
                   </div>
                   <div class="modal-body">
-                  <form id="log" method="POST" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="logo" class="col-form-label">Imagen Slide 1</label>
-                        <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo">
-                        @error('logo')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                          <label for="logo" class="col-form-label">Imagen de Logo</label>
+                          <form id="logo{{ $contenidosection1s[1]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
+                            @csrf
+                          </form>
+                          @error('logo')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="editador{{ $contenidosection1s[1]->id }}" style="height:450px; background-color: #000;">
+                          </div>
                         </div>
                       </div>
-                      <div class="col-md-8">
-                        <img src="{{'/storage/' . $contenidosection1s[1]->logo}}" style="height:100%;width:100%;" class="img-fluid img-thumbnail rounded">
-                      </div>
-                    </div>
                   </div>
-                  <div class="modal-footer" style="background-color:#4066D4;">
-                    <button type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
+                  <div class="modal-footer ">
+                    <button class="buttonConfirm{{ $contenidosection1s[1]->id }} btn btn-primary">Confirmar</button>
                   </div>
-                  </form>
                 </div>
               </div>
             </div>
@@ -376,29 +381,31 @@
                   </button>
                   </div>
                   <div class="modal-body">
-                  <form method="POST" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
-                    @csrf
                     <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="background" class="col-form-label">Imagen de Fondo</label>
-                        <input id="background" type="file" class="form-control @error('background') is-invalid @enderror" name="background">
-                        @error('background')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                        </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                      <label for="background" class="col-form-label">Imagen de Fondo</label>
+                      <form id="background{{ $contenidosection1s[1]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
+                        @csrf
+                      </form>
+                      @error('logo')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                      @enderror
                       </div>
-                      <div class="col-md-8">
-                        <img src="{{'/storage/' . $contenidosection1s[1]->background_image}}" style="height:100%;width:100%;" class="img-fluid img-thumbnail rounded">
+                    </div>
+                    <div class="col-md-8">
+                      <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
+                      <div class="editadorBack{{ $contenidosection1s[1]->id }}" style="height:450px; background-color: #000;">
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer" style="background-color:#4066D4;">
-                    <button id="back" type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
-                  </div>
-                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button class="buttonConfirmBack{{ $contenidosection1s[1]->id }} btn btn-primary">Confirmar</button>
+                </div>
                 </div>
               </div>
             </div>
@@ -485,29 +492,30 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                    <form id="log" method="POST" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
-                      @csrf
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                          <label for="logo" class="col-form-label">Imagen Slide 2</label>
-                          <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo">
-                          @error('logo')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-group">
+                            <label for="logo" class="col-form-label">Imagen de Logo</label>
+                            <form id="logo{{ $contenidosection1s[2]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
+                              @csrf
+                            </form>
+                            @error('logo')
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                              </span>
+                            @enderror
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <!-- <img src="{{'/storage/' . $contenidosection1s[2]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
+                            <div class="editador{{ $contenidosection1s[2]->id }}" style="height:450px; background-color: #000;">
+                            </div>
                           </div>
                         </div>
-                        <div class="col-md-8">
-                          <img src="{{'/storage/' . $contenidosection1s[2]->logo}}" style="height:100%;width:100%;" class="img-fluid img-thumbnail rounded">
-                        </div>
-                      </div>
                     </div>
-                    <div class="modal-footer" style="background-color:#4066D4;">
-                      <button type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
+                    <div class="modal-footer">
+                      <button class="buttonConfirm{{ $contenidosection1s[2]->id }} btn btn-primary">Confirmar</button>
                     </div>
-                    </form>
                   </div>
                 </div>
               </div>
@@ -523,29 +531,31 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                    <form method="POST" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
-                      @csrf
                       <div class="row">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                          <label for="background" class="col-form-label">Imagen de Fondo</label>
-                          <input id="background" type="file" class="form-control @error('background') is-invalid @enderror" name="background">
-                          @error('background')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                          </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                        <label for="background" class="col-form-label">Imagen de Fondo2</label>
+                        <form id="background{{ $contenidosection1s[2]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
+                          @csrf
+                        </form>
+                        @error('logo')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
-                        <div class="col-md-8">
-                          <img src="{{'/storage/' . $contenidosection1s[2]->background_image}}" style="height:100%;width:100%;" class="img-fluid img-thumbnail rounded">
+                      </div>
+                      <div class="col-md-8" id="editarback">
+                        <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
+                        <div class="editadorBack{{ $contenidosection1s[2]->id }}" style="height:450px; background-color: #000;">
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer" style="background-color:#4066D4;">
-                      <button id="back" type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
-                    </div>
-                    </form>
+
+                  </div>
+                  <div class="modal-footer" id="buttonsback">
+                    <button class="buttonConfirmBack{{ $contenidosection1s[2]->id }} btn btn-primary">Confirmar</button>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -632,32 +642,33 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                    <form id="log" method="POST" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
-                      @csrf
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                          <label for="logo" class="col-form-label">Imagen Slide 3</label>
-                          <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo">
-                          @error('logo')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-group">
+                            <label for="logo" class="col-form-label">Imagen de Logo</label>
+                            <form id="logo{{ $contenidosection1s[3]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
+                              @csrf
+                            </form>
+                            @error('logo')
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                              </span>
+                            @enderror
+                            </div>
+                            <div class="col-md-8">
+                          <!-- <img src="{{'/storage/' . $contenidosection1s[2]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
+                          <div class="editador{{ $contenidosection1s[3]->id }}" style="height:450px; background-color: #000;">
+                          </div>
                           </div>
                         </div>
-                        <div class="col-md-8">
-                          <img src="{{'/storage/' . $contenidosection1s[3]->logo}}" style="height:100%;width:100%;" class="img-fluid img-thumbnail rounded">
+                        <div class="modal-footer">
+                          <button class="buttonConfirm{{ $contenidosection1s[3]->id }} btn btn-primary">Confirmar</button>
                         </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer" style="background-color:#4066D4;">
-                      <button type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
-                    </div>
-                    </form>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
               <!-- End modal logo -->
 
               <!--modal background_image-->
@@ -670,80 +681,65 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                    <form method="POST" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
-                      @csrf
                       <div class="row">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                          <label for="background" class="col-form-label">Imagen de Fondo</label>
-                          <input id="background" type="file" class="form-control @error('background') is-invalid @enderror" name="background">
-                          @error('background')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                          </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                        <label for="background" class="col-form-label">Imagen de Fondo</label>
+                        <form id="background{{ $contenidosection1s[3]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
+                          @csrf
+                        </form>
+                        @error('logo')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
                         </div>
-                        <div class="col-md-8">
-                          <img src="{{'/storage/' . $contenidosection1s[3]->background_image}}" style="height:100%;width:100%;" class="img-fluid img-thumbnail rounded">
+                      </div>
+                      <div class="col-md-8 editar">
+                        <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
+                        <div class="editadorBack{{ $contenidosection1s[3]->id }}" style="height:450px; background-color: #000;">
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer" style="background-color:#4066D4;">
-                      <button id="back" type="submit" class="btn btn-success">Actualizar&nbsp;<i class="fas fa-image"></i></button>
-                    </div>
-                    </form>
+
+                  </div>
+                  <div class="modal-footer buttons">
+                    <button class="buttonConfirmBack{{ $contenidosection1s[3]->id }} btn btn-primary">Confirmar</button>
+                  </div>
                   </div>
                 </div>
               </div>
               <!-- End modal background-image -->
 
             <!-- END static form -->
-        </div>
+          </div>
         <!-- End Slide 3 -->
       <!-- End Carousel Sections -->
-        </div>
-    </div>
-  </div>
-</div>
+
 @endsection
 @section('script')
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
-<script src="{{asset('lib/cropper/cropper.js')}}">
-
+<script src="{{asset('lib/cropper/cropper.js')}}"></script>
+<script>
+$('.modal').on('hidden.bs.modal', function () {
+ location.reload();
+})
 </script>
 <script>
-  Dropzone.options.logo = {
+@foreach($contenidosection1s as $section)
+  Dropzone.options.logo{{$section->id}} = {
      paramName: "logo",
      addRemoveLinks: true,
      transformFile: function(file, done) {
-        // Create Dropzone reference for use in confirm button click handler
         var myDropZone = this;
-
-        // Create the image editor overlay
-        var editor = document.createElement('div');
-        editor.style.position = 'fixed';
-        editor.style.left = 0;
-        editor.style.right = 0;
-        editor.style.top = 0;
-        editor.style.bottom = 0;
-        editor.style.zIndex = 9999;
-        editor.style.backgroundColor = '#000';
-        document.body.appendChild(editor);
-
+        var editor = $('.editador{{ $section->id }}');
         // Create confirm button at the top left of the viewport
-        var buttonConfirm = document.createElement('button');
-        buttonConfirm.style.position = 'absolute';
-        buttonConfirm.style.left = '10px';
-        buttonConfirm.style.top = '10px';
-        buttonConfirm.style.zIndex = 9999;
-        buttonConfirm.textContent = 'Confirm';
-        editor.appendChild(buttonConfirm);
-        buttonConfirm.addEventListener('click', function() {
+        var buttonConfirm = $('.buttonConfirm{{ $section->id }}');
+        $(buttonConfirm).click(function() {
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 3500,
-             height: 2625
+             width: 1760,
+             height: 990
            });
            // Turn the canvas into a Blob (file object without a name)
            canvas.toBlob(function(blob) {
@@ -762,30 +758,71 @@
                   done(blob);
               });
            });
-
           // Remove the editor from the view
-          document.body.removeChild(editor);
+
+
         });
         // Create an image node for Cropper.js
        var image = new Image();
        image.src = URL.createObjectURL(file);
-       editor.appendChild(image);
-
+       // editor.appendChild(image);
+       $(image).appendTo(editor)
        // Create Cropper.js
        var cropper = new Cropper(image, { aspectRatio: 4/3 });
+   }
+  };
+
+  Dropzone.options.background{{ $section->id }} = {
+     paramName: "background",
+     addRemoveLinks: true,
+     transformFile: function(file, done) {
+       // Create Dropzone reference for use in confirm button click handler
+       var myDropZone = this;
+
+       var editor = $('.editadorBack{{ $section->id }}');
+
+       var buttonConfirm = $('.buttonConfirmBack{{ $section->id }}');
+       // var buttonConfirm = $('.buttonConfirm');
+       $(buttonConfirm).click(function() {
+         // Get the canvas with image data from Cropper.js
+          var canvas = cropper.getCroppedCanvas({
+            width: 3180,
+            height: 1788
+          });
+          // Turn the canvas into a Blob (file object without a name)
+          canvas.toBlob(function(blob) {
+            // Create a new Dropzone file thumbnail
+             myDropZone.createThumbnail(
+               blob,
+               myDropZone.options.thumbnailWidth,
+               myDropZone.options.thumbnailHeight,
+               myDropZone.options.thumbnailMethod,
+               false,
+               function(dataURL) {
+
+                 // Update the Dropzone file thumbnail
+                 myDropZone.emit('thumbnail', file, dataURL);
+                 // Return the file to Dropzone
+                 done(blob);
+             });
+          });
+
+         // Remove the editor from the view
+
+       });
+       // Create an image node for Cropper.js
+      var image = new Image();
+      image.src = URL.createObjectURL(file);
+      // editor.appendChild(image);
+      $(image).appendTo(editor)
+      // Create Cropper.js
+      var cropper = new Cropper(image, { aspectRatio: 16/9 });
+
 
      }
   };
-
-  $('.modal').on('hidden.bs.modal', function () {
-   location.reload();
-  })
+@endforeach
 </script>
-<!-- <script>
-$('#back').click(function() {
-  $('#section1').submit();
-});
-</script> -->
 <script src="{{ asset('lib/tabslet/jquery.tabslet.js') }}"></script>
 <script>
   $('.tabs').tabslet();
