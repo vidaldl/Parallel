@@ -359,13 +359,14 @@
                           </div>
                         </div>
                         <div class="col-md-8">
-                          <div class="editador{{ $contenidosection1s[1]->id }}" style="height:450px; background-color: #000;">
+                          <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[1]->logo}}" class="logoThumb{{ $contenidosection1s[1]->id }} img-fluid img-thumbnail rounded">
+                          <div class="editador{{ $contenidosection1s[1]->id }} d-none" style="height:450px; background-color: #000;">
                           </div>
                         </div>
                       </div>
                   </div>
                   <div class="modal-footer ">
-                    <button class="buttonConfirm{{ $contenidosection1s[1]->id }} btn btn-primary">Confirmar</button>
+                    <button class="buttonConfirm{{ $contenidosection1s[1]->id }} btn btn-primary d-none">Confirmar</button>
                   </div>
                 </div>
               </div>
@@ -397,15 +398,15 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
-                      <div class="editadorBack{{ $contenidosection1s[1]->id }}" style="height:450px; background-color: #000;">
+                      <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[1]->background_image}}" class="backThumb{{ $contenidosection1s[1]->id }} img-fluid img-thumbnail rounded">
+                      <div class="editadorBack{{ $contenidosection1s[1]->id }} d-none" style="height:450px; background-color: #000;">
                       </div>
                     </div>
                   </div>
 
                 </div>
                 <div class="modal-footer">
-                  <button class="buttonConfirmBack{{ $contenidosection1s[1]->id }} btn btn-primary">Confirmar</button>
+                  <button class="buttonConfirmBack{{ $contenidosection1s[1]->id }} btn btn-primary d-none">Confirmar</button>
                 </div>
                 </div>
               </div>
@@ -508,7 +509,7 @@
                             </div>
                           </div>
                           <div class="col-md-8">
-                            <!-- <img src="{{'/storage/' . $contenidosection1s[2]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
+                            <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[2]->logo}}" class="logoThumb{{ $contenidosection1s[2]->id }} img-fluid img-thumbnail rounded">
                             <div class="editador{{ $contenidosection1s[2]->id }} d-none" style="height:450px; background-color: #000;">
                             </div>
                           </div>
@@ -547,15 +548,15 @@
                         </div>
                       </div>
                       <div class="col-md-8" id="editarback">
-                        <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
-                        <div class="editadorBack{{ $contenidosection1s[2]->id }}" style="height:450px; background-color: #000;">
+                        <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[2]->background_image}}" class="backThumb{{ $contenidosection1s[2]->id }} img-fluid img-thumbnail rounded">
+                        <div class="editadorBack{{ $contenidosection1s[2]->id }} d-none" style="height:450px; background-color: #000;">
                         </div>
                       </div>
                     </div>
 
                   </div>
                   <div class="modal-footer" id="buttonsback">
-                    <button class="buttonConfirmBack{{ $contenidosection1s[2]->id }} btn btn-primary">Confirmar</button>
+                    <button class="buttonConfirmBack{{ $contenidosection1s[2]->id }} btn btn-primary d-none">Confirmar</button>
                   </div>
                   </div>
                 </div>
@@ -656,20 +657,20 @@
                               </span>
                             @enderror
                             </div>
-                            <div class="col-md-8">
-                          <!-- <img src="{{'/storage/' . $contenidosection1s[2]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
-                          <div class="editador{{ $contenidosection1s[3]->id }}" style="height:450px; background-color: #000;">
                           </div>
+                          <div class="col-md-8">
+                            <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[3]->logo}}" class="logoThumb{{ $contenidosection1s[3]->id }} img-fluid img-thumbnail rounded">
+                            <div class="editador{{ $contenidosection1s[3]->id }} d-none" style="height:450px; background-color: #000;">
+                            </div>
                           </div>
                         </div>
-                        <div class="modal-footer">
-                          <button class="buttonConfirm{{ $contenidosection1s[3]->id }} btn btn-primary">Confirmar</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                      <button class="buttonConfirm{{ $contenidosection1s[3]->id }} btn btn-primary d-none">Confirmar</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
               <!-- End modal logo -->
 
               <!--modal background_image-->
@@ -697,15 +698,15 @@
                         </div>
                       </div>
                       <div class="col-md-8 editar">
-                        <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
-                        <div class="editadorBack{{ $contenidosection1s[3]->id }}" style="height:450px; background-color: #000;">
+                        <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[3]->background_image}}" class="backThumb{{ $contenidosection1s[3]->id }} img-fluid img-thumbnail rounded">
+                        <div class="editadorBack{{ $contenidosection1s[3]->id }} d-none" style="height:450px; background-color: #000;">
                         </div>
                       </div>
                     </div>
 
                   </div>
                   <div class="modal-footer buttons">
-                    <button class="buttonConfirmBack{{ $contenidosection1s[3]->id }} btn btn-primary">Confirmar</button>
+                    <button class="buttonConfirmBack{{ $contenidosection1s[3]->id }} btn btn-primary d-none">Confirmar</button>
                   </div>
                   </div>
                 </div>
