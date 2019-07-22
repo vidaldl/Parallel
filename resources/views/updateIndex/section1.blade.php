@@ -99,7 +99,7 @@
               </div>
               <div class="form-group">
                 <label class="col-form-label">Imagen de Fondo</label><br>
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBack">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBack{{ $contenidosection1s[0]->id }}">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                 @error('background')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -128,7 +128,7 @@
               <div class="form-group">
 
                   <label for="image" class="col-form-label">Imagen de Logo</label><br>
-                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo{{ $contenidosection1s[0]->id }}">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                   @error('logo')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -154,7 +154,7 @@
           </form>
 
           <!--modal logo-->
-          <div class="modal fade" id="modalLogo" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+          <div class="modal fade" id="modalLogo{{ $contenidosection1s[0]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header" style="background-color:#4066D4;">
@@ -179,14 +179,14 @@
                         </div>
                       </div>
                       <div class="col-md-8">
-                        <!-- <img src="{{'/storage/' . $contenidosection1s[0]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
-                      <div class="editador{{ $contenidosection1s[0]->id }}" style="height:450px; background-color: #000;">
+                      <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[0]->logo}}" class="logoThumb{{ $contenidosection1s[0]->id }} img-fluid img-thumbnail rounded">
+                      <div class="editador{{ $contenidosection1s[0]->id }} d-none" style="height:450px; background-color: #000;">
                       </div>
                       </div>
                     </div>
                 </div>
                 <div class="modal-footer buttons">
-                  <button class="buttonConfirm{{ $contenidosection1s[0]->id }} btn btn-primary">Confirmar</button>
+                  <button class="buttonConfirm{{ $contenidosection1s[0]->id }} btn btn-primary d-none">Confirmar</button>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@
           <!-- End modal logo -->
 
           <!--modal background_image-->
-          <div class="modal fade" id="modalBack" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+          <div class="modal fade" id="modalBack{{ $contenidosection1s[0]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header" style="background-color:#4066D4;">
@@ -218,14 +218,15 @@
                     </div>
                   </div>
                   <div class="col-md-8">
-                    <div class="editadorBack{{ $contenidosection1s[0]->id }}" style="height:450px; background-color: #000;">
+                    <img style="width:100%;" src="{{'/storage/' . $contenidosection1s[0]->background_image}}" class="backThumb{{ $contenidosection1s[0]->id }} img-fluid img-thumbnail rounded">
+                    <div class="editadorBack{{ $contenidosection1s[0]->id }} d-none" style="height:450px; background-color: #000;">
                     </div>
                   </div>
                 </div>
 
               </div>
               <div class="modal-footer">
-                <button class="buttonConfirmBack{{ $contenidosection1s[0]->id }} btn btn-primary">Confirmar</button>
+                <button class="buttonConfirmBack{{ $contenidosection1s[0]->id }} btn btn-primary d-none">Confirmar</button>
               </div>
                 <!-- <form method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
                   @csrf
@@ -273,7 +274,7 @@
               @csrf
                 <div class="form-group col-md-6">
                   <label class="col-form-label">Imagen de Fondo</label><br>
-                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBackSlide1">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBackSlide{{ $contenidosection1s[1]->id }}">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                   @error('background')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -302,7 +303,7 @@
                 <div class="form-group col-md-6">
 
                     <label for="image" class="col-form-label">Imagen</label><br>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide1">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[1]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                     <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
                       <option value="0" {{ $contenidosection1s[1]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
                       <option value="1" {{ $contenidosection1s[1]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
@@ -334,7 +335,7 @@
           </form>
 
             <!--modal logo-->
-            <div class="modal fade" id="modalLogoSlide1" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+            <div class="modal fade" id="modalLogoSlide{{ $contenidosection1s[1]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header" style="background-color:#4066D4;">
@@ -372,7 +373,7 @@
             <!-- End modal logo -->
 
             <!--modal background_image-->
-            <div class="modal fade" id="modalBackSlide1" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+            <div class="modal fade" id="modalBackSlide{{ $contenidosection1s[1]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header" style="background-color:#4066D4;">
@@ -422,7 +423,7 @@
                 @csrf
                   <div class="form-group col-md-6">
                     <label class="col-form-label">Imagen de Fondo</label><br>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBackSlide2">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBackSlide{{ $contenidosection1s[2]->id }}">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                     @error('background')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -451,7 +452,7 @@
                   <div class="form-group col-md-6">
 
                       <label for="image" class="col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide2">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[2]->id }}">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                       <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
                         <option value="0" {{ $contenidosection1s[2]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
                         <option value="1" {{ $contenidosection1s[2]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
@@ -483,7 +484,7 @@
             </form>
 
               <!--modal logo-->
-              <div class="modal fade" id="modalLogoSlide2" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+              <div class="modal fade" id="modalLogoSlide{{ $contenidosection1s[2]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header" style="background-color:#4066D4;">
@@ -508,13 +509,13 @@
                           </div>
                           <div class="col-md-8">
                             <!-- <img src="{{'/storage/' . $contenidosection1s[2]->logo}}" style="width:100%;" class="img-fluid img-thumbnail rounded" id="logoThumb"> -->
-                            <div class="editador{{ $contenidosection1s[2]->id }}" style="height:450px; background-color: #000;">
+                            <div class="editador{{ $contenidosection1s[2]->id }} d-none" style="height:450px; background-color: #000;">
                             </div>
                           </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                      <button class="buttonConfirm{{ $contenidosection1s[2]->id }} btn btn-primary">Confirmar</button>
+                      <button class="buttonConfirm{{ $contenidosection1s[2]->id }} btn btn-primary d-none">Confirmar</button>
                     </div>
                   </div>
                 </div>
@@ -522,7 +523,7 @@
               <!-- End modal logo -->
 
               <!--modal background_image-->
-              <div class="modal fade" id="modalBackSlide2" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+              <div class="modal fade" id="modalBackSlide{{ $contenidosection1s[2]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header" style="background-color:#4066D4;">
@@ -534,7 +535,7 @@
                       <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                        <label for="background" class="col-form-label">Imagen de Fondo2</label>
+                        <label for="background" class="col-form-label">Imagen de Fondo</label>
                         <form id="background{{ $contenidosection1s[2]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
                           @csrf
                         </form>
@@ -572,7 +573,7 @@
                 @csrf
                   <div class="form-group col-md-6">
                     <label class="col-form-label">Imagen de Fondo</label><br>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBackSlide3">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalBackSlide{{ $contenidosection1s[3]->id }}">Subir Fondo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                     @error('background')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -601,7 +602,7 @@
                   <div class="form-group col-md-6">
 
                       <label for="image" class="col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide3">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[3]->id }}">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                       <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
                         <option value="0" {{ $contenidosection1s[3]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
                         <option value="1" {{ $contenidosection1s[3]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
@@ -633,7 +634,7 @@
             </form>
 
               <!--modal logo-->
-              <div class="modal fade" id="modalLogoSlide3" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+              <div class="modal fade" id="modalLogoSlide{{ $contenidosection1s[3]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header" style="background-color:#4066D4;">
@@ -672,7 +673,7 @@
               <!-- End modal logo -->
 
               <!--modal background_image-->
-              <div class="modal fade" id="modalBackSlide3" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+              <div class="modal fade" id="modalBackSlide{{ $contenidosection1s[3]->id }}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header" style="background-color:#4066D4;">
@@ -721,9 +722,9 @@
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <script>
-$('.modal').on('hidden.bs.modal', function () {
- location.reload();
-})
+// $('.modal').on('hidden.bs.modal', function () {
+//  location.reload();
+// })
 </script>
 <script>
 @foreach($contenidosection1s as $section)
@@ -733,8 +734,14 @@ $('.modal').on('hidden.bs.modal', function () {
      transformFile: function(file, done) {
         var myDropZone = this;
         var editor = $('.editador{{ $section->id }}');
+        var logoThumb = $('.logoThumb{{ $section->id }}');
+        $(logoThumb).addClass('d-none');
+        $(editor).removeClass('d-none');
+        $(editor).addClass('d-block');
         // Create confirm button at the top left of the viewport
         var buttonConfirm = $('.buttonConfirm{{ $section->id }}');
+        $(buttonConfirm).removeClass('d-none');
+        $(buttonConfirm).addClass('d-block');
         $(buttonConfirm).click(function() {
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
@@ -759,9 +766,12 @@ $('.modal').on('hidden.bs.modal', function () {
               });
            });
           // Remove the editor from the view
+          $(buttonConfirm).removeClass('d-block');
+          $(buttonConfirm).addClass('d-none');
 
 
         });
+
         // Create an image node for Cropper.js
        var image = new Image();
        image.src = URL.createObjectURL(file);
@@ -769,8 +779,23 @@ $('.modal').on('hidden.bs.modal', function () {
        $(image).appendTo(editor)
        // Create Cropper.js
        var cropper = new Cropper(image, { aspectRatio: 4/3 });
-   }
-  };
+
+
+
+     },
+     init: function () {
+        this.on("complete", function (file) {
+          if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+            setTimeout(
+              function()
+              {
+                location.reload();
+              }, 1500);
+          }
+        });
+      }
+    };
 
   Dropzone.options.background{{ $section->id }} = {
      paramName: "background",
@@ -780,9 +805,14 @@ $('.modal').on('hidden.bs.modal', function () {
        var myDropZone = this;
 
        var editor = $('.editadorBack{{ $section->id }}');
+       var backThumb = $('.backThumb{{ $section->id }}');
+       $(backThumb).addClass('d-none');
+       $(editor).removeClass('d-none');
+       $(editor).addClass('d-block');
 
        var buttonConfirm = $('.buttonConfirmBack{{ $section->id }}');
-       // var buttonConfirm = $('.buttonConfirm');
+       $(buttonConfirm).removeClass('d-none');
+       $(buttonConfirm).addClass('d-block');
        $(buttonConfirm).click(function() {
          // Get the canvas with image data from Cropper.js
           var canvas = cropper.getCroppedCanvas({
@@ -808,7 +838,8 @@ $('.modal').on('hidden.bs.modal', function () {
           });
 
          // Remove the editor from the view
-
+         $(buttonConfirm).removeClass('d-block');
+         $(buttonConfirm).addClass('d-none');
        });
        // Create an image node for Cropper.js
       var image = new Image();
@@ -819,6 +850,19 @@ $('.modal').on('hidden.bs.modal', function () {
       var cropper = new Cropper(image, { aspectRatio: 16/9 });
 
 
+    },
+
+    init: function () {
+       this.on("complete", function (file) {
+         if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+           setTimeout(
+             function()
+             {
+               location.reload();
+             }, 1500);
+         }
+       });
      }
   };
 @endforeach
