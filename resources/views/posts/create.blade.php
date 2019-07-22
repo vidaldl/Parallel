@@ -12,9 +12,6 @@
     <div class="card-body">
       <form autocomplete="off" method="POST" action="{{ isset($post) ? route('posts.update', $post->id) : route('posts.store') }}" enctype="multipart/form-data">
         @csrf
-        @if(isset($post))
-          @method('PUT')
-        @endif
 
         <div class="row">
           <div class="form-group col-md-8">
@@ -63,14 +60,9 @@
           @enderror
         </div>
         <div class="form-group">
-          <label for="image" class="col-form-label">Imagen de Portada</label>
-          <input id="image" type="file" class="form-control" name="image">
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
         </div>
-        @if(isset($post))
-        <div class="form-group">
-          <img src="{{'/storage/' . $post->image}}" class="img-fluid img-thumbnail rounded">
-        </div>
-        @endif
+
         <div class="form-group ">
           <label for="published_at" class="label">Publicado en</label>
           <div class="input-group mb-3 col-md-4">
@@ -98,6 +90,47 @@
 </div>
 </div>
 
+  <!--modal image-->
+  <div class="modal fade" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#4066D4;">
+        <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                <label for="logo" class="col-form-label">Imagen</label>
+                <form id="image" method="POST" class="image dropzone" action="{{ isset($post) ? route('posts.update', $post->id) : route('posts.store') }}" enctype="multipart/form-data">
+                  @csrf
+
+                </form>
+                @error('image')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+                </div>
+              </div>
+              <div class="col-md-8">
+                @if(isset($post))
+                <img style="width:100%;" src="{{'/storage/' . $post->image}}" class="logoThumb img-fluid img-thumbnail rounded">
+                @endif
+                <div class="editador d-none" style="height:450px; background-color: #000;">
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer ">
+          <button class="buttonConfirm btn btn-primary d-none">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal image -->
 
 @endsection
 
@@ -106,23 +139,23 @@
 @section('script')
   <script src="{{ asset('lib/summernote/summernote.js') }}"></script>
   <script>
-  $(document).ready(function() {
-  $('#contenido').summernote({
-    toolbar: [
-      // [groupName, [list of button]]
-      //['style', ['style']],
-       ['font', ['bold', 'underline']],
-       //['fontname', ['fontname']],
-       ['color', ['color']],
-       //['para', ['ul', 'ol', 'paragraph']],
-       //['table', ['table']],
-       ['insert', ['link', 'picture', 'video']],
-       //['view', ['fullscreen', 'codeview', 'help']]
-    ]
-  });
-  $("#contenido").summernote("foreColor", "blue");
-  $("#contenido").summernote("backColor", "red");
-  });
+    $(document).ready(function() {
+    $('#contenido').summernote({
+      toolbar: [
+        // [groupName, [list of button]]
+        //['style', ['style']],
+         ['font', ['bold', 'underline']],
+         //['fontname', ['fontname']],
+         ['color', ['color']],
+         //['para', ['ul', 'ol', 'paragraph']],
+         //['table', ['table']],
+         ['insert', ['link', 'picture', 'video']],
+         //['view', ['fullscreen', 'codeview', 'help']]
+      ]
+    });
+    $("#contenido").summernote("foreColor", "blue");
+    $("#contenido").summernote("backColor", "red");
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script type="text/javascript">
@@ -131,10 +164,108 @@
       defaultDate: new Date()
     })
   </script>
+  <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
+  <script src="{{asset('lib/cropper/cropper.js')}}"></script>
+  <script>
+
+  </script>
+  <script>
+  Dropzone.options.image = {
+     paramName: "image",
+     transformFile: function(file, done) {
+        var myDropZone = this;
+        var editor = $('.editador');
+        var logoThumb = $('.logoThumb');
+        $(logoThumb).addClass('d-none');
+        $(editor).removeClass('d-none');
+        $(editor).addClass('d-block');
+        // Create confirm button at the top left of the viewport
+        var buttonConfirm = $('.buttonConfirm');
+        $(buttonConfirm).removeClass('d-none');
+        $(buttonConfirm).addClass('d-block');
+        $(buttonConfirm).click(function() {
+          // Get the canvas with image data from Cropper.js
+           var canvas = cropper.getCroppedCanvas({
+             width: 1280,
+             height: 560
+           });
+           // Turn the canvas into a Blob (file object without a name)
+           canvas.toBlob(function(blob) {
+             // Create a new Dropzone file thumbnail
+              myDropZone.createThumbnail(
+                blob,
+                myDropZone.options.thumbnailWidth,
+                myDropZone.options.thumbnailHeight,
+                myDropZone.options.thumbnailMethod,
+                false,
+                function(dataURL) {
+
+                  // Update the Dropzone file thumbnail
+                  myDropZone.emit('thumbnail', file, dataURL);
+                  // Return the file to Dropzone
+                  done(blob);
+              });
+           });
+          // Remove the editor from the view
+          $(buttonConfirm).removeClass('d-block');
+          $(buttonConfirm).addClass('d-none');
+
+
+        });
+
+        // Create an image node for Cropper.js
+       var image = new Image();
+       image.src = URL.createObjectURL(file);
+       // editor.appendChild(image);
+       $(image).appendTo(editor)
+       // Create Cropper.js
+       var cropper = new Cropper(image, { aspectRatio: 1/0.4375 });
+
+
+
+     },
+
+    @if(isset($post))
+      init: function () {
+         this.on("complete", function (file) {
+           if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+             setTimeout(
+               function()
+               {
+                 location.reload();
+               }, 1500);
+           }
+         });
+       }
+
+       @else
+       init: function () {
+          this.on("complete", function (file) {
+            if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+              setTimeout(
+                function()
+                {
+                  var url = "/redirect1";
+                  $(location).attr('href',url);
+                }, 1500);
+            }
+          });
+        }
+    @endif
+
+
+    };
+
+  </script>
+
 @endsection
 
 @section('css')
   <link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
+  <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 @endsection

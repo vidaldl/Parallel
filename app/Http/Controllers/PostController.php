@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests\Posts\CreatePostsRequest;
 use App\Http\Requests\Posts\UpdatePostsRequest;
 use Illuminate\Support\Facades\Storage;
@@ -47,47 +47,55 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreatePostsRequest $request)
+
+     public function redirect1() {
+       $latest = DB::table('posts')->orderBy('id', 'desc')->first();
+       
+       return redirect('posts/' . $latest->id . '/edit');
+     }
+    public function store(Request $request)
     {
 
 
         // Upload the image
         //$image = $request->image->store('posts');
-        //upload it
-        $image = $request->file('image'); //->store('content');
-        //Image Intervention
-        $finalImage = Image::make($image);
-        $random = rand();
-        $originalPath = public_path().'/storage/content/original/';
-        $finalPath = public_path().'/storage/posts/';
-        $finalImage->save($originalPath.$random.$image->getClientOriginalName());
-        $finalDummy = $finalImage->basename;
-        $finalDummyName = 'content/original/'.$finalDummy;
-        Storage::delete($finalDummyName);
-        //moment of transformation
-        $width = NULL;
-        $height = 280;
 
-        $finalImage->resize($width, $height, function ($constraint) {
-            $constraint->aspectRatio();
-
-        });
-
-        // $finalImage->resize(150,150);
-        $finalImage->save($finalPath.$random.$image->getClientOriginalName());
-        $finalImageName = 'posts/'.$finalImage->basename;
+        $title = $request->input('title');
+        $description = $request->input('description');
+        $category = $request->input('category');
+        $published_at = $request->input('published_at');
+        $contenido = $request->input('contenido');
+        $data['category_id'] = $request->category;
 
 
-        // create the post
-        $post = Post::create([
-          'title' => $request->title,
-          'category_id' => $request->category,
-          'description' => $request->description,
-          'contenido' => $request->contenido,
-          'image' => $finalImageName,
-          'published_at' => $request->published_at
-        ]);
+          if ($request->hasFile('image')) {
 
+
+            $this->validate($request, [
+                'image' => 'image|required|mimes:png,jpg,jpeg,svg'
+             ]);
+            //upload it
+            $image = $request->file('image')->store('content/posts');
+
+            $data=array('image'=>$image);
+            DB::table('posts')->insert($data);
+            $latest = DB::getPdo('posts')->lastInsertId();
+            return redirect('posts/' . $latest . '/edit');
+
+          }
+
+          else {
+            // create the post
+
+
+
+            $data=array("title"=>$title,"description"=>$description,"category_id"=>$category, "published_at"=>$published_at, "contenido"=>$contenido);
+            DB::table('posts')->insert($data);
+            session()->flash('success', 'La sección fue actualizada');
+            //redirect
+            return redirect()->back();
+
+          }
         // if ($request->tags) {
         //   $post->tags()->attach($request->tags);
         // }
@@ -127,48 +135,51 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePostsRequest $request, Post $post)
+    public function update(Request $request, $id)
     {
 
-        $data = $request->only(['title', 'description', 'category', 'published_at', 'contenido']);
+        $title = $request->input('title');
+        $description = $request->input('description');
+        $category = $request->input('category');
+        $published_at = $request->input('published_at');
+        $contenido = $request->input('contenido');
         $data['category_id'] = $request->category;
+
+
+        $oldImage = DB::table('posts')->where('id', $id)->first();
+        // $data = $request->only(['title', 'description', 'category', 'published_at', 'contenido']);
+        // $data['category_id'] = $request->category;
         //check if new image
         if ($request->hasFile('image')) {
+          $this->validate($request, [
+              'image' => 'image|required|mimes:png,jpg,jpeg,svg'
+           ]);
           //upload it
-          $image = $request->file('image'); //->store('content');
+          $image = $request->file('image')->store('content/posts/');
           //Image Intervention
-          $finalImage = Image::make($image);
-          $random = rand();
-          $originalPath = public_path().'/storage/content/original/';
-          $finalPath = public_path().'/storage/posts/';
-          $finalImage->save($originalPath.$random.$image->getClientOriginalName());
-          $finalDummy = $finalImage->basename;
-          $finalDummyName = 'content/original/'.$finalDummy;
-          Storage::delete($finalDummyName);
-          //moment of transformation
-          $width = 640;
-          $height = 280;
 
-          $finalImage->resizeCanvas($width, $height);
-          $imageWidth = $finalImage->width();
 
-          //$finalImage->crop(640, 280);
-          Storage::delete($post->image);
-          // $finalImage->resize(150,150);
-          $finalImage->save($finalPath.$random.$image->getClientOriginalName());
-          $finalImageName = 'posts/'.$finalImage->basename;
 
-          $data['image'] = $finalImageName;
-        }
+          Storage::delete($oldImage->image);
 
-        //Update Attributes
-        $post->update($data);
+          $data=array('image'=>$image);
+          DB::table('posts')->where('id', $id)->update($data);
+
+        }else {
+
+          $data=array("title"=>$title,"description"=>$description,"category_id"=>$category, "published_at"=>$published_at, "contenido"=>$contenido);
+          DB::table('posts')->where('id', $id)->update($data);
+          session()->flash('success', 'La sección fue actualizada');
+          //redirect
+          return redirect()->back();
+
 
 
         //flash
         session()->flash('success', 'El Post fué actualizado');
         //redirect
         return redirect(route('posts.index'));
+      }
     }
 
     /**

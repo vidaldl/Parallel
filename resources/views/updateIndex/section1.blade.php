@@ -603,7 +603,7 @@
                   <div class="form-group col-md-6">
 
                       <label for="image" class="col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[3]->id }}">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                       <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
                         <option value="0" {{ $contenidosection1s[3]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
                         <option value="1" {{ $contenidosection1s[3]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
@@ -722,11 +722,7 @@
 @section('script')
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
-<script>
-// $('.modal').on('hidden.bs.modal', function () {
-//  location.reload();
-// })
-</script>
+
 <script>
 @foreach($contenidosection1s as $section)
   Dropzone.options.logo{{$section->id}} = {

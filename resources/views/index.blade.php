@@ -326,6 +326,8 @@
   </div>
 </section>
 
+
+
 <!--/Info Slider -->
 
   <!-- Call to Action -->
@@ -370,7 +372,7 @@
 
     <div class="portfolio-grid" >
       <div class="row">
-        @foreach($posts->sortByDesc('created_at') as $post)
+        @foreach($posts->sortByDesc('id') as $post)
           <div class="col-lg-3 col-sm-4 col-xs-12">
             <div class="card card-block card-image-div">
               <a href="#" data-toggle="modal" data-target="#modal{{ $post->id }}"><img class="img-thumbnail" alt="" src="{{ '/storage/' . $post->image }}">

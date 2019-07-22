@@ -64,7 +64,12 @@ Route::post('/update-about/{id}', 'HomeController@aboutUpdate')->name('about.upd
 // Posts functionality
 Route::resource('categories', 'CategoriesController');
 Route::resource('tags', 'TagsController');
-Route::resource('posts', 'PostController');
+Route::resource('posts', 'PostController', ['except' => ['update']]);
+  // Post update
+Route::post('/posts/{id}', 'PostController@update')->name('posts.update');
+//redirect1
+Route::get('/redirect1', 'PostController@redirect1');
+
 Route::get('trashed-posts', 'PostController@trashed')->name('trashed-posts.index');
 Route::put('restore-posts/{post}', 'PostController@restore')->name('restore-posts');
 Route::get('users/profile', 'UsersController@edit')->name('users.edit-profile');
