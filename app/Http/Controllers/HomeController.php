@@ -125,10 +125,11 @@ class HomeController extends Controller
       $primary_color = $request->input('primary_color');
       $button_primary = $request->input('button_primary');
       $button_secondary = $request->input('button_secondary');
+      $page_title = $request->input('page_title');
 
-      $data = array("primary_color"=>$primary_color,"button_primary"=>$button_primary,"button_secondary"=>$button_secondary);
+      $data = array("primary_color"=>$primary_color,"button_primary"=>$button_primary,"button_secondary"=>$button_secondary,"page_title"=>$page_title);
       DB::table('styles')->update($data);
-      session()->flash('success', 'El Color ha sido Cambiado');
+      session()->flash('success', 'La informacion ha sido actualizada');
       //redirect
       return redirect()->back();
     }

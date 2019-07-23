@@ -15,6 +15,7 @@ use App\ContenidoAbout;
 use App\Style;
 use App\InfoSliderImage;
 use App\InfoSliderText;
+use App\Pricing;
 
 
 
@@ -31,6 +32,7 @@ class IndexController extends Controller
       ->with('contenidosection5s', ContenidoSection5::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
       ->with('servicios', Servicio::all())
+      ->with('pricings', Pricing::all())
       ->with('styles', Style::all())
       ->with('info_slider_images', InfoSliderImage::all())
       ->with('info_slider_texts', InfoSliderText::all());

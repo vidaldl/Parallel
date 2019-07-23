@@ -63,9 +63,15 @@
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center  mb-4" >
-<form class="col-md-12" method="POST" action="{{route('style.update', $styles[0]->id)}}">
+<form autocomplete="off" class="col-md-12" method="POST" action="{{route('style.update', $styles[0]->id)}}">
   @csrf
  <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <label for="page_title">Titulo del Sitio</label><br>
+    <input onchange="this.form.submit()" class="form-control"  name="page_title" type="text" id="page_title" value="{{ $styles[0]->page_title }}">
+  </div>
+</div>
 <div class="form-row">
   <div class="form-group col-md-4">
     <label for="primary_color">Color Principal</label>
