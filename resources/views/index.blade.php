@@ -438,7 +438,7 @@
           <h2 class="mb-3">
               {{$contenidosection3->title}}
             </h2>
-        <div class="contenidoStyle" style="{{ $contenidosection2->display == '0' ? 'color: black;' : 'color: #fff;' }}">
+        <div class="contenidoStyle" style="color: #fff;">
 
             {!! $contenidosection3->contenido !!}
 
@@ -554,12 +554,12 @@
 
             <div>
               <i class="fa fa-envelope"></i>
-              <p>{{$contenidosection5->email}}</p>
+              <p>{!! $contenidosection5->email !!}</p>
             </div>
 
             <div>
               <i class="fa fa-phone"></i>
-              <p>{{$contenidosection5->number}}</p>
+              <p>{!! $contenidosection5->number !!}</p>
             </div>
 
 
