@@ -274,8 +274,8 @@
 
         </ul>
         <ul class="nav-menu pull-right">
-          <li ><a href="{{url('http://ghidalgo.com/webapp/login')}}"><i class="fa fa-user-alt" style="font-size:17px;"></i>&nbsp;&nbsp;Clientes</a></li>
-          <li><a href="{{url('http://ghidalgo.com/webapp/login')}}"><i class="fa fa-building" style="font-size:17px;"></i>&nbsp;&nbsp;Administración</a></li>
+          <li ><a href="{{url('http://app.ghidalgo.com/')}}"><i class="fa fa-user-alt" style="font-size:17px;"></i>&nbsp;&nbsp;Clientes</a></li>
+          <li><a href="{{url('http://app.ghidalgo.com/')}}"><i class="fa fa-building" style="font-size:17px;"></i>&nbsp;&nbsp;Administración</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
