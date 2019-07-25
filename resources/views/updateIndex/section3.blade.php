@@ -86,14 +86,16 @@ $('#contenido').summernote({
 <script>
 ClassicEditor.create( document.querySelector( '#contenido' ), {
       removePlugins: [ 'Heading', 'Link' ],
-      toolbar: [ 'bold', 'italic', 'mediaEmbed']
+      toolbar: [ 'bold', 'italic', 'mediaEmbed'],
+
+
     }).then( editor => {
         console.log( Array.from( editor.ui.componentFactory.names() ) );
-    } )
-    .catch( error => {
+    } ).catch( error => {
         console.error( error );
     } );
-console.log(ClassicEditor.builtinPlugins.map( plugin => plugin.pluginName ));
+
+
 </script>
 @endsection
 @section('css')

@@ -5,6 +5,14 @@ html{
   box-sizing: border-box;
 }
 
+#textHeight {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+
+ #textHeight p, #textHeight li {
+   font-size: 22px;
+ }
+
 /* PRICING */
 .pricing {
   margin-bottom: 35px;
@@ -162,8 +170,13 @@ background-color: #269aff;
 
 
 
-.contenidoStyle p{
-  color: white;
+.contenidoStyle p {
+  color: #FFFFFF!important;
+  line-height: normal!important;
+
+
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+
 }
 
 
@@ -881,13 +894,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 5px;
 }
 
-.cta h2,
-.cta p {
+.cta h2 {
 }
 
 .cta p {
   margin-bottom: 0;
-  opacity: .75;
+
 }
 
 .cta .btn-ghost {

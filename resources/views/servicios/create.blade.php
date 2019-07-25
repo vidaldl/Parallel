@@ -55,7 +55,7 @@
 
         <div class="form-group mt-5">
           <label for="contenido" class="col-form-label">Descripcion del Post</label>
-          <input id="contenido" name="contenido" class="form-control @error('contenido') is-invalid @enderror" value="{{ isset($servicio) ? $servicio->contenido : '' }}">
+          <textarea id="contenido" name="contenido" class="form-control @error('contenido') is-invalid @enderror" > {{ isset($servicio) ? $servicio->contenido : '' }} </textarea>
           @error('contenido')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -99,13 +99,9 @@ $('.icp').on('iconpickerSelected', function (e) {
 ClassicEditor.create( document.querySelector( '#contenido' ), {
       removePlugins: [ 'Heading', 'Link' ],
       toolbar: [ 'bold', 'italic',]
-    }).then( editor => {
-        console.log( Array.from( editor.ui.componentFactory.names() ) );
-    } )
-    .catch( error => {
+    }).catch( error => {
         console.error( error );
     } );
-console.log(ClassicEditor.builtinPlugins.map( plugin => plugin.pluginName ));
 </script>
 
 @endsection

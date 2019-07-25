@@ -48,7 +48,9 @@
       color: {{$styles[0]->primary_color}};
     }
 
-    .btn-ghost:hover {
+
+
+    .btn-ghost:hover, #articuloTitle {
 
       color: {{$styles[0]->primary_color}};
     }
@@ -310,7 +312,7 @@
             <div>
               <h3>{{ $servicio->title }}</h3>
               <p>
-                {{ $servicio->contenido }}
+                {!! $servicio->contenido !!}
               </p>
             </div>
           </div>
@@ -328,18 +330,18 @@
 <div id="infoSlider" class="infoSlider {{$info_slider_texts[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 2px solid {{$styles[0]->primary_color}};">
   <div class="container-fluid mt-5">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="row">
           <div id="textHeight" class="col-md-12">
             <h2>{!! $info_slider_texts[0]->title !!}</h2>
-            <p>{!! $info_slider_texts[0]->contenido !!}</p>
+            {!! $info_slider_texts[0]->contenido !!}
           </div>
           <div id="btnH"class="mb-5 mx-auto">
             <a class="btn" style="color:#ffff;">{{ $info_slider_texts[0]->button }}</a>
           </div>
         </div>
       </div>
-      <div class="col-md-8 " id="imageH" style="overflow: hidden;">
+      <div class="col-md-6 " id="imageH" style="overflow: hidden;">
         <div class="flexslider">
           <ul class="slides">
             @foreach($info_slider_images as $images)
@@ -353,10 +355,9 @@
     </div>
   </div>
 </div>
-
-
-
 <!--/Info Slider -->
+
+
 
 <!-- PRICING -->
 
@@ -429,43 +430,15 @@
 
 <!-- /PRICING -->
 
-  <!-- Call to Action -->
-@foreach($contenidosection3s as $contenidosection3)
-  <section class="cta {{ $contenidosection3->display == '0' ? 'd-none' : '' }}" id="acercas" style="{{ $contenidosection2->display == '0' ? 'color: black;background-color: #FFFFFF;' : '' }}">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9 col-sm-12 text-lg-left text-center">
-          <h2 class="mb-3">
-              {{$contenidosection3->title}}
-            </h2>
-        <div class="contenidoStyle" style="color: #fff;">
-
-            {!! $contenidosection3->contenido !!}
-
-        </div>
-        </div>
-
-        <div id="articuloss" class="col-lg-3 col-sm-12 text-lg-right text-center align-self-center">
-          <a class="btn {{ $contenidosection2->display == '0' ? 'btn-full' : 'btn-ghost' }}" href="/about">{{$contenidosection3->button}}&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /Call to Action -->
-  @endforeach
 
 
-
-
-
-
-
+<!-- Articulos -->
 @foreach($contenidosection4s as $contenidosection4)
-  <!-- Articulos -->
+
 
   <section class="portfolio {{ $contenidosection4->display == '0' ? 'd-none' : '' }}" id="articulos">
     <div class="container text-center">
-      <h2>
+      <h2 id="articuloTitle">
           {{$contenidosection4->title}}
         </h2>
 
@@ -532,8 +505,38 @@
     </div>
   </div>
   <!--END MODAL-->
+<!-- /Articulos -->
 @endforeach
-  <!-- /Portfolio -->
+
+
+
+
+<!-- Call to Action -->
+@foreach($contenidosection3s as $contenidosection3)
+<section class="cta {{ $contenidosection3->display == '0' ? 'd-none' : '' }}" id="acercas" style="{{ $contenidosection2->display == '0' ? 'color: black;background-color: #FFFFFF;' : '' }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-sm-12 text-lg-left text-center">
+        <h2 class="mb-3">
+            {{$contenidosection3->title}}
+          </h2>
+      <div class="contenidoStyle">
+
+          {!! $contenidosection3->contenido !!}
+
+      </div>
+      </div>
+
+      <div id="articuloss" class="col-lg-3 col-sm-12 text-lg-right text-center align-self-center">
+        <a class="btn {{ $contenidosection2->display == '0' ? 'btn-full' : 'btn-ghost' }}" href="/about">{{$contenidosection3->button}}&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+@endforeach
+<!-- /Call to Action -->
+
+
 
 @foreach($contenidosection5s as $contenidosection5)
   <section class="{{ $contenidosection5->display == '0' ? 'd-none' : '' }}" id="contact">
