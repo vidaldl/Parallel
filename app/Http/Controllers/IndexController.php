@@ -24,7 +24,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index() {
-      return view('index')->with('posts', Post::paginate(8))
+      return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
       ->with('contenidosection1s', ContenidoSection1::all())
       ->with('contenidosection2s', ContenidoSection2::all())
       ->with('contenidosection3s', ContenidoSection3::all())

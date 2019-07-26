@@ -72,14 +72,9 @@
     .stats-col .circle {
       border: 6px solid {{$styles[0]->primary_color}};
     }
-    .features h2 {
-      color: {{$styles[0]->primary_color}};
-    }
+
     .feature-col .feature-icon {
       background: {{$styles[0]->primary_color}};
-    }
-    .feature-col h3 {
-      color: {{$styles[0]->primary_color}};
     }
     .cta {
       background-color: {{$styles[0]->primary_color}};
@@ -89,7 +84,7 @@
     }
     .infoSlider h2 {
       margin-bottom: 25px;
-      color: {{$styles[0]->primary_color}};
+
 
     }
     .team h2 {
@@ -98,9 +93,7 @@
     .team .card:hover .card-title-wrap {
       background-color: {{$styles[0]->primary_color}};
     }
-    #contact h2 {
-      color: {{$styles[0]->primary_color}};
-    }
+
     #contact .info i {
       color: {{$styles[0]->primary_color}};
     }
@@ -140,6 +133,15 @@
 
 }
 
+
+.blog-home3 .bg-success-gradiant {
+  background: {{$styles[0]->button_primary}};
+
+}
+
+.blog-home3 a.link:hover {
+    color: {{$styles[0]->button_secondary}};
+}
 </style>
 
 @endsection
@@ -309,6 +311,7 @@
                 <span class="{{ $servicio->icon }}"></span>
               </div>
             </div>
+
             <div>
               <h3>{{ $servicio->title }}</h3>
               <p>
@@ -431,8 +434,112 @@
 <!-- /PRICING -->
 
 
+<div class="blog-home3 py-5 mr-5 ml-5">
 
-<!-- Articulos -->
+    <div class="container-fluid">
+      <!-- Row  -->
+      <div class="row justify-content-center">
+        <!-- Column -->
+        <div class="col-md-8 text-center">
+          <h3 class="my-3">{{$contenidosection4s[0]->title}}</h3>
+          <h6 class="subtitle font-weight-normal">{{$contenidosection4s[0]->tagline}}</h6>
+        </div>
+        <!-- Column -->
+        <!-- Column -->
+      </div>
+      <div class="row mt-4">
+        <!-- Column -->
+        <div class="col-lg-6">
+          <div class="card border-0 mb-4">
+            <a href="#" data-toggle="modal" data-target="#modal{{ $posts[0]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[0]->image}}" alt="wrappixel kit"></a>
+            <div class="date-pos text-center text-white p-3 bg-success-gradiant">Grupo Hidalgo &nbsp; &nbsp; {{$posts[0]->created_at}}</div>
+            <h5 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[0]->id }}" class="link text-decoration-none">{{$posts[0]->title}}</a></h5>
+            <p class="m-t-20 lol">{{$posts[0]->tagline}}</p>
+          </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-6">
+          <div class="row">
+            <!-- Column -->
+            <div class="col-md-6">
+              <div class="card border-0 mb-4">
+                <a href="#" data-toggle="modal" data-target="#modal{{ $posts[1]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[1]->image}}" alt="wrappixel kit"></a>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">Grupo Hidalgo &nbsp; &nbsp; {{$posts[1]->created_at}}</div>
+                <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[1]->id }}" class="link text-decoration-none">{{$posts[1]->title}}</a></h6>
+              </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-6">
+              <div class="card border-0 mb-4">
+                <a href="#" data-toggle="modal" data-target="#modal{{ $posts[2]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[2]->image}}" alt="wrappixel kit"></a>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">Grupo Hidalgo &nbsp; &nbsp; {{$posts[2]->created_at}}</div>
+                <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[2]->id }}" class="link text-decoration-none">{{$posts[2]->title}}</a></h6>
+              </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-6">
+              <div class="card border-0 mb-4">
+                <a href="#" data-toggle="modal" data-target="#modal{{ $posts[3]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[3]->image}}" alt="wrappixel kit"></a>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">Grupo Hidalgo &nbsp; &nbsp; {{$posts[3]->created_at}}</div>
+                <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[3]->id }}" class="link text-decoration-none">{{$posts[3]->title}}</a></h6>
+              </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-6">
+              <div class="card border-0 mb-4">
+                <a href="#" data-toggle="modal" data-target="#modal{{ $posts[4]->id }}" ><img class="card-img-top" src="{{'storage/' . $posts[4]->image}}" alt="wrappixel kit"></a>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">Grupo Hidalgo &nbsp; &nbsp; {{$posts[4]->created_at}}</div>
+                <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[4]->id }}" class="link text-decoration-none">{{$posts[4]->title}}</a></h6>
+              </div>
+            </div>
+            <!-- Column -->
+          </div>
+        </div>
+        <!-- Column -->
+      </div>
+    </div>
+</div>
+<!-- MODAL -->
+@foreach($posts as $post)
+<div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content super-iframe-holder">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+
+            <div class="post-information col-md-12">
+              <h2>{{ $post->title }}</h2>
+                <span><i class="fa fa-user"></i> <small>Grupo Hidalgo</small></span> &nbsp;
+                <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
+                <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
+            </div>
+            <div class="col-md-6 imgModal" >
+            <img src="{{ '/storage/' . $post->image }}" style="width:100%" class="img-fluid rounded" alt="">
+          </div>
+          <div class="col-md-6 mb-3 textModal" style="padding-right: 10px;">
+            {!! $post->contenido !!}
+
+          </div>
+          <div class="col-md-6 offset-md-6 mb-3">
+            <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm pull-right mb-3" style="border-radius: 0px;">Más Información &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+@endforeach
+<!-- MODAL -->
+
+<!--OLD Articulos
 @foreach($contenidosection4s as $contenidosection4)
 
 
@@ -473,7 +580,7 @@
 @endforeach
 
 @foreach($posts as $post)
-<!--MODAL BEGINNIG-->
+-MODAL BEGINNIG-
   <div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -504,9 +611,10 @@
       </div>
     </div>
   </div>
-  <!--END MODAL-->
-<!-- /Articulos -->
+  -END MODAL-
 @endforeach
+/Articulos -->
+
 
 
 
@@ -662,9 +770,24 @@
   @endsection
 
   @section('script')
+
   <script type="text/javascript">
 
     $(document).ready(function() {
+      var width1 = $('.imgModal').width();
+      var width2 = $('.textModal').width();
+      alert(width1);
+
+
+
+      $(".lol").each(function () {
+        len=$(this).text().length;
+        str= $(this).text().substr(0,130);
+        lastIndexOf = str.lastIndexOf(" ");
+        if(len>130) {
+            $(this).text(str.substr(0, lastIndexOf) + '...');
+        }
+      });
       $('.flexslider').flexslider({
     animation: "slide"
   });

@@ -186,8 +186,8 @@
         $(buttonConfirm).click(function() {
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 1280,
-             height: 560
+             width: 940.5,
+             height: 627
            });
            // Turn the canvas into a Blob (file object without a name)
            canvas.toBlob(function(blob) {
@@ -219,7 +219,7 @@
        // editor.appendChild(image);
        $(image).appendTo(editor)
        // Create Cropper.js
-       var cropper = new Cropper(image, { aspectRatio: 1/0.4375 });
+       var cropper = new Cropper(image, { aspectRatio: 3/2 });
 
 
 
