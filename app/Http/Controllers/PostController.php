@@ -50,7 +50,7 @@ class PostController extends Controller
 
      public function redirect1() {
        $latest = DB::table('posts')->orderBy('id', 'desc')->first();
-       
+
        return redirect('posts/' . $latest->id . '/edit');
      }
     public function store(Request $request)
@@ -93,7 +93,12 @@ class PostController extends Controller
             DB::table('posts')->insert($data);
             session()->flash('success', 'La sección fue actualizada');
             //redirect
-            return redirect()->back();
+            if(isset($post)){
+              redirect(route('posts/'));
+            }else{
+            $latest = DB::getPdo('posts')->lastInsertId();
+            return redirect('posts/' . $latest . '/edit');
+            }
 
           }
         // if ($request->tags) {

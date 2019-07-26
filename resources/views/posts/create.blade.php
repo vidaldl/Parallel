@@ -16,7 +16,7 @@
         <div class="row">
           <div class="form-group col-md-8">
             <label for="title" class="">Titulo del Post</label>
-            <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{isset($post) ? $post->title : ''}}">
+            <input id="title" onchange="this.form.submit()" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{isset($post) ? $post->title : ''}}">
             @error('title')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -27,7 +27,7 @@
             <label for="category">Categoria</label>
             <select name="category" id="category" class="col-md-10 form-control">
               @foreach($categories as $category)
-                <option value="{{ $category->id }}"
+                <option onchange="this.form.submit()" value="{{ $category->id }}"
                   @if(isset($post))
                     @if($category->id === $post->category_id)
                       selected
@@ -42,7 +42,7 @@
 
         <div class="form-group">
           <label for="description" class="col-form-label">Descripcion del Post</label>
-          <textarea id="description" name="description" cols="5" rows="1" class="form-control @error('description') is-invalid @enderror" >{{ isset($post) ? $post->description : '' }}</textarea>
+          <textarea onchange="this.form.submit()" id="description" name="description" cols="5" rows="1" class="form-control @error('description') is-invalid @enderror" >{{ isset($post) ? $post->description : '' }}</textarea>
           @error('description')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -51,7 +51,7 @@
         </div>
         <div class="form-group">
           <label for="contenido" class="col-form-label">Contenido del Post</label>
-          <textarea id="contenido" name="contenido" class="@error('contenido') is-invalid @enderror">{{isset($post) ? $post->contenido : ''}}</textarea>
+          <textarea onchange="this.form.submit()" id="contenido" name="contenido" class="@error('contenido') is-invalid @enderror">{{isset($post) ? $post->contenido : ''}}</textarea>
 
           @error('contenido')
             <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
             </div>
-            <input id="published_at" class="form-control @error('published_at') is-invalid @enderror" name="published_at" value="{{ isset($post) ? $post->published_at : ''}}">
+            <input id="published_at" onchange="this.form.submit()" class="form-control @error('published_at') is-invalid @enderror" name="published_at" value="{{ isset($post) ? $post->published_at : ''}}">
           </div>
           @error('published_at')
             <span class="invalid-feedback" role="alert">
