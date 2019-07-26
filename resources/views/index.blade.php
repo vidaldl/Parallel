@@ -774,11 +774,6 @@
   <script type="text/javascript">
 
     $(document).ready(function() {
-      var width1 = $('.imgModal').width();
-      var width2 = $('.textModal').width();
-      alert(width1);
-
-
 
       $(".lol").each(function () {
         len=$(this).text().length;
