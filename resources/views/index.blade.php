@@ -117,9 +117,7 @@
   color: {{$styles[0]->primary_color}};
 }
 
-.pricing-price {
-  color: {{$styles[0]->primary_color}};
-}
+
 
 .pricing-button {
   color: #fff;
@@ -175,7 +173,7 @@
                 <p class="tagline">
                   {{$contenidosection1s[1]->tagline}}
                 </p>
-                <a class="btn btn-full" href="#servicios">{{$contenidosection1s[1]->button}}</a>
+                <a class="btn btn-full {{$contenidosection1s[1]->button ? '' : 'd-none'}}" href="{{ $contenidosection1s[1]->link ? $contenidosection1s[1]->link : '#servicios' }}">{{$contenidosection1s[1]->button}}</a>
               </div>
             </div>
         </div>
@@ -199,7 +197,7 @@
                   <p class="tagline mb-1" style="margin-top: 12px;">
                     {{$contenidosection1s[2]->tagline}}
                   </p>
-                  <a class="btn btn-full " style="border-radius: 3px" href="#servicios">{{$contenidosection1s[2]->button}}</a>
+                  <a class="btn btn-full {{$contenidosection1s[2]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[2]->link ? $contenidosection1s[2]->link : '#servicios' }}">{{$contenidosection1s[2]->button}}</a>
                 </div>
                 </div>
               </div>
@@ -217,7 +215,7 @@
                     <p class="tagline mb-1 " style="margin-top: 12px;">
                       {{$contenidosection1s[3]->tagline}}
                     </p>
-                    <a class="btn btn-full mt-4" style="border-radius: 3px" href="#servicios">{{$contenidosection1s[3]->button}}</a>
+                    <a class="btn btn-full mt-4 {{$contenidosection1s[3]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[3]->link ? $contenidosection1s[3]->link : '#servicios' }}">{{$contenidosection1s[3]->button}}</a>
                   </div>
 
                   <div class="col-md-6 " style="{{ $contenidosection1s[3]->carousel == 0 ? 'visibility: hidden;' : '' }}">
@@ -251,7 +249,7 @@
         <p class="tagline">
           {{$contenidosection1s[0]->tagline}}
         </p>
-        <a class="btn btn-full" href="#servicios">{{$contenidosection1s[0]->button}}</a>
+        <a class="btn btn-full" href="{{ $contenidosection1s[0]->link ? $contenidosection1s[0]->link : '#servicios' }}">{{$contenidosection1s[0]->button}}</a>
       </div>
     </div>
 
@@ -278,8 +276,8 @@
 
         </ul>
         <ul class="nav-menu pull-right">
-          <li ><a href="{{url('http://app.ghidalgo.com/')}}"><i class="fa fa-user-alt" style="font-size:17px;"></i>&nbsp;&nbsp;Clientes</a></li>
-          <li><a href="{{url('http://app.ghidalgo.com/')}}"><i class="fa fa-building" style="font-size:17px;"></i>&nbsp;&nbsp;Administración</a></li>
+          <li class="{{$styles[0]->show_link_1 === 0 ? 'd-none' : ''}}"><a href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}}" style="font-size:17px;"></i>&nbsp;&nbsp;{{$styles[0]->custom_link_text_1}}</a></li>
+          <li class="{{$styles[0]->show_link_2 === 0 ? 'd-none' : ''}}"><a href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}}" style="font-size:17px;"></i>&nbsp;&nbsp;{{$styles[0]->custom_link_text_2}}</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -330,7 +328,7 @@
 
 <!-- Info Slider -->
 
-<div id="infoSlider" class="infoSlider {{$info_slider_texts[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 2px solid {{$styles[0]->primary_color}};">
+<div id="infoSlider" class="infoSlider {{$info_slider_texts[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 1px solid #E1E4EA;">
   <div class="container-fluid mt-5">
     <div class="row">
       <div class="col-md-6">
@@ -366,65 +364,81 @@
 
 <!-- <div class="pricing" id="pricing">
   <div class="background">
-  <div class="containerr">
-    <div class="panel pricing-table">
+  <div class="containerr" >
+    <div class="panel pricing-table" style="border: 1px solid black;">
 
-      <div class="pricing-plan" style=" position: relative; min-height: 500px; border: 1px solid black;">
-        <div class="col-md-12">
-          <img src="{{ 'storage/' . $pricings[0]->image }}" alt="" class="pricing-img">
-          <h2 class="pricing-header">{{ $pricings[0]->title }}</h2>
-          <ul class="pricing-features">
-            <li class="pricing-features-item {{$pricings[0]->item1 ? '' : 'd-none'}}">{{ $pricings[0]->item1 }}</li>
-            <li class="pricing-features-item {{$pricings[0]->item2 ? '' : 'd-none'}}">{{ $pricings[0]->item2 }}</li>
-            <li class="pricing-features-item {{$pricings[0]->item3 ? '' : 'd-none'}}">{{ $pricings[0]->item3 }}</li>
-            <li class="pricing-features-item {{$pricings[0]->item4 ? '' : 'd-none'}}">{{ $pricings[0]->item4 }}</li>
-            <li class="pricing-features-item {{$pricings[0]->item5 ? '' : 'd-none'}}">{{ $pricings[0]->item5 }}</li>
-            <li class="pricing-features-item {{$pricings[0]->item6 ? '' : 'd-none'}}">{{ $pricings[0]->item6 }}</li>
-          </ul>
+      <div class="row">
+        <div class="pricing-plan col-md-4" >
+          <div class="col-md-12">
+            <img src="{{ 'storage/' . $pricings[0]->image }}" alt="" class="pricing-img">
+            <h2 class="pricing-header">{{ $pricings[0]->title }}</h2>
+            <ul class="pricing-features">
+              <li class="pricing-features-item {{$pricings[0]->item1 ? '' : 'd-none'}}">{{ $pricings[0]->item1 }}</li>
+              <li class="pricing-features-item {{$pricings[0]->item2 ? '' : 'd-none'}}">{{ $pricings[0]->item2 }}</li>
+              <li class="pricing-features-item {{$pricings[0]->item3 ? '' : 'd-none'}}">{{ $pricings[0]->item3 }}</li>
+              <li class="pricing-features-item {{$pricings[0]->item4 ? '' : 'd-none'}}">{{ $pricings[0]->item4 }}</li>
+              <li class="pricing-features-item {{$pricings[0]->item5 ? '' : 'd-none'}}">{{ $pricings[0]->item5 }}</li>
+              <li class="pricing-features-item {{$pricings[0]->item6 ? '' : 'd-none'}}">{{ $pricings[0]->item6 }}</li>
+            </ul>
+          </div>
+          <div class="d-block d-sm-none">
+            <span class="pricing-price">{{$pricings[0]->price}}</span>
+            <a href="#/" class="pricing-button">{{$pricings[0]->button}}</a>
+          </div>
         </div>
-        <div style="position: relative;bottom: 0; border:1px solid black;" class="col-md-12">
-          <span class="pricing-price">{{$pricings[0]->price}}</span>
-          <a href="#/" class="pricing-button">{{$pricings[0]->button}}</a>
+
+        <div class="pricing-plan col-md-4" >
+          <div class="col-md-12">
+            <img src="{{ 'storage/' . $pricings[1]->image }}" alt="" class="pricing-img">
+            <h2 class="pricing-header">{{ $pricings[1]->title }}</h2>
+            <ul class="pricing-features">
+              <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[1]->item1 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item2 ? '' : 'd-none'}}">{{ $pricings[1]->item2 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item3 ? '' : 'd-none'}}">{{ $pricings[1]->item3 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item4 ? '' : 'd-none'}}">{{ $pricings[1]->item4 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item5 ? '' : 'd-none'}}">{{ $pricings[1]->item5 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item6 ? '' : 'd-none'}}">{{ $pricings[1]->item6 }}</li>
+            </ul>
+          </div>
+          <div class="d-block d-sm-none">
+            <span class="pricing-price">{{$pricings[1]->price}}</span>
+            <a href="#/" class="pricing-button">{{$pricings[1]->button}}</a>
+          </div>
+        </div>
+
+        <div class="pricing-plan col-md-4">
+          <div class="col-md-12" >
+            <img src="{{ 'storage/' . $pricings[2]->image }}" alt="" class="pricing-img">
+            <h2 class="pricing-header">{{ $pricings[2]->title }}</h2>
+            <ul class="pricing-features">
+              <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[2]->item1 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item2 ? '' : 'd-none'}}">{{ $pricings[2]->item2 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item3 ? '' : 'd-none'}}">{{ $pricings[2]->item3 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item4 ? '' : 'd-none'}}">{{ $pricings[2]->item4 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item5 ? '' : 'd-none'}}">{{ $pricings[2]->item5 }}</li>
+              <li class="pricing-features-item {{$pricings[1]->item6 ? '' : 'd-none'}}">{{ $pricings[2]->item6 }}</li>
+            </ul>
+          </div>
+          <div class="d-block d-sm-none">
+            <span class="pricing-price">{{$pricings[2]->price}}</span>
+            <a href="#/" class="pricing-button">{{$pricings[2]->button}}</a>
+          </div>
+        </div>
+        <div class="col-md-4 d-none d-sm-block">
+            <span class="pricing-price">{{$pricings[0]->price}}</span>
+            <a href="#/" class="pricing-button">{{$pricings[0]->button}}</a>
+        </div>
+        <div class="col-md-4 d-none d-sm-block">
+            <span class="pricing-price">{{$pricings[1]->price}}</span>
+            <a href="#/" class="pricing-button">{{$pricings[1]->button}}</a>
+        </div>
+        <div class="col-md-4 d-none d-sm-block">
+            <span class="pricing-price">{{$pricings[2]->price}}</span>
+            <a href="#/" class="pricing-button">{{$pricings[2]->button}}</a>
         </div>
       </div>
 
-      <div class="pricing-plan" style=" position: relative; min-height: 500px; border: 1px solid black;">
-        <div class="col-md-12">
-          <img src="{{ 'storage/' . $pricings[1]->image }}" alt="" class="pricing-img">
-          <h2 class="pricing-header">{{ $pricings[1]->title }}</h2>
-          <ul class="pricing-features">
-            <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[1]->item1 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item2 ? '' : 'd-none'}}">{{ $pricings[1]->item2 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item3 ? '' : 'd-none'}}">{{ $pricings[1]->item3 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item4 ? '' : 'd-none'}}">{{ $pricings[1]->item4 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item5 ? '' : 'd-none'}}">{{ $pricings[1]->item5 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item6 ? '' : 'd-none'}}">{{ $pricings[1]->item6 }}</li>
-          </ul>
-        </div>
-      <div style="position: relative;bottom: 0; border:1px solid black;" class="col-md-12">
-        <span class="pricing-price">{{$pricings[1]->price}}</span>
-        <a href="#/" class="pricing-button">{{$pricings[1]->button}}</a>
-      </div>
-      </div>
 
-      <div class="pricing-plan" >
-        <div class="col-md-12">
-          <img src="{{ 'storage/' . $pricings[1]->image }}" alt="" class="pricing-img">
-          <h2 class="pricing-header">{{ $pricings[1]->title }}</h2>
-          <ul class="pricing-features">
-            <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[1]->item1 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item2 ? '' : 'd-none'}}">{{ $pricings[1]->item2 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item3 ? '' : 'd-none'}}">{{ $pricings[1]->item3 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item4 ? '' : 'd-none'}}">{{ $pricings[1]->item4 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item5 ? '' : 'd-none'}}">{{ $pricings[1]->item5 }}</li>
-            <li class="pricing-features-item {{$pricings[1]->item6 ? '' : 'd-none'}}">{{ $pricings[1]->item6 }}</li>
-          </ul>
-        </div>
-        <div style="position: relative;bottom: 0; border:1px solid black;" class="col-md-12">
-          <span class="pricing-price">{{$pricings[2]->price}}</span>
-          <a href="#/" class="pricing-button">{{$pricings[2]->button}}</a>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -434,14 +448,14 @@
 <!-- /PRICING -->
 
 
-<div class="blog-home3 py-5 mr-5 ml-5">
+<div class="blog-home3 py-5 mr-5 ml-5" style="border-top: 1px solid #E1E4EA">
 
     <div class="container-fluid">
       <!-- Row  -->
       <div class="row justify-content-center">
         <!-- Column -->
         <div class="col-md-8 text-center">
-          <h3 class="my-3">{{$contenidosection4s[0]->title}}</h3>
+          <h2 class="my-3">{{$contenidosection4s[0]->title}}</h2>
           <h6 class="subtitle font-weight-normal">{{$contenidosection4s[0]->tagline}}</h6>
         </div>
         <!-- Column -->
@@ -525,10 +539,11 @@
             {!! $post->contenido !!}
 
           </div>
-          <div class="col-md-6 offset-md-6 mb-3">
-            <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm pull-right mb-3" style="border-radius: 0px;">Más Información &rarr;</a>
-          </div>
-
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="col-md-6 offset-md-6 mb-3">
+          <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm pull-right mb-3" style="border-radius: 0px;">Más Información &rarr;</a>
         </div>
       </div>
 

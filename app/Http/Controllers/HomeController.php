@@ -127,7 +127,29 @@ class HomeController extends Controller
       $button_secondary = $request->input('button_secondary');
       $page_title = $request->input('page_title');
 
-      $data = array("primary_color"=>$primary_color,"button_primary"=>$button_primary,"button_secondary"=>$button_secondary,"page_title"=>$page_title);
+      $custom_icon_1 = $request->input('custom_icon_1');
+      $custom_link_text_1 = $request->input('custom_link_text_1');
+      $custom_link_address_1 = $request->input('custom_link_address_1');
+      $show_link_1 = $request->input('show_link_1');
+
+      $custom_icon_2 = $request->input('custom_icon_2');
+      $custom_link_text_2 = $request->input('custom_link_text_2');
+      $custom_link_address_2 = $request->input('custom_link_address_2');
+      $show_link_2 = $request->input('show_link_2');
+
+
+      $data = array("primary_color"=>$primary_color,
+      "button_primary"=>$button_primary,
+      "button_secondary"=>$button_secondary,
+      "page_title"=>$page_title,
+      "custom_icon_1"=>$custom_icon_1,
+      "custom_link_text_1"=>$custom_link_text_1,
+      "custom_link_address_1"=>$custom_link_address_1,
+      "show_link_1"=>$show_link_1,
+      "custom_icon_2"=>$custom_icon_2,
+      "custom_link_text_2"=>$custom_link_text_2,
+      "custom_link_address_2"=>$custom_link_address_2,
+      "show_link_2"=>$show_link_2);
       DB::table('styles')->update($data);
       session()->flash('success', 'La informacion ha sido actualizada');
       //redirect
@@ -173,6 +195,7 @@ class HomeController extends Controller
       $tagline = $request->input('tagline');
       $button = $request->input('button');
       $displayImage = $request->input('displayImage');
+      $link = $request->input('link');
       $logo = NULL;
 
 
@@ -252,7 +275,7 @@ class HomeController extends Controller
 
         }
         else {
-        $data=array("title"=>$title,"tagline"=>$tagline,"button"=>$button, "carousel"=>$displayImage);
+        $data=array("title"=>$title,"tagline"=>$tagline,"button"=>$button, "carousel"=>$displayImage, "link"=>$link);
         DB::table('contenido_section1s')->where('id', $id)->update($data);
         session()->flash('success', 'La sección fue actualizada');
         //redirect

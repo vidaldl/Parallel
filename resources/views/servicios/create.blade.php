@@ -83,12 +83,7 @@
 <script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
 <script>
 $(document).ready(function () {
-  $('.icp-dd').iconpicker({
-       // title: 'Dropdown with picker',
-       // component:'.btn > i'
-     });
-
-
+  $('.icp-dd').iconpicker();
 })
 $('.icp').on('iconpickerSelected', function (e) {
     $('#icon').get(0).value = e.iconpickerInstance.options.fullClassFormatter(e.iconpickerValue);

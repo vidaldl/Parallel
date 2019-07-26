@@ -147,6 +147,16 @@
                     </span>
                   @enderror
               </div>
+              <div class="form-group">
+                <label for="link" class="col-form-label">Enlace</label>
+                <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[0]->link }}">
+                <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                  @error('link')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
 
             <div class="form-group">
               <button type="submit" class="btn btn-success float-right">Actualizar</button>
@@ -326,6 +336,11 @@
                       </span>
                     @enderror
                 </div>
+                <div class="form-group col-md-12">
+                  <label for="link" class="col-form-label">Enlace</label>
+                  <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[1]->link }}">
+                  <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                </div>
 
 
                 <div class="form-group col-md-1 offset-md-9">
@@ -477,6 +492,11 @@
                       @enderror
                   </div>
 
+                  <div class="form-group col-md-12">
+                    <label for="link" class="col-form-label">Enlace</label>
+                    <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[2]->link }}">
+                    <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                  </div>
 
                   <div class="form-group col-md-1 offset-md-9">
                     <button type="submit" class="btn btn-success">Actualizar</button>
@@ -619,7 +639,7 @@
 
                   <div class="form-group col-md-12">
                     <label for="button" class="col-form-label">Botón</label>
-                    <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $contenidosection1s[2]->button }}">
+                    <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $contenidosection1s[3]->button }}">
                       @error('button')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -627,6 +647,11 @@
                       @enderror
                   </div>
 
+                  <div class="form-group col-md-12">
+                    <label for="link" class="col-form-label">Enlace</label>
+                    <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[3]->link }}">
+                    <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                  </div>
 
                   <div class="form-group col-md-1 offset-md-9">
                     <button type="submit" class="btn btn-success">Actualizar</button>
