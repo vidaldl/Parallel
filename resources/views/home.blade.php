@@ -249,6 +249,35 @@
         </div>
       </div>
 
+      <div class="col-md-4 mb-4 {{ $pricings[0]->display == '0' ? 'd-none' : ''}}">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+        <form method="POST" action="{{route('infoSlider.display', $info_slider_texts[0]->id)}}">
+          @csrf
+          <div class="row">
+            <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección de Precios</h6></span>
+              <select onchange="this.form.submit()" name="display" class="col-md-6  float-right">
+                <option value="1" {{ $pricings[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
+                <option value="0" {{ $pricings[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
+              </select>
+          </div>
+        </form>
+          </div>
+          <a href="editPricing">
+            <div class="card-body">
+              <div class="text-center">
+                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/pricing.png')}}" alt="">
+              </div>
+            </div>
+          </a>
+          <div class="card-footer">
+            <a href="editPricing">Editar contenido &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+
+
       <div class="col-md-4 mb-4 {{ $contenidosection3s[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -365,6 +394,7 @@
     @if($contenidosection1s[0]->display == '1'
     && $contenidosection2s[0]->display == '1'
     && $info_slider_texts[0]->display == '1'
+    && $pricings[0]->display == '1'
     && $contenidosection3s[0]->display == '1'
     && $contenidosection4s[0]->display == '1'
     && $contenidosection5s[0]->display == '1'
@@ -425,6 +455,7 @@
       </div>
     </div>
 
+
     <div class="col-md-4 mb-4 {{ $info_slider_texts[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -451,6 +482,35 @@
         </div>
       </div>
     </div>
+
+
+    <div class="col-md-4 mb-4 {{ $pricings[0]->display == '1' ? 'd-none' : ''}}">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+      <form method="POST" action="{{route('infoSlider.display', $info_slider_texts[0]->id)}}">
+        @csrf
+        <div class="row">
+          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección de Precios</h6></span>
+            <select onchange="this.form.submit()" name="display" class="col-md-6  float-right">
+              <option value="1" {{ $pricings[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
+              <option value="0" {{ $pricings[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
+            </select>
+        </div>
+      </form>
+        </div>
+        <a href="editPricing}}">
+          <div class="card-body">
+            <div class="text-center">
+              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/pricing.png')}}" alt="">
+            </div>
+          </div>
+        </a>
+        <div class="card-footer">
+          <a href="editPricing">Editar contenido &rarr;</a>
+        </div>
+      </div>
+    </div>
+
 
     <div class="col-md-4 mb-4 {{ $contenidosection3s[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">

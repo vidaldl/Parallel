@@ -181,26 +181,24 @@
         <!-- SLIDE 2 -->
           <div class="carousel-item" style="background-image: url({{ '/storage/' . $contenidosection1s[2]->background_image }});">
               <div class="overlay"></div>
-              <div class="carousel-caption" >
+              <div class="carousel-caption" style="top: 45%;transform: translateY(-40%);">
                 <div class="row">
-                  <div class="" style="{{ $contenidosection1s[2]->carousel == 0 ? 'visibility: hidden;' : '' }}">
-                    <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img height="100%" width="350px"  src="{{'/storage/' . $contenidosection1s[2]->logo}}"></a>
+                  <div class="col-md-6 " style="{{ $contenidosection1s[2]->carousel == 0 ? 'visibility: hidden;' : '' }}">
+                    <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img height="100%" width="850px" src="{{'/storage/' . $contenidosection1s[2]->logo}}"></a><!-- <img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;" src="{{asset('img/world.png')}}"> -->
                   </div>
-                </div>
-                <div class="row">
-                <div class="col-md-4">
-                  <h1  style="text-align:left;">
-                    {{$contenidosection1s[2]->title}}
+
+                  <div class="col-md-6" style="text-align: right;">
+                    <h1  style="text-align:right;">
+                      {{$contenidosection1s[2]->title}}
                     </h1>
+                    <p class="tagline mb-1 " style="margin-top: 12px;">
+                      {{$contenidosection1s[2]->tagline}}
+                    </p>
+                    <a class="btn btn-full mt-4 {{$contenidosection1s[2]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[2]->link ? $contenidosection1s[2]->link : '#servicios' }}">{{$contenidosection1s[2]->button}}</a>
+                  </div>
+
                 </div>
-                <div class="col-md-8" style="text-align:right;">
-                  <p class="tagline mb-1" style="margin-top: 12px;">
-                    {{$contenidosection1s[2]->tagline}}
-                  </p>
-                  <a class="btn btn-full {{$contenidosection1s[2]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[2]->link ? $contenidosection1s[2]->link : '#servicios' }}">{{$contenidosection1s[2]->button}}</a>
                 </div>
-                </div>
-              </div>
           </div>
         <!-- /SLIDE 2 -->
         <!-- SLIDE 3 -->
@@ -362,7 +360,7 @@
 
 <!-- PRICING -->
 
-<!-- <div class="pricing" id="pricing">
+<div class="pricing" id="pricing">
   <div class="background">
   <div class="containerr" >
     <div class="panel pricing-table" style="border: 1px solid black;">
@@ -370,7 +368,7 @@
       <div class="row">
         <div class="pricing-plan col-md-4" >
           <div class="col-md-12">
-            <img src="{{ 'storage/' . $pricings[0]->image }}" alt="" class="pricing-img">
+            <img src="{{ 'storage/' . $pricings[0]->image }}" alt="" style="border-radius: 100%;" class="pricing-img">
             <h2 class="pricing-header">{{ $pricings[0]->title }}</h2>
             <ul class="pricing-features">
               <li class="pricing-features-item {{$pricings[0]->item1 ? '' : 'd-none'}}">{{ $pricings[0]->item1 }}</li>
@@ -389,7 +387,7 @@
 
         <div class="pricing-plan col-md-4" >
           <div class="col-md-12">
-            <img src="{{ 'storage/' . $pricings[1]->image }}" alt="" class="pricing-img">
+            <img src="{{ 'storage/' . $pricings[1]->image }}" alt="" style="border-radius: 100%;" class="pricing-img">
             <h2 class="pricing-header">{{ $pricings[1]->title }}</h2>
             <ul class="pricing-features">
               <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[1]->item1 }}</li>
@@ -408,7 +406,7 @@
 
         <div class="pricing-plan col-md-4">
           <div class="col-md-12" >
-            <img src="{{ 'storage/' . $pricings[2]->image }}" alt="" class="pricing-img">
+            <img src="{{ 'storage/' . $pricings[2]->image }}" style="border-radius: 100%;" alt="" class="pricing-img">
             <h2 class="pricing-header">{{ $pricings[2]->title }}</h2>
             <ul class="pricing-features">
               <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[2]->item1 }}</li>
@@ -443,7 +441,7 @@
     </div>
   </div>
 </div>
-</div> -->
+</div>
 
 <!-- /PRICING -->
 
@@ -466,7 +464,7 @@
         <div class="col-lg-6">
           <div class="card border-0 mb-4">
             <a href="#" data-toggle="modal" data-target="#modal{{ $posts[0]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[0]->image}}" alt="wrappixel kit"></a>
-            <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$styles[0]->page_title}} &nbsp; &nbsp; {{$posts[0]->created_at}}</div>
+            <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[0]->published_at}}</div>
             <h5 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[0]->id }}" class="link text-decoration-none">{{$posts[0]->title}}</a></h5>
             <p class="m-t-20 lol">{{$posts[0]->tagline}}</p>
           </div>
@@ -478,7 +476,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[1]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[1]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$styles[0]->page_title}} &nbsp; &nbsp; {{$posts[1]->created_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[1]->published_at}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[1]->id }}" class="link text-decoration-none">{{$posts[1]->title}}</a></h6>
               </div>
             </div>
@@ -486,7 +484,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[2]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[2]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$styles[0]->page_title}} &nbsp; &nbsp; {{$posts[2]->created_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[2]->published_at}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[2]->id }}" class="link text-decoration-none">{{$posts[2]->title}}</a></h6>
               </div>
             </div>
@@ -494,7 +492,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[3]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[3]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$styles[0]->page_title}} &nbsp; &nbsp; {{$posts[3]->created_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[3]->published_at}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[3]->id }}" class="link text-decoration-none">{{$posts[3]->title}}</a></h6>
               </div>
             </div>
@@ -502,7 +500,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[4]->id }}" ><img class="card-img-top" src="{{'storage/' . $posts[4]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$styles[0]->page_title}} &nbsp; &nbsp; {{$posts[4]->created_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[4]->published_at}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[4]->id }}" class="link text-decoration-none">{{$posts[4]->title}}</a></h6>
               </div>
             </div>
@@ -528,7 +526,7 @@
 
             <div class="post-information col-md-12">
               <h2>{{ $post->title }}</h2>
-                <span><i class="fa fa-user"></i> <small>Grupo Hidalgo</small></span> &nbsp;
+                <span><i class="fa fa-user"></i> <small>{{$users[0]->username}}</small></span> &nbsp;
                 <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
                 <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
             </div>

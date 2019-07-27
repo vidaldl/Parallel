@@ -16,6 +16,7 @@ use App\Style;
 use App\InfoSliderImage;
 use App\InfoSliderText;
 use App\Pricing;
+use App\User;
 
 
 
@@ -35,7 +36,8 @@ class IndexController extends Controller
       ->with('pricings', Pricing::all())
       ->with('styles', Style::all())
       ->with('info_slider_images', InfoSliderImage::all())
-      ->with('info_slider_texts', InfoSliderText::all());
+      ->with('info_slider_texts', InfoSliderText::all())
+      ->with('users', User::all());
 
     }
 

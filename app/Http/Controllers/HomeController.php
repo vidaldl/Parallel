@@ -16,6 +16,7 @@ use App\ContenidoAbout;
 use App\Style;
 use App\InfoSliderImage;
 use App\InfoSliderText;
+use App\Pricing;
 use Image;
 class HomeController extends Controller
 {
@@ -45,9 +46,62 @@ class HomeController extends Controller
         ->with('contenidosectionfooters', ContenidoSectionFooter::all())
         ->with('contenidoabouts', ContenidoAbout::all())
         ->with('styles', Style::all())
+        ->with('pricings', Pricing::all())
         ->with('info_slider_images', InfoSliderImage::all())
         ->with('info_slider_texts', InfoSliderText::all());
     }
+
+    /*Pricing -------------------------------------------------------------------------------->*/
+    public function pricingEdit() {
+      return view('updateIndex/pricing')->with('pricings', Pricing::all());
+    }
+
+
+    public function pricingUpdate(Request $request, $id) {
+      $title = $request->input('title');
+      $item1 = $request->input('item1');
+      $item2 = $request->input('item2');
+      $item3 = $request->input('item3');
+      $item4 = $request->input('item4');
+      $item5 = $request->input('item5');
+      $item6 = $request->input('item6');
+      $price = $request->input('price');
+      $button = $request->input('button');
+
+
+      if ($request->hasFile('image')) {
+        $this->validate($request, [
+            'image' => 'image|required|mimes:png,svg'
+         ]);
+        $imageOld = DB::table('pricings')->where('id', $id)->first();
+
+        //upload it
+        $image = $request->file('image')->store('content/pricing');
+        Storage::delete($imageOld->image);
+        $data=array('image'=>$image);
+        DB::table('pricings')->where('id', $id)->update($data);
+
+        // session()->flash('success', 'La sección fue actualizada con la imagen');
+        // return redirect()->back();
+
+      } else {
+        $data=array('title'=>$title,
+        'item1'=>$item1,
+        'item2'=>$item2,
+        'item3'=>$item3,
+        'item4'=>$item4,
+        'item5'=>$item5,
+        'item6'=>$item6,
+        'price'=>$price,
+        'button'=>$button);
+        DB::table('pricings')->where('id', $id)->update($data);
+
+        session()->flash('success', 'La imagen ha sido actualizada');
+        //redirect
+        return redirect()->back();
+      }
+    }
+
 
     /*Info Slider Image -------------------------------------------------------------------------------->*/
     public function storeSliderImage (SliderImageRequest $request) {

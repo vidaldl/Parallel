@@ -41,6 +41,9 @@ Route::post('/displayInfoSlider/{id}', 'HomeController@infoSliderDisplay')->name
 Route::post('/store-slider-image', 'HomeController@storeSliderImage')->name('store.sliderImage');
 Route::post('/update-slider-image/{id}', 'HomeController@updateSliderImage')->name('update.sliderImage');
 Route::delete('/delete-slider-image/{id}', 'HomeController@deleteSliderImage')->name('delete.sliderImage');
+//Pricing
+Route::get('/editPricing', 'HomeController@pricingEdit')->name('pricing.edit');
+Route::post('/updatePricing/{id}', 'HomeController@pricingUpdate')->name('pricing.update');
 //Section3
 Route::get('/editsection3/{id}', 'HomeController@section3Edit')->name('section3.edit');
 Route::post('/updatesection3/{id}', 'HomeController@section3Update')->name('section3.update');
