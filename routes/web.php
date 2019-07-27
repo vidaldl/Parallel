@@ -44,6 +44,7 @@ Route::delete('/delete-slider-image/{id}', 'HomeController@deleteSliderImage')->
 //Pricing
 Route::get('/editPricing', 'HomeController@pricingEdit')->name('pricing.edit');
 Route::post('/updatePricing/{id}', 'HomeController@pricingUpdate')->name('pricing.update');
+Route::post('/displayPricing/{id}', 'HomeController@pricingDisplay')->name('pricing.display');
 //Section3
 Route::get('/editsection3/{id}', 'HomeController@section3Edit')->name('section3.edit');
 Route::post('/updatesection3/{id}', 'HomeController@section3Update')->name('section3.update');

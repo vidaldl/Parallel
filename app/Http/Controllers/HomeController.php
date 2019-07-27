@@ -57,6 +57,8 @@ class HomeController extends Controller
     }
 
 
+
+
     public function pricingUpdate(Request $request, $id) {
       $title = $request->input('title');
       $item1 = $request->input('item1');
@@ -102,6 +104,15 @@ class HomeController extends Controller
       }
     }
 
+
+    public function pricingDisplay(Request $request, $id) {
+      $display = $request->input('pricing');
+      $data=array("display"=>$display);
+      DB::table('pricings')->where('id', $id)->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
 
     /*Info Slider Image -------------------------------------------------------------------------------->*/
     public function storeSliderImage (SliderImageRequest $request) {

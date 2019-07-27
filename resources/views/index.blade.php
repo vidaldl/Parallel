@@ -360,7 +360,7 @@
 
 <!-- PRICING -->
 
-<div class="pricing" id="pricing">
+<div class="pricing {{ $pricings[0]->display == '0' ? 'd-none' : '' }}" id="pricing">
   <div class="background">
   <div class="containerr" >
     <div class="panel pricing-table" style="border: 1px solid black;">
