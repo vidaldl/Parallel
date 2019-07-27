@@ -535,7 +535,7 @@ a:hover {
 /* ==================================================
   Hero Styling
 ================================================== */
-.carousel-fullscreen .carousel-inner .carousel-item {
+  .carousel-item {
     height: 100vh;
     min-height: 600px;
     background-position: center center;
@@ -553,9 +553,7 @@ a:hover {
     transition: all 0.2s ease-out;
 }
 .carousel-fullscreen .carousel-caption {
-    top: 50%;
-    bottom: auto;
-    transform: translateY(-50%);
+
 }
 .hero {
   display: table;
