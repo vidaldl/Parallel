@@ -181,8 +181,8 @@
         <!-- SLIDE 2 -->
           <div class="carousel-item" style="background-image: url({{ '/storage/' . $contenidosection1s[2]->background_image }});">
               <div class="overlay"></div>
-              <div class="carousel-caption" style="top: 45%;transform: translateY(-40%); left:5%; right: 5%;border: 1px solid white;">
-                <div class="row" style="border: 1px solid white;">
+              <div class="carousel-caption" style="top: 45%;transform: translateY(-40%); left:5%; right: 5%;">
+                <div class="row">
                   <div class="col-md-6 " style="{{ $contenidosection1s[2]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                     <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img class="img-fluid" height="100%" width="850px" style="margin-right: 45px;overflow-y: hidden;" src="{{'/storage/' . $contenidosection1s[2]->logo}}"></a><!-- <img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;" src="{{asset('img/world.png')}}"> -->
                   </div>
