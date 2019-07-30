@@ -87,11 +87,14 @@
     </div>
   </div>
 
-  <!-- ICONOS -->
+  <!-- ICONOS1 -->
   <div class="col-md-4">
     <h3>Personalizar Links Barra de Navegación</h3>
     <div class="form-group">
-      <label for="button_secondary">Seleccine Ícono</label> <select name="show_link_1" onchange="this.form.submit()" class="float-right mr-5"><option value="1" {{ $styles[0]->show_link_1 == '1' ? 'selected' : '' }}>Mostrar</option> <option value="0" {{ $styles[0]->show_link_1 == '0' ? 'selected' : '' }}>Esconder</option></select>
+      <label for="button_secondary">Seleccine Ícono</label> <select name="show_link_1" onchange="this.form.submit()" class="float-right mr-5">
+        <option value="1" {{ $styles[0]->show_link_1 == '1' ? 'selected' : '' }}>Mostrar</option>
+        <option value="0" {{ $styles[0]->show_link_1 == '0' ? 'selected' : '' }}>Esconder</option>
+      </select>
       <div class="input-group">
         <input id="custom_icon_1" type="hidden" data-placement="bottomRight" class="form-control @error('custom_icon_1') is-invalid @enderror"  name="custom_icon_1" value="{{ $styles[0]->custom_icon_1 }}">
         <div class="btn-group">
@@ -116,12 +119,16 @@
   </div>
 <button type="submit" class="btn btn-success float-right mt-5">Actualizar</button>
 </div>
-<!-- /ICONOS2 -->
+<!-- /ICONOS1 -->
 <!-- ICONOS2 -->
   <div class="col-md-4">
     <h3>&nbsp;</h3>
     <div class="form-group">
-      <label for="button_secondary">Seleccine Ícono</label> <select name="show_link_2" onchange="this.form.submit()" class="float-right mr-5"><option value="1" {{ $styles[0]->show_link_2 == '1' ? 'selected' : '' }}>Mostrar</option> <option value="0" {{ $styles[0]->show_link_2 == '0' ? 'selected' : '' }}>Esconder</option></select>
+      <label for="button_secondary">Seleccine Ícono</label>
+      <select name="show_link_2" onchange="this.form.submit()" class="float-right mr-5">
+        <option value="1" {{ $styles[0]->show_link_2 == '1' ? 'selected' : '' }}>Mostrar</option>
+        <option value="0" {{ $styles[0]->show_link_2 == '0' ? 'selected' : '' }}>Esconder</option>
+      </select>
       <div class="input-group">
         <input id="custom_icon_2" type="hidden" data-placement="bottomRight" class="form-control @error('custom_icon_2') is-invalid @enderror"  name="custom_icon_2" value="{{ $styles[0]->custom_icon_2 }}">
         <div class="btn-group">
@@ -167,7 +174,7 @@
 
 
   <div id="activo" class="row tabdiv">
-
+    <!-- Seccion 1 -->
       <div class="col-md-4 mb-4 {{ $contenidosection1s[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -194,14 +201,16 @@
           </div>
         </div>
       </div>
+    <!-- /Seccion 1 -->
 
+    <!-- Servicios -->
       <div class="col-md-4 mb-4 {{ $contenidosection2s[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
             <form method="POST" action="{{route('section2.display', $contenidosection2s[0]->id)}}">
               @csrf
               <div class="row">
-                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 2</h6></span>
+                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Articulos</h6></span>
                   <select onchange="this.form.submit()" name="section2" class="col-md-6  float-right">
                     <option value="1" {{ $contenidosection2s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                     <option value="0" {{ $contenidosection2s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -221,7 +230,9 @@
           </div>
         </div>
       </div>
+    <!-- /Servicios -->
 
+    <!-- Info Slider -->
       <div class="col-md-4 mb-4 {{ $info_slider_texts[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -248,7 +259,9 @@
           </div>
         </div>
       </div>
+    <!-- Info Slider -->
 
+    <!-- Pricing -->
       <div class="col-md-4 mb-4 {{ $pricings[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -275,16 +288,16 @@
           </div>
         </div>
       </div>
+    <!-- Pricing -->
 
-
-
+    <!-- ABOUT -->
       <div class="col-md-4 mb-4 {{ $contenidosection3s[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
             <form method="POST" action="{{route('section3.display', $contenidosection3s[0]->id)}}">
               @csrf
               <div class="row">
-                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 3</h6></span>
+                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Seccion Acerca De</h6></span>
                   <select onchange="this.form.submit()" name="section3" class="col-md-6  float-right">
                     <option value="1" {{ $contenidosection3s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                     <option value="0" {{ $contenidosection3s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -304,7 +317,9 @@
           </div>
         </div>
       </div>
+    <!-- /ABOUT -->
 
+    <!-- Articulos -->
       <div class="col-md-4 mb-4 {{ $contenidosection4s[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -331,7 +346,9 @@
           </div>
         </div>
       </div>
+    <!-- /Articulos -->
 
+    <!-- Contact -->
       <div class="col-md-4 mb-4 {{ $contenidosection5s[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -358,7 +375,9 @@
           </div>
         </div>
       </div>
+    <!-- Contact -->
 
+    <!-- Pie de Pagina -->
       <div class="col-md-4 mb-4 {{ $contenidosectionfooters[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -385,6 +404,7 @@
           </div>
         </div>
       </div>
+    <!-- /Pie de Pagina -->
 
 
 
