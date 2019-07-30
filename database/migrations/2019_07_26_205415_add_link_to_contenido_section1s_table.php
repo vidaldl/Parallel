@@ -14,7 +14,7 @@ class AddLinkToContenidoSection1sTable extends Migration
     public function up()
     {
         Schema::table('contenido_section1s', function (Blueprint $table) {
-            $table->string('link')->nullable();
+            $table->text('link')->nullable();
         });
     }
 

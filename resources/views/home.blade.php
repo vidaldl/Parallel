@@ -210,7 +210,7 @@
             <form method="POST" action="{{route('section2.display', $contenidosection2s[0]->id)}}">
               @csrf
               <div class="row">
-                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Articulos</h6></span>
+                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Servicios</h6></span>
                   <select onchange="this.form.submit()" name="section2" class="col-md-6  float-right">
                     <option value="1" {{ $contenidosection2s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                     <option value="0" {{ $contenidosection2s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -290,14 +290,14 @@
       </div>
     <!-- Pricing -->
 
-    <!-- ABOUT -->
+    <!-- Info -->
       <div class="col-md-4 mb-4 {{ $contenidosection3s[0]->display == '0' ? 'd-none' : ''}}">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
             <form method="POST" action="{{route('section3.display', $contenidosection3s[0]->id)}}">
               @csrf
               <div class="row">
-                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Seccion Acerca De</h6></span>
+                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Seccion Info</h6></span>
                   <select onchange="this.form.submit()" name="section3" class="col-md-6  float-right">
                     <option value="1" {{ $contenidosection3s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                     <option value="0" {{ $contenidosection3s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -317,7 +317,7 @@
           </div>
         </div>
       </div>
-    <!-- /ABOUT -->
+    <!-- /Info -->
 
     <!-- Articulos -->
       <div class="col-md-4 mb-4 {{ $contenidosection4s[0]->display == '0' ? 'd-none' : ''}}">
@@ -326,7 +326,7 @@
             <form method="POST" action="{{route('section4.display', $contenidosection4s[0]->id)}}">
               @csrf
               <div class="row">
-                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 4</h6></span>
+                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Artículos</h6></span>
                   <select onchange="this.form.submit()" name="section4" class="col-md-6  float-right">
                     <option value="1" {{ $contenidosection4s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                     <option value="0" {{ $contenidosection4s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -406,8 +406,6 @@
       </div>
     <!-- /Pie de Pagina -->
 
-
-
   </div>
 
   <div id="inactivo" class="row tabdiv">
@@ -421,6 +419,8 @@
     && $contenidosectionfooters[0]->display == '1')
     <h1 class="mx-auto mt-3">No hay secciones inactivas</h1>
     @else
+
+  <!-- Seccion 1 -->
     <div class="col-md-4 mb-4 {{ $contenidosection1s[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -447,14 +447,16 @@
         </div>
       </div>
     </div>
+  <!-- /Seccion 1 -->
 
+  <!-- Servicios -->
     <div class="col-md-4 mb-4 {{ $contenidosection2s[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <form method="POST" action="{{route('section2.display', $contenidosection2s[0]->id)}}">
             @csrf
             <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 2</h6></span>
+              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Servicios</h6></span>
                 <select onchange="this.form.submit()" name="section2" class="col-md-6  float-right">
                   <option value="1" {{ $contenidosection2s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                   <option value="0" {{ $contenidosection2s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -474,8 +476,9 @@
         </div>
       </div>
     </div>
+  <!-- /Servicios -->
 
-
+  <!-- Slider Info 1 -->
     <div class="col-md-4 mb-4 {{ $info_slider_texts[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -502,8 +505,9 @@
         </div>
       </div>
     </div>
+  <!-- /Slider Info 2 -->
 
-
+  <!-- Pricing -->
     <div class="col-md-4 mb-4 {{ $pricings[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -530,15 +534,16 @@
         </div>
       </div>
     </div>
+  <!-- /Pricing -->
 
-
+  <!-- Info -->
     <div class="col-md-4 mb-4 {{ $contenidosection3s[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <form method="POST" action="{{route('section3.display', $contenidosection3s[0]->id)}}">
             @csrf
             <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 3</h6></span>
+              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección Info</h6></span>
                 <select onchange="this.form.submit()" name="section3" class="col-md-6  float-right">
                   <option value="1" {{ $contenidosection3s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                   <option value="0" {{ $contenidosection3s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -558,14 +563,16 @@
         </div>
       </div>
     </div>
+  <!-- Info -->
 
+  <!-- Artículos -->
     <div class="col-md-4 mb-4 {{ $contenidosection4s[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <form method="POST" action="{{route('section4.display', $contenidosection4s[0]->id)}}">
             @csrf
             <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 4</h6></span>
+              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Artículos</h6></span>
                 <select onchange="this.form.submit()" name="section4" class="col-md-6  float-right">
                   <option value="1" {{ $contenidosection4s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                   <option value="0" {{ $contenidosection4s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -585,7 +592,9 @@
         </div>
       </div>
     </div>
+  <!-- /Artículos -->
 
+  <!-- Contacto -->
     <div class="col-md-4 mb-4 {{ $contenidosection5s[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -612,7 +621,9 @@
         </div>
       </div>
     </div>
+  <!-- Contacto -->
 
+  <!-- Pie de Pagina -->
     <div class="col-md-4 mb-4 {{ $contenidosectionfooters[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -639,7 +650,7 @@
         </div>
       </div>
     </div>
-
+  <!-- Pie de Pagina -->
 
 
     @endif
