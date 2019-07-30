@@ -89,21 +89,22 @@
     .team .card:hover .card-title-wrap {
       background-color: {{$styles[0]->primary_color}};
     }
-    #contact h2 {
-      color: {{$styles[0]->primary_color}};
-    }
+
     #contact .info i {
       color: {{$styles[0]->primary_color}};
     }
-    #contact .form #sendmessage {
-      color: {{$styles[0]->primary_color}};
-      border-color: {{$styles[0]->primary_color}};
-    }
+
     .site-footer .bottom .list-inline a:hover {
       color: {{$styles[0]->primary_color}};
     }
     .site-footer .credits a {
       color: {{$styles[0]->primary_color}};
+    }
+
+    #contact {
+      min-height: 85vh;
+      background-color: {{$contenidoabouts[0]->back_color}};
+
     }
 </style>
 @endsection

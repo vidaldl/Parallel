@@ -140,6 +140,29 @@
 .blog-home3 a.link:hover {
     color: {{$styles[0]->button_secondary}};
 }
+
+/*Background Colors*/
+#servicios, #servicios .feature-col .card {
+  background-color: {{$contenidosection2s[0]->back_color}};
+}
+
+
+
+#infoSlider {
+  background-color: {{$info_slider_texts[0]->back_color}};
+}
+
+.pricing {
+  background-color: {{$pricings[0]->back_color}};
+}
+
+#articulos, #articulos .card {
+  background-color: {{$contenidosection4s[0]->back_color}};
+}
+
+#contact {
+  background-color: {{$contenidosection5s[0]->back_color}};
+}
 </style>
 
 @endsection
@@ -445,8 +468,8 @@
 
 <!-- /PRICING -->
 
-
-<div class="blog-home3 py-5 mr-5 ml-5" style="border-top: 1px solid #E1E4EA">
+<!--Articulos-->
+<section id="articulos" class="blog-home3 py-5 " style="border-top: 1px solid #E1E4EA">
 
     <div class="container-fluid">
       <!-- Row  -->
@@ -510,7 +533,7 @@
         <!-- Column -->
       </div>
     </div>
-</div>
+</section>
 <!-- MODAL -->
 @foreach($posts as $post)
 <div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">
@@ -552,83 +575,8 @@
 @endforeach
 <!-- MODAL -->
 
-<!--OLD Articulos
-@foreach($contenidosection4s as $contenidosection4)
 
-
-  <section class="portfolio {{ $contenidosection4->display == '0' ? 'd-none' : '' }}" id="articulos">
-    <div class="container text-center">
-      <h2 id="articuloTitle">
-          {{$contenidosection4->title}}
-        </h2>
-
-      <p>
-        {{$contenidosection4->tagline}}
-      </p>
-    </div>
-
-
-    <div class="portfolio-grid" >
-      <div class="row">
-        @foreach($posts->sortByDesc('id') as $post)
-          <div class="col-lg-3 col-sm-4 col-xs-12">
-            <div class="card card-block card-image-div">
-              <a href="#" data-toggle="modal" data-target="#modal{{ $post->id }}"><img class="img-thumbnail" alt="" src="{{ '/storage/' . $post->image }}">
-                <div class="portfolio-over">
-                  <div>
-                    <h3 class="card-title">
-                      {{ $post->title }}
-                    </h3>
-                    <p class="card-text">
-                      {{ $post->description }}
-                    </p>
-                  </div>
-                </div></a>
-            </div>
-          </div>
-          @endforeach
-        <a href="/blog" class="btn mx-auto mt-4 mb-3">{{$contenidosection4->button}}&nbsp;<i class="fas fa-chevron-down"></i></a>
-      </div>
-  </section>
-@endforeach
-
-@foreach($posts as $post)
--MODAL BEGINNIG-
-  <div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color:#199EB8;">
-        <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-4 margen">
-              <img src="{{ '/storage/' . $post->image }}" style="height:280px" class="img-fluid rounded" alt="">
-            </div>
-            <div class="col-md-8">
-              <div class="post-information">
-                <h2>{{ $post->title }}</h2>
-                  <span><i class="fa fa-user"></i> <small>Grupo Hidalgo</small></span> &nbsp;
-                  <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
-                  <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
-              </div>
-              <p>{!! $post->contenido !!}</p>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer" style="background-color:#199EB8;">
-          <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')">Solicita más información &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  -END MODAL-
-@endforeach
-/Articulos -->
-
-
+<!--Articulos-->
 
 
 

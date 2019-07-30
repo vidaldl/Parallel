@@ -69,6 +69,7 @@ class HomeController extends Controller
       $item6 = $request->input('item6');
       $price = $request->input('price');
       $button = $request->input('button');
+      $back_color = $request->input('back_color');
 
 
       if ($request->hasFile('image')) {
@@ -95,7 +96,8 @@ class HomeController extends Controller
         'item5'=>$item5,
         'item6'=>$item6,
         'price'=>$price,
-        'button'=>$button);
+        'button'=>$button,
+        'back_color'=>$back_color);
         DB::table('pricings')->where('id', $id)->update($data);
 
         session()->flash('success', 'La imagen ha sido actualizada');
@@ -167,8 +169,9 @@ class HomeController extends Controller
       $title = $request->input('title');
       $contenido = $request->input('contenido');
       $button = $request->input('button');
+      $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button);
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "back_color"=>$back_color);
       DB::table('info_slider_texts')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -233,8 +236,9 @@ class HomeController extends Controller
       $vision = $request->input('vision');
       $valores = $request->input('valores');
       $map = $request->input('map');
+      $back_color = $request->input('back_color');
 
-      $data=array("mision"=>$mision, "vision"=>$vision, "valores"=>$valores, "map"=>$map,);
+      $data=array("mision"=>$mision, "vision"=>$vision, "valores"=>$valores, "map"=>$map, "back_color"=>$back_color);
       DB::table('contenido_abouts')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -371,8 +375,9 @@ class HomeController extends Controller
 
     public function section2Update(Request $request, $id) {
       $title = $request->input('title');
+      $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title);
+      $data=array("title"=>$title, "back_color"=>$back_color);
       DB::table('contenido_section2s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -423,8 +428,9 @@ class HomeController extends Controller
       $title = $request->input('title');
       $tagline = $request->input('tagline');
       $button = $request->input('button');
+      $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "tagline"=>$tagline, "button"=>$button);
+      $data=array("title"=>$title, "tagline"=>$tagline, "button"=>$button, "back_color"=>$back_color);
       DB::table('contenido_section4s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -451,8 +457,9 @@ class HomeController extends Controller
       $address = $request->input('address');
       $email = $request->input('email');
       $number = $request->input('number');
+      $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "address"=>$address, "email"=>$email, "number"=>$number);
+      $data=array("title"=>$title, "address"=>$address, "email"=>$email, "number"=>$number, "back_color"=>$back_color);
       DB::table('contenido_section5s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect

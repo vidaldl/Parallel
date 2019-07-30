@@ -2,9 +2,7 @@
 @extends('layouts.app')
 @section('css')
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
-<style>
-
-</style>
+<link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -58,7 +56,10 @@
                     </span>
                   @enderror
               </div>
-
+              <div class="form-group">
+                <label for="back_color">Color de Fondo</label><br>
+                <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $contenidoabouts[0]->back_color }}">
+              </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
@@ -71,6 +72,13 @@
 
 @endsection
 @section('script')
+<script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script>
+  $('#back_color').spectrum({
+    preferredFormat: "hex",
+   showInput: true,
+  });
+</script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
 <script>
 $(document).ready(function() {
@@ -90,10 +98,4 @@ $('.editors').summernote({
 
 });
 </script>
-@endsection
-@section('css')
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
-<style>
-
-</style>
 @endsection

@@ -53,6 +53,10 @@
                   @enderror
               </div>
               <div class="form-group">
+                <label for="back_color">Color de Fondo</label><br>
+                <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $contenidosection5s[0]->back_color }}">
+              </div>
+              <div class="form-group">
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
           </form>
@@ -62,4 +66,16 @@
     </div>
   </div>
 </div>
+@endsection
+@section('script')
+<script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script>
+  $('#back_color').spectrum({
+    preferredFormat: "hex",
+   showInput: true,
+  });
+</script>
+@endsection
+@section('css')
+<link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 @endsection

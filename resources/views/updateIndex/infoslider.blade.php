@@ -3,6 +3,7 @@
 <link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
+<link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 <style>
 .modal-dialog{
   position: relative;
@@ -66,6 +67,10 @@
                       <strong>{{ $message }}</strong>
                     </span>
                   @enderror
+              </div>
+              <div class="form-group">
+                <label for="back_color">Color de Fondo</label><br>
+                <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $contenidosection2s[0]->back_color }}">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
@@ -174,6 +179,13 @@
 </div>
 @endsection
 @section('script')
+<script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script>
+  $('#back_color').spectrum({
+    preferredFormat: "hex",
+   showInput: true,
+  });
+</script>
 <script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
 <script>
   ClassicEditor.create( document.querySelector( '#contenido' ), {

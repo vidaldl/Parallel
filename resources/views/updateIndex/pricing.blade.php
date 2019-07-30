@@ -10,18 +10,17 @@
   <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#pricing"  width="100%" height="450"></iframe></div>
     <div class="card mt-3 col-md-12 mb-5">
       <div class="card-body">
-
+        <form method="POST" action="{{route('pricing.update', $pricings[0]->id)}}" enctype="multipart/form-data">
+          @csrf
         <div class="row">
+          <div class="form-group col-md-12 ml-1">
+            <label for="back_color">Color de Fondo</label><br>
+            <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $pricings[0]->back_color }}">
+          </div>
           <!-- PRICING 1 -->
             <div class="col-md-4">
               <div class="container">
                 <h4>Comparación 1</h4>
-                <form method="POST" action="{{route('pricing.update', $pricings[0]->id)}}" enctype="multipart/form-data">
-                  @csrf
-
-                    <div class="form-group d-none d-sm-block d-md-block d-lg-none">
-                      <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/pricing.png')}}">
-                    </div>
                     <div class="form-group">
                       <label class="col-md-12 col-form-label">Imagen </label><br>
                       <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$pricings[0]->id}}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
@@ -129,10 +128,6 @@
                 <h4>Comparación 2</h4>
                 <form method="POST" action="{{route('pricing.update', $pricings[1]->id)}}" enctype="multipart/form-data">
                   @csrf
-
-                    <div class="form-group d-none d-sm-block d-md-block d-lg-none">
-                      <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/pricing.png')}}">
-                    </div>
                     <div class="form-group">
                       <label class="col-md-12 col-form-label">Imagen</label><br>
                       <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$pricings[1]->id}}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
@@ -240,10 +235,6 @@
                 <h4>Comparación 3</h4>
                 <form method="POST" action="{{route('pricing.update', $pricings[2]->id)}}" enctype="multipart/form-data">
                   @csrf
-
-                    <div class="form-group d-none d-sm-block d-md-block d-lg-none">
-                      <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/pricing.png')}}">
-                    </div>
                     <div class="form-group">
                       <label class="col-md-12 col-form-label">Imagen</label><br>
                       <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$pricings[2]->id}}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
@@ -418,6 +409,7 @@ display:none !important;
 outline:inherit !important;
 }
 </style>
+<link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 @endsection
 
 @section('script')
@@ -488,5 +480,12 @@ Dropzone.options.image{{$images->id}} = {
     }
   };
 @endforeach
+</script>
+<script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script>
+  $('#back_color').spectrum({
+    preferredFormat: "hex",
+   showInput: true,
+  });
 </script>
 @endsection

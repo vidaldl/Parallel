@@ -118,7 +118,11 @@
 
       <div class="col-md-12" id="h1color">
         <h1>
-            Grupo Hidalgo & Asociados, S.R.L.
+            @if($contenidosection1s[0]->carousel === 0)
+              {{$contenidosection1s[1]->title}}
+            @else
+              {{$contenidosection1s[0]->title}}
+            @endif
           </h1>
 
           <p class="tagline">
