@@ -549,7 +549,7 @@
         <div class="col-lg-6">
           <div class="card border-0 mb-4">
             <a href="#" data-toggle="modal" data-target="#modal{{ $posts[0]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[0]->image}}" alt="wrappixel kit"></a>
-            <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[0]->published_at}}</div>
+            <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[0]->published_at->format('d M Y')}}</div>
             <h5 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[0]->id }}" class="link text-decoration-none">{{$posts[0]->title}}</a></h5>
             <p class="m-t-20 lol">{{$posts[0]->tagline}}</p>
           </div>
@@ -561,7 +561,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[1]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[1]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[1]->published_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[1]->published_at->format('d M Y')}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[1]->id }}" class="link text-decoration-none">{{$posts[1]->title}}</a></h6>
               </div>
             </div>
@@ -569,7 +569,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[2]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[2]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[2]->published_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[2]->published_at->format('d M Y')}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[2]->id }}" class="link text-decoration-none">{{$posts[2]->title}}</a></h6>
               </div>
             </div>
@@ -577,7 +577,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[3]->id }}"><img class="card-img-top" src="{{'storage/' . $posts[3]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[3]->published_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[3]->published_at->format('d M Y')}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[3]->id }}" class="link text-decoration-none">{{$posts[3]->title}}</a></h6>
               </div>
             </div>
@@ -585,7 +585,7 @@
             <div class="col-md-6">
               <div class="card border-0 mb-4">
                 <a href="#" data-toggle="modal" data-target="#modal{{ $posts[4]->id }}" ><img class="card-img-top" src="{{'storage/' . $posts[4]->image}}" alt="wrappixel kit"></a>
-                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[4]->published_at}}</div>
+                <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{$users[0]->username}} &nbsp; &nbsp; {{$posts[4]->published_at->format('d M Y')}}</div>
                 <h6 class="font-weight-medium mt-3"><a href="#" data-toggle="modal" data-target="#modal{{ $posts[4]->id }}" class="link text-decoration-none">{{$posts[4]->title}}</a></h6>
               </div>
             </div>
@@ -613,7 +613,7 @@
                     <div class="post-information col-md-12" style="padding: 15px">
                       <h2>{{ $post->title }}</h2>
                         <span><i class="fa fa-user"></i> <small>{{$users[0]->username}}</small></span> &nbsp;
-                        <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
+                        <span><i class="fa fa-clock-o"></i> <small>{{$post->published_at->format('d M Y')}}</small></span> &nbsp;
                         <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
                     </div>
                     <div class="col-md-6 imgModal" >

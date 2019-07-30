@@ -14,6 +14,7 @@ class Post extends Model
       'title', 'description', 'contenido', 'image', 'published_at', 'category_id'
     ];
 
+    protected $dates = ['created_at', 'published_at'];
 
     public function deleteImage() {
 

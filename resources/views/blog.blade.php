@@ -231,7 +231,7 @@
                          <div class="post-information col-md-12" style="padding: 15px">
                            <h2>{{ $post->title }}</h2>
                              <span><i class="fa fa-user"></i> <small>{{$users[0]->username}}</small></span> &nbsp;
-                             <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
+                             <span><i class="fa fa-clock-o"></i> <small>{{$post->published_at->format('d M Y')}}</small></span> &nbsp;
                              <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
                          </div>
                          <div class="col-md-6 imgModal" >
