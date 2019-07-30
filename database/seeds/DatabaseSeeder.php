@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(StyleSeeder::class);
         // $this->call(Section1Seeder::class);
         // $this->call(InfoSlidersSeeder::class);
-        $this->call(PricingSeeder::class);
+        // $this->call(PricingSeeder::class);
+        $this->call(InfoSlidersSeeder2::class);
+        $this->call(InfoSlidersSeeder3::class);
     }
 }

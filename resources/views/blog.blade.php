@@ -126,7 +126,11 @@
           </h1>
 
           <p class="tagline">
-            LoremIpsumdolor sir amet ablen icons
+            @if($contenidosection1s[0]->carousel === 0)
+              {{$contenidosection1s[1]->tagline}}
+            @else
+              {{$contenidosection1s[0]->tagline}}
+            @endif
           </p>
 
       </div>
@@ -213,36 +217,45 @@
                  </div>
              </div>
              <!--MODAL1 BEGINNIG-->
-               <div class="modal fade" id="modal{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="modal{{$post->id}}" aria-hidden="true">
-                 <div class="modal-dialog modal-lg">
-                   <div class="modal-content">
-                     <div class="modal-header" style="background-color:#199EB8;">
-                     <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                     </button>
-                     </div>
-                     <div class="modal-body">
-                       <div class="row">
-                         <div class="col-md-4 margen">
-                           <img src="{{ '/storage/' . $post->image }}" style="height:100%" class="img-fluid rounded" alt="">
+             <div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">
+               <div class="modal-dialog modal-lg">
+                 <div class="modal-content  super-iframe-holder">
+                   <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                   </div>
+                   <div class="modal-body" >
+                     <div class="row" style="padding: 5px;">
+
+                         <div class="post-information col-md-12" style="padding: 15px">
+                           <h2>{{ $post->title }}</h2>
+                             <span><i class="fa fa-user"></i> <small>{{$users[0]->username}}</small></span> &nbsp;
+                             <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
+                             <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
                          </div>
-                         <div class="col-md-8">
-                           <div class="post-information">
-                             <h2>{{$post->title}}</h2>
-                               <span><i class="fa fa-user"></i> <small>Grupo Hidalgo</small></span> &nbsp;
-                               <span><i class="fa fa-clock-o"></i> <small>{{ $post->created_at }}</small></span> &nbsp;
-                               <span><i class="fa fa-tags"></i> <small>{{ $post->category->name }}</small></span> &nbsp;
-                           </div>
-                           <p>{!! $post->contenido !!}</p>
+                         <div class="col-md-6 imgModal" >
+                         <img src="{{ '/storage/' . $post->image }}" style="width:100%" class="img-fluid rounded" alt="">
+                       </div>
+                       <div class="col-md-6 mb-3 textModal">
+                         <div class="container">
+                           {!! $post->contenido !!}
                          </div>
                        </div>
                      </div>
-                     <div class="modal-footer" style="background-color:#199EB8;">
-                       <a href="#contact" onclick="$('#modal{{$post->id}}').modal('hide')">Solicita más información &rarr;</a>
-                     </div>
                    </div>
+                   <div class="modal-footer">
+
+                       <div class="row">
+                         <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm mr-3" style="border-radius: 0px; margin-bottom: 0px;">Más Información &rarr;</a>
+                       </div>
+
+                   </div>
+
                  </div>
                </div>
+             </div>
+
              <!--END MODAL1-->
            @endforeach
 

@@ -206,7 +206,7 @@
               <div class="overlay"></div>
               <div class="carousel-caption" style="top: 45%;transform: translateY(-40%); left:5%; right: 5%;">
                 <div class="row">
-                  <div class="col-md-6 " style="{{ $contenidosection1s[2]->carousel == 0 ? 'visibility: hidden;' : '' }}">
+                  <div class="col-md-6 d-none d-sm-none d-md-block" style="{{ $contenidosection1s[2]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                     <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img class="img-fluid" height="100%" width="850px" style="margin-right: 45px;overflow-y: hidden;" src="{{'/storage/' . $contenidosection1s[2]->logo}}"></a><!-- <img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;" src="{{asset('img/world.png')}}"> -->
                   </div>
 
@@ -239,7 +239,7 @@
                     <a class="btn btn-full mt-4 {{$contenidosection1s[3]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[3]->link ? $contenidosection1s[3]->link : '#servicios' }}">{{$contenidosection1s[3]->button}}</a>
                   </div>
 
-                  <div class="col-md-6 " style="{{ $contenidosection1s[3]->carousel == 0 ? 'visibility: hidden;' : '' }}">
+                  <div class="col-md-6 d-none d-sm-none d-md-block" style="{{ $contenidosection1s[3]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                     <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img class="img-fluid" height="100%" width="850px" style="overflow-y: hidden;"  src="{{'/storage/' . $contenidosection1s[3]->logo}}"></a><!-- <img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;" src="{{asset('img/world.png')}}"> -->
                   </div>
                 </div>
@@ -354,16 +354,16 @@
     <div class="row">
       <div class="col-md-6">
         <div class="row">
-          <div id="textHeight" class="col-md-12">
+          <div id="" class="col-md-12 textHeight">
             <h2>{!! $info_slider_texts[0]->title !!}</h2>
             {!! $info_slider_texts[0]->contenido !!}
           </div>
-          <div id="btnH"class="mb-5 mx-auto">
+          <div id=""class="mb-5 mx-auto btnH">
             <a class="btn" style="color:#ffff;">{{ $info_slider_texts[0]->button }}</a>
           </div>
         </div>
       </div>
-      <div class="col-md-6 " id="imageH" style="overflow: hidden;">
+      <div class="col-md-6 imageH" id="" style="overflow: hidden;">
         <div class="flexslider">
           <ul class="slides">
             @foreach($info_slider_images as $images)
@@ -379,7 +379,69 @@
 </div>
 <!--/Info Slider -->
 
+<!-- Info Slider2 -->
 
+<div id="infoSlider2" class="infoSlider {{$info_slider_text2s[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 1px solid #E1E4EA;">
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-md-6 imageH" id="" style="overflow: hidden;">
+        <div class="flexslider">
+          <ul class="slides">
+            @foreach($info_slider_image2s as $images)
+            <li>
+              <img src="{{ 'storage/' . $images->image }}" />
+            </li>
+            @endforeach
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div id="" class="col-md-12 textHeight">
+            <h2>{!! $info_slider_text2s[0]->title !!}</h2>
+            {!! $info_slider_text2s[0]->contenido !!}
+          </div>
+          <div id=""class="mb-5 mx-auto btnH">
+            <a class="btn" style="color:#ffff;">{{ $info_slider_text2s[0]->button }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Info Slider2 -->
+
+<!-- Info Slider2 -->
+
+<div id="infoSlider3" class="infoSlider {{$info_slider_text3s[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 1px solid #E1E4EA;">
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div id="" class="col-md-12 textHeight">
+            <h2>{!! $info_slider_text3s[0]->title !!}</h2>
+            {!! $info_slider_text3s[0]->contenido !!}
+          </div>
+          <div id=""class="mb-5 mx-auto btnH">
+            <a class="btn" style="color:#ffff;">{{ $info_slider_text3s[0]->button }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 imageH" id="" style="overflow: hidden;">
+        <div class="flexslider">
+          <ul class="slides">
+            @foreach($info_slider_image3s as $images)
+            <li>
+              <img src="{{ 'storage/' . $images->image }}" />
+            </li>
+            @endforeach
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Info Slider2 -->
 
 <!-- PRICING -->
 
@@ -532,48 +594,55 @@
         </div>
         <!-- Column -->
       </div>
+
+      <div class="row">
+        <a href="/blog" class="btn mx-auto" style="border-radius: 0%;">Más Artículos &nbsp;<i class="fas fa-angle-down"></i></a>
+        <!-- MODAL -->
+        @foreach($posts as $post)
+        <div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content  super-iframe-holder">
+              <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div class="modal-body" >
+                <div class="row">
+
+                    <div class="post-information col-md-12" style="padding: 15px">
+                      <h2>{{ $post->title }}</h2>
+                        <span><i class="fa fa-user"></i> <small>{{$users[0]->username}}</small></span> &nbsp;
+                        <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
+                        <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
+                    </div>
+                    <div class="col-md-6 imgModal" >
+                    <img src="{{ '/storage/' . $post->image }}" style="width:100%" class="img-fluid rounded" alt="">
+                  </div>
+                  <div class="col-md-6 mb-3 textModal">
+                    {!! $post->contenido !!}
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+
+                  <div class="row">
+                    <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm mr-3" style="border-radius: 0px; margin-bottom: 0px;">Más Información &rarr;</a>
+                  </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        @endforeach
+        <!-- MODAL -->
+
+      </div>
+
     </div>
 </section>
-<!-- MODAL -->
-@foreach($posts as $post)
-<div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content super-iframe-holder">
-      <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-
-            <div class="post-information col-md-12">
-              <h2>{{ $post->title }}</h2>
-                <span><i class="fa fa-user"></i> <small>{{$users[0]->username}}</small></span> &nbsp;
-                <span><i class="fa fa-clock-o"></i> <small>{{$post->created_at}}</small></span> &nbsp;
-                <span><i class="fa fa-tags"></i> <small>{{$post->category->name}}</small></span> &nbsp;
-            </div>
-            <div class="col-md-6 imgModal" >
-            <img src="{{ '/storage/' . $post->image }}" style="width:100%" class="img-fluid rounded" alt="">
-          </div>
-          <div class="col-md-6 mb-3 textModal" style="padding-right: 10px;">
-            {!! $post->contenido !!}
-
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div class="col-md-6 offset-md-6 mb-3">
-          <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm pull-right mb-3" style="border-radius: 0px;">Más Información &rarr;</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-@endforeach
-<!-- MODAL -->
 
 
 <!--Articulos-->
@@ -750,11 +819,10 @@
     });
 
     $(window).load(function() {
-      var height1 = $('#imageH').height();
-      var height2 = $('#btnH').height();
+      var height1 = $('.imageH').height();
+      var height2 = $('.btnH').height();
       var sum = height1 - height2 - height2;
-      $('#textHeight').css('min-height', sum + 'px');
-      console.log($(window).width());
+      $('.textHeight').css('min-height', sum + 'px');
       var windowWidth = $(window).width();
 
       if (windowWidth < 768) {

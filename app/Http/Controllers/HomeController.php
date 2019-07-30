@@ -16,6 +16,10 @@ use App\ContenidoAbout;
 use App\Style;
 use App\InfoSliderImage;
 use App\InfoSliderText;
+use App\InfoSliderImage2;
+use App\InfoSliderText2;
+use App\InfoSliderImage3;
+use App\InfoSliderText3;
 use App\Pricing;
 use Image;
 class HomeController extends Controller
@@ -48,7 +52,11 @@ class HomeController extends Controller
         ->with('styles', Style::all())
         ->with('pricings', Pricing::all())
         ->with('info_slider_images', InfoSliderImage::all())
-        ->with('info_slider_texts', InfoSliderText::all());
+        ->with('info_slider_texts', InfoSliderText::all())
+        ->with('info_slider_image2s', InfoSliderImage2::all())
+        ->with('info_slider_text2s', InfoSliderText2::all())
+        ->with('info_slider_image3s', InfoSliderImage3::all())
+        ->with('info_slider_text3s', InfoSliderText3::all());
     }
 
     /*Pricing -------------------------------------------------------------------------------->*/
@@ -156,8 +164,6 @@ class HomeController extends Controller
     }
 
 
-
-
     /*Info Slider Text -------------------------------------------------------------------------------->*/
     public function infoSliderEdit ($id) {
       return view('updateIndex/infoslider')
@@ -187,6 +193,144 @@ class HomeController extends Controller
       return redirect()->back();
     }
 
+    /*Info Slider Image 2-------------------------------------------------------------------------------->*/
+    public function storeSliderImage2 (SliderImageRequest $request) {
+       $slide = $request->slide->store('slides');
+       $post = InfoSliderImage2::create([
+         'image' => $slide
+       ]);
+       // flash message
+       session()->flash('success', 'La imagen fué subida');
+       //redirect user
+       return redirect()->back();
+    }
+
+    public function updateSliderImage2 (Request $request, $id) {
+      $this->validate($request, [
+          'slide' => 'image|required|mimes:png,jpg,jpeg,svg'
+       ]);
+      $slideOld = DB::table('info_slider_image2s')->where('id', $id)->first();
+      //upload it
+      $slide = $request->file('slide')->store('slides');
+      Storage::delete($slideOld->image);
+      // $finalDataName = 'content/'.$logo;
+      $data=array('image'=>$slide);
+      DB::table('info_slider_image2s')->where('id', $id)->update($data);
+
+      session()->flash('success', 'La imagen ha sido actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function deleteSliderImage2 (InfoSliderImage $slide, $id) {
+      Storage::delete($slide->image);
+      $image = InfoSliderImage2::where('id', $id)->first();
+      Storage::delete($image->image);
+      $image->delete();
+      session()->flash('error', 'Se ha borrado la imagen');
+      //redirect
+      return redirect()->back();
+    }
+
+
+    /*Info Slider Text 2 -------------------------------------------------------------------------------->*/
+    public function infoSlider2Edit ($id) {
+      return view('updateIndex/infoslider2')
+      ->with('info_slider_image2s', InfoSliderImage2::all())
+      ->with('info_slider_text2s', InfoSliderText2::all());
+    }
+
+    public function infoSlider2Update(Request $request, $id) {
+      $title = $request->input('title');
+      $contenido = $request->input('contenido');
+      $button = $request->input('button');
+      $back_color = $request->input('back_color');
+
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "back_color"=>$back_color);
+      DB::table('info_slider_text2s')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function infoSlider2Display(Request $request, $id) {
+      $display = $request->input('infoSlider');
+      $data=array("display"=>$display);
+      DB::table('info_slider_text2s')->where('id', $id)->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+
+    /*Info Slider Image 3-------------------------------------------------------------------------------->*/
+    public function storeSliderImage3 (SliderImageRequest $request) {
+       $slide = $request->slide->store('slides');
+       $post = InfoSliderImage3::create([
+         'image' => $slide
+       ]);
+       // flash message
+       session()->flash('success', 'La imagen fué subida');
+       //redirect user
+       return redirect()->back();
+    }
+
+    public function updateSliderImage3 (Request $request, $id) {
+      $this->validate($request, [
+          'slide' => 'image|required|mimes:png,jpg,jpeg,svg'
+       ]);
+      $slideOld = DB::table('info_slider_image3s')->where('id', $id)->first();
+      //upload it
+      $slide = $request->file('slide')->store('slides');
+      Storage::delete($slideOld->image);
+      // $finalDataName = 'content/'.$logo;
+      $data=array('image'=>$slide);
+      DB::table('info_slider_image3s')->where('id', $id)->update($data);
+
+      session()->flash('success', 'La imagen ha sido actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function deleteSliderImage3 (InfoSliderImage $slide, $id) {
+      Storage::delete($slide->image);
+      $image = InfoSliderImage3::where('id', $id)->first();
+      Storage::delete($image->image);
+      $image->delete();
+      session()->flash('error', 'Se ha borrado la imagen');
+      //redirect
+      return redirect()->back();
+    }
+
+
+    /*Info Slider Text 3 -------------------------------------------------------------------------------->*/
+    public function infoSlider3Edit ($id) {
+      return view('updateIndex/infoslider3')
+      ->with('info_slider_image3s', InfoSliderImage3::all())
+      ->with('info_slider_text3s', InfoSliderText3::all());
+    }
+
+    public function infoSlider3Update(Request $request, $id) {
+      $title = $request->input('title');
+      $contenido = $request->input('contenido');
+      $button = $request->input('button');
+      $back_color = $request->input('back_color');
+
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "back_color"=>$back_color);
+      DB::table('info_slider_text3s')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function infoSlider3Display(Request $request, $id) {
+      $display = $request->input('infoSlider');
+      $data=array("display"=>$display);
+      DB::table('info_slider_text3s')->where('id', $id)->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
 
     /*Styles Update -------------------------------------------------------------------------------->*/
     public function styleUpdate (Request $request, $id) {

@@ -259,7 +259,65 @@
           </div>
         </div>
       </div>
-    <!-- Info Slider -->
+    <!-- /Info Slider -->
+
+    <!-- Info Slider 2 -->
+      <div class="col-md-4 mb-4 {{ $info_slider_text2s[0]->display == '0' ? 'd-none' : ''}}">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+        <form method="POST" action="{{route('infoSlider2.display', $info_slider_text2s[0]->id)}}">
+          @csrf
+          <div class="row">
+            <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Slider de Informacion 2</h6></span>
+              <select onchange="this.form.submit()" name="infoSlider" class="col-md-6  float-right">
+                <option value="1" {{ $info_slider_text2s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
+                <option value="0" {{ $info_slider_text2s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
+              </select>
+          </div>
+        </form>
+          </div>
+          <a href="editInfoSlider2/{{$info_slider_text2s[0]->id}}">
+            <div class="card-body">
+              <div class="text-center">
+                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/infoSlider.png')}}" alt="">
+              </div>
+            </div>
+          </a>
+          <div class="card-footer">
+            <a href="editInfoSlider2/{{$info_slider_text2s[0]->id}}">Editar contenido &rarr;</a>
+          </div>
+        </div>
+      </div>
+    <!-- /Info Slider 2 -->
+
+    <!-- Info Slider 3 -->
+      <div class="col-md-4 mb-4 {{ $info_slider_text3s[0]->display == '0' ? 'd-none' : ''}}">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+        <form method="POST" action="{{route('infoSlider3.display', $info_slider_text3s[0]->id)}}">
+          @csrf
+          <div class="row">
+            <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Slider de Informacion 3</h6></span>
+              <select onchange="this.form.submit()" name="infoSlider" class="col-md-6  float-right">
+                <option value="1" {{ $info_slider_text3s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
+                <option value="0" {{ $info_slider_text3s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
+              </select>
+          </div>
+        </form>
+          </div>
+          <a href="editInfoSlider3/{{$info_slider_text3s[0]->id}}">
+            <div class="card-body">
+              <div class="text-center">
+                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/infoSlider.png')}}" alt="">
+              </div>
+            </div>
+          </a>
+          <div class="card-footer">
+            <a href="editInfoSlider3/{{$info_slider_text3s[0]->id}}">Editar contenido &rarr;</a>
+          </div>
+        </div>
+      </div>
+    <!-- /Info Slider 3 -->
 
     <!-- Pricing -->
       <div class="col-md-4 mb-4 {{ $pricings[0]->display == '0' ? 'd-none' : ''}}">
@@ -412,6 +470,8 @@
     @if($contenidosection1s[0]->display == '1'
     && $contenidosection2s[0]->display == '1'
     && $info_slider_texts[0]->display == '1'
+    && $info_slider_text2s[0]->display == '1'
+    && $info_slider_text3s[0]->display == '1'
     && $pricings[0]->display == '1'
     && $contenidosection3s[0]->display == '1'
     && $contenidosection4s[0]->display == '1'
@@ -505,7 +565,65 @@
         </div>
       </div>
     </div>
-  <!-- /Slider Info 2 -->
+  <!-- /Slider Info 1 -->
+
+  <!-- Info Slider 2 -->
+    <div class="col-md-4 mb-4 {{ $info_slider_text2s[0]->display == '1' ? 'd-none' : ''}}">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+      <form method="POST" action="{{route('infoSlider2.display', $info_slider_text2s[0]->id)}}">
+        @csrf
+        <div class="row">
+          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Slider de Informacion 2</h6></span>
+            <select onchange="this.form.submit()" name="infoSlider" class="col-md-6  float-right">
+              <option value="1" {{ $info_slider_text2s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
+              <option value="0" {{ $info_slider_text2s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
+            </select>
+        </div>
+      </form>
+        </div>
+        <a href="editInfoSlider2/{{$info_slider_text2s[0]->id}}">
+          <div class="card-body">
+            <div class="text-center">
+              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/infoSlider.png')}}" alt="">
+            </div>
+          </div>
+        </a>
+        <div class="card-footer">
+          <a href="editInfoSlider2/{{$info_slider_text2s[0]->id}}">Editar contenido &rarr;</a>
+        </div>
+      </div>
+    </div>
+  <!-- /Info Slider 2 -->
+
+  <!-- Info Slider 3 -->
+    <div class="col-md-4 mb-4 {{ $info_slider_text3s[0]->display == '1' ? 'd-none' : ''}}">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+      <form method="POST" action="{{route('infoSlider3.display', $info_slider_text3s[0]->id)}}">
+        @csrf
+        <div class="row">
+          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Slider de Informacion 3</h6></span>
+            <select onchange="this.form.submit()" name="infoSlider" class="col-md-6  float-right">
+              <option value="1" {{ $info_slider_text3s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
+              <option value="0" {{ $info_slider_text3s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
+            </select>
+        </div>
+      </form>
+        </div>
+        <a href="editInfoSlider3/{{$info_slider_text3s[0]->id}}">
+          <div class="card-body">
+            <div class="text-center">
+              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/infoSlider.png')}}" alt="">
+            </div>
+          </div>
+        </a>
+        <div class="card-footer">
+          <a href="editInfoSlider3/{{$info_slider_text3s[0]->id}}">Editar contenido &rarr;</a>
+        </div>
+      </div>
+    </div>
+  <!-- /Info Slider 3 -->
 
   <!-- Pricing -->
     <div class="col-md-4 mb-4 {{ $pricings[0]->display == '1' ? 'd-none' : ''}}">

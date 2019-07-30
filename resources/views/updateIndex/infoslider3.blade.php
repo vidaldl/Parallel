@@ -25,7 +25,7 @@
     <div class="card mt-3 col-md-8 mb-5">
         <div class="card-body">
 
-          <form method="POST" action="{{route('infoSlider.update', $info_slider_texts[0]->id)}}" enctype="multipart/form-data">
+          <form method="POST" action="{{route('infoSlider3.update', $info_slider_text3s[0]->id)}}" enctype="multipart/form-data">
             @csrf
 
               <div class="form-group d-none d-sm-block d-md-block d-lg-none">
@@ -33,7 +33,7 @@
               </div>
               <div class="form-group">
                 <label for="title" class="col-form-label">Titulo</label>
-                <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $info_slider_texts[0]->title }}">
+                <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $info_slider_text3s[0]->title }}">
                   @error('title')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
               </div>
               <div class="form-group">
                 <label for="contenido" class="col-form-label">Contenido</label>
-                <textarea id="contenido" name="contenido" class="form-control @error('contenido') is-invalid @enderror"  >{{ $info_slider_texts[0]->contenido }}</textarea>
+                <textarea id="contenido" name="contenido" class="form-control @error('contenido') is-invalid @enderror"  >{{ $info_slider_text3s[0]->contenido }}</textarea>
 
                   @error('contenido')
                     <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
               </div>
               <div class="form-group">
                 <label for="button" class="col-form-label">Botón</label>
-                <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $info_slider_texts[0]->button }}">
+                <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $info_slider_text3s[0]->button }}">
                   @error('button')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
               </div>
               <div class="form-group">
                 <label for="back_color">Color de Fondo</label><br>
-                <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $info_slider_texts[0]->back_color }}">
+                <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $info_slider_text3s[0]->back_color }}">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
@@ -98,25 +98,24 @@
                       </thead>
                       <tbody>
 
-                      @foreach($info_slider_images as $images)
+                      @foreach($info_slider_image3s as $images)
 
                         <tr>
                           <td>
                             <div class="form-group">
-                              <form method="POST" id="slide{{ $images->id}}" class="dropzone" action="{{route('update.sliderImage', $images->id)}}" enctype="multipart/form-data">
+                              <form method="POST" id="slide{{ $images->id}}" class="dropzone" action="{{route('update.sliderImage3', $images->id)}}" enctype="multipart/form-data">
                               @csrf
                               </form>
                             </div>
                           </td>
                         <td class="editorTD{{ $images->id }}">
-
                           <img style="height:200px; " class="img-thumbnail{{ $images->id }}" src="{{'/storage/' . $images->image}}">
                           <div class="editor{{ $images->id }} d-none" style="height:450px; background-color: #000;">
                           </div>
                           <button class="buttonConfirm{{ $images->id }} btn btn-primary float-right mt-2 d-none">Confirmar</button>
                         </td>
                         <td class="delTD{{ $images->id }}">
-                          <form  method="POST" action="{{route('delete.sliderImage', $images->id)}}">
+                          <form  method="POST" action="{{route('delete.sliderImage3', $images->id)}}">
                             @csrf
                             @method('DELETE')
                             <input type="submit" class="btn btn-danger" value="X">
@@ -127,12 +126,12 @@
                       @endforeach
 
 
-                      @if($info_slider_images->count() < 7)
+                      @if($info_slider_image3s->count() < 7)
 
                       <tr class="imageInput">
                         <td>
                           <div class="form-group">
-                            <form method="POST" id="slide" class="dropzone" action="{{route('store.sliderImage')}}" enctype="multipart/form-data">
+                            <form method="POST" id="slide" class="dropzone" action="{{route('store.sliderImage3')}}" enctype="multipart/form-data">
                               @csrf
                             </form>
                             @error('slide')
@@ -191,13 +190,10 @@
   ClassicEditor.create( document.querySelector( '#contenido' ), {
         removePlugins: ['Autoformat', 'Heading', 'Link' ],
         toolbar: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList']
-      }).then( editor => {
-          console.log( Array.from( editor.ui.componentFactory.names() ) );
-      } )
-      .catch( error => {
+      }).catch( error => {
           console.error( error );
       } );
-  console.log(ClassicEditor.builtinPlugins.map( plugin => plugin.pluginName ));
+
 </script>
 <script>
   $(document).ready(function() {
@@ -273,7 +269,7 @@
   };
 
 
-  @foreach($info_slider_images as $images)
+  @foreach($info_slider_image3s as $images)
   Dropzone.options.slide{{$images->id}} = {
      paramName: "slide",
      transformFile: function(file, done) {
