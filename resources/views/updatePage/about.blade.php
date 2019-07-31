@@ -21,6 +21,24 @@
                 <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/sectionAbout.png')}}">
               </div>
               <div class="form-group">
+                <label for="hours">Horarios</label>
+                <input id="hours" name="hours" class="form-control @error('hours') is-invalid @enderror" value="{{$contenidoabouts[0]->hours}}">
+                @error('hours')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group">
+                <label for="web_address">Dirección Web</label>
+                <input id="web_address" name="web_address" class="form-control @error('web_address') is-invalid @enderror" value="{{$contenidoabouts[0]->web_address}}">
+                @error('web_address')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group">
                 <label for="mision" class="col-form-label">Misión</label>
                 <textarea id="mision" name="mision" class="editors form-control @error('mision') is-invalid @enderror"  >{{ $contenidoabouts[0]->mision }}</textarea>
                   @error('mision')

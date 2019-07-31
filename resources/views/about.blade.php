@@ -158,7 +158,7 @@
                 <i style="font-size: 28px" class="fa fa-mobile"></i>
                 <p>
                   {{$contenidosection5->number}}<br>
-                  <span>Lunes-Viernes (9am-5pm)</span>
+                  <span>{{$contenidoabouts[0]->hours}}</span>
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@
                 <i style="font-size: 28px" class="fa fa-envelope"></i>
                 <p>
                   Email: {{$contenidosection5->email}}<br>
-                  <span>Web: www.ghidalgo.com</span>
+                  <span>{{$contenidoabouts[0]->web_address}}</span>
                 </p>
               </div>
             </div>

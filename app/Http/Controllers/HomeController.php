@@ -381,8 +381,10 @@ class HomeController extends Controller
       $valores = $request->input('valores');
       $map = $request->input('map');
       $back_color = $request->input('back_color');
+      $hours = $request->input('hours');
+      $web_address = $request->input('web_address');
 
-      $data=array("mision"=>$mision, "vision"=>$vision, "valores"=>$valores, "map"=>$map, "back_color"=>$back_color);
+      $data=array("mision"=>$mision, "vision"=>$vision, "valores"=>$valores, "map"=>$map, "back_color"=>$back_color, "hours"=>$hours, "web_address"=>$web_address);
       DB::table('contenido_abouts')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
