@@ -55,6 +55,7 @@ class IndexController extends Controller
       ->with('contenidosection1s', ContenidoSection1::all())
       ->with('categories', Category::all())->with('tags', Tag::all())
       ->with('posts', Post::paginate(16))
+      ->with('contenidosection4s', ContenidoSection4::all())
       ->with('contenidosection5s', ContenidoSection5::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
       ->with('styles', Style::all())

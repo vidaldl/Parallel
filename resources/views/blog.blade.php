@@ -2,7 +2,6 @@
 @section('style')
 <style>
     .portfolio h2 {
-    color: #3742fa;
     margin-bottom: 25px;
     }
 
@@ -118,7 +117,7 @@
 
       <div class="col-md-12" id="h1color">
         <h1>
-            @if($contenidosection1s[0]->carousel === 0)
+            @if($contenidosection1s[0]->carousel == 1)
               {{$contenidosection1s[1]->title}}
             @else
               {{$contenidosection1s[0]->title}}
@@ -126,7 +125,7 @@
           </h1>
 
           <p class="tagline">
-            @if($contenidosection1s[0]->carousel === 0)
+            @if($contenidosection1s[0]->carousel == 1)
               {{$contenidosection1s[1]->tagline}}
             @else
               {{$contenidosection1s[0]->tagline}}
@@ -176,7 +175,7 @@
     <!-- Isotope Menu -->
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <h1 class="text-center mb-5">
-          Artículos
+          {{$contenidosection4s[0]->title}}
         </h1>
       <div class="awesome-menu ">
         <ul class="project-menu">
