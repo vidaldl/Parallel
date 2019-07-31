@@ -10,15 +10,25 @@
   <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#pricing"  width="100%" height="450"></iframe></div>
     <div class="card mt-3 col-md-12 mb-5">
       <div class="card-body">
-        <form method="POST" action="{{route('pricing.update', $pricings[0]->id)}}" enctype="multipart/form-data">
-          @csrf
         <div class="row">
           <div class="form-group col-md-12 ml-1">
             <label for="back_color">Color de Fondo</label><br>
             <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $pricings[0]->back_color }}">
           </div>
+
+
+          <div class="tabs">
+
+              <ul class="tabs-navigation horizontal">
+                <li class="li"><a class="a" href="#price1">Comparación 1</a></li>
+                <li class="li"><a class="a" href="#price2">Comparación 2</a></li>
+                <li class="li"><a class="a" href="#price3">Comparación 3</a></li>
+              </ul>
+        <div id="price1" class="tabdiv">
           <!-- PRICING 1 -->
-            <div class="col-md-4">
+          <form method="POST" action="{{route('pricing.update', $pricings[0]->id)}}" enctype="multipart/form-data">
+            @csrf
+            <div class="col-md-12">
               <div class="container">
                 <h4>Comparación 1</h4>
                     <div class="form-group">
@@ -121,9 +131,11 @@
               </div>
             </div>
           <!-- /Pricing 1 -->
+        </div>
 
+        <div id="price2" class="tabdiv">
           <!-- PRICING 2 -->
-            <div class="col-md-4">
+            <div class="col-md-12">
               <div class="container">
                 <h4>Comparación 2</h4>
                 <form method="POST" action="{{route('pricing.update', $pricings[1]->id)}}" enctype="multipart/form-data">
@@ -228,9 +240,11 @@
               </div>
             </div>
           <!-- /Pricing 2 -->
+        </div>
 
+        <div id="price3" class="tabdiv">
           <!-- PRICING 3 -->
-            <div class="col-md-4">
+            <div class="col-md-12">
               <div class="container">
                 <h4>Comparación 3</h4>
                 <form method="POST" action="{{route('pricing.update', $pricings[2]->id)}}" enctype="multipart/form-data">
@@ -336,11 +350,13 @@
             </div>
           <!-- /Pricing 3 -->
         </div>
+      </div>
+        </div>
 
       </div>
     </div>
   </div>
-</div>
+
 
 @foreach($pricings as $pricing)
 <!--modal image1-->
@@ -388,6 +404,64 @@
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <style>
+.tabdiv {
+	/*border-top: 1px solid #c7c7c7*/
+  min-height: 450px;
+	background: white !important;
+  padding: 10px 0;
+	/*border-bottom: 4px solid #E95855 !important;*/
+}
+
+.spans {
+	border-bottom: 4px solid #E5E5E5 !important;
+	color: #ccc !important;
+	font-weight: 300;
+	line-height: 186px !important;
+	display: block;
+	text-align: center;
+	font-size: 24px;
+}
+
+.tabs UL.horizontal {
+	list-style: none outside none;
+	margin: 0;
+}
+
+.li {
+	background: white;
+	border-bottom: 4px solid #E5E5E5;
+	margin: 0 10px 0 0;
+	display: inline-block;
+}
+
+.a {
+	color: #ccc;
+	display: block;
+	font-size: 18px;
+	font-weight: 300;
+	padding: 14px 24px;
+	text-decoration: none;
+}
+
+.li:hover {
+	background: #466699;
+	border-bottom: 4px solid #2165D1;
+}
+
+.tabs .li:hover A {
+	color: white;
+  text-decoration: none;
+}
+.actives {
+	background: #466699 !important;
+	border-bottom: 4px solid #2165D1 !important;
+}
+
+.actives A {
+	color: white !important;
+}
+
+
 .cropper-crop-box, .cropper-view-box {
   border-radius: 50%;
 }
@@ -413,6 +487,10 @@ outline:inherit !important;
 @endsection
 
 @section('script')
+<script src="{{ asset('lib/tabslet/jquery.tabslet.js') }}"></script>
+<script>
+  $('.tabs').tabslet();
+</script>
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <script>

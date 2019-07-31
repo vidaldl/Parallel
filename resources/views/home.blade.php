@@ -156,9 +156,7 @@
 <!-- /ICONOS2 -->
 
   </div>
-<div class="form-row">
 
-</div>
 </form>
 </div>
 
@@ -169,8 +167,6 @@
       <li class="li"><a class="a" href="#inactivo">Inactivas</a></li>
       <li class="li"><a class="a" href="#paginas">Páginas</a></li>
     </ul>
-
-
 
 
   <div id="activo" class="row tabdiv">

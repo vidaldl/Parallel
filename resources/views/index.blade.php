@@ -494,12 +494,12 @@
             <img src="{{ 'storage/' . $pricings[2]->image }}" style="border-radius: 100%;" alt="" class="pricing-img">
             <h2 class="pricing-header">{{ $pricings[2]->title }}</h2>
             <ul class="pricing-features">
-              <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[2]->item1 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item2 ? '' : 'd-none'}}">{{ $pricings[2]->item2 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item3 ? '' : 'd-none'}}">{{ $pricings[2]->item3 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item4 ? '' : 'd-none'}}">{{ $pricings[2]->item4 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item5 ? '' : 'd-none'}}">{{ $pricings[2]->item5 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item6 ? '' : 'd-none'}}">{{ $pricings[2]->item6 }}</li>
+              <li class="pricing-features-item {{$pricings[2]->item1 ? '' : 'd-none'}}">{{ $pricings[2]->item1 }}</li>
+              <li class="pricing-features-item {{$pricings[2]->item2 ? '' : 'd-none'}}">{{ $pricings[2]->item2 }}</li>
+              <li class="pricing-features-item {{$pricings[2]->item3 ? '' : 'd-none'}}">{{ $pricings[2]->item3 }}</li>
+              <li class="pricing-features-item {{$pricings[2]->item4 ? '' : 'd-none'}}">{{ $pricings[2]->item4 }}</li>
+              <li class="pricing-features-item {{$pricings[2]->item5 ? '' : 'd-none'}}">{{ $pricings[2]->item5 }}</li>
+              <li class="pricing-features-item {{$pricings[2]->item6 ? '' : 'd-none'}}">{{ $pricings[2]->item6 }}</li>
             </ul>
           </div>
           <div class="d-block d-sm-none">
