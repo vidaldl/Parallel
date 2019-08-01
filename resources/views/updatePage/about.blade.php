@@ -1,7 +1,6 @@
 
 @extends('layouts.app')
 @section('css')
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 @endsection
 @section('content')
@@ -97,23 +96,15 @@
    showInput: true,
   });
 </script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
 <script>
-$(document).ready(function() {
-$('.editors').summernote({
-  toolbar: [
-    // [groupName, [list of button]]
-    //['style', ['style']],
-     ['font', ['bold', 'underline']],
-     //['fontname', ['fontname']],
-     ['color', ['color']],
-     //['para', ['ul', 'ol', 'paragraph']],
-     //['table', ['table']],
-     ['insert', ['link', 'picture', 'video']],
-     //['view', ['fullscreen', 'codeview', 'help']]
-  ]
-});
-
-});
+var allEditors = document.querySelectorAll('.editors');
+for (var i = 0; i < allEditors.length; ++i) {
+  ClassicEditor.create( allEditors[i], {
+        removePlugins: ['Autoformat', 'Heading', 'Link' ],
+        toolbar: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList']
+      });
+}
 </script>
+
 @endsection
