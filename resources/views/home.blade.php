@@ -119,7 +119,7 @@
     </div>
     <div class="form-group">
       <label for="custom_link_address_1">Especifique Enlace</label><br>
-      <input  class="form-control col-md-6"  name="custom_link_address_1" type="text" id="custom_link_address_1" placeholder="Http://" value="{{ $styles[0]->custom_link_address_1 }}">
+      <input list="sections" class="form-control col-md-6"  name="custom_link_address_1" type="text" id="custom_link_address_1" placeholder="Http://" value="{{ $styles[0]->custom_link_address_1 }}">
       <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
     </div>
   </div>
@@ -151,12 +151,22 @@
     </div>
     <div class="form-group">
       <label for="custom_link_address_1">Especifique Enlace</label><br>
-      <input class="form-control col-md-6"  name="custom_link_address_2" type="text" id="custom_link_address_2" placeholder="Http://" value="{{ $styles[0]->custom_link_address_2 }}">
+      <input list="sections" class="form-control col-md-6"  name="custom_link_address_2" type="text" id="custom_link_address_2" placeholder="Http://" value="{{ $styles[0]->custom_link_address_2 }}">
       <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
     </div>
 
     </div>
   <!-- /ICONOS2 -->
+  <!-- ICONOS LINK SECTION LIST -->
+  <datalist id="sections">
+    <option value="#inicio">Inicio</option>
+    <option value="#servicios">Servicios</option>
+    <option value="#infoSlider">Slider de Info.</option>
+    <option value="#articulos">Artículos</option>
+    <option value="#contact">Contacto</option>
+  </datalist>
+  <!-- /ICONOS LINK SECTION LIST -->
+  
   <button type="submit" class="btn btn-success mx-auto mt-5 mb-3">Actualizar</button>
   </div>
   </div>
@@ -183,7 +193,7 @@
         <form method="POST" action="{{route('section1.display', $contenidosection1s[0]->id)}}">
           @csrf
           <div class="row">
-            <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 1</h6></span>
+            <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Inicio</h6></span>
               <select onchange="this.form.submit()" name="section1" class="col-md-6  float-right">
                 <option value="1" {{ $contenidosection1s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
                 <option value="0" {{ $contenidosection1s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
@@ -489,7 +499,7 @@
       <form method="POST" action="{{route('section1.display', $contenidosection1s[0]->id)}}">
         @csrf
         <div class="row">
-          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección 1</h6></span>
+          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Inicio</h6></span>
             <select onchange="this.form.submit()" name="section1" class="col-md-6  float-right">
               <option value="1" {{ $contenidosection1s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
               <option value="0" {{ $contenidosection1s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
