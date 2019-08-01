@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->integer('category_id');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

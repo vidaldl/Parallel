@@ -19,6 +19,7 @@ class CreateContenidoSectionFootersTable extends Migration
             $table->string('facebook_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('twitter_link')->nullable();
+            $table->integer('display')->default('1')->nullable();
             $table->timestamps();
         });
     }

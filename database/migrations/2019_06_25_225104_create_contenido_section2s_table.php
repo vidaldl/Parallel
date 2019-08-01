@@ -16,6 +16,8 @@ class CreateContenidoSection2sTable extends Migration
         Schema::create('contenido_section2s', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
+            $table->integer('display')->default('1')->nullable();
+            $table->string('back_color')->nullable()->default('#FFFFFF');
             $table->timestamps();
         });
     }

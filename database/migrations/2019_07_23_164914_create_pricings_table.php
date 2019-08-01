@@ -25,6 +25,8 @@ class CreatePricingsTable extends Migration
             $table->string('item6')->nullable();
             $table->string('price')->nullable();
             $table->string('button')->nullable();
+            $table->integer('display')->default(1);
+            $table->string('back_color')->nullable()->default('#FFFFFF');
             $table->timestamps();
         });
     }

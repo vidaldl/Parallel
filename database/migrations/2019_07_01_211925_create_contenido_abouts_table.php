@@ -15,10 +15,13 @@ class CreateContenidoAboutsTable extends Migration
     {
         Schema::create('contenido_abouts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('hours');
+            $table->string('web_address');
             $table->text('mision')->nullable();
             $table->text('vision')->nullable();
             $table->text('valores')->nullable();
             $table->text('map')->nullable();
+            $table->string('back_color')->nullable()->default('#F7F7F7');
             $table->timestamps();
         });
     }

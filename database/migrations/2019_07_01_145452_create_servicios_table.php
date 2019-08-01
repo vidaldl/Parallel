@@ -19,6 +19,7 @@ class CreateServiciosTable extends Migration
             $table->string('title')->nullable();
             $table->string('contenido')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
