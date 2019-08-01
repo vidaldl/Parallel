@@ -74,86 +74,92 @@
       <input onchange="this.form.submit()" class="form-control col-md-6"  name="page_title" type="text" id="page_title" value="{{ $styles[0]->page_title }}">
     </div>
     <div class="form-group col-md-4">
-      <label for="primary_color">Color Principal</label>
+      <label for="primary_color">Color Principal</label><br>
       <input onchange="this.form.submit()" class="form-control" name="primary_color" type="text" id="primary_color" value="{{ $styles[0]->primary_color }}">
     </div>
     <div class="form-group col-md-4">
-      <label for="button_primary">Botón Desactivado</label>
+      <label for="button_primary">Botón Desactivado</label><br>
       <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $styles[0]->button_primary }}">
     </div>
     <div class="form-group col-md-4">
-      <label for="button_secondary">Botón Activado</label>
+      <label for="button_secondary">Botón Activado</label><br>
       <input onchange="this.form.submit()" class="form-control" name="button_secondary" type="text" id="button_secondary" value="{{ $styles[0]->button_secondary }}">
     </div>
   </div>
 
-  <!-- ICONOS1 -->
-  <div class="col-md-4">
-    <h3>Personalizar Links Barra de Navegación</h3>
-    <div class="form-group">
-      <label for="button_secondary">Seleccine Ícono</label> <select name="show_link_1" onchange="this.form.submit()" class="float-right mr-5">
-        <option value="1" {{ $styles[0]->show_link_1 == '1' ? 'selected' : '' }}>Mostrar</option>
-        <option value="0" {{ $styles[0]->show_link_1 == '0' ? 'selected' : '' }}>Esconder</option>
-      </select>
-      <div class="input-group">
-        <input id="custom_icon_1" type="hidden" data-placement="bottomRight" class="form-control @error('custom_icon_1') is-invalid @enderror"  name="custom_icon_1" value="{{ $styles[0]->custom_icon_1 }}">
-        <div class="btn-group">
-           <button type="button" class="btn btn-primary iconpicker-component"><i
-                   class="{{  $styles[0]->custom_icon_1 }}"></i></button>
-           <button type="button" class="icp1 icp-dd1 btn btn-primary dropdown-toggle"
-                   data-selected="fa-car" data-toggle="dropdown">
-               <span class="caret"></span>
-           </button>
-           <div class="dropdown-menu"></div>
-       </div>
-      </div>
-    </div>
-  <div class="form-group">
-    <label for="custom_link_text_1">Texto del Enlace</label><br>
-    <input  class="form-control col-md-6"  name="custom_link_text_1" type="text" id="custom_link_text_1" value="{{ $styles[0]->custom_link_text_1 }}">
+  <div class="col-md-8">
+  <div class="row">
+    <h3 class="mx-auto" style="text-align: center; text-decoration: underline;">Personalizar Links Barra de Navegación</h3>
   </div>
-  <div class="form-group">
-    <label for="custom_link_address_1">Especifique Enlace</label><br>
-    <input  class="form-control col-md-6"  name="custom_link_address_1" type="text" id="custom_link_address_1" placeholder="Http://" value="{{ $styles[0]->custom_link_address_1 }}">
-    <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
-  </div>
-<button type="submit" class="btn btn-success float-right mt-5">Actualizar</button>
-</div>
-<!-- /ICONOS1 -->
-<!-- ICONOS2 -->
-  <div class="col-md-4">
-    <h3>&nbsp;</h3>
-    <div class="form-group">
-      <label for="button_secondary">Seleccine Ícono</label>
-      <select name="show_link_2" onchange="this.form.submit()" class="float-right mr-5">
-        <option value="1" {{ $styles[0]->show_link_2 == '1' ? 'selected' : '' }}>Mostrar</option>
-        <option value="0" {{ $styles[0]->show_link_2 == '0' ? 'selected' : '' }}>Esconder</option>
-      </select>
-      <div class="input-group">
-        <input id="custom_icon_2" type="hidden" data-placement="bottomRight" class="form-control @error('custom_icon_2') is-invalid @enderror"  name="custom_icon_2" value="{{ $styles[0]->custom_icon_2 }}">
-        <div class="btn-group">
-           <button type="button" class="btn btn-primary iconpicker-component"><i
-                   class="{{  $styles[0]->custom_icon_2 }}"></i></button>
-           <button type="button" class="icp2 icp-dd2 btn btn-primary dropdown-toggle"
-                   data-selected="fa-car" data-toggle="dropdown">
-               <span class="caret"></span>
-           </button>
-           <div class="dropdown-menu"></div>
-       </div>
-      </div>
-    </div>
-  <div class="form-group">
-    <label for="custom_link_text_1">Texto del Enlace</label><br>
-    <input class="form-control col-md-6"  name="custom_link_text_2" type="text" id="custom_link_text_2" value="{{ $styles[0]->custom_link_text_2 }}">
-  </div>
-  <div class="form-group">
-    <label for="custom_link_address_1">Especifique Enlace</label><br>
-    <input class="form-control col-md-6"  name="custom_link_address_2" type="text" id="custom_link_address_2" placeholder="Http://" value="{{ $styles[0]->custom_link_address_2 }}">
-    <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
-  </div>
+  <div class="row">
+    <!-- ICONOS1 -->
+    <div class="col-md-6">
 
+      <div class="form-group">
+        <label for="button_secondary">Seleccine Ícono</label> <select name="show_link_1" onchange="this.form.submit()" class="float-right mr-5">
+          <option value="1" {{ $styles[0]->show_link_1 == '1' ? 'selected' : '' }}>Mostrar</option>
+          <option value="0" {{ $styles[0]->show_link_1 == '0' ? 'selected' : '' }}>Esconder</option>
+        </select>
+        <div class="input-group">
+          <input id="custom_icon_1" type="hidden" data-placement="bottomRight" class="form-control @error('custom_icon_1') is-invalid @enderror"  name="custom_icon_1" value="{{ $styles[0]->custom_icon_1 }}">
+          <div class="btn-group">
+             <button type="button" class="btn btn-primary iconpicker-component"><i
+                     class="{{  $styles[0]->custom_icon_1 }}"></i></button>
+             <button type="button" class="icp1 icp-dd1 btn btn-primary dropdown-toggle"
+                     data-selected="fa-car" data-toggle="dropdown">
+                 <span class="caret"></span>
+             </button>
+             <div class="dropdown-menu"></div>
+         </div>
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="custom_link_text_1">Texto del Enlace</label><br>
+      <input  class="form-control col-md-6"  name="custom_link_text_1" type="text" id="custom_link_text_1" value="{{ $styles[0]->custom_link_text_1 }}">
+    </div>
+    <div class="form-group">
+      <label for="custom_link_address_1">Especifique Enlace</label><br>
+      <input  class="form-control col-md-6"  name="custom_link_address_1" type="text" id="custom_link_address_1" placeholder="Http://" value="{{ $styles[0]->custom_link_address_1 }}">
+      <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+    </div>
   </div>
-<!-- /ICONOS2 -->
+  <!-- /ICONOS1 -->
+  <!-- ICONOS2 -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="button_secondary">Seleccine Ícono</label>
+        <select name="show_link_2" onchange="this.form.submit()" class="float-right mr-5">
+          <option value="1" {{ $styles[0]->show_link_2 == '1' ? 'selected' : '' }}>Mostrar</option>
+          <option value="0" {{ $styles[0]->show_link_2 == '0' ? 'selected' : '' }}>Esconder</option>
+        </select>
+        <div class="input-group">
+          <input id="custom_icon_2" type="hidden" data-placement="bottomRight" class="form-control @error('custom_icon_2') is-invalid @enderror"  name="custom_icon_2" value="{{ $styles[0]->custom_icon_2 }}">
+          <div class="btn-group">
+             <button type="button" class="btn btn-primary iconpicker-component"><i
+                     class="{{  $styles[0]->custom_icon_2 }}"></i></button>
+             <button type="button" class="icp2 icp-dd2 btn btn-primary dropdown-toggle"
+                     data-selected="fa-car" data-toggle="dropdown">
+                 <span class="caret"></span>
+             </button>
+             <div class="dropdown-menu"></div>
+         </div>
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="custom_link_text_1">Texto del Enlace</label><br>
+      <input class="form-control col-md-6"  name="custom_link_text_2" type="text" id="custom_link_text_2" value="{{ $styles[0]->custom_link_text_2 }}">
+    </div>
+    <div class="form-group">
+      <label for="custom_link_address_1">Especifique Enlace</label><br>
+      <input class="form-control col-md-6"  name="custom_link_address_2" type="text" id="custom_link_address_2" placeholder="Http://" value="{{ $styles[0]->custom_link_address_2 }}">
+      <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+    </div>
+
+    </div>
+  <!-- /ICONOS2 -->
+  <button type="submit" class="btn btn-success mx-auto mt-5 mb-3">Actualizar</button>
+  </div>
+  </div>
 
   </div>
 

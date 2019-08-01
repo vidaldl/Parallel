@@ -117,7 +117,7 @@
               </div>
               <div class="form-group">
                 <label for="tagline" class="col-form-label">Sub-titulo</label>
-                <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror"  value="{{ $contenidosection1s[0]->tagline }}">
+                <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[0]->tagline }}</textarea>
                   @error('tagline')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -302,7 +302,7 @@
                 </div>
                 <div class="form-group col-md-12">
                   <label for="tagline" class="col-form-label">Sub-titulo</label>
-                  <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror"  value="{{ $contenidosection1s[1]->tagline }}">
+                  <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[1]->tagline }}</textarea>
                     @error('tagline')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -457,7 +457,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <label for="tagline" class="col-form-label">Sub-titulo</label>
-                    <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror"  value="{{ $contenidosection1s[2]->tagline }}">
+                    <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[2]->tagline }}</textarea>
                       @error('tagline')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -612,7 +612,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <label for="tagline" class="col-form-label">Sub-titulo</label>
-                    <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror"  value="{{ $contenidosection1s[3]->tagline }}">
+                    <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[3]->tagline }}</textarea>
                       @error('tagline')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -747,6 +747,18 @@
 @section('script')
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
+<!-- EDITOR -->
+<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<script>
+var allEditors = document.querySelectorAll('.inputEditor');
+for (var i = 0; i < allEditors.length; ++i) {
+  ClassicEditor.create( allEditors[i], {
+        removePlugins: ['Autoformat', 'Heading', 'Link' ],
+        toolbar: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList']
+      });
+}
+</script>
+<!-- /EDITOR -->
 
 <script>
 @foreach($contenidosection1s as $section)

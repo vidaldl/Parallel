@@ -193,9 +193,9 @@
                 <h1>
                   {{$contenidosection1s[1]->title}}
                 </h1>
-                <p class="tagline">
-                  {{$contenidosection1s[1]->tagline}}
-                </p>
+                <div class="tagline">
+                  {!! $contenidosection1s[1]->tagline !!}
+                </div>
                 <a class="btn btn-full {{$contenidosection1s[1]->button ? '' : 'd-none'}}" href="{{ $contenidosection1s[1]->link ? $contenidosection1s[1]->link : '#servicios' }}">{{$contenidosection1s[1]->button}}</a>
               </div>
             </div>
@@ -214,9 +214,9 @@
                     <h1  style="text-align:right;">
                       {{$contenidosection1s[2]->title}}
                     </h1>
-                    <p class="tagline mb-1 " style="margin-top: 12px;">
-                      {{$contenidosection1s[2]->tagline}}
-                    </p>
+                    <div class="tagline mb-1 " style="margin-top: 12px;">
+                      {!! $contenidosection1s[2]->tagline !!}
+                    </div>
                     <a class="btn btn-full mt-4 {{$contenidosection1s[2]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[2]->link ? $contenidosection1s[2]->link : '#servicios' }}">{{$contenidosection1s[2]->button}}</a>
                   </div>
 
@@ -233,9 +233,9 @@
                     <h1  style="text-align:left;">
                       {{$contenidosection1s[3]->title}}
                     </h1>
-                    <p class="tagline mb-1 " style="margin-top: 12px;">
-                      {{$contenidosection1s[3]->tagline}}
-                    </p>
+                    <div class="tagline mb-1 " style="margin-top: 12px;">
+                      {!! $contenidosection1s[3]->tagline !!}
+                    </div>
                     <a class="btn btn-full mt-4 {{$contenidosection1s[3]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[3]->link ? $contenidosection1s[3]->link : '#servicios' }}">{{$contenidosection1s[3]->button}}</a>
                   </div>
 
@@ -267,9 +267,9 @@
           {{$contenidosection1s[0]->title}}
         </h1>
 
-        <p class="tagline">
-          {{$contenidosection1s[0]->tagline}}
-        </p>
+        <div class="tagline">
+          {!! $contenidosection1s[0]->tagline !!}
+        </div>
         <a class="btn btn-full" href="{{ $contenidosection1s[0]->link ? $contenidosection1s[0]->link : '#servicios' }}">{{$contenidosection1s[0]->button}}</a>
       </div>
     </div>

@@ -617,9 +617,12 @@ a:hover {
 }
 
 .tagline {
+  margin: 45px 0 75px 0;
+}
+
+.tagline p{
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-size: 26px;
-  margin: 45px 0 75px 0;
   color: #fff;
 }
 
