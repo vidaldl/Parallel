@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Category;
 
-use Image;
-
 
 class PostController extends Controller
 {

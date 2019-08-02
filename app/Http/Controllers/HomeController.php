@@ -21,7 +21,6 @@ use App\InfoSliderText2;
 use App\InfoSliderImage3;
 use App\InfoSliderText3;
 use App\Pricing;
-use Image;
 class HomeController extends Controller
 {
     /**
