@@ -17,14 +17,16 @@ Route::get('/about', 'IndexController@about');
 Route::get('/blog', 'IndexController@blog');
 
 
-Auth::routes();
+Auth::routes(['verify' => true, 'register' => false]);
 
 
 Route::get('home', 'HomeController@index')->name('home');
-Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
+
 
 Route::middleware(['auth'])->group(function () {
 // EditSections
+//Styles
+Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
 //Section1
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
 Route::post('/updatesection1/{id}', 'HomeController@section1Update')->name('section1.update');
