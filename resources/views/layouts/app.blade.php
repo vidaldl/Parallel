@@ -14,7 +14,7 @@
   <!-- Custom fonts for this template-->
 
   <link href="{{ asset('css/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-  
+
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -120,11 +120,9 @@
             @guest
             <a class="nav-link" href="{{ route('login') }}"><span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ __('Login') }}</span></a>
 
-            <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             @if (Route::has('register'))
-            <a class="nav-link" href="{{ route('register') }}"><span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ __('Register') }}</span></a>
             @endif
             @else
             <li class="nav-item dropdown no-arrow">
