@@ -67,6 +67,8 @@
 <form autocomplete="off" class="col-md-12" method="POST" action="{{route('style.update', $styles[0]->id)}}">
   @csrf
  <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+ <!-- BOTOM DE UPDATE -->
+ <a class="btn btn-primary" href="{{route('app.checkUpdate')}}">UPDATE</a>
 <div class="form-row">
   <div class="col-md-4">
     <div class="form-group col-md-12">
@@ -166,7 +168,7 @@
     <option value="#contact">Contacto</option>
   </datalist>
   <!-- /ICONOS LINK SECTION LIST -->
-  
+
   <button type="submit" class="btn btn-success mx-auto mt-5 mb-3">Actualizar</button>
   </div>
   </div>

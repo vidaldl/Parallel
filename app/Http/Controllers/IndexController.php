@@ -21,7 +21,7 @@ use App\InfoSliderImage3;
 use App\InfoSliderText3;
 use App\Pricing;
 use App\User;
-
+use  Updater;
 
 
 use Illuminate\Http\Request;
@@ -48,6 +48,19 @@ class IndexController extends Controller
       ->with('users', User::all());
 
     }
+
+    public function checkUpdate() {
+      if(Updater::isNewVersionAvailable('1.0')){
+        return view('yes');
+      } else {
+        return view('no');
+      }
+    }
+
+    public function update() {
+
+    }
+
 
     public function blog() {
 

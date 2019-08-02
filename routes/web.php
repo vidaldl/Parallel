@@ -24,6 +24,9 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
 
 Route::middleware(['auth'])->group(function () {
+//APP UPDATE
+Route::get('parallel-update/check', 'IndexController@checkUpdate')->name('app.checkUpdate');
+
 // EditSections
 //Section1
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
