@@ -25,6 +25,15 @@
                 <li class="li"><a class="a" href="#price3">Comparación 3</a></li>
               </ul>
         <div id="price1" class="tabdiv">
+          <!-- LINK SECTION LIST -->
+          <datalist id="sections">
+            <option value="#inicio">Inicio</option>
+            <option value="#servicios">Servicios</option>
+            <option value="#infoSlider">Slider de Info.</option>
+            <option value="#articulos">Artículos</option>
+            <option value="#contact">Contacto</option>
+          </datalist>
+          <!-- /LINK SECTION LIST -->
           <!-- PRICING 1 -->
           <form method="POST" action="{{route('pricing.update', $pricings[0]->id)}}" enctype="multipart/form-data">
             @csrf
@@ -119,6 +128,16 @@
                       <label for="button" class="col-md-12 col-form-label">Botón</label>
                       <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $pricings[0]->button }}">
                         @error('button')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                      <label for="link" class="col-form-label">Enlace</label>
+                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$pricings[0]->link}}">
+                      <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                        @error('link')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
@@ -233,6 +252,17 @@
                           </span>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                      <label for="link" class="col-form-label">Enlace</label>
+                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$pricings[1]->link}}">
+                      <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                        @error('link')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                    </div>
                     <div class="form-group">
                       <button type="submit" class="btn btn-success float-right">Actualizar</button>
                     </div>
@@ -337,6 +367,17 @@
                       <label for="button" class="col-md-12 col-form-label">Botón</label>
                       <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $pricings[2]->button }}">
                         @error('button')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                      <label for="link" class="col-form-label">Enlace</label>
+                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$pricings[2]->link}}">
+                      <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                        @error('link')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>

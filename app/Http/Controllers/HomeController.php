@@ -76,6 +76,7 @@ class HomeController extends Controller
       $item6 = $request->input('item6');
       $price = $request->input('price');
       $button = $request->input('button');
+      $link = $request->input('link');
       $back_color = $request->input('back_color');
 
 
@@ -104,6 +105,7 @@ class HomeController extends Controller
         'item6'=>$item6,
         'price'=>$price,
         'button'=>$button,
+        'link'=>$link,
         'back_color'=>$back_color);
         DB::table('pricings')->where('id', $id)->update($data);
 
@@ -174,9 +176,10 @@ class HomeController extends Controller
       $title = $request->input('title');
       $contenido = $request->input('contenido');
       $button = $request->input('button');
+      $link = $request->input('link');
       $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "back_color"=>$back_color);
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "link"=>$link, "back_color"=>$back_color);
       DB::table('info_slider_texts')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -243,9 +246,10 @@ class HomeController extends Controller
       $title = $request->input('title');
       $contenido = $request->input('contenido');
       $button = $request->input('button');
+      $link = $request->input('link');
       $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "back_color"=>$back_color);
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button,"link"=>$link, "back_color"=>$back_color);
       DB::table('info_slider_text2s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
@@ -313,9 +317,10 @@ class HomeController extends Controller
       $title = $request->input('title');
       $contenido = $request->input('contenido');
       $button = $request->input('button');
+      $link = $request->input('link');
       $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "back_color"=>$back_color);
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button,"link"=>$link, "back_color"=>$back_color);
       DB::table('info_slider_text3s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect

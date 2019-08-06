@@ -185,7 +185,11 @@
             <div class="carousel-caption text-center style="top: 50%;transform: translateY(-40%);"">
               <div class="row">
                 <div class="col-md-12" style="{{ $contenidosection1s[1]->carousel == 0 ? 'visibility: hidden;' : '' }}">
+                  @if(empty($contenidosection1s[1]->title))
+                  <a class="hero-brand " href="{{redirect('home')}}" title="Home"><img height="100%" width="600px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                  @else
                   <a class="hero-brand " href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                  @endif
 
                 </div>
               </div>
@@ -249,7 +253,7 @@
         <!-- /SLIDE 3 -->
 </div>
 
-
+<!-- STATIC -->
   <section class="hero {{ $contenidosection1s[0]->display == '0' ? 'd-none' : '' }} {{ $contenidosection1s[0]->carousel == 1 ? 'd-none' : '' }}" id="inicio" style="background-image: url({{ '/storage/' . $contenidosection1s[0]->background_image }});">
     <div class="container text-center">
       <div class="row">
@@ -275,7 +279,7 @@
     </div>
 
   </section>
-  <!-- /Hero -->
+<!-- /STATIC -->
 
   <!-- Header -->
   <header id="header">
@@ -358,9 +362,11 @@
             <h2>{!! $info_slider_texts[0]->title !!}</h2>
             {!! $info_slider_texts[0]->contenido !!}
           </div>
-          <div id=""class="mb-5 mx-auto btnH">
-            <a class="btn" style="color:#ffff;">{{ $info_slider_texts[0]->button }}</a>
+          @if(!empty($info_slider_texts[0]->button) && !empty($info_slider_texts[0]->link))
+          <div id="" class="mb-5 mx-auto btnH" >
+            <a href="{{ $info_slider_texts[0]->link }}" class="btn" style="color:#ffff;">{{ $info_slider_texts[0]->button }}</a>
           </div>
+          @endif
         </div>
       </div>
       <div class="col-md-6 imageH" id="" style="overflow: hidden;">
@@ -401,9 +407,11 @@
             <h2>{!! $info_slider_text2s[0]->title !!}</h2>
             {!! $info_slider_text2s[0]->contenido !!}
           </div>
-          <div id=""class="mb-5 mx-auto btnH">
-            <a class="btn" style="color:#ffff;">{{ $info_slider_text2s[0]->button }}</a>
+          @if(!empty($info_slider_text2s[0]->button) && !empty($info_slider_text2s[0]->link))
+          <div id="" class="mb-5 mx-auto btnH" >
+            <a href="{{ $info_slider_text2s[0]->link }}" class="btn" style="color:#ffff;">{{ $info_slider_text2s[0]->button }}</a>
           </div>
+          @endif
         </div>
       </div>
     </div>
@@ -422,9 +430,11 @@
             <h2>{!! $info_slider_text3s[0]->title !!}</h2>
             {!! $info_slider_text3s[0]->contenido !!}
           </div>
-          <div id=""class="mb-5 mx-auto btnH">
-            <a class="btn" style="color:#ffff;">{{ $info_slider_text3s[0]->button }}</a>
+          @if(!empty($info_slider_text3s[0]->button) && !empty($info_slider_text3s[0]->link))
+          <div id="" class="mb-5 mx-auto btnH" >
+            <a href="{{ $info_slider_text3s[0]->link }}" class="btn" style="color:#ffff;">{{ $info_slider_text3s[0]->button }}</a>
           </div>
+          @endif
         </div>
       </div>
       <div class="col-md-6 imageH" id="" style="overflow: hidden;">
@@ -464,9 +474,9 @@
               <li class="pricing-features-item {{$pricings[0]->item6 ? '' : 'd-none'}}">{{ $pricings[0]->item6 }}</li>
             </ul>
           </div>
-          <div class="d-block d-sm-none">
+          <div class="d-block d-sm-none ">
             <span class="pricing-price">{{$pricings[0]->price}}</span>
-            <a href="#/" class="pricing-button">{{$pricings[0]->button}}</a>
+            <a href="{{$pricings[0]->link}}" class="pricing-button {{$pricings[0]->button ? '' : 'd-none'}}">{{$pricings[0]->button}}</a>
           </div>
         </div>
 
@@ -485,7 +495,7 @@
           </div>
           <div class="d-block d-sm-none">
             <span class="pricing-price">{{$pricings[1]->price}}</span>
-            <a href="#/" class="pricing-button">{{$pricings[1]->button}}</a>
+            <a href="{{$pricings[1]->link}}" class="pricing-button {{$pricings[1]->button ? '' : 'd-none'}}">{{$pricings[1]->button}}</a>
           </div>
         </div>
 
@@ -502,22 +512,22 @@
               <li class="pricing-features-item {{$pricings[2]->item6 ? '' : 'd-none'}}">{{ $pricings[2]->item6 }}</li>
             </ul>
           </div>
-          <div class="d-block d-sm-none">
+          <div class="d-block d-sm-none ">
             <span class="pricing-price">{{$pricings[2]->price}}</span>
-            <a href="#/" class="pricing-button">{{$pricings[2]->button}}</a>
+            <a href="{{$pricings[2]->link}}" class="pricing-button {{$pricings[2]->button ? '' : 'd-none'}}">{{$pricings[2]->button}}</a>
           </div>
         </div>
         <div class="col-md-4 d-none d-sm-block">
             <span class="pricing-price">{{$pricings[0]->price}}</span>
-            <a href="#/" class="pricing-button">{{$pricings[0]->button}}</a>
+            <a href="{{$pricings[0]->link}}" class="pricing-button {{$pricings[0]->button ? '' : 'd-none'}}">{{$pricings[0]->button}}</a>
         </div>
         <div class="col-md-4 d-none d-sm-block">
             <span class="pricing-price">{{$pricings[1]->price}}</span>
-            <a href="#/" class="pricing-button">{{$pricings[1]->button}}</a>
+            <a href="{{$pricings[1]->link}}" class="pricing-button {{$pricings[1]->button ? '' : 'd-none'}}">{{$pricings[1]->button}}</a>
         </div>
         <div class="col-md-4 d-none d-sm-block">
             <span class="pricing-price">{{$pricings[2]->price}}</span>
-            <a href="#/" class="pricing-button">{{$pricings[2]->button}}</a>
+            <a href="{{$pricings[2]->link}}" class="pricing-button {{$pricings[2]->button ? '' : 'd-none'}}">{{$pricings[2]->button}}</a>
         </div>
       </div>
 
@@ -627,7 +637,7 @@
               <div class="modal-footer">
 
                   <div class="row">
-                    <a href="#contact" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm mr-3" style="border-radius: 0px; margin-bottom: 0px;">Más Información &rarr;</a>
+                    <a href="{{$post->link}}" onclick="$('#modal{{ $post->id }}').modal('hide')" class="btn btn-sm mr-3 {{$post->button ? '' : 'd-none'}}" style="border-radius: 0px; margin-bottom: 0px;">{{$post->button}}</a>
                   </div>
 
               </div>

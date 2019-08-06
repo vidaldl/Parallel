@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index')->with('posts', Post::all());
+        return view('posts.index')->with('posts', Post::orderByDesc('id')->get());
     }
 
     /**
@@ -63,7 +63,10 @@ class PostController extends Controller
         $category = $request->input('category');
         $published_at = $request->input('published_at');
         $contenido = $request->input('contenido');
+        $button = $request->input('button');
+        $link = $request->input('link');
         $data['category_id'] = $request->category;
+
 
 
           if ($request->hasFile('image')) {
@@ -87,7 +90,7 @@ class PostController extends Controller
 
 
 
-            $data=array("title"=>$title,"description"=>$description,"category_id"=>$category, "published_at"=>$published_at, "contenido"=>$contenido);
+            $data=array("title"=>$title,"description"=>$description,"category_id"=>$category, "published_at"=>$published_at, "contenido"=>$contenido, "button"=>$button, "link"=>$link);
             DB::table('posts')->insert($data);
             session()->flash('success', 'La sección fue actualizada');
             //redirect
@@ -146,6 +149,8 @@ class PostController extends Controller
         $category = $request->input('category');
         $published_at = $request->input('published_at');
         $contenido = $request->input('contenido');
+        $button = $request->input('button');
+        $link = $request->input('link');
         $data['category_id'] = $request->category;
 
 
@@ -170,7 +175,7 @@ class PostController extends Controller
 
         }else {
 
-          $data=array("title"=>$title,"description"=>$description,"category_id"=>$category, "published_at"=>$published_at, "contenido"=>$contenido);
+          $data=array("title"=>$title,"description"=>$description,"category_id"=>$category, "published_at"=>$published_at, "contenido"=>$contenido, "button"=>$button, "link"=>$link);
           DB::table('posts')->where('id', $id)->update($data);
           session()->flash('success', 'La sección fue actualizada');
           //redirect

@@ -27,7 +27,15 @@
 
           <form method="POST" action="{{route('infoSlider.update', $info_slider_texts[0]->id)}}" enctype="multipart/form-data">
             @csrf
-
+            <!-- LINK SECTION LIST -->
+            <datalist id="sections">
+              <option value="#inicio">Inicio</option>
+              <option value="#servicios">Servicios</option>
+              <option value="#infoSlider">Slider de Info.</option>
+              <option value="#articulos">Artículos</option>
+              <option value="#contact">Contacto</option>
+            </datalist>
+            <!-- /LINK SECTION LIST -->
               <div class="form-group d-none d-sm-block d-md-block d-lg-none">
                 <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/infoSlider.png')}}">
               </div>
@@ -59,6 +67,18 @@
                     </span>
                   @enderror
               </div>
+
+              <div class="form-group">
+                <label for="link" class="col-form-label">Enlace</label>
+                <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$info_slider_texts[0]->link}}">
+                <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                  @error('link')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+
               <div class="form-group">
                   <label for="image" class="col-form-label">Imagenes del Slideshow</label><br>
                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImages">Manejar Imagenes &nbsp;&nbsp;<i class="fas fa-image"></i></a>

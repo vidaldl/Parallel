@@ -77,6 +77,25 @@
             </span>
           @enderror
         </div>
+        <div class="form-group">
+          <label for="button" class="col-form-label">Botón</label>
+          <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ isset($post) ? $post->button : '' }}">
+            @error('button')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
+        </div>
+        <div class="form-group">
+          <label for="link" class="col-form-label">Enlace</label>
+          <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{isset($post) ? $post->link : ''}}">
+          <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+            @error('link')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
+        </div>
 
 
         <div class="form-group">
@@ -89,6 +108,16 @@
   </div>
 </div>
 </div>
+
+<!-- LINK SECTION LIST -->
+<datalist id="sections">
+  <option value="#inicio">Inicio</option>
+  <option value="#servicios">Servicios</option>
+  <option value="#infoSlider">Slider de Info.</option>
+  <option value="#articulos">Artículos</option>
+  <option value="#contact">Contacto</option>
+</datalist>
+<!-- /LINK SECTION LIST -->
 
   <!--modal image-->
   <div class="modal fade" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">

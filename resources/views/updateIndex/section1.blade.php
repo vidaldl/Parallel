@@ -72,7 +72,7 @@
     <div class="card mt-3 col-md-8 mb-5">
         <div class="card-body">
         <!-- Carousel activator Form -->
-          <form id="sectionType" method="POST" action="{{route('section1.carousel', $contenidosection1s[0]->id)}}">
+          <form autocomplete="off" id="sectionType" method="POST" action="{{route('section1.carousel', $contenidosection1s[0]->id)}}">
             @csrf
             <div class="form-group">
               <div class="form-group">
@@ -90,8 +90,17 @@
             </div>
           </form>
         <!-- End carousel activator form -->
+        <!-- ICONOS LINK SECTION LIST -->
+        <datalist id="sections">
+          <option value="#inicio">Inicio</option>
+          <option value="#servicios">Servicios</option>
+          <option value="#infoSlider">Slider de Info.</option>
+          <option value="#articulos">Artículos</option>
+          <option value="#contact">Contacto</option>
+        </datalist>
+        <!-- /ICONOS LINK SECTION LIST -->
         <!-- Static Form -->
-          <form class="{{$contenidosection1s[0]->carousel == 1 ? 'd-none' : ''}}" id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
+          <form autocomplete="off" class="{{$contenidosection1s[0]->carousel == 1 ? 'd-none' : ''}}" id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
             @csrf
 
               <div class="form-group d-none d-sm-block d-md-block d-lg-none">
@@ -149,7 +158,7 @@
               </div>
               <div class="form-group">
                 <label for="link" class="col-form-label">Enlace</label>
-                <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[0]->link }}">
+                <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[0]->link }}">
                 <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
                   @error('link')
                     <span class="invalid-feedback" role="alert">
@@ -279,7 +288,7 @@
           </ul>
         <!-- Slide 1 -->
         <div id="slide1" class="tabdiv" style="padding: 10px; background-color: #E5E5E5!important;">
-          <form id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
+          <form autocomplete="off" id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
             <div class="row">
               @csrf
                 <div class="form-group col-md-6">
@@ -338,7 +347,7 @@
                 </div>
                 <div class="form-group col-md-12">
                   <label for="link" class="col-form-label">Enlace</label>
-                  <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[1]->link }}">
+                  <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[1]->link }}">
                   <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
                 </div>
 
@@ -434,7 +443,7 @@
 
         <!-- Slide 2 -->
         <div id="slide2" class="tabdiv" style="padding: 10px; background-color: #E5E5E5!important;">
-            <form id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
+            <form autocomplete="off" id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
               <div class="row">
                 @csrf
                   <div class="form-group col-md-6">
@@ -494,7 +503,7 @@
 
                   <div class="form-group col-md-12">
                     <label for="link" class="col-form-label">Enlace</label>
-                    <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[2]->link }}">
+                    <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[2]->link }}">
                     <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
                   </div>
 
@@ -589,7 +598,7 @@
 
         <!-- Slide 3 -->
         <div id="slide3" class="tabdiv" style="padding: 10px; background-color: #E5E5E5!important;">
-            <form id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
+            <form autocomplete="off" id="section1" method="POST" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
               <div class="row">
                 @csrf
                   <div class="form-group col-md-6">
@@ -649,7 +658,7 @@
 
                   <div class="form-group col-md-12">
                     <label for="link" class="col-form-label">Enlace</label>
-                    <input id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[3]->link }}">
+                    <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{ $contenidosection1s[3]->link }}">
                     <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
                   </div>
 
