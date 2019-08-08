@@ -21,12 +21,36 @@ use App\InfoSliderImage3;
 use App\InfoSliderText3;
 use App\Pricing;
 use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SolicitudDeContacto;
 
 
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+
+    public function mail() {
+
+
+      $data = request()->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'number' => 'nullable',
+        'subject' => 'required',
+        'message' => 'required'
+      ]);
+
+      Mail::to('test@test.com')->send(new SolicitudDeContacto($data));
+
+      // flash message
+      session()->flash('success', 'Su mensaje a sido Enviado! Estaremos en contacto lo más rapido posible.');
+      //redirect user
+      return redirect('/#contact');
+    }
+
+
+
     public function index() {
       return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
       ->with('contenidosection1s', ContenidoSection1::all())

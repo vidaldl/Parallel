@@ -22,6 +22,8 @@ Auth::routes(['verify' => true, 'register' => false]);
 
 Route::get('home', 'HomeController@index')->name('home');
 
+// Contact Form
+Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 
 Route::middleware(['auth'])->group(function () {
 // EditSections
