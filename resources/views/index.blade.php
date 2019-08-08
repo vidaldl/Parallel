@@ -180,15 +180,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
         <!-- SLIDE 1 -->
-        <div class="carousel-item active" style="background-image: url({{ '/storage/' . $contenidosection1s[1]->background_image }});">
+        <div class="carousel-item active " style="background-image: url({{ '/storage/' . $contenidosection1s[1]->background_image }});">
             <div class="overlay"></div>
             <div class="carousel-caption text-center style="top: 50%;transform: translateY(-40%);"">
               <div class="row">
                 <div class="col-md-12" style="{{ $contenidosection1s[1]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                   @if(empty($contenidosection1s[1]->title))
-                  <a class="hero-brand " href="{{redirect('home')}}" title="Home"><img height="100%" width="600px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" class="img-fluid logo-bottom" width="600px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
                   @else
-                  <a class="hero-brand " href="{{redirect('home')}}" title="Home"><img height="100%" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" class="img-fluid logo-bottom" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
                   @endif
 
                 </div>

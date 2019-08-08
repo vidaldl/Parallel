@@ -17,7 +17,7 @@ class CreateServiciosTable extends Migration
             $table->bigIncrements('id');
             $table->string('icon')->nullable();
             $table->string('title')->nullable();
-            $table->string('contenido')->nullable();
+            $table->text('contenido')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
