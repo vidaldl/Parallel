@@ -607,16 +607,32 @@ a:hover {
   width: 100%;
 }
 
-@media only screen and (min-width: 1200px) {
-.logo-bottom {
-  margin-bottom: 150px;
-}
-
-}
 
 .logo-bottom {
-
+  margin-bottom: 50px;
 }
+.tagline {
+  margin-bottom: 250px;
+}
+
+@media screen and (max-width: 1300px) {
+.logo-bottom {
+  margin-bottom: 0px;
+  }
+
+.tagline {
+  margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .logo-bottom {
+    margin-bottom: 0px;
+    margin-top: 20px;
+    }
+  .tagline {
+    margin-bottom: 20px;
+    }
 }
 
 .hero-brand {
@@ -628,14 +644,19 @@ a:hover {
   opacity: .75;
 }
 
-.tagline {
-  margin: 45px 0 75px 0;
-}
+
 
 .tagline p{
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-size: 26px;
   color: #fff;
+}
+
+.tagline li{
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  color: #fff;
+  
 }
 
 /* ==================================================

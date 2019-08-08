@@ -208,7 +208,7 @@
         <!-- SLIDE 2 -->
           <div class="carousel-item" style="background-image: url({{ '/storage/' . $contenidosection1s[2]->background_image }});">
               <div class="overlay"></div>
-              <div class="carousel-caption" style="top: 45%;transform: translateY(-40%); left:5%; right: 5%;">
+              <div class="carousel-caption" style="top: 45%;transform: translateY(-65%); left:5%; right: 5%;">
                 <div class="row">
                   <div class="col-md-6 d-none d-sm-none d-md-block" style="{{ $contenidosection1s[2]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                     <a class="hero-brand" style="margin-bottom: 10px;"  href="{{redirect('home')}}" title="Home"><img class="img-fluid" height="100%" width="850px" style="margin-right: 45px;overflow-y: hidden;" src="{{'/storage/' . $contenidosection1s[2]->logo}}"></a><!-- <img height="100%" width="850px" style=" margin-left: 45px;overflow-y: hidden;" src="{{asset('img/world.png')}}"> -->
@@ -218,8 +218,10 @@
                     <h1  style="text-align:right;">
                       {{$contenidosection1s[2]->title}}
                     </h1>
-                    <div class="tagline mb-1 " style="margin-top: 12px;">
-                      {!! $contenidosection1s[2]->tagline !!}
+                    <div class="row">
+                      <div class="tagline mb-1 d-block ml-auto" style="margin-top: 12px;">
+                        {!! $contenidosection1s[2]->tagline !!}
+                      </div>
                     </div>
                     <a class="btn btn-full mt-4 {{$contenidosection1s[2]->button ? '' : 'd-none'}}" style="border-radius: 3px" href="{{ $contenidosection1s[2]->link ? $contenidosection1s[2]->link : '#servicios' }}">{{$contenidosection1s[2]->button}}</a>
                   </div>
@@ -231,7 +233,7 @@
         <!-- SLIDE 3 -->
           <div class="carousel-item" style="background-image: url({{ '/storage/' . $contenidosection1s[3]->background_image }});">
               <div class="overlay"></div>
-              <div class="carousel-caption" style="top: 45%;left:5%; right: 5%; transform: translateY(-40%);">
+              <div class="carousel-caption" style="top: 45%;transform: translateY(-65%); left:5%; right: 5%; ">
                 <div class="row">
                   <div class="col-md-6" style="text-align: left;">
                     <h1  style="text-align:left;">
