@@ -374,11 +374,19 @@
       <div class="col-md-6 imageH" id="" style="overflow: hidden;">
         <div class="flexslider">
           <ul class="slides">
-            @foreach($info_slider_images as $images)
-            <li>
-              <img src="{{ 'storage/' . $images->image }}" />
-            </li>
-            @endforeach
+            @if(empty($info_slider_texts[0]->video))
+              @foreach($info_slider_images as $images)
+              <li>
+                <img src="{{ 'storage/' . $images->image }}" />
+              </li>
+              @endforeach
+            @else
+              <li>
+                <video controls muted autoplay src="{{ '/storage/' . $info_slider_texts[0]->video }}" width="100%" >
+                
+                </video>
+              </li>
+            @endif
           </ul>
         </div>
       </div>
@@ -395,11 +403,20 @@
       <div class="col-md-6 imageH" id="" style="overflow: hidden;">
         <div class="flexslider">
           <ul class="slides">
-            @foreach($info_slider_image2s as $images)
-            <li>
-              <img src="{{ 'storage/' . $images->image }}" />
-            </li>
-            @endforeach
+            @if(empty($info_slider_text2s[0]->video))
+              @foreach($info_slider_image2s as $images)
+              <li>
+                <img src="{{ 'storage/' . $images->image }}" />
+              </li>
+              @endforeach
+            @else
+              <li>
+                <video width="100%" controls muted autoplay loop>
+                  <source src="{{ '/storage/' . $info_slider_text2s[0]->video }}" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+              </li>
+            @endif
           </ul>
         </div>
       </div>
@@ -421,7 +438,7 @@
 </div>
 <!--/Info Slider2 -->
 
-<!-- Info Slider2 -->
+<!-- Info Slider3 -->
 
 <div id="infoSlider3" class="infoSlider {{$info_slider_text3s[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 1px solid #E1E4EA;">
   <div class="container-fluid mt-5">
@@ -442,11 +459,20 @@
       <div class="col-md-6 imageH" id="" style="overflow: hidden;">
         <div class="flexslider">
           <ul class="slides">
-            @foreach($info_slider_image3s as $images)
-            <li>
-              <img src="{{ 'storage/' . $images->image }}" />
-            </li>
-            @endforeach
+            @if(empty($info_slider_text3s[0]->video))
+              @foreach($info_slider_image3s as $images)
+              <li>
+                <img src="{{ 'storage/' . $images->image }}" />
+              </li>
+              @endforeach
+            @else
+              <li>
+                <video width="100%" controls muted autoplay loop>
+                  <source src="{{ '/storage/' . $info_slider_text3s[0]->video }}" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+              </li>
+            @endif
           </ul>
         </div>
       </div>

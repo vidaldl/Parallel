@@ -155,7 +155,7 @@ class HomeController extends Controller
     }
 
     public function deleteSliderImage (InfoSliderImage $slide, $id) {
-      Storage::delete($slide->image);
+      // Storage::delete($slide->image);
       $image = InfoSliderImage::where('id', $id)->first();
       Storage::delete($image->image);
       $image->delete();
@@ -173,6 +173,25 @@ class HomeController extends Controller
     }
 
     public function infoSliderUpdate(Request $request, $id) {
+
+
+      if ($request->hasFile('video')) {
+        $this->validate($request, [
+            'video' => 'required|mimes:mp4'
+         ]);
+
+        $videoOld = DB::table('info_slider_texts')->where('id', $id)->first();
+
+        $video = $request->file('video')->store('videos');
+        Storage::delete($videoOld->video);
+
+        $data=array("video"=>$video);
+        DB::table('info_slider_texts')->update($data);
+
+        session()->flash('success', 'El video fué actualizado');
+        //redirect
+        return redirect()->back();
+      } else {
       $title = $request->input('title');
       $contenido = $request->input('contenido');
       $button = $request->input('button');
@@ -184,6 +203,7 @@ class HomeController extends Controller
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
+      }
     }
 
     public function infoSliderDisplay(Request $request, $id) {
@@ -191,6 +211,17 @@ class HomeController extends Controller
       $data=array("display"=>$display);
       DB::table('info_slider_texts')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+
+    public function deleteSliderVideo (InfoSliderText $request, $id) {
+      // Storage::delete($slide->image);
+     $video = InfoSliderText::where('id', $id)->first();
+      Storage::delete($video->video);
+      $video->update(['video'=>null]);
+      session()->flash('error', 'Se ha borrado la imagen');
       //redirect
       return redirect()->back();
     }
@@ -243,17 +274,36 @@ class HomeController extends Controller
     }
 
     public function infoSlider2Update(Request $request, $id) {
-      $title = $request->input('title');
-      $contenido = $request->input('contenido');
-      $button = $request->input('button');
-      $link = $request->input('link');
-      $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button,"link"=>$link, "back_color"=>$back_color);
-      DB::table('info_slider_text2s')->update($data);
-      session()->flash('success', 'La sección fue actualizada');
-      //redirect
-      return redirect()->back();
+            if ($request->hasFile('video')) {
+              $this->validate($request, [
+                  'video' => 'required|mimes:mp4'
+               ]);
+
+              $videoOld = DB::table('info_slider_text2s')->where('id', $id)->first();
+
+              $video = $request->file('video')->store('videos');
+              Storage::delete($videoOld->video);
+
+              $data=array("video"=>$video);
+              DB::table('info_slider_text2s')->update($data);
+
+              session()->flash('success', 'El video fué actualizado');
+              //redirect
+              return redirect()->back();
+            } else {
+            $title = $request->input('title');
+            $contenido = $request->input('contenido');
+            $button = $request->input('button');
+            $link = $request->input('link');
+            $back_color = $request->input('back_color');
+
+            $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "link"=>$link, "back_color"=>$back_color);
+            DB::table('info_slider_text2s')->update($data);
+            session()->flash('success', 'La sección fue actualizada');
+            //redirect
+            return redirect()->back();
+            }
     }
 
     public function infoSlider2Display(Request $request, $id) {
@@ -261,6 +311,17 @@ class HomeController extends Controller
       $data=array("display"=>$display);
       DB::table('info_slider_text2s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+
+    public function deleteSliderVideo2 (InfoSliderText2 $request, $id) {
+      // Storage::delete($slide->image);
+     $video = InfoSliderText2::where('id', $id)->first();
+      Storage::delete($video->video);
+      $video->update(['video'=>null]);
+      session()->flash('error', 'Se ha borrado la imagen');
       //redirect
       return redirect()->back();
     }
@@ -314,17 +375,35 @@ class HomeController extends Controller
     }
 
     public function infoSlider3Update(Request $request, $id) {
+      if ($request->hasFile('video')) {
+        $this->validate($request, [
+            'video' => 'required|mimes:mp4'
+         ]);
+
+        $videoOld = DB::table('info_slider_text3s')->where('id', $id)->first();
+
+        $video = $request->file('video')->store('videos');
+        Storage::delete($videoOld->video);
+
+        $data=array("video"=>$video);
+        DB::table('info_slider_text3s')->update($data);
+
+        session()->flash('success', 'El video fué actualizado');
+        //redirect
+        return redirect()->back();
+      } else {
       $title = $request->input('title');
       $contenido = $request->input('contenido');
       $button = $request->input('button');
       $link = $request->input('link');
       $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button,"link"=>$link, "back_color"=>$back_color);
+      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button, "link"=>$link, "back_color"=>$back_color);
       DB::table('info_slider_text3s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
+      }
     }
 
     public function infoSlider3Display(Request $request, $id) {
@@ -332,6 +411,16 @@ class HomeController extends Controller
       $data=array("display"=>$display);
       DB::table('info_slider_text3s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+    public function deleteSliderVideo3 (InfoSliderText3 $request, $id) {
+      // Storage::delete($slide->image);
+     $video = InfoSliderText3::where('id', $id)->first();
+      Storage::delete($video->video);
+      $video->update(['video'=>null]);
+      session()->flash('error', 'Se ha borrado la imagen');
       //redirect
       return redirect()->back();
     }

@@ -79,14 +79,15 @@
                   @enderror
               </div>
 
-              <div class="form-group">
-                  <label for="image" class="col-form-label">Imagenes del Slideshow</label><br>
-                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImages">Manejar Imagenes &nbsp;&nbsp;<i class="fas fa-image"></i></a>
-                  @error('logo')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+              <div class="form-row mb-4">
+                  <div class="col-md-6">
+                    <label for="image" class="col-form-label">Manejar Slideshow</label><br>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImages">Imagenes &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="image" class="col-form-label">Or:</label><br>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalVideo">Video &nbsp;&nbsp;<i class="fas fa-video"></i></a>
+                  </div>
               </div>
               <div class="form-group">
                 <label for="back_color">Color de Fondo</label><br>
@@ -96,6 +97,41 @@
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
           </form>
+
+          <!--Modal Video-->
+          <div class="modal fade" id="modalVideo" tabindex="-1" role="dialog" aria-labelledby="modalVideo" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color:#4066D4;">
+                  <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </div>
+                <div class="modal-body">
+                  <div class="col-md-12 mb-4">
+                    <form method="POST" id="video" class="dropzone" action="{{route('infoSlider3.update', $info_slider_text3s[0]->id)}}" enctype="multipart/form-data">
+                      @csrf
+                    </form>
+                  </div>
+                  <div class="col-md-12">
+                    <video width="100%" controls muted loop>
+                      <source src="{{ '/storage/' . $info_slider_text3s[0]->video }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <form  method="POST" action="{{route('delete.sliderVideo3', $info_slider_text3s[0]->id)}}">
+                    @csrf
+                    @method('DELETE')
+                    <div class="form-row">
+                      <button type="submit" class="btn btn-danger align-right"><i class="fas fa-trash"></i></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
           <!--modal Image-->
           <div class="modal fade" id="modalImages" tabindex="-1" role="dialog" aria-labelledby="modalImages" aria-hidden="true">
@@ -227,6 +263,24 @@
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <script>
+
+Dropzone.options.video = {
+   paramName: "video",
+   init: function () {
+      this.on("complete", function (file) {
+        if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+          setTimeout(
+            function()
+            {
+              location.reload();
+            }, 1500);
+        }
+      });
+    }
+};
+
+
   Dropzone.options.slide = {
      paramName: "slide",
 

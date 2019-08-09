@@ -19,6 +19,7 @@ class CreateInfoSliderText3sTable extends Migration
             $table->text('contenido')->nullable();
             $table->string('button')->nullable();
             $table->text('link')->nullable();
+            $table->text('video')->nullable();
             $table->integer('display')->default('0')->nullable();
             $table->string('back_color')->nullable()->default('#FFFFFF');
             $table->timestamps();

@@ -42,6 +42,7 @@ Route::post('/displaysection2/{id}', 'HomeController@section2Display')->name('se
 Route::get('/editInfoSlider/{id}', 'HomeController@infoSliderEdit')->name('info-slider-text.edit');
 Route::post('/updateInfoSlider/{id}', 'HomeController@infoSliderUpdate')->name('infoSlider.update');
 Route::post('/displayInfoSlider/{id}', 'HomeController@infoSliderDisplay')->name('infoSlider.display');
+Route::delete('/delete-slider-video/{id}', 'HomeController@deleteSliderVideo')->name('delete.sliderVideo');
 Route::post('/store-slider-image', 'HomeController@storeSliderImage')->name('store.sliderImage');
 Route::post('/update-slider-image/{id}', 'HomeController@updateSliderImage')->name('update.sliderImage');
 Route::delete('/delete-slider-image/{id}', 'HomeController@deleteSliderImage')->name('delete.sliderImage');
@@ -49,6 +50,7 @@ Route::delete('/delete-slider-image/{id}', 'HomeController@deleteSliderImage')->
 Route::get('/editInfoSlider2/{id}', 'HomeController@infoSlider2Edit')->name('info-slider-text2.edit');
 Route::post('/updateInfoSlider2/{id}', 'HomeController@infoSlider2Update')->name('infoSlider2.update');
 Route::post('/displayInfoSlider2/{id}', 'HomeController@infoSlider2Display')->name('infoSlider2.display');
+Route::delete('/delete-slider-video2/{id}', 'HomeController@deleteSliderVideo2')->name('delete.sliderVideo2');
 Route::post('/store-slider-image2', 'HomeController@storeSliderImage2')->name('store.sliderImage2');
 Route::post('/update-slider-image2/{id}', 'HomeController@updateSliderImage2')->name('update.sliderImage2');
 Route::delete('/delete-slider-image2/{id}', 'HomeController@deleteSliderImage2')->name('delete.sliderImage2');
@@ -56,6 +58,7 @@ Route::delete('/delete-slider-image2/{id}', 'HomeController@deleteSliderImage2')
 Route::get('/editInfoSlider3/{id}', 'HomeController@infoSlider3Edit')->name('info-slider-text3.edit');
 Route::post('/updateInfoSlider3/{id}', 'HomeController@infoSlider3Update')->name('infoSlider3.update');
 Route::post('/displayInfoSlider3/{id}', 'HomeController@infoSlider3Display')->name('infoSlider3.display');
+Route::delete('/delete-slider-video3/{id}', 'HomeController@deleteSliderVideo3')->name('delete.sliderVideo3');
 Route::post('/store-slider-image3', 'HomeController@storeSliderImage3')->name('store.sliderImage3');
 Route::post('/update-slider-image3/{id}', 'HomeController@updateSliderImage3')->name('update.sliderImage3');
 Route::delete('/delete-slider-image3/{id}', 'HomeController@deleteSliderImage3')->name('delete.sliderImage3');

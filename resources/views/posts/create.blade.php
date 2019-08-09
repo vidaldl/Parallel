@@ -51,7 +51,7 @@
         </div>
         <div class="form-group">
           <label for="contenido" class="col-form-label">Contenido del Post</label>
-          <textarea onchange="{{isset($post) ? '' : 'this.form.submit()'}}" id="contenido" name="contenido" class="@error('contenido') is-invalid @enderror">{{isset($post) ? $post->contenido : ''}}</textarea>
+          <textarea onchange="{{isset($post) ? '' : 'this.form.submit()'}}" id="contenidos" name="contenido" class="@error('contenido') is-invalid @enderror">{{isset($post) ? $post->contenido : ''}}</textarea>
 
           @error('contenido')
             <span class="invalid-feedback" role="alert">
@@ -166,16 +166,20 @@
 
 
 @section('script')
-<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script> -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
   <script>
-      ClassicEditor.create( document.querySelector( '#contenido' ), {
-            removePlugins: [ 'Heading', 'Link' ],
-            toolbar: ['undo', 'redo','imageUpload', 'imageStyle:full', 'numberedList', 'bulletedList', 'bold', 'italic', 'mediaEmbed'],
-          }).then( editor => {
-              console.log( Array.from( editor.ui.componentFactory.names() ) );
-          } ).catch( error => {
-              console.error( error );
-          } );
+      // ClassicEditor.create( document.querySelector( '#contenido' ), {
+      //       removePlugins: [ 'Heading', 'Link' ],
+      //       toolbar: ['undo', 'redo','imageUpload', 'imageStyle:full', 'numberedList', 'bulletedList', 'bold', 'italic', 'mediaEmbed'],
+      //     }).then( editor => {
+      //         console.log( Array.from( editor.ui.componentFactory.names() ) );
+      //     } ).catch( error => {
+      //         console.error( error );
+      //     } );
+      $(document).ready(function() {
+        $('#contenidos').summernote();
+      });
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -289,4 +293,5 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
   <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
 @endsection
