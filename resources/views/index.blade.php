@@ -382,8 +382,8 @@
               @endforeach
             @else
               <li>
-                <video controls muted autoplay src="{{ '/storage/' . $info_slider_texts[0]->video }}" width="100%" >
-                
+                <video controls muted autoplay loop src="{{ '/storage/' . $info_slider_texts[0]->video }}" width="100%" >
+
                 </video>
               </li>
             @endif
