@@ -186,9 +186,9 @@
               <div class="row">
                 <div class="col-md-12" style="{{ $contenidosection1s[1]->carousel == 0 ? 'visibility: hidden;' : '' }}">
                   @if(empty($contenidosection1s[1]->title))
-                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" class="img-fluid logo-bottom" width="600px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" class="img-fluid logo-bottom d-fixed" width="600px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
                   @else
-                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" class="img-fluid logo-bottom" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
+                  <a class="hero-brand" href="{{redirect('home')}}" title="Home"><img height="100%" class="img-fluid logo-bottom d-fixed" width="350px;" src="{{'/storage/' . $contenidosection1s[1]->logo}}"></a>
                   @endif
 
                 </div>
