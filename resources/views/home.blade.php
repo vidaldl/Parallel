@@ -189,10 +189,11 @@
 
   <div id="activo" class=" tabdiv">
     <div class="row">
-      <div class="container" id="sort">
+      <div class="container">
         <div class="col-md-12">
           @include('updateIndex.sections.inicio')
         </div>
+        <div class="" id="sort">
         @foreach($orders as $order)
         <div id="{{$order->id}}" class="col-md-12 sortable">
         @php
@@ -201,6 +202,7 @@
         @include($path)
         </div>
         @endforeach
+        </div>
         <div class="col-md-12">
           @include('updateIndex.sections.footer')
         </div>
