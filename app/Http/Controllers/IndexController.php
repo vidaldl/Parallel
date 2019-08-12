@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
+use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 use App\Tag;
@@ -21,11 +23,12 @@ use App\InfoSliderImage3;
 use App\InfoSliderText3;
 use App\Pricing;
 use App\User;
+use App\Order;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
 
-use Illuminate\Http\Request;
+
 
 class IndexController extends Controller
 {
@@ -53,6 +56,7 @@ class IndexController extends Controller
 
     public function index() {
       return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
+      ->with('orders', Order::orderBy('order')->get())
       ->with('contenidosection1s', ContenidoSection1::all())
       ->with('contenidosection2s', ContenidoSection2::all())
       ->with('contenidosection3s', ContenidoSection3::all())
@@ -69,6 +73,19 @@ class IndexController extends Controller
       ->with('info_slider_image3s', InfoSliderImage3::all())
       ->with('info_slider_text3s', InfoSliderText3::all())
       ->with('users', User::all());
+
+
+    }
+
+    public function order(Request $request) {
+      $order = DB::table('orders')->orderBy('order')->get();
+      $itemID = $request->input('itemID');
+      $itemIndex = $request->input('itemIndex');
+
+      foreach ($order as $item) {
+        $data=array('order'=>$itemIndex);
+        return DB::table('orders')->where('id', '=', $itemID)->update($data);
+      }
 
     }
 

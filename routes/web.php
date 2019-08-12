@@ -21,11 +21,13 @@ Auth::routes(['verify' => true, 'register' => false]);
 
 
 Route::get('home', 'HomeController@index')->name('home');
-
+//Order Sections
+Route::post('/order', 'IndexController@order');
 // Contact Form
 Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 
 Route::middleware(['auth'])->group(function () {
+
 // EditSections
 //Styles
 Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');

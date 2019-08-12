@@ -21,6 +21,7 @@ use App\InfoSliderText2;
 use App\InfoSliderImage3;
 use App\InfoSliderText3;
 use App\Pricing;
+use App\Order;
 class HomeController extends Controller
 {
     /**
@@ -41,6 +42,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home')
+        ->with('orders', Order::orderBy('order')->get())
         ->with('contenidosection1s', ContenidoSection1::all())
         ->with('contenidosection2s', ContenidoSection2::all())
         ->with('contenidosection3s', ContenidoSection3::all())
