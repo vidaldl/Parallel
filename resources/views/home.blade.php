@@ -457,7 +457,7 @@
     </div>
   <!-- /Artículos -->
 
-  <!-- Servicios -->
+  <!-- Enlaces -->
     <div class="col-md-4 mb-4 {{ $link_sections[0]->display == '1' ? 'd-none' : ''}}">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -475,7 +475,7 @@
         <a href="editsection2/{{$link_sections[0]->id}}">
           <div class="card-body">
             <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/section2.png')}}" alt="">
+              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/enlaces.png')}}" alt="">
             </div>
           </div>
         </a>
@@ -484,7 +484,7 @@
         </div>
       </div>
     </div>
-  <!-- /Servicios -->
+  <!-- /Enlaces -->
 
   <!-- Contacto -->
     <div class="col-md-4 mb-4 {{ $contenidosection5s[0]->display == '1' ? 'd-none' : ''}}">

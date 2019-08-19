@@ -15,7 +15,7 @@
       </div>
       <div class="card-body row">
         <div class="col-md-6">
-          <img class="img-fluid" src="{{asset('img/sections/section1.png')}}">
+          <img class="img-fluid" src="{{asset('img/sections/enlaces.png')}}">
         </div>
         <div class=" col-md-6">
           <div class="row">
