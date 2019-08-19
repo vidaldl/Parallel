@@ -12,22 +12,67 @@ class LinksTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('links')->delete();
-        
+
+
+
         \DB::table('links')->insert(array (
-            0 => 
+            0 =>
             array (
-                'id' => 1,
-                'image' => 'lol',
+                'image' => 'content/links/zzAh9DroRwJya01tHcnPYJwfwEZKi1MaCa2cMhEw.png',
                 'title' => 'Aduanas',
-                'link' => 'https://google.com',
+                'link' => NULL,
+                'deleted_at' => NULL,
+                'created_at' => '2019-08-16 16:18:05',
+                'updated_at' => '2019-08-16 16:18:05',
+            ),
+            1 =>
+            array (
+                'image' => 'content/links/1ji18GjWrRdLPWT6fJ7kJ5kfGMFXxXHnNQowylI1.png',
+                'title' => 'Google',
+                'link' => '#contact',
+                'deleted_at' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            2 =>
+            array (
+                'image' => 'content/links/tTIyyk0YHtCXzprnjb4Essh2GU7AsHyBbWX1zwxR.png',
+                'title' => 'Impuestos Internos',
+                'link' => '#servicios',
+                'deleted_at' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            3 =>
+            array (
+                'image' => 'content/links/S6SoBwozlOzSgthxF9IGlCplEBlCTAqF1DqGg1VX.png',
+                'title' => 'Super Tucano International',
+                'link' => 'google.com',
+                'deleted_at' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            4 =>
+            array (
+                'image' => 'content/links/ASgOghdZ3Pp3T5azqaOi3vbrphFsH6gVLuy0yRoR.png',
+                'title' => 'Grupo Ramos',
+                'link' => 'http://google.com',
+                'deleted_at' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            5 =>
+            array (
+                'image' => 'content/links/1nDoI4MlrycISssVtU7AMMR8ux4StOy0soFgMid8.png',
+                'title' => 'Grupo Hidalgo',
+                'link' => 'http://ghidalgo.com',
+                'deleted_at' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
         ));
-        
-        
+
+
     }
 }
