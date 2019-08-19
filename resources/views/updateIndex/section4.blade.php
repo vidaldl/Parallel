@@ -44,6 +44,16 @@
                   @enderror
               </div>
               <div class="form-group">
+                <label for="link" class="col-form-label">Enlace</label>
+                <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$contenidosection4s[0]->link}}">
+                <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
+                  @error('link')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
                 <label for="back_color">Color de Fondo</label><br>
                 <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $contenidosection4s[0]->back_color }}">
               </div>
@@ -53,6 +63,16 @@
               </div>
           </form>
 
+          <!-- LINK SECTION LIST -->
+          <datalist id="sections">
+            <option value="#inicio">Inicio</option>
+            <option value="#servicios">Servicios</option>
+            <option value="#infoSlider">Slider de Info.</option>
+            <option value="#articulos">Artículos</option>
+            <option value="#contact">Contacto</option>
+            <option value="/blog">Más Artículos</option>
+          </datalist>
+          <!-- /LINK SECTION LIST -->
 
         </div>
     </div>

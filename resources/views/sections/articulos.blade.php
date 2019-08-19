@@ -61,7 +61,7 @@
         <!-- Column -->
       </div>
       <div class="row">
-        <a href="/blog" class="btn mx-auto" style="border-radius: 0%;">Más Artículos &nbsp;<i class="fas fa-angle-down"></i></a>
+        <a href="{{$contenidosection4s[0]->tagline}}" class="btn mx-auto {{$contenidosection4s[0]->button ? '' : 'd-none'}}" style="border-radius: 0%;">Más Artículos &nbsp;<i class="fas fa-angle-down"></i></a>
         <!-- MODAL -->
         @foreach($posts as $post)
         <div class="modal fade" id="modal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ $post->id }}" aria-hidden="true">

@@ -14,13 +14,14 @@ class CreateContenidoSection4sTable extends Migration
     public function up()
     {
         Schema::create('contenido_section4s', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->string('tagline')->nullable();
-            $table->string('button')->nullable();
-            $table->integer('display')->default('1')->nullable();
-            $table->string('back_color')->nullable()->default('#FFFFFF');
-            $table->timestamps();
+          $table->bigIncrements('id');
+          $table->string('title')->nullable();
+          $table->string('tagline')->nullable();
+          $table->string('button')->nullable();
+          $table->text('link')->nullable();
+          $table->integer('display')->default('1')->nullable();
+          $table->string('back_color')->nullable()->default('#FFFFFF');
+          $table->timestamps();
         });
     }
 

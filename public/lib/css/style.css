@@ -29,6 +29,25 @@ html{
   outline: 0;
 } */
 
+/* Links------------------------------------------------------------------------------------*/
+.links-list {
+  list-style: none;
+
+  padding: 0;
+}
+
+.links-list li {
+  line-height: 26px;
+}
+
+.links-list a {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.links-list a:hover {
+  color: #0275d8;
+}
 
 /* Articles------------------------------------------------------------------------------------*/
 
@@ -449,7 +468,7 @@ h1 {
   font-size: 45px;
 }
 
-.h1color {
+.h1color p{
   color: #3742fa;
 }
 
@@ -610,9 +629,6 @@ a:hover {
 
 .logo-bottom {
   margin-bottom: 50px;
-}
-.tagline {
-  
 }
 
 @media screen and (max-width: 1300px) {

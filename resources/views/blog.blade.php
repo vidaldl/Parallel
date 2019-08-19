@@ -116,7 +116,7 @@
       </div>
 
       <div class="col-md-12" id="h1color">
-        <h1>
+          <h1>
             @if($contenidosection1s[0]->carousel == 1)
               {{$contenidosection1s[1]->title}}
             @else
@@ -124,13 +124,13 @@
             @endif
           </h1>
 
-          <p class="tagline">
+          <div class="tagline">
             @if($contenidosection1s[0]->carousel == 1)
-              {{$contenidosection1s[1]->tagline}}
+              {!! $contenidosection1s[1]->tagline !!}
             @else
-              {{$contenidosection1s[0]->tagline}}
+              {!! $contenidosection1s[0]->tagline !!}
             @endif
-          </p>
+          </div>
 
       </div>
     </div>

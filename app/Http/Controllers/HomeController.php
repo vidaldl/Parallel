@@ -22,6 +22,8 @@ use App\InfoSliderImage3;
 use App\InfoSliderText3;
 use App\Pricing;
 use App\Order;
+use App\Links;
+use App\LinkSection;
 class HomeController extends Controller
 {
     /**
@@ -57,8 +59,38 @@ class HomeController extends Controller
         ->with('info_slider_image2s', InfoSliderImage2::all())
         ->with('info_slider_text2s', InfoSliderText2::all())
         ->with('info_slider_image3s', InfoSliderImage3::all())
-        ->with('info_slider_text3s', InfoSliderText3::all());
+        ->with('info_slider_text3s', InfoSliderText3::all())
+        ->with('links', Links::all())
+        ->with('link_sections', LinkSection::all());
     }
+
+    /*Links -------------------------------------------------------------------------------->*/
+    public function linkEdit() {
+      return view('updateIndex/linkSection')->with('links', Links::all())->with('link_sections', LinkSection::all());
+    }
+
+    public function linkUpdate(Request $request, $id) {
+      $title = $request->input('title');
+      $back_color = $request->input('back_color');
+
+      $data=array("title"=>$title, "back_color"=>$back_color);
+      DB::table('link_sections')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+    public function linkDisplay(Request $request, $id) {
+      $display = $request->input('link');
+      $data=array("display"=>$display);
+      DB::table('link_sections')->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
+
+
+
 
     /*Pricing -------------------------------------------------------------------------------->*/
     public function pricingEdit() {
@@ -669,9 +701,10 @@ class HomeController extends Controller
       $title = $request->input('title');
       $tagline = $request->input('tagline');
       $button = $request->input('button');
+      $link = $request->input('link');
       $back_color = $request->input('back_color');
 
-      $data=array("title"=>$title, "tagline"=>$tagline, "button"=>$button, "back_color"=>$back_color);
+      $data=array("title"=>$title, "tagline"=>$tagline, "button"=>$button, "link"=>$link, "back_color"=>$back_color);
       DB::table('contenido_section4s')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect

@@ -155,8 +155,7 @@ class PostController extends Controller
 
 
         $oldImage = DB::table('posts')->where('id', $id)->first();
-        // $data = $request->only(['title', 'description', 'category', 'published_at', 'contenido']);
-        // $data['category_id'] = $request->category;
+
         //check if new image
         if ($request->hasFile('image')) {
           $this->validate($request, [

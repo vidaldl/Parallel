@@ -40,6 +40,10 @@ Route::post('/carouselsection1/{id}', 'HomeController@section1Carousel')->name('
 Route::get('/editsection2/{id}', 'HomeController@section2Edit')->name('section2.edit');
 Route::post('/updatesection2/{id}', 'HomeController@section2Update')->name('section2.update');
 Route::post('/displaysection2/{id}', 'HomeController@section2Display')->name('section2.display');
+//Links
+Route::get('/editlink/{id}', 'HomeController@linkEdit')->name('link.edit');
+Route::post('/updatelink/{id}', 'HomeController@linkUpdate')->name('link.update');
+Route::post('/displaylink/{id}', 'HomeController@linkDisplay')->name('link.display');
 //Slider information
 Route::get('/editInfoSlider/{id}', 'HomeController@infoSliderEdit')->name('info-slider-text.edit');
 Route::post('/updateInfoSlider/{id}', 'HomeController@infoSliderUpdate')->name('infoSlider.update');
@@ -96,6 +100,7 @@ Route::resource('posts', 'PostController', ['except' => ['update']]);
 Route::post('/posts/{id}', 'PostController@update')->name('posts.update');
 //redirect1
 Route::get('/redirect1', 'PostController@redirect1');
+Route::get('/redirect2', 'LinkController@redirect2');
 
 Route::get('trashed-posts', 'PostController@trashed')->name('trashed-posts.index');
 Route::put('restore-posts/{post}', 'PostController@restore')->name('restore-posts');
@@ -109,6 +114,10 @@ Route::resource('servicios', 'ServicioController');
 Route::get('trashed-servicios', 'ServicioController@trashed')->name('trashed-servicios.index');
 Route::put('restore-servicios/{servicio}', 'ServicioController@restore')->name('restore-servicios');
 
+//Links
+Route::resource('links', 'LinkController');
+Route::get('trashed-links', 'LinkController@trashed')->name('trashed-links.index');
+Route::put('restore-links/{servicio}', 'LinkController@restore')->name('restore-links');
 });
 
 Route::middleware(['auth','admin'])->group(function() {

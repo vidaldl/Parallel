@@ -24,6 +24,8 @@ use App\InfoSliderText3;
 use App\Pricing;
 use App\User;
 use App\Order;
+use App\Links;
+use App\LinkSection;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -72,6 +74,8 @@ class IndexController extends Controller
       ->with('info_slider_text2s', InfoSliderText2::all())
       ->with('info_slider_image3s', InfoSliderImage3::all())
       ->with('info_slider_text3s', InfoSliderText3::all())
+      ->with('links', Links::all())
+      ->with('link_sections', LinkSection::all())
       ->with('users', User::all());
 
 
