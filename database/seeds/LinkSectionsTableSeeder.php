@@ -12,20 +12,20 @@ class LinkSectionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('link_sections')->delete();
-        
+
         \DB::table('link_sections')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'title' => 'Enclaces Útiles',
                 'back_color' => '#dadada',
-                'display' => 1,
+                'display' => 0,
             ),
         ));
-        
-        
+
+
     }
 }
