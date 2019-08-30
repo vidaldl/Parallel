@@ -1,4 +1,4 @@
-<div id="infoSlider" class="infoSlider {{$info_slider_texts[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 1px solid #E1E4EA;">
+<div id="infoslider1" class="infoSlider" style="border-top: 1px solid #E1E4EA;">
   <div class="container-fluid mt-5">
     <div class="row">
       <div class="col-md-6">

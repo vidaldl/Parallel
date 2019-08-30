@@ -68,7 +68,7 @@
 <div class="d-sm-flex align-items-center  mb-4" >
 <form autocomplete="off" class="col-md-12" method="POST" action="{{route('style.update', $styles[0]->id)}}">
   @csrf
- <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+ <h1 class="h3 mb-3 text-gray-800">Manejador</h1>
 <div class="form-row">
   <div class="col-md-4">
     <div class="form-group col-md-12">
@@ -191,361 +191,62 @@
     <div class="row">
       <div class="container">
         <div class="col-md-12">
-          @include('updateIndex.sections.inicio')
+          @if($contenidosection1s[0]->display == 1)
+            @include('updateIndex.sections.inicio')
+          @endif
         </div>
         <div class="" id="sort">
         @foreach($orders as $order)
-        <div id="{{$order->id}}" class="col-md-12 sortable">
-        @php
-          $path = 'updateIndex.sections.' . $order->section ;
-        @endphp
-        @include($path)
-        </div>
+          <div id="{{$order->id}}" class="col-md-12 sortable">
+            @php
+              $path = 'updateIndex.sections.' . $order->section ;
+            @endphp
+            @if($order->display == 1)
+              @include($path)
+            @endif
+          </div>
         @endforeach
         </div>
         <div class="col-md-12">
-          @include('updateIndex.sections.footer')
+          @if($contenidosectionfooters[0]->display == 1)
+            @include('updateIndex.sections.footer')
+          @endif
         </div>
       </div>
     </div>
   </div>
 
-<div id="inactivo" class="row tabdiv">
-    @if($contenidosection1s[0]->display == '1'
-    && $contenidosection2s[0]->display == '1'
-    && $info_slider_texts[0]->display == '1'
-    && $info_slider_text2s[0]->display == '1'
-    && $info_slider_text3s[0]->display == '1'
-    && $pricings[0]->display == '1'
-    && $link_sections[0]->display == '1'
-    && $contenidosection3s[0]->display == '1'
-    && $contenidosection4s[0]->display == '1'
-    && $contenidosection5s[0]->display == '1'
-    && $contenidosectionfooters[0]->display == '1')
-    <h1 class="mx-auto mt-3">No hay secciones inactivas</h1>
-    @else
+<div id="inactivo" class="tabdiv">
 
-  <!-- Seccion 1 -->
-    <div class="col-md-4 mb-4 {{ $contenidosection1s[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-      <form method="POST" action="{{route('section1.display', $contenidosection1s[0]->id)}}">
-        @csrf
-        <div class="row">
-          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Inicio</h6></span>
-            <select onchange="this.form.submit()" name="section1" class="col-md-6  float-right">
-              <option value="1" {{ $contenidosection1s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-              <option value="0" {{ $contenidosection1s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-            </select>
+    <!-- <h1 class="mx-auto mt-3">No hay secciones inactivas</h1> -->
+
+
+    <div class="row">
+      <div class="container">
+        <div class="col-md-12">
+          @if($contenidosection1s[0]->display == 0)
+            @include('updateIndex.sections.inicio')
+          @endif
         </div>
-      </form>
-        </div>
-        <a href="editsection1/{{$contenidosection1s[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/section1.png')}}" alt="">
-            </div>
+        @foreach($orders as $order)
+          <div id="{{$order->id}}" class="col-md-12">
+            @php
+              $path = 'updateIndex.sections.' . $order->section ;
+            @endphp
+            @if($order->display == 0)
+              @include($path)
+            @endif
           </div>
-        </a>
-        <div class="card-footer">
-          <a href="editsection1/{{$contenidosection1s[0]->id}}">Editar contenido &rarr;</a>
+        @endforeach
+        <div class="col-md-12">
+          @if($contenidosectionfooters[0]->display == 0)
+            @include('updateIndex.sections.footer')
+          @endif
         </div>
       </div>
     </div>
-  <!-- /Seccion 1 -->
-
-  <!-- Servicios -->
-    <div class="col-md-4 mb-4 {{ $contenidosection2s[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <form method="POST" action="{{route('section2.display', $contenidosection2s[0]->id)}}">
-            @csrf
-            <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Servicios</h6></span>
-                <select onchange="this.form.submit()" name="section2" class="col-md-6  float-right">
-                  <option value="1" {{ $contenidosection2s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-                  <option value="0" {{ $contenidosection2s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-                </select>
-            </div>
-          </form>
-        </div>
-        <a href="editsection2/{{$contenidosection2s[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/section2.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editsection2/{{$contenidosection2s[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- /Servicios -->
-
-  <!-- Slider Info 1 -->
-    <div class="col-md-4 mb-4 {{ $info_slider_texts[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-      <form method="POST" action="{{route('infoSlider.display', $info_slider_texts[0]->id)}}">
-        @csrf
-        <div class="row">
-          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Slider de Informacion</h6></span>
-            <select onchange="this.form.submit()" name="infoSlider" class="col-md-6  float-right">
-              <option value="1" {{ $info_slider_texts[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-              <option value="0" {{ $info_slider_texts[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-            </select>
-        </div>
-      </form>
-        </div>
-        <a href="editInfoSlider/{{$info_slider_texts[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/infoSlider.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editInfoSlider/{{$info_slider_texts[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- /Slider Info 1 -->
-
-  <!-- Info Slider 2 -->
-    <div class="col-md-4 mb-4 {{ $info_slider_text2s[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-      <form method="POST" action="{{route('infoSlider2.display', $info_slider_text2s[0]->id)}}">
-        @csrf
-        <div class="row">
-          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Slider de Informacion 2</h6></span>
-            <select onchange="this.form.submit()" name="infoSlider" class="col-md-6  float-right">
-              <option value="1" {{ $info_slider_text2s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-              <option value="0" {{ $info_slider_text2s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-            </select>
-        </div>
-      </form>
-        </div>
-        <a href="editInfoSlider2/{{$info_slider_text2s[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/infoSlider.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editInfoSlider2/{{$info_slider_text2s[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- /Info Slider 2 -->
-
-  <!-- Info Slider 3 -->
-    <div class="col-md-4 mb-4 {{ $info_slider_text3s[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-      <form method="POST" action="{{route('infoSlider3.display', $info_slider_text3s[0]->id)}}">
-        @csrf
-        <div class="row">
-          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Slider de Informacion 3</h6></span>
-            <select onchange="this.form.submit()" name="infoSlider" class="col-md-6  float-right">
-              <option value="1" {{ $info_slider_text3s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-              <option value="0" {{ $info_slider_text3s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-            </select>
-        </div>
-      </form>
-        </div>
-        <a href="editInfoSlider3/{{$info_slider_text3s[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/infoSlider.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editInfoSlider3/{{$info_slider_text3s[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- /Info Slider 3 -->
-
-  <!-- Pricing -->
-    <div class="col-md-4 mb-4 {{ $pricings[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-      <form method="POST" action="{{route('pricing.display', $pricings[0]->id)}}">
-        @csrf
-        <div class="row">
-          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección de Precios</h6></span>
-            <select onchange="this.form.submit()" name="pricing" class="col-md-6  float-right">
-              <option value="1" {{ $pricings[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-              <option value="0" {{ $pricings[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-            </select>
-        </div>
-      </form>
-        </div>
-        <a href="editPricing}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/pricing.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editPricing">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- /Pricing -->
-
-  <!-- Info -->
-    <div class="col-md-4 mb-4 {{ $contenidosection3s[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <form method="POST" action="{{route('section3.display', $contenidosection3s[0]->id)}}">
-            @csrf
-            <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección Info</h6></span>
-                <select onchange="this.form.submit()" name="section3" class="col-md-6  float-right">
-                  <option value="1" {{ $contenidosection3s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-                  <option value="0" {{ $contenidosection3s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-                </select>
-            </div>
-          </form>
-        </div>
-        <a href="editsection3/{{$contenidosection3s[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/section3.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editsection3/{{$contenidosection3s[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- Info -->
-
-  <!-- Artículos -->
-    <div class="col-md-4 mb-4 {{ $contenidosection4s[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <form method="POST" action="{{route('section4.display', $contenidosection4s[0]->id)}}">
-            @csrf
-            <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Artículos</h6></span>
-                <select onchange="this.form.submit()" name="section4" class="col-md-6  float-right">
-                  <option value="1" {{ $contenidosection4s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-                  <option value="0" {{ $contenidosection4s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-                </select>
-            </div>
-          </form>
-        </div>
-        <a href="editsection4/{{$contenidosection4s[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/section4.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editsection4/{{$contenidosection4s[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- /Artículos -->
-
-  <!-- Enlaces -->
-    <div class="col-md-4 mb-4 {{ $link_sections[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <form method="POST" action="{{route('link.display', $link_sections[0]->id)}}">
-            @csrf
-            <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Enlaces Destacados</h6></span>
-                <select onchange="this.form.submit()" name="link" class="col-md-6  float-right">
-                  <option value="1" {{ $link_sections[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-                  <option value="0" {{ $link_sections[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-                </select>
-            </div>
-          </form>
-        </div>
-        <a href="editsection2/{{$link_sections[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/enlaces.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editsection2/{{$link_sections[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- /Enlaces -->
-
-  <!-- Contacto -->
-    <div class="col-md-4 mb-4 {{ $contenidosection5s[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <form method="POST" action="{{route('section5.display', $contenidosection5s[0]->id)}}">
-            @csrf
-            <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Sección Contacto</h6></span>
-                <select onchange="this.form.submit()" name="section5" class="col-md-6  float-right">
-                  <option value="1" {{ $contenidosection5s[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-                  <option value="0" {{ $contenidosection5s[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-                </select>
-            </div>
-          </form>
-        </div>
-        <a href="editsection5/{{$contenidosection5s[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/section5.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editsection5/{{$contenidosection5s[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- Contacto -->
-
-  <!-- Pie de Pagina -->
-    <div class="col-md-4 mb-4 {{ $contenidosectionfooters[0]->display == '1' ? 'd-none' : ''}}">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <form method="POST" action="{{route('sectionFooter.display', $contenidosectionfooters[0]->id)}}">
-            @csrf
-            <div class="row">
-              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Pie de Página</h6></span>
-                <select onchange="this.form.submit()" name="sectionFooter" class="col-md-6  float-right">
-                  <option value="1" {{ $contenidosectionfooters[0]->display == '1' ? 'selected' : '' }}>Mostrar</option>
-                  <option value="0" {{ $contenidosectionfooters[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
-                </select>
-            </div>
-          </form>
-        </div>
-        <a href="editsectionFooter/{{$contenidosectionfooters[0]->id}}">
-          <div class="card-body">
-            <div class="text-center">
-              <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/sections/sectionFooter.png')}}" alt="">
-            </div>
-          </div>
-        </a>
-        <div class="card-footer">
-          <a href="editsectionFooter/{{$contenidosectionfooters[0]->id}}">Editar contenido &rarr;</a>
-        </div>
-      </div>
-    </div>
-  <!-- Pie de Pagina -->
 
 
-    @endif
 
   </div>
 

@@ -1,4 +1,4 @@
-<section id="links" class="links {{$link_sections[0]->display ? '' : 'd-none'}}" style="background-color: {{$link_sections[0]->back_color}}; border-top: 1px solid #E1E4EA">
+<section id="links" class="links" style="background-color: {{$link_sections[0]->back_color}}; border-top: 1px solid #E1E4EA">
   <div class="container">
     <div class="row links-title">
       <h3 style="margin-left: 0px;">{{$link_sections[0]->title}}</h3>

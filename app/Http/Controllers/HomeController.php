@@ -64,6 +64,8 @@ class HomeController extends Controller
         ->with('link_sections', LinkSection::all());
     }
 
+
+
     /*Links -------------------------------------------------------------------------------->*/
     public function linkEdit() {
       return view('updateIndex/linkSection')->with('links', Links::all())->with('link_sections', LinkSection::all());
@@ -74,15 +76,15 @@ class HomeController extends Controller
       $back_color = $request->input('back_color');
 
       $data=array("title"=>$title, "back_color"=>$back_color);
-      DB::table('link_sections')->update($data);
+      DB::table('link_sections')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
     }
     public function linkDisplay(Request $request, $id) {
-      $display = $request->input('link');
+      $display = $request->input('links');
       $data=array("display"=>$display);
-      DB::table('link_sections')->update($data);
+      DB::table('orders')->where('section', 'links')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -153,7 +155,7 @@ class HomeController extends Controller
     public function pricingDisplay(Request $request, $id) {
       $display = $request->input('pricing');
       $data=array("display"=>$display);
-      DB::table('pricings')->where('id', $id)->update($data);
+      DB::table('orders')->where('section', 'pricing')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -241,9 +243,9 @@ class HomeController extends Controller
     }
 
     public function infoSliderDisplay(Request $request, $id) {
-      $display = $request->input('infoSlider');
+      $display = $request->input('infoslider1');
       $data=array("display"=>$display);
-      DB::table('info_slider_texts')->where('id', $id)->update($data);
+      DB::table('orders')->where('section', 'infoslider1')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -341,9 +343,9 @@ class HomeController extends Controller
     }
 
     public function infoSlider2Display(Request $request, $id) {
-      $display = $request->input('infoSlider');
+      $display = $request->input('infoslider2');
       $data=array("display"=>$display);
-      DB::table('info_slider_text2s')->where('id', $id)->update($data);
+      DB::table('orders')->where('section', 'infoslider2')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -441,9 +443,9 @@ class HomeController extends Controller
     }
 
     public function infoSlider3Display(Request $request, $id) {
-      $display = $request->input('infoSlider');
+      $display = $request->input('infoslider3');
       $data=array("display"=>$display);
-      DB::table('info_slider_text3s')->where('id', $id)->update($data);
+      DB::table('orders')->where('section', 'infoslider3')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -657,9 +659,9 @@ class HomeController extends Controller
       return redirect()->back();
     }
     public function section2Display(Request $request, $id) {
-      $display = $request->input('section2');
+      $display = $request->input('servicios');
       $data=array("display"=>$display);
-      DB::table('contenido_section2s')->update($data);
+      DB::table('orders')->where('section', 'servicios')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -684,9 +686,9 @@ class HomeController extends Controller
     }
 
     public function section3Display(Request $request, $id) {
-      $display = $request->input('section3');
+      $display = $request->input('info');
       $data=array("display"=>$display);
-      DB::table('contenido_section3s')->update($data);
+      DB::table('orders')->where('section', 'info')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -712,9 +714,9 @@ class HomeController extends Controller
     }
 
     public function section4Display(Request $request, $id) {
-      $display = $request->input('section4');
+      $display = $request->input('articulos');
       $data=array("display"=>$display);
-      DB::table('contenido_section4s')->update($data);
+      DB::table('orders')->where('section', 'articulos')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -741,9 +743,9 @@ class HomeController extends Controller
     }
 
     public function section5Display(Request $request, $id) {
-      $display = $request->input('section5');
+      $display = $request->input('contact');
       $data=array("display"=>$display);
-      DB::table('contenido_section5s')->update($data);
+      DB::table('orders')->where('section', 'contact')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();

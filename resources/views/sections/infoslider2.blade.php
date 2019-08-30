@@ -1,4 +1,4 @@
-<div id="infoSlider2" class="infoSlider {{$info_slider_text2s[0]->display == 0 ? 'd-none' : ''}}" style="border-top: 1px solid #E1E4EA;">
+<div id="infoslider2" class="infoSlider" style="border-top: 1px solid #E1E4EA;">
   <div class="container-fluid mt-5">
     <div class="row">
       <div class="col-md-6 imageH" id="" style="overflow: hidden;">

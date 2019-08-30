@@ -1,11 +1,11 @@
-@foreach($contenidosection2s as $contenidosection2)
 
-  <section class="features {{ $contenidosection2->display == '0' ? 'd-none' : '' }}" id="servicios">
+
+  <section class="features" id="servicios">
     <div class="container">
       <h2 class="text-center">
-          {{$contenidosection2->title}}
+          {{$contenidosection2s[0]->title}}
         </h2>
-@endforeach
+
       <div class="row">
       @foreach($servicios as $servicio)
         <div class="feature-col col-lg-4 col-xs-12">

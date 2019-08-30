@@ -1,5 +1,5 @@
 <!-- Footer -->
-  <div class="col-md-12 mb-4 {{ $contenidosectionfooters[0]->display == '0' ? 'd-none' : ''}}">
+  <div class="col-md-12 mb-4">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
         <form method="POST" action="{{route('sectionFooter.display', $contenidosectionfooters[0]->id)}}">

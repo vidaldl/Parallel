@@ -1,12 +1,12 @@
 @section('footer')
-@foreach($contenidosectionfooters as $contenidosectionfooter)
-<footer class="site-footer {{ $contenidosectionfooter->display == '0' ? 'd-none' : '' }}" id="footer">
+
+<footer class="site-footer {{ $contenidosectionfooters[0]->display == '0' ? 'd-none' : '' }}" id="footer">
   <div class="bottom">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-xs-12 text-lg-left text-center">
           <p class="copyright-text">
-            © {{$contenidosectionfooter->copy}}
+            © {{$contenidosectionfooters[0]->copy}}
           </p>
           <div class="credits">
 
@@ -36,9 +36,9 @@
               <a href="#contact">Contacto</a>
             </li>
             <li class="list-inline-item">
-              <a target="_blank" href="{{$contenidosectionfooter->twitter_link}}"><i class="fab fa-twitter"></i></a>
-              <a target="_blank" href="{{$contenidosectionfooter->facebook_link}}"><i class="fab fa-facebook"></i></a>
-              <a target="_blank" href="{{$contenidosectionfooter->instagram_link}}"><i class="fab fa-instagram"></i></a>
+              <a target="_blank" href="{{$contenidosectionfooters[0]->twitter_link}}"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" href="{{$contenidosectionfooters[0]->facebook_link}}"><i class="fab fa-facebook"></i></a>
+              <a target="_blank" href="{{$contenidosectionfooters[0]->instagram_link}}"><i class="fab fa-instagram"></i></a>
             </li>
           </ul>
           <ul class="list-inline">
@@ -49,5 +49,5 @@
     </div>
   </div>
 </footer>
-@endforeach
+
 @endsection

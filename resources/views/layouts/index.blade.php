@@ -41,6 +41,7 @@
   <!-- Main Stylesheet File -->
   <link href="{{asset('lib/css/style.css')}}" rel="stylesheet">
 
+@stack('styles')
 @yield('style')
 </head>
 
@@ -54,8 +55,8 @@
 
 
 <!-- Required JavaScript Libraries -->
-<script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
+<script src="{{ asset('lib/jqueryOld/jquery.min.js') }}"></script>
+<script src="{{ asset('lib/jqueryOld/jquery-migrate.min.js') }}"></script>
 <script src="{{ asset('lib/superfish/hoverIntent.js') }}"></script>
 <script src="{{ asset('lib/superfish/superfish.min.js') }}"></script>
 <script src="{{ asset('lib/tether/js/tether.min.js') }}"></script>
@@ -69,6 +70,7 @@
 <script src="{{ asset('lib/lockfixed/lockfixed.min.js') }}"></script>
 <script src="{{ asset('lib/isotope/isotope.pkgd.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider.js"></script>
+@stack('scripts')
 @yield('script')
 <!-- CUSTOM JS -->
 <script src="{{ asset('lib/js/custom.js') }}"></script>

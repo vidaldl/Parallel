@@ -26,6 +26,8 @@ use App\User;
 use App\Order;
 use App\Links;
 use App\LinkSection;
+use App\Gallery;
+use App\GallerySection;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -76,6 +78,10 @@ class IndexController extends Controller
       ->with('info_slider_text3s', InfoSliderText3::all())
       ->with('links', Links::all())
       ->with('link_sections', LinkSection::all())
+      ->with('galleries', Gallery::all())
+      ->with('galleries_count', Gallery::select('slide')->distinct()->pluck('slide'))
+      ->with('column_count', Gallery::select('column')->distinct()->pluck('column'))
+      ->with('gallery_sections', GallerySection::all())
       ->with('users', User::all());
 
 

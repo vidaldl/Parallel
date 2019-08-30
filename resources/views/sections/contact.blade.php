@@ -1,9 +1,9 @@
-@foreach($contenidosection5s as $contenidosection5)
-  <section class="{{ $contenidosection5->display == '0' ? 'd-none' : '' }}" id="contact">
+
+  <section id="contact">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2 class="section-title">{{$contenidosection5->title}}</h2>
+          <h2 class="section-title">{{$contenidosection5s[0]->title}}</h2>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -11,17 +11,17 @@
           <div class="info">
             <div>
               <i class="fa fa-map-marker-alt"></i>
-              <p>{!! $contenidosection5->address !!}</p>
+              <p>{!! $contenidosection5s[0]->address !!}</p>
             </div>
 
             <div>
               <i class="fa fa-envelope"></i>
-              <p>{!! $contenidosection5->email !!}</p>
+              <p>{!! $contenidosection5s[0]->email !!}</p>
             </div>
 
             <div>
               <i class="fa fa-phone"></i>
-              <p>{!! $contenidosection5->number !!}</p>
+              <p>{!! $contenidosection5s[0]->number !!}</p>
             </div>
           </div>
         </div>
@@ -90,4 +90,3 @@
       </div>
     </div>
   </section>
-  @endforeach

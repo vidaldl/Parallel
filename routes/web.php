@@ -31,6 +31,12 @@ Route::middleware(['auth'])->group(function () {
 // EditSections
 //Styles
 Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
+
+//Gallery
+Route::resource('galleries', 'GalleriesController');
+Route::post('/display-galleries', 'GalleriesController@display')->name('galleries.display');
+Route::post('/update-gallerySection/{id}', 'GalleriesController@updateSection')->name('galleries.section');
+Route::post('galleries/{id}/update', 'GalleriesController@updateGal')->name('gal.update');
 //Section1
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
 Route::post('/updatesection1/{id}', 'HomeController@section1Update')->name('section1.update');
