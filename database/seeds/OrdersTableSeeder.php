@@ -12,13 +12,13 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
         DB::table('orders')->insert(array (
             0 =>
             array (
                 'section' => 'gallery',
                 'order' => 9,
-                'display' => 1,
+                'display' => 0,
             ),
         ));
 
