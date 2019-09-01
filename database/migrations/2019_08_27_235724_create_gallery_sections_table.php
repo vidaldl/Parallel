@@ -15,8 +15,8 @@ class CreateGallerySectionsTable extends Migration
     {
         Schema::create('gallery_sections', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->string('subtitle')->nullable();
+            $table->string('title')->nullable()->default('Galería');
+            $table->string('subtitle')->nullable()->default('Nuestras Fotos');
             $table->string('back_color')->nullable()->default('#FFFFFF');
         });
     }

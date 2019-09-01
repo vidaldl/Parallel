@@ -443,9 +443,9 @@
     <div class="slide slide--{{$slide}}">
       <div class="carousel-column-container">
 
-          <ul class="carousel-column column-{{$column_count[0]}}">
+          <ul class="carousel-column column-1">
             @foreach($galleries as $element)
-              @if($element->column == $column_count[0] && $element->slide == $slide)
+              @if($element->column == 1 && $element->slide == $slide)
                 @if($element->type == 'image')
                   <li class="carousel-grid-item">
                     <a href="{{'storage/' . $element->object}}" title="{{$element->title}}" class="item {{$element->type}}" style="background-image: url('{{'storage/' . $element->object }}');min-height: 324px"></a>
@@ -470,9 +470,9 @@
               @endif
             @endforeach
           </ul>
-          <ul class="carousel-column column-{{$column_count[1]}}">
+          <ul class="carousel-column column-2">
             @foreach($galleries as $element)
-              @if($element->column == $column_count[1] && $element->slide == $slide)
+              @if($element->column == 2 && $element->slide == $slide)
                 @if($element->type == 'image')
                   <li class="carousel-grid-item">
                     <a href="{{'storage/' . $element->object}}" title="{{$element->title}}" class="item {{$element->type}}" style="background-image: url('{{'storage/' . $element->object }}'); min-height: 280px"></a>
