@@ -530,7 +530,7 @@
         var urlId = youtube_parser(url);
 
         $('#video{{$element->id}}').css('background-image', 'url(https://img.youtube.com/vi/' + urlId + '/0.jpg)');
-
+        $('.video{{$element->id}}').attr('href', 'https://www.youtube.com/watch?v=' + urlId);
       @endif
       @endforeach
 
