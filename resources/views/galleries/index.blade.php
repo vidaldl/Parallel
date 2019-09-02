@@ -126,14 +126,16 @@
 
                 @if($object->type == "video")
                   @php
-                  $url = "$object->object";
-                  parse_str( parse_url( $url, PHP_URL_QUERY ), $vars );
-                  $lastUrl =  $vars['v'];
+
+                    $url = "$object->object";
+                    preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+                    $youtube_id = $match[1];
+
                   @endphp
-                  <iframe  height="315" src="https://www.youtube.com/embed/{{$lastUrl}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe  height="315" src="https://www.youtube.com/embed/{{$youtube_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 @endif
                 @if($object->type == "text")
-                <h4>{{$object->object}}</h4>  
+                <h4>{{$object->object}}</h4>
 
                 @endif
 
