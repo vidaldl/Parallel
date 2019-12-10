@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="{{asset('lib/iconpicker/css/fontawesome-iconpicker.css')}}">
+  <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -11,9 +12,9 @@
 </div>
 
 
-<div class="row justify-content-center">
+<div class="row justify-content-center"  style="overflow: scroll;">
   <div class="card col-md-8 mb-5">
-    <div class="card-body" style="height: 500px;">
+    <div class="card-body" style="">
       <form autocomplete="off" method="POST" action="{{ isset($servicio) ? route('servicios.update', $servicio->id) : route('servicios.store') }}">
         @csrf
         @if(isset($servicio))
@@ -21,7 +22,7 @@
         @endif
 
 
-          <div class="form-group">
+          <div class="form-group mt-5">
             <label for="icon" class="col-form-label">Ícono</label>
             <div class="input-group">
               <input id="icon" type="text" data-placement="bottomRight" class="form-control @error('icon') is-invalid @enderror"  name="icon" value="{{isset($servicio) ? $servicio->icon : ''}}">
@@ -55,7 +56,7 @@
 
         <div class="form-group mt-5">
           <label for="contenido" class="col-form-label">Descripcion del Post</label>
-          <textarea id="contenido" name="contenido" class="form-control @error('contenido') is-invalid @enderror" > {{ isset($servicio) ? $servicio->contenido : '' }} </textarea>
+          <textarea onchange="this.form.submit()" id="contenido" name="contenido" class="form-control @error('contenido') is-invalid @enderror" > {{ isset($servicio) ? $servicio->contenido : '' }} </textarea>
           @error('contenido')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -63,11 +64,12 @@
           @enderror
         </div>
 
-        <div class="form-group mt-5">
-          <button type="submit" class="btn btn-success float-right">
+        <div class="form-group row">
+          <button type="submit" class="btn btn-success ml-auto">
             {{ isset($post) ? 'Guardar' : 'Publicar' }}
           </button>
         </div>
+
       </form>
     </div>
   </div>
@@ -89,7 +91,7 @@ $('.icp').on('iconpickerSelected', function (e) {
     $('#icon').get(0).value = e.iconpickerInstance.options.fullClassFormatter(e.iconpickerValue);
   });
 </script>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
 <script>
 ClassicEditor.create( document.querySelector( '#contenido' ), {
       removePlugins: [ 'Heading', 'Link' ],
@@ -97,6 +99,12 @@ ClassicEditor.create( document.querySelector( '#contenido' ), {
     }).catch( error => {
         console.error( error );
     } );
+</script> -->
+
+
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script>
+  $('#contenido').trumbowyg();
 </script>
 
 @endsection

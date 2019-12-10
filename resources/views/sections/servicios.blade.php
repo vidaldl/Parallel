@@ -16,11 +16,11 @@
               </div>
             </div>
 
-            <div>
+            <div class="toShorten">
               <h3>{{ $servicio->title }}</h3>
-              <p>
+
                 {!! $servicio->contenido !!}
-              </p>
+
             </div>
           </div>
         </div>
@@ -28,3 +28,13 @@
       </div>
     </div>
   </section>
+
+@push('scripts')
+  <script>
+    $('.toShorten p').shorten({
+      "showChars" : 150,
+    	"moreText"	: "Leer Más",
+    	"lessText"	: "Menos",
+    });
+  </script>
+@endpush

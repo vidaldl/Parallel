@@ -70,6 +70,7 @@
 <script src="{{ asset('lib/lockfixed/lockfixed.min.js') }}"></script>
 <script src="{{ asset('lib/isotope/isotope.pkgd.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider.js"></script>
+<script src="{{asset('lib/shortenJS/shorten.js')}}"></script>
 @stack('scripts')
 @yield('script')
 <!-- CUSTOM JS -->
