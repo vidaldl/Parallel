@@ -16,11 +16,12 @@
               </div>
             </div>
 
-            <div class="toShorten">
+            <div>
               <h3>{{ $servicio->title }}</h3>
 
+              <span class="short">
                 {!! $servicio->contenido !!}
-
+              </span>
             </div>
           </div>
         </div>
@@ -30,11 +31,19 @@
   </section>
 
 @push('scripts')
+<script src="{{asset('lib/collapser/jquery.collapser.js')}}"></script>
   <script>
-    $('.toShorten p').shorten({
-      "showChars" : 150,
-    	"moreText"	: "Leer Más",
-    	"lessText"	: "Menos",
+    $('.short').collapser({
+    	mode: 'lines',
+    	truncate: 2,
+      ellipsis: '...',
+      showText: 'Mostrar Más &darr;',
+      hideText: 'Mostrar Menos &uarr;'
     });
+    // $('.short').shorten({
+    //   "showChars" : 100,
+    // 	"moreText"	: "Leer Más",
+    // 	"lessText"	: "Menos",
+    // });
   </script>
 @endpush
