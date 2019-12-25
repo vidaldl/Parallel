@@ -1,4 +1,4 @@
-<section id="links" class="links" style="background-color: {{$link_sections[0]->back_color}}; border-top: 1px solid #E1E4EA">
+<!-- <section id="links" class="links" style="background-color: {{$link_sections[0]->back_color}}; border-top: 1px solid #E1E4EA">
   <div class="container">
     <div class="row links-title">
       <h3 style="margin-left: 0px;">{{$link_sections[0]->title}}</h3>
@@ -14,4 +14,17 @@
       @endforeach
     </div>
   </div>
+</section> -->
+<div class="line"></div>
+<section>
+<h4 class="center">{{$link_sections[0]->title}}</h4>
+<div class="container clearfix">
+  <ul class="clients-grid grid-6 nobottommargin clearfix">
+    @foreach($links as $link)
+  	<li>
+      <a class="text-center" href="{{$link->link}}"><img src="{{'/storage/' . $link->image}}" alt="Clients">{{$link->title}}</a>
+    </li>
+  	@endforeach
+  </ul>
+</div>
 </section>

@@ -8,6 +8,7 @@ use App\Category;
 use App\Tag;
 use App\Servicio;
 use App\ContenidoSection1;
+use App\menu_item;
 use App\ContenidoSection2;
 use App\ContenidoSection3;
 use App\ContenidoSection4;
@@ -28,6 +29,7 @@ use App\Links;
 use App\LinkSection;
 use App\Gallery;
 use App\GallerySection;
+use App\SectionProperty;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -62,6 +64,7 @@ class IndexController extends Controller
       return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
       ->with('orders', Order::orderBy('order')->get())
       ->with('contenidosection1s', ContenidoSection1::all())
+      ->with('menu_items', menu_item::all())
       ->with('contenidosection2s', ContenidoSection2::all())
       ->with('contenidosection3s', ContenidoSection3::all())
       ->with('contenidosection4s', ContenidoSection4::all())
@@ -82,6 +85,7 @@ class IndexController extends Controller
       ->with('galleries_count', Gallery::select('slide')->distinct()->pluck('slide'))
       ->with('column_count', Gallery::select('column')->distinct()->pluck('column'))
       ->with('gallery_sections', GallerySection::all())
+      ->with('section_properties', SectionProperty::all())
       ->with('users', User::all());
 
 
@@ -96,6 +100,11 @@ class IndexController extends Controller
         $data=array('order'=>$itemIndex);
         return DB::table('orders')->where('id', '=', $itemID)->update($data);
       }
+
+    }
+
+
+    public function menu_items(Request $request, $id) {
 
     }
 

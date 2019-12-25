@@ -88,6 +88,34 @@
           </div>
         </div>
       </li>
+
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+       Bienes Raíces Real Estate
+     </div>
+
+     <li class="nav-item active">
+       <a class="nav-link" href="{{route('properties.index')}}">
+         <i class="fas fa-fw fa-building"></i>
+         <span>Propiedades</span></a>
+     </li>
+
+
+     <li class="nav-item active">
+       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#properties" aria-expanded="true" aria-controls="properties">
+         <i class="fas fa-fw fa-tools"></i>
+         <span>Mantenimiento</span>
+       </a>
+       <div id="properties" class="collapse" aria-labelledby="Properties" data-parent="#accordionSidebar">
+         <div class="bg-white py-2 collapse-inner rounded">
+           <h6 class="collapse-header">Propiedades</h6>
+           <a class="collapse-item" href="{{route('cities.index')}}"><i class="fas fa-fw fa-map-pin"></i>&nbsp;Sectores</a>
+           <a class="collapse-item" href="{{route('features.index')}}"><i class="fas fa-fw fa-chair"></i>&nbsp;Datos Generales</a>
+
+
+         </div>
+       </div>
+     </li>
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

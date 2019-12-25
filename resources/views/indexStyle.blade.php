@@ -32,6 +32,15 @@
     .btn:hover {
       background-color: {{$styles[0]->button_secondary}};
     }
+
+    .button {
+      background-color: {{$styles[0]->button_primary}};
+    }
+
+    .button:hover {
+      background-color: {{$styles[0]->button_secondary}} !important;
+    }
+
     #contact .form button[type="submit"] {
       background: {{$styles[0]->button_primary}};
     }

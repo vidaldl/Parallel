@@ -26,7 +26,7 @@ class StylesTableSeeder extends Seeder
                 'page_title' => 'Madre Tierra',
                 'custom_icon_1' => 'fas fa-fingerprint',
                 'custom_link_text_1' => 'Acceso',
-                'custom_link_address_1' => NULL,
+                'custom_link_address_1' => '#servicios',
                 'show_link_1' => 1,
                 'custom_icon_2' => 'fab fa-adn',
                 'custom_link_text_2' => 'adsfasdf',

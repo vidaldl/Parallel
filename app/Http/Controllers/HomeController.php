@@ -24,6 +24,9 @@ use App\Pricing;
 use App\Order;
 use App\Links;
 use App\LinkSection;
+use App\SectionProperty;
+use App\Properties\City;
+use App\Properties\Feature;
 class HomeController extends Controller
 {
     /**
@@ -61,7 +64,8 @@ class HomeController extends Controller
         ->with('info_slider_image3s', InfoSliderImage3::all())
         ->with('info_slider_text3s', InfoSliderText3::all())
         ->with('links', Links::all())
-        ->with('link_sections', LinkSection::all());
+        ->with('link_sections', LinkSection::all())
+        ->with('section_properties', SectionProperty::all());
     }
 
 
@@ -82,9 +86,9 @@ class HomeController extends Controller
       return redirect()->back();
     }
     public function linkDisplay(Request $request, $id) {
-      $display = $request->input('links');
+      $display = $request->input('houses');
       $data=array("display"=>$display);
-      DB::table('orders')->where('section', 'links')->update($data);
+      DB::table('orders')->where('section', 'houses')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();

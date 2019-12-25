@@ -20,14 +20,14 @@ class UsersTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'username' => 'Madre Tierra',
+                'username' => 'admin',
                 'email' => 'vidaldl63@gmail.com',
                 'role' => 'admin',
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$SWn55X5.tZkyiqQD/tnJROwrBXRnhS3cQ4P/dLdCiMW79kvZ5nuxy',
-                'remember_token' => 'R7jk30vK4sggjG6GhShxNyoScJsrQAfYFZrC1P5bh00AdGKL8hXHBlPBABd5',
+                'password' => '$2y$10$spkODgUDltrZCwMQOdcqtuX/xktrOk2yvIjOs7wyAkn6itb2ssF3S',
+                'remember_token' => '9i2kLxP5dL69aQM3Ptdz6cxa0ZGbeJp4r1CNLP26dEZ8OKjhzKo8Q4gje5Li',
                 'created_at' => '2019-06-23 00:17:24',
-                'updated_at' => '2019-09-09 05:10:06',
+                'updated_at' => '2019-11-16 15:57:44',
             ),
         ));
         

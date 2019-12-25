@@ -24,7 +24,7 @@ class CreateLinksRequest extends FormRequest
     public function rules()
     {
         return [
-          'title' => 'required|unique:servicios'
+          'title' => 'required|unique:servicios|max:22'
         ];
     }
 }

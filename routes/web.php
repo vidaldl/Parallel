@@ -21,6 +21,8 @@ Auth::routes(['verify' => true, 'register' => false]);
 
 
 Route::get('home', 'HomeController@index')->name('home');
+//Menu Items
+Route::post('/menu-items', 'IndexController@menu_items')->name('menu_items');
 //Order Sections
 Route::post('/order', 'IndexController@order');
 // Contact Form
@@ -29,6 +31,30 @@ Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 Route::middleware(['auth'])->group(function () {
 
 // EditSections
+
+//Properties Features
+Route::resource('features', 'FeaturesController');
+Route::get('trashed-features', 'FeaturesController@trashed')->name('trashed-features.index');
+Route::put('restore-features/{city}', 'FeaturesController@restore')->name('restore-features');
+//Properties Cities
+Route::resource('cities', 'CitiesController');
+Route::get('trashed-cities', 'CitiesController@trashed')->name('trashed-cities.index');
+Route::put('restore-cities/{city}', 'CitiesController@restore')->name('restore-cities');
+
+//Properties Section
+Route::get('/editProp/{id}', 'PropertyController@propertiesSectionEdit')->name('propSection.edit');
+Route::post('/updateprop/{id}', 'PropertyController@propertiesSectionUpdate')->name('propSection.update');
+Route::post('/displayprop/{id}', 'PropertyController@propertiesSectionDisplay')->name('propSection.display');
+
+
+//Properties
+Route::resource('properties', 'PropertyController');
+// Property update
+// Route::post('/property/{id}', 'PropertyController@update')->name('property.update');
+Route::get('trashed-properties', 'PropertyController@trashed')->name('trashed-properties.index');
+Route::put('restore-properties/{property}', 'PropertyController@restore')->name('restore-properties');
+
+
 //Styles
 Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
 
@@ -102,14 +128,19 @@ Route::post('/update-about/{id}', 'HomeController@aboutUpdate')->name('about.upd
 Route::resource('categories', 'CategoriesController');
 Route::resource('tags', 'TagsController');
 Route::resource('posts', 'PostController', ['except' => ['update']]);
+Route::get('trashed-posts', 'PostController@trashed')->name('trashed-posts.index');
+Route::put('restore-posts/{post}', 'PostController@restore')->name('restore-posts');
+
   // Post update
 Route::post('/posts/{id}', 'PostController@update')->name('posts.update');
 //redirect1
 Route::get('/redirect1', 'PostController@redirect1');
 Route::get('/redirect2', 'LinkController@redirect2');
+Route::get('/redirectProperty', 'PropertyController@redirectProperty');
 
-Route::get('trashed-posts', 'PostController@trashed')->name('trashed-posts.index');
-Route::put('restore-posts/{post}', 'PostController@restore')->name('restore-posts');
+
+
+
 Route::get('users/profile', 'UsersController@edit')->name('users.edit-profile');
 Route::put('users/profile', 'UsersController@update')->name('users.update-profile');
 Route::post('logout-reset', 'UsersController@logoutReset')->name('logout.reset');

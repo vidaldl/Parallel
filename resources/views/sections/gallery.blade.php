@@ -1,4 +1,4 @@
-@push('styles')
+<!-- @push('styles')
   <style media="screen">
     #image-carousel { overflow: visible; }
     #image-carousel .carousel-column {
@@ -423,7 +423,7 @@
 
 .nobg {
 
-}
+} -->
 
   </style>
 <link href="{{ asset('lib/magnific/magnific-popup.css') }}" rel="stylesheet">
@@ -510,7 +510,7 @@
 </div>
 @push('scripts')
 
-<script src="{{ asset('lib/jquery/plugins.js') }}"></script>
+<!-- <script src="{{ asset('lib/jquery/plugins.js') }}"></script>
 <script src="{{ asset('lib/jquery/functions.js') }}"></script>
 <script>
   $(document).ready(function() {
@@ -587,7 +587,7 @@
 
 </script>
 <!-- Footer Scripts
-============================================= -->
+============================================= --> -->
 
 
 

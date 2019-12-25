@@ -6,56 +6,68 @@
 @endsection
 
 @section('content')
-<!--INICIO-->
-@include('sections.inicio')
-<!--/INICIO -->
+
   <!-- Header -->
-  <header id="header">
-    <div class="container">
+  <header id="header" class="transparent-header transparent-header-responsive full-header dark" data-sticky-class="not-dark">
+    <div id="header-wrap">
+      <div class="container clearfix">
+        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+        <!-- Logo
+        ============================================= -->
+        <!-- <div id="logo">
+          <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+          <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+        </div>-->
+        <!-- Primary Navigation
+        ============================================= -->
+        <nav id="primary-menu" class="dark">
+          <ul>
+            @foreach($menu_items as $item)
 
-      <div id="logo" class="pull-left">
-        <!-- <a href="#inicio"><img src="img/logo-hidalgo-small.png" alt="" title="" /></a> -->
-        <!-- Uncomment below if you prefer to use a text image -->
-        <!-- <h3 class="" ><a href="#hero">Grupo Hidalgo</a></h3> -->
+            @endforeach
+            <li class="current"><a href="#inicio"><div>Inicio</div></a></li>
+            <li><a href="#servicios"><div>Servicios</div></a></li>
+            <li><a href="#articulos"><div>Artículos</div></a></li>
+            <li><a href="/about"><div>Acerca De</div></a></li>
+            <li><a href="#contact"><div>Contacto</div></a></li>
+          </ul>
+
+          <div id="top-cart" data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_1}}">
+						<a  class="{{$styles[0]->show_link_1 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}}"></i></a>
+					</div>
+
+          <div id="top-cart" data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_2}}">
+						<a class="{{$styles[0]->show_link_2 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}}"></i></a>
+					</div>
+
+
+
+							</div>
+						</div>
+        </nav><!-- #primary-menu end -->
       </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#articulos">Artículos</a></li>
-          <li><a href="/about">Acerca De</a></li>
-          <li><a href="#contact">Contacto</a></li>
-
-        </ul>
-        <ul class="nav-menu pull-right">
-          <li class="{{$styles[0]->show_link_1 == 0 ? 'd-none' : ''}}"><a href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}}" style="font-size:17px;"></i>&nbsp;&nbsp;{{$styles[0]->custom_link_text_1}}</a></li>
-          <li class="{{$styles[0]->show_link_2 == 0 ? 'd-none' : ''}}"><a href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}}" style="font-size:17px;"></i>&nbsp;&nbsp;{{$styles[0]->custom_link_text_2}}</a></li>
-        </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-      <nav class="nav social-nav pull-right d-none d-lg-inline">
-
-      </nav>
-
     </div>
-  </header>
+  </header><!-- #header end -->
   <!-- #header -->
 
+  <!--INICIO-->
+  @include('sections.inicio')
+  <!--/INICIO -->
+
+<div id="content" style="margin-bottom: 0px;">
+  <div class="content-wrap">
+    @foreach($orders as $order)
+      @php
+        $path = 'sections.' . $order->section ;
+      @endphp
+      @if($order->display == 1)
+        @include($path)
+      @endif
+    @endforeach
+  </div>
+</div>
 
 
-
-@foreach($orders as $order)
-  @php
-    $path = 'sections.' . $order->section ;
-  @endphp
-  @if($order->display == 1)
-    @include($path)
-  @endif
-@endforeach
-
-
-  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
 @endsection
 
 <!--Footer-->

@@ -39,5 +39,11 @@ class DatabaseSeeder extends Seeder
         $this->call(LinkSectionsTableSeeder::class);
         $this->call(GalleriesTableSeeder::class);
         $this->call(GallerySectionsTableSeeder::class);
+        $this->call(SectionPropertiesTableSeeder::class);
+        $this->call(CitiesTableSeeder::class);
+        $this->call(FeaturesTableSeeder::class);
+        $this->call(FeaturePropertyTableSeeder::class);
+        $this->call(MenuItemsTableSeeder::class);
+        $this->call(PropertiesTableSeeder::class);
     }
 }

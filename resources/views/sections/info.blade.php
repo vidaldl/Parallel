@@ -1,4 +1,4 @@
-
+<!--
 <section class="cta" id="info" style="{{ $contenidosection2s[0]->display == '0' ? 'color: black;background-color: #FFFFFF;' : '' }}">
   <div class="container">
     <div class="row">
@@ -18,4 +18,13 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+<div class="clear"></div>
+
+<div class="container clearfix">
+  <div class="promo promo-dark promo-flat bottommargin-lg">
+  	<h3 class="t400 ls1">{{$contenidosection3s[0]->title}}</h3>
+    <div class="dark">{!! $contenidosection3s[0]->contenido !!}</div>
+  	<a href="#" class="button button-dark button-large button-rounded">{{$contenidosection3s[0]->button}}</a>
+  </div>
+</div>

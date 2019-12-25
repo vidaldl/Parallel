@@ -1,45 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html dir="ltr" lang="en-US">
 <head>
-  <meta charset="utf-8">
-  <title>{{ $styles[0]->page_title }}</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
 
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
 
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/css/bootstrap.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/style.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/css/swiper.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/css/dark.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/css/font-icons.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/css/animate.css') }}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/css/magnific-popup.css') }}" type="text/css" />
 
-  <!-- Favicon -->
-  <link href="{{asset('img/favicon.ico')}}" rel="icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-
-  <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.css">
+	<link rel="stylesheet" href="{{ asset('lib/CanvasTest/css/responsive.css') }}" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
-  <!-- Main Stylesheet File -->
-  <link href="{{asset('lib/css/style.css')}}" rel="stylesheet">
+	<!-- Document Title
+	============================================= -->
+	<title>{{$styles[0]->page_title}}</title>
+
 
 @stack('styles')
 @yield('style')
@@ -47,34 +32,25 @@
 
 <body>
 
+
 @yield('content')
 
 @yield('footer')
 
-<a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+
+
+<div id="gotoTop" class="icon-angle-up"></div>
 
 
 <!-- Required JavaScript Libraries -->
-<script src="{{ asset('lib/jqueryOld/jquery.min.js') }}"></script>
-<script src="{{ asset('lib/jqueryOld/jquery-migrate.min.js') }}"></script>
-<script src="{{ asset('lib/superfish/hoverIntent.js') }}"></script>
-<script src="{{ asset('lib/superfish/superfish.min.js') }}"></script>
-<script src="{{ asset('lib/tether/js/tether.min.js') }}"></script>
-<script src="{{ asset('lib/stellar/stellar.min.js') }}"></script>
-<script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
-<script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-<script src="{{ asset('lib/easing/easing.js') }}"></script>
-<script src="{{ asset('lib/stickyjs/sticky.js') }}"></script>
-<script src="{{ asset('lib/parallax/parallax.js') }}"></script>
-<script src="{{ asset('lib/lockfixed/lockfixed.min.js') }}"></script>
-<script src="{{ asset('lib/isotope/isotope.pkgd.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider.js"></script>
+<script src="{{ asset('lib/CanvasTest/js/jquery.js') }}"></script>
+<script src="{{ asset('lib/CanvasTest/js/plugins.js') }}"></script>
+
+
 @stack('scripts')
 @yield('script')
-<!-- CUSTOM JS -->
-<script src="{{ asset('lib/js/custom.js') }}"></script>
-
+<!-- FUCNTIONS -->
+<script src="{{ asset('lib/CanvasTest/js/functions.js') }}"></script>
 
 </body>
 </html>

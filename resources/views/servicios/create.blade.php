@@ -65,7 +65,7 @@
 
         <div class="form-group mt-5">
           <button type="submit" class="btn btn-success float-right">
-            {{ isset($post) ? 'Guardar' : 'Publicar' }}
+            {{ isset($servicio) ? 'Guardar' : 'Publicar' }}
           </button>
         </div>
       </form>
