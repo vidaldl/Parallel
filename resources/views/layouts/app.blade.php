@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Parallel | {{$styles[0]->page_title}}</title>
+  <title>Parallel Cloud</title>
 
   <!-- Custom fonts for this template-->
 

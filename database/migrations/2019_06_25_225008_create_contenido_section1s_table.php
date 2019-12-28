@@ -23,6 +23,7 @@ class CreateContenidoSection1sTable extends Migration
             $table->text('link')->nullable();
             $table->integer('display')->default('1')->nullable();
             $table->integer('carousel')->default('1')->nullable();
+            $table->integer('style')->default('1')->nullable();
             $table->timestamps();
         });
     }

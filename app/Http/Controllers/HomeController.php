@@ -509,6 +509,16 @@ class HomeController extends Controller
 
 
     /*SECTION 1 -------------------------------------------------------------------------------->*/
+    public function sliderStyleUpdate(Request $request, $id) {
+      $style = $request->input('style');
+
+      $data = array("style"=>$style);
+      DB::table('contenido_section1s')->where('id', $id)->update($data);
+      session()->flash('success', 'La sección fue actualizada');
+      //redirect
+      return redirect()->back();
+    }
+
     public function section1Carousel(Request $request, $id) {
       $carousel = $request->input('carousel');
       $data=array("carousel"=>$carousel);

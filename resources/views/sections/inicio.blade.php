@@ -1,7 +1,14 @@
 @if ($contenidosection1s[0]->carousel == 1)
-  @include('sections.inicio.carousel')
+  @include('sections.inicio.carousel.style1')
 @endif
 
 @if($contenidosection1s[0]->carousel == 0)
-  @include('sections.inicio.static')
+  @if($contenidosection1s[0]->style == 1)
+    @include('sections.inicio.static.style1')
+  @endif
+
+  @if($contenidosection1s[0]->style == 2)
+    @include('sections.inicio.static.style2')
+  @endif
+
 @endif

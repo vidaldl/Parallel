@@ -70,26 +70,51 @@
   <div class="row justify-content-center">
     <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/"  width="100%" height="450"></iframe></div>
     <div class="card mt-3 col-md-8 mb-5">
-        <div class="card-body">
-        <!-- Carousel activator Form -->
-          <form autocomplete="off" id="sectionType" method="POST" action="{{route('section1.carousel', $contenidosection1s[0]->id)}}">
-            @csrf
-            <div class="form-group">
+      <div class="card-body">
+        <div class="row">
+          <!-- Carousel activator Form -->
+          <div class="col-md-6">
+            <form autocomplete="off" id="sectionType" method="POST" action="{{route('section1.carousel', $contenidosection1s[0]->id)}}">
+              @csrf
               <div class="form-group">
-                <label for="carousel" class="col-form-label">Tipo de Sección</label><br>
-                  <select onchange="this.form.submit()" name="carousel" class="col-md-4">
-                    <option value="0" {{ $contenidosection1s[0]->carousel == '0' ? 'selected' : '' }}>Estático</option>
-                    <option value="1" {{ $contenidosection1s[0]->carousel == '1' ? 'selected' : '' }}>Carrusel</option>
-                  </select>
-                  @error('title')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                <div class="form-group">
+                  <label for="carousel" class="col-form-label">Tipo de Sección</label><br>
+                    <select onchange="this.form.submit()" name="carousel" class="col-md-4">
+                      <option value="0" {{ $contenidosection1s[0]->carousel == '0' ? 'selected' : '' }}>Estático</option>
+                      <option value="1" {{ $contenidosection1s[0]->carousel == '1' ? 'selected' : '' }}>Carrusel</option>
+                    </select>
+                    @error('title')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
               </div>
-            </div>
-          </form>
-        <!-- End carousel activator form -->
+            </form>
+          </div>
+          <!-- End carousel activator form -->
+          <!-- STYLE PICKER -->
+          <div class="col-md-6 {{$contenidosection1s[0]->carousel == 1 ? 'd-none' : ''}}">
+            <form autocomplete="off" id="sectionType" method="POST" action="{{route('sliderStyle.update', $contenidosection1s[0]->id)}}">
+              @csrf
+              <div class="form-group">
+                <div class="form-group">
+                  <label for="carousel" class="col-form-label">Estilo</label><br>
+                    <select onchange="this.form.submit()" name="style" class="col-md-4">
+                      <option value="1" {{ $contenidosection1s[0]->style == '1' ? 'selected' : '' }}>Pantalla Completa</option>
+                      <option value="2" {{ $contenidosection1s[0]->style == '2' ? 'selected' : '' }}>Pantalla Media</option>
+                    </select>
+                    @error('title')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- STYLE PICKER -->
+        </div>
         <!-- ICONOS LINK SECTION LIST -->
         <datalist id="sections">
           <option value="#inicio">Inicio</option>
@@ -274,6 +299,7 @@
             </div>
           </div>
         </div>
+
           <!-- End modal background-image -->
 
         <!-- END static form -->
