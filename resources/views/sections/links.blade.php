@@ -16,7 +16,7 @@
   </div>
 </section> -->
 <div class="line"></div>
-<section>
+<section id="links">
 <h4 class="center">{{$link_sections[0]->title}}</h4>
 <div class="container clearfix">
   <ul class="clients-grid grid-6 nobottommargin clearfix">

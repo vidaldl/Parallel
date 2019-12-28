@@ -15,9 +15,9 @@ class CreateStylesTable extends Migration
     {
         Schema::create('styles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('primary_color');
-            $table->string('button_primary');
-            $table->string('button_secondary');
+            $table->string('primary_color')->nullable();
+            $table->string('button_primary')->nullable();
+            $table->string('button_secondary')->nullable();
             $table->string('page_title')->nullable();
             $table->string('custom_icon_1')->nullable();
             $table->string('custom_link_text_1')->nullable();

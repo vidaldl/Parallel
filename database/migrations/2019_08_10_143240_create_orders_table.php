@@ -19,6 +19,8 @@ class CreateOrdersTable extends Migration
             $table->string('name')->nullable();
             $table->integer('order');
             $table->integer('display')->default(1);
+            $table->string('menu_name')->nullable();
+            $table->integer('menu_display')->nullable();
         });
     }
 

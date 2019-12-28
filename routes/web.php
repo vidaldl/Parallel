@@ -13,6 +13,11 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('/about', 'IndexController@about');
+Route::get('/menu', 'MenuController@index')->name('menu.index');
+Route::post('/menu-update/{id}', 'MenuController@update');
+Route::post('/menu-display/{id}', 'MenuController@display');
+Route::post('/menuSide-update/{id}', 'MenuController@menuSideUpdate')->name('menuSide.update');
+
 
 Route::get('/blog', 'IndexController@blog');
 
@@ -21,8 +26,7 @@ Auth::routes(['verify' => true, 'register' => false]);
 
 
 Route::get('home', 'HomeController@index')->name('home');
-//Menu Items
-Route::post('/menu-items', 'IndexController@menu_items')->name('menu_items');
+
 //Order Sections
 Route::post('/order', 'IndexController@order');
 // Contact Form

@@ -1,7 +1,7 @@
 @section('css')
 
 @endsection
-<div class="container clearfix">
+<div id="infoslider1" class="container clearfix">
 <div id="section-nextgen" class="page-section bottommargin-lg">
 	<div class="row clearfix">
 

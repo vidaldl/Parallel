@@ -22,24 +22,23 @@
         ============================================= -->
         <nav id="primary-menu" class="dark">
           <ul>
-            @foreach($menu_items as $item)
-
+            <li><a href="#slider"><div>Inicio</div></a></li>
+            @foreach($orders as $item)
+              @if($item->display == 1 && $item->menu_display == 1)
+                <li><a href="#{{$item->section}}"><div>{{$item->menu_name}}</div></a></li>
+              @endif
             @endforeach
-            <li class="current"><a href="#inicio"><div>Inicio</div></a></li>
-            <li><a href="#servicios"><div>Servicios</div></a></li>
-            <li><a href="#articulos"><div>Artículos</div></a></li>
-            <li><a href="/about"><div>Acerca De</div></a></li>
-            <li><a href="#contact"><div>Contacto</div></a></li>
+
           </ul>
+          <ul style="border: none;">
+            <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_1}}">
+  						<a class="{{$styles[0]->show_link_1 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}} fa-2x"></i></a>
+  					</li>
 
-          <div id="top-cart" data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_1}}">
-						<a  class="{{$styles[0]->show_link_1 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}}"></i></a>
-					</div>
-
-          <div id="top-cart" data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_2}}">
-						<a class="{{$styles[0]->show_link_2 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}}"></i></a>
-					</div>
-
+            <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_2}}">
+  						<a class="{{$styles[0]->show_link_2 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}} fa-2x"></i></a>
+  					</li>
+          </ul>
 
 
 							</div>

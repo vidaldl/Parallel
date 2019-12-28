@@ -19,7 +19,7 @@
     </div>
   </div>
 </section> -->
-<div class="clear"></div>
+<div id="info" class="clear"></div>
 
 <div class="container clearfix">
   <div class="promo promo-dark promo-flat bottommargin-lg">

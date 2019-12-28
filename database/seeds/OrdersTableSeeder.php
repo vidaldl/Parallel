@@ -24,6 +24,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Servicios',
                 'order' => 0,
                 'display' => 0,
+                'menu_name' => 'Servicios',
+                'menu_display' => '1',
             ),
             1 => 
             array (
@@ -32,6 +34,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Slider 1',
                 'order' => 2,
                 'display' => 1,
+                'menu_name' => 'Sliders',
+                'menu_display' => '1',
             ),
             2 => 
             array (
@@ -40,6 +44,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Slider 2',
                 'order' => 3,
                 'display' => 0,
+                'menu_name' => 'Slider',
+                'menu_display' => '1',
             ),
             3 => 
             array (
@@ -48,6 +54,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Slider 3',
                 'order' => 1,
                 'display' => 0,
+                'menu_name' => 'Slider',
+                'menu_display' => '1',
             ),
             4 => 
             array (
@@ -56,6 +64,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Precios',
                 'order' => 5,
                 'display' => 0,
+                'menu_name' => 'Precios',
+                'menu_display' => '1',
             ),
             5 => 
             array (
@@ -64,6 +74,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Artículos',
                 'order' => 6,
                 'display' => 0,
+                'menu_name' => 'Articulos',
+                'menu_display' => '1',
             ),
             6 => 
             array (
@@ -72,6 +84,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Acción',
                 'order' => 4,
                 'display' => 1,
+                'menu_name' => 'Info',
+                'menu_display' => '1',
             ),
             7 => 
             array (
@@ -80,6 +94,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Contacto',
                 'order' => 8,
                 'display' => 1,
+                'menu_name' => 'Contacto',
+                'menu_display' => '1',
             ),
             8 => 
             array (
@@ -88,6 +104,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Enlaces Útiles',
                 'order' => 9,
                 'display' => 1,
+                'menu_name' => 'Enlaces',
+                'menu_display' => '1',
             ),
             9 => 
             array (
@@ -96,6 +114,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Galeria',
                 'order' => 7,
                 'display' => 0,
+                'menu_name' => 'Galería',
+                'menu_display' => '1',
             ),
             10 => 
             array (
@@ -104,6 +124,8 @@ class OrdersTableSeeder extends Seeder
                 'name' => 'Propiedades',
                 'order' => 10,
                 'display' => 1,
+                'menu_name' => 'Propiedades',
+                'menu_display' => '1',
             ),
         ));
         

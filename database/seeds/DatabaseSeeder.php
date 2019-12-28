@@ -43,7 +43,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CitiesTableSeeder::class);
         $this->call(FeaturesTableSeeder::class);
         $this->call(FeaturePropertyTableSeeder::class);
-        $this->call(MenuItemsTableSeeder::class);
         $this->call(PropertiesTableSeeder::class);
     }
 }

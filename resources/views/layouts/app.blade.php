@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Siscop Dashboard</title>
+  <title>Parallel | {{$styles[0]->page_title}}</title>
 
   <!-- Custom fonts for this template-->
 
@@ -40,7 +40,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Siscop <sup>Dashboard</sup></div>
+        <div class="sidebar-brand-text mx-3">Parallel <sup>Dashboard</sup></div>
       </a>
 
       <!-- Divider -->
@@ -90,7 +90,15 @@
       </li>
 
       <hr class="sidebar-divider">
-      <div class="sidebar-heading">
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{{route('menu.index')}}">
+          <i class="fas fa-fw fa-compass"></i>
+          <span>Editar Menu</span></a>
+      </li>
+
+      <!-- REAL STATE PROJECT -->
+      <!-- <div class="sidebar-heading">
        Bienes Raíces Real Estate
      </div>
 
@@ -115,7 +123,7 @@
 
          </div>
        </div>
-     </li>
+     </li> -->
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

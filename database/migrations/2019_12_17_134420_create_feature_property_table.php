@@ -15,8 +15,8 @@ class CreateFeaturePropertyTable extends Migration
     {
         Schema::create('feature_property', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->integer('feature_id');
-          $table->integer('property_id');
+          $table->integer('feature_id')->nullable();
+          $table->integer('property_id')->nullable();
           $table->string('value')->nullable();
           $table->timestamps();
         });
@@ -29,8 +29,6 @@ class CreateFeaturePropertyTable extends Migration
      */
     public function down()
     {
-        Schema::table('feature_property', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('feature_property');
     }
 }

@@ -36,6 +36,9 @@
               <div class="d-none d-md-block"><img class="img-fluid " src="{{'/storage/' . $contenidosection1s[0]->logo }}" style="height: 300px" alt=""></div>
               <h2 data-animate="fadeInUp">{{$contenidosection1s[0]->title}}</h2>
               <div class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[0]->tagline !!}</div>
+              <a href="#" style="color: #fff;" class="button button-rounded button-light button-green button-large button-border tright d-none d-md-inline-block">
+							<span>Regístrate</span>
+							</a>
             </div>
           </div>
         </div>

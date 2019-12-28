@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/colors.php?color=2C3E50" type="text/css" />
 @endpush
 <div class="line"></div>
-<div class="" style="background-color: {{$section_properties[0]->back_color}}; padding: 25px;">
+<div id="houses" class="" style="background-color: {{$section_properties[0]->back_color}}; padding: 25px;">
 
 
   <div class="container clearfix" >
