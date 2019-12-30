@@ -38,6 +38,11 @@ Route::middleware(['auth'])->group(function () {
 
 //Portfolio
 Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');
+Route::resource('portfolioItems', 'Portfolio\PortfolioItemController', ['except' => ['update']]);
+Route::post('/portfolioItem/{id}', 'Portfolio\PortfolioItemController@update')->name('portfolioItems.update');
+Route::get('trashed-portfolioItems', 'Portfolio\PortfolioItemController@trashed')->name('trashed-portfolioItems.index');
+Route::put('restore-portfolioItems/{portfolioItem}', 'Portfolio\PortfolioItemController@restore')->name('restore-portfolio-items');
+Route::get('/redirectPortfolioItem', 'Portfolio\PortfolioCategoryController@redirect');
 
 //Frase section
 Route::get('/frase/{id}', 'HomeController@fraseEdit')->name('frase.edit');
@@ -48,7 +53,7 @@ Route::post('/frase/{id}', 'HomeController@fraseUpdate')->name('frase.update');
 //Properties Features
 Route::resource('features', 'FeaturesController');
 Route::get('trashed-features', 'FeaturesController@trashed')->name('trashed-features.index');
-Route::put('restore-features/{city}', 'FeaturesController@restore')->name('restore-features');
+Route::put('restore-features/{feature}', 'FeaturesController@restore')->name('restore-features');
 //Properties Cities
 Route::resource('cities', 'CitiesController');
 Route::get('trashed-cities', 'CitiesController@trashed')->name('trashed-cities.index');
@@ -168,7 +173,7 @@ Route::put('restore-servicios/{servicio}', 'ServicioController@restore')->name('
 //Links
 Route::resource('links', 'LinkController');
 Route::get('trashed-links', 'LinkController@trashed')->name('trashed-links.index');
-Route::put('restore-links/{servicio}', 'LinkController@restore')->name('restore-links');
+Route::put('restore-links/{link}', 'LinkController@restore')->name('restore-links');
 });
 
 Route::middleware(['auth','admin'])->group(function() {

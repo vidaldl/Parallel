@@ -92,10 +92,18 @@
         </div>
       </li>
 
-      <li class="nav-item active">
-        <a class="nav-link" href="{{route('portfolioCategories.index')}}">
+
+      <li class="nav-item active ">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePortfolio" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-concierge-bell"></i>
-          <span>Portfolio</span></a>
+          <span>Portfolio</span>
+        </a>
+        <div id="collapsePortfolio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{ route('portfolioItems.index') }}"><i class="fas fa-fw fa-edit"></i>&nbsp;Artículos</a>
+            <a class="collapse-item" href="{{ route('portfolioCategories.index') }}"><i class="fas fa-fw fa-tags"></i>&nbsp;Categorías</a>
+          </div>
+        </div>
       </li>
 
       <hr class="sidebar-divider">

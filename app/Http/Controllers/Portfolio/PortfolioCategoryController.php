@@ -19,7 +19,7 @@ class PortfolioCategoryController extends Controller
      */
     public function index()
     {
-        return view('portfolio/index')->with('portfolioCategories', PortfolioCategory::all());
+        return view('portfolio.categories.index')->with('portfolioCategories', PortfolioCategory::all());
     }
 
     /**
@@ -29,7 +29,7 @@ class PortfolioCategoryController extends Controller
      */
     public function create()
     {
-        return view('portfolio.create');
+        return view('portfolio.categories.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class PortfolioCategoryController extends Controller
      */
     public function edit(PortfolioCategory $portfolioCategory)
     {
-      return view('portfolio.create')->with('portfolioCategory', $portfolioCategory);
+      return view('portfolio.categories.create')->with('portfolioCategory', $portfolioCategory);
     }
 
     /**
