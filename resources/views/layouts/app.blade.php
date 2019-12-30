@@ -93,7 +93,7 @@
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="{{route('properties.index')}}">
+        <a class="nav-link" href="{{route('portfolioCategories.index')}}">
           <i class="fas fa-fw fa-concierge-bell"></i>
           <span>Portfolio</span></a>
       </li>

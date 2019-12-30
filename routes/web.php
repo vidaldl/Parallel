@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
 // ================================== EditSections ========================================
 
 //Portfolio
-
+Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');
 
 //Frase section
 Route::get('/frase/{id}', 'HomeController@fraseEdit')->name('frase.edit');
