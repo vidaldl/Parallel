@@ -43,6 +43,7 @@ Route::post('/portfolioItem/{id}', 'Portfolio\PortfolioItemController@update')->
 Route::get('trashed-portfolioItems', 'Portfolio\PortfolioItemController@trashed')->name('trashed-portfolioItems.index');
 Route::put('restore-portfolioItems/{portfolioItem}', 'Portfolio\PortfolioItemController@restore')->name('restore-portfolio-items');
 Route::get('/redirectPortfolioItem', 'Portfolio\PortfolioCategoryController@redirect');
+Route::post('/portfolio-display', 'Portfolio\PortfolioItemController@display')->name('portfolio.display');
 
 //Frase section
 Route::get('/frase/{id}', 'HomeController@fraseEdit')->name('frase.edit');

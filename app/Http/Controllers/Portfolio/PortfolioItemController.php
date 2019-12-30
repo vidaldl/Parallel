@@ -15,6 +15,16 @@ use App\Http\Requests\Portfolio\UpdatePortfolioItemsRequest;
 
 class PortfolioItemController extends Controller
 {
+
+    public function display(Request $request) {
+      $portfolioDisplay = $request->input('portfolio-programs');
+      $data = array('display'=>$portfolioDisplay);
+      DB::table('orders')->where('section', 'portfolio-programs')->update($data);
+      session()->flash('success', 'La sección fué actualizada');
+      return redirect()->back();
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +32,7 @@ class PortfolioItemController extends Controller
      */
     public function index()
     {
-      return view('portfolio.items.index')->with('portfolioItems', PortfolioItem::all());
+      return view('portfolio.items.index')->with('portfolioItems', PortfolioItem::all())->with('portfolioCategories', PortfolioCategory::all());
     }
 
     /**

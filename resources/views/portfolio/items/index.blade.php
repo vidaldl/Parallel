@@ -19,6 +19,7 @@
           <tr>
             <th scope="col">Icono</th>
             <th scope="col">Titulo</th>
+            <th scope="col">Categorias</th>
             <th></th>
           </tr>
         </thead>
@@ -31,6 +32,17 @@
               </td>
               <td>
                 <h4>{{ $item->title }}</h4>
+              </td>
+              <td>
+              <a href="{{route('portfolioCategories.index')}}">
+                @foreach($item->portfolio_category->pluck('name') as $ca)
+                  @if($loop->last)
+                  {{$ca}}.
+                  @else
+                  {{$ca}},
+                 @endif
+                @endforeach
+              </a>
               </td>
                 <form method="POST" action="{{ route('portfolioItems.destroy', $item->id) }}">
                   @csrf

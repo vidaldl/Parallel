@@ -31,6 +31,8 @@ use App\Gallery;
 use App\GallerySection;
 use App\SectionProperty;
 use App\Frase;
+use App\Portfolio\PortfolioCategory;
+use App\Portfolio\PortfolioItem;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -88,6 +90,8 @@ class IndexController extends Controller
       ->with('gallery_sections', GallerySection::all())
       ->with('section_properties', SectionProperty::all())
       ->with('frases', Frase::all())
+      ->with('portfolio_categories', PortfolioCategory::all())
+      ->with('portfolio_items', PortfolioItem::all())
       ->with('users', User::all());
 
 
