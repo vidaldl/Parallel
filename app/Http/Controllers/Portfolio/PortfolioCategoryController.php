@@ -97,10 +97,10 @@ class PortfolioCategoryController extends Controller
      */
     public function destroy(PortfolioCategory $portfolioCategory)
     {
-    //   if ($category->posts->count() > 0) {
-    //   session()->flash('error', 'La Categoria no puede ser eliminada porque esta asociada a algún Artículo');
-    //   return redirect()->back();
-    // }
+      if ($portfolioCategory->portfolio_item->count() > 0) {
+      session()->flash('error', 'La Categoria no puede ser eliminada porque esta asociada a algún Portfolio: Artículo');
+      return redirect()->back();
+    }
 
 
       $portfolioCategory->delete();

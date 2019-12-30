@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
 <style>
 .modal-dialog{
   position: relative;
@@ -63,6 +64,34 @@
                   @enderror
               </div>
 
+
+                @if($portfolioCategories->count() > 0)
+                <div class="form-group">
+                  <label for="categories" class="col-form-label">Categorías</label>
+
+                    <select {{isset($portfolioItem) ? '' : 'disabled'}} multiple id="categories" type="select" name="categories[]" class="form-control select @error('categories') is-invalid @enderror">
+                    @if(isset($portfolioItem))
+                      @foreach($portfolioCategories as $cat)
+                        <option value="{{$cat->id}}"
+                          @if(in_array($cat->id, $portfolioItem->portfolio_category->pluck('id')->toArray()))
+                            selected
+                          @endif
+                          >
+                          {{$cat->name}}
+                        </option>
+                      @endforeach
+                    @endif
+                    </select>
+
+                    @error('categories')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+              @endif
+
+
               <div class="form-group">
                 <label for="image" class="col-form-label">Imagen</label><br>
                 <a href="#" class="btn btn-primary {{isset($portfolioItem) ? '' : 'disabled'}}"  data-toggle="modal" data-target="#modalImage">Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
@@ -121,6 +150,14 @@
 @endif
 @endsection
 @section('script')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('.select').select2();
+});
+</script>
+
+
 <script>
 
  $("#ajButton").click(function(e){
@@ -128,7 +165,7 @@
 
     var title = $("#title").val();
     var subtitle = $("#subtitle").val();
-
+    var categories = $("#categories").val();
 
     $.ajax({
            type:'POST',
@@ -136,7 +173,8 @@
            url:'/portfolioItem/{{isset($portfolioItem) ? "$portfolioItem->id" : ''}}',
            data:{"_token": "{{ csrf_token() }}",
             title:title,
-            subtitle:subtitle
+            subtitle:subtitle,
+            categories:categories
           },
            success:function(data){
               alert(data.success);

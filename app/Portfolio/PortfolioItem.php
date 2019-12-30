@@ -5,6 +5,7 @@ namespace App\Portfolio;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
+use App\Portfolio\PortfolioCategory;
 
 class PortfolioItem extends Model
 {
@@ -21,4 +22,8 @@ class PortfolioItem extends Model
       'subtitle',
       'image'
     ];
+
+    public function portfolio_category() {
+      return $this->belongsToMany(PortfolioCategory::class);
+    }
 }

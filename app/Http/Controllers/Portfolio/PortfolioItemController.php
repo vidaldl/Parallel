@@ -10,6 +10,7 @@ use Response;
 use Illuminate\Support\Facades\Storage;
 
 use App\Portfolio\PortfolioItem;
+use App\Portfolio\PortfolioCategory;
 use App\Http\Requests\Portfolio\UpdatePortfolioItemsRequest;
 
 class PortfolioItemController extends Controller
@@ -31,7 +32,7 @@ class PortfolioItemController extends Controller
      */
     public function create()
     {
-      return view('portfolio.items.create');
+      return view('portfolio.items.create')->with('portfolioCategories', PortfolioCategory::all());
     }
 
     /**
@@ -58,12 +59,12 @@ class PortfolioItemController extends Controller
       return redirect('portfolioItems/' . $latest . '/edit');
 
     }else {
-    $data = array('title'=>$title, 'subtitle'=>$subtitle);
-    DB::table('portfolio_items')->insert($data);
-    session()->flash('success', 'Artículo actualizado');
-    $latest = DB::getPdo('portfolio_items')->lastInsertId();
-    return redirect('portfolioItems/' . $latest . '/edit');
-    }
+      $data = array('title'=>$title, 'subtitle'=>$subtitle);
+      $dataUpload = DB::table('portfolio_items')->insert($data);
+      session()->flash('success', 'Artículo actualizado');
+      $latest = DB::getPdo('portfolio_items')->lastInsertId();
+      return redirect('portfolioItems/' . $latest . '/edit');
+      }
     }
 
     /**
@@ -91,7 +92,7 @@ class PortfolioItemController extends Controller
      */
     public function edit(PortfolioItem $portfolioItem)
     {
-      return view('portfolio.items.create')->with('portfolioItem', $portfolioItem);
+      return view('portfolio.items.create')->with('portfolioItem', $portfolioItem)->with('portfolioCategories', PortfolioCategory::all());
     }
 
     /**
@@ -103,8 +104,15 @@ class PortfolioItemController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $portfolio = PortfolioItem::find($id);
+      // dd($portfolio->title);
+      // $portfolio->portfolio_category()->attach(2);
+
+
       $title = $request->input('title');
       $subtitle = $request->input('subtitle');
+      $categories = $request->input('categories');
+      $portfolio->portfolio_category()->sync($categories);
       $oldImage = DB::table('portfolio_items')->where('id', $id)->first();
       if ($request->hasFile('image')) {
           $this->validate($request, [
@@ -114,8 +122,6 @@ class PortfolioItemController extends Controller
 
           $image = $request->file('image')->store('content/portfolio');
           //Image Intervention
-
-
 
           Storage::delete($oldImage->image);
 
