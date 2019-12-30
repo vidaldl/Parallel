@@ -52,13 +52,18 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{route('menu.index')}}">
+          <i class="fas fa-fw fa-compass"></i>
+          <span>Editar Menu</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
        Contenido
      </div>
-      <li class="nav-item active">
+      <li class="nav-item active ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-newspaper"></i>
           <span>Artículos</span>
@@ -83,19 +88,19 @@
             <h6 class="collapse-header">Editar Servicios</h6>
             <a class="collapse-item" href="{{ route('servicios.index') }}"><i class="fas fa-fw fa-wrench"></i>&nbsp;Servicios</a>
             <a class="collapse-item" href="{{ route('trashed-servicios.index') }}"><i class="fas fa-fw fa-trash"></i>&nbsp;Papelera</a>
-
-
           </div>
         </div>
       </li>
 
+      <li class="nav-item active">
+        <a class="nav-link" href="{{route('properties.index')}}">
+          <i class="fas fa-fw fa-concierge-bell"></i>
+          <span>Portfolio</span></a>
+      </li>
+
       <hr class="sidebar-divider">
 
-      <li class="nav-item active">
-        <a class="nav-link" href="{{route('menu.index')}}">
-          <i class="fas fa-fw fa-compass"></i>
-          <span>Editar Menu</span></a>
-      </li>
+
 
       <!-- REAL STATE PROJECT -->
       <!-- <div class="sidebar-heading">

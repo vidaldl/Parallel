@@ -44,5 +44,6 @@ class DatabaseSeeder extends Seeder
         $this->call(FeaturesTableSeeder::class);
         $this->call(FeaturePropertyTableSeeder::class);
         $this->call(PropertiesTableSeeder::class);
+        $this->call(FrasesTableSeeder::class);
     }
 }

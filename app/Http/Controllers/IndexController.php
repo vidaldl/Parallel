@@ -30,6 +30,7 @@ use App\LinkSection;
 use App\Gallery;
 use App\GallerySection;
 use App\SectionProperty;
+use App\Frase;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -86,6 +87,7 @@ class IndexController extends Controller
       ->with('column_count', Gallery::select('column')->distinct()->pluck('column'))
       ->with('gallery_sections', GallerySection::all())
       ->with('section_properties', SectionProperty::all())
+      ->with('frases', Frase::all())
       ->with('users', User::all());
 
 

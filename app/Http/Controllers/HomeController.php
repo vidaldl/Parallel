@@ -27,6 +27,7 @@ use App\LinkSection;
 use App\SectionProperty;
 use App\Properties\City;
 use App\Properties\Feature;
+use App\Frase;
 class HomeController extends Controller
 {
     /**
@@ -65,9 +66,29 @@ class HomeController extends Controller
         ->with('info_slider_text3s', InfoSliderText3::all())
         ->with('links', Links::all())
         ->with('link_sections', LinkSection::all())
+        ->with('frases', Frase::all())
         ->with('section_properties', SectionProperty::all());
     }
 
+
+    /*Frase -------------------------------------------------------------------------------->*/
+    public function fraseDisplay(Request $request, $id) {
+      $fraseDisplay = $request->input('frase');
+      $data = array('display'=>$fraseDisplay);
+      DB::table('orders')->where('section', 'frase')->update($data);
+      session()->flash('success', 'La sección fué actualizada');
+      return redirect()->back();
+    }
+
+    public function fraseEdit() {
+      return view('updateIndex/frase')->with('frases', Frase::all());
+    }
+
+    public function fraseUpdate(Request $request, $id) {
+      $title = $request->input('title');
+      $data = array('title'=>$title);
+      DB::table('frases')->where('id', $id)->update($data);
+    }
 
 
     /*Links -------------------------------------------------------------------------------->*/

@@ -34,7 +34,16 @@ Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 
 Route::middleware(['auth'])->group(function () {
 
-// EditSections
+// ================================== EditSections ========================================
+
+//Portfolio
+
+
+//Frase section
+Route::get('/frase/{id}', 'HomeController@fraseEdit')->name('frase.edit');
+Route::post('/frase-dislpay/{id}', 'HomeController@fraseDisplay')->name('frase.display');
+Route::post('/frase/{id}', 'HomeController@fraseUpdate')->name('frase.update');
+
 
 //Properties Features
 Route::resource('features', 'FeaturesController');
