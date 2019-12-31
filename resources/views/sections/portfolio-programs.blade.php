@@ -20,7 +20,7 @@
                 <div class="item portfolio-item col-md-3 mt-5 @foreach($item->portfolio_category->pluck('name') as $ca)pf-{{str_replace(' ', '', $ca)}} @endforeach ">
 									<div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
 										<div class="fbox-icon">
-											<a href="{{route('portfolioItems.show', $item->id)}}"><i style="background-image: url({{ '/storage/' . $item->image }}); background-size: contain; background-repeat: no-repeat;" class="i-alt"></i></a>
+											<a href="{{route('portfolioItems.show', $item->id)}}"><i style="background-image: url({{ '/storage/' . $item->logo }}); background-size: contain; background-repeat: no-repeat;" class="i-alt"></i></a>
 										</div>
 										<h3>{{$item->title}}<span class="subtitle">{{$item->subtitle}}</span></h3>
 									</div>
@@ -29,9 +29,9 @@
 						</div>
 						<div class="row">
 						<div class="pagination-container mx-auto topmargin nobottommargin">
-
-							<ul class="pagination nomargin"></ul>
-
+							@if($portfolio_items->count() > 9)
+								<ul class="pagination nomargin"></ul>
+							@endif
 						</div>
 						</div>
 					</div>
