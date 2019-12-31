@@ -78,11 +78,6 @@
         </tbody>
 
       </table>
-      <div class="container-fluid">
-        <div class="row">
-          <a class="ml-auto btn btn-danger" href="{{route('trashed-portfolioItems.index')}}"><i class="fas fa-trash"></i>&nbsp;Papelera</a>
-        </div>
-      </div>
     </div>
   </div>
 </div>
