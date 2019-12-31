@@ -20,7 +20,7 @@
                 <div class="item portfolio-item col-md-3 mt-5 @foreach($item->portfolio_category->pluck('name') as $ca)pf-{{str_replace(' ', '', $ca)}} @endforeach ">
 									<div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
 										<div class="fbox-icon">
-											<a href="#"><i style="background-image: url({{ '/storage/' . $item->image }}); background-size: contain; background-repeat: no-repeat;" class="i-alt"></i></a>
+											<a href="{{route('portfolioItems.show', $item->id)}}"><i style="background-image: url({{ '/storage/' . $item->image }}); background-size: contain; background-repeat: no-repeat;" class="i-alt"></i></a>
 										</div>
 										<h3>{{$item->title}}<span class="subtitle">{{$item->subtitle}}</span></h3>
 									</div>

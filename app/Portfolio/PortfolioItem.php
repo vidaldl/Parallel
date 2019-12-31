@@ -11,9 +11,15 @@ class PortfolioItem extends Model
 {
     use SoftDeletes;
 
-    public function deleteImage() {
+    public function deleteLogo() {
 
-      Storage::delete($this->image);
+      Storage::delete($this->Logo);
+
+    }
+
+    public function deleteScreenshot() {
+
+      Storage::delete($this->screenshot);
 
     }
 

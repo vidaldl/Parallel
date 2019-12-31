@@ -13,6 +13,11 @@ use App\Portfolio\PortfolioItem;
 use App\Portfolio\PortfolioCategory;
 use App\Http\Requests\Portfolio\UpdatePortfolioItemsRequest;
 
+use App\Order;
+use App\Style;
+use App\ContenidoSection2;
+use App\ContenidoSectionFooter;
+
 class PortfolioItemController extends Controller
 {
 
@@ -68,7 +73,7 @@ class PortfolioItemController extends Controller
       $latest = DB::getPdo('portfolio_items')->lastInsertId();
       return redirect('portfolioItems/' . $latest . '/edit');
 
-    }else {
+      }else {
       $data = array('title'=>$title, 'subtitle'=>$subtitle);
       $dataUpload = DB::table('portfolio_items')->insert($data);
       session()->flash('success', 'Artículo actualizado');
@@ -85,7 +90,13 @@ class PortfolioItemController extends Controller
      */
     public function show($id)
     {
-        //
+      return view('portfolio.show')
+      ->with('portfolioCategories', PortfolioCategory::all())
+      ->with('orders', Order::orderBy('order')->get())
+      ->with('styles', Style::all())
+      ->with('contenidosection2s', ContenidoSection2::all())
+      ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('portfolioItems', PortfolioItem::find($id));
     }
 
     public function redirect() {
@@ -114,32 +125,69 @@ class PortfolioItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $portfolio = PortfolioItem::find($id);
+      //Categories first
+      $categories = $request->input('categories');
+
       // dd($portfolio->title);
       // $portfolio->portfolio_category()->attach(2);
 
-
+    //PORTADA
       $title = $request->input('title');
       $subtitle = $request->input('subtitle');
-      $categories = $request->input('categories');
-      $portfolio->portfolio_category()->sync($categories);
+
+    //Detalle
+      $contenido = $request->input('contenido');
+      $author = $request->input('author');
+      $author_bio = $request->input('author_bio');
+      $link_title = $request->input('link_title');
+      $button_text = $request->input('button_text');
+      $button_icon = $request->input('button_icon');
+      $link = $request->input('link');
+
       $oldImage = DB::table('portfolio_items')->where('id', $id)->first();
-      if ($request->hasFile('image')) {
+
+
+        if ($request->hasFile('logo')) {
           $this->validate($request, [
-              'image' => 'image|required|mimes:png,jpg,jpeg,svg'
+              'logo' => 'image|required|mimes:png,jpg,jpeg,svg'
            ]);
           //upload it
 
-          $image = $request->file('image')->store('content/portfolio');
+          $logo = $request->file('logo')->store('content/portfolio');
           //Image Intervention
 
-          Storage::delete($oldImage->image);
+          Storage::delete($oldImage->logo);
 
-          $data=array('image'=>$image);
+          $data=array('logo'=>$logo);
           DB::table('portfolio_items')->where('id', $id)->update($data);
 
-        } else {
-          $data = array('title'=>$title, 'subtitle'=>$subtitle);
+        }elseif ($request->hasFile('screenshot')) {
+            $this->validate($request, [
+                'screenshot' => 'image|required|mimes:png,jpg,jpeg,svg'
+             ]);
+            //upload it
+            $screenshot = $request->file('screenshot')->store('content/portfolio');
+            //Image Intervention
+
+            Storage::delete($oldImage->screenshot);
+
+            $data=array('screenshot'=>$screenshot);
+            DB::table('portfolio_items')->where('id', $id)->update($data);
+
+          } else {
+            $portfolio = PortfolioItem::find($id);
+            $portfolio->portfolio_category()->sync($categories);
+          $data = array(
+          'title'=>$title,
+          'subtitle'=>$subtitle,
+          'contenido'=>$contenido,
+          'author'=>$author,
+          'author_bio'=>$author_bio,
+          'link_title'=>$link_title,
+          'button_text'=>$button_text,
+          'button_icon'=>$button_icon,
+          'link'=>$link
+          );
           DB::table('portfolio_items')->where('id', $id)->update($data);
         }
     }
@@ -152,9 +200,12 @@ class PortfolioItemController extends Controller
      */
     public function destroy($id)
     {
+
       $portfolioItems = PortfolioItem::withTrashed()->where('id', $id)->firstOrFail();
       if ($portfolioItems->trashed()) {
-      $portfolioItems->deleteImage();
+      // $portfolioItems->portfolio_category()->detach($id);
+      DB::table('portfolio_category_portfolio_item')->where('portfolio_item_id', $id)->delete();
+      $portfolioItems->deleteScreenshot();
       $portfolioItems->forceDelete();
       session()->flash('error', 'Artículo eliminado permanentemente');
       return redirect(route('trashed-portfolioItems.index'));

@@ -17,7 +17,15 @@ class CreatePortfolioItemsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('subtitle')->nullable();
-            $table->string('image')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('screenshot')->nullable();
+            $table->text('contenido')->nullable();
+            $table->string('author')->nullable();
+            $table->text('author_bio')->nullable();
+            $table->string('link_title')->nullable();
+            $table->string('button_text')->nullable();
+            $table->string('button_icon')->nullable();
+            $table->string('link')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

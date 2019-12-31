@@ -137,6 +137,16 @@ class OrdersTableSeeder extends Seeder
                 'menu_name' => 'Más',
                 'menu_display' => 1,
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'section' => 'portfolio-programs',
+                'name' => 'Portfolio',
+                'order' => 12,
+                'display' => 1,
+                'menu_name' => 'Portafolio',
+                'menu_display' => 1,
+            ),
         ));
         
         

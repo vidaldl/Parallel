@@ -28,7 +28,7 @@
           @foreach($portfolioItems as $item)
           <tr>
               <td>
-                <img src="{{ '/storage/' . $item->image }}" width="120" alt="">
+                <img src="{{ '/storage/' . $item->logo }}" width="120" alt="">
               </td>
               <td>
                 <h4>{{ $item->title }}</h4>
