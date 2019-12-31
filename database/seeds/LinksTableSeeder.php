@@ -51,7 +51,7 @@ class LinksTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'image' => 'content/links/S6SoBwozlOzSgthxF9IGlCplEBlCTAqF1DqGg1VX.png',
-                'title' => 'Super Tucano International',
+                'title' => 'Super Tucano Inter.',
                 'link' => 'google.com',
                 'deleted_at' => NULL,
                 'created_at' => NULL,

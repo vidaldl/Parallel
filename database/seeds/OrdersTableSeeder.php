@@ -92,7 +92,7 @@ class OrdersTableSeeder extends Seeder
                 'id' => 8,
                 'section' => 'contact',
                 'name' => 'Contacto',
-                'order' => 8,
+                'order' => 10,
                 'display' => 1,
                 'menu_name' => 'Contacto',
                 'menu_display' => 1,
@@ -102,7 +102,7 @@ class OrdersTableSeeder extends Seeder
                 'id' => 9,
                 'section' => 'links',
                 'name' => 'Enlaces Útiles',
-                'order' => 9,
+                'order' => 11,
                 'display' => 1,
                 'menu_name' => 'Enlaces',
                 'menu_display' => 0,
@@ -119,30 +119,20 @@ class OrdersTableSeeder extends Seeder
             ),
             10 => 
             array (
-                'id' => 11,
-                'section' => 'houses',
-                'name' => 'Propiedades',
-                'order' => 10,
-                'display' => 1,
-                'menu_name' => 'Propiedades',
-                'menu_display' => 0,
-            ),
-            11 => 
-            array (
                 'id' => 12,
                 'section' => 'frase',
                 'name' => 'Frase Titulo',
-                'order' => 11,
+                'order' => 8,
                 'display' => 1,
                 'menu_name' => 'Más',
                 'menu_display' => 1,
             ),
-            12 => 
+            11 => 
             array (
                 'id' => 13,
                 'section' => 'portfolio-programs',
                 'name' => 'Portfolio',
-                'order' => 12,
+                'order' => 9,
                 'display' => 1,
                 'menu_name' => 'Portafolio',
                 'menu_display' => 1,
