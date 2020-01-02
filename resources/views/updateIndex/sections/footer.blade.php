@@ -2,7 +2,7 @@
   <div class="col-md-12 mb-4">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <form method="POST" action="{{route('sectionFooter.display', $contenidosectionfooters[0]->id)}}">
+        <!-- <form method="POST" action="{{route('sectionFooter.display', $contenidosectionfooters[0]->id)}}">
           @csrf
           <div class="row">
             <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Pie de Página</h6></span>
@@ -11,7 +11,7 @@
                 <option value="0" {{ $contenidosectionfooters[0]->display == '0' ? 'selected' : '' }}>Esconder</option>
               </select>
           </div>
-        </form>
+        </form> -->
       </div>
         <div class="card-body row">
           <div class="col-md-6">

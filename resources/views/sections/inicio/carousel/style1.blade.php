@@ -13,7 +13,7 @@
             <div class="slider-caption slider-caption-center">
               <div class="d-none d-md-block"><img class="img-fluid " src="{{'/storage/' . $contenidosection1s[1]->logo }}" style="height: 300px" alt=""></div>
               <h2 data-animate="fadeInUp">{{$contenidosection1s[1]->title}}</h2>
-              <div class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[1]->tagline !!}</div>
+              <div class="d-none d-md-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[1]->tagline !!}</div>
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="slider-caption slider-caption-right">
               <h2 data-animate="fadeInUp">{{$contenidosection1s[2]->title}}</h2>
-              <div class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[2]->tagline !!}</div>
+              <div class="d-none d-md-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[2]->tagline !!}</div>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
           <div class="container clearfix">
             <div class="slider-caption">
               <h2 data-animate="fadeInUp">{{$contenidosection1s[3]->title}}</h2>
-              <div class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[3]->tagline !!}</div>
+              <div class="d-none d-md-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[3]->tagline !!}</div>
             </div>
             <div class="slider-caption slider-caption-right d-none d-xl-block">
               <img src="{{'/storage/' . $contenidosection1s[3]->logo }}" alt="">

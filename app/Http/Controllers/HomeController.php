@@ -107,9 +107,9 @@ class HomeController extends Controller
       return redirect()->back();
     }
     public function linkDisplay(Request $request, $id) {
-      $display = $request->input('houses');
+      $display = $request->input('links');
       $data=array("display"=>$display);
-      DB::table('orders')->where('section', 'houses')->update($data);
+      DB::table('orders')->where('section', 'links')->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();
@@ -789,14 +789,14 @@ class HomeController extends Controller
       return redirect()->back();
     }
 
-    public function sectionFooterDisplay(Request $request, $id) {
-      $display = $request->input('sectionFooter');
-      $data=array("display"=>$display);
-      DB::table('contenido_section_footers')->update($data);
-      session()->flash('success', 'La sección fue actualizada');
-      //redirect
-      return redirect()->back();
-    }
+    // public function sectionFooterDisplay(Request $request, $id) {
+    //   $display = $request->input('sectionFooter');
+    //   $data=array("display"=>$display);
+    //   DB::table('contenido_section_footers')->update($data);
+    //   session()->flash('success', 'La sección fue actualizada');
+    //   //redirect
+    //   return redirect()->back();
+    // }
 
 
 
