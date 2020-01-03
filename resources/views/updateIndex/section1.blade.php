@@ -140,6 +140,22 @@
                   </span>
                 @enderror
               </div>
+              <!-- TRANSPARENCIA DEL FONDO -->
+              <div class="form-group">
+                <label class="col-form-label">Transparencia de Fondo</label><br>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="porciento">%</span>
+                  </div>
+                  <input id="overlay" type="input" name="overlay" class="form-control @error('overlay') is-invalid @enderror"  value="{{ $contenidosection1s[0]->overlay }}">
+                </div>
+                  @error('overlay')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+
               <div class="form-group">
                 <label for="title" class="col-form-label">Titulo</label>
                 <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $contenidosection1s[0]->title }}">

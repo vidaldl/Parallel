@@ -8,7 +8,7 @@
 					============================================= -->
 						<ul class="portfolio-filter clearfix" data-container="#portfolio">
 
-							<li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+							<li class="activeFilter"><a href="#" data-filter="*">Todos</a></li>
               @foreach($portfolio_categories as $category)
                 <li><a href="#" data-filter=".pf-{{str_replace(' ', '', $category->name)}}">{{$category->name}}</a></li>
 					    @endforeach

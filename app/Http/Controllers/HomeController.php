@@ -553,13 +553,17 @@ class HomeController extends Controller
     }
 
     public function section1Update(Request $request, $id) {
+
       $title = $request->input('title');
       $tagline = $request->input('tagline');
       $button = $request->input('button');
       $displayImage = $request->input('displayImage');
       $link = $request->input('link');
+      $overlay = $request->input('overlay');
       $logo = NULL;
-
+      $request->validate([
+          'overlay' => 'integer|required|between:1,100'
+       ]);
 
       // Logo ---------------------------------------------------------------
       if ($request->hasFile('logo')) {
@@ -570,28 +574,9 @@ class HomeController extends Controller
 
         //upload it
         $logo = $request->file('logo')->store('content');
-        //Image Intervention
-        // $finalImage = Image::make($logo);
-        // $random = rand();
-        // $originalPath = public_path().'/storage/content/original/';
-        // $finalPath = public_path().'/storage/content/';
-        // $finalImage->save($originalPath.$random.$logo->getClientOriginalName());
-        // $finalDummy = $logo->basename;
-        // $finalDummyName = 'content/original/'.$finalDummy;
-        //moment of transformation
-        // $width = 350;
-        // $height = 250;
-        // $finalImage->width() > $finalImage->height() ? $width=null : $height=null;
-        // $finalImage->resize($width, $height, function ($constraint) {
-        //     $constraint->aspectRatio();
-        // });
-        // $finalImage->resize(150,150);
-        // $logo->save($finalPath.$random.$logo->getClientOriginalName());
-        // Storage::delete($finalDummyName);
+
         Storage::delete($logoOld->logo);
 
-
-        // $finalDataName = 'content/'.$logo;
         $data=array('logo'=>$logo);
         DB::table('contenido_section1s')->where('id', $id)->update($data);
 
@@ -637,7 +622,7 @@ class HomeController extends Controller
 
         }
         else {
-        $data=array("title"=>$title,"tagline"=>$tagline,"button"=>$button, "carousel"=>$displayImage, "link"=>$link);
+        $data=array("title"=>$title,"overlay"=>$overlay,"tagline"=>$tagline,"button"=>$button, "carousel"=>$displayImage, "link"=>$link);
         DB::table('contenido_section1s')->where('id', $id)->update($data);
         session()->flash('success', 'La sección fue actualizada');
         //redirect

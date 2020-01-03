@@ -7,7 +7,7 @@
       <div class="swiper-wrapper">
 
         <div class="swiper-slide dark" style="background-image: url({{ '/storage/' . $contenidosection1s[1]->background_image }});">
-          <div class="overlay"></div>
+          <div class="overlay{{$contenidosection1s[1]->id}}"></div>
           <div class="container clearfix">
 
             <div class="slider-caption slider-caption-center">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="swiper-slide dark" style="background-image: url({{ '/storage/' . $contenidosection1s[2]->background_image }});">
-          <div class="overlay"></div>
+          <div class="overlay{{$contenidosection1s[2]->id}}"></div>
           <div class="container clearfix">
             <div class="slider-caption d-none d-xl-block">
               <img src="{{'/storage/' . $contenidosection1s[2]->logo }}" alt="">
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="swiper-slide dark" style="background-image: url({{ '/storage/' . $contenidosection1s[3]->background_image }});">
-          <div class="overlay"></div>
+          <div class="overlay{{$contenidosection1s[3]->id}}"></div>
           <div class="container clearfix">
             <div class="slider-caption">
               <h2 data-animate="fadeInUp">{{$contenidosection1s[3]->title}}</h2>

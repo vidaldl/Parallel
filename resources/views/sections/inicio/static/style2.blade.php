@@ -5,7 +5,7 @@
 		<div class="swiper-container swiper-parent">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide dark" style="background-image: url({{ '/storage/' . $contenidosection1s[0]->background_image }});">
-					<div class="overlay"></div>
+					<div class="overlay{{$contenidosection1s[0]->id}}"></div>
 					<div class="container clearfix">
 
 						<div class="slider-caption slider-caption-center">
