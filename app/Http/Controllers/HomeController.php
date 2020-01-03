@@ -562,7 +562,7 @@ class HomeController extends Controller
       $overlay = $request->input('overlay');
       $logo = NULL;
       $request->validate([
-          'overlay' => 'integer|required|between:1,100'
+          'overlay' => 'integer|between:1,100'
        ]);
 
       // Logo ---------------------------------------------------------------
