@@ -11,7 +11,7 @@
 .dark h5,
 .dark h6 { color: #EEE; }
 
-.dark a:hover { color: #EEE; }
+
 
 body.dark,
 .dark #wrapper,
@@ -576,9 +576,7 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 .dark .rounded-skill { color: #EEE; }
 
 .dark .button-dark:not(.button-border),
-.dark .button:hover { background-color: rgba(0,0,0,0.3); }
 
-.dark .button-dark:hover { background-color: #1ABC9C; }
 
 .dark .button-light:not(.button-border):hover { background-color: #282828; }
 
@@ -1686,4 +1684,3 @@ body #side-panel.dark #side-panel-trigger-close a {
 	.dark .pricing-box.pricing-extended .pricing-action-area { border-top-color: rgba(255,255,255,0.15); }
 
 }
-

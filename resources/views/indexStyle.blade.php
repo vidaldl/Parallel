@@ -33,13 +33,19 @@
       background-color: {{$styles[0]->button_secondary}};
     }
 
-    .button {
+    /* .button {
       background-color: {{$styles[0]->button_primary}};
     }
 
     .button:hover {
       background-color: {{$styles[0]->button_secondary}} !important;
-    }
+    } */
+
+    /* .dark a:hover { color: #EEE; } */
+
+    .dark .button:hover { background-color: #59BA41; }
+
+    /* .dark .button-dark:hover { background-color: #1ABC9C; } */
 
     #contact .form button[type="submit"] {
       background: {{$styles[0]->button_primary}};
