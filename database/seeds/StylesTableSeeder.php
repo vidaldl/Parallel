@@ -12,12 +12,12 @@ class StylesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('styles')->delete();
-        
+
         \DB::table('styles')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'primary_color' => '#6d855d',
@@ -32,11 +32,11 @@ class StylesTableSeeder extends Seeder
                 'custom_link_text_2' => 'adsfasdf',
                 'custom_link_address_2' => 'http://www.google.com',
                 'show_link_2' => 0,
-                'created_at' => '2019-07-05 22:13:07',
-                'updated_at' => '2019-07-05 22:13:07',
+                'link_mode_1' => '1',
+                'link_mode_2' => '1'
             ),
         ));
-        
-        
+
+
     }
 }

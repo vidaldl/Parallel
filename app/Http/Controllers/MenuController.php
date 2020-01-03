@@ -50,28 +50,40 @@ class MenuController extends Controller
 
     public function menuSideUpdate(Request $request, $id)
     {
-      $custom_icon_1 = $request->input('custom_icon_1');
-      $custom_link_text_1 = $request->input('custom_link_text_1');
-      $custom_link_address_1 = $request->input('custom_link_address_1');
-      $show_link_1 = $request->input('show_link_1');
 
-      $custom_icon_2 = $request->input('custom_icon_2');
-      $custom_link_text_2 = $request->input('custom_link_text_2');
-      $custom_link_address_2 = $request->input('custom_link_address_2');
-      $show_link_2 = $request->input('show_link_2');
 
-      $data = array("custom_icon_1"=>$custom_icon_1,
-      "custom_link_text_1"=>$custom_link_text_1,
-      "custom_link_address_1"=>$custom_link_address_1,
-      "show_link_1"=>$show_link_1,
-      "custom_icon_2"=>$custom_icon_2,
-      "custom_link_text_2"=>$custom_link_text_2,
-      "custom_link_address_2"=>$custom_link_address_2,
-      "show_link_2"=>$show_link_2);
-      DB::table('styles')->update($data);
-      session()->flash('success', 'La informacion ha sido actualizada');
-      //redirect
-      return redirect()->back();
+
+
+        $link_mode_1 = $request->input('link_mode_1');
+        $link_mode_2 = $request->input('link_mode_2');
+        $custom_icon_1 = $request->input('custom_icon_1');
+        $custom_link_text_1 = $request->input('custom_link_text_1');
+        $custom_link_address_1 = $request->input('custom_link_address_1');
+        $show_link_1 = $request->input('show_link_1');
+
+        $custom_icon_2 = $request->input('custom_icon_2');
+        $custom_link_text_2 = $request->input('custom_link_text_2');
+        $custom_link_address_2 = $request->input('custom_link_address_2');
+        $show_link_2 = $request->input('show_link_2');
+
+        $data = array("custom_icon_1"=>$custom_icon_1,
+        "custom_link_text_1"=>$custom_link_text_1,
+        "custom_link_address_1"=>$custom_link_address_1,
+        "show_link_1"=>$show_link_1,
+        "custom_icon_2"=>$custom_icon_2,
+        "custom_link_text_2"=>$custom_link_text_2,
+        "custom_link_address_2"=>$custom_link_address_2,
+        "show_link_2"=>$show_link_2,
+        "link_mode_1"=>$link_mode_1,
+        "link_mode_2"=>$link_mode_2);
+        DB::table('styles')->where('id', $id)->update($data);
+        session()->flash('success', 'La informacion ha sido actualizada');
+        //redirect
+        return redirect()->back();
+
+
+
+
     }
 
 }

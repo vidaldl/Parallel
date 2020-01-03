@@ -27,7 +27,8 @@ class CreateStylesTable extends Migration
             $table->string('custom_link_text_2')->nullable();
             $table->text('custom_link_address_2')->nullable();
             $table->integer('show_link_2')->default('1')->nullable();
-            $table->timestamps();
+            $table->integer('link_mode_1')->default('1')->nullable();
+            $table->integer('link_mode_2')->default('1')->nullable();
         });
     }
 
