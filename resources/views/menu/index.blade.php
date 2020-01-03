@@ -137,8 +137,8 @@
                          </button>
                          <div class="dropdown-menu"></div>
                        </div>
-                      @elseif($styles[0]->link_mode_1 == '2')
-                      <input  class="form-control"  name="custom_icon_1" type="text" id="custom_icon_1" value="{{ $styles[0]->custom_icon_1 }}">
+                      @else
+
                       @endif
 
                       </div>
@@ -185,8 +185,8 @@
                              </button>
                              <div class="dropdown-menu"></div>
                          </div>
-                       @elseif($styles[0]->link_mode_2 == '2')
-                        <input  class="form-control col-md-12"  name="custom_icon_2" type="text" id="custom_icon_2" value="{{ $styles[0]->custom_icon_2 }}">
+                       @else
+                        
                        @endif
                       </div>
                     </div>

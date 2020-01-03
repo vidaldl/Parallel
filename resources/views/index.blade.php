@@ -36,14 +36,14 @@
     						<a class="{{$styles[0]->show_link_1 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}} fa-2x"></i></a>
     					</li>
             @elseif($styles[0]->link_mode_1 == '2')
-              <li><a href="{!! $styles[0]->custom_link_address_1 !!}"><div>{{$styles[0]->custom_icon_1}}</div></a></li>
+              <li><a href="{!! $styles[0]->custom_link_address_1 !!}"><div>{{$styles[0]->custom_link_text_1}}</div></a></li>
             @endif
             @if($styles[0]->link_mode_2 == '1')
               <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_2}}">
     						<a class="{{$styles[0]->show_link_2 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}} fa-2x"></i></a>
     					</li>
             @elseif($styles[0]->link_mode_2 == '2')
-              <li><a href="{!! $styles[0]->custom_link_address_2 !!}"><div>{{$styles[0]->custom_icon_2}}</div></a></li>
+              <li><a href="{!! $styles[0]->custom_link_address_2 !!}"><div>{{$styles[0]->custom_link_text_2}}</div></a></li>
             @endif
           </ul>
 
