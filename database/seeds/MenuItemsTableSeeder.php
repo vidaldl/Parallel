@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CitiesTableSeeder extends Seeder
+class MenuItemsTableSeeder extends Seeder
 {
 
     /**
@@ -14,14 +14,13 @@ class CitiesTableSeeder extends Seeder
     {
         
 
-        \DB::table('cities')->delete();
+        \DB::table('menu_items')->delete();
         
-        \DB::table('cities')->insert(array (
+        \DB::table('menu_items')->insert(array (
             0 => 
             array (
-                'id' => 3,
-                'name' => 'Menerdo',
-                'deleted_at' => NULL,
+                'id' => 1,
+                'logo' => 'content/menu/Jdu4Opg3jOCHdtijrqja5Ss55cn9ndzTL6QXjYzx.png',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

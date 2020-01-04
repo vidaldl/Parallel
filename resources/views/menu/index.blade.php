@@ -340,14 +340,14 @@ Dropzone.options.logo = {
    },
    init: function () {
       this.on("complete", function (file) {
-        // if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-        //
-        //   setTimeout(
-        //     function()
-        //     {
-        //       location.reload();
-        //     }, 1500);
-        // }
+        if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+          setTimeout(
+            function()
+            {
+              location.reload();
+            }, 1500);
+        }
       });
     }
   };
