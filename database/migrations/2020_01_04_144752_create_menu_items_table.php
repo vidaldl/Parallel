@@ -15,10 +15,8 @@ class CreateMenuItemsTable extends Migration
     {
         Schema::create('menu_items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tipo');
-            $table->string('title');
-            $table->text('target');
-            $table->string('display');
+            $table->string('logo')->nullable();
+            $table->timestamps();
         });
     }
 

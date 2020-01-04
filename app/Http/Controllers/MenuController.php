@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Style;
+use App\MenuItem;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -18,16 +20,24 @@ class MenuController extends Controller
     {
         return view('menu.index')
         ->with('styles', Style::all())
+        ->with('menu_item', MenuItem::all())
         ->with('order', Order::all());
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+    public function logo(Request $request, $id) {
+      $this->validate($request, [
+          'logo' => 'image|required|mimes:png,svg'
+       ]);
+      $imageOld = DB::table('menu_items')->where('id', $id)->first();
+
+      //upload it
+      $logo = $request->file('logo')->store('content/menu');
+      Storage::delete($imageOld->logo);
+      $data=array('logo'=>$logo);
+      DB::table('menu_items')->where('id', $id)->update($data);
+    }
+
     public function update(Request $request, $id)
     {
         $menu_name = $request->input('menu_name');
@@ -50,9 +60,6 @@ class MenuController extends Controller
 
     public function menuSideUpdate(Request $request, $id)
     {
-
-
-
 
         $link_mode_1 = $request->input('link_mode_1');
         $link_mode_2 = $request->input('link_mode_2');
@@ -80,9 +87,6 @@ class MenuController extends Controller
         session()->flash('success', 'La informacion ha sido actualizada');
         //redirect
         return redirect()->back();
-
-
-
 
     }
 

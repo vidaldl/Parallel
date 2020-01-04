@@ -68,9 +68,9 @@
     .scrolltop {
       background: {{$styles[0]->primary_color}};
     }
-    #header {
+    /* #header {
       background: {{$styles[0]->primary_color}};
-    }
+    } */
     .nav-menu ul li:hover {
       background: {{$styles[0]->primary_color}};
     }

@@ -13,10 +13,7 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('/about', 'IndexController@about');
-Route::get('/menu', 'MenuController@index')->name('menu.index');
-Route::post('/menu-update/{id}', 'MenuController@update');
-Route::post('/menu-display/{id}', 'MenuController@display');
-Route::post('/menuSide-update/{id}', 'MenuController@menuSideUpdate')->name('menuSide.update');
+
 
 
 Route::get('/blog', 'IndexController@blog');
@@ -35,6 +32,14 @@ Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 Route::middleware(['auth'])->group(function () {
 
 // ================================== EditSections ========================================
+// MENU
+Route::get('/menu', 'MenuController@index')->name('menu.index');
+Route::post('/menu-update/{id}', 'MenuController@update');
+Route::post('/menu-display/{id}', 'MenuController@display');
+Route::post('/menuSide-update/{id}', 'MenuController@menuSideUpdate')->name('menuSide.update');
+Route::post('/menuLogo-update/{id}', 'MenuController@logo')->name('menuLogo.update');
+
+
 
 //Portfolio
 Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');

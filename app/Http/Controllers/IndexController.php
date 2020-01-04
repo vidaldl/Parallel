@@ -33,6 +33,7 @@ use App\SectionProperty;
 use App\Frase;
 use App\Portfolio\PortfolioCategory;
 use App\Portfolio\PortfolioItem;
+use App\MenuItem;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -67,7 +68,7 @@ class IndexController extends Controller
       return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
       ->with('orders', Order::orderBy('order')->get())
       ->with('contenidosection1s', ContenidoSection1::all())
-      ->with('menu_items', menu_item::all())
+      ->with('menu_item', MenuItem::all())
       ->with('contenidosection2s', ContenidoSection2::all())
       ->with('contenidosection3s', ContenidoSection3::all())
       ->with('contenidosection4s', ContenidoSection4::all())
@@ -93,9 +94,8 @@ class IndexController extends Controller
       ->with('portfolio_categories', PortfolioCategory::all())
       ->with('portfolio_items', PortfolioItem::all())
       ->with('users', User::all());
-
-
     }
+
 
     public function order(Request $request) {
       $order = DB::table('orders')->orderBy('order')->get();
@@ -109,10 +109,6 @@ class IndexController extends Controller
 
     }
 
-
-    public function menu_items(Request $request, $id) {
-
-    }
 
 
     public function blog() {
