@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('css')
-<link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
@@ -242,18 +242,18 @@
    showInput: true,
   });
 </script>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script>
-  ClassicEditor.create( document.querySelector( '#contenido' ), {
-        removePlugins: ['Autoformat', 'Heading', 'Link' ],
-        toolbar: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList']
-      }).then( editor => {
-          console.log( Array.from( editor.ui.componentFactory.names() ) );
-      } )
-      .catch( error => {
-          console.error( error );
-      } );
-  console.log(ClassicEditor.builtinPlugins.map( plugin => plugin.pluginName ));
+$('#contenido').trumbowyg({
+  btns: [
+      ['strong', 'em', 'del'],
+      ['link'],
+      ['unorderedList', 'orderedList'],
+      ['removeformat'],
+      ['fullscreen']
+  ]
+});
+
 </script>
 <script>
   $(document).ready(function() {
@@ -267,141 +267,67 @@
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <script>
-Dropzone.options.video = {
-   paramName: "video",
-   init: function () {
-      this.on("complete", function (file) {
-        if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+  Dropzone.options.video = {
+     paramName: "video",
+     init: function () {
+        this.on("complete", function (file) {
+          if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
 
-          setTimeout(
-            function()
-            {
-              location.reload();
-            }, 1500);
-        }
-      });
-    }
-};
-  Dropzone.options.slide = {
-     paramName: "slide",
-
-     transformFile: function(file, done) {
-        var myDropZone = this;
-        var editor = $('.editorNew');
-        $(editor).removeClass('d-none');
-        $(editor).addClass('d-block');
-        // Create confirm button at the top left of the viewport
-        var buttonConfirm = $('.buttonConfirm');
-        $(buttonConfirm).removeClass('d-none');
-        $(buttonConfirm).addClass('d-block');
-        $(buttonConfirm).click(function() {
-          // Get the canvas with image data from Cropper.js
-           var canvas = cropper.getCroppedCanvas({
-             width: 1760,
-             height: 990
-           });
-           // Turn the canvas into a Blob (file object without a name)
-           canvas.toBlob(function(blob) {
-             // Create a new Dropzone file thumbnail
-              myDropZone.createThumbnail(
-                blob,
-                myDropZone.options.thumbnailWidth,
-                myDropZone.options.thumbnailHeight,
-                myDropZone.options.thumbnailMethod,
-                false,
-                function(dataURL) {
-
-                  // Update the Dropzone file thumbnail
-                  myDropZone.emit('thumbnail', file, dataURL);
-                  // Return the file to Dropzone
-                  done(blob);
-              });
-           });
-          // Remove the editor from the view
-          $(buttonConfirm).removeClass('d-block');
-          $(buttonConfirm).addClass('d-none');
+            setTimeout(
+              function()
+              {
+                location.reload();
+              }, 1500);
+          }
         });
-        // Create an image node for Cropper.js
-       var image = new Image();
-       image.src = URL.createObjectURL(file);
-       // editor.appendChild(image);
-       $(image).appendTo(editor)
-       // Create Cropper.js
-       var cropper = new Cropper(image, { aspectRatio: 4/3 });
-   },
-   init: function () {
-      this.on("complete", function (file) {
-        if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-
-          setTimeout(
-            function()
-            {
-              location.reload();
-            }, 1500);
-        }
-      });
-    }
+      }
   };
+    Dropzone.options.slide = {
+       paramName: "slide",
 
+       transformFile: function(file, done) {
+          var myDropZone = this;
+          var editor = $('.editorNew');
+          $(editor).removeClass('d-none');
+          $(editor).addClass('d-block');
+          // Create confirm button at the top left of the viewport
+          var buttonConfirm = $('.buttonConfirm');
+          $(buttonConfirm).removeClass('d-none');
+          $(buttonConfirm).addClass('d-block');
+          $(buttonConfirm).click(function() {
+            // Get the canvas with image data from Cropper.js
+             var canvas = cropper.getCroppedCanvas({
+               width: 1760,
+               height: 990
+             });
+             // Turn the canvas into a Blob (file object without a name)
+             canvas.toBlob(function(blob) {
+               // Create a new Dropzone file thumbnail
+                myDropZone.createThumbnail(
+                  blob,
+                  myDropZone.options.thumbnailWidth,
+                  myDropZone.options.thumbnailHeight,
+                  myDropZone.options.thumbnailMethod,
+                  false,
+                  function(dataURL) {
 
-  @foreach($info_slider_images as $images)
-  Dropzone.options.slide{{$images->id}} = {
-     paramName: "slide",
-     transformFile: function(file, done) {
-        var myDropZone = this;
-        var editor = $('.editor{{ $images->id }}');
-        var imgThumbnail = $('.img-thumbnail{{ $images->id }}');
-        $(imgThumbnail).addClass('d-none');
-        $(editor).removeClass('d-none');
-        $(editor).addClass('d-block');
-
-        // Delete Button
-        $('.delTD{{ $images->id }}').addClass('d-none');
-        $('.editorTD{{ $images->id }}').attr('colspan',2);
-        // Create confirm button at the top left of the viewport
-        var buttonConfirm = $('.buttonConfirm{{ $images->id }}');
-        $(buttonConfirm).removeClass('d-none');
-        $(buttonConfirm).addClass('d-block');
-        $(buttonConfirm).click(function() {
-          // Get the canvas with image data from Cropper.js
-           var canvas = cropper.getCroppedCanvas({
-             width: 1760,
-             height: 990
-           });
-           // Turn the canvas into a Blob (file object without a name)
-           canvas.toBlob(function(blob) {
-             // Create a new Dropzone file thumbnail
-              myDropZone.createThumbnail(
-                blob,
-                myDropZone.options.thumbnailWidth,
-                myDropZone.options.thumbnailHeight,
-                myDropZone.options.thumbnailMethod,
-                false,
-                function(dataURL) {
-
-                  // Update the Dropzone file thumbnail
-                  myDropZone.emit('thumbnail', file, dataURL);
-                  // Return the file to Dropzone
-                  done(blob);
-              });
-           });
-          // Remove the editor from the view
-          $(buttonConfirm).removeClass('d-block');
-          $(buttonConfirm).addClass('d-none');
-
-
-        });
-
-        // Create an image node for Cropper.js
-       var image = new Image();
-       image.src = URL.createObjectURL(file);
-       // editor.appendChild(image);
-       $(image).appendTo(editor)
-       // Create Cropper.js
-       var cropper = new Cropper(image, { aspectRatio: 16/9 });
-
-
-
+                    // Update the Dropzone file thumbnail
+                    myDropZone.emit('thumbnail', file, dataURL);
+                    // Return the file to Dropzone
+                    done(blob);
+                });
+             });
+            // Remove the editor from the view
+            $(buttonConfirm).removeClass('d-block');
+            $(buttonConfirm).addClass('d-none');
+          });
+          // Create an image node for Cropper.js
+         var image = new Image();
+         image.src = URL.createObjectURL(file);
+         // editor.appendChild(image);
+         $(image).appendTo(editor)
+         // Create Cropper.js
+         var cropper = new Cropper(image, { aspectRatio: 4/3 });
      },
      init: function () {
         this.on("complete", function (file) {
@@ -416,6 +342,80 @@ Dropzone.options.video = {
         });
       }
     };
-  @endforeach
+
+
+    @foreach($info_slider_images as $images)
+    Dropzone.options.slide{{$images->id}} = {
+       paramName: "slide",
+       transformFile: function(file, done) {
+          var myDropZone = this;
+          var editor = $('.editor{{ $images->id }}');
+          var imgThumbnail = $('.img-thumbnail{{ $images->id }}');
+          $(imgThumbnail).addClass('d-none');
+          $(editor).removeClass('d-none');
+          $(editor).addClass('d-block');
+
+          // Delete Button
+          $('.delTD{{ $images->id }}').addClass('d-none');
+          $('.editorTD{{ $images->id }}').attr('colspan',2);
+          // Create confirm button at the top left of the viewport
+          var buttonConfirm = $('.buttonConfirm{{ $images->id }}');
+          $(buttonConfirm).removeClass('d-none');
+          $(buttonConfirm).addClass('d-block');
+          $(buttonConfirm).click(function() {
+            // Get the canvas with image data from Cropper.js
+             var canvas = cropper.getCroppedCanvas({
+               width: 1760,
+               height: 990
+             });
+             // Turn the canvas into a Blob (file object without a name)
+             canvas.toBlob(function(blob) {
+               // Create a new Dropzone file thumbnail
+                myDropZone.createThumbnail(
+                  blob,
+                  myDropZone.options.thumbnailWidth,
+                  myDropZone.options.thumbnailHeight,
+                  myDropZone.options.thumbnailMethod,
+                  false,
+                  function(dataURL) {
+
+                    // Update the Dropzone file thumbnail
+                    myDropZone.emit('thumbnail', file, dataURL);
+                    // Return the file to Dropzone
+                    done(blob);
+                });
+             });
+            // Remove the editor from the view
+            $(buttonConfirm).removeClass('d-block');
+            $(buttonConfirm).addClass('d-none');
+
+
+          });
+
+          // Create an image node for Cropper.js
+         var image = new Image();
+         image.src = URL.createObjectURL(file);
+         // editor.appendChild(image);
+         $(image).appendTo(editor)
+         // Create Cropper.js
+         var cropper = new Cropper(image, { aspectRatio: 16/9 });
+
+
+
+       },
+       init: function () {
+          this.on("complete", function (file) {
+            if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+              setTimeout(
+                function()
+                {
+                  location.reload();
+                }, 1500);
+            }
+          });
+        }
+      };
+    @endforeach
 </script>
 @endsection

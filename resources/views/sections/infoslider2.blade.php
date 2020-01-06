@@ -1,39 +1,42 @@
-<div id="infoslider2" class="infoSlider" style="border-top: 1px solid #E1E4EA;">
-  <div class="container-fluid mt-5">
-    <div class="row">
-      <div class="col-md-6 imageH" id="" style="overflow: hidden;">
-        <div class="flexslider">
-          <ul class="slides">
-            @if(empty($info_slider_text2s[0]->video))
-              @foreach($info_slider_image2s as $images)
-              <li>
-                <img src="{{ 'storage/' . $images->image }}" />
-              </li>
-              @endforeach
-            @else
-              <li>
-                <video width="100%" controls muted autoplay loop>
-                  <source src="{{ '/storage/' . $info_slider_text2s[0]->video }}" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-              </li>
-            @endif
-          </ul>
-        </div>
+@section('css')
+
+@endsection
+<div id="infoslider2" class="container clearfix">
+<div id="section-nextgen" class="page-section bottommargin-lg">
+	<div class="row clearfix">
+    <div class="col-lg-5">
+      <div class="emphasis-title bottommargin-sm">
+        <h2 style="font-size: 42px;" class="font-body ls1 t400">{!! $info_slider_text2s[0]->title !!}</h2>
       </div>
-      <div class="col-md-6">
-        <div class="row">
-          <div id="" class="col-md-12 textHeight">
-            <h2>{!! $info_slider_text2s[0]->title !!}</h2>
-            {!! $info_slider_text2s[0]->contenido !!}
-          </div>
-          @if(!empty($info_slider_text2s[0]->button) && !empty($info_slider_text2s[0]->link))
-          <div id="" class="mb-5 mx-auto btnH" >
-            <a href="{{ $info_slider_text2s[0]->link }}" class="btn" style="color:#ffff;">{{ $info_slider_text2s[0]->button }}</a>
-          </div>
-          @endif
-        </div>
-      </div>
+      <p style="color: #777;" class="lead">{!! $info_slider_text2s[0]->contenido !!}</p>
+      <a href="{{ $info_slider_text2s[0]->link }}" class="section-more-link">{!! $info_slider_text2s[0]->button !!}<i class="icon-angle-right"></i></a>
     </div>
-  </div>
+
+		<div class="col-lg-7 pf-icons pf-illustrations alt">
+      <!-- IMAGE -->
+
+      <div class="portfolio-image">
+					@if($info_slider_image2s->count() > 1)
+					<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
+					@else
+					<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
+					@endif
+          <div class="flexslider">
+            <div class="slider-wrap">
+              @foreach($info_slider_image2s as $images)
+              <div class="slide"><img src="{{ 'storage/' . $images->image }}" alt="Morning Dew"></div>
+              @endforeach
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /IMAGE -->
+		</div>
+
+
+
+	</div>
+
+</div>
+
 </div>

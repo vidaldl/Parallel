@@ -20,7 +20,7 @@ class MenuController extends Controller
     {
         return view('menu.index')
         ->with('styles', Style::all())
-        ->with('menu_item', MenuItem::all())
+        ->with('menu_items', MenuItem::all())
         ->with('order', Order::all());
     }
 

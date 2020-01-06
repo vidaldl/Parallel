@@ -61,6 +61,7 @@
   </style>
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
+<link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -167,7 +168,7 @@
               </div>
               <div class="form-group">
                 <label for="tagline" class="col-form-label">Sub-titulo</label>
-                <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[0]->tagline }}</textarea>
+                <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[0]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[0]->tagline }}</textarea>
                   @error('tagline')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -178,7 +179,7 @@
               <div class="form-group">
 
                   <label for="image" class="col-form-label">Imagen de Logo</label><br>
-                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo{{ $contenidosection1s[0]->id }}">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo{{ $contenidosection1s[0]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                   @error('logo')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -353,7 +354,7 @@
                 </div>
                 <div class="form-group col-md-12">
                   <label for="tagline" class="col-form-label">Sub-titulo</label>
-                  <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[1]->tagline }}</textarea>
+                  <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[1]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[1]->tagline }}</textarea>
                     @error('tagline')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -508,7 +509,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <label for="tagline" class="col-form-label">Sub-titulo</label>
-                    <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[2]->tagline }}</textarea>
+                    <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[2]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[2]->tagline }}</textarea>
                       @error('tagline')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -519,7 +520,7 @@
                   <div class="form-group col-md-6">
 
                       <label for="image" class="col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[2]->id }}">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[2]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                       <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
                         <option value="0" {{ $contenidosection1s[2]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
                         <option value="1" {{ $contenidosection1s[2]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
@@ -663,7 +664,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <label for="tagline" class="col-form-label">Sub-titulo</label>
-                    <textarea id="tagline" type="input" name="tagline" class="inputEditor form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[3]->tagline }}</textarea>
+                    <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[3]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[3]->tagline }}</textarea>
                       @error('tagline')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -674,7 +675,7 @@
                   <div class="form-group col-md-6">
 
                       <label for="image" class="col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[3]->id }}">Subir Logo &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[3]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                       <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
                         <option value="0" {{ $contenidosection1s[3]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
                         <option value="1" {{ $contenidosection1s[3]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
@@ -799,8 +800,19 @@
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <!-- EDITOR -->
-<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script>
+@foreach($contenidosection1s as $section)
+$('.inputEditor{{$section->id}}').trumbowyg({
+  btns: [
+      ['strong', 'em', 'del'],
+      ['link'],
+      ['unorderedList', 'orderedList'],
+      ['removeformat'],
+      ['fullscreen']
+  ]
+});
+@endforeach
 var allEditors = document.querySelectorAll('.inputEditor');
 for (var i = 0; i < allEditors.length; ++i) {
   ClassicEditor.create( allEditors[i], {
@@ -830,8 +842,8 @@ for (var i = 0; i < allEditors.length; ++i) {
         $(buttonConfirm).click(function() {
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 1760,
-             height: 990
+             width: 1280,
+             height: 960
            });
            // Turn the canvas into a Blob (file object without a name)
            canvas.toBlob(function(blob) {
@@ -901,8 +913,8 @@ for (var i = 0; i < allEditors.length; ++i) {
        $(buttonConfirm).click(function() {
          // Get the canvas with image data from Cropper.js
           var canvas = cropper.getCroppedCanvas({
-            width: 3180,
-            height: 1788
+            width: 1280,
+            height: 720
           });
           // Turn the canvas into a Blob (file object without a name)
           canvas.toBlob(function(blob) {

@@ -251,7 +251,8 @@
               </div>
             </div>
             <div class="col-md-8">
-              <img style="width:100%;" src="{{'/storage/' . $menu_item->logo}}" class="logoThumb img-fluid img-thumbnail rounded">
+
+              <img style="width:100%;" src="{{'/storage/' . $menu_items[0]->logo}}" class="logoThumb img-fluid img-thumbnail rounded">
             <div class="editador d-none" style="height:450px; background-color: #000;">
             </div>
             </div>

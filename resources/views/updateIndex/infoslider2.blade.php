@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('css')
-<link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
@@ -241,15 +241,17 @@
    showInput: true,
   });
 </script>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script>
-  ClassicEditor.create( document.querySelector( '#contenido' ), {
-        removePlugins: ['Autoformat', 'Heading', 'Link' ],
-        toolbar: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList']
-      }).catch( error => {
-          console.error( error );
-      } );
-
+$('#contenido').trumbowyg({
+  btns: [
+      ['strong', 'em', 'del'],
+      ['link'],
+      ['unorderedList', 'orderedList'],
+      ['removeformat'],
+      ['fullscreen']
+  ]
+});
 </script>
 <script>
   $(document).ready(function() {

@@ -244,7 +244,7 @@
                    </div>
                   </div>
                 </div>
-            <!-- /ICONOS1 -->
+              <!-- /ICONOS1 -->
             <div class="form-group">
               <label for="button_text" class="col-form-label">Link del Botón</label>
               <input {{isset($portfolioItem) ? '' : 'disabled'}} id="link" type="input" name="link" class="form-control @error('link') is-invalid @enderror"  value="{{isset($portfolioItem) ? $portfolioItem->link : ''}}">

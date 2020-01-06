@@ -61,7 +61,7 @@
   <!--/INICIO -->
 
 <div id="content" style="margin-bottom: 0px;">
-  <div class="content-wrap">
+
     @foreach($orders as $order)
       @php
         $path = 'sections.' . $order->section ;
@@ -70,7 +70,7 @@
         @include($path)
       @endif
     @endforeach
-  </div>
+
 </div>
 
 
