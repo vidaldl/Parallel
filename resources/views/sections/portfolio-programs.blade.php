@@ -1,6 +1,4 @@
-
-	<div class="line"></div>
-
+<div class="topmargin-sm"></div>
 <div id="portfolio-programs" class="container clearfix">
 
 					<div class="row">

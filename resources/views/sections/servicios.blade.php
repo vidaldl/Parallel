@@ -1,7 +1,8 @@
+<div id="servicios" class="clear"></div>
 <div class="section notopmargin nobottommargin nobottomborder" style="background-color: #fff">
 	<div class="container clearfix">
 		<div class="heading-block center nomargin">
-			<h3>Our Latest Works</h3>
+			<h3>{{$contenidosection2s[0]->title}}</h3>
 		</div>
 	</div>
 </div>
