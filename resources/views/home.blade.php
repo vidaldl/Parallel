@@ -5,6 +5,10 @@
   <link href="{{ asset('lib/tabslet/jquery.tabslet.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <style media="screen">
+.ghost {
+  opacity: .5;
+  background: #C8EBFB;
+}
 .tabdiv {
 	/*border-top: 1px solid #c7c7c7*/
   min-height: 450px;
@@ -198,14 +202,23 @@
 
 $(document).ready(function () {
   $("#sort").sortable({
-        axis: "y",
-        containment: ".tabdiv",
+        axis: 'y',
+        placeholder: 'highlight',
+        handle: '.handle',
+        containment: '.tabdiv',
         scroll:'auto',
-        cursor: "move",
+        cursor: 'move',
         tolerance: 'pointer',
         revert: 'invalid',
         placeholder: 'col-md-12 sortable',
         forceHelperSize: true,
+        ghostClass: 'sortable-ghost',
+        sort: function(e) {
+          $('.line-space').fadeOut();
+        },
+        update: function( ) {
+          $('.line-space').fadeIn();
+        },
         stop: function() {
           $.map($(this).find('.sortable'), function(el) {
             var itemID = el.id;

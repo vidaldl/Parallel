@@ -32,13 +32,16 @@ Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 Route::middleware(['auth'])->group(function () {
 
 // ================================== EditSections ========================================
+//LINE BETWEEN
+Route::post('/line-update/{id}', 'IndexController@lineUpdate')->name('line.update');
+
+
 // MENU
 Route::get('/menu', 'MenuController@index')->name('menu.index');
 Route::post('/menu-update/{id}', 'MenuController@update');
 Route::post('/menu-display/{id}', 'MenuController@display');
 Route::post('/menuSide-update/{id}', 'MenuController@menuSideUpdate')->name('menuSide.update');
 Route::post('/menuLogo-update/{id}', 'MenuController@logo')->name('menuLogo.update');
-
 
 
 //Portfolio

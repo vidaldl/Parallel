@@ -67,6 +67,17 @@
         $path = 'sections.' . $order->section ;
       @endphp
       @if($order->display == 1)
+        @if($order->line == 1)
+          @if($order->line_style == 1)
+            <div class="container">
+              <div class="line"></div>
+            </div>
+          @elseif($order->line_style == 2)
+            <div class="line"></div>
+          @endif
+        @elseif($order->line == 2)
+          <div class="topmargin-lg"></div>
+        @endif
         @include($path)
       @endif
     @endforeach

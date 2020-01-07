@@ -97,6 +97,26 @@ class IndexController extends Controller
     }
 
 
+    public function lineUpdate(Request $request, $id) {
+      if($request->input('line-display-hidden')) {
+        $line = $request->input('line-display-hidden');
+        $data = array('line'=>$line);
+        DB::table('orders')->where('id', $id)->update($data);
+        session()->flash('success', 'La sección fué actualizada');
+        return redirect()->back();
+      } else {
+        $line = $request->input('line-display');
+        $line_style = $request->input('line-style');
+        $data=array("line"=>$line, "line_style"=>$line_style);
+        // $data=array("title"=>$title, "back_color"=>$back_color);
+        DB::table('orders')->where('id', $id)->update($data);
+        session()->flash('success', 'La sección fué actualizada');
+        return redirect()->back();
+      }
+
+    }
+
+
     public function order(Request $request) {
       $order = DB::table('orders')->orderBy('order')->get();
       $itemID = $request->input('itemID');
