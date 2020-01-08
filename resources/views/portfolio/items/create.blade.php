@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('css')
-<link href="{{ asset('lib/summernote/summernote.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
@@ -255,9 +254,9 @@
                 @enderror
             </div>
             @endif
-              <div class="form-group">
-                <button class="ajButton btn btn-success float-right">Actualizar</button>
-              </div>
+            <div class="form-group">
+              <button class="ajButton btn btn-success float-right">Actualizar</button>
+            </div>
             </div>
           </div>
         </div>

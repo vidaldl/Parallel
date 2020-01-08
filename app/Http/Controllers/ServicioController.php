@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use DB;
+
 use App\Http\Requests\UpdateServicios;
 use App\Http\Requests\Servicios\CreateServiciosRequest;
 use App\Servicio;
@@ -35,22 +38,27 @@ class ServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateServiciosRequest $request, Servicio $servicio)
+    public function store(Request $request)
     {
+      $icon = $request->input('icon');
+      $title = $request->input('title');
+      $contenido = $request->input('contenido');
+      $contenido_modal = $request->input('contenido_modal');
 
-        // code...
-
-      $servicioCreate = $servicio::create([
-        'icon' => $request->icon,
-        'title' => $request->title,
-        'contenido' => $request->contenido
-      ]);
+      $data = array('icon'=>$icon, 'title'=>$title, 'contenido'=>$contenido,  'contenido_modal'=>$contenido_modal);
+      DB::table('servicios')->insert($data);
 
       // flash message
       session()->flash('success', 'El post fue creado!');
       //redirect user
-      return redirect(route('servicios.index'));
+      return redirect(route('servicio.redirect'));
 
+    }
+
+    public function redirect() {
+      $latest = DB::table('servicios')->orderBy('id', 'desc')->first();
+
+       return redirect('servicios/' . $latest->id . '/edit');
     }
 
     /**
@@ -83,13 +91,36 @@ class ServicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateServicios $request, Servicio $servicio)
+    public function update(Request $request, $id)
     {
-        $data = $request->only(['icon', 'title', 'contenido']);
-        $servicio->update($data);
+        $icon = $request->input('icon');
+        $title = $request->input('title');
+        $contenido = $request->input('contenido');
+        $contenido_modal = $request->input('contenido_modal');
+
+        if ($request->hasFile('image')) {
+          $this->validate($request, [
+            'image' => 'image|required|mimes:png,svg'
+         ]);
+        $imageOld = DB::table('servicios')->where('id', $id)->first();
+
+        //upload it
+        $image = $request->file('image')->store('content/servicios');
+        Storage::delete($imageOld->image);
+        $data=array('image'=>$image);
+        DB::table('servicios')->where('id', $id)->update($data);
+      }else {
+
+
+        $data = array('icon'=>$icon, 'title'=>$title, 'contenido'=>$contenido,  'contenido_modal'=>$contenido_modal);
+        DB::table('servicios')->where('id', $id)->update($data);
+
         session()->flash('success', 'Servicio actualizado');
         //redirect
         return redirect(route('servicios.index'));
+      }
+
+
     }
 
     /**

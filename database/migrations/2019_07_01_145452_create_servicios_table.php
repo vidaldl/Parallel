@@ -18,6 +18,8 @@ class CreateServiciosTable extends Migration
             $table->string('icon')->nullable();
             $table->string('title')->nullable();
             $table->text('contenido')->nullable();
+            $table->string('image')->nullable();
+            $table->text('contenido_modal')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

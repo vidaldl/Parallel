@@ -175,9 +175,11 @@ Route::post('logout-reset', 'UsersController@logoutReset')->name('logout.reset')
 Route::get('password-redirect', 'UsersController@passwordRedirect')->name('password.redirect');
 
 // Servicios functionality
-Route::resource('servicios', 'ServicioController');
+Route::resource('servicios', 'ServicioController', ['except' => ['update']]);
+Route::post('servicios/{id}', 'ServicioController@update')->name('servicio.update');
 Route::get('trashed-servicios', 'ServicioController@trashed')->name('trashed-servicios.index');
 Route::put('restore-servicios/{servicio}', 'ServicioController@restore')->name('restore-servicios');
+Route::get('/redirectServicio', 'ServicioController@redirect')->name('servicio.redirect');
 
 //Links
 Route::resource('links', 'LinkController');
