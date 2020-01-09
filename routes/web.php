@@ -29,6 +29,16 @@ Route::post('/order', 'IndexController@order');
 // Contact Form
 Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 
+//Portfolio
+Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');
+Route::resource('portfolioItems', 'Portfolio\PortfolioItemController', ['except' => ['update']]);
+Route::post('/portfolioItem/{id}', 'Portfolio\PortfolioItemController@update')->name('portfolioItems.update');
+Route::get('trashed-portfolioItems', 'Portfolio\PortfolioItemController@trashed')->name('trashed-portfolioItems.index');
+Route::put('restore-portfolioItems/{portfolioItem}', 'Portfolio\PortfolioItemController@restore')->name('restore-portfolio-items');
+Route::get('/redirectPortfolioItem', 'Portfolio\PortfolioCategoryController@redirect');
+Route::post('/portfolio-display', 'Portfolio\PortfolioItemController@display')->name('portfolio.display');
+
+
 Route::middleware(['auth'])->group(function () {
 
 // ================================== EditSections ========================================
@@ -44,14 +54,7 @@ Route::post('/menuSide-update/{id}', 'MenuController@menuSideUpdate')->name('men
 Route::post('/menuLogo-update/{id}', 'MenuController@logo')->name('menuLogo.update');
 
 
-//Portfolio
-Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');
-Route::resource('portfolioItems', 'Portfolio\PortfolioItemController', ['except' => ['update']]);
-Route::post('/portfolioItem/{id}', 'Portfolio\PortfolioItemController@update')->name('portfolioItems.update');
-Route::get('trashed-portfolioItems', 'Portfolio\PortfolioItemController@trashed')->name('trashed-portfolioItems.index');
-Route::put('restore-portfolioItems/{portfolioItem}', 'Portfolio\PortfolioItemController@restore')->name('restore-portfolio-items');
-Route::get('/redirectPortfolioItem', 'Portfolio\PortfolioCategoryController@redirect');
-Route::post('/portfolio-display', 'Portfolio\PortfolioItemController@display')->name('portfolio.display');
+
 
 //Frase section
 Route::get('/frase/{id}', 'HomeController@fraseEdit')->name('frase.edit');

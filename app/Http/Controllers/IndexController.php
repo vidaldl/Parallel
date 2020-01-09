@@ -63,7 +63,6 @@ class IndexController extends Controller
     }
 
 
-
     public function index() {
       return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
       ->with('orders', Order::orderBy('order')->get())

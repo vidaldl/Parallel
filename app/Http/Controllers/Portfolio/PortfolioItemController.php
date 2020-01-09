@@ -21,6 +21,13 @@ use App\ContenidoSectionFooter;
 class PortfolioItemController extends Controller
 {
 
+  public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
+
+
+
     public function display(Request $request) {
       $portfolioDisplay = $request->input('portfolio-programs');
       $data = array('display'=>$portfolioDisplay);
