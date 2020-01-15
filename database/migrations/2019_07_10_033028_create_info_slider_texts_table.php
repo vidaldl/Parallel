@@ -19,10 +19,11 @@ class CreateInfoSliderTextsTable extends Migration
             $table->text('contenido')->nullable();
             $table->string('button')->nullable();
             $table->text('link')->nullable();
+            $table->integer('display_type')->nullable()->default(0);
             $table->text('video')->nullable();
             $table->integer('display')->default('1')->nullable();
             $table->string('back_color')->nullable()->default('#FFFFFF');
-            $table->timestamps();
+
         });
     }
 

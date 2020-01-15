@@ -4,9 +4,9 @@
 <div id="infoslider1" class="container clearfix">
 <div id="section-nextgen" class="page-section bottommargin-lg">
 	<div class="row clearfix">
-
 		<div class="col-lg-7 center pf-icons pf-illustrations alt">
-      <!-- IMAGE -->
+		@if($info_slider_texts[0]->display_type == 0)
+			<!-- IMAGE -->
       <div class="portfolio-image">
 					@if($info_slider_images->count() > 1)
 					<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
@@ -22,7 +22,14 @@
           </div>
         </div>
       </div>
+			</div>
       <!-- /IMAGE -->
+			@endif
+			@if($info_slider_texts[0]->display_type == 1)
+			<video muted autoplay controls loop style="display: block; width: 100%;">
+				<source src='{{"/storage/" . $info_slider_texts[0]->video}}' type='video/mp4' />
+			</video>
+			@endif
 		</div>
 
 		<div class="col-lg-5">

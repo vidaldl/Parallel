@@ -252,6 +252,13 @@ class HomeController extends Controller
         session()->flash('success', 'El video fué actualizado');
         //redirect
         return redirect()->back();
+      } elseif ($request->has('val')) {
+        $display_type = $request->input('val');
+
+        $data = array("display_type"=>$display_type);
+        DB::table('info_slider_texts')->update($data);
+
+        return redirect()->back();
       } else {
       $title = $request->input('title');
       $contenido = $request->input('contenido');

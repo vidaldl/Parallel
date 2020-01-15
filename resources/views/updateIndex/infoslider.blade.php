@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
+<link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
 <style>
 .modal-dialog{
   position: relative;
@@ -13,6 +14,11 @@
   width: auto;
   min-width: 600px;
 }
+.tgl-sw-swipe + .btn-switch {
+  background: #4e73df;
+}
+
+
 </style>
 @endsection
 @section('content')
@@ -78,17 +84,25 @@
                     </span>
                   @enderror
               </div>
+<!-- MULTIMEDIA -->
+              <div class="form-group">
+                <label for="media_type">Tipo de Multimedia</label>
+                <div id="media_type"></div>
+
 
               <div class="form-row mb-4">
-                  <div class="col-md-6">
-                    <label for="image" class="col-form-label">Manejar Slideshow</label><br>
+                  <div class="col-md-6" id="type_image">
+                    <label class="col-form-label">Manejar Slideshow</label><br>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImages">Imagenes &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                   </div>
-                  <div class="col-md-6">
-                    <label for="image" class="col-form-label">Or:</label><br>
+                  <div class="col-md-6" id="type_video">
+                    <label class="col-form-label">Video:</label><br>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalVideo">Video &nbsp;&nbsp;<i class="fas fa-video"></i></a>
                   </div>
+                </div>
               </div>
+<!-- /MULTIMEDIA -->
+
               <div class="form-group">
                 <label for="back_color">Color de Fondo</label><br>
                 <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $info_slider_texts[0]->back_color }}">
@@ -235,28 +249,81 @@
 </div>
 @endsection
 @section('script')
+<script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script>
   $('#back_color').spectrum({
     preferredFormat: "hex",
    showInput: true,
   });
-</script>
-<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
-<script>
-$('#contenido').trumbowyg({
-  btns: [
-      ['strong', 'em', 'del'],
-      ['link'],
-      ['unorderedList', 'orderedList'],
-      ['removeformat'],
-      ['fullscreen']
-  ]
+  $('#contenido').trumbowyg({
+    btns: [
+        ['strong', 'em', 'del'],
+        ['link'],
+        ['unorderedList', 'orderedList'],
+        ['removeformat'],
+        ['fullscreen']
+    ]
+  });
+
+  $('#media_type').btnSwitch({
+  Theme:'Swipe',
+  OnText: "Image",
+  OffText: "Video",
+  OnValue: '0',
+  OnCallback: function(val) {
+    $('#type_video').hide();
+    $('#type_image').show();
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'/updateInfoSlider/1',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+    },
+  OffValue: '1',
+  OffCallback: function (val) {
+    $('#type_image').hide();
+    $('#type_video').show();
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'/updateInfoSlider/1',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+  },
+  @if($info_slider_texts[0]->display_type == 1)
+  ToggleState: true
+  @else
+  ToggleState: false
+  @endif
 });
 
+
 </script>
+
+
 <script>
   $(document).ready(function() {
+    @if($info_slider_texts[0]->display_type == 1)
+    $('#type_image').hide();
+    @else
+    $('#type_video').hide();
+    @endif
+
     $('.imageInput').hide();
     $('#addImage').click(function() {
       $('.imageInput').show();
