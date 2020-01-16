@@ -4,32 +4,34 @@
 <div id="infoslider1" class="container clearfix">
 <div id="section-nextgen" class="page-section bottommargin-lg">
 	<div class="row clearfix">
+
 		<div class="col-lg-7 center pf-icons pf-illustrations alt">
-		@if($info_slider_texts[0]->display_type == 0)
-			<!-- IMAGE -->
-      <div class="portfolio-image">
-					@if($info_slider_images->count() > 1)
-					<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
-					@else
-					<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
-					@endif
-          <div class="flexslider">
-            <div class="slider-wrap">
-              @foreach($info_slider_images as $images)
-              <div class="slide"><img src="{{ 'storage/' . $images->image }}" alt="Morning Dew"></div>
-              @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
-			</div>
+      <!-- IMAGE -->
+			@if($info_slider_texts[0]->display_type == 0)
+				<div class="portfolio-image">
+						@if($info_slider_images->count() > 1)
+						<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
+						@else
+						<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
+						@endif
+	          <div class="flexslider">
+	            <div class="slider-wrap">
+	              @foreach($info_slider_images as $images)
+	              <div class="slide"><img src="{{ 'storage/' . $images->image }}" alt="Morning Dew"></div>
+	              @endforeach
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+			@endif
       <!-- /IMAGE -->
-			@endif
+			<!-- VIDEO -->
 			@if($info_slider_texts[0]->display_type == 1)
-			<video muted autoplay controls loop style="display: block; width: 100%;">
-				<source src='{{"/storage/" . $info_slider_texts[0]->video}}' type='video/mp4' />
-			</video>
+				<video muted autoplay controls loop style="display: block; width: 100%;">
+					<source src='{{"/storage/" . $info_slider_texts[0]->video}}' type='video/mp4' />
+				</video>
 			@endif
+			<!-- /VIDEO -->
 		</div>
 
 		<div class="col-lg-5">

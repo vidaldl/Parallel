@@ -359,6 +359,13 @@ class HomeController extends Controller
               session()->flash('success', 'El video fué actualizado');
               //redirect
               return redirect()->back();
+            }elseif ($request->has('val')) {
+              $display_type = $request->input('val');
+
+              $data = array("display_type"=>$display_type);
+              DB::table('info_slider_text2s')->update($data);
+
+              return redirect()->back();
             } else {
             $title = $request->input('title');
             $contenido = $request->input('contenido');
@@ -458,6 +465,13 @@ class HomeController extends Controller
 
         session()->flash('success', 'El video fué actualizado');
         //redirect
+        return redirect()->back();
+      } elseif ($request->has('val')) {
+        $display_type = $request->input('val');
+
+        $data = array("display_type"=>$display_type);
+        DB::table('info_slider_text3s')->update($data);
+
         return redirect()->back();
       } else {
       $title = $request->input('title');

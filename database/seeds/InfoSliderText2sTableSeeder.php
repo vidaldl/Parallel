@@ -20,15 +20,14 @@ class InfoSliderText2sTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'title' => 'Build web applications2',
-                'contenido' => '<p>2Build web applications ​​RAD - RAPID APPLICATION DEVELOPMENTUse our modern, intuitive, and powerful browser-based environment to quickly build and run ​w​eb apps such as forms​,​ reports,​ pivot, tables, charts, maps, ​PDFs, dashboards, and menus. This makes iterative development easy. Use the Business intelligence concept to build management dashboards.EFFORTLESS DESIGN AND CUSTOMIZATIONCustomize your Applications UI without writing a single line of HTML, CSS or Javascript. You can change everything from the way one button looks to the entire theme of the app, with a few points and clicks.​MULTIPLE LANGUAGE PROJECTSCreate projects with support to over 50 languages. Our Data dictionary feature makes it easy to translate table names, fields and messages.</p>',
-                'button' => 'Conoce Todas Las Funciones',
-                'link' => '#inicio',
-                'video' => 'videos/0m1Ta8jhMtrdZuGxJigg8fqe6xwffwnUu0ypnrcq.mp4',
-                'display' => 1,
+                'title' => 'Más Cosas',
+                'contenido' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'button' => 'Saludos Mas aqui',
+                'link' => NULL,
+                'display_type' => 0,
+                'video' => NULL,
+                'display' => 0,
                 'back_color' => '#FFFFFF',
-                'created_at' => '2019-07-30 16:38:23',
-                'updated_at' => '2019-08-09 03:16:44',
             ),
         ));
         

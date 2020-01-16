@@ -1,28 +1,37 @@
 @section('css')
 
 @endsection
-<div id="infoslider3" class="container clearfix">
+<div id="infoslider1" class="container clearfix">
 <div id="section-nextgen" class="page-section bottommargin-lg">
 	<div class="row clearfix">
 
 		<div class="col-lg-7 center pf-icons pf-illustrations alt">
       <!-- IMAGE -->
-      <div class="portfolio-image">
-					@if($info_slider_image3s->count() > 1)
-					<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
-					@else
-					<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
-					@endif
-          <div class="flexslider">
-            <div class="slider-wrap">
-              @foreach($info_slider_image3s as $images)
-              <div class="slide"><img src="{{ 'storage/' . $images->image }}" alt="Morning Dew"></div>
-              @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
+			@if($info_slider_text3s[0]->display_type == 0)
+				<div class="portfolio-image">
+						@if($info_slider_image3s->count() > 1)
+						<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
+						@else
+						<!-- <div class="fslider" data-arrows="false" data-speed="400" data-pause="4000"> -->
+						@endif
+	          <div class="flexslider">
+	            <div class="slider-wrap">
+	              @foreach($info_slider_image3s as $images)
+	              <div class="slide"><img src="{{ 'storage/' . $images->image }}" alt="Morning Dew"></div>
+	              @endforeach
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+			@endif
       <!-- /IMAGE -->
+			<!-- VIDEO -->
+			@if($info_slider_text3s[0]->display_type == 1)
+				<video muted autoplay controls loop style="display: block; width: 100%;">
+					<source src='{{"/storage/" . $info_slider_text3s[0]->video}}' type='video/mp4' />
+				</video>
+			@endif
+			<!-- /VIDEO -->
 		</div>
 
 		<div class="col-lg-5">

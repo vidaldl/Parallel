@@ -234,6 +234,7 @@ $('.icp').on('iconpickerSelected', function (e) {
 </script>
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js')}}"></script>
 <script>
 $('.tabs').tabslet();
 

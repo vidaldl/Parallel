@@ -13,24 +13,33 @@
     </div>
 
 		<div class="col-lg-7 pf-icons pf-illustrations alt">
-      <!-- IMAGE -->
+			@if($info_slider_text2s[0]->display_type == 0)
+				<!-- IMAGE -->
+				<div class="portfolio-image">
+						@if($info_slider_image2s->count() > 1)
+						<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
+						@else
+						<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
+						@endif
+						<div class="flexslider">
+							<div class="slider-wrap">
+								@foreach($info_slider_image2s as $images)
+								<div class="slide"><img src="{{ 'storage/' . $images->image }}" alt="Morning Dew"></div>
+								@endforeach
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <div class="portfolio-image">
-					@if($info_slider_image2s->count() > 1)
-					<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
-					@else
-					<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
-					@endif
-          <div class="flexslider">
-            <div class="slider-wrap">
-              @foreach($info_slider_image2s as $images)
-              <div class="slide"><img src="{{ 'storage/' . $images->image }}" alt="Morning Dew"></div>
-              @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /IMAGE -->
+				<!-- /IMAGE -->
+				@endif
+				<!-- VIDEO -->
+				@if($info_slider_text2s[0]->display_type == 1)
+				<video muted autoplay controls loop style="display: block; width: 100%;">
+					<source src='{{"/storage/" . $info_slider_text2s[0]->video}}' type='video/mp4' />
+				</video>
+				@endif
+				<!-- /VIDEO -->
 		</div>
 
 
