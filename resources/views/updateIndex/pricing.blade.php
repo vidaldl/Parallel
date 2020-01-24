@@ -7,46 +7,68 @@
   <a href="{{route('home')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Secciones<span></a>
 </div>
   <div class="row justify-content-center">
-  <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#pricing"  width="100%" height="450"></iframe></div>
+  <!-- <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#pricing"  width="100%" height="450"></iframe></div> -->
     <div class="card mt-3 col-md-12 mb-5">
       <div class="card-body">
-        <div class="row">
-          <div class="form-group col-md-12 ml-1">
-            <label for="back_color">Color de Fondo</label><br>
-            <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $pricings[0]->back_color }}">
+        <div class="card-body">
+          <div class="row justify-content-center">
+            <form autocomplete="off" method="POST" action="{{route('pricingSection.update', 1)}}">
+              @csrf
+              <div class="form-group">
+                <h3>Sección de Precios</h3>
+              </div>
+              <div class="form-group">
+                <label for="title">Título de la sección</label>
+                <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $pricing_sections[0]->title }}">
+                @error('title')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group">
+                <label for="subtitle">Subtitulo</label>
+                <input id="subtitle" type="input" name="subtitle" class="form-control @error('subtitle') is-invalid @enderror"  value="{{ $pricing_sections[0]->subtitle }}">
+                @error('subtitle')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group mb-3">
+                <button type="submit" class="btn btn-success">Actualizar</button>
+              </div>
+            </form>
           </div>
-
-
+        </div>
+        <div class="row justify-content-center">
           <div class="tabs">
-
-              <ul class="tabs-navigation horizontal">
-                <li class="li"><a class="a" href="#price1">Comparación 1</a></li>
-                <li class="li"><a class="a" href="#price2">Comparación 2</a></li>
-                <li class="li"><a class="a" href="#price3">Comparación 3</a></li>
-              </ul>
-        <div id="price1" class="tabdiv">
-          <!-- LINK SECTION LIST -->
-          <datalist id="sections">
-            <option value="#inicio">Inicio</option>
-            <option value="#servicios">Servicios</option>
-            <option value="#infoSlider">Slider de Info.</option>
-            <option value="#articulos">Artículos</option>
-            <option value="#contact">Contacto</option>
-          </datalist>
-          <!-- /LINK SECTION LIST -->
-          <!-- PRICING 1 -->
-          <form method="POST" action="{{route('pricing.update', $pricings[0]->id)}}" enctype="multipart/form-data">
-            @csrf
+        <ul class="tabs-navigation horizontal">
+          @foreach($pricings as $price)
+          <li class="li"><a class="a" href="#price{{$price->id}}">Tabla {{$loop->iteration}}</a></li>
+          @endforeach
+          <li class="li"><a class="a" href="#nuevo"><i class="fas fa-plus-square"></i></a></li>
+        </ul>
+        @foreach($pricings as $price)
+        <div id="price{{$price->id}}" class="tabdiv">
+          <!-- PRICING  -->
             <div class="col-md-12">
               <div class="container">
-                <h4>Comparación 1</h4>
+                <h4>Tabla {{$loop->iteration}}</h4>
+
+                <div class="row">
+                  <a class="btn btn-danger mr-5 ml-auto" style="color:white;" data-toggle="modal" data-target="#modalDestroy{{$price->id}}">Eliminar &nbsp;<i class="fas fa-trash"></i></a>
+                </div>
+
+                <form autocomplete="off" method="POST" action="{{route('pricing.update', $price->id)}}" enctype="multipart/form-data">
+                  @csrf
                     <div class="form-group">
                       <label class="col-md-12 col-form-label">Imagen </label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$pricings[0]->id}}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$price->id}}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                     </div>
                     <div class="form-group">
                       <label for="title" class="col-md-12 col-form-label">Titulo</label>
-                      <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $pricings[0]->title }}">
+                      <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $price->title }}">
                         @error('title')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -55,69 +77,19 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="item1" class="col-md-12 col-form-label">Característica 1</label>
-                      <input id="item1" type="input" name="item1" class="form-control @error('item1') is-invalid @enderror"  value="{{ $pricings[0]->item1 }}">
-                        @error('item1')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item2" class="col-md-12 col-form-label">Característica 2</label>
-                      <input id="item2" type="input" name="item2" class="form-control @error('item2') is-invalid @enderror"  value="{{ $pricings[0]->item2 }}">
-                        @error('item2')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item3" class="col-md-12 col-form-label">Característica 3</label>
-                      <input id="item3" type="input" name="item3" class="form-control @error('item3') is-invalid @enderror"  value="{{ $pricings[0]->item3 }}">
-                        @error('item3')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item4" class="col-md-12 col-form-label">Característica 4</label>
-                      <input id="item4" type="input" name="item4" class="form-control @error('item4') is-invalid @enderror"  value="{{ $pricings[0]->item4 }}">
-                        @error('item4')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item5" class="col-md-12 col-form-label">Característica 5</label>
-                      <input id="item5" type="input" name="item5" class="form-control @error('item5') is-invalid @enderror"  value="{{ $pricings[0]->item5 }}">
-                        @error('item5')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item6" class="col-md-12 col-form-label">Característica 6</label>
-                      <input id="item6" type="input" name="item6" class="form-control @error('item6') is-invalid @enderror"  value="{{ $pricings[0]->item6 }}">
-                        @error('item6')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
                       <label for="price" class="col-md-12 col-form-label">Precio</label>
-                      <input id="price" type="input" name="price" class="form-control @error('price') is-invalid @enderror" placeholder="$" value="{{ $pricings[0]->price }}">
+                      <input id="price" type="input" name="price" class="form-control @error('price') is-invalid @enderror" placeholder="$" value="{{ $price->price }}">
                         @error('button')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recurrence" class="col-md-12 col-form-label">Recurrencia</label>
+                      <input id="recurrence" type="input" name="recurrence" class="form-control @error('recurrence') is-invalid @enderror" placeholder="$" value="{{ $price->recurrence }}">
+                        @error('recurrence')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
@@ -126,7 +98,7 @@
 
                     <div class="form-group">
                       <label for="button" class="col-md-12 col-form-label">Botón</label>
-                      <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $pricings[0]->button }}">
+                      <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $price->button }}">
                         @error('button')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -135,7 +107,7 @@
                     </div>
                     <div class="form-group">
                       <label for="link" class="col-form-label">Enlace</label>
-                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$pricings[0]->link}}">
+                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$price->link}}">
                       <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
                         @error('link')
                           <span class="invalid-feedback" role="alert">
@@ -144,28 +116,63 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-success float-right">Actualizar</button>
+                      <div class="row">
+                        <button type="submit" class="btn btn-success ml-auto">Actualizar</button>
+                      </div>
                     </div>
                 </form>
               </div>
+
+              <!-- CARACTERISTICAS -->
+              <div class="row">
+                  <h4>Características</h4>
+                  <div class="form-group">
+                    @foreach($price->pricing_item as $item)
+                      <form autocomplete="off" class="form-inline mt-3" action="{{route('pricing.update', $item->pivot->pricing_item_id)}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                          <button id="delete{{$item->pivot->pricing_item_id}}" class="btn btn-danger mr-2" type="button">X</button>
+                        </div>
+                        <div class="form-group">
+                          <input id="items" type="input" name="items" class="form-control @error('button') is-invalid @enderror"  value="{{ $item->item }}">
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-success ml-2" type="submit"><i class="fas fa-check"></i>Actualizar</button>
+                        </div>
+                      </form>
+                    @endforeach
+                    <form autocomplete="off" class="form-inline mt-5" action="{{route('pricingItem.create', $price->id)}}" method="post">
+                      @csrf
+                      <div class="form-group">
+                        <input placeholder="Nuevo" id="items" type="input" name="item" class="form-control @error('item') is-invalid @enderror">
+                        @error('item')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>Es cecesario que escribas algo</strong>
+                          </span>
+                        @enderror
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary ml-2" type="submit"><i class="fas fa-plus"></i>  Agregar</button>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+              <!-- /CARACTERISTICAS -->
             </div>
           <!-- /Pricing 1 -->
         </div>
+        @endforeach
 
-        <div id="price2" class="tabdiv">
-          <!-- PRICING 2 -->
+        <div id="nuevo" class="tabdiv">
+          <!-- PRICING Add  -->
             <div class="col-md-12">
               <div class="container">
-                <h4>Comparación 2</h4>
-                <form method="POST" action="{{route('pricing.update', $pricings[1]->id)}}" enctype="multipart/form-data">
+                <h4>Nueva Tabla</h4>
+                <form autocomplete="off" method="POST" action="{{route('pricing.store')}}" enctype="multipart/form-data">
                   @csrf
                     <div class="form-group">
-                      <label class="col-md-12 col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$pricings[1]->id}}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
-                    </div>
-                    <div class="form-group">
                       <label for="title" class="col-md-12 col-form-label">Titulo</label>
-                      <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $pricings[1]->title }}">
+                      <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror">
                         @error('title')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -174,69 +181,19 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="item1" class="col-md-12 col-form-label">Característica 1</label>
-                      <input id="item1" type="input" name="item1" class="form-control @error('item1') is-invalid @enderror"  value="{{ $pricings[1]->item1 }}">
-                        @error('item1')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item2" class="col-md-12 col-form-label">Característica 2</label>
-                      <input id="item2" type="input" name="item2" class="form-control @error('item2') is-invalid @enderror"  value="{{ $pricings[1]->item2 }}">
-                        @error('item2')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item3" class="col-md-12 col-form-label">Característica 3</label>
-                      <input id="item3" type="input" name="item3" class="form-control @error('item3') is-invalid @enderror"  value="{{ $pricings[1]->item3 }}">
-                        @error('item3')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item4" class="col-md-12 col-form-label">Característica 4</label>
-                      <input id="item4" type="input" name="item4" class="form-control @error('item4') is-invalid @enderror"  value="{{ $pricings[1]->item4 }}">
-                        @error('item4')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item5" class="col-md-12 col-form-label">Característica 5</label>
-                      <input id="item5" type="input" name="item5" class="form-control @error('item5') is-invalid @enderror"  value="{{ $pricings[1]->item5 }}">
-                        @error('item5')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item6" class="col-md-12 col-form-label">Característica 6</label>
-                      <input id="item6" type="input" name="item6" class="form-control @error('item6') is-invalid @enderror"  value="{{ $pricings[1]->item6 }}">
-                        @error('item6')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
                       <label for="price" class="col-md-12 col-form-label">Precio</label>
-                      <input id="price" type="input" name="price" class="form-control @error('price') is-invalid @enderror" placeholder="$"  value="{{ $pricings[1]->price }}">
+                      <input id="price" type="input" name="price" class="form-control @error('price') is-invalid @enderror" placeholder="$">
                         @error('button')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recurrence" class="col-md-12 col-form-label">Recurrencia</label>
+                      <input id="recurrence" type="input" name="recurrence" class="form-control @error('recurrence') is-invalid @enderror">
+                        @error('recurrence')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
@@ -245,17 +202,16 @@
 
                     <div class="form-group">
                       <label for="button" class="col-md-12 col-form-label">Botón</label>
-                      <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $pricings[1]->button }}">
+                      <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror">
                         @error('button')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
                     </div>
-
                     <div class="form-group">
                       <label for="link" class="col-form-label">Enlace</label>
-                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$pricings[1]->link}}">
+                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://">
                       <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
                         @error('link')
                           <span class="invalid-feedback" role="alert">
@@ -264,133 +220,14 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-success float-right">Actualizar</button>
+                      <button type="submit" class="btn btn-success float-right">Crear</button>
                     </div>
                 </form>
               </div>
             </div>
-          <!-- /Pricing 2 -->
+          <!-- /Pricing Add -->
         </div>
 
-        <div id="price3" class="tabdiv">
-          <!-- PRICING 3 -->
-            <div class="col-md-12">
-              <div class="container">
-                <h4>Comparación 3</h4>
-                <form method="POST" action="{{route('pricing.update', $pricings[2]->id)}}" enctype="multipart/form-data">
-                  @csrf
-                    <div class="form-group">
-                      <label class="col-md-12 col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal{{$pricings[2]->id}}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
-                    </div>
-                    <div class="form-group">
-                      <label for="title" class="col-md-12 col-form-label">Titulo</label>
-                      <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $pricings[2]->title }}">
-                        @error('title')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item1" class="col-md-12 col-form-label">Característica 1</label>
-                      <input id="item1" type="input" name="item1" class="form-control @error('item1') is-invalid @enderror"  value="{{ $pricings[2]->item1 }}">
-                        @error('item1')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item2" class="col-md-12 col-form-label">Característica 2</label>
-                      <input id="item2" type="input" name="item2" class="form-control @error('item2') is-invalid @enderror"  value="{{ $pricings[2]->item2 }}">
-                        @error('item2')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item3" class="col-md-12 col-form-label">Característica 3</label>
-                      <input id="item3" type="input" name="item3" class="form-control @error('item3') is-invalid @enderror"  value="{{ $pricings[2]->item3 }}">
-                        @error('item3')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item4" class="col-md-12 col-form-label">Característica 4</label>
-                      <input id="item4" type="input" name="item4" class="form-control @error('item4') is-invalid @enderror"  value="{{ $pricings[2]->item4 }}">
-                        @error('item4')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item5" class="col-md-12 col-form-label">Característica 5</label>
-                      <input id="item5" type="input" name="item5" class="form-control @error('item5') is-invalid @enderror"  value="{{ $pricings[2]->item5 }}">
-                        @error('item5')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="item6" class="col-md-12 col-form-label">Característica 6</label>
-                      <input id="item6" type="input" name="item6" class="form-control @error('item6') is-invalid @enderror"  value="{{ $pricings[2]->item6 }}">
-                        @error('item6')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="price" class="col-md-12 col-form-label">Precio</label>
-                      <input id="price" type="input" name="price" class="form-control @error('price') is-invalid @enderror" placeholder="$"  value="{{ $pricings[2]->price }}">
-                        @error('button')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="button" class="col-md-12 col-form-label">Botón</label>
-                      <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $pricings[2]->button }}">
-                        @error('button')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="link" class="col-form-label">Enlace</label>
-                      <input list="sections" id="link" type="input" name="link" class="form-control @error('button') is-invalid @enderror"  placeholder="Http://" value="{{$pricings[2]->link}}">
-                      <small class="form-text text-muted">Asegurece de que el Link Contiene &nbsp;HTTP:// &nbsp;Antes de la Dirección</small>
-                        @error('link')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-success float-right">Actualizar</button>
-                    </div>
-                </form>
-              </div>
-            </div>
-          <!-- /Pricing 3 -->
-        </div>
       </div>
         </div>
 
@@ -400,6 +237,32 @@
 
 
 @foreach($pricings as $pricing)
+<!-- MODAL DESTROY -->
+<div class="modal fade" id="modalDestroy{{$pricing->id}}" tabindex="-1" role="dialog" aria-labelledby="modalDestroy" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#4066D4;">
+      <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+          Estás seguro que deseas eliminar la Tabla?
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+        <form method="POST" action="{{route('pricing.destroy', $price->id)}}" enctype="multipart/form-data">
+          @csrf
+          @method('DELETE')
+          <button id="sendLista" class="btn btn-warning">Confirmar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /MODAL DESTROY -->
+
 <!--modal image1-->
 <div class="modal fade" id="modal{{$pricing->id}}" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -425,7 +288,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <img style="width:100%; border-radius: 100%;" src="{{'/storage/' . $pricing->image}}" class="imgThumb{{$pricing->id}} img-fluid img-thumbnail ">
+              <img style="width:100%;" src="{{'/storage/' . $pricing->image}}" class="imgThumb{{$pricing->id}} img-fluid img-thumbnail ">
               <div class="editor{{$pricing->id}} d-none" style="height:450px; background-color: #000;">
               </div>
             </div>
@@ -445,84 +308,86 @@
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <style>
-.tabdiv {
-	/*border-top: 1px solid #c7c7c7*/
-  min-height: 450px;
-	background: white !important;
-  padding: 10px 0;
-	/*border-bottom: 4px solid #E95855 !important;*/
-}
-
-.spans {
-	border-bottom: 4px solid #E5E5E5 !important;
-	color: #ccc !important;
-	font-weight: 300;
-	line-height: 186px !important;
-	display: block;
-	text-align: center;
-	font-size: 24px;
-}
-
-.tabs UL.horizontal {
-	list-style: none outside none;
-	margin: 0;
-}
-
-.li {
-	background: white;
-	border-bottom: 4px solid #E5E5E5;
-	margin: 0 10px 0 0;
-	display: inline-block;
-}
-
-.a {
-	color: #ccc;
-	display: block;
-	font-size: 18px;
-	font-weight: 300;
-	padding: 14px 24px;
-	text-decoration: none;
-}
-
-.li:hover {
-	background: #466699;
-	border-bottom: 4px solid #2165D1;
-}
-
-.tabs .li:hover A {
-	color: white;
-  text-decoration: none;
-}
-.actives {
-	background: #466699 !important;
-	border-bottom: 4px solid #2165D1 !important;
-}
-
-.actives A {
-	color: white !important;
-}
 
 
-.cropper-crop-box, .cropper-view-box {
-  border-radius: 50%;
-}
+  .tabdiv {
+  	/*border-top: 1px solid #c7c7c7*/
+    min-height: 450px;
+  	background: white !important;
+    padding: 10px 0;
+  	/*border-bottom: 4px solid #E95855 !important;*/
+  }
 
-.cropper-view-box {
-  box-shadow: 0 0 0 1px #39f;
-  outline: 0;
-}
+  .spans {
+  	border-bottom: 4px solid #E5E5E5 !important;
+  	color: #ccc !important;
+  	font-weight: 300;
+  	line-height: 186px !important;
+  	display: block;
+  	text-align: center;
+  	font-size: 24px;
+  }
 
-.cropper-face {
-background-color:inherit !important;
-}
+  .tabs UL.horizontal {
+  	list-style: none outside none;
+  	margin: 0;
+  }
 
-.cropper-dashed, .cropper-point.point-se, .cropper-point.point-sw, .cropper-point.point-nw,   .cropper-point.point-ne, .cropper-line {
-display:none !important;
-}
+  .li {
+  	background: white;
+  	border-bottom: 4px solid #E5E5E5;
+  	margin: 0 10px 0 0;
+  	display: inline-block;
+  }
 
-.cropper-view-box {
-outline:inherit !important;
-}
+  .a {
+  	color: #ccc;
+  	display: block;
+  	font-size: 18px;
+  	font-weight: 300;
+  	padding: 14px 24px;
+  	text-decoration: none;
+  }
+
+  .li:hover {
+  	background: #466699;
+  	border-bottom: 4px solid #2165D1;
+  }
+
+  .tabs .li:hover A {
+  	color: white;
+    text-decoration: none;
+  }
+  .actives {
+  	background: #466699 !important;
+  	border-bottom: 4px solid #2165D1 !important;
+  }
+
+  .actives A {
+  	color: white !important;
+  }
+
+
+  /* .cropper-crop-box, .cropper-view-box {
+    border-radius: 50%;
+  }
+
+  .cropper-view-box {
+    box-shadow: 0 0 0 1px #39f;
+    outline: 0;
+  }
+
+  .cropper-face {
+  background-color:inherit !important;
+  }
+
+  .cropper-dashed, .cropper-point.point-se, .cropper-point.point-sw, .cropper-point.point-nw,   .cropper-point.point-ne, .cropper-line {
+  display:none !important;
+  }
+
+  .cropper-view-box {
+  outline:inherit !important;
+  } */
 </style>
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 @endsection
@@ -530,7 +395,25 @@ outline:inherit !important;
 @section('script')
 <script src="{{ asset('lib/tabslet/jquery.tabslet.js') }}"></script>
 <script>
-  $('.tabs').tabslet();
+$('.tabs').tabslet();
+@foreach($pricings as $price)
+  @foreach($price->pricing_item as $item)
+    $('#delete{{$item->pivot->pricing_item_id}}').click(function() {
+      var idDel = {{$item->pivot->pricing_item_id}};
+          $.ajax({
+                 type:'POST',
+                 dataType: 'json',
+                 url:'{{route("pricingItem.destroy", $price->id)}}',
+                 data:{"_token": "{{ csrf_token() }}",
+                 idDel:idDel
+               },
+              });
+      location.reload();
+    });
+  @endforeach
+@endforeach
+
+
 </script>
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
@@ -553,8 +436,8 @@ Dropzone.options.image{{$images->id}} = {
       $(buttonConfirm).click(function() {
         // Get the canvas with image data from Cropper.js
          var canvas = cropper.getCroppedCanvas({
-           width: 180,
-           height: 180
+           width: 720,
+           height: 360
          });
          // Turn the canvas into a Blob (file object without a name)
          canvas.toBlob(function(blob) {
@@ -583,7 +466,7 @@ Dropzone.options.image{{$images->id}} = {
      // editor.appendChild(image);
      $(image).appendTo(editor)
      // Create Cropper.js
-     var cropper = new Cropper(image, { aspectRatio: 1/1 });
+     var cropper = new Cropper(image, { aspectRatio: 16/9 });
    },
    init: function () {
       this.on("complete", function (file) {

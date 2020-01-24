@@ -2,7 +2,6 @@
 
 @section('style')
   @include('indexStyle')
-
 @endsection
 
 @section('content')

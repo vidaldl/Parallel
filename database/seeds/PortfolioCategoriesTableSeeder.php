@@ -19,31 +19,24 @@ class PortfolioCategoriesTableSeeder extends Seeder
         \DB::table('portfolio_categories')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'name' => 'Finanzas y de mas',
-                'created_at' => NULL,
-                'updated_at' => '2019-12-30 14:17:16',
-            ),
-            1 => 
-            array (
                 'id' => 2,
                 'name' => 'Medico',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 => 
+            1 => 
             array (
                 'id' => 3,
                 'name' => 'Nómina',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 => 
+            2 => 
             array (
                 'id' => 5,
-                'name' => 'asdasdss',
+                'name' => 'Desarrollo',
                 'created_at' => '2019-12-30 14:20:51',
-                'updated_at' => '2019-12-30 14:21:00',
+                'updated_at' => '2020-01-23 20:39:40',
             ),
         ));
         

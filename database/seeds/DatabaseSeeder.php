@@ -48,5 +48,9 @@ class DatabaseSeeder extends Seeder
         $this->call(StylesTableSeeder::class);
         $this->call(TagsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(PricingSectionsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(PricingItemsTableSeeder::class);
+        $this->call(PricingPricingItemTableSeeder::class);
     }
 }

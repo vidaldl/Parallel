@@ -15,15 +15,10 @@ class CreatePricingsTable extends Migration
     {
         Schema::create('pricings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('title');
-            $table->string('item1')->nullable();
-            $table->string('item2')->nullable();
-            $table->string('item3')->nullable();
-            $table->string('item4')->nullable();
-            $table->string('item5')->nullable();
-            $table->string('item6')->nullable();
             $table->string('price')->nullable();
+            $table->string('recurrence')->nullable();
             $table->string('button')->nullable();
             $table->text('link')->nullable();
             $table->integer('display')->default(0);

@@ -95,7 +95,7 @@
         </div>
         <div class=" col-md-6">
           <div class="row">
-            <a class="btn btn-success mx-auto mt-5" href="editPricing">Editar contenido &rarr;</a>
+            <a class="btn btn-success mx-auto mt-5" href="{{route('pricing.index')}}">Editar contenido &rarr;</a>
           </div>
         </div>
       </div>

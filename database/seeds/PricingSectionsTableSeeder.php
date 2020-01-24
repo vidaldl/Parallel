@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class FrasesTableSeeder extends Seeder
+class PricingSectionsTableSeeder extends Seeder
 {
 
     /**
@@ -14,13 +14,14 @@ class FrasesTableSeeder extends Seeder
     {
         
 
-        \DB::table('frases')->delete();
+        \DB::table('pricing_sections')->delete();
         
-        \DB::table('frases')->insert(array (
+        \DB::table('pricing_sections')->insert(array (
             0 => 
             array (
                 'id' => 1,
-                'title' => '"ELIGE LO SIMPLE"',
+                'title' => 'Membresias',
+                'subtitle' => 'Arrastra para más -->',
             ),
         ));
         

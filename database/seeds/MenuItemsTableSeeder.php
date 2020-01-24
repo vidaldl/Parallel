@@ -20,7 +20,7 @@ class MenuItemsTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'logo' => 'content/menu/Jdu4Opg3jOCHdtijrqja5Ss55cn9ndzTL6QXjYzx.png',
+                'logo' => 'content/menu/UIyGpDjXsjayUbNInOhPaPyNLk57RTRyQBhdzoXt.png',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

@@ -134,7 +134,6 @@ class PortfolioItemController extends Controller
     {
       //Categories first
       $categories = $request->input('categories');
-
       // dd($portfolio->title);
       // $portfolio->portfolio_category()->attach(2);
 

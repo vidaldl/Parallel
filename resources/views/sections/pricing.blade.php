@@ -1,77 +1,47 @@
-<div class="pricing" id="pricing">
-  <div class="background">
-  <div class="containerr" >
-    <div class="panel pricing-table" style="border: 1px solid black;">
-      <div class="row">
-        <div class="pricing-plan col-md-4" >
-          <div class="col-md-12">
-            <img src="{{ 'storage/' . $pricings[0]->image }}" alt="" style="border-radius: 100%;" class="pricing-img">
-            <h2 class="pricing-header">{{ $pricings[0]->title }}</h2>
-            <ul class="pricing-features">
-              <li class="pricing-features-item {{$pricings[0]->item1 ? '' : 'd-none'}}">{{ $pricings[0]->item1 }}</li>
-              <li class="pricing-features-item {{$pricings[0]->item2 ? '' : 'd-none'}}">{{ $pricings[0]->item2 }}</li>
-              <li class="pricing-features-item {{$pricings[0]->item3 ? '' : 'd-none'}}">{{ $pricings[0]->item3 }}</li>
-              <li class="pricing-features-item {{$pricings[0]->item4 ? '' : 'd-none'}}">{{ $pricings[0]->item4 }}</li>
-              <li class="pricing-features-item {{$pricings[0]->item5 ? '' : 'd-none'}}">{{ $pricings[0]->item5 }}</li>
-              <li class="pricing-features-item {{$pricings[0]->item6 ? '' : 'd-none'}}">{{ $pricings[0]->item6 }}</li>
-            </ul>
-          </div>
-          <div class="d-block d-sm-none ">
-            <span class="pricing-price">{{$pricings[0]->price}}</span>
-            <a href="{{$pricings[0]->link}}" class="pricing-button {{$pricings[0]->button ? '' : 'd-none'}}">{{$pricings[0]->button}}</a>
-          </div>
-        </div>
-        <div class="pricing-plan col-md-4" >
-          <div class="col-md-12">
-            <img src="{{ 'storage/' . $pricings[1]->image }}" alt="" style="border-radius: 100%;" class="pricing-img">
-            <h2 class="pricing-header">{{ $pricings[1]->title }}</h2>
-            <ul class="pricing-features">
-              <li class="pricing-features-item {{$pricings[1]->item1 ? '' : 'd-none'}}">{{ $pricings[1]->item1 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item2 ? '' : 'd-none'}}">{{ $pricings[1]->item2 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item3 ? '' : 'd-none'}}">{{ $pricings[1]->item3 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item4 ? '' : 'd-none'}}">{{ $pricings[1]->item4 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item5 ? '' : 'd-none'}}">{{ $pricings[1]->item5 }}</li>
-              <li class="pricing-features-item {{$pricings[1]->item6 ? '' : 'd-none'}}">{{ $pricings[1]->item6 }}</li>
-            </ul>
-          </div>
-          <div class="d-block d-sm-none">
-            <span class="pricing-price">{{$pricings[1]->price}}</span>
-            <a href="{{$pricings[1]->link}}" class="pricing-button {{$pricings[1]->button ? '' : 'd-none'}}">{{$pricings[1]->button}}</a>
-          </div>
-        </div>
+@push('styles')
+<link rel="stylesheet" href="{{ asset('lib/realCSS/specificCSS/specific.css') }}" type="text/css" />
+@endpush
 
-        <div class="pricing-plan col-md-4">
-          <div class="col-md-12" >
-            <img src="{{ 'storage/' . $pricings[2]->image }}" style="border-radius: 100%;" alt="" class="pricing-img">
-            <h2 class="pricing-header">{{ $pricings[2]->title }}</h2>
-            <ul class="pricing-features">
-              <li class="pricing-features-item {{$pricings[2]->item1 ? '' : 'd-none'}}">{{ $pricings[2]->item1 }}</li>
-              <li class="pricing-features-item {{$pricings[2]->item2 ? '' : 'd-none'}}">{{ $pricings[2]->item2 }}</li>
-              <li class="pricing-features-item {{$pricings[2]->item3 ? '' : 'd-none'}}">{{ $pricings[2]->item3 }}</li>
-              <li class="pricing-features-item {{$pricings[2]->item4 ? '' : 'd-none'}}">{{ $pricings[2]->item4 }}</li>
-              <li class="pricing-features-item {{$pricings[2]->item5 ? '' : 'd-none'}}">{{ $pricings[2]->item5 }}</li>
-              <li class="pricing-features-item {{$pricings[2]->item6 ? '' : 'd-none'}}">{{ $pricings[2]->item6 }}</li>
-            </ul>
+<div id="pricing" class="section" style="padding: 80px 0">
+  <div class="container">
+    <div class="heading-block nobottomborder mb-0">
+      <div class="before-heading">Select your Plan</div>
+      <h2 class="nott t600 mb-0">Membership</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div id="price-carousel" class="owl-carousel carousel-widget" data-margin="30" data-nav="false" data-pagi="true" data-items-xs="1" data-items-sm="1" data-items-md="2" data-items-lg="3" data-items-xl="3">
+
+          @foreach($pricings as $price)
+          <div class="price-list shadow-sm card border-0 rounded">
+            <div class="position-relative">
+              <img src="{{'/storage/' . $price->image}}" alt="Featured image 1" class="card-img-top rounded-top">
+            </div>
+            <div class="card-body">
+              <div class="justify-content-center p-0 center">
+                <h3 class="card-title mb-0">{{$price->title}}</h3>
+              </div>
+
+              <div class="price-title pb-3">${{$price->price}}<small>{{$price->recurrence}}</small></div>
+
+              <ul class="list-group list-group-flush mb-4">
+
+                @foreach($price->pricing_item->sortByDesc('id') as $item)
+                  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i>{{$item->item}}</li>
+                @endforeach
+
+              </ul>
+              @if(isset($price->button))
+              <a href="{{$price->link}}" class="button button-rounded button-large btn-block m-0 center t500">{{$price->button}}</a>
+              @endif
+            </div>
           </div>
-          <div class="d-block d-sm-none ">
-            <span class="pricing-price">{{$pricings[2]->price}}</span>
-            <a href="{{$pricings[2]->link}}" class="pricing-button {{$pricings[2]->button ? '' : 'd-none'}}">{{$pricings[2]->button}}</a>
-          </div>
-        </div>
-        <div class="col-md-4 d-none d-sm-block">
-            <span class="pricing-price">{{$pricings[0]->price}}</span>
-            <a href="{{$pricings[0]->link}}" class="pricing-button {{$pricings[0]->button ? '' : 'd-none'}}">{{$pricings[0]->button}}</a>
-        </div>
-        <div class="col-md-4 d-none d-sm-block">
-            <span class="pricing-price">{{$pricings[1]->price}}</span>
-            <a href="{{$pricings[1]->link}}" class="pricing-button {{$pricings[1]->button ? '' : 'd-none'}}">{{$pricings[1]->button}}</a>
-        </div>
-        <div class="col-md-4 d-none d-sm-block">
-            <span class="pricing-price">{{$pricings[2]->price}}</span>
-            <a href="{{$pricings[2]->link}}" class="pricing-button {{$pricings[2]->button ? '' : 'd-none'}}">{{$pricings[2]->button}}</a>
+          @endforeach
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

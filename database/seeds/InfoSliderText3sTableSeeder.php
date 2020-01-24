@@ -20,13 +20,12 @@ class InfoSliderText3sTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'title' => 'El tres',
-                'contenido' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-',
+                'title' => 'Simplifica',
+                'contenido' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 'button' => 'Menos Info',
                 'link' => NULL,
-                'video' => NULL,
-                'display_type' => 0,
+                'video' => 'videos/pzjXEEkPytxXXS2pOntStiKKFnT7XSiW4tVP5Cx1.mp4',
+                'display_type' => 1,
                 'display' => 0,
                 'back_color' => '#FFFFFF',
             ),

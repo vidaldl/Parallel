@@ -20,12 +20,12 @@ class LinksTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 5,
-                'image' => 'content/links/zzAh9DroRwJya01tHcnPYJwfwEZKi1MaCa2cMhEw.png',
+                'image' => 'content/links/LwIi7YqDXCcmu2Kn8HwTOZGA4uh55uPIpaAIFtU5.png',
                 'title' => 'Aduanas',
                 'link' => NULL,
-                'deleted_at' => NULL,
+                'deleted_at' => '2020-01-17 02:45:28',
                 'created_at' => '2019-08-16 16:18:05',
-                'updated_at' => '2019-08-16 16:18:05',
+                'updated_at' => '2020-01-17 02:45:28',
             ),
             1 => 
             array (

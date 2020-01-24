@@ -38,6 +38,17 @@ Route::put('restore-portfolioItems/{portfolioItem}', 'Portfolio\PortfolioItemCon
 Route::get('/redirectPortfolioItem', 'Portfolio\PortfolioCategoryController@redirect');
 Route::post('/portfolio-display', 'Portfolio\PortfolioItemController@display')->name('portfolio.display');
 
+//Pricing
+// Route::get('/editPricing', 'HomeController@pricingEdit')->name('pricing.edit');
+// Route::post('/updatePricing/{id}', 'HomeController@pricingUpdate')->name('pricing.update');
+Route::resource('pricing', 'PricingController', ['except' => ['update']]);
+Route::post('/pricingUpdate/{id}', 'PricingController@pricingUpdate')->name('pricing.update');
+Route::post('/displayPricing/{id}', 'PricingController@pricingDisplay')->name('pricing.display');
+
+Route::post('pricingItemCreate/{id}', 'PricingController@pricingItemsCreate')->name('pricingItem.create');
+Route::post('pricingItemDestroy/{id}', 'PricingController@pricingItemDestroy')->name('pricingItem.destroy');
+Route::post('pricingSection/{id}', 'PricingController@sectionUpdate')->name('pricingSection.update');
+
 
 Route::middleware(['auth'])->group(function () {
 
@@ -131,10 +142,7 @@ Route::delete('/delete-slider-video3/{id}', 'HomeController@deleteSliderVideo3')
 Route::post('/store-slider-image3', 'HomeController@storeSliderImage3')->name('store.sliderImage3');
 Route::post('/update-slider-image3/{id}', 'HomeController@updateSliderImage3')->name('update.sliderImage3');
 Route::delete('/delete-slider-image3/{id}', 'HomeController@deleteSliderImage3')->name('delete.sliderImage3');
-//Pricing
-Route::get('/editPricing', 'HomeController@pricingEdit')->name('pricing.edit');
-Route::post('/updatePricing/{id}', 'HomeController@pricingUpdate')->name('pricing.update');
-Route::post('/displayPricing/{id}', 'HomeController@pricingDisplay')->name('pricing.display');
+
 //Section3
 Route::get('/editsection3/{id}', 'HomeController@section3Edit')->name('section3.edit');
 Route::post('/updatesection3/{id}', 'HomeController@section3Update')->name('section3.update');
