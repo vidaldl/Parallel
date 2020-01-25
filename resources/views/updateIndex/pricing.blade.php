@@ -124,8 +124,9 @@
               </div>
 
               <!-- CARACTERISTICAS -->
-              <div class="row">
+            <div class="row">
                   <h4>Características</h4>
+
                   <div class="form-group">
                     @foreach($price->pricing_item as $item)
                       <form autocomplete="off" class="form-inline mt-3" action="{{route('pricing.update', $item->pivot->pricing_item_id)}}" method="post">
