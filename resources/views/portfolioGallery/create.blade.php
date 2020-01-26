@@ -160,7 +160,6 @@
               @endforeach
 
 
-              @if($gallery_images->count() < 7)
 
               <tr class="imageInput">
                 <td>
@@ -183,7 +182,6 @@
                 </td>
               </tr>
 
-              @else
               <tr class="imageInput">
                 <td>
                   <div class="alert alert-danger" role="alert">
@@ -236,7 +234,7 @@
           </form>
         </div>
       </div>
-    
+
     </div>
 
   </div>
