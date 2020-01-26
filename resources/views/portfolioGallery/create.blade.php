@@ -161,6 +161,7 @@
 
 
 
+
               <tr class="imageInput">
                 <td>
                   <div class="form-group">
@@ -182,14 +183,7 @@
                 </td>
               </tr>
 
-              <tr class="imageInput">
-                <td>
-                  <div class="alert alert-danger" role="alert">
-                    Ya existen demasiadas fotos en el Slider
-                  </div>
-                </td>
-              </tr>
-              @endif
+
               <tr style="height: 200px;">
               </tr>
               </tbody>
