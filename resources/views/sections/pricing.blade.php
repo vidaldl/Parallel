@@ -5,8 +5,8 @@
 <div id="pricing" class="section" style="padding: 80px 0">
   <div class="container">
     <div class="heading-block nobottomborder mb-0">
-      <div class="before-heading">Select your Plan</div>
-      <h2 class="nott t600 mb-0">Membership</h2>
+      <div class="before-heading">{{$pricing_sections[0]->subtitle}}</div>
+      <h2 class="nott t600 mb-0">{{$pricing_sections[0]->title}}</h2>
     </div>
   </div>
 

@@ -222,14 +222,14 @@ class PortfolioItemController extends Controller
   }
     }
 
-public function trashed() {
-  $trashed = PortfolioItem::onlyTrashed()->get();
-  return view('portfolio.items.index')->with('portfolioItems', $trashed);
-}
-public function restore($id) {
-  $portfolioItems = PortfolioItem::withTrashed()->where('id', $id)->firstOrFail();
-  $portfolioItems->restore();
-  session()->flash('success', 'Portfolio: Artículo Restaurado');
-  return redirect()->back();
-}
+    public function trashed() {
+      $trashed = PortfolioItem::onlyTrashed()->get();
+      return view('portfolio.items.index')->with('portfolioItems', $trashed);
+    }
+    public function restore($id) {
+      $portfolioItems = PortfolioItem::withTrashed()->where('id', $id)->firstOrFail();
+      $portfolioItems->restore();
+      session()->flash('success', 'Portfolio: Artículo Restaurado');
+      return redirect()->back();
+    }
 }

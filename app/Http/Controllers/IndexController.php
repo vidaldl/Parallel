@@ -28,8 +28,9 @@ use App\User;
 use App\Order;
 use App\Links;
 use App\LinkSection;
-use App\Gallery;
-use App\GallerySection;
+use App\PortfolioGallery\GallerySection;
+use App\PortfolioGallery\GalleryItem;
+use App\PortfolioGallery\GalleryImages;
 use App\SectionProperty;
 use App\Frase;
 use App\Portfolio\PortfolioCategory;
@@ -86,10 +87,9 @@ class IndexController extends Controller
       ->with('info_slider_text3s', InfoSliderText3::all())
       ->with('links', Links::all())
       ->with('link_sections', LinkSection::all())
-      ->with('galleries', Gallery::all())
-      ->with('galleries_count', Gallery::select('slide')->distinct()->pluck('slide'))
-      ->with('column_count', Gallery::select('column')->distinct()->pluck('column'))
       ->with('gallery_sections', GallerySection::all())
+      ->with('gallery_images', GalleryImages::all())
+      ->with('gallery_items', GalleryItem::all())
       ->with('section_properties', SectionProperty::all())
       ->with('frases', Frase::all())
       ->with('portfolio_categories', PortfolioCategory::all())

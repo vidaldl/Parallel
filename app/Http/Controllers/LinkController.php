@@ -153,14 +153,14 @@ class LinkController extends Controller
   }
 }
 
-public function trashed() {
-  $trashed = Links::onlyTrashed()->get();
-  return view('links.index')->with('links', $trashed);
-}
-public function restore($id) {
-  $links = Links::withTrashed()->where('id', $id)->firstOrFail();
-  $links->restore();
-  session()->flash('success', 'Enlace Restaurado');
-  return redirect()->back();
-}
+    public function trashed() {
+      $trashed = Links::onlyTrashed()->get();
+      return view('links.index')->with('links', $trashed);
+    }
+    public function restore($id) {
+      $links = Links::withTrashed()->where('id', $id)->firstOrFail();
+      $links->restore();
+      session()->flash('success', 'Enlace Restaurado');
+      return redirect()->back();
+    }
 }

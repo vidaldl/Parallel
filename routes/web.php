@@ -38,6 +38,20 @@ Route::put('restore-portfolioItems/{portfolioItem}', 'Portfolio\PortfolioItemCon
 Route::get('/redirectPortfolioItem', 'Portfolio\PortfolioCategoryController@redirect');
 Route::post('/portfolio-display', 'Portfolio\PortfolioItemController@display')->name('portfolio.display');
 
+//Portfolio Gallery
+Route::get('/portfolioGallerySection/{id}', 'PortfolioGalleryController@editSection')->name('portfolioGallerySection.index');
+Route::post('/portfolioGallerySectionUpdate/{id}', 'PortfolioGalleryController@updateSection')->name('portfolioGallerySection.update');
+Route::resource('portfolioGallery', 'PortfolioGalleryController', ['except' => ['update']]);
+Route::post('/portfolioGallery/{id}', 'PortfolioGalleryController@update')->name('portfolioGallery.update');
+Route::post('/portfolioGallery-display', 'PortfolioGalleryController@display')->name('portfolioGallery.display');
+Route::get('trashed-gallery', 'PortfolioGalleryController@trashed')->name('trashed-gallery.index');
+Route::put('restore-gallery/{link}', 'PortfolioGalleryController@restore')->name('restore-gallery');
+
+  //Portfolio Images
+Route::post('/portfolioGalleryImageCreate/{id}', 'PortfolioGalleryController@imageCreate')->name('portfolioGalleryImage.create');
+Route::post('/portfolioGalleryImageDestroy/{id}', 'PortfolioGalleryController@imageDestroy')->name('portfolioGalleryImage.destroy');
+Route::post('/portfolioGalleryImage/{id}', 'PortfolioGalleryController@imageUpdate')->name('portfolioGalleryImage.update');
+
 //Pricing
 // Route::get('/editPricing', 'HomeController@pricingEdit')->name('pricing.edit');
 // Route::post('/updatePricing/{id}', 'HomeController@pricingUpdate')->name('pricing.update');
@@ -48,6 +62,7 @@ Route::post('/displayPricing/{id}', 'PricingController@pricingDisplay')->name('p
 Route::post('pricingItemCreate/{id}', 'PricingController@pricingItemsCreate')->name('pricingItem.create');
 Route::post('pricingItemDestroy/{id}', 'PricingController@pricingItemDestroy')->name('pricingItem.destroy');
 Route::post('pricingSection/{id}', 'PricingController@sectionUpdate')->name('pricingSection.update');
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -99,11 +114,7 @@ Route::put('restore-properties/{property}', 'PropertyController@restore')->name(
 //Styles
 Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
 
-//Gallery
-Route::resource('galleries', 'GalleriesController');
-Route::post('/display-galleries', 'GalleriesController@display')->name('galleries.display');
-Route::post('/update-gallerySection/{id}', 'GalleriesController@updateSection')->name('galleries.section');
-Route::post('galleries/{id}/update', 'GalleriesController@updateGal')->name('gal.update');
+
 //Section1
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
 Route::post('/updatesection1/{id}', 'HomeController@section1Update')->name('section1.update');

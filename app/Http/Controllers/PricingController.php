@@ -46,7 +46,7 @@ class PricingController extends Controller
       $subtitle = $request->input('subtitle');
 
       $data = array('title'=>$title, 'subtitle'=>$subtitle);
-      DB::table('pricing_sections')->where('id', $id)->udpate($data);
+      DB::table('pricing_sections')->where('id', $id)->update($data);
 
       session()->flash('success', 'La imagen ha sido actualizada');
       return redirect()->back();
