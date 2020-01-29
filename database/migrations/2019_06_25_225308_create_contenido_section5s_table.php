@@ -18,7 +18,7 @@ class CreateContenidoSection5sTable extends Migration
             $table->string('title')->nullable();
             $table->string('address')->nullable();
             $table->string('email')->nullable();
-            $table->string('number')->nullable();
+            $table->text('number')->nullable();
             $table->integer('display')->default('1')->nullable();
             $table->string('back_color')->nullable()->default('#F7F7F7');
             $table->timestamps();

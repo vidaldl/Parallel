@@ -89,8 +89,7 @@
                 <label for="media_type">Tipo de Multimedia</label>
                 <div id="media_type"></div>
 
-
-              <div class="form-row mb-4">
+                <div class="form-row mb-4">
                   <div class="col-md-6" id="type_image">
                     <label class="col-form-label">Manejar Slideshow</label><br>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImages">Imagenes &nbsp;&nbsp;<i class="fas fa-image"></i></a>
@@ -252,6 +251,7 @@
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
 <script>
   $('#back_color').spectrum({
     preferredFormat: "hex",
@@ -259,11 +259,15 @@
   });
   $('#contenido').trumbowyg({
     btns: [
-        ['strong', 'em', 'del'],
-        ['link'],
-        ['unorderedList', 'orderedList'],
-        ['removeformat'],
-        ['fullscreen']
+      ['fontsize'],
+      ['strong', 'em', 'del'],
+      ['link'],
+      ['image'],
+      ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+      ['unorderedList', 'orderedList'],
+      ['horizontalRule'],
+      ['removeformat'],
+      ['fullscreen']
     ]
   });
 

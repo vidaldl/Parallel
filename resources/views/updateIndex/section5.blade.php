@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('css')
+  <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
+@endsection
+
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Editar Sección Contacto</h1>
@@ -45,7 +49,7 @@
               </div>
               <div class="form-group">
                 <label for="number" class="col-form-label">Teléfono</label>
-                <input id="number" type="input" name="number" class="form-control @error('number') is-invalid @enderror"  value="{{ $contenidosection5s[0]->number }}">
+                <textarea id="number" type="input" name="number" class="form-control @error('number') is-invalid @enderror">{{ $contenidosection5s[0]->number }}</textarea>
                   @error('number')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -69,7 +73,16 @@
 @endsection
 @section('script')
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script src="{{asset('trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js')}}"></script>
 <script>
+$('#number').trumbowyg({
+  btns: [
+    ['fullscreen']
+  ]
+});
+
+
   $('#back_color').spectrum({
     preferredFormat: "hex",
    showInput: true,

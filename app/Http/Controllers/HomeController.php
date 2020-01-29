@@ -522,7 +522,6 @@ class HomeController extends Controller
       $title = $request->input('title');
       $tagline = $request->input('tagline');
       $button = $request->input('button');
-      $displayImage = $request->input('displayImage');
       $link = $request->input('link');
       $overlay = $request->input('overlay');
       $logo = NULL;
@@ -587,7 +586,7 @@ class HomeController extends Controller
 
         }
         else {
-        $data=array("title"=>$title,"overlay"=>$overlay,"tagline"=>$tagline,"button"=>$button, "carousel"=>$displayImage, "link"=>$link);
+        $data=array("title"=>$title,"overlay"=>$overlay,"tagline"=>$tagline,"button"=>$button, "link"=>$link);
         DB::table('contenido_section1s')->where('id', $id)->update($data);
         session()->flash('success', 'La sección fue actualizada');
         //redirect
@@ -604,7 +603,7 @@ class HomeController extends Controller
     }
 
     public function section1Display(Request $request, $id) {
-      $display = $request->input('section1');
+      $display = $request->input('val');
       $data=array("display"=>$display);
       DB::table('contenido_section1s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fue actualizada');

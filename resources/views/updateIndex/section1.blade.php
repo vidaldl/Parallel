@@ -2,6 +2,11 @@
 @section('css')
   <link href="{{ asset('lib/tabslet/jquery.tabslet.css') }}" rel="stylesheet">
   <style media="screen">
+  .tgl-sw-swipe + .btn-switch {
+  background: #e74a3b;
+  }
+
+
   .tabdiv {
   /*border-top: 1px solid #c7c7c7*/
   min-height: 450px;
@@ -62,6 +67,7 @@
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
+<link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -69,7 +75,9 @@
   <a href="{{route('home')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Secciones<span></a>
 </div>
   <div class="row justify-content-center">
-    <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/"  width="100%" height="450"></iframe></div>
+    <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block">
+      
+    </div>
     <div class="card mt-3 col-md-8 mb-5">
       <div class="card-body">
         <div class="row">
@@ -143,7 +151,7 @@
               </div>
               <!-- TRANSPARENCIA DEL FONDO -->
               <div class="form-group">
-                <label class="col-form-label">Transparencia de Fondo</label><br>
+                <label class="col-form-label">Opacidad de Fondo</label><br>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="porciento">%</span>
@@ -168,7 +176,7 @@
               </div>
               <div class="form-group">
                 <label for="tagline" class="col-form-label">Sub-titulo</label>
-                <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[0]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[0]->tagline }}</textarea>
+                <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror" value="{{ $contenidosection1s[0]->tagline }}">
                   @error('tagline')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -176,16 +184,24 @@
                   @enderror
               </div>
 
+              <!-- MULTIMEDIA -->
               <div class="form-group">
+                <label for="media_type{{$contenidosection1s[0]->id}}">Logo:</label>
+                <div id="media_type{{$contenidosection1s[0]->id}}"></div>
 
-                  <label for="image" class="col-form-label">Imagen de Logo</label><br>
-                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo{{ $contenidosection1s[0]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
-                  @error('logo')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                <div class="form-row mb-4">
+                  <div class="col-md-6" id="type_image{{$contenidosection1s[0]->id}}">
+                    <label for="image" class="col-form-label">Imagen de Logo</label><br>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo{{ $contenidosection1s[0]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                  </div>
+                  <div class="col-md-6" id="type_video">
 
+                  </div>
+                </div>
+              </div>
+              <!-- /MULTIMEDIA -->
+
+              <div class="form-group">
 
               </div>
 
@@ -343,6 +359,23 @@
                     </span>
                   @enderror
                 </div>
+
+                <!-- TRANSPARENCIA DEL FONDO -->
+                <div class="form-group">
+                  <label class="col-form-label">Opacidad de Fondo</label><br>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="porciento">%</span>
+                    </div>
+                    <input id="overlay" type="input" name="overlay" class="form-control @error('overlay') is-invalid @enderror"  value="{{ $contenidosection1s[1]->overlay }}">
+                  </div>
+                    @error('overlay')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+
                 <div class="form-group col-md-12">
                   <label for="title" class="col-form-label">Titulo</label>
                   <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $contenidosection1s[1]->title }}">
@@ -352,9 +385,10 @@
                       </span>
                     @enderror
                 </div>
+
                 <div class="form-group col-md-12">
                   <label for="tagline" class="col-form-label">Sub-titulo</label>
-                  <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[1]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[1]->tagline }}</textarea>
+                  <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror" value="{{ $contenidosection1s[1]->tagline }}">
                     @error('tagline')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -362,19 +396,20 @@
                     @enderror
                 </div>
 
-                <div class="form-group col-md-6">
+                <div class="form-group">
+                  <!-- MULTIMEDIA -->
+                  <div class="container">
+                    <label for="media_type{{$contenidosection1s[1]->id}}">Logo:</label>
+                    <div id="media_type{{$contenidosection1s[1]->id}}"></div>
 
-                    <label for="image" class="col-form-label">Imagen</label><br>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[1]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
-                    <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
-                      <option value="0" {{ $contenidosection1s[1]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
-                      <option value="1" {{ $contenidosection1s[1]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
-                    </select>
-                    @error('logo')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                      </span>
-                    @enderror
+                    <div class="form-row mb-4">
+                      <div class="col-md-12" id="type_image{{$contenidosection1s[1]->id}}">
+                        <label for="image" class="col-form-label">Imagen</label><br>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[1]->id }}">Subir &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /MULTIMEDIA -->
 
 
                 </div>
@@ -498,6 +533,23 @@
                       </span>
                     @enderror
                   </div>
+
+                  <!-- TRANSPARENCIA DEL FONDO -->
+                  <div class="form-group">
+                    <label class="col-form-label">Opacidad de Fondo</label><br>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="porciento">%</span>
+                      </div>
+                      <input id="overlay" type="input" name="overlay" class="form-control @error('overlay') is-invalid @enderror"  value="{{ $contenidosection1s[2]->overlay }}">
+                    </div>
+                      @error('overlay')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                      @enderror
+                  </div>
+
                   <div class="form-group col-md-12">
                     <label for="title" class="col-form-label">Titulo</label>
                     <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $contenidosection1s[2]->title }}">
@@ -509,7 +561,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <label for="tagline" class="col-form-label">Sub-titulo</label>
-                    <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[2]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[2]->tagline }}</textarea>
+                    <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror" value="{{ $contenidosection1s[2]->tagline }}">
                       @error('tagline')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -517,22 +569,20 @@
                       @enderror
                   </div>
 
-                  <div class="form-group col-md-6">
-
-                      <label for="image" class="col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[2]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
-                      <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
-                        <option value="0" {{ $contenidosection1s[2]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
-                        <option value="1" {{ $contenidosection1s[2]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
-                      </select>
-                      @error('logo')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror
-
-
+                  <!-- MULTIMEDIA -->
+                  <div class="form-group">
+                    <div class="container">
+                      <label for="media_type{{$contenidosection1s[2]->id}}">Logo:</label>
+                      <div id="media_type{{$contenidosection1s[2]->id}}"></div>
+                      <div class="form-row mb-4">
+                        <div class="col-md-12" id="type_image{{$contenidosection1s[2]->id}}">
+                          <label for="image" class="col-form-label">Imagen</label><br>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[2]->id }}">Subir &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <!-- /MULTIMEDIA -->
 
                   <div class="form-group col-md-12">
                     <label for="button" class="col-form-label">Botón</label>
@@ -653,6 +703,23 @@
                       </span>
                     @enderror
                   </div>
+
+                  <!-- TRANSPARENCIA DEL FONDO -->
+                  <div class="form-group">
+                    <label class="col-form-label">Opacidad de Fondo</label><br>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="porciento">%</span>
+                      </div>
+                      <input id="overlay" type="input" name="overlay" class="form-control @error('overlay') is-invalid @enderror"  value="{{ $contenidosection1s[3]->overlay }}">
+                    </div>
+                      @error('overlay')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                      @enderror
+                  </div>
+
                   <div class="form-group col-md-12">
                     <label for="title" class="col-form-label">Titulo</label>
                     <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{ $contenidosection1s[3]->title }}">
@@ -664,7 +731,7 @@
                   </div>
                   <div class="form-group col-md-12">
                     <label for="tagline" class="col-form-label">Sub-titulo</label>
-                    <textarea id="tagline" type="input" name="tagline" class="inputEditor{{ $contenidosection1s[3]->id }} form-control @error('tagline') is-invalid @enderror">{{ $contenidosection1s[3]->tagline }}</textarea>
+                    <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror" value="{{ $contenidosection1s[3]->tagline }}">
                       @error('tagline')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -672,22 +739,20 @@
                       @enderror
                   </div>
 
-                  <div class="form-group col-md-6">
-
-                      <label for="image" class="col-form-label">Imagen</label><br>
-                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[3]->id }}">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
-                      <select name="displayImage" onchange="this.form.submit()" class="ml-3" >
-                        <option value="0" {{ $contenidosection1s[3]->carousel == '0' ? 'selected' : '' }}>Esconder</option>
-                        <option value="1" {{ $contenidosection1s[3]->carousel == '1' ? 'selected' : '' }}>Mostrar</option>
-                      </select>
-                      @error('logo')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror
-
-
+                  <!-- MULTIMEDIA -->
+                  <div class="form-group">
+                    <div class="container">
+                      <label for="media_type{{$contenidosection1s[3]->id}}">Logo:</label>
+                      <div id="media_type{{$contenidosection1s[3]->id}}"></div>
+                      <div class="form-row mb-4">
+                        <div class="col-md-12" id="type_image{{$contenidosection1s[3]->id}}">
+                          <label for="image" class="col-form-label">Imagen</label><br>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogoSlide{{ $contenidosection1s[3]->id }}">Subir &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <!-- /MULTIMEDIA -->
 
                   <div class="form-group col-md-12">
                     <label for="button" class="col-form-label">Botón</label>
@@ -801,25 +866,61 @@
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <!-- EDITOR -->
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script>
-@foreach($contenidosection1s as $section)
-$('.inputEditor{{$section->id}}').trumbowyg({
-  btns: [
-      ['strong', 'em', 'del'],
-      ['link'],
-      ['unorderedList', 'orderedList'],
-      ['removeformat'],
-      ['fullscreen']
-  ]
+
+$(document).ready(function() {
+  @foreach($contenidosection1s as $section)
+    @if($section->display == 0)
+      $('#type_image{{$section->id}}').hide();
+    @endif
+
+    $('#media_type{{$section->id}}').btnSwitch({
+    Theme:'Swipe',
+    OnText: "Si",
+    OffText: "No",
+    OnValue: '1',
+    OnCallback: function(val) {
+      $('#type_image{{$section->id}}').show();
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'/displaysection1/{{$section->id}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+      },
+    OffValue: '0',
+    OffCallback: function (val) {
+      $('#type_image{{$section->id}}').hide();
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'/displaysection1/{{$section->id}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+    },
+      @if($section->display == 1)
+        ToggleState: true
+      @else
+        ToggleState: false
+      @endif
+    });
+
+  @endforeach
 });
-@endforeach
-var allEditors = document.querySelectorAll('.inputEditor');
-for (var i = 0; i < allEditors.length; ++i) {
-  ClassicEditor.create( allEditors[i], {
-        removePlugins: ['Autoformat', 'Heading', 'Link' ],
-        toolbar: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList']
-      });
-}
+
 </script>
 <!-- /EDITOR -->
 

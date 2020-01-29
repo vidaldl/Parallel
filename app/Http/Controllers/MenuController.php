@@ -40,12 +40,25 @@ class MenuController extends Controller
 
     public function update(Request $request, $id)
     {
+      if($request->has('inicio')) {
+        $item_inicio = $request->input('inicio');
+
+        $data = array('item_inicio' => $item_inicio);
+        DB::table('menu_items')->where('id', $id)->update($data);
+
+        session()->flash('success', 'La informacion ha sido actualizada');
+        //redirect
+        return redirect()->back();
+      }else {
         $menu_name = $request->input('menu_name');
 
         $data = array('menu_name'=>$menu_name);
         DB::table('orders')->where('id', $id)->update($data);
 
         session()->flash('success', 'Menú Actualizado');
+      }
+
+
     }
 
 

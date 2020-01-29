@@ -161,9 +161,8 @@ class PortfolioGalleryController extends Controller
         'desc'=>$desc
       );
 
-      DB::table('gallery_items')->insert($data);
-      $latest = DB::getPdo('gallery_items')->lastInsertId();
-      return redirect('portfolioGallery/' . $latest . '/edit');
+      DB::table('gallery_items')->where('id', $id)->update($data);
+      return redirect()->back();
 
     }
 

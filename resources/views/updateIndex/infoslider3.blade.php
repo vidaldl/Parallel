@@ -247,6 +247,7 @@
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
 <script>
   $('#back_color').spectrum({
     preferredFormat: "hex",
@@ -255,12 +256,15 @@
 
   $('#contenido').trumbowyg({
     btns: [
-        ['strong', 'em', 'del'],
-        ['link'],
-        ['unorderedList', 'orderedList'],
-        ['removeformat'],
-        ['fullscreen']
-    ]
+      ['fontsize'],
+      ['strong', 'em', 'del'],
+      ['link'],
+      ['image'],
+      ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+      ['unorderedList', 'orderedList'],
+      ['horizontalRule'],
+      ['removeformat'],
+      ['fullscreen']
   });
 
   $('#media_type').btnSwitch({

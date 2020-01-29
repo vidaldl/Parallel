@@ -83,6 +83,25 @@
               <div class="form-group mb-3">
                 <h4>Secciones Activas:</h4>
               </div>
+
+                <form class="form-group" action="{{route('menu.update', 1)}}" method="POST">
+                  @csrf
+                  <label for="inicio" class="col-form-label">Inicio</label>
+                  <div class="input-group">
+
+                    <input id="inicio" type="input" name="inicio" class="form-control @error('inicio') is-invalid @enderror"  value="{{ $menu_items[0]->item_inicio }}">
+                      @error('inicio')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                      @enderror
+                    <div class="input-group-append">
+                      <button class="btn btn-success" type="submit">Actualizar</button>
+                    </div>
+                  </div>
+
+                </form>
+
               @foreach($order as $menu_item)
                 @if($menu_item->display == 1)
                   <div class="form-group">

@@ -21,7 +21,7 @@
         ============================================= -->
         <nav id="primary-menu" class="dark">
           <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
-            <li><a href="#" data-href="#slider"><div>Inicio</div></a></li>
+            <li><a href="#" data-href="#slider"><div>{{$menu_item[0]->item_inicio}}</div></a></li>
             @foreach($orders as $item)
               @if($item->display == 1 && $item->menu_display == 1)
                 <li><a href="#" data-href="#{{$item->section}}"><div>{{$item->menu_name}}</div></a></li>

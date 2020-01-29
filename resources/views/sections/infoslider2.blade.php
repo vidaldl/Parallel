@@ -9,8 +9,11 @@
         <h2 style="font-size: 42px;" class="font-body ls1 t400">{!! $info_slider_text2s[0]->title !!}</h2>
       </div>
       <p style="color: #777;" class="lead">{!! $info_slider_text2s[0]->contenido !!}</p>
-      <a href="{{ $info_slider_text2s[0]->link }}" class="section-more-link">{!! $info_slider_text2s[0]->button !!}<i class="icon-angle-right"></i></a>
-    </div>
+
+			@if($info_slider_text2s[0]->button)
+			<a href="{{ $info_slider_text2s[0]->link }}" class="section-more-link">{!! $info_slider_text2s[0]->button !!}<i class="icon-angle-right"></i></a>
+			@endif
+		</div>
 
 		<div class="col-lg-7 pf-icons pf-illustrations alt">
 			@if($info_slider_text2s[0]->display_type == 0)
