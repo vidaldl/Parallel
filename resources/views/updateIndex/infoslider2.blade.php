@@ -265,6 +265,7 @@
       ['horizontalRule'],
       ['removeformat'],
       ['fullscreen']
+    ]
   });
 
   $('#media_type').btnSwitch({
