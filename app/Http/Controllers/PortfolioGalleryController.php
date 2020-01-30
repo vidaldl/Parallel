@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\PortfolioGallery\GalleryImages;
 use App\PortfolioGallery\GalleryItem;
 use App\PortfolioGallery\GallerySection;
+use App\Style;
 
 use DB;
 use Illuminate\Support\Facades\Storage;
@@ -96,8 +97,14 @@ class PortfolioGalleryController extends Controller
      */
     public function show($id)
     {
+      $item = GalleryItem::where('id', $id)->firstOrFail();
+      $next = GalleryItem::where('id', '>', $item->id)->orderBy('id')->first();
+      $previous = GalleryItem::where('id', '<', $item->id)->orderBy('id','desc')->first();
       return view('portfolioGallery.show')
+      ->with('styles', Style::all())
       ->with('gallery_items', GalleryItem::find($id))
+      ->with('paginate_items', GalleryItem::all())
+      ->with(compact('item', 'previous', 'next'))
       ->with('gallery_images', GalleryImages::all());
     }
 

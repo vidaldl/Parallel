@@ -240,14 +240,21 @@
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
 <script>
 $('#desc').trumbowyg({
   btns: [
-      ['strong', 'em', 'del'],
-      ['link'],
-      ['unorderedList', 'orderedList'],
-      ['removeformat'],
-      ['fullscreen']
+    ['fontsize'],
+    ['fontfamily'],
+    ['strong', 'em', 'del'],
+    ['link'],
+    ['image'],
+    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+    ['unorderedList', 'orderedList'],
+    ['horizontalRule'],
+    ['removeformat'],
+    ['fullscreen']
   ]
 });
 

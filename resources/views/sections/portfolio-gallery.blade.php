@@ -1,4 +1,4 @@
-<div class="section notopmargin noborder nobottommargin" >
+<div id="gallery" class="section notopmargin noborder nobottommargin" >
 
   <div class="container clearfix">
 
@@ -14,7 +14,7 @@
 <!-- Portfolio Items
 ============================================= -->
 <div class="container-fluid clearfix">
-  <div id="#gallery" class="portfolio row justify-content-center portfolio-nomargin portfolio-notitle portfolio-full clearfix">
+  <div class="portfolio row justify-content-center portfolio-nomargin portfolio-notitle portfolio-full clearfix">
     @foreach($gallery_items as $item)
 
         @if($item->display_type == 1)
@@ -26,12 +26,12 @@
             </a>
             <div class="portfolio-overlay">
               <a id="video{{$item->id}}" href="{{$item->video}}" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-              <a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+              <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
             </div>
           </div>
           <div class="portfolio-desc">
-            <h3><a href="#">{{$item->title}}</a></h3>
-            <span><a href="#">{{$item->subtitle}}</a></span>
+            <h3><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->title}}</a></h3>
+            <span><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->subtitle}}</a></span>
           </div>
         </article>
         @else
@@ -52,12 +52,12 @@
                 @foreach($item->gallery_images as $image)
                   <a href="{{'/storage/' . $image->image}}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
                 @endforeach
-                <a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
               </div>
             </div>
             <div class="portfolio-desc">
-              <h3><a href="#">{{$item->title}}</a></h3>
-              <span><a href="#">{{$item->subtitle}}</a></span>
+              <h3><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->title}}</a></h3>
+              <span><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->subtitle}}</a></span>
             </div>
           </article>
           @else
@@ -72,13 +72,13 @@
               <div class="portfolio-overlay">
                 @foreach($item->gallery_images as $image)
                   <a href="{{'/storage/' . $image->image}}" class="left-icon" data-lightbox="image"><i class="fas fa-image"></i></a>
-                  <a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                  <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
                 @endforeach
               </div>
             </div>
             <div class="portfolio-desc">
-              <h3><a href="#">{{$item->title}}</a></h3>
-              <span><a href="#">{{$item->subtitle}}</a></span>
+              <h3><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->title}}</a></h3>
+              <span><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->subtitle}}</a></span>
             </div>
           </article>
           @endif
@@ -106,7 +106,7 @@
 
     @foreach($gallery_items as $item)
 
-        @if($item->gallery_images->count() == 0)
+        @if($item->display_type == 1)
 
         var url = $('#video{{$item->id}}').attr('href');
         var urlId = youtube_parser(url);
