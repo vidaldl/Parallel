@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27f792b3b1015b5b65346fc8ea06d2cd",
+    "content-hash": "8627f2e1b4f3f898adecd1d7e056186c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -718,6 +718,49 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "joeyrush/better-migrate-seed",
+            "version": "0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joeyrush/better-migrate-seed.git",
+                "reference": "13f70d271e449f1a76297fd0ce91a9e6582cb298"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joeyrush/better-migrate-seed/zipball/13f70d271e449f1a76297fd0ce91a9e6582cb298",
+                "reference": "13f70d271e449f1a76297fd0ce91a9e6582cb298",
+                "shasum": ""
+            },
+            "require": {
+                "orangehill/iseed": "^2.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JoeyRush\\BetterMigrateSeed\\BetterMigrateSeedServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JoeyRush\\BetterMigrateSeed\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Rushton",
+                    "email": "joe_rushton@hotmail.co.uk"
+                }
+            ],
+            "description": "An alternative migrate:fresh --seed command which allows you to create a group of seeders from your existing data and/or playback a group of seeders",
+            "time": "2019-09-16T20:52:07+00:00"
         },
         {
             "name": "laravel/framework",
