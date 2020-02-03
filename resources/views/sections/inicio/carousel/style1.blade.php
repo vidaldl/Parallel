@@ -11,14 +11,13 @@
           <div class="container clearfix">
 
             <div class="slider-caption slider-caption-center">
-              @if($contenidosection1s[1]->display == 0)
-              <h2 class="mb-4" data-animate="fadeInUp">{{$contenidosection1s[1]->title}}</h2>
-              <div class="d-none d-sm-block mb-4" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[1]->tagline }}</div>
-              @else
-              <div class="d-none d-md-block mb-5"><img class="img-fluid " src="{{'/storage/' . $contenidosection1s[1]->logo }}" style="height: 450px" alt=""></div>
-              <h2 class="d-none d-block d-md-none d-lg-none" data-animate="fadeInUp">{{$contenidosection1s[1]->title}}</h2>
-              <div class="d-none d-sm-block d-md-none d-lg-none" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[1]->tagline }}</div>
+
+              @if($contenidosection1s[1]->display == 1)
+              <div class="d-none d-md-block mb-2"><img class="img-fluid " src="{{'/storage/' . $contenidosection1s[1]->logo }}" style="height: 350px" alt=""></div>
               @endif
+              <h2 class="d-none d-block" data-animate="fadeInUp">{{$contenidosection1s[1]->title}}</h2>
+              <div class="d-none d-sm-block " data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[1]->tagline }}</div>
+
             </div>
           </div>
         </div>

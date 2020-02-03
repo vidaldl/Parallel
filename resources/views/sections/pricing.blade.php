@@ -27,12 +27,10 @@
 
               <div class="price-title pb-3">${{$price->price}}<small>{{$price->recurrence}}</small></div>
 
-              <ul class="list-group list-group-flush mb-4">
-
+              <ul class="list-group list-group-flush mb-4" style="min-height: 275px;">
                 @foreach($price->pricing_item->sortByDesc('id') as $item)
                   <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i>{{$item->item}}</li>
                 @endforeach
-
               </ul>
               @if(isset($price->button))
               <a href="{{$price->link}}" class="button button-rounded button-large btn-block m-0 center t500">{{$price->button}}</a>
