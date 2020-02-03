@@ -113,9 +113,9 @@
     <div class="row">
       <div class="container">
         <div class="col-md-12">
-          @if($contenidosection1s[0]->display == 1)
+
             @include('updateIndex.sections.inicio')
-          @endif
+
         </div>
         <div class="" id="sort">
         @foreach($orders as $order)
@@ -145,11 +145,7 @@
 
     <div class="row">
       <div class="container">
-        <div class="col-md-12">
-          @if($contenidosection1s[0]->display == 0)
-            @include('updateIndex.sections.inicio')
-          @endif
-        </div>
+
         @foreach($orders as $order)
           <div id="{{$order->id}}" class="col-md-12">
             @php

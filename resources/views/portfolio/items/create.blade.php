@@ -567,6 +567,8 @@ $(".ajButton").click(function(e){
 <script src="{{ asset('lib/tabslet/jquery.tabslet.js') }}"></script>
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
 <script>
   $('.tabs').tabslet();
   $('#contenido').trumbowyg({
@@ -578,6 +580,8 @@ $(".ajButton").click(function(e){
         }
     },
     btns: [
+        ['fontsize'],
+        ['fontfamily'],
         ['viewHTML'],
         ['formatting'],
         ['strong', 'em', 'del'],

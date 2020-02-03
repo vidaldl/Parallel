@@ -63,7 +63,7 @@
       <div class="sidebar-heading">
        Contenido
      </div>
-      <li class="nav-item active ">
+      <!-- <li class="nav-item active ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-newspaper"></i>
           <span>Artículos</span>
@@ -73,11 +73,11 @@
             <h6 class="collapse-header">Editar Artículos</h6>
             <a class="collapse-item" href="{{ route('posts.index') }}"><i class="fas fa-fw fa-edit"></i>&nbsp;Artículos</a>
             <a class="collapse-item" href="{{ route('trashed-posts.index') }}"><i class="fas fa-fw fa-trash"></i>&nbsp;Papelera</a>
-            <!-- <a class="collapse-item" href="{{ route('tags.index') }}"><i class="fas fa-fw fa-hashtag"></i>&nbsp;Etiquetas</a> -->
+            <a class="collapse-item" href="{{ route('tags.index') }}"><i class="fas fa-fw fa-hashtag"></i>&nbsp;Etiquetas</a>
             <a class="collapse-item" href="{{ route('categories.index') }}"><i class="fas fa-fw fa-tags"></i>&nbsp;Categorias</a>
           </div>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
           <i class="fas fa-fw fa-tools"></i>
