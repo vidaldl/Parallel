@@ -64,7 +64,7 @@
     <div class="oc-item">
       <div class="product iproduct clearfix">
         <div class="product-image">
-          <a href="#"><img src="images/shop/shoes/1-1.jpg" alt="Dark Brown Boots"></a>
+          <a href="#"><img src="images/shop/shoes/1.jpg" alt="Dark Brown Boots"></a>
           <a href="#"><img src="images/shop/shoes/1.jpg" alt="Dark Brown Boots"></a>
           <div class="product-overlay">
             <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
