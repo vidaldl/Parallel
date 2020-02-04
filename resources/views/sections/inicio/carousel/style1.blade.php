@@ -24,9 +24,11 @@
         <div class="swiper-slide dark" style="background-image: url({{ '/storage/' . $contenidosection1s[2]->background_image }});">
           <div class="overlay{{$contenidosection1s[2]->id}}"></div>
           <div class="container clearfix">
+            @if($contenidosection1s[2]->display == 1)
             <div class="slider-caption d-none d-xl-block">
               <img src="{{'/storage/' . $contenidosection1s[2]->logo }}" alt="">
             </div>
+            @endif
             <div class="slider-caption slider-caption-right">
               <h2 data-animate="fadeInUp">{{$contenidosection1s[2]->title}}</h2>
               <div class="d-none d-md-block" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[2]->tagline }}</div>
@@ -40,9 +42,11 @@
               <h2 data-animate="fadeInUp">{{$contenidosection1s[3]->title}}</h2>
               <div class="d-none d-md-block" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[3]->tagline }}</div>
             </div>
-            <div class="slider-caption slider-caption-right d-none d-xl-block">
-              <img src="{{'/storage/' . $contenidosection1s[3]->logo }}" alt="">
-            </div>
+            @if($contenidosection1s[3]->display == 1)
+              <div class="slider-caption slider-caption-right d-none d-xl-block">
+                <img src="{{'/storage/' . $contenidosection1s[3]->logo }}" alt="">
+              </div>
+            @endif
           </div>
         </div>
       </div>
