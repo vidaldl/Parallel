@@ -46,7 +46,11 @@
 <!-- Required JavaScript Libraries -->
 <script src="{{ asset('lib/realCSS/js/jquery.js') }}"></script>
 <script src="{{ asset('lib/realCSS/js/plugins.js') }}"></script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
 
+<!-- <script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5"></script> -->
 
 @stack('scripts')
 @yield('script')

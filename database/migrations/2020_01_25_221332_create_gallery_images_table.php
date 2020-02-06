@@ -16,7 +16,6 @@ class CreateGalleryImagesTable extends Migration
         Schema::create('gallery_images', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('image');
-            $table->timestamps();
         });
     }
 

@@ -148,6 +148,12 @@ class PortfolioGalleryController extends Controller
       $data = array('display_type' => $display_type);
       DB::table('gallery_items')->where('id', $id)->update($data);
 
+    }elseif($request->has('valBtn')) {
+      $display_tooltip = $request->input('valBtn');
+
+      $data = array('display_tooltip' => $display_tooltip);
+      DB::table('gallery_items')->where('id', $id)->update($data);
+
     }elseif($request->has('video')) {
       $video = $request->input('video');
 
@@ -160,12 +166,16 @@ class PortfolioGalleryController extends Controller
       $subtitle = $request->input('subtitle');
       $desc_title = $request->input('desc_title');
       $desc = $request->input('desc');
+      $left_btn = $request->input('left_btn');
+      $right_btn = $request->input('right_btn');
 
       $data = array(
         'title'=>$title,
         'subtitle'=>$subtitle,
         'desc_title'=>$desc_title,
-        'desc'=>$desc
+        'desc'=>$desc,
+        'left_btn'=>$left_btn,
+        'right_btn'=>$right_btn
       );
 
       DB::table('gallery_items')->where('id', $id)->update($data);

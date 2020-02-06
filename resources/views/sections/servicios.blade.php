@@ -12,11 +12,13 @@
   <div class="row justify-content-center">
 	  @foreach($servicios as $servicio)
     <div class="col-md-4 bottommargin-lg">
-      <div class="feature-box fbox-small fbox-plain rightmargin-sm" data-animate="fadeIn">
-        <div class="fbox-icon">
+      <div class="feature-box fbox-small fbox-plain rightmargin-sm" >
+        <div class="fbox-icon" data-animate="bounceIn">
           <a href="#" data-featherlight="#animatedModal{{$servicio->id}}"><i class="{{ $servicio->icon }}"></i></a>
         </div>
-        <h3>{{ $servicio->title }}</h3>
+        <a href="#" style="text-decoration: none;" data-featherlight="#animatedModal{{$servicio->id}}">
+					<h3>{{ $servicio->title }}</h3>
+				</a>
         <p class="short">{{ $servicio->contenido }}</p>
       </div>
     </div>
@@ -26,7 +28,6 @@
 
 @foreach($servicios as $servicio)
 <div class="modbox" id="animatedModal{{$servicio->id}}" style="width: 85vw !important">
-
 				<div class="container" style="min-height: 500px;">
 					<!-- Portfolio Single Gallery
 				============================================= -->

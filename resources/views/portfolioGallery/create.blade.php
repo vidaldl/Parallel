@@ -33,7 +33,6 @@
           <form method="POST" id="formulario" action="{{ isset($gallery_items) ? route('portfolioGallery.update', $gallery_items->id) : route('portfolioGallery.store') }}" enctype="multipart/form-data">
             @csrf
 
-
               <div class="form-group">
                 <label for="title" class="col-form-label">Titulo</label>
                 <input id="title" type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{isset($gallery_items) ? $gallery_items->title : ''}}">
@@ -98,6 +97,32 @@
               </div>
 <!--/IMAGEN -->
 
+
+              <div class="form-group">
+                <label for="media_type">Frase Encima de los Botones:</label>
+                <div id="tooltips"></div>
+              <!-- BOTONES DE LA GALERÍA -->
+              <div id="toolDisplay">
+                <div class="form-group" id="left_btn">
+                  <label for="left_btn" class="col-form-label">Botón Izquierdo</label>
+                  <input id="left_btn" name="left_btn" class="form-control @error('left_btn') is-invalid @enderror" value="{{isset($gallery_items) ? $gallery_items->left_btn : ''}}">
+                    @error('left_btn')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+                <div class="form-group" id="right_btn">
+                  <label for="right_btn" class="col-form-label">Botón Derecho</label>
+                  <input id="right_btn" name="right_btn" class="form-control @error('right_btn') is-invalid @enderror" value="{{isset($gallery_items) ? $gallery_items->right_btn : ''}}">
+                    @error('right_btn')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+              </div>
+              </div>
 @endif
               <div class="form-group">
                 <button type="submit" id="mandar" class="btn btn-success float-right">Actualizar</button>
@@ -130,7 +155,6 @@
                 </tr>
               </thead>
               <tbody>
-
               @foreach($gallery_items->gallery_images as $images)
 
                 <tr>
@@ -158,10 +182,6 @@
                 </tr>
 
               @endforeach
-
-
-
-
               <tr class="imageInput">
                 <td>
                   <div class="form-group">
@@ -260,6 +280,9 @@ $('#desc').trumbowyg({
 
 @if(isset($gallery_items))
   $(document).ready(function() {
+    @if($gallery_items->display_tooltip == 0)
+      $('#toolDisplay').hide();
+    @endif
     @if($gallery_items->display_type == 1)
       $('#type_image').hide();
     @else
@@ -316,6 +339,54 @@ $('#desc').trumbowyg({
     },
 
       @if($gallery_items->display_type == 1)
+      ToggleState: true
+      @else
+      ToggleState: false
+      @endif
+  });
+
+
+
+// BUTTON TOOLTIPS
+
+  $('#tooltips').btnSwitch({
+    Theme:'Swipe',
+    OnText: "Si",
+    OffText: "No",
+    OnValue: '1',
+    OnCallback: function(val) {
+      $('#toolDisplay').show();
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'{{route('portfolioGallery.update', $gallery_items->id)}}',
+             data:{"_token": "{{ csrf_token() }}",
+             valBtn:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+      },
+    OffValue: '0',
+    OffCallback: function (val) {
+      $('#toolDisplay').hide();
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'{{route('portfolioGallery.update', $gallery_items->id)}}',
+             data:{"_token": "{{ csrf_token() }}",
+             valBtn:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+    },
+
+      @if($gallery_items->display_tooltip == 1)
       ToggleState: true
       @else
       ToggleState: false

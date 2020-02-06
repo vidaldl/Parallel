@@ -20,7 +20,10 @@ class CreateGalleryItemsTable extends Migration
             $table->string('desc_title')->nullable();
             $table->string('video')->nullable();
             $table->text('desc')->nullable();
-            $table->string('display_type')->default(1);
+            $table->string('left_btn')->default('Expander');
+            $table->string('right_btn')->default('Más');
+            $table->integer('display_tooltip')->default(1);
+            $table->integer('display_type')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

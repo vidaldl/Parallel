@@ -1,3 +1,6 @@
+@push('styles')
+  <link rel="stylesheet" href="{{asset('lib/tooltipster/css/tooltipster.bundle.css')}}" type="text/css" />
+@endpush
 <div id="gallery" class="section notopmargin noborder nobottommargin" >
 
   <div class="container clearfix">
@@ -19,14 +22,14 @@
 
         @if($item->display_type == 1)
         <!-- VIDEO -->
-        <article class="col-md-3 portfolio-item pf-graphics pf-uielements">
+        <article id="gal" class="col-md-3 gal{{$item->id}} portfolio-item pf-graphics pf-uielements">
           <div class="portfolio-image">
             <a href="#">
               <img id="videoThumb{{$item->id}}" alt="Mac Sunglasses">
             </a>
             <div class="portfolio-overlay">
-              <a id="video{{$item->id}}" href="{{$item->video}}" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-              <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+              <a id="video{{$item->id}}" href="{{$item->video}}" class="left-icon galBut{{$item->id}}" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+              <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
             </div>
           </div>
           <div class="portfolio-desc">
@@ -37,7 +40,7 @@
         @else
           @if($item->gallery_images->count() > 1)
           <!-- Carousel Fotos -->
-          <article class="col-md-3 portfolio-item pf-icons pf-illustrations">
+          <article class="col-md-3 gal{{$item->id}} portfolio-item pf-icons pf-illustrations">
             <div class="portfolio-image">
               <div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
                 <div class="flexslider">
@@ -50,9 +53,9 @@
               </div>
               <div class="portfolio-overlay" data-lightbox="gallery">
                 @foreach($item->gallery_images as $image)
-                  <a href="{{'/storage/' . $image->image}}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                  <a href="{{'/storage/' . $image->image}}" class="left-icon galBut{{$item->id}}" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
                 @endforeach
-                <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
               </div>
             </div>
             <div class="portfolio-desc">
@@ -62,7 +65,7 @@
           </article>
           @else
           <!-- FOTO Unica -->
-          <article class="col-md-3 portfolio-item pf-media pf-icons">
+          <article class="col-md-3 gal{{$item->id}} portfolio-item pf-media pf-icons">
             <div class="portfolio-image">
               <a href="#">
                 @foreach($item->gallery_images as $image)
@@ -71,8 +74,8 @@
               </a>
               <div class="portfolio-overlay">
                 @foreach($item->gallery_images as $image)
-                  <a href="{{'/storage/' . $image->image}}" class="left-icon" data-lightbox="image"><i class="fas fa-image"></i></a>
-                  <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                  <a href="{{'/storage/' . $image->image}}" class="left-icon galBut{{$item->id}}" data-lightbox="image"><i class="fas fa-image"></i></a>
+                  <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
                 @endforeach
               </div>
             </div>
@@ -91,8 +94,56 @@
 </div>
 
 @push('scripts')
+<script src="{{ asset('lib/tooltipster/js/tooltipster.bundle.js') }}"></script>
   <script>
+
+
   $(document).ready(function() {
+
+@foreach($gallery_items as $item)
+@if($item->display_tooltip == 1)
+    $(function() {
+
+    var timeoutId{{$item->id}};
+    $(".gal{{$item->id}}").hover(function() {
+        if (!timeoutId{{$item->id}}) {
+            timeoutId{{$item->id}} = window.setTimeout(function() {
+                timeoutId{{$item->id}} = null;
+                $('.galBut{{$item->id}}').tooltipster('open');
+                $('.galButr{{$item->id}}').tooltipster('open');
+           }, 500);
+        }
+    },
+    function () {
+        if (timeoutId{{$item->id}}) {
+            window.clearTimeout(timeoutId{{$item->id}});
+            timeoutId{{$item->id}} = null;
+        }
+        else {
+           $('.galBut{{$item->id}}').tooltipster('close');
+           $('.galButr{{$item->id}}').tooltipster('close');
+        }
+      });
+    });
+
+    $('.galBut{{$item->id}}').tooltipster({
+      trigger: 'click',
+      content: '{{$item->left_btn}}'
+    });
+    $('.galButr{{$item->id}}').tooltipster({
+      trigger: 'click',
+      side: 'bottom',
+      content: '{{$item->right_btn}}'
+    });
+@endif
+@endforeach
+    // $('.galBut1').tooltipster('open');
+    // $('.galButr1').tooltipster('open');
+    // $('.galBut1').tooltipster('close');
+    // $('.galButr1').tooltipster('close');
+
+
+
     function youtube_parser(url){
       var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
       var match = url.match(regExp);
