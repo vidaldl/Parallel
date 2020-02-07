@@ -9,7 +9,12 @@
 
 					<div class="col_half">
 						<div class="copyrights-menu copyright-links clearfix">
-							<a href="#inicio">Inicio</a>/<a href="#servicios">Servicios</a>/<a href="#articulos">Artículos</a>/<a href="/about">Acerca de</a>/<a href="#contact">Contacto</a>
+							<a href="#" data-href="#slider">{{$menu_item[0]->item_inicio}}</a>/
+							@foreach($orders as $item)
+								@if($item->display == 1 && $item->menu_display == 1)
+									<a href="#{{$item->section}}">{{$item->menu_name}}</a>/
+								@endif
+							@endforeach
 						</div>
 						&copy; Copyright {{$contenidosectionfooters[0]->copy}} {{ now()->year }}
 

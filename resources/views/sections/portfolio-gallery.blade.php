@@ -1,7 +1,8 @@
 @push('styles')
   <link rel="stylesheet" href="{{asset('lib/tooltipster/css/tooltipster.bundle.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{asset('lib/tooltipster/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css')}}" type="text/css" />
 @endpush
-<div id="gallery" class="section notopmargin noborder nobottommargin" >
+<div id="portfolio-gallery" class="section notopmargin noborder nobottommargin" >
 
   <div class="container clearfix">
 
@@ -128,11 +129,13 @@
 
     $('.galBut{{$item->id}}').tooltipster({
       trigger: 'click',
+      theme: 'tooltipster-borderless',
       content: '{{$item->left_btn}}'
     });
     $('.galButr{{$item->id}}').tooltipster({
       trigger: 'click',
       side: 'bottom',
+      theme: 'tooltipster-borderless',
       content: '{{$item->right_btn}}'
     });
 @endif

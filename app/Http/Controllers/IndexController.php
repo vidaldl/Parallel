@@ -66,6 +66,8 @@ class IndexController extends Controller
 
 
     public function index() {
+      $pCats = PortfolioCategory::has('portfolio_item')->get();
+      
       return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
       ->with('orders', Order::orderBy('order')->get())
       ->with('contenidosection1s', ContenidoSection1::all())
@@ -92,7 +94,7 @@ class IndexController extends Controller
       ->with('gallery_items', GalleryItem::all())
       ->with('section_properties', SectionProperty::all())
       ->with('frases', Frase::all())
-      ->with('portfolio_categories', PortfolioCategory::all())
+      ->with('portfolio_categories', $pCats)
       ->with('portfolio_items', PortfolioItem::all())
       ->with('users', User::all());
     }
