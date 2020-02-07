@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->integer('container_style')->default(1);
             $table->string('menu_name')->nullable();
             $table->integer('menu_display')->nullable();
+            $table->string('edit_link')->default('Test');
         });
     }
 

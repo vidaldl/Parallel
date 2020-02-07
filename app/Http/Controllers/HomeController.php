@@ -70,6 +70,31 @@ class HomeController extends Controller
         ->with('section_properties', SectionProperty::all());
     }
 
+    public function indexInactive()
+    {
+        return view('homeInactive')
+        ->with('orders', Order::orderBy('order')->get())
+        ->with('contenidosection1s', ContenidoSection1::all())
+        ->with('contenidosection2s', ContenidoSection2::all())
+        ->with('contenidosection3s', ContenidoSection3::all())
+        ->with('contenidosection4s', ContenidoSection4::all())
+        ->with('contenidosection5s', ContenidoSection5::all())
+        ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+        ->with('contenidoabouts', ContenidoAbout::all())
+        ->with('styles', Style::all())
+        ->with('pricings', Pricing::all())
+        ->with('info_slider_images', InfoSliderImage::all())
+        ->with('info_slider_texts', InfoSliderText::all())
+        ->with('info_slider_image2s', InfoSliderImage2::all())
+        ->with('info_slider_text2s', InfoSliderText2::all())
+        ->with('info_slider_image3s', InfoSliderImage3::all())
+        ->with('info_slider_text3s', InfoSliderText3::all())
+        ->with('links', Links::all())
+        ->with('link_sections', LinkSection::all())
+        ->with('frases', Frase::all())
+        ->with('section_properties', SectionProperty::all());
+    }
+
 
     /*Frase -------------------------------------------------------------------------------->*/
     public function fraseDisplay(Request $request, $id) {

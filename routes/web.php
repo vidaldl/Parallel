@@ -23,11 +23,14 @@ Auth::routes(['verify' => true, 'register' => false]);
 
 
 Route::get('home', 'HomeController@index')->name('home');
+Route::get('homeInactive', 'HomeController@indexInactive')->name('home.inactive');
 
 //Order Sections
 Route::post('/order', 'IndexController@order');
 // Contact Form
 Route::post('/cForm', 'IndexController@mail')->name('send.contact');
+
+
 
 //Portfolio
 Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');
@@ -36,14 +39,13 @@ Route::post('/portfolioItem/{id}', 'Portfolio\PortfolioItemController@update')->
 Route::get('trashed-portfolioItems', 'Portfolio\PortfolioItemController@trashed')->name('trashed-portfolioItems.index');
 Route::put('restore-portfolioItems/{portfolioItem}', 'Portfolio\PortfolioItemController@restore')->name('restore-portfolio-items');
 Route::get('/redirectPortfolioItem', 'Portfolio\PortfolioCategoryController@redirect');
-Route::post('/portfolio-display', 'Portfolio\PortfolioItemController@display')->name('portfolio.display');
+
 
 //Portfolio Gallery
 Route::get('/portfolioGallerySection/{id}', 'PortfolioGalleryController@editSection')->name('portfolioGallerySection.index');
 Route::post('/portfolioGallerySectionUpdate/{id}', 'PortfolioGalleryController@updateSection')->name('portfolioGallerySection.update');
 Route::resource('portfolioGallery', 'PortfolioGalleryController', ['except' => ['update']]);
 Route::post('/portfolioGallery/{id}', 'PortfolioGalleryController@update')->name('portfolioGallery.update');
-Route::post('/portfolioGallery-display', 'PortfolioGalleryController@display')->name('portfolioGallery.display');
 Route::get('trashed-gallery', 'PortfolioGalleryController@trashed')->name('trashed-gallery.index');
 Route::put('restore-gallery/{link}', 'PortfolioGalleryController@restore')->name('restore-gallery');
 
@@ -57,7 +59,7 @@ Route::post('/portfolioGalleryImage/{id}', 'PortfolioGalleryController@imageUpda
 // Route::post('/updatePricing/{id}', 'HomeController@pricingUpdate')->name('pricing.update');
 Route::resource('pricing', 'PricingController', ['except' => ['update']]);
 Route::post('/pricingUpdate/{id}', 'PricingController@pricingUpdate')->name('pricing.update');
-Route::post('/displayPricing/{id}', 'PricingController@pricingDisplay')->name('pricing.display');
+
 
 Route::post('pricingItemCreate/{id}', 'PricingController@pricingItemsCreate')->name('pricingItem.create');
 Route::post('pricingItemDestroy/{id}', 'PricingController@pricingItemDestroy')->name('pricingItem.destroy');
@@ -66,6 +68,21 @@ Route::post('pricingSection/{id}', 'PricingController@sectionUpdate')->name('pri
 
 
 Route::middleware(['auth'])->group(function () {
+
+// ================================== Display ========================================
+Route::post('/display-portfolio-programs', 'DisplayController@portfolioprogramsDisplay');
+Route::post('/display-pricing', 'DisplayController@pricingDisplay');
+Route::post('/display-frase', 'DisplayController@fraseDisplay');
+Route::post('/display-servicios', 'DisplayController@serviciosDisplay');
+Route::post('/display-links', 'DisplayController@linksDisplay');
+Route::post('/display-infoslider1', 'DisplayController@infoslider1Display');
+Route::post('/display-infoslider2', 'DisplayController@infoslider2Display');
+Route::post('/display-infoslider3', 'DisplayController@infoslider3Display');
+Route::post('/display-info', 'DisplayController@infoDisplay');
+Route::post('/display-articulos', 'DisplayController@articulosDisplay');
+Route::post('/display-contact', 'DisplayController@contactDisplay');
+Route::post('/display-portfolio-gallery', 'DisplayController@portfoliogalleryDisplay')->name('portfolioGallery.display');
+// Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
 // ================================== EditSections ========================================
 //LINE BETWEEN
@@ -84,7 +101,6 @@ Route::post('/menuLogo-update/{id}', 'MenuController@logo')->name('menuLogo.upda
 
 //Frase section
 Route::get('/frase/{id}', 'HomeController@fraseEdit')->name('frase.edit');
-Route::post('/frase-dislpay/{id}', 'HomeController@fraseDisplay')->name('frase.display');
 Route::post('/frase/{id}', 'HomeController@fraseUpdate')->name('frase.update');
 
 
@@ -118,21 +134,20 @@ Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.upd
 //Section1
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
 Route::post('/updatesection1/{id}', 'HomeController@section1Update')->name('section1.update');
-Route::post('/displaysection1/{id}', 'HomeController@section1Display')->name('section1.display');
+
 Route::post('/carouselsection1/{id}', 'HomeController@section1Carousel')->name('section1.carousel');
 Route::post('/style-pick/{id}', 'HomeController@sliderStyleUpdate')->name('sliderStyle.update');
 //Section2
 Route::get('/editsection2/{id}', 'HomeController@section2Edit')->name('section2.edit');
 Route::post('/updatesection2/{id}', 'HomeController@section2Update')->name('section2.update');
-Route::post('/displaysection2/{id}', 'HomeController@section2Display')->name('section2.display');
+
 //Links
 Route::get('/editlink/{id}', 'HomeController@linkEdit')->name('link.edit');
 Route::post('/updatelink/{id}', 'HomeController@linkUpdate')->name('link.update');
-Route::post('/displaylink/{id}', 'HomeController@linkDisplay')->name('link.display');
+
 //Slider information
 Route::get('/editInfoSlider/{id}', 'HomeController@infoSliderEdit')->name('info-slider-text.edit');
 Route::post('/updateInfoSlider/{id}', 'HomeController@infoSliderUpdate')->name('infoSlider.update');
-Route::post('/displayInfoSlider/{id}', 'HomeController@infoSliderDisplay')->name('infoSlider.display');
 Route::delete('/delete-slider-video/{id}', 'HomeController@deleteSliderVideo')->name('delete.sliderVideo');
 Route::post('/store-slider-image', 'HomeController@storeSliderImage')->name('store.sliderImage');
 Route::post('/update-slider-image/{id}', 'HomeController@updateSliderImage')->name('update.sliderImage');
@@ -140,7 +155,6 @@ Route::delete('/delete-slider-image/{id}', 'HomeController@deleteSliderImage')->
 //Slider information2
 Route::get('/editInfoSlider2/{id}', 'HomeController@infoSlider2Edit')->name('info-slider-text2.edit');
 Route::post('/updateInfoSlider2/{id}', 'HomeController@infoSlider2Update')->name('infoSlider2.update');
-Route::post('/displayInfoSlider2/{id}', 'HomeController@infoSlider2Display')->name('infoSlider2.display');
 Route::delete('/delete-slider-video2/{id}', 'HomeController@deleteSliderVideo2')->name('delete.sliderVideo2');
 Route::post('/store-slider-image2', 'HomeController@storeSliderImage2')->name('store.sliderImage2');
 Route::post('/update-slider-image2/{id}', 'HomeController@updateSliderImage2')->name('update.sliderImage2');
@@ -148,7 +162,6 @@ Route::delete('/delete-slider-image2/{id}', 'HomeController@deleteSliderImage2')
 //Slider information3
 Route::get('/editInfoSlider3/{id}', 'HomeController@infoSlider3Edit')->name('info-slider-text3.edit');
 Route::post('/updateInfoSlider3/{id}', 'HomeController@infoSlider3Update')->name('infoSlider3.update');
-Route::post('/displayInfoSlider3/{id}', 'HomeController@infoSlider3Display')->name('infoSlider3.display');
 Route::delete('/delete-slider-video3/{id}', 'HomeController@deleteSliderVideo3')->name('delete.sliderVideo3');
 Route::post('/store-slider-image3', 'HomeController@storeSliderImage3')->name('store.sliderImage3');
 Route::post('/update-slider-image3/{id}', 'HomeController@updateSliderImage3')->name('update.sliderImage3');
@@ -157,19 +170,19 @@ Route::delete('/delete-slider-image3/{id}', 'HomeController@deleteSliderImage3')
 //Section3
 Route::get('/editsection3/{id}', 'HomeController@section3Edit')->name('section3.edit');
 Route::post('/updatesection3/{id}', 'HomeController@section3Update')->name('section3.update');
-Route::post('/displaysection3/{id}', 'HomeController@section3Display')->name('section3.display');
+
 //Section4
 Route::get('/editsection4/{id}', 'HomeController@section4Edit')->name('section4.edit');
 Route::post('/updatesection4/{id}', 'HomeController@section4Update')->name('section4.update');
-Route::post('/displaysection4/{id}', 'HomeController@section4Display')->name('section4.display');
+
 //Section5
 Route::get('/editsection5/{id}', 'HomeController@section5Edit')->name('section5.edit');
 Route::post('/updatesection5/{id}', 'HomeController@section5Update')->name('section5.update');
-Route::post('/displaysection5/{id}', 'HomeController@section5Display')->name('section5.display');
+
 //Section Footer
 Route::get('/editsectionFooter/{id}', 'HomeController@sectionFooterEdit')->name('sectionFooter.edit');
 Route::post('/updatesectionFooter/{id}', 'HomeController@sectionFooterUpdate')->name('sectionFooter.update');
-Route::post('/displaysectionFooter/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
+
 //Abut Page
 Route::get('/edit-about/{id}', 'HomeController@aboutEdit')->name('about.edit');
 Route::post('/update-about/{id}', 'HomeController@aboutUpdate')->name('about.update');

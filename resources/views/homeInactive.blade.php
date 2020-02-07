@@ -2,6 +2,7 @@
 @section('css')
 <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
+  <link href="{{ asset('lib/tabslet/jquery.tabslet.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
 <style media="screen">
@@ -108,49 +109,25 @@
 <div class="tabs">
 
     <ul class="tabs-navigation horizontal">
-      <li class="li actives"><a class="a" href="#activo">Activas</a></li>
-      <li class="li"><a class="a" href="{{route('home.inactive')}}">Inactivas</a></li>
+      <li class="li"><a class="a" href="{{route('home')}}">Activas</a></li>
+      <li class="li actives"><a class="a" href="#inactivo">Inactivas</a></li>
       <!-- <li class="li"><a class="a" href="#paginas">Páginas</a></li> -->
     </ul>
 
-<!-- ACTIVO -->
+<!-- INACTIVO -->
   <div id="activo" class=" tabdiv">
     <div class="row">
       <div class="container">
-        <div class="col-md-12">
-          <!-- Inicio -->
-          <div class="col-md-12 mb-4">
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <div class="row">
-                  <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Inicio</h6></span>
-                </div>
-              </div>
-              <div class="card-body row">
-                <div class="col-md-6">
-                  <img class="img-fluid" src="{{asset('img/sections/section1.png')}}">
-                </div>
-                <div class=" col-md-6">
-                  <div class="row">
-                    <a class="btn btn-success mx-auto mt-5" href="editsection1/{{$contenidosection1s[0]->id}}">Editar contenido &rarr;</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Inicio -->
-        </div>
-
         <div class="" id="sort">
           @foreach($orders as $order)
-            <div id="{{$order->id}}" class="col-md-12 sortable">
-              @if($order->display == 1)
+            @if($order->display == 0)
+              @if($order->section != 'articulos')
                 <div id="sect{{$order->id}}" class="col-md-12 mb-4">
                   <div class="card shadow mb-4">
                     <div class="card-header py-3">
                       <div class="row">
                         <div class="col-md-1">
-                          <div class="handle"><i class="fas fa-arrows-alt"></i></div>
+
                         </div>
                         <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">{{$order->name}}</h6></span>
                         <div class="ml-auto mr-5">
@@ -174,38 +151,16 @@
                   </div>
                 </div>
               @endif
-            </div>
-
+            @endif
           @endforeach
         </div>
 
-        <div class="col-md-12">
-          <!-- FOOTER -->
-          <div class="col-md-12 mb-4">
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <div class="row">
-                  <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Footer</h6></span>
-                </div>
-              </div>
-              <div class="card-body row">
-                <div class="col-md-6">
-                  <img class="img-fluid" src="{{asset('img/sections/footer.png')}}">
-                </div>
-                <div class=" col-md-6">
-                  <div class="row">
-                    <a class="btn btn-success mx-auto mt-5" href="editsectionFooter/1">Editar contenido &rarr;</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /FOOTER -->
-        </div>
       </div>
     </div>
   </div>
 
+
+</div>
 </div>
 
 
@@ -214,48 +169,6 @@
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
 <script>
-
-$(document).ready(function () {
-  $("#sort").sortable({
-        axis: 'y',
-        placeholder: 'highlight',
-        handle: '.handle',
-        containment: '.tabdiv',
-        scroll:'auto',
-        cursor: 'move',
-        tolerance: 'pointer',
-        revert: 'invalid',
-        forceHelperSize: true,
-        sort: function(e) {
-          $('.line-space').fadeOut();
-        },
-        update: function( ) {
-          $('.line-space').fadeIn();
-        },
-        stop: function() {
-          $.map($(this).find('.sortable'), function(el) {
-            var itemID = el.id;
-            var itemIndex = $(el).index();
-            console.log(itemID);
-            console.log(itemIndex);
-            $.ajaxSetup({
-              headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              }
-            });
-
-            $.ajax({
-              url: '/order',
-              type: 'POST',
-              dataType: 'json',
-              data: {itemID: itemID, itemIndex: itemIndex},
-
-            })
-          });
-        }
-     });
-});
-
 @foreach($orders as $order)
   $('#display{{$order->id}}').btnSwitch({
     Theme:'Swipe',
@@ -310,6 +223,7 @@ $(document).ready(function () {
     @endif
   });
 @endforeach
+
 </script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
 <script>
@@ -326,6 +240,9 @@ $(document).ready(function () {
    showInput: true,
   });
 </script>
+<script src="{{ asset('lib/tabslet/jquery.tabslet.js') }}"></script>
+<script>
 
+</script>
 
 @endsection
