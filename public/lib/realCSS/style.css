@@ -5933,8 +5933,8 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-overlay {
 
 .product-overlay a {
 	display: block;
-	float: left;
-	width: 50%;
+
+
 	font-size: 13px;
 	color: #333;
 	background-color: #F5F5F5;

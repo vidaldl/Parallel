@@ -141,7 +141,7 @@ class PortfolioGalleryController extends Controller
       DB::table('gallery_images')->where('id', $id)->update($data);
 
       $latest = DB::getPdo('links')->lastInsertId();
-
+      Storage::delete($latest->image);
     }elseif($request->has('val')) {
       $display_type = $request->input('val');
 

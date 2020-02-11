@@ -36,6 +36,8 @@ use App\Frase;
 use App\Portfolio\PortfolioCategory;
 use App\Portfolio\PortfolioItem;
 use App\MenuItem;
+use App\Catalog\CatalogItem;
+use App\Catalog\CatalogSection;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -67,7 +69,7 @@ class IndexController extends Controller
 
     public function index() {
       $pCats = PortfolioCategory::has('portfolio_item')->get();
-      
+
       return view('index')->with('posts', Post::orderByDesc('id')->paginate(5))
       ->with('orders', Order::orderBy('order')->get())
       ->with('contenidosection1s', ContenidoSection1::all())
@@ -96,6 +98,8 @@ class IndexController extends Controller
       ->with('frases', Frase::all())
       ->with('portfolio_categories', $pCats)
       ->with('portfolio_items', PortfolioItem::all())
+      ->with('catalog_items', CatalogItem::all())
+      ->with('catalog_sections', CatalogSection::all())
       ->with('users', User::all());
     }
 

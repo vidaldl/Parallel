@@ -12,6 +12,8 @@ class DemoContentDatabaseSeeder extends Seeder
     public function run()
     {
         //
+        $this->call(DemoContentCatalogItemsTableSeeder::class);
+        $this->call(DemoContentCatalogSectionsTableSeeder::class);
         $this->call(DemoContentCitiesTableSeeder::class);
         $this->call(DemoContentContenidoAboutsTableSeeder::class);
         $this->call(DemoContentContenidoSection1sTableSeeder::class);

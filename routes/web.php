@@ -65,7 +65,12 @@ Route::post('pricingItemCreate/{id}', 'PricingController@pricingItemsCreate')->n
 Route::post('pricingItemDestroy/{id}', 'PricingController@pricingItemDestroy')->name('pricingItem.destroy');
 Route::post('pricingSection/{id}', 'PricingController@sectionUpdate')->name('pricingSection.update');
 
-
+//Catalog
+Route::post('/catalogSection/{id}', 'CatalogController@sectionUpdate')->name('catalog.section.update');
+Route::resource('catalog', 'CatalogController', ['except' => ['update']]);
+Route::post('/catalogUpdate/{id}', 'CatalogController@update')->name('catalog.update');
+Route::get('trashed-catalog', 'CatalogController@trashed')->name('trashed-catalog.index');
+Route::put('restore-catalog/{catalog}', 'CatalogController@restore')->name('restore-catalog');
 
 Route::middleware(['auth'])->group(function () {
 
@@ -82,6 +87,7 @@ Route::post('/display-info', 'DisplayController@infoDisplay');
 Route::post('/display-articulos', 'DisplayController@articulosDisplay');
 Route::post('/display-contact', 'DisplayController@contactDisplay');
 Route::post('/display-portfolio-gallery', 'DisplayController@portfoliogalleryDisplay')->name('portfolioGallery.display');
+Route::post('/display-catalog', 'DisplayController@catalogDisplay');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
 // ================================== EditSections ========================================
@@ -144,6 +150,10 @@ Route::post('/updatesection2/{id}', 'HomeController@section2Update')->name('sect
 //Links
 Route::get('/editlink/{id}', 'HomeController@linkEdit')->name('link.edit');
 Route::post('/updatelink/{id}', 'HomeController@linkUpdate')->name('link.update');
+
+Route::resource('links', 'LinkController');
+Route::get('trashed-links', 'LinkController@trashed')->name('trashed-links.index');
+Route::put('restore-links/{link}', 'LinkController@restore')->name('restore-links');
 
 //Slider information
 Route::get('/editInfoSlider/{id}', 'HomeController@infoSliderEdit')->name('info-slider-text.edit');
@@ -216,10 +226,7 @@ Route::get('trashed-servicios', 'ServicioController@trashed')->name('trashed-ser
 Route::put('restore-servicios/{servicio}', 'ServicioController@restore')->name('restore-servicios');
 Route::get('/redirectServicio', 'ServicioController@redirect')->name('servicio.redirect');
 
-//Links
-Route::resource('links', 'LinkController');
-Route::get('trashed-links', 'LinkController@trashed')->name('trashed-links.index');
-Route::put('restore-links/{link}', 'LinkController@restore')->name('restore-links');
+
 });
 
 Route::middleware(['auth','admin'])->group(function() {

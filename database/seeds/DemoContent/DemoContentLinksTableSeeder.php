@@ -23,9 +23,9 @@ class DemoContentLinksTableSeeder extends Seeder
                 'image' => 'content/links/LwIi7YqDXCcmu2Kn8HwTOZGA4uh55uPIpaAIFtU5.png',
                 'title' => 'Aduanas',
                 'link' => NULL,
-                'deleted_at' => '2020-01-17 02:45:28',
+                'deleted_at' => NULL,
                 'created_at' => '2019-08-16 16:18:05',
-                'updated_at' => '2020-01-17 02:45:28',
+                'updated_at' => '2020-02-11 06:13:07',
             ),
             1 => 
             array (

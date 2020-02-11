@@ -24,11 +24,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Servicios',
                 'order' => 0,
                 'display' => 1,
-                'line' => 2,
+                'line' => 0,
                 'line_style' => 1,
                 'container_style' => 1,
                 'menu_name' => 'Servicios',
                 'menu_display' => 1,
+                'edit_link' => 'editsection2/1',
             ),
             1 => 
             array (
@@ -37,11 +38,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Slider 1',
                 'order' => 7,
                 'display' => 1,
-                'line' => 1,
+                'line' => 0,
                 'line_style' => 1,
                 'container_style' => 1,
                 'menu_name' => 'Sliders',
                 'menu_display' => 0,
+                'edit_link' => 'editInfoSlider/1',
             ),
             2 => 
             array (
@@ -50,11 +52,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Slider 2',
                 'order' => 2,
                 'display' => 1,
-                'line' => 1,
+                'line' => 0,
                 'line_style' => 2,
                 'container_style' => 1,
                 'menu_name' => 'Slider',
                 'menu_display' => 0,
+                'edit_link' => 'editInfoSlider2/1',
             ),
             3 => 
             array (
@@ -63,11 +66,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Slider 3',
                 'order' => 5,
                 'display' => 1,
-                'line' => 1,
+                'line' => 0,
                 'line_style' => 2,
                 'container_style' => 1,
                 'menu_name' => 'Slider',
                 'menu_display' => 0,
+                'edit_link' => 'editInfoSlider3/1',
             ),
             4 => 
             array (
@@ -81,6 +85,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'container_style' => 1,
                 'menu_name' => 'Precios',
                 'menu_display' => 1,
+                'edit_link' => 'pricing',
             ),
             5 => 
             array (
@@ -94,6 +99,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'container_style' => 1,
                 'menu_name' => 'Articulos',
                 'menu_display' => 1,
+                'edit_link' => 'Test',
             ),
             6 => 
             array (
@@ -102,11 +108,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Acción',
                 'order' => 6,
                 'display' => 1,
-                'line' => 2,
+                'line' => 0,
                 'line_style' => 1,
                 'container_style' => 1,
                 'menu_name' => 'Info',
                 'menu_display' => 0,
+                'edit_link' => 'editsection3/1',
             ),
             7 => 
             array (
@@ -115,11 +122,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Contacto',
                 'order' => 11,
                 'display' => 1,
-                'line' => 2,
+                'line' => 0,
                 'line_style' => 1,
                 'container_style' => 1,
                 'menu_name' => 'Contacto',
                 'menu_display' => 1,
+                'edit_link' => 'editsection5/1',
             ),
             8 => 
             array (
@@ -128,11 +136,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Enlaces Útiles',
                 'order' => 10,
                 'display' => 1,
-                'line' => 1,
+                'line' => 0,
                 'line_style' => 1,
                 'container_style' => 1,
                 'menu_name' => 'Enlaces',
                 'menu_display' => 0,
+                'edit_link' => 'editlink/1',
             ),
             9 => 
             array (
@@ -141,11 +150,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Galeria',
                 'order' => 4,
                 'display' => 1,
-                'line' => 1,
+                'line' => 0,
                 'line_style' => 2,
                 'container_style' => 1,
                 'menu_name' => 'Galería',
                 'menu_display' => 1,
+                'edit_link' => 'portfolioGallerySectionUpdate/1',
             ),
             10 => 
             array (
@@ -154,11 +164,12 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'name' => 'Frase Titulo',
                 'order' => 8,
                 'display' => 1,
-                'line' => 1,
+                'line' => 0,
                 'line_style' => 1,
                 'container_style' => 1,
                 'menu_name' => 'Más',
                 'menu_display' => 0,
+                'edit_link' => 'frase/1',
             ),
             11 => 
             array (
@@ -172,6 +183,21 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'container_style' => 1,
                 'menu_name' => 'Portafolio',
                 'menu_display' => 0,
+                'edit_link' => 'portfolioItems',
+            ),
+            12 => 
+            array (
+                'id' => 14,
+                'section' => 'catalog',
+                'name' => 'Catalogo',
+                'order' => 12,
+                'display' => 1,
+                'line' => 0,
+                'line_style' => 1,
+                'container_style' => 1,
+                'menu_name' => 'Catalogo',
+                'menu_display' => 1,
+                'edit_link' => 'catalog',
             ),
         ));
         
