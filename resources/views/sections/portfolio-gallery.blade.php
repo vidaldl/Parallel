@@ -17,7 +17,7 @@
 
 <!-- Portfolio Items
 ============================================= -->
-<div class="container-fluid clearfix">
+<div class="container-fluid clearfix bottommargin-lg">
   <div class="portfolio row justify-content-center portfolio-nomargin portfolio-notitle portfolio-full clearfix">
     @foreach($gallery_items as $item)
 

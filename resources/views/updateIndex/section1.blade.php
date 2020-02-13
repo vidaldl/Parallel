@@ -99,30 +99,64 @@
                     @enderror
                 </div>
               </div>
-            </form>
-          </div>
-          <!-- End carousel activator form -->
-          <!-- STYLE PICKER -->
-          <div class="col-md-6 {{$contenidosection1s[0]->carousel == 1 ? 'd-none' : ''}}">
-            <form autocomplete="off" id="sectionType" method="POST" action="{{route('sliderStyle.update', $contenidosection1s[0]->id)}}">
-              @csrf
-              <div class="form-group">
+              </form>
+            </div>
+            <!-- STYLE PICKER -->
+            <div class="col-md-6 {{$contenidosection1s[0]->carousel == 1 ? 'd-none' : ''}}">
+              <form autocomplete="off" id="sectionType" method="POST" action="{{route('sliderStyle.update', $contenidosection1s[0]->id)}}">
+                @csrf
                 <div class="form-group">
-                  <label for="carousel" class="col-form-label">Estilo</label><br>
-                    <select onchange="this.form.submit()" name="style" class="col-md-4">
-                      <option value="1" {{ $contenidosection1s[0]->style == '1' ? 'selected' : '' }}>Pantalla Completa</option>
-                      <option value="2" {{ $contenidosection1s[0]->style == '2' ? 'selected' : '' }}>Pantalla Media</option>
-                    </select>
-                    @error('title')
+                  <div class="form-group">
+                    <label for="carousel" class="col-form-label">Estilo</label><br>
+                      <select onchange="this.form.submit()" name="style" class="col-md-4">
+                        <option value="1" {{ $contenidosection1s[0]->style == '1' ? 'selected' : '' }}>Pantalla Completa</option>
+                        <option value="2" {{ $contenidosection1s[0]->style == '2' ? 'selected' : '' }}>Pantalla Media</option>
+                      </select>
+                      @error('title')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                      @enderror
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- STYLE PICKER -->
+<!-- =========TITLE AND SUBTITLE SIZES -->
+            <div class="col-md-12">
+              <form autocomplete="off" id="Sizes" method="POST" action="{{route('section1.update', $contenidosection1s[0]->id)}}">
+                @csrf
+                <label for="title_size" class="col-form-label">Tamaño del Titulo</label>
+                <div class="input-group col-md-6 mb-3">
+                  <input onchange="this.form.submit()" id="title_size" type="input" name="title_size" class="form-control @error('title_size') is-invalid @enderror"  value="{{ $contenidosection1s[0]->title_size }}">
+                  <div class="input-group-append">
+                    <span class="input-group-text" >px</span>
+                  </div>
+                    @error('title_size')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
                     @enderror
                 </div>
-              </div>
-            </form>
-          </div>
-          <!-- STYLE PICKER -->
+
+                <label for="subtitle_size" class="col-form-label">Tamaño del Sub-titulo</label>
+                <div class="input-group col-md-6">
+                  <input onchange="this.form.submit()" id="subtitle_size" type="input" name="subtitle_size" class="form-control @error('subtitle_size') is-invalid @enderror"  value="{{ $contenidosection1s[0]->subtitle_size }}">
+                  <div class="input-group-append">
+                    <span class="input-group-text">px</span>
+                  </div>
+                    @error('subtitle_size')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+              </form>
+            </div>
+
+
+          <!-- End carousel activator form -->
+
         </div>
         <!-- ICONOS LINK SECTION LIST -->
         <datalist id="sections">
@@ -559,6 +593,7 @@
                         </span>
                       @enderror
                   </div>
+
                   <div class="form-group col-md-12">
                     <label for="tagline" class="col-form-label">Sub-titulo</label>
                     <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror" value="{{ $contenidosection1s[2]->tagline }}">

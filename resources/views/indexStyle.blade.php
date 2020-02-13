@@ -1,6 +1,11 @@
 <style>
+.slider-caption .slider-caption-h2 {
+	font-size: {{$contenidosection1s[0]->title_size}}px;
+}
 
-
+.slider-caption .slider-caption-p {
+	font-size: {{$contenidosection1s[0]->subtitle_size}}px;
+}
 @foreach($contenidosection1s as $cont)
 
 .overlay{{$cont->id}} {
@@ -19,5 +24,6 @@
 
 
 }
+
 @endforeach
 </style>

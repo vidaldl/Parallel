@@ -9,8 +9,8 @@
 					<div class="container clearfix">
 
 						<div class="slider-caption slider-caption-center">
-							<h2 data-animate="fadeInUp">{{$contenidosection1s[0]->title}}</h2>
-							<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[0]->tagline !!}</p>
+							<h2 class="slider-caption-h2" data-animate="fadeInUp">{{$contenidosection1s[0]->title}}</h2>
+							<p class="slider-caption-p d-none d-sm-block" data-animate="fadeInUp" data-delay="200">{!! $contenidosection1s[0]->tagline !!}</p>
 							@if($contenidosection1s[0]->overlay <= 50)
                 <a href="{{$contenidosection1s[0]->link}}" class="button button-amber button-large d-none d-md-inline-block">
 									<span>{{$contenidosection1s[0]->button}}</span>

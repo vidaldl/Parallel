@@ -24,7 +24,9 @@ class CreateContenidoSection1sTable extends Migration
             $table->integer('display')->default('1')->nullable();
             $table->integer('carousel')->default('1')->nullable();
             $table->integer('style')->default('1')->nullable();
-            $table->timestamps();
+            $table->integer('title_size')->default('60')->nullable();
+            $table->integer('subtitle_size')->default('32')->nullable();
+
         });
     }
 

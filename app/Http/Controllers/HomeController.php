@@ -549,6 +549,7 @@ class HomeController extends Controller
       $button = $request->input('button');
       $link = $request->input('link');
       $overlay = $request->input('overlay');
+
       $logo = NULL;
       $request->validate([
           'overlay' => 'integer|between:1,100'
@@ -609,9 +610,24 @@ class HomeController extends Controller
           //redirect
           return redirect()->back();
 
-        }
-        else {
-        $data=array("title"=>$title,"overlay"=>$overlay,"tagline"=>$tagline,"button"=>$button, "link"=>$link);
+        } elseif ($request->has('title_size') || $request->has('subtitle_size')) {
+          $title_size = $request->input('title_size');
+          $subtitle_size = $request->input('subtitle_size');
+
+          $data = array("title_size"=>$title_size,"subtitle_size"=>$subtitle_size);
+
+          DB::table('contenido_section1s')->where('id', $id)->update($data);
+          session()->flash('success', 'La sección fue actualizada');
+          //redirect
+          return redirect()->back();
+        } else {
+        $data=array(
+        "title"=>$title,
+        "overlay"=>$overlay,
+        "tagline"=>$tagline,
+        "button"=>$button,
+        "link"=>$link
+      );
         DB::table('contenido_section1s')->where('id', $id)->update($data);
         session()->flash('success', 'La sección fue actualizada');
         //redirect

@@ -12,12 +12,12 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('contenido_section1s')->delete();
-        
+
         \DB::table('contenido_section1s')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'logo' => 'content/TqAo2VEZl709UevET6qB7rJNngEeFNPEkDcvizu1.png',
@@ -29,11 +29,9 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'display' => NULL,
                 'carousel' => 0,
                 'style' => 1,
-                'created_at' => '2019-06-26 00:01:15',
-                'updated_at' => '2019-06-26 00:01:15',
                 'overlay' => 65,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 3,
                 'logo' => 'content/KvYh7b5Yqs5ZXl19vd6oJViuk6vms3g7msZcHVR3.png',
@@ -45,11 +43,9 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'display' => 0,
                 'carousel' => 1,
                 'style' => 1,
-                'created_at' => '2019-07-09 15:00:55',
-                'updated_at' => '2019-07-09 15:00:55',
                 'overlay' => 65,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 4,
                 'logo' => 'content/12e7PK2GNPdPc8usFgbqcTgEhTJAiEwtH3eWCqrZ.png',
@@ -61,11 +57,9 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'display' => 0,
                 'carousel' => 1,
                 'style' => 1,
-                'created_at' => '2019-07-09 15:00:55',
-                'updated_at' => '2019-07-09 15:00:55',
                 'overlay' => 65,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 5,
                 'logo' => 'content/URJGZzHD7hf7t7jOnXg1o7IUISK6tV55AbPwms45.png',
@@ -77,12 +71,10 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'display' => 0,
                 'carousel' => 1,
                 'style' => 1,
-                'created_at' => '2019-07-09 15:00:55',
-                'updated_at' => '2019-07-09 15:00:55',
                 'overlay' => 65,
             ),
         ));
-        
-        
+
+
     }
 }

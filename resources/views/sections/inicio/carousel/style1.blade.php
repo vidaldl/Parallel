@@ -15,8 +15,8 @@
               @if($contenidosection1s[1]->display == 1)
               <div class="d-none d-md-block mb-2"><img class="img-fluid " src="{{'/storage/' . $contenidosection1s[1]->logo }}" style="height: 350px" alt=""></div>
               @endif
-              <h2 class="d-none d-block" data-animate="fadeInUp">{{$contenidosection1s[1]->title}}</h2>
-              <div class="d-none d-sm-block " data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[1]->tagline }}</div>
+              <h2 class="slider-caption-h2 d-none d-block" data-animate="fadeInUp">{{$contenidosection1s[1]->title}}</h2>
+              <p class="slider-caption-p d-none d-sm-block " data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[1]->tagline }}</p>
 
             </div>
           </div>
@@ -30,8 +30,8 @@
             </div>
             @endif
             <div class="slider-caption slider-caption-right">
-              <h2 data-animate="fadeInUp">{{$contenidosection1s[2]->title}}</h2>
-              <div class="d-none d-md-block" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[2]->tagline }}</div>
+              <h2 class="slider-caption-h2" data-animate="fadeInUp">{{$contenidosection1s[2]->title}}</h2>
+              <p class="slider-caption-p d-none d-md-block" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[2]->tagline }}</p>
             </div>
           </div>
         </div>
@@ -39,8 +39,8 @@
           <div class="overlay{{$contenidosection1s[3]->id}}"></div>
           <div class="container clearfix">
             <div class="slider-caption">
-              <h2 data-animate="fadeInUp">{{$contenidosection1s[3]->title}}</h2>
-              <div class="d-none d-md-block" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[3]->tagline }}</div>
+              <h2 class="slider-caption-h2" data-animate="fadeInUp">{{$contenidosection1s[3]->title}}</h2>
+              <p class="slider-caption-p d-none d-md-block" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[3]->tagline }}</p>
             </div>
             @if($contenidosection1s[3]->display == 1)
               <div class="slider-caption slider-caption-right d-none d-xl-block">
