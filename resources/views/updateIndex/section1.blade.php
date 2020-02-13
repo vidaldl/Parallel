@@ -76,7 +76,7 @@
 </div>
   <div class="row justify-content-center">
     <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block">
-      
+
     </div>
     <div class="card mt-3 col-md-8 mb-5">
       <div class="card-body">
@@ -943,8 +943,8 @@ $(document).ready(function() {
         $(buttonConfirm).click(function() {
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 1280,
-             height: 960
+             width: 3840,
+             height: 2160
            });
            // Turn the canvas into a Blob (file object without a name)
            canvas.toBlob(function(blob) {
@@ -1014,8 +1014,8 @@ $(document).ready(function() {
        $(buttonConfirm).click(function() {
          // Get the canvas with image data from Cropper.js
           var canvas = cropper.getCroppedCanvas({
-            width: 1280,
-            height: 720
+            width: 3840,
+            height: 2160
           });
           // Turn the canvas into a Blob (file object without a name)
           canvas.toBlob(function(blob) {

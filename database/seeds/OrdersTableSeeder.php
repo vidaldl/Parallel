@@ -13,9 +13,6 @@ class OrdersTableSeeder extends Seeder
     public function run()
     {
 
-
-
-
         \DB::table('orders')->insert(array (
 
             0 =>
