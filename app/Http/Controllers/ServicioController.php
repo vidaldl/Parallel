@@ -9,7 +9,7 @@ use DB;
 use App\Http\Requests\UpdateServicios;
 use App\Http\Requests\Servicios\CreateServiciosRequest;
 use App\Servicio;
-
+use App\ContenidoSection2;
 class ServicioController extends Controller
 {
     /**
@@ -19,7 +19,7 @@ class ServicioController extends Controller
      */
     public function index()
     {
-      return view('servicios.index')->with('servicios', Servicio::all());
+      return view('servicios.index')->with('servicios', Servicio::all())->with('contenido_section2s', ContenidoSection2::all());
     }
 
     /**
@@ -93,10 +93,7 @@ class ServicioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $icon = $request->input('icon');
-        $title = $request->input('title');
-        $contenido = $request->input('contenido');
-        $contenido_modal = $request->input('contenido_modal');
+
 
         if ($request->hasFile('image')) {
           $this->validate($request, [
@@ -111,7 +108,10 @@ class ServicioController extends Controller
         DB::table('servicios')->where('id', $id)->update($data);
       }else {
 
-
+        $icon = $request->input('icon');
+        $title = $request->input('title');
+        $contenido = $request->input('contenido');
+        $contenido_modal = $request->input('contenido_modal');
         $data = array('icon'=>$icon, 'title'=>$title, 'contenido'=>$contenido,  'contenido_modal'=>$contenido_modal);
         DB::table('servicios')->where('id', $id)->update($data);
 

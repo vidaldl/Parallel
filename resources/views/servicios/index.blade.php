@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+@section('css')
+  <link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
+  <style media="screen">
+    .tgl-sw-swipe + .btn-switch {
+      background: #e74a3b;
+    }
+  </style>
+@endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Servicios</h1>
@@ -10,7 +17,17 @@
 </div>
 @if($servicios->count() > 0)
 <div class="card">
-  <div class="card-body table-hover" >
+  <div class="card-header">
+    <div class="row">
+      <div class="ml-auto mr-5">
+        <div class="row">
+          <h5>Link Detalles:</h5>&nbsp;&nbsp;
+          <div id="display"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body table-hover">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead class="thead-dark">
@@ -77,5 +94,52 @@
   @endif
 
 </div>
+
+@section('script')
+<script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
+<script>
+$('#display').btnSwitch({
+  Theme:'Swipe',
+  OnText: "Si",
+  OffText: "No",
+  OnValue: '1',
+  OnCallback: function(val) {
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("section2.update", 1)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+    },
+  OffValue: '0',
+  OffCallback: function (val) {
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("section2.update", 1)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+  },
+  @if($contenido_section2s[0]->desc_link == 1)
+  ToggleState: true
+  @else
+  ToggleState: false
+  @endif
+});
+</script>
+@endsection
 
 @endsection

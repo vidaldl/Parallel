@@ -657,14 +657,22 @@ class HomeController extends Controller
     }
 
     public function section2Update(Request $request, $id) {
-      $title = $request->input('title');
-      $back_color = $request->input('back_color');
+      if ($request->has('val')) {
+        $desc_link = $request->input('val');
 
-      $data=array("title"=>$title, "back_color"=>$back_color);
-      DB::table('contenido_section2s')->update($data);
-      session()->flash('success', 'La sección fue actualizada');
-      //redirect
-      return redirect()->back();
+        $data = array('desc_link' => $desc_link);
+        DB::table('contenido_section2s')->where('id', $id)->update($data);
+      }else {
+        $title = $request->input('title');
+        $back_color = $request->input('back_color');
+
+        $data=array("title"=>$title, "back_color"=>$back_color);
+        DB::table('contenido_section2s')->update($data);
+        session()->flash('success', 'La sección fue actualizada');
+        //redirect
+        return redirect()->back();
+      }
+
     }
     public function section2Display(Request $request, $id) {
       $display = $request->input('servicios');

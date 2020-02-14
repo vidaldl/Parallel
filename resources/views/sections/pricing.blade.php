@@ -21,12 +21,17 @@
               <img src="{{'/storage/' . $price->image}}" alt="Featured image 1" class="card-img-top rounded-top">
             </div>
             <div class="card-body">
+              @if($price->price)
               <div class="justify-content-center p-0 center">
                 <h3 class="card-title mb-0">{{$price->title}}</h3>
               </div>
 
-              <div class="price-title pb-3">${{$price->price}}<small>{{$price->recurrence}}</small></div>
-
+                <div class="price-title pb-3">${{$price->price}}<small>{{$price->recurrence}}</small></div>
+              @else
+              <div class="justify-content-center p-0 center">
+                <h3 class="card-title mb-3">{{$price->title}}</h3>
+              </div>
+              @endif
               <ul class="list-group list-group-flush mb-4" style="min-height: 275px;">
                 @foreach($price->pricing_item->sortByDesc('id') as $item)
                   <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i>{{$item->item}}</li>

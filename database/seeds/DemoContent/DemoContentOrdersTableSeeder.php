@@ -12,12 +12,12 @@ class DemoContentOrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('orders')->delete();
-        
+
         \DB::table('orders')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'section' => 'servicios',
@@ -31,7 +31,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 1,
                 'edit_link' => 'editsection2/1',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'section' => 'infoslider1',
@@ -45,7 +45,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'editInfoSlider/1',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'section' => 'infoslider2',
@@ -59,7 +59,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'editInfoSlider2/1',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'section' => 'infoslider3',
@@ -73,7 +73,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'editInfoSlider3/1',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'section' => 'pricing',
@@ -87,7 +87,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 1,
                 'edit_link' => 'pricing',
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'section' => 'articulos',
@@ -101,7 +101,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 1,
                 'edit_link' => 'Test',
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'section' => 'info',
@@ -115,7 +115,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'editsection3/1',
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
                 'section' => 'contact',
@@ -129,7 +129,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 1,
                 'edit_link' => 'editsection5/1',
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 9,
                 'section' => 'links',
@@ -143,7 +143,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'editlink/1',
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 10,
                 'section' => 'portfolio-gallery',
@@ -155,9 +155,9 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'container_style' => 1,
                 'menu_name' => 'Galería',
                 'menu_display' => 1,
-                'edit_link' => 'portfolioGallerySectionUpdate/1',
+                'edit_link' => 'portfolioGallerySection/1',
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 12,
                 'section' => 'frase',
@@ -171,7 +171,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'frase/1',
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 13,
                 'section' => 'portfolio-programs',
@@ -185,7 +185,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'portfolioItems',
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 14,
                 'section' => 'catalog',
@@ -200,7 +200,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'edit_link' => 'catalog',
             ),
         ));
-        
-        
+
+
     }
 }

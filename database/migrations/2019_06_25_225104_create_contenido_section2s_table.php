@@ -18,7 +18,7 @@ class CreateContenidoSection2sTable extends Migration
             $table->string('title')->nullable();
             $table->integer('display')->default('1')->nullable();
             $table->string('back_color')->nullable()->default('#FFFFFF');
-            $table->timestamps();
+            $table->integer('desc_link')->default(1);
         });
     }
 
