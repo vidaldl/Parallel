@@ -71,6 +71,7 @@ Route::resource('catalog', 'CatalogController', ['except' => ['update']]);
 Route::post('/catalogUpdate/{id}', 'CatalogController@update')->name('catalog.update');
 Route::get('trashed-catalog', 'CatalogController@trashed')->name('trashed-catalog.index');
 Route::put('restore-catalog/{catalog}', 'CatalogController@restore')->name('restore-catalog');
+Route::post('/delSecImg/{id}', 'CatalogController@destroySecImg')->name('sec.img.destroy');
 
 Route::middleware(['auth'])->group(function () {
 
@@ -140,7 +141,7 @@ Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.upd
 //Section1
 Route::get('/editsection1/{id}', 'HomeController@section1Edit')->name('section1.edit');
 Route::post('/updatesection1/{id}', 'HomeController@section1Update')->name('section1.update');
-
+Route::post('/displaysection1/{id}', 'HomeController@section1Display')->name('section1.display');
 Route::post('/carouselsection1/{id}', 'HomeController@section1Carousel')->name('section1.carousel');
 Route::post('/style-pick/{id}', 'HomeController@sliderStyleUpdate')->name('sliderStyle.update');
 //Section2

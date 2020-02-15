@@ -12,7 +12,13 @@ class CatalogItem extends Model
 
   public function deleteImage() {
 
-    Storage::delete($this->image);
+    Storage::delete($this->img_primaria);
+
+  }
+
+  public function deleteSecImage() {
+
+    Storage::delete($this->img_secundaria);
 
   }
 }

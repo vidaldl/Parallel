@@ -144,10 +144,17 @@
                 <label for="image" class="col-form-label">Imagen Primaria</label><br>
                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage">Principal &nbsp;&nbsp;<i class="fas fa-image"></i></a>
               </div>
+
               <div class="form-group">
                 <label for="image" class="col-form-label">Imagen Secundaria(opcional)</label><br>
                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage2">Secundaria &nbsp;&nbsp;<i class="fas fa-image"></i></a>
               </div>
+
+              <div class="input-group mb-3">
+              <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage2">Secundaria &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+              <button id="clearImage" class="btn btn-danger ml-4" type="button"><i class="fas fa-trash"></i></button>
+
+            </div>
 
 <!-- OTRAS IMAGENES -->
               <!-- <div class="form-group">
@@ -273,6 +280,22 @@
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
 <script>
+$('#clearImage').on('click', function() {
+
+  $.ajax({
+         type:'POST',
+         dataType: 'json',
+         url:'{{route("sec.img.destroy", $catalog_items->id)}}',
+         data:{"_token": "{{ csrf_token() }}",
+         val:val
+        },
+         success:function(data){
+           alert('Imagen Eliminada');
+         }
+      });
+});
+
+
 
 $('#destacado').btnSwitch({
 Theme:'Swipe',

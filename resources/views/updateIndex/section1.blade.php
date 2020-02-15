@@ -904,201 +904,201 @@
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script>
 
-$(document).ready(function() {
-  @foreach($contenidosection1s as $section)
-    @if($section->display == 0)
-      $('#type_image{{$section->id}}').hide();
-    @endif
-
-    $('#media_type{{$section->id}}').btnSwitch({
-    Theme:'Swipe',
-    OnText: "Si",
-    OffText: "No",
-    OnValue: '1',
-    OnCallback: function(val) {
-      $('#type_image{{$section->id}}').show();
-
-      $.ajax({
-             type:'POST',
-             dataType: 'json',
-             url:'/displaysection1/{{$section->id}}',
-             data:{"_token": "{{ csrf_token() }}",
-             val:val
-            },
-             success:function(data){
-                alert(data.success);
-             }
-          });
-      },
-    OffValue: '0',
-    OffCallback: function (val) {
-      $('#type_image{{$section->id}}').hide();
-
-      $.ajax({
-             type:'POST',
-             dataType: 'json',
-             url:'/displaysection1/{{$section->id}}',
-             data:{"_token": "{{ csrf_token() }}",
-             val:val
-            },
-             success:function(data){
-                alert(data.success);
-             }
-          });
-    },
-      @if($section->display == 1)
-        ToggleState: true
-      @else
-        ToggleState: false
+  $(document).ready(function() {
+    @foreach($contenidosection1s as $section)
+      @if($section->display == 0)
+        $('#type_image{{$section->id}}').hide();
       @endif
-    });
 
-  @endforeach
-});
+      $('#media_type{{$section->id}}').btnSwitch({
+      Theme:'Swipe',
+      OnText: "Si",
+      OffText: "No",
+      OnValue: '1',
+      OnCallback: function(val) {
+        $('#type_image{{$section->id}}').show();
+
+        $.ajax({
+               type:'POST',
+               dataType: 'json',
+               url:'/displaysection1/{{$section->id}}',
+               data:{"_token": "{{ csrf_token() }}",
+               val:val
+              },
+               success:function(data){
+                  alert(data.success);
+               }
+            });
+        },
+      OffValue: '0',
+      OffCallback: function (val) {
+        $('#type_image{{$section->id}}').hide();
+
+        $.ajax({
+               type:'POST',
+               dataType: 'json',
+               url:'/displaysection1/{{$section->id}}',
+               data:{"_token": "{{ csrf_token() }}",
+               val:val
+              },
+               success:function(data){
+                  alert(data.success);
+               }
+            });
+      },
+        @if($section->display == 1)
+          ToggleState: true
+        @else
+          ToggleState: false
+        @endif
+      });
+
+    @endforeach
+  });
 
 </script>
 <!-- /EDITOR -->
 
 <script>
-@foreach($contenidosection1s as $section)
-  Dropzone.options.logo{{$section->id}} = {
-     paramName: "logo",
-     addRemoveLinks: true,
-     transformFile: function(file, done) {
-        var myDropZone = this;
-        var editor = $('.editador{{ $section->id }}');
-        var logoThumb = $('.logoThumb{{ $section->id }}');
-        $(logoThumb).addClass('d-none');
-        $(editor).removeClass('d-none');
-        $(editor).addClass('d-block');
-        // Create confirm button at the top left of the viewport
-        var buttonConfirm = $('.buttonConfirm{{ $section->id }}');
-        $(buttonConfirm).removeClass('d-none');
-        $(buttonConfirm).addClass('d-block');
-        $(buttonConfirm).click(function() {
-          // Get the canvas with image data from Cropper.js
-           var canvas = cropper.getCroppedCanvas({
-             width: 3840,
-             height: 2160
-           });
-           // Turn the canvas into a Blob (file object without a name)
-           canvas.toBlob(function(blob) {
-             // Create a new Dropzone file thumbnail
-              myDropZone.createThumbnail(
-                blob,
-                myDropZone.options.thumbnailWidth,
-                myDropZone.options.thumbnailHeight,
-                myDropZone.options.thumbnailMethod,
-                false,
-                function(dataURL) {
-
-                  // Update the Dropzone file thumbnail
-                  myDropZone.emit('thumbnail', file, dataURL);
-                  // Return the file to Dropzone
-                  done(blob);
-              });
-           });
-          // Remove the editor from the view
-          $(buttonConfirm).removeClass('d-block');
-          $(buttonConfirm).addClass('d-none');
-
-
-        });
-
-        // Create an image node for Cropper.js
-       var image = new Image();
-       image.src = URL.createObjectURL(file);
-       // editor.appendChild(image);
-       $(image).appendTo(editor)
-       // Create Cropper.js
-       var cropper = new Cropper(image, { aspectRatio: 4/3 });
-
-
-
-     },
-     init: function () {
-        this.on("complete", function (file) {
-          if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-
-            setTimeout(
-              function()
-              {
-                location.reload();
-              }, 1500);
-          }
-        });
-      }
-    };
-
-  Dropzone.options.background{{ $section->id }} = {
-     paramName: "background",
-     addRemoveLinks: true,
-     transformFile: function(file, done) {
-       // Create Dropzone reference for use in confirm button click handler
-       var myDropZone = this;
-
-       var editor = $('.editadorBack{{ $section->id }}');
-       var backThumb = $('.backThumb{{ $section->id }}');
-       $(backThumb).addClass('d-none');
-       $(editor).removeClass('d-none');
-       $(editor).addClass('d-block');
-
-       var buttonConfirm = $('.buttonConfirmBack{{ $section->id }}');
-       $(buttonConfirm).removeClass('d-none');
-       $(buttonConfirm).addClass('d-block');
-       $(buttonConfirm).click(function() {
-         // Get the canvas with image data from Cropper.js
-          var canvas = cropper.getCroppedCanvas({
-            width: 3840,
-            height: 2160
-          });
-          // Turn the canvas into a Blob (file object without a name)
-          canvas.toBlob(function(blob) {
-            // Create a new Dropzone file thumbnail
-             myDropZone.createThumbnail(
-               blob,
-               myDropZone.options.thumbnailWidth,
-               myDropZone.options.thumbnailHeight,
-               myDropZone.options.thumbnailMethod,
-               false,
-               function(dataURL) {
-
-                 // Update the Dropzone file thumbnail
-                 myDropZone.emit('thumbnail', file, dataURL);
-                 // Return the file to Dropzone
-                 done(blob);
+  @foreach($contenidosection1s as $section)
+    Dropzone.options.logo{{$section->id}} = {
+       paramName: "logo",
+       addRemoveLinks: true,
+       transformFile: function(file, done) {
+          var myDropZone = this;
+          var editor = $('.editador{{ $section->id }}');
+          var logoThumb = $('.logoThumb{{ $section->id }}');
+          $(logoThumb).addClass('d-none');
+          $(editor).removeClass('d-none');
+          $(editor).addClass('d-block');
+          // Create confirm button at the top left of the viewport
+          var buttonConfirm = $('.buttonConfirm{{ $section->id }}');
+          $(buttonConfirm).removeClass('d-none');
+          $(buttonConfirm).addClass('d-block');
+          $(buttonConfirm).click(function() {
+            // Get the canvas with image data from Cropper.js
+             var canvas = cropper.getCroppedCanvas({
+               width: 3840,
+               height: 2160
              });
+             // Turn the canvas into a Blob (file object without a name)
+             canvas.toBlob(function(blob) {
+               // Create a new Dropzone file thumbnail
+                myDropZone.createThumbnail(
+                  blob,
+                  myDropZone.options.thumbnailWidth,
+                  myDropZone.options.thumbnailHeight,
+                  myDropZone.options.thumbnailMethod,
+                  false,
+                  function(dataURL) {
+
+                    // Update the Dropzone file thumbnail
+                    myDropZone.emit('thumbnail', file, dataURL);
+                    // Return the file to Dropzone
+                    done(blob);
+                });
+             });
+            // Remove the editor from the view
+            $(buttonConfirm).removeClass('d-block');
+            $(buttonConfirm).addClass('d-none');
+
+
           });
 
-         // Remove the editor from the view
-         $(buttonConfirm).removeClass('d-block');
-         $(buttonConfirm).addClass('d-none');
-       });
-       // Create an image node for Cropper.js
-      var image = new Image();
-      image.src = URL.createObjectURL(file);
-      // editor.appendChild(image);
-      $(image).appendTo(editor)
-      // Create Cropper.js
-      var cropper = new Cropper(image, { aspectRatio: 16/9 });
+          // Create an image node for Cropper.js
+         var image = new Image();
+         image.src = URL.createObjectURL(file);
+         // editor.appendChild(image);
+         $(image).appendTo(editor)
+         // Create Cropper.js
+         var cropper = new Cropper(image, { aspectRatio: 4/3 });
 
 
-    },
 
-    init: function () {
-       this.on("complete", function (file) {
-         if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+       },
+       init: function () {
+          this.on("complete", function (file) {
+            if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
 
-           setTimeout(
-             function()
-             {
-               location.reload();
-             }, 1500);
-         }
-       });
-     }
-  };
-@endforeach
+              setTimeout(
+                function()
+                {
+                  location.reload();
+                }, 1500);
+            }
+          });
+        }
+      };
+
+    Dropzone.options.background{{ $section->id }} = {
+       paramName: "background",
+       addRemoveLinks: true,
+       transformFile: function(file, done) {
+         // Create Dropzone reference for use in confirm button click handler
+         var myDropZone = this;
+
+         var editor = $('.editadorBack{{ $section->id }}');
+         var backThumb = $('.backThumb{{ $section->id }}');
+         $(backThumb).addClass('d-none');
+         $(editor).removeClass('d-none');
+         $(editor).addClass('d-block');
+
+         var buttonConfirm = $('.buttonConfirmBack{{ $section->id }}');
+         $(buttonConfirm).removeClass('d-none');
+         $(buttonConfirm).addClass('d-block');
+         $(buttonConfirm).click(function() {
+           // Get the canvas with image data from Cropper.js
+            var canvas = cropper.getCroppedCanvas({
+              width: 3840,
+              height: 2160
+            });
+            // Turn the canvas into a Blob (file object without a name)
+            canvas.toBlob(function(blob) {
+              // Create a new Dropzone file thumbnail
+               myDropZone.createThumbnail(
+                 blob,
+                 myDropZone.options.thumbnailWidth,
+                 myDropZone.options.thumbnailHeight,
+                 myDropZone.options.thumbnailMethod,
+                 false,
+                 function(dataURL) {
+
+                   // Update the Dropzone file thumbnail
+                   myDropZone.emit('thumbnail', file, dataURL);
+                   // Return the file to Dropzone
+                   done(blob);
+               });
+            });
+
+           // Remove the editor from the view
+           $(buttonConfirm).removeClass('d-block');
+           $(buttonConfirm).addClass('d-none');
+         });
+         // Create an image node for Cropper.js
+        var image = new Image();
+        image.src = URL.createObjectURL(file);
+        // editor.appendChild(image);
+        $(image).appendTo(editor)
+        // Create Cropper.js
+        var cropper = new Cropper(image, { aspectRatio: 16/9 });
+
+
+      },
+
+      init: function () {
+         this.on("complete", function (file) {
+           if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+             setTimeout(
+               function()
+               {
+                 location.reload();
+               }, 1500);
+           }
+         });
+       }
+    };
+  @endforeach
 </script>
 <script src="{{ asset('lib/tabslet/jquery.tabslet.js') }}"></script>
 <script>

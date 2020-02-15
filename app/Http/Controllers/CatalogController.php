@@ -175,12 +175,26 @@ class CatalogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function destroySecImg($id) {
+      $latest = DB::table('catalog_items')->where('id', $id)->first();
+      $img_secundaria = '';
+
+      $data = array('img_secundaria'=>$img_secundaria);
+
+      DB::table('catalog_items')->where('id', $id)->update('data');
+      Storage::delete($latest->img_secundaria);
+    }
+
+
+
     public function destroy($id)
     {
       $catalog_items = CatalogItem::withTrashed()->where('id', $id)->firstOrFail();
 
       if ($catalog_items->trashed()) {
         $catalog_items->deleteImage();
+        $catalog_items->deleteSecImage();
         $catalog_items->forceDelete();
         session()->flash('success', 'Artículo eliminado permanentemente');
         return redirect(route('trashed-catalog.index'));
