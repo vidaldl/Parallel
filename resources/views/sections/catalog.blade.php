@@ -1,5 +1,5 @@
 <div class="container clearfix" id="catalog">
-	<div class="section notopmargin nobottommargin nobottomborder" style="background-color: #fff">
+	<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
 		<div class="container clearfix">
 			<div class="heading-block center nomargin">
 				<h3>{{$catalog_sections[0]->title}}</h3>
@@ -11,7 +11,7 @@
 
 	  <!-- <h4>Related Products</h4> -->
 
-	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="true" data-autoplay="10000" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
+	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-autoplay="10000" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
 			@foreach($catalog_items as $item)
 	    	<div class="oc-item">
 	      <div class="product iproduct clearfix">

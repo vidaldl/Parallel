@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Catalog\CatalogSection;
 use App\Catalog\CatalogItem;
-
+use App\Order;
 use DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -39,7 +39,8 @@ class CatalogController extends Controller
     {
       return view('catalog.index')
       ->with('catalog_items', CatalogItem::all())
-      ->with('catalog_sections', CatalogSection::all());
+      ->with('catalog_sections', CatalogSection::all())
+      ->with('orders', Order::orderBy('order')->get());
     }
 
     /**

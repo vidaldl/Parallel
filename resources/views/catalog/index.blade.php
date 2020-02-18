@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Enlaces Destacados</h1>
+  <h1 class="h3 mb-0 text-gray-800">Catalogo de Productos</h1>
   @if (\Request::is('trashed-catalog'))
     <a href="{{ route('catalog.index')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Artículos<span></a>
 </div>
@@ -10,6 +10,70 @@
   @else
     <a href="{{ route('catalog.create')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-plus fa-sm "></i></span><span class="text"> &nbsp;Nuevo Artículo<span></a>
 
+</div>
+<div class="col-md-12">
+  <!-- LINE/SPACE -->
+  @foreach($orders as $item)
+    @if($item->id == 14)
+  <form method="POST" action="{{route('line.update', 14)}}">
+    @csrf
+    <div class="line-space card col-md-8 offset-md-2 mt-4 mb-4">
+      <a href="#" style="text-decoration: none">
+        <div class="card-header py-3">
+        <div class="row">
+          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Espacio entre:</h6></span>
+              @if($item->line == 0)
+                <select onchange="this.form.submit()" name="line-display-hidden" class="col-md-6  float-right">
+                  <option selected>Nada</option>
+                  <option value = "1">Línea</option>
+                  <option value = "2">Margen</option>
+                </select>
+              @endif
+        </div>
+      </div>
+      </a>
+      @if($item->line != 0)
+      <div id="collapse3">
+        <div class="card-body row">
+        <div class="col-md-6 offset-md-3">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="line-display">Espacio:</label>
+              <select name="line-display" onchange="this.form.submit()">
+                <option value="0">No Mostrar</option>
+              @if($item->line == 1)
+                <option value="1" selected>Línea</option>
+                <option value="2">Margen</option>
+                @elseif($item->line == 2)
+                <option value="1">Línea</option>
+                <option value="2" selected>Margen</option>
+                @endif
+              </select>
+            </div>
+            <div class="col-md-6 {{$item->line == 2 ? 'd-none' : ''}}">
+
+                <label for="line-display">Estilo de Línea:</label>
+                <select name="line-style" onchange="this.form.submit()">
+                  @if($item->line_style == 1)
+                    <option value="1" selected>Parcial</option>
+                    <option value="2">Completo</option>
+                  @elseif($item->line_style == 2)
+                    <option value="1">Parcial</option>
+                    <option value="2" selected>Completo</option>
+                  @endif
+                </select>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      @endif
+    </div>
+  </form>
+    @endif
+  @endforeach
+  <!-- END LINE/SPACE -->
 </div>
 <div class="card mb-5">
   <form method="POST" class="container" action="{{route('catalog.section.update', 1)}}" enctype="multipart/form-data">

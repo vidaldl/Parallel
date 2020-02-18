@@ -1,6 +1,6 @@
 
 <div id="servicios" class="clear"></div>
-<div class="section notopmargin nobottommargin nobottomborder" style="background-color: #fff">
+<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
 	<div class="container clearfix">
 		<div class="heading-block center nomargin">
 			<h3>{{$contenidosection2s[0]->title}}</h3>
@@ -8,7 +8,7 @@
 	</div>
 </div>
 
-<div class="container clearfix bottommargin">
+<div class="container clearfix">
   <div class="row justify-content-center">
 	  @foreach($servicios as $servicio)
     <div class="col-md-4 bottommargin-lg">

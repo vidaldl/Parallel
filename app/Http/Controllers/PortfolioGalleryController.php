@@ -7,6 +7,7 @@ use App\PortfolioGallery\GalleryImages;
 use App\PortfolioGallery\GalleryItem;
 use App\PortfolioGallery\GallerySection;
 use App\Style;
+use App\Order;
 
 use DB;
 use Illuminate\Support\Facades\Storage;
@@ -28,7 +29,7 @@ class PortfolioGalleryController extends Controller
     }
 
     public function editSection($id) {
-      return view('updateIndex.portfolioGallery')->with('gallery_sections', GallerySection::all());
+      return view('updateIndex.portfolioGallery')->with('orders', Order::orderBy('order')->get())->with('gallery_sections', GallerySection::all());
     }
 
     public function updateSection(Request $request, $id) {

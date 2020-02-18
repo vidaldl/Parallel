@@ -111,6 +111,7 @@
                       <select onchange="this.form.submit()" name="style" class="col-md-4">
                         <option value="1" {{ $contenidosection1s[0]->style == '1' ? 'selected' : '' }}>Pantalla Completa</option>
                         <option value="2" {{ $contenidosection1s[0]->style == '2' ? 'selected' : '' }}>Pantalla Media</option>
+                        <option value="3" {{ $contenidosection1s[0]->style == '3' ? 'selected' : '' }}>1/3 de Pantalla</option>
                       </select>
                       @error('title')
                         <span class="invalid-feedback" role="alert">
@@ -208,6 +209,7 @@
                     </span>
                   @enderror
               </div>
+              @if($contenidosection1s[0]->style != 3)
               <div class="form-group">
                 <label for="tagline" class="col-form-label">Sub-titulo</label>
                 <input id="tagline" type="input" name="tagline" class="form-control @error('tagline') is-invalid @enderror" value="{{ $contenidosection1s[0]->tagline }}">
@@ -217,7 +219,7 @@
                     </span>
                   @enderror
               </div>
-
+              @endif
               <!-- MULTIMEDIA -->
               <div class="form-group">
                 <label for="media_type{{$contenidosection1s[0]->id}}">Logo:</label>
@@ -903,7 +905,6 @@
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script>
-
   $(document).ready(function() {
     @foreach($contenidosection1s as $section)
       @if($section->display == 0)
@@ -955,7 +956,6 @@
 
     @endforeach
   });
-
 </script>
 <!-- /EDITOR -->
 

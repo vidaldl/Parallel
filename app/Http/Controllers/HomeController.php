@@ -106,7 +106,7 @@ class HomeController extends Controller
     }
 
     public function fraseEdit() {
-      return view('updateIndex/frase')->with('frases', Frase::all());
+      return view('updateIndex/frase')->with('orders', Order::orderBy('order')->get())->with('frases', Frase::all());
     }
 
     public function fraseUpdate(Request $request, $id) {
@@ -118,7 +118,7 @@ class HomeController extends Controller
 
     /*Links -------------------------------------------------------------------------------->*/
     public function linkEdit() {
-      return view('updateIndex/linkSection')->with('links', Links::all())->with('link_sections', LinkSection::all());
+      return view('updateIndex/linkSection')->with('orders', Order::orderBy('order')->get())->with('links', Links::all())->with('link_sections', LinkSection::all());
     }
 
     public function linkUpdate(Request $request, $id) {
@@ -199,7 +199,8 @@ class HomeController extends Controller
     public function infoSliderEdit ($id) {
       return view('updateIndex/infoslider')
       ->with('info_slider_images', InfoSliderImage::all())
-      ->with('info_slider_texts', InfoSliderText::all());
+      ->with('info_slider_texts', InfoSliderText::all())
+      ->with('orders', Order::orderBy('order')->get());
     }
 
     public function infoSliderUpdate(Request $request, $id) {
@@ -307,7 +308,8 @@ class HomeController extends Controller
     public function infoSlider2Edit ($id) {
       return view('updateIndex/infoslider2')
       ->with('info_slider_image2s', InfoSliderImage2::all())
-      ->with('info_slider_text2s', InfoSliderText2::all());
+      ->with('info_slider_text2s', InfoSliderText2::all())
+      ->with('orders', Order::orderBy('order')->get());
     }
 
     public function infoSlider2Update(Request $request, $id) {
@@ -415,7 +417,8 @@ class HomeController extends Controller
     public function infoSlider3Edit ($id) {
       return view('updateIndex/infoslider3')
       ->with('info_slider_image3s', InfoSliderImage3::all())
-      ->with('info_slider_text3s', InfoSliderText3::all());
+      ->with('info_slider_text3s', InfoSliderText3::all())
+      ->with('orders', Order::orderBy('order')->get());
     }
 
     public function infoSlider3Update(Request $request, $id) {
@@ -539,7 +542,7 @@ class HomeController extends Controller
       return redirect()->back();
     }
     public function section1Edit($id) {
-      return view('updateIndex/section1')->with('contenidosection1s', ContenidoSection1::all());
+      return view('updateIndex/section1')->with('orders', Order::orderBy('order')->get())->with('contenidosection1s', ContenidoSection1::all());
     }
 
     public function section1Update(Request $request, $id) {
@@ -653,7 +656,7 @@ class HomeController extends Controller
     }
     /*SECTION 2 -------------------------------------------------------------------------------->*/
     public function section2Edit($id) {
-      return view('updateIndex/section2')->with('contenidosection2s', ContenidoSection2::all());
+      return view('updateIndex/section2')->with('orders', Order::orderBy('order')->get())->with('contenidosection2s', ContenidoSection2::all());
     }
 
     public function section2Update(Request $request, $id) {
@@ -686,7 +689,7 @@ class HomeController extends Controller
 
     /*SECTION 3 -------------------------------------------------------------------------------->*/
     public function section3Edit($id) {
-      return view('updateIndex/section3')->with('contenidosection3s', ContenidoSection3::all());
+      return view('updateIndex/section3')->with('orders', Order::orderBy('order')->get())->with('contenidosection3s', ContenidoSection3::all());
     }
 
     public function section3Update(Request $request, $id) {
@@ -713,7 +716,7 @@ class HomeController extends Controller
 
     /*SECTION 4 -------------------------------------------------------------------------------->*/
     public function section4Edit($id) {
-      return view('updateIndex/section4')->with('contenidosection4s', ContenidoSection4::all());
+      return view('updateIndex/section4')->with('orders', Order::orderBy('order')->get())->with('contenidosection4s', ContenidoSection4::all());
     }
     public function section4Update(Request $request, $id) {
       $title = $request->input('title');
@@ -741,7 +744,7 @@ class HomeController extends Controller
 
     /*SECTION 5 -------------------------------------------------------------------------------->*/
     public function section5Edit($id) {
-      return view('updateIndex/section5')->with('contenidosection5s', ContenidoSection5::all());
+      return view('updateIndex/section5')->with('orders', Order::orderBy('order')->get())->with('contenidosection5s', ContenidoSection5::all());
     }
 
     public function section5Update(Request $request, $id) {
@@ -771,7 +774,7 @@ class HomeController extends Controller
 
     /*SECTION Footer -------------------------------------------------------------------------------->*/
     public function sectionFooterEdit($id) {
-      return view('updateIndex/sectionFooter')->with('contenidosectionfooters', ContenidoSectionFooter::all());
+      return view('updateIndex/sectionFooter')->with('orders', Order::orderBy('order')->get())->with('contenidosectionfooters', ContenidoSectionFooter::all());
     }
 
     public function sectionFooterUpdate(Request $request, $id) {

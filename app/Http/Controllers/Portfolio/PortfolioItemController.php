@@ -44,7 +44,7 @@ class PortfolioItemController extends Controller
      */
     public function index()
     {
-      return view('portfolio.items.index')->with('portfolioItems', PortfolioItem::all())->with('portfolioCategories', PortfolioCategory::all());
+      return view('portfolio.items.index')->with('orders', Order::orderBy('order')->get())->with('portfolioItems', PortfolioItem::all())->with('portfolioCategories', PortfolioCategory::all());
     }
 
     /**

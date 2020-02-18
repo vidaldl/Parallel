@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('lib/realCSS/specificCSS/specific.css') }}" type="text/css" />
 @endpush
 
-<div id="pricing" class="section" style="padding: 80px 0">
+<div id="pricing" class="">
   <div class="container">
     <div class="heading-block nobottomborder mb-0">
       <div class="before-heading">{{$pricing_sections[0]->subtitle}}</div>

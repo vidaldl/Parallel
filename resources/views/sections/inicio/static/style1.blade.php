@@ -11,18 +11,19 @@
           <div class="container clearfix">
 
             <div class="slider-caption slider-caption-center dark">
-
+              @if($contenidosection1s[0]->display == 1)
                 <div class="d-none d-md-block mb-5"><img class="img-fluid " src="{{'/storage/' . $contenidosection1s[0]->logo }}" style="height: 300px" alt=""></div>
+              @endif
                 <h2 class="slider-caption-h2 mb-4" data-animate="fadeInUp">{{$contenidosection1s[0]->title}}</h2>
                 <div class="slider-caption-p d-none d-sm-block mb-4" data-animate="fadeInUp" data-delay="200">{{ $contenidosection1s[0]->tagline }}</div>
 
               @if($contenidosection1s[0]->button)
                 @if($contenidosection1s[0]->overlay <= 50)
-                  <a href="{{$contenidosection1s[0]->link}}" class="button button-amber button-large d-none d-md-inline-block">
+                  <a href="{{$contenidosection1s[0]->link}}" class="button button-green button-large d-none d-md-inline-block">
                     <span>{{$contenidosection1s[0]->button}}</span>
                   </a>
                 @elseif($contenidosection1s[0]->overlay > 50)
-                  <a href="{{$contenidosection1s[0]->link}}" style="color: #fff;" class="button button-rounded button-light button-green button-large button-border d-none d-md-inline-block">
+                  <a href="{{$contenidosection1s[0]->link}}" style="color: #fff;" class="button button-green button-rounded button-light  button-large button-border d-none d-md-inline-block">
                     <span>{{$contenidosection1s[0]->button}}</span>
                   </a>
                 @endif

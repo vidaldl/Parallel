@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="{{asset('lib/tooltipster/css/tooltipster.bundle.css')}}" type="text/css" />
   <link rel="stylesheet" href="{{asset('lib/tooltipster/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css')}}" type="text/css" />
 @endpush
-<div id="portfolio-gallery" class="section notopmargin noborder nobottommargin" >
+<div id="portfolio-gallery" style="margin-bottom: 60px; padding-bottom: 60px;" class="notopmargin noborder nobottommargin" >
 
   <div class="container clearfix">
 
@@ -17,7 +17,7 @@
 
 <!-- Portfolio Items
 ============================================= -->
-<div class="container-fluid clearfix bottommargin-lg">
+<div class="container-fluid clearfix">
   <div class="portfolio row justify-content-center portfolio-nomargin portfolio-notitle portfolio-full clearfix">
     @foreach($gallery_items as $item)
 

@@ -21,8 +21,8 @@ class DemoContentStylesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'primary_color' => NULL,
-                'button_primary' => NULL,
-                'button_secondary' => NULL,
+                'button_primary' => '#00f2f4',
+                'button_secondary' => '#d09029',
                 'page_title' => 'Parallel By Siscop',
                 'custom_icon_1' => NULL,
                 'custom_link_text_1' => 'Registro',

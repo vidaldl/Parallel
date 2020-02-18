@@ -87,7 +87,7 @@
     <!-- <div class="form-group col-md-4">
       <label for="primary_color">Color Principal</label><br>
       <input onchange="this.form.submit()" class="form-control" name="primary_color" type="text" id="primary_color" value="{{ $styles[0]->primary_color }}">
-    </div>
+    </div> -->
     <div class="form-group col-md-4">
       <label for="button_primary">Botón Desactivado</label><br>
       <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $styles[0]->button_primary }}">
@@ -95,7 +95,7 @@
     <div class="form-group col-md-4">
       <label for="button_secondary">Botón Activado</label><br>
       <input onchange="this.form.submit()" class="form-control" name="button_secondary" type="text" id="button_secondary" value="{{ $styles[0]->button_secondary }}">
-    </div> -->
+    </div>
   </div>
 
 

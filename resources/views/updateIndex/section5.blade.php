@@ -11,6 +11,68 @@
 </div>
   <div class="row justify-content-center">
     <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#contact"  width="100%" height="450"></iframe></div>
+    <div class="col-md-12">
+    @foreach($orders as $item)
+      @if($item->id == 8)
+        <form method="POST" action="{{route('line.update', 8)}}">
+          @csrf
+          <div class="line-space card col-md-8 offset-md-2 mt-4 mb-4">
+            <a href="#" style="text-decoration: none">
+              <div class="card-header py-3">
+              <div class="row">
+                <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Espacio entre:</h6></span>
+                    @if($item->line == 0)
+                      <select onchange="this.form.submit()" name="line-display-hidden" class="col-md-6  float-right">
+                        <option selected>Nada</option>
+                        <option value = "1">Línea</option>
+                        <option value = "2">Margen</option>
+                      </select>
+                    @endif
+              </div>
+            </div>
+            </a>
+            @if($item->line != 0)
+            <div id="collapse8">
+              <div class="card-body row">
+              <div class="col-md-6 offset-md-3">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="line-display">Espacio:</label>
+                    <select name="line-display" onchange="this.form.submit()">
+                      <option value="0">No Mostrar</option>
+                    @if($item->line == 1)
+                      <option value="1" selected>Línea</option>
+                      <option value="2">Margen</option>
+                    @elseif($item->line == 2)
+                    <option value="1">Línea</option>
+                    <option value="2" selected>Margen</option>
+                    @endif
+                    </select>
+                  </div>
+                  <div class="col-md-6 {{$item->line == 2 ? 'd-none' : ''}}">
+
+                      <label for="line-display">Estilo de Línea:</label>
+                      <select name="line-style" onchange="this.form.submit()">
+                        @if($item->line_style == 1)
+                          <option value="1" selected>Parcial</option>
+                          <option value="2">Completo</option>
+                        @elseif($item->line_style == 2)
+                          <option value="1">Parcial</option>
+                          <option value="2" selected>Completo</option>
+                        @endif
+                      </select>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            @endif
+          </div>
+        </form>
+      @endif
+    @endforeach
+    </div>
     <div class="card mt-3 col-md-8 mb-5">
         <div class="card-body">
 
@@ -56,10 +118,10 @@
                     </span>
                   @enderror
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="back_color">Color de Fondo</label><br>
                 <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $contenidosection5s[0]->back_color }}">
-              </div>
+              </div> -->
               <div class="form-group">
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
@@ -82,11 +144,6 @@ $('#number').trumbowyg({
   ]
 });
 
-
-  $('#back_color').spectrum({
-    preferredFormat: "hex",
-   showInput: true,
-  });
 </script>
 @endsection
 @section('css')

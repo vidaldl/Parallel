@@ -150,11 +150,11 @@
                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage2">Secundaria &nbsp;&nbsp;<i class="fas fa-image"></i></a>
               </div>
 
-              <div class="input-group mb-3">
+              <!-- <div class="input-group mb-3">
               <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage2">Secundaria &nbsp;&nbsp;<i class="fas fa-image"></i></a>
               <button id="clearImage" class="btn btn-danger ml-4" type="button"><i class="fas fa-trash"></i></button>
 
-            </div>
+              </div> -->
 
 <!-- OTRAS IMAGENES -->
               <!-- <div class="form-group">

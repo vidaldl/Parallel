@@ -2,7 +2,7 @@
 
 @endsection
 <div id="infoslider2" class="container clearfix">
-<div id="section-nextgen" class="page-section bottommargin-lg">
+<div id="section-nextgen" class="page-section">
 	<div class="row clearfix">
     <div class="col-lg-5">
       <div class="emphasis-title bottommargin-sm">

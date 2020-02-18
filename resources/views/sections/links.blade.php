@@ -15,7 +15,7 @@
     </div>
   </div>
 </section> -->
-<section class="bottommargin topmargin" id="links">
+<section class="bottommargin" id="links">
 <h4 class="center">{{$link_sections[0]->title}}</h4>
   <div class="container clearfix">
     <ul class="clients-grid nobottommargin clearfix row justify-content-center">

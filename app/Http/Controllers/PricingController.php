@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pricing;
 use App\PricingItem;
 use App\PricingSection;
+use App\Order;
 use DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -38,7 +39,8 @@ class PricingController extends Controller
     {
       return view('updateIndex/pricing')
       ->with('pricing_sections', PricingSection::all())
-      ->with('pricings', Pricing::all());
+      ->with('pricings', Pricing::all())
+      ->with('orders', Order::orderBy('order')->get());
     }
 
     public function sectionUpdate(Request $request, $id) {

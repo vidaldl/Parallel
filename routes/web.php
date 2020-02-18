@@ -73,6 +73,23 @@ Route::get('trashed-catalog', 'CatalogController@trashed')->name('trashed-catalo
 Route::put('restore-catalog/{catalog}', 'CatalogController@restore')->name('restore-catalog');
 Route::post('/delSecImg/{id}', 'CatalogController@destroySecImg')->name('sec.img.destroy');
 
+//Catalog 2
+
+Route::post('/catalogSection2/{id}', 'CatalogController2@sectionUpdate')->name('catalog2.section.update');
+Route::resource('catalog2', 'CatalogController2', ['except' => ['update']]);
+Route::post('/catalog2Update/{id}', 'CatalogController2@update')->name('catalog2.update');
+Route::get('trashed-catalog2', 'CatalogController2@trashed')->name('trashed-catalog2.index');
+Route::put('restore-catalog2/{catalog}', 'CatalogController2@restore')->name('restore-catalog2');
+Route::post('/delSecImg2/{id}', 'CatalogController2@destroySecImg')->name('sec.img.destroy2');
+
+//Catalog 3
+Route::post('/catalogSection3/{id}', 'CatalogController3@sectionUpdate')->name('catalog3.section.update');
+Route::resource('catalog3', 'CatalogController3', ['except' => ['update']]);
+Route::post('/catalog3Update/{id}', 'CatalogController3@update')->name('catalog3.update');
+Route::get('trashed-catalog3', 'CatalogController3@trashed')->name('trashed-catalog3.index');
+Route::put('restore-catalog3/{catalog}', 'CatalogController3@restore')->name('restore-catalog3');
+Route::post('/delSecImg3/{id}', 'CatalogController3@destroySecImg')->name('sec.img.destroy3');
+
 Route::middleware(['auth'])->group(function () {
 
 // ================================== Display ========================================

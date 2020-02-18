@@ -11,4 +11,8 @@
     @include('sections.inicio.static.style2')
   @endif
 
+  @if($contenidosection1s[0]->style == 3)
+    @include('sections.inicio.static.style3')
+  @endif
+
 @endif

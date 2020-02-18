@@ -12,26 +12,28 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('contenido_section1s')->delete();
-
+        
         \DB::table('contenido_section1s')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
-                'logo' => 'content/TqAo2VEZl709UevET6qB7rJNngEeFNPEkDcvizu1.png',
+                'logo' => 'content/6hQpLrylLybA5ZhGe08D0DTCyxfgDmf2BeYYon3S.png',
                 'background_image' => 'content/tVp6RN9kA5bvEPPyybyK1sVO3n3E9tC2TJO9gD5T.png',
-                'title' => 'Company Name',
-                'tagline' => 'Company Slogan',
-                'button' => NULL,
+                'title' => 'Company name',
+                'tagline' => NULL,
+                'button' => 'More Information',
                 'link' => '#infoSlider',
-                'display' => NULL,
+                'display' => 0,
                 'carousel' => 0,
                 'style' => 1,
+                'title_size' => 60,
+                'subtitle_size' => 32,
                 'overlay' => 65,
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 3,
                 'logo' => 'content/KvYh7b5Yqs5ZXl19vd6oJViuk6vms3g7msZcHVR3.png',
@@ -43,9 +45,11 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'display' => 0,
                 'carousel' => 1,
                 'style' => 1,
+                'title_size' => 60,
+                'subtitle_size' => 32,
                 'overlay' => 65,
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 4,
                 'logo' => 'content/12e7PK2GNPdPc8usFgbqcTgEhTJAiEwtH3eWCqrZ.png',
@@ -57,9 +61,11 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'display' => 0,
                 'carousel' => 1,
                 'style' => 1,
+                'title_size' => 60,
+                'subtitle_size' => 32,
                 'overlay' => 65,
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 5,
                 'logo' => 'content/URJGZzHD7hf7t7jOnXg1o7IUISK6tV55AbPwms45.png',
@@ -71,10 +77,12 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'display' => 0,
                 'carousel' => 1,
                 'style' => 1,
+                'title_size' => 60,
+                'subtitle_size' => 32,
                 'overlay' => 65,
             ),
         ));
-
-
+        
+        
     }
 }

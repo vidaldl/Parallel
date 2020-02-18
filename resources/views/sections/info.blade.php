@@ -19,10 +19,10 @@
     </div>
   </div>
 </section> -->
-<div id="info" class="clear"></div>
+<div id="info" class=""></div>
 
 <div class="container clearfix">
-  <div class="promo promo-dark promo-flat bottommargin-lg">
+  <div class="promo promo-dark promo-flat">
   	<h3 class="t400 ls1">{{$contenidosection3s[0]->title}}</h3>
     <div class="dark">{!! $contenidosection3s[0]->contenido !!}</div>
   	<a href="#" class="button button-dark button-large button-rounded">{{$contenidosection3s[0]->button}}</a>

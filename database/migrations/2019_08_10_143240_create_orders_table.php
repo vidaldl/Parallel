@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('name')->nullable();
             $table->integer('order');
             $table->integer('display')->default(1);
-            $table->integer('line')->default(0);
+            $table->integer('line')->default(2);
             $table->integer('line_style')->default(1);
             $table->integer('container_style')->default(1);
             $table->string('menu_name')->nullable();
