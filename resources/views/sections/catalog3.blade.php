@@ -8,7 +8,7 @@
 			</div>
 		</div>
 	@endif
-	<div class="col_full">
+	<div>
 
 	  <!-- <h4>Related Products</h4> -->
 

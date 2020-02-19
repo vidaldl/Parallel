@@ -8,10 +8,9 @@
 			</div>
 		</div>
 	@endif
-	<div class="col_full">
 
+	<div>
 	  <!-- <h4>Related Products</h4> -->
-
 	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-autoplay="10000" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
 			@foreach($catalog_items as $item)
 	    	<div class="oc-item">
