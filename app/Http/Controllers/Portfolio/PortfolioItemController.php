@@ -17,6 +17,7 @@ use App\Order;
 use App\Style;
 use App\ContenidoSection2;
 use App\ContenidoSectionFooter;
+use App\MenuItem;
 
 class PortfolioItemController extends Controller
 {
@@ -98,6 +99,7 @@ class PortfolioItemController extends Controller
     public function show($id)
     {
       return view('portfolio.show')
+      ->with('menu_item', MenuItem::all())
       ->with('portfolioCategories', PortfolioCategory::all())
       ->with('orders', Order::orderBy('order')->get())
       ->with('styles', Style::all())
