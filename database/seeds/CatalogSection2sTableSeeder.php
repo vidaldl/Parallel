@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CatalogSectionsTableSeeder extends Seeder
+class CatalogSection2sTableSeeder extends Seeder
 {
 
     /**
@@ -14,13 +14,13 @@ class CatalogSectionsTableSeeder extends Seeder
     {
         
 
-        \DB::table('catalog_sections')->delete();
+        \DB::table('catalog_section2s')->delete();
         
-        \DB::table('catalog_sections')->insert(array (
+        \DB::table('catalog_section2s')->insert(array (
             0 => 
             array (
                 'id' => 1,
-                'title' => 'Catálogo',
+                'title' => 'Catálogo 2',
                 'button_primary' => '#EEE',
                 'button_secondary' => '#F9F9F9',
                 'button_text_color' => '#333',

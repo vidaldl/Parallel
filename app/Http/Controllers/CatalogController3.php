@@ -21,8 +21,11 @@ class CatalogController3 extends Controller
 
     public function sectionUpdate(Request $request, $id) {
       $title = $request->input('title');
+      $button_primary = $request->input('button_primary');
+      $button_secondary = $request->input('button_secondary');
+      $button_text_color = $request->input('button_text_color');
 
-      $data = array('title' => $title);
+      $data = array('title' => $title, 'button_primary'=>$button_primary, 'button_secondary'=>$button_secondary, 'button_text_color'=>$button_text_color);
 
       DB::table('catalog_section3s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fué actualizada');
@@ -68,7 +71,7 @@ class CatalogController3 extends Controller
       DB::table('catalog_item3s')->insert($data);
 
       $latest = DB::getPdo('catalog_item3s')->lastInsertId();
-      return redirect('catalog2/' . $latest . '/edit');
+      return redirect('catalog3/' . $latest . '/edit');
     }
 
     /**

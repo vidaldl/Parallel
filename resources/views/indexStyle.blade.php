@@ -1,4 +1,64 @@
 <style>
+.button-catalog {
+	text-shadow: none !important;
+	color: {{$catalog_sections[0]->button_text_color}} !important;
+}
+
+.button-catalog2 {
+	text-shadow: none !important;
+	color: {{$catalog_section2s[0]->button_text_color}} !important;
+}
+
+.button-catalog3 {
+	text-shadow: none !important;
+	color: {{$catalog_section3s[0]->button_text_color}} !important;
+}
+
+.catalog-button {
+	background-color: {{$catalog_sections[0]->button_primary}} !important;
+}
+
+.catalog-button:hover {
+	background-color: {{$catalog_sections[0]->button_secondary}} !important;
+}
+
+.catalog-button2 {
+	background-color: {{$catalog_sections[0]->button_primary}} !important;
+}
+
+.catalog-button2:hover {
+	background-color: {{$catalog_section2s[0]->button_secondary}} !important;
+}
+
+.catalog-button3 {
+	background: {{$catalog_section3s[0]->button_primary}} !important;
+}
+
+.catalog-button3:hover {
+	background-color: {{$catalog_section3s[0]->button_secondary}} !important;
+}
+
+::selection {
+	background: {{$styles[0]->button_secondary}};
+}
+
+::-moz-selection {
+	background: {{$styles[0]->button_secondary}}; /* Firefox */
+}
+
+::-webkit-selection {
+	background: {{$styles[0]->button_secondary}}; /* Safari */
+}
+
+.sale-flash {
+	background-color: {{$styles[0]->button_primary}};
+}
+
+.portfolio-filter li a:hover {
+    color: {{$styles[0]->button_secondary}};
+}
+
+
 .button-green { background-color: {{$styles[0]->button_primary}}; }
 .button-green:hover,
 .button-reveal.button-green:hover,
@@ -7,7 +67,31 @@
 	background-color: {{$styles[0]->button_secondary}} !important;
 }
 
+.portfolio-filter li.activeFilter a {
+	background-color:  {{$styles[0]->button_primary}};
+}
 
+.owl-carousel .owl-dots .owl-dot {
+	background-color: {{$styles[0]->button_primary}};
+}
+
+a {
+    color: {{$styles[0]->button_primary}};
+}
+
+.button {
+    background-color: {{$styles[0]->button_primary}};
+}
+
+.color {
+    color: {{$styles[0]->button_primary}} !important;
+}
+
+
+.feature-box.fbox-plain .fbox-icon i,
+.feature-box.fbox-plain .fbox-icon img {
+    color: {{$styles[0]->button_primary}};
+}
 
 .slider-caption .slider-caption-h2 {
 	font-size: {{$contenidosection1s[0]->title_size}}px;

@@ -2,7 +2,7 @@
 	<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
 		<div class="container clearfix">
 			<div class="heading-block center nomargin">
-				<h3>{{$catalog_section2s[0]->title}}</h3>
+				<h3>{{$catalog_section3s[0]->title}}</h3>
 			</div>
 		</div>
 	</div>
@@ -12,7 +12,7 @@
 	  <!-- <h4>Related Products</h4> -->
 
 	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-autoplay="10000" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
-			@foreach($catalog_item2s as $item)
+			@foreach($catalog_item3s as $item)
 	    	<div class="oc-item">
   	      <div class="product iproduct clearfix">
   	        <div class="product-image">
@@ -48,8 +48,8 @@
   								</div>
   							@endif
   							@if($item->button)
-  			          <div class="product-rating row">
-  									<a href="{{$item->button_link}}" class="col-md-8 mx-auto center button button-small button-rounded button-reveal button-white button-light tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
+  			          <div class="product-rating">
+  									<a href="{{$item->button_link}}" class="catalog-button3 col-md-8 mx-auto center button button-small button-rounded button-reveal button-light button-catalog3 tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
   			          </div>
   							@endif
   	        </div>

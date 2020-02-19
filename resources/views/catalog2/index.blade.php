@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('css')
+  <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
+@endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Segundo Catálogo de Productos</h1>
@@ -88,6 +90,20 @@
         @enderror
     </div>
     <div class="form-group">
+      <div class="form-group">
+        <label for="button_primary">Botón Desactivado</label><br>
+        <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $catalog_section2s[0]->button_primary }}">
+      </div>
+      <div class="form-group">
+        <label for="button_secondary">Botón Activado</label><br>
+        <input onchange="this.form.submit()" class="form-control" name="button_secondary" type="text" id="button_secondary" value="{{ $catalog_section2s[0]->button_secondary }}">
+      </div>
+      <div class="form-group">
+        <label for="button_secondary">Color Letras del Botón</label><br>
+        <input onchange="this.form.submit()" class="form-control" name="button_text_color" type="text" id="button_text_color" value="{{ $catalog_section2s[0]->button_text_color }}">
+      </div>
+    </div>
+    <div class="form-group">
       <button class="btn btn-success float-right mb-3">Actualizar</button>
     </div>
   </form>
@@ -170,4 +186,21 @@
 
 </div>
 
+@endsection
+@section('script')
+  <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+  <script type="text/javascript">
+    $('#button_primary').spectrum({
+      preferredFormat: "hex",
+     showInput: true,
+    });
+    $('#button_secondary').spectrum({
+      preferredFormat: "hex",
+     showInput: true,
+    });
+    $('#button_text_color').spectrum({
+      preferredFormat: "hex",
+     showInput: true,
+    });
+  </script>
 @endsection
