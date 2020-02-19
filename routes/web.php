@@ -106,6 +106,8 @@ Route::post('/display-articulos', 'DisplayController@articulosDisplay');
 Route::post('/display-contact', 'DisplayController@contactDisplay');
 Route::post('/display-portfolio-gallery', 'DisplayController@portfoliogalleryDisplay')->name('portfolioGallery.display');
 Route::post('/display-catalog', 'DisplayController@catalogDisplay');
+Route::post('/display-catalog2', 'DisplayController@catalog2Display');
+Route::post('/display-catalog3', 'DisplayController@catalog3Display');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
 // ================================== EditSections ========================================
