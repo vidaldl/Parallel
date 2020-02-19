@@ -111,7 +111,7 @@
                       <select onchange="this.form.submit()" name="style" class="col-md-4">
                         <option value="1" {{ $contenidosection1s[0]->style == '1' ? 'selected' : '' }}>Pantalla Completa</option>
                         <option value="2" {{ $contenidosection1s[0]->style == '2' ? 'selected' : '' }}>Pantalla Media</option>
-                        <option value="3" {{ $contenidosection1s[0]->style == '3' ? 'selected' : '' }}>1/3 de Pantalla</option>
+                        <option value="3" {{ $contenidosection1s[0]->style == '3' ? 'selected' : '' }}>1/4 de Pantalla</option>
                       </select>
                       @error('title')
                         <span class="invalid-feedback" role="alert">

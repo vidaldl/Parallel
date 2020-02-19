@@ -1,12 +1,13 @@
 <div class="container clearfix" id="catalog">
-	<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
-		<div class="container clearfix">
-			<div class="heading-block center nomargin">
-				<h3>{{$catalog_sections[0]->title}}</h3>
+	@if($catalog_sections[0]->title)
+		<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
+			<div class="container clearfix">
+				<div class="heading-block center nomargin">
+					<h3>{{$catalog_sections[0]->title}}</h3>
+				</div>
 			</div>
 		</div>
-	</div>
-
+	@endif
 	<div class="col_full">
 
 	  <!-- <h4>Related Products</h4> -->
