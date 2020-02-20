@@ -773,22 +773,7 @@ class HomeController extends Controller
 
 
     /*SECTION Footer -------------------------------------------------------------------------------->*/
-    public function sectionFooterEdit($id) {
-      return view('updateIndex/sectionFooter')->with('orders', Order::orderBy('order')->get())->with('contenidosectionfooters', ContenidoSectionFooter::all());
-    }
-
-    public function sectionFooterUpdate(Request $request, $id) {
-      $copy = $request->input('copy');
-      $facebook_link = $request->input('facebook_link');
-      $instagram_link = $request->input('instagram_link');
-      $twitter_link = $request->input('twitter_link');
-
-      $data=array("copy"=>$copy, "facebook_link"=>$facebook_link, "instagram_link"=>$instagram_link, "twitter_link"=>$twitter_link);
-      DB::table('contenido_section_footers')->update($data);
-      session()->flash('success', 'La sección fue actualizada');
-      //redirect
-      return redirect()->back();
-    }
+  
 
     // public function sectionFooterDisplay(Request $request, $id) {
     //   $display = $request->input('sectionFooter');

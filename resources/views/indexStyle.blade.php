@@ -1,4 +1,9 @@
 <style>
+@foreach($footer_links as $item)
+.social-icon{{$item->id}}:hover{
+	background-color: {{$item->back_color}};
+}
+@endforeach
 .button-catalog {
 	text-shadow: none !important;
 	color: {{$catalog_sections[0]->button_text_color}} !important;

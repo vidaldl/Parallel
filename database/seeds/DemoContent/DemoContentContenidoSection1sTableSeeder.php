@@ -23,7 +23,7 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
                 'logo' => 'content/6hQpLrylLybA5ZhGe08D0DTCyxfgDmf2BeYYon3S.png',
                 'background_image' => 'content/tVp6RN9kA5bvEPPyybyK1sVO3n3E9tC2TJO9gD5T.png',
                 'title' => 'Company name',
-                'tagline' => NULL,
+                'tagline' => 'Company Slogan',
                 'button' => 'More Information',
                 'link' => '#infoSlider',
                 'display' => 0,

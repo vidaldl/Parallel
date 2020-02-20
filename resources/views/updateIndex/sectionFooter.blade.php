@@ -1,21 +1,40 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
+<link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
+@endsection
+
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Editar Pie de Página</h1>
   <a href="{{route('home')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Secciones<span></a>
 </div>
   <div class="row justify-content-center">
-    <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#footer"  width="100%" height="450"></iframe></div>
+    <div class="card col-md-8">
+      <div class="card-body">
+      <form method="POST" action="{{route('sectionFooter.update', $contenidosectionfooters[0]->id)}}" enctype="multipart/form-data">
+        @csrf
+        <label for="style">Estilo del Footer:</label>
+        <select onchange="this.form.submit()" class="col-md-3 offset-md-4" name="style">
+          @if($contenidosectionfooters[0]->style == 1)
+            <option value="1" selected>Simple</option>
+            <option value="2">Acerca de</option>
+          @elseif($contenidosectionfooters[0]->style == 2)
+            <option value="1">Simple</option>
+            <option value="2" selected>Acerca de</option>
+          @endif
+        </select>
+      </form>
+      </div>
+    </div>
     <div class="card mt-3 col-md-8 mb-5">
         <div class="card-body">
 
           <form method="POST" action="{{route('sectionFooter.update', $contenidosectionfooters[0]->id)}}" enctype="multipart/form-data">
             @csrf
 
-              <div class="form-group d-none d-sm-block d-md-block d-lg-none">
-                <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/sectionFooter.png')}}">
-              </div>
+
               <div class="form-group">
                 <label for="copy" class="col-form-label">Nombre de la Empresa</label>
                 <input id="copy" type="input" name="copy" class="form-control @error('copy') is-invalid @enderror"  value="{{ $contenidosectionfooters[0]->copy }}">
@@ -25,34 +44,32 @@
                     </span>
                   @enderror
               </div>
+              @if($contenidosectionfooters[0]->style == 2)
+              <div class="form-group" id="type_image">
+                <label for="image" class="col-form-label">Imagen de Logo</label><br>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+              </div>
               <div class="form-group">
-                <label for="facebook_link" class="col-form-label">Link de Facebook</label>
-                <input id="facebook_link" type="input" name="facebook_link" class="form-control @error('facebook_link') is-invalid @enderror" value="{{ $contenidosectionfooters[0]->facebook_link }}">
-                  @error('facebook_link')
+                <label for="acerca" class="col-form-label">Acerca de la Empresa</label>
+                <textarea id="acerca" type="input" name="acerca" class="form-control @error('copy') is-invalid @enderror">{{ $contenidosectionfooters[0]->acerca }}</textarea>
+                  @error('copy')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
                   @enderror
               </div>
               <div class="form-group">
-                <label for="instagram_link" class="col-form-label">Link de Instagram</label>
-                <input id="instagram_link" type="input" name="instagram_link" class="form-control @error('instagram_link') is-invalid @enderror"  value="{{ $contenidosectionfooters[0]->instagram_link }}">
-                  @error('instagram_link')
+                <label for="social_title" class="col-form-label">Titulo Enlaces</label>
+                <input id="social_title" type="input" name="social_title" class="form-control @error('copy') is-invalid @enderror"  value="{{ $contenidosectionfooters[0]->social_title }}">
+                  @error('social_title')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
                   @enderror
               </div>
+              @endif
               <div class="form-group">
-                <label for="twitter_link" class="col-form-label">Link de Twitter</label>
-                <input id="twitter_link" type="twitter_link" name="twitter_link" class="form-control @error('twitter_link') is-invalid @enderror"  value="{{ $contenidosectionfooters[0]->twitter_link }}">
-                  @error('twitter_link')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
-              </div>
-              <div class="form-group">
+                <a class="btn btn-primary" href="{{route('footer.index')}}" style="text-decoration: none"><i class="fad fa-link"></i>&nbsp;Enlaces</a>
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
           </form>
@@ -61,5 +78,119 @@
         </div>
     </div>
   </div>
+
+  <!--modal logo-->
+  <div class="modal fade" id="modalLogo" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#4066D4;">
+        <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                <label for="logo" class="col-form-label">Imagen de Logo</label>
+                <form id="logo" method="POST" class="logo dropzone" action="{{route('sectionFooter.update', $contenidosectionfooters[0]->id)}}" enctype="multipart/form-data">
+                  @csrf
+                </form>
+                @error('logo')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+                </div>
+              </div>
+              <div class="col-md-8">
+              <img style="width:100%;" src="{{'/storage/' . $contenidosectionfooters[0]->logo}}" class="logoThumb img-fluid img-thumbnail rounded">
+              <div class="editador d-none" style="height:450px; background-color: #000;">
+              </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer buttons">
+          <button class="buttonConfirm btn btn-primary d-none">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal logo -->
 </div>
+@endsection
+@section('script')
+<script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
+<script src="{{asset('lib/cropper/cropper.js')}}"></script>
+<script>
+Dropzone.options.logo = {
+   paramName: "logo",
+   addRemoveLinks: true,
+   transformFile: function(file, done) {
+      var myDropZone = this;
+      var editor = $('.editador');
+      var logoThumb = $('.logoThumb');
+      $(logoThumb).addClass('d-none');
+      $(editor).removeClass('d-none');
+      $(editor).addClass('d-block');
+      // Create confirm button at the top left of the viewport
+      var buttonConfirm = $('.buttonConfirm');
+      $(buttonConfirm).removeClass('d-none');
+      $(buttonConfirm).addClass('d-block');
+      $(buttonConfirm).click(function() {
+        // Get the canvas with image data from Cropper.js
+         var canvas = cropper.getCroppedCanvas({
+           width: 720,
+           height: 405
+         });
+         // Turn the canvas into a Blob (file object without a name)
+         canvas.toBlob(function(blob) {
+           // Create a new Dropzone file thumbnail
+            myDropZone.createThumbnail(
+              blob,
+              myDropZone.options.thumbnailWidth,
+              myDropZone.options.thumbnailHeight,
+              myDropZone.options.thumbnailMethod,
+              false,
+              function(dataURL) {
+
+                // Update the Dropzone file thumbnail
+                myDropZone.emit('thumbnail', file, dataURL);
+                // Return the file to Dropzone
+                done(blob);
+            });
+         });
+        // Remove the editor from the view
+        $(buttonConfirm).removeClass('d-block');
+        $(buttonConfirm).addClass('d-none');
+
+
+      });
+
+      // Create an image node for Cropper.js
+     var image = new Image();
+     image.src = URL.createObjectURL(file);
+     // editor.appendChild(image);
+     $(image).appendTo(editor)
+     // Create Cropper.js
+     var cropper = new Cropper(image);
+
+
+
+   },
+   init: function () {
+      this.on("complete", function (file) {
+        if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+          setTimeout(
+            function()
+            {
+              location.reload();
+            }, 1500);
+        }
+      });
+    }
+  };
+</script>
 @endsection

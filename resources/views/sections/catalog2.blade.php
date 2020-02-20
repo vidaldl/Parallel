@@ -49,7 +49,7 @@
   							@endif
   							@if($item->button)
   			          <div class="product-rating">
-  									<a href="{{$item->button_link}}" class="catalog-button2 col-md-8 mx-auto center button button-small button-rounded button-reveal button-catalog2 tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
+  									<a href="{{$item->button_link}}" target="_blank" class="catalog-button2 col-md-8 mx-auto center button button-small button-rounded button-reveal button-catalog2 tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
   			          </div>
   							@endif
   	        </div>

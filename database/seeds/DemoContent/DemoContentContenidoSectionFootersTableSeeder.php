@@ -20,13 +20,11 @@ class DemoContentContenidoSectionFootersTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'copy' => 'Madre Tierra',
-                'facebook_link' => 'https://www.facebook.com/SiscopsystemsSRL',
-                'instagram_link' => 'https://www.instagram.com/siscopsystems/',
-                'twitter_link' => 'https://www.twitter.com',
-                'display' => 1,
-                'created_at' => '2019-06-26 00:01:15',
-                'updated_at' => '2019-06-26 00:01:15',
+                'copy' => 'Parallel Inc.',
+                'logo' => 'content/footer/C7mS3XONiL8C889DjZ8725mWgqt0jIVD9hOvDjZW.png',
+                'social_title' => NULL,
+                'acerca' => NULL,
+                'style' => 1,
             ),
         ));
         

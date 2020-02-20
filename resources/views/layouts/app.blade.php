@@ -21,7 +21,7 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-
+  <link rel="stylesheet" href="{{ asset('lib/realCSS/css/font-icons.css') }}" type="text/css" />
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
   @yield('css')
 

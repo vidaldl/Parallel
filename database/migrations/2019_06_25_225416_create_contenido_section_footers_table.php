@@ -16,11 +16,10 @@ class CreateContenidoSectionFootersTable extends Migration
         Schema::create('contenido_section_footers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('copy')->nullable();
-            $table->string('facebook_link')->nullable();
-            $table->string('instagram_link')->nullable();
-            $table->string('twitter_link')->nullable();
-            $table->integer('display')->default('1')->nullable();
-            $table->timestamps();
+            $table->string('logo')->nullable();
+            $table->string('social_title')->nullable();
+            $table->text('acerca')->nullable();
+            $table->integer('style')->default('1')->nullable();
         });
     }
 

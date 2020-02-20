@@ -42,6 +42,7 @@ use App\Catalog2\CatalogItem2;
 use App\Catalog2\CatalogSection2;
 use App\Catalog3\CatalogItem3;
 use App\Catalog3\CatalogSection3;
+use App\FooterLink;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -108,6 +109,7 @@ class IndexController extends Controller
       ->with('catalog_section2s', CatalogSection2::all())
       ->with('catalog_item3s', CatalogItem3::all())
       ->with('catalog_section3s', CatalogSection3::all())
+      ->with('footer_links', FooterLink::all())
       ->with('users', User::all());
     }
 

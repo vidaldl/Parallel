@@ -110,9 +110,19 @@ Route::post('/display-catalog2', 'DisplayController@catalog2Display');
 Route::post('/display-catalog3', 'DisplayController@catalog3Display');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
+
+
 // ================================== EditSections ========================================
 //LINE BETWEEN
 Route::post('/line-update/{id}', 'IndexController@lineUpdate')->name('line.update');
+
+//Section Footer
+Route::get('/editsectionFooter/{id}', 'FooterController@sectionFooterEdit')->name('sectionFooter.edit');
+Route::post('/updatesectionFooter/{id}', 'FooterController@sectionFooterUpdate')->name('sectionFooter.update');
+Route::resource('footer', 'FooterController', ['except' => ['update']]);
+Route::post('/footer/{id}', 'FooterController@update')->name('footer.update');
+Route::get('trashed-footer', 'FooterController@trashed')->name('trashed-footer.index');
+Route::put('restore-footer/{footer}', 'FooterController@restore')->name('restore-footer');
 
 
 // MENU
@@ -209,9 +219,7 @@ Route::post('/updatesection4/{id}', 'HomeController@section4Update')->name('sect
 Route::get('/editsection5/{id}', 'HomeController@section5Edit')->name('section5.edit');
 Route::post('/updatesection5/{id}', 'HomeController@section5Update')->name('section5.update');
 
-//Section Footer
-Route::get('/editsectionFooter/{id}', 'HomeController@sectionFooterEdit')->name('sectionFooter.edit');
-Route::post('/updatesectionFooter/{id}', 'HomeController@sectionFooterUpdate')->name('sectionFooter.update');
+
 
 //Abut Page
 Route::get('/edit-about/{id}', 'HomeController@aboutEdit')->name('about.edit');
