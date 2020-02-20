@@ -11,6 +11,66 @@
   <a href="{{route('home')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Secciones<span></a>
 </div>
   <div class="row justify-content-center">
+    <div class="col-md-12">
+      <!-- LINE/SPACE -->
+        <form method="POST" action="{{route('sectionFooter.update', $contenidosectionfooters[0]->id)}}">
+        @csrf
+        <div class="line-space card col-md-8 offset-md-2 mt-4 mb-4">
+          <a href="#" style="text-decoration: none">
+            <div class="card-header py-3">
+            <div class="row">
+              <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Espacio entre:</h6></span>
+                  @if($contenidosectionfooters[0]->line == 0)
+                    <select onchange="this.form.submit()" name="line-hidden" class="col-md-6  float-right">
+                      <option selected>Nada</option>
+                      <option value = "1">Línea</option>
+                      <option value = "2">Espacio</option>
+                    </select>
+                  @endif
+            </div>
+          </div>
+          </a>
+          @if($contenidosectionfooters[0]->line != 0)
+          <div id="collapse9">
+            <div class="card-body row">
+            <div class="col-md-6 offset-md-3">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="line-display">Espacio Encima de la Sección:</label>
+                  <select name="line-display" onchange="this.form.submit()">
+                    <option value="0">No Mostrar</option>
+                  @if($contenidosectionfooters[0]->line == 1)
+                    <option value="1" selected>Línea</option>
+                    <option value="2">Espacio</option>
+                    @elseif($contenidosectionfooters[0]->line == 2)
+                    <option value="1">Línea</option>
+                    <option value="2" selected>Espacio</option>
+                    @endif
+                  </select>
+                </div>
+                <div class="col-md-6 {{$contenidosectionfooters[0]->line == 2 ? 'd-none' : ''}}">
+
+                    <label for="line-style">Estilo de Línea:</label>
+                    <select name="line-style" onchange="this.form.submit()">
+                      @if($contenidosectionfooters[0]->line_style == 1)
+                        <option value="1" selected>Parcial</option>
+                        <option value="2">Completo</option>
+                      @elseif($contenidosectionfooters[0]->line_style == 2)
+                        <option value="1">Parcial</option>
+                        <option value="2" selected>Completo</option>
+                      @endif
+                    </select>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          @endif
+        </div>
+      </form>
+      <!-- END LINE/SPACE -->
+    </div>
     <div class="card col-md-8">
       <div class="card-body">
       <form method="POST" action="{{route('sectionFooter.update', $contenidosectionfooters[0]->id)}}" enctype="multipart/form-data">

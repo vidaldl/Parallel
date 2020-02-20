@@ -44,6 +44,27 @@ class FooterController extends Controller
       //redirect
       return redirect()->back();
     }
+    elseif ($request->has('line-hidden')) {
+      $line = $request->input('line-hidden');
+
+      $data = array('line'=>$line);
+      DB::table('contenido_section_footers')->where('id', $id)->update($data);
+      return redirect()->back();
+    }
+    elseif ($request->has('line-display')) {
+      $line = $request->input('line-display');
+
+      $data = array('line'=>$line);
+      DB::table('contenido_section_footers')->where('id', $id)->update($data);
+      return redirect()->back();
+    }
+    elseif ($request->has('line-style')) {
+      $line_style = $request->input('line-style');
+
+      $data = array('line_style'=>$line_style);
+      DB::table('contenido_section_footers')->where('id', $id)->update($data);
+      return redirect()->back();
+    }
     else{
     $copy = $request->input('copy');
     $social_title = $request->input('social_title');

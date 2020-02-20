@@ -20,7 +20,7 @@ class DemoContentLinksTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 5,
-                'image' => 'content/links/LwIi7YqDXCcmu2Kn8HwTOZGA4uh55uPIpaAIFtU5.png',
+                'image' => 'content/links/iQ4DMrxxwXfNXG7DdB6vOSEG2Wa9kyoLZ3evnw9h.png',
                 'title' => 'Aduanas',
                 'link' => NULL,
                 'deleted_at' => NULL,

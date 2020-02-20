@@ -20,6 +20,8 @@ class CreateContenidoSectionFootersTable extends Migration
             $table->string('social_title')->nullable();
             $table->text('acerca')->nullable();
             $table->integer('style')->default('1')->nullable();
+            $table->integer('line')->default('0')->nullable();
+            $table->integer('line_style')->default('1')->nullable();
         });
     }
 

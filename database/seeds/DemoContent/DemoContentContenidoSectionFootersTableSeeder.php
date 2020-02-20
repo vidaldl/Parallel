@@ -25,6 +25,8 @@ class DemoContentContenidoSectionFootersTableSeeder extends Seeder
                 'social_title' => NULL,
                 'acerca' => NULL,
                 'style' => 1,
+                'line' => 2,
+                'line_style' => 1,
             ),
         ));
         

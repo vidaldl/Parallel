@@ -1,7 +1,7 @@
 
 @section('footer')
 
-<footer id="footer" class="site-footer dark {{ $contenidosectionfooters[0]->display == '0' ? 'd-none' : '' }}" id="footer">
+<footer id="footer" class="site-footer dark" id="footer">
   <!-- Copyrights
 			============================================= -->
 			<div id="copyrights">

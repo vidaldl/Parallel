@@ -81,10 +81,23 @@
       @endif
     @endforeach
 
+    @if($contenidosectionfooters[0]->line == 1)
+      @if($contenidosectionfooters[0]->line_style == 1)
+        <div class="container">
+          <div class="line"></div>
+        </div>
+      @elseif($contenidosectionfooters[0]->line_style == 2)
+        <div class="line"></div>
+      @endif
+    @elseif($contenidosectionfooters[0]->line == 2)
+      <div class="topmargin-lg"></div>
+    @endif
+
 </div>
 
 
 @endsection
+
 
 <!--Footer-->
 @include('sections.footer')
