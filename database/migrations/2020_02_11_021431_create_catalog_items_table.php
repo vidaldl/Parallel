@@ -27,6 +27,7 @@ class CreateCatalogItemsTable extends Migration
             $table->string('button')->default('Más Información')->nullable();
             $table->string('button_icon')->default('fas fa-arrow-right')->nullable();
             $table->string('button_link')->default('#')->nullable();
+            $table->string('link_code')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

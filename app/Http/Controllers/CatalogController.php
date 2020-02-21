@@ -153,6 +153,7 @@ class CatalogController extends Controller
         $button = $request->input('button');
         $button_link = $request->input('button_link');
         $button_icon = $request->input('button_icon');
+        $link_code = $request->input('link_code');
 
         $data = array(
           'title' => $title,
@@ -163,7 +164,8 @@ class CatalogController extends Controller
           'precio_nuevo' => $precio_nuevo,
           'button' => $button,
           'button_link' => $button_link,
-          'button_icon' => $button_icon
+          'button_icon' => $button_icon,
+          'link_code' => $link_code
         );
 
         DB::table('catalog_items')->where('id', $id)->update($data);

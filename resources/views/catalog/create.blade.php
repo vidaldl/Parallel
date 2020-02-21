@@ -128,14 +128,25 @@
                 </div>
               </div>
 
-              <div class="form-group" id="d-precio">
-                <label for="button_link" class="col-form-label">Link del Botón</label>
-                <input id="button_link" type="input" name="button_link" class="form-control @error('button_link') is-invalid @enderror"  value="{{isset($catalog_items) ? $catalog_items->button_link : ''}}">
-                @error('button_link')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                @enderror
+              <div class="form-row" id="d-precio">
+                <div class="col-md-8">
+                  <label for="button_link" class="col-form-label">Link del Botón</label>
+                  <input id="button_link" type="input" name="button_link" class="form-control @error('button_link') is-invalid @enderror"  value="{{isset($catalog_items) ? $catalog_items->button_link : ''}}">
+                  @error('button_link')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+                </div>
+                <div class="col-md-4">
+                  <label for="link_code" class="col-form-label">Codigo del Artículo</label>
+                  <input id="link_code" type="input" name="link_code" class="form-control @error('link_code') is-invalid @enderror"  value="{{isset($catalog_items) ? $catalog_items->link_code : ''}}">
+                  @error('link_code')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+                </div>
               </div>
 
 

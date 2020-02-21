@@ -11,7 +11,7 @@
 
 	<div>
 	  <!-- <h4>Related Products</h4> -->
-	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-autoplay="10000" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
+	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
 			@foreach($catalog_items as $item)
 	    	<div class="oc-item">
 	      <div class="product iproduct clearfix">
@@ -49,7 +49,11 @@
 							@endif
 							@if($item->button)
 			          <div class="product-rating">
-									<a href="{{$item->button_link}}" target="_blank" class="catalog-button col-md-8 mx-auto center button button-small button-rounded button-reveal button-catalog tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
+									@if($item->link_code)
+										<a href="{{$item->button_link}}?producto={{$item->link_code}}" target="_blank" class="catalog-button3 col-md-8 mx-auto center button button-small button-rounded button-reveal button-light button-catalog3 tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
+									@else
+										<a href="{{$item->button_link}}" target="_blank" class="catalog-button3 col-md-8 mx-auto center button button-small button-rounded button-reveal button-light button-catalog3 tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
+									@endif
 			          </div>
 							@endif
 	        </div>
