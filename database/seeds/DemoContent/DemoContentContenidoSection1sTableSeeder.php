@@ -20,13 +20,13 @@ class DemoContentContenidoSection1sTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'logo' => 'content/6hQpLrylLybA5ZhGe08D0DTCyxfgDmf2BeYYon3S.png',
+                'logo' => 'content/pVbWX3vnrR0jwBlDLqMLpBYRzHYng0bACa2auzbQ.png',
                 'background_image' => 'content/tVp6RN9kA5bvEPPyybyK1sVO3n3E9tC2TJO9gD5T.png',
                 'title' => 'Company name',
                 'tagline' => 'Company Slogan',
                 'button' => 'More Information',
                 'link' => '#infoSlider',
-                'display' => 0,
+                'display' => 1,
                 'carousel' => 0,
                 'style' => 1,
                 'title_size' => 60,

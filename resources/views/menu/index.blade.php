@@ -353,7 +353,7 @@ Dropzone.options.logo = {
      // editor.appendChild(image);
      $(image).appendTo(editor)
      // Create Cropper.js
-     var cropper = new Cropper(image, { aspectRatio: 4/2 });
+     var cropper = new Cropper(image);
 
 
 
