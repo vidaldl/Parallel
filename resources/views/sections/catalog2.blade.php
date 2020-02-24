@@ -3,7 +3,11 @@
 		<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
 			<div class="container clearfix">
 				<div class="heading-block center nomargin">
+					@if($catalog_section2s[0]->title_link)
+					<a target="_blank" href="{{$catalog_section2s[0]->title_link}}"><h3>{{$catalog_section2s[0]->title}}</h3></a>
+					@else
 					<h3>{{$catalog_section2s[0]->title}}</h3>
+					@endif
 				</div>
 			</div>
 		</div>

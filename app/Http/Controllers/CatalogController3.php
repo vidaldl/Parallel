@@ -24,8 +24,15 @@ class CatalogController3 extends Controller
       $button_primary = $request->input('button_primary');
       $button_secondary = $request->input('button_secondary');
       $button_text_color = $request->input('button_text_color');
+      $title_link = $request->input('title_link');
 
-      $data = array('title' => $title, 'button_primary'=>$button_primary, 'button_secondary'=>$button_secondary, 'button_text_color'=>$button_text_color);
+      $data = array(
+        'title' => $title,
+        'button_primary'=>$button_primary,
+        'button_secondary'=>$button_secondary,
+        'button_text_color'=>$button_text_color,
+        'title_link'=>$title_link
+      );
 
       DB::table('catalog_section3s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fué actualizada');

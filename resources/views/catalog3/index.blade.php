@@ -89,7 +89,17 @@
           </span>
         @enderror
     </div>
+    <div class="form-group mb-4">
+      <label for="title_link" class="col-form-label">Enlace del titulo</label>
+      <input id="title_link" onchange="this.form.submit()" type="input" name="title_link" value="{{$catalog_section3s[0]->title_link}}" class="form-control @error('title_link') is-invalid @enderror">
+        @error('title_link')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+    </div>
     <div class="form-group">
+      <h5>Artículos del Catalogo:</h5><br>
       <div class="form-group">
         <label for="button_primary">Botón Desactivado</label><br>
         <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $catalog_section3s[0]->button_primary }}">

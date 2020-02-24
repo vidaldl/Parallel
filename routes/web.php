@@ -110,9 +110,16 @@ Route::post('/display-catalog2', 'DisplayController@catalog2Display');
 Route::post('/display-catalog3', 'DisplayController@catalog3Display');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
+// ================================== Styles ========================================
+Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
+
+Route::post('/font-store', 'FontController@store')->name('font.store');
+Route::post('/font-delete/{id}', 'FontController@delete')->name('font.delete');
+Route::post('/font-style-update', 'FontController@fontStyleUpdate')->name('fontStyle.update');
 
 
 // ================================== EditSections ========================================
+
 //LINE BETWEEN
 Route::post('/line-update/{id}', 'IndexController@lineUpdate')->name('line.update');
 
@@ -161,10 +168,6 @@ Route::resource('properties', 'PropertyController');
 // Route::post('/property/{id}', 'PropertyController@update')->name('property.update');
 Route::get('trashed-properties', 'PropertyController@trashed')->name('trashed-properties.index');
 Route::put('restore-properties/{property}', 'PropertyController@restore')->name('restore-properties');
-
-
-//Styles
-Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');
 
 
 //Section1

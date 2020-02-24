@@ -1,9 +1,31 @@
+<!-- FONT LINKS -->
+
 <style>
+/* FONTS */
+body {
+	font-family: '{!!$fonts[1]->font_name!!}', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: '{!!$fonts[0]->font_name!!}', sans-serif;
+}
+
+
+/* FOOTER */
 @foreach($footer_links as $item)
 .social-icon{{$item->id}}:hover{
 	background-color: {{$item->back_color}};
 }
+
+/* ButtonColors */
 @endforeach
+
+
 .button-catalog {
 	text-shadow: none !important;
 	color: {{$catalog_sections[0]->button_text_color}} !important;
@@ -98,6 +120,8 @@ a {
     color: {{$styles[0]->button_primary}};
 }
 
+/* SECTION 1 FONT SIZE */
+
 .slider-caption .slider-caption-h2 {
 	font-size: {{$contenidosection1s[0]->title_size}}px;
 }
@@ -105,6 +129,8 @@ a {
 .slider-caption .slider-caption-p {
 	font-size: {{$contenidosection1s[0]->subtitle_size}}px;
 }
+/* SECTION 1 OVERLAY */
+
 @foreach($contenidosection1s as $cont)
 
 .overlay{{$cont->id}} {

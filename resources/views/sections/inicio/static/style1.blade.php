@@ -19,11 +19,11 @@
 
               @if($contenidosection1s[0]->button)
                 @if($contenidosection1s[0]->overlay <= 50)
-                  <a href="{{$contenidosection1s[0]->link}}" class="button button-green button-large d-none d-md-inline-block">
+                  <a href="{{$contenidosection1s[0]->link}}" class="button button-green button-large">
                     <span>{{$contenidosection1s[0]->button}}</span>
                   </a>
                 @elseif($contenidosection1s[0]->overlay > 50)
-                  <a href="{{$contenidosection1s[0]->link}}" style="color: #fff;" class="button button-green button-rounded button-light  button-large button-border d-none d-md-inline-block">
+                  <a href="{{$contenidosection1s[0]->link}}" style="color: #fff;" class="button button-green button-rounded button-light  button-large button-border">
                     <span>{{$contenidosection1s[0]->button}}</span>
                   </a>
                 @endif

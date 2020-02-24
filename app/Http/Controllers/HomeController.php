@@ -28,6 +28,8 @@ use App\SectionProperty;
 use App\Properties\City;
 use App\Properties\Feature;
 use App\Frase;
+use App\Font;
+use App\FontStyle;
 class HomeController extends Controller
 {
     /**
@@ -67,6 +69,8 @@ class HomeController extends Controller
         ->with('links', Links::all())
         ->with('link_sections', LinkSection::all())
         ->with('frases', Frase::all())
+        ->with('fonts', Font::all())
+        ->with('font_styles', FontStyle::all())
         ->with('section_properties', SectionProperty::all());
     }
 
@@ -773,7 +777,7 @@ class HomeController extends Controller
 
 
     /*SECTION Footer -------------------------------------------------------------------------------->*/
-  
+
 
     // public function sectionFooterDisplay(Request $request, $id) {
     //   $display = $request->input('sectionFooter');

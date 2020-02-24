@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('css')
+@include('bladeStyles.fonts')
 <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -72,39 +73,141 @@
 
 </style>
 <link rel="stylesheet" href="{{asset('lib/iconpicker/css/fontawesome-iconpicker.css')}}">
+<link rel="stylesheet" href="{{asset('lib/tooltipster/css/tooltipster.bundle.css')}}" type="text/css" />
+<link rel="stylesheet" href="{{asset('lib/tooltipster/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css')}}" type="text/css" />
+<link rel="stylesheet" href="{{asset('lib/magnific/magnific-popup.css')}}" type="text/css" />
+
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center  mb-4" >
 <form autocomplete="off" class="col-md-12" method="POST" action="{{route('style.update', $styles[0]->id)}}">
   @csrf
  <h1 class="h3 mb-3 text-gray-800">Manejador</h1>
-<div class="form-row">
-  <div class="col-md-4">
-    <div class="form-group col-md-12">
-      <label for="page_title">Titulo del Sitio</label><br>
-      <input onchange="this.form.submit()" class="form-control col-md-6"  name="page_title" type="text" id="page_title" value="{{ $styles[0]->page_title }}">
-    </div>
-    <!-- <div class="form-group col-md-4">
-      <label for="primary_color">Color Principal</label><br>
-      <input onchange="this.form.submit()" class="form-control" name="primary_color" type="text" id="primary_color" value="{{ $styles[0]->primary_color }}">
-    </div> -->
-    <div class="form-group col-md-4">
-      <label for="button_primary">Botón Desactivado</label><br>
-      <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $styles[0]->button_primary }}">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="button_secondary">Botón Activado</label><br>
-      <input onchange="this.form.submit()" class="form-control" name="button_secondary" type="text" id="button_secondary" value="{{ $styles[0]->button_secondary }}">
+<div class="row">
+  <div class="card col-md-4">
+    <div class="row justify-content-center">
+        <div class="form-group col-md-12">
+          <label for="page_title">Titulo del Sitio</label><br>
+          <input onchange="this.form.submit()" class="form-control col-md-6"  name="page_title" type="text" id="page_title" value="{{ $styles[0]->page_title }}">
+        </div>
+        <!-- <div class="form-group col-md-4">
+          <label for="primary_color">Color Principal</label><br>
+          <input onchange="this.form.submit()" class="form-control" name="primary_color" type="text" id="primary_color" value="{{ $styles[0]->primary_color }}">
+        </div> -->
+        <div class="form-group col-md-4">
+          <label for="button_primary">Botón Desactivado</label><br>
+          <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $styles[0]->button_primary }}">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="button_secondary">Botón Activado</label><br>
+          <input onchange="this.form.submit()" class="form-control" name="button_secondary" type="text" id="button_secondary" value="{{ $styles[0]->button_secondary }}">
+        </div>
+
+      </div>
+  </div>
+  </form>
+
+  <div class="card col-md-7 offset-md-1">
+    <h5 class="mt-3">Estilo de Letras(Fuentes):</h5>
+    <div class="row justify-content-center">
+
+
+        <div class="form-group">
+          <label for="">Tus Fuentes</label><br>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fontsModal">
+            Estilo de Fuente &nbsp;
+            <i class="fad fa-font-case"></i>
+          </button>
+
+        </div>
+        <form class="col-md-12" action="{{route('fontStyle.update')}}" method="POST">
+          @csrf
+          <div class="form-group">
+            <label for="">Fuente para los Titulos</label><br>
+            <select onchange="this.form.submit()" class="form-control" name="titles" type="text">
+              @foreach($font_styles as $item)
+                @if($fonts[0]->font_name == $item->name)
+                  <option value="{{$item->id}}" selected>{{$item->name}}</option>
+                @elseif($fonts[0]->font_name != $item->name)
+                <option value="{{$item->id}}">{{$item->name}}</option>
+                @endif
+              @endforeach
+            </select>
+          </div>
+        </form>
+        <form class="col-md-12" action="{{route('fontStyle.update')}}" method="POST">
+          @csrf
+          <div class="form-group">
+            <label for="">Fuente para el Cuerpo</label><br>
+            <select onchange="this.form.submit()" class="form-control" name="body" type="text">
+              @foreach($font_styles as $item)
+                @if($fonts[1]->font_name == $item->name)
+                  <option value="{{$item->id}}" selected>{{$item->name}}</option>
+                @elseif($fonts[1]->font_name != $item->name)
+                <option value="{{$item->id}}">{{$item->name}}</option>
+                @endif
+
+              @endforeach
+            </select>
+          </div>
+      </form>
     </div>
   </div>
-
-
-
-  </div>
-
-</form>
 </div>
 
+<!-- FONTS MODAL =====================================================-->
+<div class="modal fade" id="fontsModal" tabindex="-1" role="dialog" aria-labelledby="fontsModal" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Lista de Fuentes Disponibles</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Fuente</th>
+              <th scope="col">Enlace de Google Font</th>
+              <th scope="col">Ejemplo</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($font_styles as $item)
+              <tr>
+                <td>{{$item->name}}</td>
+                <td>{{$item->link}}</td>
+                <td style="font-family: '{{$item->name}}'; font-size: 32px">{{$item->name}}</td>
+                <form method="POST" action="{{route('font.delete', $item->id)}}">
+                  @csrf
+                  <td><button type="submit" class="btn btn-danger"><i class="far fa-trash"></i></button></td>
+                </form>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+
+        <div class="modal-footer">
+          <form class="col-md-12" method="POST" action="{{route('font.store')}}">
+            @csrf
+            <div class="row">
+              <input type="text" class="form-control col-md-3 mr-1" name="name" id="fontName" placeholder="Nombre">
+              <input type="text" class="form-control col-md-3 mr-1" name="link" id="fontLink" placeholder="Link">
+              <a href="https://www.youtube.com/watch?v=7bUVjJWA6Vw" class="mfp-iframe my-auto" id="iframe" data-dismiss="modal"><i class="fad fa-question-circle fa-lg"></i></a>
+              <button type="submit" class=" offset-md-2 btn btn-primary ml-auto"><i class="far fa-plus-square"></i>  Agregar</button>
+            </div>
+          </form>
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<!-- /FONTS MODAL =====================================================-->
 <div class="tabs">
 
     <ul class="tabs-navigation horizontal">
@@ -211,10 +314,14 @@
 
 @endsection
 @section('script')
+<script src="{{ asset('lib/tooltipster/js/tooltipster.bundle.js') }}"></script>
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
+<script src="{{ asset('lib/magnific/jquery.magnific-popup.min.js') }}"></script>
 <script>
-
+$('#iframe').magnificPopup({
+    type: 'iframe'
+});
 $(document).ready(function () {
   $("#sort").sortable({
         axis: 'y',

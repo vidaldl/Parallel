@@ -16,6 +16,7 @@ class CreateCatalogSectionsTable extends Migration
         Schema::create('catalog_sections', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->default('Catálogo')->nullable();
+            $table->string('title_link')->nullable();
             $table->string('button_primary')->default('#EEE');
             $table->string('button_secondary')->default('#F9F9F9');
             $table->string('button_text_color')->default('#333');

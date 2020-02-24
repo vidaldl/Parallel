@@ -26,9 +26,6 @@
           @foreach($gallery_items as $item)
           <tr>
               <td>
-                <img src="" width="120" alt="">
-              </td>
-              <td>
                 <h4>{{ $item->title }}</h4>
               </td>
                 <form method="POST" action="{{ route('portfolioGallery.destroy', $item->id) }}">
