@@ -313,7 +313,6 @@
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
-<script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
 <script>
   $('#back_color').spectrum({
     preferredFormat: "hex",
@@ -323,7 +322,6 @@
   $('#contenido').trumbowyg({
     btns: [
       ['fontsize'],
-      ['fontfamily'],
       ['strong', 'em', 'del'],
       ['link'],
       ['image'],

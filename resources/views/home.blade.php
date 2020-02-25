@@ -170,7 +170,6 @@
           <thead>
             <tr>
               <th scope="col">Fuente</th>
-              <th scope="col">Enlace de Google Font</th>
               <th scope="col">Ejemplo</th>
               <th>Delete</th>
             </tr>
@@ -179,8 +178,7 @@
             @foreach($font_styles as $item)
               <tr>
                 <td>{{$item->name}}</td>
-                <td>{{$item->link}}</td>
-                <td style="font-family: '{{$item->name}}'; font-size: 32px">{{$item->name}}</td>
+                <td style="font-family: '{{$item->name}}'; font-size: 42px">{{$item->name}}</td>
                 <form method="POST" action="{{route('font.delete', $item->id)}}">
                   @csrf
                   <td><button type="submit" class="btn btn-danger"><i class="far fa-trash"></i></button></td>

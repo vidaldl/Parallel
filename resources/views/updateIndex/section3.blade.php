@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+<link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 <style>
 .note-editable { background-color: #3742FA!important; color: white; }
 </style>
@@ -13,7 +13,7 @@
   <a href="{{route('home')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Secciones<span></a>
 </div>
   <div class="row justify-content-center">
-    <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#acercas"  width="100%" height="450"></iframe></div>
+    <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"></div>
     <div class="col-md-12">
       <!-- LINE/SPACE -->
       @foreach($orders as $item)
@@ -107,9 +107,36 @@
                   @enderror
               </div>
               <div class="form-group">
-                <label for="button" class="col-form-label">button</label>
+                <label for="button" class="col-form-label">Botón</label>
                 <input id="button" type="input" name="button" class="form-control @error('button') is-invalid @enderror"  value="{{ $contenidosection3s[0]->button }}">
                   @error('button')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="link" class="col-form-label">Enlace</label>
+                <input id="link" type="input" placeholder="Https://" name="link" class="form-control @error('link') is-invalid @enderror"  value="{{ $contenidosection3s[0]->link }}">
+                  @error('link')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="background_color" class="col-form-label">Color de Fondo</label>
+                <input id="background_color" type="input" name="background_color" class="form-control @error('background_color') is-invalid @enderror"  value="{{ $contenidosection3s[0]->background_color }}">
+                  @error('background_color')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="text_color" class="col-form-label">Color del Texto</label>
+                <input id="text_color" type="input" name="text_color" class="form-control @error('text_color') is-invalid @enderror"  value="{{ $contenidosection3s[0]->text_color }}">
+                  @error('text_color')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -127,25 +154,6 @@
 </div>
 @endsection
 @section('script')
-<!-- <script src="{{ asset('lib/summernote/summernote.js') }}"></script>
-<script>
-$(document).ready(function() {
-$('#contenido').summernote({
-  toolbar: [
-    // [groupName, [list of button]]
-    //['style', ['style']],
-     ['font', ['bold', 'underline']],
-     //['fontname', ['fontname']],
-     ['color', ['color']],
-     //['para', ['ul', 'ol', 'paragraph']],
-     //['table', ['table']],
-     ['insert', ['link', 'picture', 'video']],
-     //['view', ['fullscreen', 'codeview', 'help']]
-  ]
-});
-
-});
-</script> -->
 <script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
 <script>
 ClassicEditor.create( document.querySelector( '#contenido' ), {
@@ -161,7 +169,15 @@ ClassicEditor.create( document.querySelector( '#contenido' ), {
 
 
 </script>
-@endsection
-@section('css')
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+<script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script type="text/javascript">
+  $('#background_color').spectrum({
+    preferredFormat: "hex",
+   showInput: true,
+  });
+  $('#text_color').spectrum({
+    preferredFormat: "hex",
+   showInput: true,
+  });
+</script>
 @endsection

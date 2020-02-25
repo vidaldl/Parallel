@@ -21,29 +21,33 @@
         ============================================= -->
         <nav id="primary-menu" class="dark">
           <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
-            <li><a href="#" data-href="#slider"><div>{{$menu_item[0]->item_inicio}}</div></a></li>
+            <li><a href="#" data-href="#slider" style="font-family: {{$fonts[1]->font_name}}"><div>{{$menu_item[0]->item_inicio}}</div></a></li>
             @foreach($orders as $item)
               @if($item->display == 1 && $item->menu_display == 1)
-                <li><a href="#" data-href="#{{$item->section}}"><div>{{$item->menu_name}}</div></a></li>
+                <li><a href="#" data-href="#{{$item->section}}" style="font-family: {{$fonts[1]->font_name}}"><div>{{$item->menu_name}}</div></a></li>
               @endif
             @endforeach
 
           </ul>
           <ul style="border: none;">
+          @if($styles[0]->show_link_1 == '1')
             @if($styles[0]->link_mode_1 == '1')
               <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_1}}">
-    						<a class="{{$styles[0]->show_link_1 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}} fa-2x"></i></a>
+    						<a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}} fa-2x"></i></a>
     					</li>
             @elseif($styles[0]->link_mode_1 == '2')
-              <li><a href="{!! $styles[0]->custom_link_address_1 !!}"><div>{{$styles[0]->custom_link_text_1}}</div></a></li>
+              <li><a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_1 !!}"><div>{{$styles[0]->custom_link_text_1}}</div></a></li>
             @endif
+          @endif
+          @if($styles[0]->show_link_2 == '1')
             @if($styles[0]->link_mode_2 == '1')
               <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_2}}">
-    						<a class="{{$styles[0]->show_link_2 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}} fa-2x"></i></a>
+    						<a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}} fa-2x"></i></a>
     					</li>
             @elseif($styles[0]->link_mode_2 == '2')
-              <li><a href="{!! $styles[0]->custom_link_address_2 !!}"><div>{{$styles[0]->custom_link_text_2}}</div></a></li>
+              <li><a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_2 !!}"><div>{{$styles[0]->custom_link_text_2}}</div></a></li>
             @endif
+          @endif
           </ul>
 
 

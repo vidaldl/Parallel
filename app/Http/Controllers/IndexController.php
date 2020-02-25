@@ -31,7 +31,6 @@ use App\LinkSection;
 use App\PortfolioGallery\GallerySection;
 use App\PortfolioGallery\GalleryItem;
 use App\PortfolioGallery\GalleryImages;
-use App\SectionProperty;
 use App\Frase;
 use App\Portfolio\PortfolioCategory;
 use App\Portfolio\PortfolioItem;
@@ -101,7 +100,6 @@ class IndexController extends Controller
       ->with('gallery_sections', GallerySection::all())
       ->with('gallery_images', GalleryImages::all())
       ->with('gallery_items', GalleryItem::all())
-      ->with('section_properties', SectionProperty::all())
       ->with('frases', Frase::all())
       ->with('portfolio_categories', $pCats)
       ->with('portfolio_items', PortfolioItem::all())

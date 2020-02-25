@@ -24,7 +24,6 @@ use App\Pricing;
 use App\Order;
 use App\Links;
 use App\LinkSection;
-use App\SectionProperty;
 use App\Properties\City;
 use App\Properties\Feature;
 use App\Frase;
@@ -70,8 +69,7 @@ class HomeController extends Controller
         ->with('link_sections', LinkSection::all())
         ->with('frases', Frase::all())
         ->with('fonts', Font::all())
-        ->with('font_styles', FontStyle::all())
-        ->with('section_properties', SectionProperty::all());
+        ->with('font_styles', FontStyle::all());
     }
 
     public function indexInactive()
@@ -95,8 +93,7 @@ class HomeController extends Controller
         ->with('info_slider_text3s', InfoSliderText3::all())
         ->with('links', Links::all())
         ->with('link_sections', LinkSection::all())
-        ->with('frases', Frase::all())
-        ->with('section_properties', SectionProperty::all());
+        ->with('frases', Frase::all());
     }
 
 
@@ -700,9 +697,19 @@ class HomeController extends Controller
       $title = $request->input('title');
       $contenido = $request->input('contenido');
       $button = $request->input('button');
+      $background_color = $request->input('background_color');
+      $text_color = $request->input('text_color');
+      $link = $request->input('link');
 
-      $data=array("title"=>$title, "contenido"=>$contenido, "button"=>$button);
-      DB::table('contenido_section3s')->update($data);
+      $data=array(
+        "title"=>$title,
+        "contenido"=>$contenido,
+        "button"=>$button,
+        "background_color"=>$background_color,
+        "text_color"=>$text_color,
+        "link"=>$link
+      );
+      DB::table('contenido_section3s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fue actualizada');
       //redirect
       return redirect()->back();

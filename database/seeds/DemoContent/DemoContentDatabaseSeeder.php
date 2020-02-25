@@ -18,7 +18,6 @@ class DemoContentDatabaseSeeder extends Seeder
         $this->call(DemoContentCatalogSection2sTableSeeder::class);
         $this->call(DemoContentCatalogSection3sTableSeeder::class);
         $this->call(DemoContentCatalogSectionsTableSeeder::class);
-        $this->call(DemoContentCitiesTableSeeder::class);
         $this->call(DemoContentContenidoAboutsTableSeeder::class);
         $this->call(DemoContentContenidoSection1sTableSeeder::class);
         $this->call(DemoContentContenidoSection2sTableSeeder::class);
@@ -26,7 +25,6 @@ class DemoContentDatabaseSeeder extends Seeder
         $this->call(DemoContentContenidoSection4sTableSeeder::class);
         $this->call(DemoContentContenidoSection5sTableSeeder::class);
         $this->call(DemoContentContenidoSectionFootersTableSeeder::class);
-        $this->call(DemoContentFeaturesTableSeeder::class);
         $this->call(DemoContentFooterLinksTableSeeder::class);
         $this->call(DemoContentFrasesTableSeeder::class);
         $this->call(DemoContentGalleryImagesTableSeeder::class);
@@ -52,8 +50,6 @@ class DemoContentDatabaseSeeder extends Seeder
         $this->call(DemoContentPricingPricingItemTableSeeder::class);
         $this->call(DemoContentPricingSectionsTableSeeder::class);
         $this->call(DemoContentPricingsTableSeeder::class);
-        $this->call(DemoContentPropertiesTableSeeder::class);
-        $this->call(DemoContentSectionPropertiesTableSeeder::class);
         $this->call(DemoContentServiciosTableSeeder::class);
         $this->call(DemoContentStylesTableSeeder::class);
         $this->call(DemoContentTagsTableSeeder::class);

@@ -45,7 +45,7 @@ class FontController extends Controller
       );
 
       DB::table('fonts')->where('element', $element)->update($data);
-      session()->flash('success', 'Los Titulos usarán la Fuente:' . $font_name);
+      session()->flash('success', 'Los Titulos usarán la Fuente: ' . $font_name);
       return redirect()->back();
     }
 
@@ -64,7 +64,7 @@ class FontController extends Controller
       );
 
       DB::table('fonts')->where('element', $element)->update($data);
-      session()->flash('success', 'Los Titulos usarán la Fuente:' . $font_name);
+      session()->flash('success', 'Los Titulos usarán la Fuente: ' . $font_name);
       return redirect()->back();
     }
   }

@@ -22,9 +22,15 @@
 <div id="info" class=""></div>
 
 <div class="container clearfix">
-  <div class="promo promo-dark promo-flat">
-  	<h3 class="t400 ls1">{{$contenidosection3s[0]->title}}</h3>
-    <div class="dark">{!! $contenidosection3s[0]->contenido !!}</div>
-  	<a href="#" class="button button-dark button-large button-rounded">{{$contenidosection3s[0]->button}}</a>
+  <div class="promo promo-dark promo-flat " style="background-color: {{$contenidosection3s[0]->background_color}}">
+  	<div class="container row" style="padding: 25px 5px;">
+      <div class="col-md-7 my-auto">
+        <h3 class="t400 ls1 ml-4" style="color: {{$contenidosection3s[0]->text_color}}">{{$contenidosection3s[0]->title}}</h3>
+        <div class="dark ml-4" style="color: {{$contenidosection3s[0]->text_color}}">{!! $contenidosection3s[0]->contenido !!}</div>
+      </div>
+    	<div class="col-md-5 my-auto">
+        <a target="_blank" href="{{$contenidosection3s[0]->link}}" style="color: {{$contenidosection3s[0]->text_color}}" class="button col-md-12 mx-auto button-dark button-large button-rounded text-center">{{$contenidosection3s[0]->button}}</a>
+      </div>
+    </div>
   </div>
 </div>

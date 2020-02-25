@@ -1,6 +1,7 @@
 <!-- FONT LINKS -->
 
 <style>
+
 /* FONTS */
 body {
 	font-family: '{!!$fonts[1]->font_name!!}', sans-serif;
