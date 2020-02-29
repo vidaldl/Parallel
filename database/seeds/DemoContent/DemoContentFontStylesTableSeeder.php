@@ -65,6 +65,14 @@ class DemoContentFontStylesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            6 => 
+            array (
+                'id' => 12,
+                'name' => 'Lobster',
+                'link' => '<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

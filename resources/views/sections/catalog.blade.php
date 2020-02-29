@@ -17,9 +17,10 @@
 	<div>
 	  <!-- <h4>Related Products</h4> -->
 	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
-			@foreach($catalog_items as $item)
-	    	<div class="oc-item">
-	      <div class="product iproduct clearfix">
+			@foreach($catalog_items->chunk($catalog_sections[0]->rows) as $catalog_items_chunk)
+    	<div class="oc-item">
+				@foreach($catalog_items_chunk as $item)
+	      	<div class="product iproduct clearfix">
 	        <div class="product-image">
 						@if($item->img_primaria)
 						<a href="#"><img src="{{'/storage/' . $item->img_primaria}}" alt="Checked Short Dress"></a>
@@ -63,6 +64,7 @@
 							@endif
 	        </div>
 	      </div>
+				@endforeach
 	    </div>
 			@endforeach
 	  	</div>

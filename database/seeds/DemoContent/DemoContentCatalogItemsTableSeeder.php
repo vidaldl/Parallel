@@ -21,7 +21,7 @@ class DemoContentCatalogItemsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'title' => 'T-Shirt',
-                'img_primaria' => 'content/catalog/9jtTfuETfC1K3DuxxPgrvUBcF9UyVyPxWZyVYWTa.png',
+                'img_primaria' => 'content/catalog/vN3EVXTrsVYODIypWauoSXEoigOAPlG3uG4ANvUn.png',
                 'img_secundaria' => 'content/catalog/ozBTgru55ct2kvK8wT842gQ5hQNnwpINUxAObKlL.png',
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
@@ -29,7 +29,7 @@ class DemoContentCatalogItemsTableSeeder extends Seeder
                 'destacado' => 1,
                 'destacado_title' => 'Oferta',
                 'precio_nuevo' => '350.50',
-                'button' => NULL,
+                'button' => 'Conoce Más',
                 'button_icon' => 'fas fa-arrow-right',
                 'button_link' => 'http://google.com',
                 'link_code' => NULL,

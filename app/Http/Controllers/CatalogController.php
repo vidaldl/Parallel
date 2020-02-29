@@ -33,13 +33,15 @@ class CatalogController extends Controller
       $button_secondary = $request->input('button_secondary');
       $button_text_color = $request->input('button_text_color');
       $title_link = $request->input('title_link');
+      $rows = $request->input('rows');
 
       $data = array(
         'title' => $title,
         'button_primary'=>$button_primary,
         'button_secondary'=>$button_secondary,
         'button_text_color'=>$button_text_color,
-        'title_link'=>$title_link
+        'title_link'=>$title_link,
+        'rows'=>$rows
       );
 
       DB::table('catalog_sections')->where('id', $id)->update($data);

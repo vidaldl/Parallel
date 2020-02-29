@@ -25,6 +25,9 @@ class DemoContentCatalogSectionsTableSeeder extends Seeder
                 'button_primary' => '#EEE',
                 'button_secondary' => '#F9F9F9',
                 'button_text_color' => '#333',
+                'style' => 0,
+                'rows' => 1,
+                'img_orientation' => 0,
             ),
         ));
         

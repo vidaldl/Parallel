@@ -24,10 +24,10 @@
           <div class="product iproduct clearfix">
             <div class="product-image">
               @if($item->img_primaria)
-              <a href="#"><img src="{{'/storage/' . $item->img_primaria}}" alt="Checked Short Dress"></a>
+              <a href="{{route('shop.show', $item->id)}}"><img src="{{'/storage/' . $item->img_primaria}}" alt="Checked Short Dress"></a>
               @endif
               @if($item->img_secundaria)
-              <a href="#"><img src="{{'/storage/' . $item->img_secundaria}}" alt="Checked Short Dress"></a>
+              <a href="{{route('shop.show', $item->id)}}"><img src="{{'/storage/' . $item->img_secundaria}}" alt="Checked Short Dress"></a>
               @endif
               @if($item->destacado == 1)
               <div class="sale-flash">{{$item->destacado_title}}</div>
@@ -42,7 +42,7 @@
               </div>
             </div>
             <div class="product-desc center">
-              <div class="product-title"><h3><a href="#">{{$item->title}}</a></h3></div>
+              <div class="product-title"><h3><a href="{{route('shop.show', $item->id)}}">{{$item->title}}</a></h3></div>
                 @if($item->precio)
                   <div class="product-price">
                     @if($item->destacado == 1)

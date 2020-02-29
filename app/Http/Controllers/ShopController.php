@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\Shop\ShopSection;
 use App\Shop\ShopItem;
 use App\Order;
+use App\Font;
+use App\FontStyle;
+use App\FooterLink;
+use App\Style;
+use App\MenuItem;
+use App\ContenidoSectionFooter;
 use DB;
 use Illuminate\Support\Facades\Storage;
 class ShopController extends Controller
@@ -99,7 +105,15 @@ class ShopController extends Controller
      */
     public function show($id)
     {
-        //
+      return view('shop.show')
+      ->with('orders', Order::all())
+      ->with('menu_item', MenuItem::all())
+      ->with('styles', Style::all())
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all())
+      ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('footer_links', FooterLink::all())
+      ->with('shop_items', ShopItem::find($id));
     }
 
     /**

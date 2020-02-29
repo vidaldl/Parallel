@@ -235,7 +235,6 @@
     OnValue: '1',
     OnCallback: function(val) {
       $('#rows').hide();
-      $('#d-precio').show();
 
       $.ajax({
              type:'POST',
@@ -252,7 +251,6 @@
     OffValue: '0',
     OffCallback: function (val) {
       $('#rows').show();
-      $('#d-precio').hide();
 
       $.ajax({
              type:'POST',

@@ -14,12 +14,13 @@
 	@endif
 
 @if($catalog_section2s[0]->style == 0)
-	<div>
+	<div class="row justify-content-center">
 	  <!-- <h4>Related Products</h4> -->
 	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-autoplay="10000" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
-			@foreach($catalog_item2s as $item)
+			@foreach($catalog_item2s->chunk($catalog_section2s[0]->rows) as $catalog_item2s_chunk)
 	    	<div class="oc-item">
-  	      <div class="product iproduct clearfix">
+					@foreach($catalog_item2s_chunk as $item)
+  	      	<div class="product iproduct clearfix">
   	        <div class="product-image">
   						@if($item->img_primaria)
   						<a href="#"><img src="{{'/storage/' . $item->img_primaria}}" alt="Checked Short Dress"></a>
@@ -63,7 +64,8 @@
   							@endif
   	        </div>
   	      </div>
-	       </div>
+					@endforeach
+       </div>
 			@endforeach
 	  </div>
 

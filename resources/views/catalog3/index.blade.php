@@ -110,6 +110,15 @@
         <label for="estilo">Estilo de mostrar Artículos</label>
         <div id="estilo"></div>
       </div>
+      <div class="form-group col-md-6" id="rows">
+        <label for="rows" class="col-form-label">Numero de Filas</label>
+        <input id="rows" type="number" name="rows" value="{{$catalog_section3s[0]->rows}}" class="form-control @error('rows') is-invalid @enderror">
+          @error('rows')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+      </div>
       <div class="form-group">
         <label for="estilo">Orientacion de las Imagenes</label>
         <div id="orientation"></div>
@@ -215,14 +224,16 @@
   <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
   <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
   <script type="text/javascript">
+  @if($catalog_section3s[0]->style == 1)
+    $('#rows').hide();
+  @endif
   $('#estilo').btnSwitch({
     Theme:'Swipe',
     OnText: "Tabla",
     OffText: "Slider",
     OnValue: '1',
     OnCallback: function(val) {
-      $('#d-titulo').show();
-      $('#d-precio').show();
+      $('#rows').hide();
 
       $.ajax({
              type:'POST',
@@ -238,8 +249,7 @@
       },
     OffValue: '0',
     OffCallback: function (val) {
-      $('#d-titulo').hide();
-      $('#d-precio').hide();
+      $('#rows').show();
 
       $.ajax({
              type:'POST',

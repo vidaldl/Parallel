@@ -16,8 +16,9 @@
 		@if($catalog_section3s[0]->style == 0)
 			  <!-- <h4>Related Products</h4> -->
 	  <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-loop="false" data-autoplay="10000" data-margin="30" data-pagi="false"  data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
-				@foreach($catalog_item3s as $item)
+				@foreach($catalog_item3s->chunk($catalog_section3s[0]->rows) as $catalog_item3s_chunk)
 		    	<div class="oc-item">
+						@foreach($catalog_item3s_chunk as $item)
 	  	      <div class="product iproduct clearfix">
 	  	        <div class="product-image">
 	  						@if($item->img_primaria)
@@ -62,7 +63,8 @@
 	  							@endif
 	  	        </div>
 	  	      </div>
-		       </div>
+						@endforeach
+					</div>
 				@endforeach
 		  </div>
 
