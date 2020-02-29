@@ -32,7 +32,7 @@ class DemoContentStylesTableSeeder extends Seeder
                 'custom_link_text_2' => 'Clientes',
                 'custom_link_address_2' => 'http://www.google.com',
                 'show_link_2' => 1,
-                'link_mode_1' => 1,
+                'link_mode_1' => 2,
                 'link_mode_2' => 2,
             ),
         ));

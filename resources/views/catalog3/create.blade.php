@@ -377,7 +377,136 @@ $('.icp').on('iconpickerSelected', function (e) {
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <script>
 
-    Dropzone.options.image = {
+@if($catalog_section3s[0]->img_orientation == 1)
+  Dropzone.options.image = {
+    paramName: "image",
+
+     transformFile: function(file, done) {
+        var myDropZone = this;
+        var editor = $('.editador');
+        var logoThumb = $('.logoThumb');
+        $(logoThumb).addClass('d-none');
+        $(editor).removeClass('d-none');
+        $(editor).addClass('d-block');
+        // Create confirm button at the top left of the viewport
+        var buttonConfirm = $('.buttonConfirm');
+        $(buttonConfirm).removeClass('d-none');
+        $(buttonConfirm).addClass('d-block');
+        $(buttonConfirm).click(function() {
+          // Get the canvas with image data from Cropper.js
+           var canvas = cropper.getCroppedCanvas({
+             width: 675,
+             height: 945
+           });
+           // Turn the canvas into a Blob (file object without a name)
+           canvas.toBlob(function(blob) {
+             // Create a new Dropzone file thumbnail
+              myDropZone.createThumbnail(
+                blob,
+                myDropZone.options.thumbnailWidth,
+                myDropZone.options.thumbnailHeight,
+                myDropZone.options.thumbnailMethod,
+                false,
+                function(dataURL) {
+
+                  // Update the Dropzone file thumbnail
+                  myDropZone.emit('thumbnail', file, dataURL);
+                  // Return the file to Dropzone
+                  done(blob);
+              });
+           });
+          // Remove the editor from the view
+          $(buttonConfirm).removeClass('d-block');
+          $(buttonConfirm).addClass('d-none');
+
+
+        });
+
+        // Create an image node for Cropper.js
+       var image = new Image();
+       image.src = URL.createObjectURL(file);
+       // editor.appendChild(image);
+       $(image).appendTo(editor)
+       // Create Cropper.js
+       var cropper = new Cropper(image, { aspectRatio: 5/7 });
+   },
+   init: function () {
+
+      this.on("complete", function (file) {
+        setTimeout(
+          function()
+          {
+            location.reload();
+          }, 1500);
+      });
+    }
+  };
+
+  Dropzone.options.image2 = {
+    paramName: "image2",
+
+     transformFile: function(file, done) {
+        var myDropZone = this;
+        var editor = $('.editador2');
+        var logoThumb = $('.logoThumb2');
+        $(logoThumb).addClass('d-none');
+        $(editor).removeClass('d-none');
+        $(editor).addClass('d-block');
+        // Create confirm button at the top left of the viewport
+        var buttonConfirm = $('.buttonConfirm2');
+        $(buttonConfirm).removeClass('d-none');
+        $(buttonConfirm).addClass('d-block');
+        $(buttonConfirm).click(function() {
+          // Get the canvas with image data from Cropper.js
+           var canvas = cropper.getCroppedCanvas({
+             width: 675,
+             height: 945
+           });
+           // Turn the canvas into a Blob (file object without a name)
+           canvas.toBlob(function(blob) {
+             // Create a new Dropzone file thumbnail
+              myDropZone.createThumbnail(
+                blob,
+                myDropZone.options.thumbnailWidth,
+                myDropZone.options.thumbnailHeight,
+                myDropZone.options.thumbnailMethod,
+                false,
+                function(dataURL) {
+
+                  // Update the Dropzone file thumbnail
+                  myDropZone.emit('thumbnail', file, dataURL);
+                  // Return the file to Dropzone
+                  done(blob);
+              });
+           });
+          // Remove the editor from the view
+          $(buttonConfirm).removeClass('d-block');
+          $(buttonConfirm).addClass('d-none');
+
+
+        });
+
+        // Create an image node for Cropper.js
+       var image = new Image();
+       image.src = URL.createObjectURL(file);
+       // editor.appendChild(image);
+       $(image).appendTo(editor)
+       // Create Cropper.js
+       var cropper = new Cropper(image, { aspectRatio: 5/7 });
+   },
+   init: function () {
+
+      this.on("complete", function (file) {
+        setTimeout(
+          function()
+          {
+            location.reload();
+          }, 1500);
+      });
+    }
+  };
+@elseif($catalog_section3s[0]->img_orientation == 0)
+  Dropzone.options.image = {
       paramName: "image",
 
        transformFile: function(file, done) {
@@ -441,7 +570,7 @@ $('.icp').on('iconpickerSelected', function (e) {
       }
     };
 
-    Dropzone.options.image2 = {
+  Dropzone.options.image2 = {
       paramName: "image2",
 
        transformFile: function(file, done) {
@@ -504,7 +633,7 @@ $('.icp').on('iconpickerSelected', function (e) {
         });
       }
     };
-
+@endif
 
 </script>
 @endif

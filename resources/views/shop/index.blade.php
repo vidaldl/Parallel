@@ -10,20 +10,20 @@
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Segundo Catálogo de Productos</h1>
-  @if (\Request::is('trashed-catalog2'))
-    <a href="{{ route('catalog3.index')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Artículos<span></a>
+  <h1 class="h3 mb-0 text-gray-800">Tienda de Productos</h1>
+  @if (\Request::is('trashed-shop'))
+    <a href="{{ route('shop.index')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Artículos<span></a>
 </div>
 
   @else
-    <a href="{{ route('catalog3.create')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-plus fa-sm "></i></span><span class="text"> &nbsp;Nuevo Artículo<span></a>
+    <a href="{{ route('shop.create')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-plus fa-sm "></i></span><span class="text"> &nbsp;Nuevo Artículo<span></a>
 
 </div>
 <div class="col-md-12">
   <!-- LINE/SPACE -->
   @foreach($orders as $item)
-    @if($item->id == 16)
-  <form method="POST" action="{{route('line.update', 16)}}">
+    @if($item->id == 14)
+  <form method="POST" action="{{route('line.update', 14)}}">
     @csrf
     <div class="line-space card col-md-8 offset-md-2 mt-4 mb-4">
       <a href="#" style="text-decoration: none">
@@ -84,11 +84,11 @@
   <!-- END LINE/SPACE -->
 </div>
 <div class="card mb-5">
-  <form method="POST" class="container" action="{{route('catalog3.section.update', 1)}}" enctype="multipart/form-data">
+  <form method="POST" class="container" action="{{route('shop.section.update', 1)}}" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
       <label for="title" class="col-form-label">Titulo de la seccion</label>
-      <input id="title" onchange="this.form.submit()" type="input" name="title" value="{{$catalog_section3s[0]->title}}" class="form-control @error('title') is-invalid @enderror">
+      <input id="title" onchange="this.form.submit()" type="input" name="title" value="{{$shop_sections[0]->title}}" class="form-control @error('title') is-invalid @enderror">
         @error('title')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -97,7 +97,7 @@
     </div>
     <div class="form-group mb-4">
       <label for="title_link" class="col-form-label">Enlace del titulo</label>
-      <input id="title_link" onchange="this.form.submit()" type="input" name="title_link" value="{{$catalog_section3s[0]->title_link}}" class="form-control @error('title_link') is-invalid @enderror">
+      <input id="title_link" onchange="this.form.submit()" type="input" name="title_link" value="{{$shop_sections[0]->title_link}}" class="form-control @error('title_link') is-invalid @enderror">
         @error('title_link')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -110,21 +110,30 @@
         <label for="estilo">Estilo de mostrar Artículos</label>
         <div id="estilo"></div>
       </div>
+      <div class="form-group col-md-6" id="rows">
+        <label for="rows" class="col-form-label">Numero de Filas</label>
+        <input id="rows" type="number" name="rows" value="{{$shop_sections[0]->rows}}" class="form-control @error('rows') is-invalid @enderror">
+          @error('rows')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+      </div>
       <div class="form-group">
         <label for="estilo">Orientacion de las Imagenes</label>
         <div id="orientation"></div>
       </div>
       <div class="form-group">
         <label for="button_primary">Botón Desactivado</label><br>
-        <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $catalog_section3s[0]->button_primary }}">
+        <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $shop_sections[0]->button_primary }}">
       </div>
       <div class="form-group">
         <label for="button_secondary">Botón Activado</label><br>
-        <input onchange="this.form.submit()" class="form-control" name="button_secondary" type="text" id="button_secondary" value="{{ $catalog_section3s[0]->button_secondary }}">
+        <input onchange="this.form.submit()" class="form-control" name="button_secondary" type="text" id="button_secondary" value="{{ $shop_sections[0]->button_secondary }}">
       </div>
       <div class="form-group">
         <label for="button_secondary">Color Letras del Botón</label><br>
-        <input onchange="this.form.submit()" class="form-control" name="button_text_color" type="text" id="button_text_color" value="{{ $catalog_section3s[0]->button_text_color }}">
+        <input onchange="this.form.submit()" class="form-control" name="button_text_color" type="text" id="button_text_color" value="{{ $shop_sections[0]->button_text_color }}">
       </div>
     </div>
     <div class="form-group">
@@ -133,7 +142,7 @@
   </form>
 </div>
 @endif
-@if($catalog_item3s->count() > 0)
+@if($shop_items->count() > 0)
 <div class="card">
   <div class="card-body table-hover" >
     <div class="table-responsive">
@@ -147,7 +156,7 @@
         </thead>
         <tbody class="table-striped">
 
-          @foreach($catalog_item3s as $item)
+          @foreach($shop_items as $item)
           <tr>
               <td>
                 <img src="{{ '/storage/' . $item->img_primaria }}" width="120" alt="">
@@ -155,7 +164,7 @@
               <td>
                 <h4>{{ $item->title }}</h4>
               </td>
-                <form method="POST" action="{{ route('catalog3.destroy', $item->id) }}">
+                <form method="POST" action="{{ route('shop.destroy', $item->id) }}">
                   @csrf
                   @method('DELETE')
               <td>
@@ -166,7 +175,7 @@
                       </button>
                     </form>
                     @if($item->trashed())
-                    <form class="float-right" action="{{ route('restore-catalog2', $item->id) }}" method="POST">
+                    <form class="float-right" action="{{ route('restore-shop', $item->id) }}" method="POST">
                       @csrf
                       @method('PUT')
                       <button type="submit" class="btn btn-success btn-inverse" >
@@ -174,7 +183,7 @@
                       </button>
                     </form>
                     @else
-                    <a href="{{ route('catalog3.edit', $item->id) }}" class="btn btn-success btn-inverse float-right" >
+                    <a href="{{ route('shop.edit', $item->id) }}" class="btn btn-success btn-inverse float-right" >
                       <i class="fas fa-edit"></i>&nbsp; Editar
                     </a>
                     @endif
@@ -191,7 +200,7 @@
       </table>
       <div class="container-fluid">
         <div class="row">
-          <a class="ml-auto btn btn-danger" href="{{route('trashed-catalog3.index')}}"><i class="fas fa-trash"></i>&nbsp;Papelera</a>
+          <a class="ml-auto btn btn-danger" href="{{route('trashed-shop.index')}}"><i class="fas fa-trash"></i>&nbsp;Papelera</a>
         </div>
       </div>
     </div>
@@ -201,7 +210,7 @@
   @else
   <div class="card" style="min-height: 300px;">
     <div class="container mt-5">
-      <h3 class="h3 text-center text-gray-800">Ahora mismo no hay articulos en la Papelera del Segundo catálogo</h3>
+      <h3 class="h3 text-center text-gray-800">Ahora mismo no hay articulos en la Papelera del catálogo</h3>
     </div>
   </div>
 
@@ -211,23 +220,27 @@
 </div>
 
 @endsection
+
 @section('script')
   <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
   <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
   <script type="text/javascript">
+  @if($shop_sections[0]->style == 1)
+    $('#rows').hide();
+  @endif
   $('#estilo').btnSwitch({
     Theme:'Swipe',
     OnText: "Tabla",
     OffText: "Slider",
     OnValue: '1',
     OnCallback: function(val) {
-      $('#d-titulo').show();
+      $('#rows').hide();
       $('#d-precio').show();
 
       $.ajax({
              type:'POST',
              dataType: 'json',
-             url:'/catalogSection3/{{$catalog_section3s[0]->id}}',
+             url:'/shopSection/{{$shop_sections[0]->id}}',
              data:{"_token": "{{ csrf_token() }}",
              val:val
             },
@@ -238,13 +251,13 @@
       },
     OffValue: '0',
     OffCallback: function (val) {
-      $('#d-titulo').hide();
+      $('#rows').show();
       $('#d-precio').hide();
 
       $.ajax({
              type:'POST',
              dataType: 'json',
-             url:'/catalogSection3/{{$catalog_section3s[0]->id}}',
+             url:'/shopSection/{{$shop_sections[0]->id}}',
              data:{"_token": "{{ csrf_token() }}",
              val:val
             },
@@ -253,56 +266,54 @@
              }
           });
     },
-      @if($catalog_section3s[0]->style == 0)
+      @if($shop_sections[0]->style == 0)
         ToggleState: false
       @else
         ToggleState: true
       @endif
     });
 
-  $('#orientation').btnSwitch({
-    Theme:'Swipe',
-    OnText: "Retrato",
-    OffText: "Paisaje",
-    OnValue: '1',
-    OnCallback: function(val) {
-      $.ajax({
-             type:'POST',
-             dataType: 'json',
-             url:'/catalogSection3/{{$catalog_section3s[0]->id}}',
-             data:{"_token": "{{ csrf_token() }}",
-             val1:val
-            },
-             success:function(data){
-                alert(data.success);
-             }
-          });
+    $('#orientation').btnSwitch({
+      Theme:'Swipe',
+      OnText: "Retrato",
+      OffText: "Paisaje",
+      OnValue: '1',
+      OnCallback: function(val) {
+        $.ajax({
+               type:'POST',
+               dataType: 'json',
+               url:'/shopSection/{{$shop_sections[0]->id}}',
+               data:{"_token": "{{ csrf_token() }}",
+               val1:val
+              },
+               success:function(data){
+                  alert(data.success);
+               }
+            });
+        },
+      OffValue: '0',
+      OffCallback: function (val) {
+        $('#d-titulo').hide();
+        $('#d-precio').hide();
+
+        $.ajax({
+               type:'POST',
+               dataType: 'json',
+               url:'/shopSection/{{$shop_sections[0]->id}}',
+               data:{"_token": "{{ csrf_token() }}",
+               val1:val
+              },
+               success:function(data){
+                  alert(data.success);
+               }
+            });
       },
-    OffValue: '0',
-    OffCallback: function (val) {
-      $('#d-titulo').hide();
-      $('#d-precio').hide();
-
-      $.ajax({
-             type:'POST',
-             dataType: 'json',
-             url:'/catalogSection3/{{$catalog_section3s[0]->id}}',
-             data:{"_token": "{{ csrf_token() }}",
-             val1:val
-            },
-             success:function(data){
-                alert(data.success);
-             }
-          });
-    },
-      @if($catalog_section3s[0]->img_orientation == 0)
-        ToggleState: false
-      @else
-        ToggleState: true
-      @endif
-    });
-
-
+        @if($shop_sections[0]->img_orientation == 0)
+          ToggleState: false
+        @else
+          ToggleState: true
+        @endif
+      });
 
     $('#button_primary').spectrum({
       preferredFormat: "hex",
@@ -312,6 +323,7 @@
       preferredFormat: "hex",
      showInput: true,
     });
+
     $('#button_text_color').spectrum({
       preferredFormat: "hex",
      showInput: true,

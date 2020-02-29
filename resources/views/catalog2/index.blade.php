@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('css')
   <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
+  <link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
+  <style media="screen">
+  .tgl-sw-swipe + .btn-switch {
+    background: #36b9cc;
+  }
+  </style>
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -101,6 +107,14 @@
     <div class="form-group">
       <h5>Artículos del Catalogo:</h5><br>
       <div class="form-group">
+        <label for="estilo">Estilo de mostrar Artículos</label>
+        <div id="estilo"></div>
+      </div>
+      <div class="form-group">
+        <label for="estilo">Orientacion de las Imagenes</label>
+        <div id="orientation"></div>
+      </div>
+      <div class="form-group">
         <label for="button_primary">Botón Desactivado</label><br>
         <input onchange="this.form.submit()" class="form-control" name="button_primary" type="text" id="button_primary" value="{{ $catalog_section2s[0]->button_primary }}">
       </div>
@@ -199,7 +213,96 @@
 @endsection
 @section('script')
   <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+  <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
   <script type="text/javascript">
+  $('#estilo').btnSwitch({
+    Theme:'Swipe',
+    OnText: "Tabla",
+    OffText: "Slider",
+    OnValue: '1',
+    OnCallback: function(val) {
+      $('#d-titulo').show();
+      $('#d-precio').show();
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'/catalogSection2/{{$catalog_section2s[0]->id}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+      },
+    OffValue: '0',
+    OffCallback: function (val) {
+      $('#d-titulo').hide();
+      $('#d-precio').hide();
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'/catalogSection2/{{$catalog_section2s[0]->id}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+    },
+      @if($catalog_section2s[0]->style == 0)
+        ToggleState: false
+      @else
+        ToggleState: true
+      @endif
+    });
+
+  $('#orientation').btnSwitch({
+    Theme:'Swipe',
+    OnText: "Retrato",
+    OffText: "Paisaje",
+    OnValue: '1',
+    OnCallback: function(val) {
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'/catalogSection2/{{$catalog_section2s[0]->id}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val1:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+      },
+    OffValue: '0',
+    OffCallback: function (val) {
+      $('#d-titulo').hide();
+      $('#d-precio').hide();
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'/catalogSection2/{{$catalog_section2s[0]->id}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val1:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+    },
+      @if($catalog_section2s[0]->img_orientation == 0)
+        ToggleState: false
+      @else
+        ToggleState: true
+      @endif
+    });
+
+
     $('#button_primary').spectrum({
       preferredFormat: "hex",
      showInput: true,

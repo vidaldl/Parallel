@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class FontsTableSeeder extends Seeder
+class DemoContentFontsTableSeeder extends Seeder
 {
 
     /**

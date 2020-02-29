@@ -3,29 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Catalog\CatalogSection;
-use App\Catalog\CatalogItem;
+use App\Shop\ShopSection;
+use App\Shop\ShopItem;
 use App\Order;
 use DB;
 use Illuminate\Support\Facades\Storage;
-
-class CatalogController extends Controller
+class ShopController extends Controller
 {
-    public function __construct()
+  public function __construct()
       {
           $this->middleware('auth', ['except' => ['show']]);
       }
 
-    public function sectionUpdate(Request $request, $id) {
+      public function sectionUpdate(Request $request, $id) {
       if ($request->has('val')) {
         $style = $request->input('val');
         $data = array('style'=>$style);
-        DB::table('catalog_sections')->where('id', $id)->update($data);
+        DB::table('shop_sections')->where('id', $id)->update($data);
       }
       elseif ($request->has('val1')) {
         $img_orientation = $request->input('val1');
         $data = array('img_orientation'=>$img_orientation);
-        DB::table('catalog_sections')->where('id', $id)->update($data);
+        DB::table('shop_sections')->where('id', $id)->update($data);
       }
       else{
       $title = $request->input('title');
@@ -33,16 +32,18 @@ class CatalogController extends Controller
       $button_secondary = $request->input('button_secondary');
       $button_text_color = $request->input('button_text_color');
       $title_link = $request->input('title_link');
+      $rows = $request->input('rows');
 
       $data = array(
         'title' => $title,
         'button_primary'=>$button_primary,
         'button_secondary'=>$button_secondary,
         'button_text_color'=>$button_text_color,
-        'title_link'=>$title_link
+        'title_link'=>$title_link,
+        'rows'=>$rows
       );
 
-      DB::table('catalog_sections')->where('id', $id)->update($data);
+      DB::table('shop_sections')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fué actualizada');
       return redirect()->back();
       }
@@ -56,9 +57,9 @@ class CatalogController extends Controller
      */
     public function index()
     {
-      return view('catalog.index')
-      ->with('catalog_items', CatalogItem::all())
-      ->with('catalog_sections', CatalogSection::all())
+      return view('shop.index')
+      ->with('shop_items', ShopItem::all())
+      ->with('shop_sections', ShopSection::all())
       ->with('orders', Order::orderBy('order')->get());
     }
 
@@ -69,7 +70,7 @@ class CatalogController extends Controller
      */
     public function create()
     {
-      return view('catalog.create');
+      return view('shop.create');
     }
 
     /**
@@ -84,10 +85,10 @@ class CatalogController extends Controller
 
       $data = array('title'=>$title);
 
-      DB::table('catalog_items')->insert($data);
+      DB::table('shop_items')->insert($data);
 
-      $latest = DB::getPdo('catalog_items')->lastInsertId();
-      return redirect('catalog/' . $latest . '/edit');
+      $latest = DB::getPdo('shop_items')->lastInsertId();
+      return redirect('shop/' . $latest . '/edit');
     }
 
     /**
@@ -109,9 +110,9 @@ class CatalogController extends Controller
      */
     public function edit($id)
     {
-      return view('catalog.create')
-      ->with('catalog_sections', CatalogSection::all())
-      ->with('catalog_items', CatalogItem::find($id));
+      return view('shop.create')
+      ->with('shop_sections', ShopSection::all())
+      ->with('shop_items', ShopItem::find($id));
     }
 
     /**
@@ -128,15 +129,15 @@ class CatalogController extends Controller
           'image' => 'image|required|mimes:png,jpg,jpeg,svg'
        ]);
        //delete old
-       $latest = DB::table('catalog_items')->where('id', $id)->first();
+       $latest = DB::table('shop_items')->where('id', $id)->first();
        Storage::delete($latest->img_primaria);
 
 
       //upload it
-      $image = $request->file('image')->store('content/catalog');
+      $image = $request->file('image')->store('content/shop');
 
       $data =array('img_primaria' => $image);
-      DB::table('catalog_items')->where('id', $id)->update($data);
+      DB::table('shop_items')->where('id', $id)->update($data);
 
 
 
@@ -145,21 +146,21 @@ class CatalogController extends Controller
             'image2' => 'image|required|mimes:png,jpg,jpeg,svg'
          ]);
          //delete old
-         $latest = DB::table('catalog_items')->where('id', $id)->first();
+         $latest = DB::table('shop_items')->where('id', $id)->first();
          Storage::delete($latest->img_secundaria);
 
         //upload it
-        $image = $request->file('image2')->store('content/catalog');
+        $image = $request->file('image2')->store('content/shop');
 
         $data =array('img_secundaria' => $image);
-        DB::table('catalog_items')->where('id', $id)->update($data);
+        DB::table('shop_items')->where('id', $id)->update($data);
 
 
       }elseif($request->has('val')) {
           $destacado = $request->input('val');
 
           $data = array('destacado' => $destacado);
-          DB::table('catalog_items')->where('id', $id)->update($data);
+          DB::table('shop_items')->where('id', $id)->update($data);
 
       }else {
         $title = $request->input('title');
@@ -186,7 +187,7 @@ class CatalogController extends Controller
           'link_code' => $link_code
         );
 
-        DB::table('catalog_items')->where('id', $id)->update($data);
+        DB::table('shop_items')->where('id', $id)->update($data);
 
         session()->flash('success', 'La sección fué actualizada');
         return redirect()->back();
@@ -201,12 +202,12 @@ class CatalogController extends Controller
      */
 
     public function destroySecImg($id) {
-      $latest = DB::table('catalog_items')->where('id', $id)->first();
+      $latest = DB::table('shop_items')->where('id', $id)->first();
       $img_secundaria = '';
 
       $data = array('img_secundaria'=>$img_secundaria);
 
-      DB::table('catalog_items')->where('id', $id)->update('data');
+      DB::table('shop_items')->where('id', $id)->update('data');
       Storage::delete($latest->img_secundaria);
     }
 
@@ -214,29 +215,29 @@ class CatalogController extends Controller
 
     public function destroy($id)
     {
-      $catalog_items = CatalogItem::withTrashed()->where('id', $id)->firstOrFail();
+      $shop_items = ShopItem::withTrashed()->where('id', $id)->firstOrFail();
 
-      if ($catalog_items->trashed()) {
-        $catalog_items->deleteImage();
-        $catalog_items->deleteSecImage();
-        $catalog_items->forceDelete();
+      if ($shop_items->trashed()) {
+        $shop_items->deleteImage();
+        $shop_items->deleteSecImage();
+        $shop_items->forceDelete();
         session()->flash('success', 'Artículo eliminado permanentemente');
-        return redirect(route('trashed-catalog.index'));
+        return redirect(route('trashed-shop.index'));
       }else {
-        $catalog_items->delete();
+        $shop_items->delete();
         session()->flash('success', 'Artículo enviado a la papelera');
-        return redirect(route('catalog.index'));
+        return redirect(route('shop.index'));
       }
     }
 
     public function trashed() {
-      $trashed = CatalogItem::onlyTrashed()->get();
-      return view('catalog.index')->with('catalog_items', $trashed);
+      $trashed = ShopItem::onlyTrashed()->get();
+      return view('shop.index')->with('shop_items', $trashed);
     }
 
     public function restore($id) {
-      $catalog_items = CatalogItem::withTrashed()->where('id', $id)->firstOrFail();
-      $catalog_items->restore();
+      $shop_items = ShopItem::withTrashed()->where('id', $id)->firstOrFail();
+      $shop_items->restore();
       session()->flash('success', 'El Artículo Fue Restaurado');
       return redirect()->back();
     }

@@ -25,6 +25,8 @@ class DemoContentDatabaseSeeder extends Seeder
         $this->call(DemoContentContenidoSection4sTableSeeder::class);
         $this->call(DemoContentContenidoSection5sTableSeeder::class);
         $this->call(DemoContentContenidoSectionFootersTableSeeder::class);
+        $this->call(DemoContentFontStylesTableSeeder::class);
+        $this->call(DemoContentFontsTableSeeder::class);
         $this->call(DemoContentFooterLinksTableSeeder::class);
         $this->call(DemoContentFrasesTableSeeder::class);
         $this->call(DemoContentGalleryImagesTableSeeder::class);

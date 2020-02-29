@@ -20,6 +20,17 @@ class CatalogController2 extends Controller
 
 
     public function sectionUpdate(Request $request, $id) {
+      if ($request->has('val')) {
+        $style = $request->input('val');
+        $data = array('style'=>$style);
+        DB::table('catalog_section2s')->where('id', $id)->update($data);
+      }
+      elseif ($request->has('val1')) {
+        $img_orientation = $request->input('val1');
+        $data = array('img_orientation'=>$img_orientation);
+        DB::table('catalog_section2s')->where('id', $id)->update($data);
+      }
+      else{
       $title = $request->input('title');
       $button_primary = $request->input('button_primary');
       $button_secondary = $request->input('button_secondary');
@@ -37,6 +48,7 @@ class CatalogController2 extends Controller
       DB::table('catalog_section2s')->where('id', $id)->update($data);
       session()->flash('success', 'La sección fué actualizada');
       return redirect()->back();
+      }
     }
 
 
@@ -100,7 +112,9 @@ class CatalogController2 extends Controller
      */
     public function edit($id)
     {
-      return view('catalog2.create')->with('catalog_item2s', CatalogItem2::find($id));
+      return view('catalog2.create')
+      ->with('catalog_section2s', CatalogSection2::all())
+      ->with('catalog_item2s', CatalogItem2::find($id));
     }
 
     /**

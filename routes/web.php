@@ -90,6 +90,15 @@ Route::get('trashed-catalog3', 'CatalogController3@trashed')->name('trashed-cata
 Route::put('restore-catalog3/{catalog}', 'CatalogController3@restore')->name('restore-catalog3');
 Route::post('/delSecImg3/{id}', 'CatalogController3@destroySecImg')->name('sec.img.destroy3');
 
+//SHOP
+Route::post('/shopSection/{id}', 'ShopController@sectionUpdate')->name('shop.section.update');
+Route::resource('shop', 'ShopController', ['except' => ['update']]);
+Route::post('/shopUpdate/{id}', 'ShopController@update')->name('shop.update');
+Route::get('trashed-shop', 'ShopController@trashed')->name('trashed-shop.index');
+Route::put('restore-shop/{shop}', 'ShopController@restore')->name('restore-shop');
+Route::post('/delSecImgShop/{id}', 'ShopController@destroySecImg')->name('sec.img.shop');
+
+
 Route::middleware(['auth'])->group(function () {
 
 // ================================== Display ========================================
@@ -108,6 +117,7 @@ Route::post('/display-portfolio-gallery', 'DisplayController@portfoliogalleryDis
 Route::post('/display-catalog', 'DisplayController@catalogDisplay');
 Route::post('/display-catalog2', 'DisplayController@catalog2Display');
 Route::post('/display-catalog3', 'DisplayController@catalog3Display');
+Route::post('/display-shop', 'DisplayController@shopDisplay');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
 // ================================== Styles ========================================

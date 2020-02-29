@@ -21,6 +21,7 @@ class DemoContentCatalogSection2sTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'title' => 'Catálogo 2',
+                'title_link' => NULL,
                 'button_primary' => '#EEE',
                 'button_secondary' => '#F9F9F9',
                 'button_text_color' => '#333',

@@ -44,6 +44,8 @@ use App\Catalog3\CatalogSection3;
 use App\FooterLink;
 use App\Font;
 use App\FontStyle;
+use App\Shop\ShopItem;
+use App\Shop\ShopSection;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 
@@ -112,6 +114,8 @@ class IndexController extends Controller
       ->with('footer_links', FooterLink::all())
       ->with('fonts', Font::all())
       ->with('font_styles', FontStyle::all())
+      ->with('shop_sections', ShopSection::all())
+      ->with('shop_items', ShopItem::all())
       ->with('users', User::all());
     }
 

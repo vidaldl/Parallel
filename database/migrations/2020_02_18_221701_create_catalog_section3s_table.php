@@ -20,6 +20,8 @@ class CreateCatalogSection3sTable extends Migration
           $table->string('button_primary')->default('#EEE');
           $table->string('button_secondary')->default('#F9F9F9');
           $table->string('button_text_color')->default('#333');
+          $table->integer('style')->default(0);
+          $table->integer('img_orientation')->default(0);
         });
     }
 
