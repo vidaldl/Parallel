@@ -116,8 +116,13 @@
               </div>
 
               <div class="form-group col-md-4">
-                <label for="color">Color Principal</label><br>
+                <label for="color">Color del Texto</label><br>
                 <input onchange="this.form.submit()" class="form-control" name="color" type="text" id="color" value="{{ $contenidosectionfooters[0]->color }}">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="color">Color del Texto(enlaces)</label><br>
+                <input onchange="this.form.submit()" class="form-control" name="color_sec" type="text" id="color_sec" value="{{ $contenidosectionfooters[0]->color_sec }}">
               </div>
               <div class="form-group">
                 <label for="acerca" class="col-form-label">Acerca de la Empresa</label>
@@ -201,6 +206,11 @@ $('#back_color').spectrum({
 });
 
 $('#color').spectrum({
+  preferredFormat: "hex",
+ showInput: true,
+});
+
+$('#color_sec').spectrum({
   preferredFormat: "hex",
  showInput: true,
 });

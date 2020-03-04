@@ -22,7 +22,7 @@
 
   						<div class="col-md-12">
 
-  							<h4 class="ls1 t400 uppercase">{{$contenidosectionfooters[0]->social_title}}</h4>
+  							<h4 class="ls1 t400 uppercase" style="color: {{$contenidosectionfooters[0]->color}}">{{$contenidosectionfooters[0]->social_title}}</h4>
 
   							<div class="bottommargin-sm clearfix">
 									@foreach($footer_links as $item)

@@ -25,7 +25,12 @@ h6 {
 
 /* ButtonColors */
 @endforeach
-
+.dark .footer-widgets-wrap a {
+    color: {{$contenidosectionfooters[0]->color}};
+}
+.dark .footer-widgets-wrap a:hover {
+    color: {{$contenidosectionfooters[0]->color_sec}};
+}
 
 .button-catalog {
 	text-shadow: none !important;

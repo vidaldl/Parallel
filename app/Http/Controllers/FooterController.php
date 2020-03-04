@@ -71,13 +71,15 @@ class FooterController extends Controller
     $acerca = $request->input('acerca');
     $back_color = $request->input('back_color');
     $color = $request->input('color');
+    $color_sec = $request->input('color_sec');
 
     $data=array(
       "copy"=>$copy,
       "social_title"=>$social_title,
       "acerca"=>$acerca,
       "back_color"=>$back_color,
-      "color"=>$color
+      "color"=>$color,
+      "color_sec"=>$color_sec
     );
     DB::table('contenido_section_footers')->update($data);
     session()->flash('success', 'La sección fue actualizada');
