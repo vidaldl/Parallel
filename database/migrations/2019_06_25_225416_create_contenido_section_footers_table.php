@@ -22,6 +22,8 @@ class CreateContenidoSectionFootersTable extends Migration
             $table->integer('style')->default('1')->nullable();
             $table->integer('line')->default('0')->nullable();
             $table->integer('line_style')->default('1')->nullable();
+            $table->string('back_color')->default('#333');
+            $table->string('color')->default('#CCC');
         });
     }
 

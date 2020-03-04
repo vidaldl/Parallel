@@ -3,6 +3,7 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
+<link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -109,6 +110,15 @@
                 <label for="image" class="col-form-label">Imagen de Logo</label><br>
                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalLogo">Subir Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
               </div>
+              <div class="form-group col-md-4">
+                <label for="back_color">Color de Fondo:</label><br>
+                <input onchange="this.form.submit()" class="form-control" name="back_color" type="text" id="back_color" value="{{ $contenidosectionfooters[0]->back_color }}">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="color">Color Principal</label><br>
+                <input onchange="this.form.submit()" class="form-control" name="color" type="text" id="color" value="{{ $contenidosectionfooters[0]->color }}">
+              </div>
               <div class="form-group">
                 <label for="acerca" class="col-form-label">Acerca de la Empresa</label>
                 <textarea id="acerca" type="input" name="acerca" class="form-control @error('copy') is-invalid @enderror">{{ $contenidosectionfooters[0]->acerca }}</textarea>
@@ -183,7 +193,18 @@
 @section('script')
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
+<script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
 <script>
+$('#back_color').spectrum({
+  preferredFormat: "hex",
+ showInput: true,
+});
+
+$('#color').spectrum({
+  preferredFormat: "hex",
+ showInput: true,
+});
+
 Dropzone.options.logo = {
    paramName: "logo",
    addRemoveLinks: true,

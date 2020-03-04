@@ -1,7 +1,7 @@
 
 @section('footer')
 
-<footer id="footer" class="site-footer dark" id="footer">
+<footer id="footer" style="background-color: {{$contenidosectionfooters[0]->back_color}}; color: {{$contenidosectionfooters[0]->color}}" class="site-footer dark" id="footer">
   <!-- Copyrights
 			============================================= -->
 			<div id="copyrights">

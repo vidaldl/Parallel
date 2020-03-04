@@ -8,6 +8,8 @@ use App\PortfolioGallery\GalleryItem;
 use App\PortfolioGallery\GallerySection;
 use App\Style;
 use App\Order;
+use App\Font;
+use App\FontStyle;
 
 use DB;
 use Illuminate\Support\Facades\Storage;
@@ -103,6 +105,8 @@ class PortfolioGalleryController extends Controller
       $previous = GalleryItem::where('id', '<', $item->id)->orderBy('id','desc')->first();
       return view('portfolioGallery.show')
       ->with('styles', Style::all())
+      ->with('fonts', Font::all())
+      ->with('font_styles', Font::all())
       ->with('gallery_items', GalleryItem::find($id))
       ->with('paginate_items', GalleryItem::all())
       ->with(compact('item', 'previous', 'next'))

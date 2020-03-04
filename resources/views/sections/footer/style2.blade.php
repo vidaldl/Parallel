@@ -1,5 +1,5 @@
 @section('footer')
-<footer id="footer" class="dark">
+<footer id="footer" class="dark" style="background-color: {{$contenidosectionfooters[0]->back_color}}; color: {{$contenidosectionfooters[0]->color}}">
 
 			<div class="container">
 
