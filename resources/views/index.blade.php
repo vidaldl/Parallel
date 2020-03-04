@@ -9,7 +9,7 @@
   <!-- Header -->
   <header id="header" class="full-header" data-sticky-class="not-dark">
     <div id="header-wrap">
-      <div class="container clearfix">
+      <div class="container-fluid clearfix">
         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
         <!-- Logo
         ============================================= -->

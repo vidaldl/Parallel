@@ -18,6 +18,9 @@ use App\Style;
 use App\ContenidoSection2;
 use App\ContenidoSectionFooter;
 use App\MenuItem;
+use App\FooterLink;
+use App\Font;
+use App\FontStyle;
 
 class PortfolioItemController extends Controller
 {
@@ -105,6 +108,9 @@ class PortfolioItemController extends Controller
       ->with('styles', Style::all())
       ->with('contenidosection2s', ContenidoSection2::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('footer_links', FooterLink::all())
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all())
       ->with('portfolioItems', PortfolioItem::find($id));
     }
 
