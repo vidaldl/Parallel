@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(CatalogSection3sTableSeeder::class);
         // $this->call(FontsTableSeeder::class);
         // $this->call(FontStylesTableSeeder::class);
-        $this->call(ShopItemsTableSeeder::class);
-        $this->call(ShopSectionsTableSeeder::class);
+        // $this->call(ShopItemsTableSeeder::class);
+        // $this->call(ShopSectionsTableSeeder::class);
+        $this->call(ModalsTableSeeder::class);
     }
 }

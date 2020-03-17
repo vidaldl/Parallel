@@ -134,4 +134,12 @@ class DisplayController extends Controller
     session()->flash('success', 'La sección fué actualizada');
     return redirect()->back();
   }
+
+  public function modalDisplay(Request $request) {
+    $display = $request->input('val');
+    $data = array('display'=>$display);
+    DB::table('orders')->where('section', 'modal')->update($data);
+    session()->flash('success', 'La sección fué actualizada');
+    return redirect()->back();
+  }
 }

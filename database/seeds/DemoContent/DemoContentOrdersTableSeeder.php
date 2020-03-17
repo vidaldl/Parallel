@@ -23,7 +23,7 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'section' => 'servicios',
                 'name' => 'Servicios',
                 'order' => 0,
-                'display' => 0,
+                'display' => 1,
                 'line' => 2,
                 'line_style' => 1,
                 'container_style' => 1,
@@ -240,6 +240,20 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_name' => 'Tienda',
                 'menu_display' => 0,
                 'edit_link' => 'shop',
+            ),
+            16 => 
+            array (
+                'id' => 18,
+                'section' => 'modal',
+                'name' => 'Modal',
+                'order' => 16,
+                'display' => 1,
+                'line' => 0,
+                'line_style' => 0,
+                'container_style' => 1,
+                'menu_name' => 'Modal',
+                'menu_display' => 0,
+                'edit_link' => 'modal',
             ),
         ));
         

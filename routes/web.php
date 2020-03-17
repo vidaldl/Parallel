@@ -32,6 +32,10 @@ Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 
 
 
+//ONLOAD MODAL
+Route::get('modal', 'ModalController@edit')->name('modal.edit');
+Route::post('modal/{id}', 'ModalController@update')->name('modal.update');
+Route::post('modalImg/{id}', 'ModalController@deleteImg')->name('modal.deleteImg');
 //Portfolio
 Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');
 Route::resource('portfolioItems', 'Portfolio\PortfolioItemController', ['except' => ['update']]);
@@ -118,6 +122,7 @@ Route::post('/display-catalog', 'DisplayController@catalogDisplay');
 Route::post('/display-catalog2', 'DisplayController@catalog2Display');
 Route::post('/display-catalog3', 'DisplayController@catalog3Display');
 Route::post('/display-shop', 'DisplayController@shopDisplay');
+Route::post('/display-modal', 'DisplayController@modalDisplay');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
 // ================================== Styles ========================================

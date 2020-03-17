@@ -24,6 +24,7 @@ class DemoContentContenidoSection2sTableSeeder extends Seeder
                 'display' => 1,
                 'back_color' => '#ffffff',
                 'desc_link' => 0,
+                'icon_style' => 0,
             ),
         ));
         

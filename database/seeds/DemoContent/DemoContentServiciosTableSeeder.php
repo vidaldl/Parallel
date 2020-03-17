@@ -21,6 +21,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'icon' => 'fas fa-car-alt',
+                'icon_img' => 'content/servicios/icons/bRNmkIpyg9Uh3Ts9AM0ZDwCNfirUeKZPiR7hy7ub.png',
                 'title' => 'Logística',
                 'contenido' => 'Eque feugiat contentiones ei has. IdSaludos',
                 'image' => 'content/servicios/W11dVrGGGIgecSlgs5Y0wKoAEeRF14AtWHaB5pTL.png',
@@ -33,6 +34,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'icon' => 'far fa-edit',
+                'icon_img' => 'content/servicios/icons/TYy1xmbroglyWJgVt4QKkod6CqC0nehKl9tjgoSp.png',
                 'title' => 'Planning',
                 'contenido' => 'Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.',
                 'image' => 'content/servicios/A5kjDTI00zJsrm4GIAz1xocjIH4iydFt2qHXE36l.png',
@@ -45,6 +47,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'icon' => 'fas fa-ship',
+                'icon_img' => 'content/servicios/icons/XeRTjESibgCZZxWmUFdOjtlYO2BuzFo3kLlwSdRS.png',
                 'title' => 'Forwarders',
                 'contenido' => 'Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.',
                 'image' => 'content/servicios/aK0X8giQB1yL7hbbgTRy9cXochzwJ7UaAEsQwzIS.png',
@@ -57,6 +60,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'icon' => 'fas fa-warehouse',
+                'icon_img' => NULL,
                 'title' => 'Almacenaje',
                 'contenido' => 'Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.',
                 'image' => 'content/servicios/hQPHQdctIXIyg0PAQmi4eeXKNUFqstPvaeSo3726.png',
@@ -69,6 +73,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'icon' => 'fas fa-map-marked-alt',
+                'icon_img' => 'content/servicios/icons/YbMk0lwPlNusP6AbT2NTouN3h3qs8AqEPk0ND8pK.png',
                 'title' => 'Transporte',
                 'contenido' => 'Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.',
                 'image' => 'content/servicios/BcyhKw891BttjAsDWMa3PjNGOEJrQLPHLq5VJJap.png',
@@ -81,6 +86,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'icon' => 'store',
+                'icon_img' => NULL,
                 'title' => 'Tienda',
                 'contenido' => 'Tienda online para provar klk con klk',
                 'image' => '',
@@ -93,6 +99,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'icon' => 'table',
+                'icon_img' => NULL,
                 'title' => 'Mesas.com',
                 'contenido' => 'En los bulto no nos destacamos',
                 'image' => '',
@@ -105,6 +112,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 8,
                 'icon' => 'peace',
+                'icon_img' => NULL,
                 'title' => 'tranquilidad.com',
                 'contenido' => 'ontobul',
                 'image' => '',
@@ -117,6 +125,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 9,
                 'icon' => 'fas fa-door-open',
+                'icon_img' => 'content/servicios/icons/sX0diFAvIOd4XYpFcjNHtpfw3LBA4uKTjqhsxcLT.png',
                 'title' => 'Conectados',
                 'contenido' => 'Estamos a tu disposición',
                 'image' => 'content/servicios/O4jvcXTSOx13ML04dVY7Xj7j7U6TAoRCSBPdsgeI.png',
@@ -129,6 +138,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 10,
                 'icon' => 'fab fa-accessible-icon',
+                'icon_img' => 'content/servicios/icons/GxqNUMjPQGrGsYT51xHyIKVC9LGhiRWSzi4Rc2Af.png',
                 'title' => 'Accesibilidad',
                 'contenido' => 'Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.',
                 'image' => 'content/servicios/NvZKknFjXpMNkHETwxAggSA5a6RdO91ajeOn3oY0.png',
@@ -141,6 +151,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 11,
                 'icon' => 'fab fa-adn',
+                'icon_img' => NULL,
                 'title' => 'Calidad',
                 'contenido' => 'HOLAAAA',
                 'image' => 'content/servicios/2AR5tZ5e9zg49cYjw3RChRaKlg89vVGCnXMkv3dz.png',
@@ -153,6 +164,7 @@ class DemoContentServiciosTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'icon' => 'far fa-user-circle',
+                'icon_img' => NULL,
                 'title' => 'Enfocados en Tí',
                 'contenido' => 'Here we show you how it\'s done!',
                 'image' => 'content/servicios/PlblaHumiG03iY2ddsHzmt9GjjiUiqE6IgsrfUyo.png',

@@ -27,6 +27,9 @@ class DemoContentContenidoSectionFootersTableSeeder extends Seeder
                 'style' => 2,
                 'line' => 2,
                 'line_style' => 1,
+                'back_color' => '#333',
+                'color' => '#CCC',
+                'color_sec' => '#999',
             ),
         ));
         

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
+<link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
@@ -199,7 +200,22 @@
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
 <script>
+$('#acerca').trumbowyg({
+  btns: [
+    ['fontsize'],
+    ['strong', 'em', 'del'],
+    ['link'],
+    ['image'],
+    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+    ['unorderedList', 'orderedList'],
+    ['horizontalRule'],
+    ['removeformat'],
+    ['fullscreen']
+  ]
+});
 $('#back_color').spectrum({
   preferredFormat: "hex",
  showInput: true,

@@ -19,12 +19,20 @@
 <div class="card">
   <div class="card-header">
     <div class="row">
+      <div class="mr-auto ml-5">
+        <div class="row">
+          <h5>Iconos:</h5>&nbsp;&nbsp;
+          <div id="icon_style"></div>
+        </div>
+      </div>
+
       <div class="ml-auto mr-5">
         <div class="row">
-          <h5>Link Detalles:</h5>&nbsp;&nbsp;
+          <h5>Servicios Detallados:</h5>&nbsp;&nbsp;
           <div id="display"></div>
         </div>
       </div>
+
     </div>
   </div>
   <div class="card-body table-hover">
@@ -42,9 +50,15 @@
           @foreach($servicios as $servicio)
           <tr>
               <td>
+              @if($contenido_section2s[0]->icon_style == 1)
+
+                <img style="width: 64px" src="{{'/storage/' . $servicio->icon_img}}">
+
+              @else
                 <div class="feature-icon">
                   <span class="{{ $servicio->icon }}"></span>
                 </div>
+              @endif
               </td>
               <td>
                 <h4>{{ $servicio->title }}</h4>
@@ -134,6 +148,60 @@ $('#display').btnSwitch({
 
   },
   @if($contenido_section2s[0]->desc_link == 1)
+  ToggleState: true
+  @else
+  ToggleState: false
+  @endif
+});
+
+$('#icon_style').btnSwitch({
+  Theme:'Swipe',
+  OnText: "Subir",
+  OffText: "FontAwesome",
+  OnValue: '1',
+  OnCallback: function(val) {
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("section2.update", 1)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val1:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+        setTimeout(
+          function()
+          {
+            location.reload();
+          }, 500);
+
+    },
+  OffValue: '0',
+  OffCallback: function (val) {
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("section2.update", 1)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val1:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+        setTimeout(
+          function()
+          {
+            location.reload();
+          }, 500);
+
+  },
+  @if($contenido_section2s[0]->icon_style == 1)
   ToggleState: true
   @else
   ToggleState: false

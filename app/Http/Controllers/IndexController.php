@@ -48,7 +48,7 @@ use App\Shop\ShopItem;
 use App\Shop\ShopSection;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
-
+use App\Modal;
 
 
 
@@ -116,6 +116,7 @@ class IndexController extends Controller
       ->with('font_styles', FontStyle::all())
       ->with('shop_sections', ShopSection::all())
       ->with('shop_items', ShopItem::all())
+      ->with('modals', Modal::all())
       ->with('users', User::all());
     }
 

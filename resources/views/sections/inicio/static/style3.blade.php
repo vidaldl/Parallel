@@ -1,4 +1,5 @@
-<section id="slider" class="slider-element swiper-no-swiping slider-parallax swiper_wrapper clearfix" data-grab="false" style="height: 250px;">
+<div id="home" class="page-section" style="position:absolute;top:0;left:0;width:100%;height:200px;z-index:-2;"></div>
+<section id="slider" class="slider-element full-screen swiper-no-swiping slider-parallax swiper_wrapper clearfix" data-grab="false" style="height: 250px;">
 
 	<div class="slider-parallax-inner">
 
@@ -22,8 +23,6 @@
 								@endif
 							@endif
 						</div>
-
-
 
 					</div>
 				</div>

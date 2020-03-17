@@ -5,6 +5,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
 
+	<link rel="icon" href="{{'/storage/' . $styles[0]->favicon}}" type="image/gif">
 	<!-- Stylesheets
 	============================================= -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
@@ -31,7 +32,7 @@
 @yield('style')
 </head>
 
-<body>
+<body class="stretched">
 
 
 @yield('content')

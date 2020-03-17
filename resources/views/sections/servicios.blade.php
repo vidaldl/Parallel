@@ -14,17 +14,32 @@
     <div class="col-md-4 bottommargin-lg">
       <div class="feature-box fbox-plain rightmargin-sm">
 				@if($contenidosection2s[0]->desc_link == 1)
-				<div class="fbox-icon" data-animate="bounceIn">
-          <a href="#" data-featherlight="#animatedModal{{$servicio->id}}"><i class="{{ $servicio->icon }}"></i></a>
-        </div>
-				<a href="#" style="text-decoration: none;" data-featherlight="#animatedModal{{$servicio->id}}">
-					<h3>{{ $servicio->title }}</h3>
-				</a>
+					@if($contenidosection2s[0]->icon_style == 1)
+						<div class="fbox-icon" data-animate="bounceIn">
+							<a href="#" data-featherlight="#animatedModal{{$servicio->id}}"><img src="{{$servicio->icon_img}}"></a>
+						</div>
+						<a href="#" style="text-decoration: none;" data-featherlight="#animatedModal{{$servicio->id}}">
+							<h3>{{ $servicio->title }}</h3>
+						</a>
+					@else
+						<div class="fbox-icon" data-animate="bounceIn">
+							<a href="#" data-featherlight="#animatedModal{{$servicio->id}}"><i class="{{ $servicio->icon }}"></i></a>
+						</div>
+						<a href="#" style="text-decoration: none;" data-featherlight="#animatedModal{{$servicio->id}}">
+							<h3>{{ $servicio->title }}</h3>
+						</a>
+					@endif
 				@else
-				<div class="fbox-icon" data-animate="bounceIn">
-          <span href="#"><i class="{{ $servicio->icon }}"></i></span>
-        </div>
-				<h3>{{ $servicio->title }}</h3>
+					@if($contenidosection2s[0]->icon_style == 1)
+						<div class="fbox-icon" data-animate="bounceIn">
+		          <span href="#"><img src="{{'/storage/' . $servicio->icon_img}}"></span>
+		        </div>
+					@else
+						<div class="fbox-icon" data-animate="bounceIn">
+							<span href="#"><i class="{{ $servicio->icon }}"></i></span>
+						</div>
+					@endif
+					<h3>{{ $servicio->title }}</h3>
 				@endif
         <p class="short">{{ $servicio->contenido }}</p>
       </div>

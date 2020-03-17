@@ -18,6 +18,7 @@ class CreateStylesTable extends Migration
             $table->string('primary_color')->nullable();
             $table->string('button_primary')->nullable();
             $table->string('button_secondary')->nullable();
+            $table->string('favicon')->nullable();
             $table->string('page_title')->nullable();
             $table->string('custom_icon_1')->nullable();
             $table->string('custom_link_text_1')->nullable();

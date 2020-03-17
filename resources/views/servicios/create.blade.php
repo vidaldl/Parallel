@@ -97,21 +97,25 @@
 
             <div class="tabdiv" id="portada">
               <div class="form-group">
-                <label for="icon" class="col-form-label">Ícono</label>
-                <div class="input-group">
-                  <input id="icon" type="text" data-placement="bottomRight" class="form-control @error('icon') is-invalid @enderror"  name="icon" value="{{isset($servicio) ? $servicio->icon : ''}}">
-                  <div class="btn-group">
-                     <button type="button" class="btn btn-primary iconpicker-component"><i
-                             class="{{ isset($servicio) ? $servicio->icon : 'fab fa-font-awesome-alt' }}"></i></button>
-                     <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
-                             data-selected="fa-car" data-toggle="dropdown">
-                         <span class="caret"></span>
-                         <span class="sr-only">Toggle Dropdown</span>
-                     </button>
-                     <div class="dropdown-menu"></div>
-                 </div>
+                <label for="icon" class="col-form-label">Ícono</label><br>
+                @if($section2[0]->icon_style == 0)
+                  <div class="input-group">
+                    <input id="icon" type="text" data-placement="bottomRight" class="form-control @error('icon') is-invalid @enderror"  name="icon" value="{{isset($servicio) ? $servicio->icon : ''}}">
+                    <div class="btn-group">
+                       <button type="button" class="btn btn-primary iconpicker-component"><i
+                               class="{{ isset($servicio) ? $servicio->icon : 'fab fa-font-awesome-alt' }}"></i></button>
+                       <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
+                               data-selected="fa-car" data-toggle="dropdown">
+                           <span class="caret"></span>
+                           <span class="sr-only">Toggle Dropdown</span>
+                       </button>
+                       <div class="dropdown-menu"></div>
+                   </div>
 
-                </div>
+                  </div>
+                @else
+                  <a href="#" class="btn btn-primary {{isset($servicio) ? '' : 'disabled'}}"  data-toggle="modal" data-target="#modalIcon">Icono &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                @endif
               </div>
 
               <div class="form-group mt-5">
@@ -172,44 +176,86 @@
 
 
 @if(isset($servicio))
-<div class="modal fade" id="modalScreenshot" tabindex="-1" role="dialog" aria-labelledby="modalScreenshot" aria-hidden="true">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">
-    <div class="modal-header" style="background-color:#4066D4;">
-    <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    <div class="modal-body">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="form-group">
-            <label for="image" class="col-form-label">Imagen de la Descripción</label>
-            <form id="screenshot" method="POST" class="image dropzone" action="{{route('servicio.update', $servicio->id)}}" enctype="multipart/form-data">
-              @csrf
-            </form>
-            @error('image')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror
+<!-- ICON -->
+<div class="modal fade" id="modalIcon" tabindex="-1" role="dialog" aria-labelledby="modalIcon" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#4066D4;">
+      <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+              <label for="image" class="col-form-label">Subir Icono</label>
+              <form id="icon" method="POST" class="icon dropzone" action="{{route('servicio.update', $servicio->id)}}" enctype="multipart/form-data">
+                @csrf
+              </form>
+              @error('image')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
+              </div>
+            </div>
+            <div class="col-md-8 docs-buttons">
+              @if(isset($servicio))
+              <img style="width:100%;" src="{{'/storage/' . $servicio->icon_img}}" class="logoThumb img-fluid img-thumbnail rounded">
+              @endif
+              <div class="editador d-none" style="width:450px; height: 600px; background-color: #000;">
+              </div>
             </div>
           </div>
-          <div class="col-md-8">
-            @if(isset($servicio))
-            <img style="width:100%;" src="{{'/storage/' . $servicio->image}}" class="logoThumb1 img-fluid img-thumbnail rounded">
-            @endif
-            <div class="editador1 d-none" style="width:450px; height: 600px; background-color: #000;">
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="modal-footer ">
-      <button class="buttonConfirm1 btn btn-primary d-none">Confirmar</button>
+      </div>
+      <div class="modal-footer ">
+        <button class="buttonConfirm btn btn-primary d-none">Confirmar</button>
+      </div>
     </div>
   </div>
 </div>
+<!-- /ICON -->
+<!-- IMAGE -->
+<div class="modal fade" id="modalScreenshot" tabindex="-1" role="dialog" aria-labelledby="modalScreenshot" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#4066D4;">
+      <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+              <label for="image" class="col-form-label">Imagen de la Descripción</label>
+              <form id="screenshot" method="POST" class="image dropzone" action="{{route('servicio.update', $servicio->id)}}" enctype="multipart/form-data">
+                @csrf
+              </form>
+              @error('image')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
+              </div>
+            </div>
+            <div class="col-md-8">
+              @if(isset($servicio))
+              <img style="width:100%;" src="{{'/storage/' . $servicio->image}}" class="logoThumb1 img-fluid img-thumbnail rounded">
+              @endif
+              <div class="editador1 d-none" style="width:450px; height: 600px; background-color: #000;">
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer ">
+        <button class="buttonConfirm1 btn btn-primary d-none">Confirmar</button>
+      </div>
+    </div>
+  </div>
 </div>
+<!-- /IMAGE -->
 @endif
 
 @endsection
@@ -313,6 +359,73 @@ $('#contenido_modal').trumbowyg({
        $(image).appendTo(editor)
        // Create Cropper.js
        var cropper = new Cropper(image, { aspectRatio: 16/9 });
+   },
+   init: function () {
+
+      this.on("complete", function (file) {
+        if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+
+          setTimeout(
+            function()
+            {
+              location.reload();
+            }, 1500);
+        }
+      });
+    }
+  };
+
+  Dropzone.options.icon = {
+
+    paramName: "icon_img",
+     transformFile: function(file, done) {
+        var myDropZone = this;
+        var editor = $('.editador');
+        var logoThumb = $('.logoThumb');
+        $(logoThumb).addClass('d-none');
+        $(editor).removeClass('d-none');
+        $(editor).addClass('d-block');
+        // Create confirm button at the top left of the viewport
+        var buttonConfirm = $('.buttonConfirm');
+        $(buttonConfirm).removeClass('d-none');
+        $(buttonConfirm).addClass('d-block');
+        $(buttonConfirm).click(function() {
+          // Get the canvas with image data from Cropper.js
+           var canvas = cropper.getCroppedCanvas({
+             width: 720,
+             height: 720
+           });
+           // Turn the canvas into a Blob (file object without a name)
+           canvas.toBlob(function(blob) {
+             // Create a new Dropzone file thumbnail
+              myDropZone.createThumbnail(
+                blob,
+                myDropZone.options.thumbnailWidth,
+                myDropZone.options.thumbnailHeight,
+                myDropZone.options.thumbnailMethod,
+                false,
+                function(dataURL) {
+
+                  // Update the Dropzone file thumbnail
+                  myDropZone.emit('thumbnail', file, dataURL);
+                  // Return the file to Dropzone
+                  done(blob);
+              });
+           });
+          // Remove the editor from the view
+          $(buttonConfirm).removeClass('d-block');
+          $(buttonConfirm).addClass('d-none');
+
+
+        });
+
+        // Create an image node for Cropper.js
+       var image = new Image();
+       image.src = URL.createObjectURL(file);
+       // editor.appendChild(image);
+       $(image).appendTo(editor)
+       // Create Cropper.js
+       var cropper = new Cropper(image, { aspectRatio: 1/1 });
    },
    init: function () {
 

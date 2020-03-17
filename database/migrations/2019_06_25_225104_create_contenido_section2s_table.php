@@ -19,6 +19,8 @@ class CreateContenidoSection2sTable extends Migration
             $table->integer('display')->default('1')->nullable();
             $table->string('back_color')->nullable()->default('#FFFFFF');
             $table->integer('desc_link')->default(1);
+            $table->integer('icon_style')->default(1);
+            
         });
     }
 

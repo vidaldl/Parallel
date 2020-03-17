@@ -16,8 +16,12 @@ class CreateMenuItemsTable extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('logo')->nullable();
+            $table->string('logo_dark')->nullable();
             $table->string('item_inicio');
-            $table->timestamps();
+            $table->integer('padding')->nullable();
+            $table->integer('menu_style')->nullable()->default(0);
+            $table->integer('menu_borders')->nullable()->default(0);
+            $table->integer('menu_sticky')->nullable()->default(0);
         });
     }
 

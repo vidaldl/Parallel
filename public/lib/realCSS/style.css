@@ -1171,6 +1171,8 @@ body.stretched #header.full-header .container {
 	transition: margin .4s ease, padding .4s ease;
 }
 
+
+
 #primary-menu ul li > a span { display: none; }
 
 #primary-menu ul li > a i {
@@ -11304,7 +11306,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 .emphasis-title h2 {
 	margin-bottom: 0;
 	font-weight: 700;
-	text-transform: uppercase;
+
 	letter-spacing: 1px;
 	color: #333;
 }

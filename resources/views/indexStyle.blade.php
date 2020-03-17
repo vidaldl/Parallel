@@ -1,10 +1,21 @@
 <!-- FONT LINKS -->
 
 <style>
+/* MODAL BUTTON */
+.modal-button {
+	color: {{$modals[0]->color}};
+}
 
+.modal-button:hover {
+	background-color: {{$modals[0]->button_color_sec}};
+}
 /* FONTS */
 body {
 	font-family: '{!!$fonts[1]->font_name!!}', sans-serif;
+}
+
+#primary-menu ul li > a:hover {
+	color: {{$styles[0]->button_secondary}};
 }
 
 h1,

@@ -12,8 +12,7 @@
 
   						<div class="widget clearfix">
   							<img src="{{'/storage/' . $contenidosectionfooters[0]->logo}}" style="position: relative; opacity: 0.85; left: -10px; max-height: 80px; margin-bottom: 20px;" alt="Footer Logo">
-
-  							<p>{{ $contenidosectionfooters[0]->acerca }}</p>
+								{!! $contenidosectionfooters[0]->acerca !!}
   						</div>
 
   					</div>

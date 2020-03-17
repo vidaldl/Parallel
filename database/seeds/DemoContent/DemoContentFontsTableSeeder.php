@@ -21,15 +21,15 @@ class DemoContentFontsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'element' => 'titles',
-                'font_link' => '<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">',
-                'font_name' => 'Raleway',
+                'font_link' => '<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">',
+                'font_name' => 'Shadows Into Light',
             ),
             1 => 
             array (
                 'id' => 2,
                 'element' => 'body',
-                'font_link' => '<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">',
-                'font_name' => 'Lato',
+                'font_link' => '<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">',
+                'font_name' => 'Roboto',
             ),
         ));
         

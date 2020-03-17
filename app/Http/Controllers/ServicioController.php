@@ -19,7 +19,9 @@ class ServicioController extends Controller
      */
     public function index()
     {
-      return view('servicios.index')->with('servicios', Servicio::all())->with('contenido_section2s', ContenidoSection2::all());
+      return view('servicios.index')
+      ->with('servicios', Servicio::all())
+      ->with('contenido_section2s', ContenidoSection2::all());
     }
 
     /**
@@ -49,7 +51,7 @@ class ServicioController extends Controller
       DB::table('servicios')->insert($data);
 
       // flash message
-      session()->flash('success', 'El post fue creado!');
+      session()->flash('success', 'El Servicio fue creado!');
       //redirect user
       return redirect(route('servicio.redirect'));
 
@@ -81,7 +83,9 @@ class ServicioController extends Controller
     public function edit(Servicio $servicio)
     {
 
-        return view('servicios.create')->with('servicio', $servicio);
+        return view('servicios.create')
+        ->with('section2', ContenidoSection2::all())
+        ->with('servicio', $servicio);
     }
 
     /**
@@ -106,7 +110,21 @@ class ServicioController extends Controller
         Storage::delete($imageOld->image);
         $data=array('image'=>$image);
         DB::table('servicios')->where('id', $id)->update($data);
-      }else {
+      } elseif ($request->hasFile('icon_img')) {
+        $this->validate($request, [
+          'icon_img' => 'image|required|mimes:png,svg,jpg'
+       ]);
+      $imageOld = DB::table('servicios')->where('id', $id)->first();
+
+      //upload it
+      $icon_img = $request->file('icon_img')->store('content/servicios/icons');
+      Storage::delete($imageOld->icon_img);
+      $data=array('icon_img'=>$icon_img);
+      DB::table('servicios')->where('id', $id)->update($data);
+    }
+
+
+      else {
 
         $icon = $request->input('icon');
         $title = $request->input('title');

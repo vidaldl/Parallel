@@ -1,5 +1,5 @@
 
-<section id="slider" class="slider-element slider-parallax swiper_wrapper full-screen clearfix swiper-no-swiping {{ $contenidosection1s[0]->carousel == 1 ? 'd-none' : '' }}" data-grab="false">
+<section id="slider" class="slider-element {{$menu_item[0]->menu_style == 2 ? 'with-header' : ''}} slider-parallax swiper_wrapper full-screen clearfix swiper-no-swiping" data-grab="false">
 
   <div class="slider-parallax-inner">
 

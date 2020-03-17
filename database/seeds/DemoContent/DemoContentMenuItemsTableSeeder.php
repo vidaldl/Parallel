@@ -21,9 +21,12 @@ class DemoContentMenuItemsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'logo' => 'content/menu/sW2xV6Wnt2D4P3kerwYRwPS1jKx1e8AkJMChWFnI.png',
+                'logo_dark' => 'content/menu/zLtFcJ5Z2ACmgjQvZdsN70eWHovvAf9u0uKJCdlm.png',
                 'item_inicio' => 'Inicio',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'padding' => 120,
+                'menu_style' => 1,
+                'menu_borders' => 0,
+                'menu_sticky' => 0,
             ),
         ));
         

@@ -482,12 +482,23 @@ class HomeController extends Controller
 
     /*Styles Update -------------------------------------------------------------------------------->*/
     public function styleUpdate (Request $request, $id) {
+      if($request->hasFile('favicon')) {
+        $this->validate($request, [
+          'favicon' => 'image|required|mimes:png,svg,jpeg,gif'
+        ]);
+        $imageOld = DB::table('styles')->where('id', $id)->first();
+
+        //upload it
+        $favicon = $request->file('favicon')->store('content');
+        Storage::delete($imageOld->favicon);
+        $data=array('favicon'=>$favicon);
+        DB::table('styles')->where('id', $id)->update($data);
+      }
+      else {
       $primary_color = $request->input('primary_color');
       $button_primary = $request->input('button_primary');
       $button_secondary = $request->input('button_secondary');
       $page_title = $request->input('page_title');
-
-
 
       $data = array("primary_color"=>$primary_color,
       "button_primary"=>$button_primary,
@@ -497,6 +508,7 @@ class HomeController extends Controller
       session()->flash('success', 'La informacion ha sido actualizada');
       //redirect
       return redirect()->back();
+      }
     }
 
 
@@ -666,7 +678,14 @@ class HomeController extends Controller
 
         $data = array('desc_link' => $desc_link);
         DB::table('contenido_section2s')->where('id', $id)->update($data);
-      }else {
+      }
+      elseif($request->has('val1')) {
+        $icon_style = $request->input('val1');
+
+        $data = array('icon_style' => $icon_style);
+        DB::table('contenido_section2s')->where('id', $id)->update($data);
+      }
+      else {
         $title = $request->input('title');
         $back_color = $request->input('back_color');
 
