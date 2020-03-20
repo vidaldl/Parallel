@@ -44,6 +44,25 @@
                   <a href="#" class="btn btn-warning ml-3"  data-toggle="modal" data-target="#deleteImg"><i class="fas fa-trash"></i></a>
                 </div>
               </div>
+              <div class="form-group">
+                <label for="width">Ancho del Modal</label>
+                <select onchange="this.form.submit()" name="width">
+                  @foreach($modal as $item)
+                    <option value="1" {{$item->width == 1 ? 'selected' : ''}}>8%</option>
+                    <option value="2" {{$item->width == 2 ? 'selected' : ''}}>17%</option>
+                    <option value="3" {{$item->width == 3 ? 'selected' : ''}}>25%</option>
+                    <option value="4" {{$item->width == 4 ? 'selected' : ''}}>33%</option>
+                    <option value="5" {{$item->width == 5 ? 'selected' : ''}}>41%</option>
+                    <option value="6" {{$item->width == 6 ? 'selected' : ''}}>50%</option>
+                    <option value="7" {{$item->width == 7 ? 'selected' : ''}}>58%</option>
+                    <option value="8" {{$item->width == 8 ? 'selected' : ''}}>65%</option>
+                    <option value="9" {{$item->width == 9 ? 'selected' : ''}}>75%</option>
+                    <option value="10" {{$item->width == 10 ? 'selected' : ''}}>83%</option>
+                    <option value="11" {{$item->width == 11 ? 'selected' : ''}}>91%</option>
+                    <option value="12" {{$item->width == 12 ? 'selected' : ''}}>100%</option>
+                  @endforeach
+                </select>
+              </div>
               @elseif($modal[0]->content_style == 0)
               <div class="form-group">
                 <label for="width">Ancho del Modal</label>

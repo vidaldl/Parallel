@@ -47,6 +47,17 @@ class ModalController extends Controller
       session()->flash('success', 'La sección ha sido actualizada!');
       return redirect()->back();
     }
+    elseif ($request->has('width')) {
+      $width = $request->input('width');
+      $data = array('width'=>$width);
+
+      DB::table('modals')->where('id', $id)->update($data);
+
+      //Flash Message
+      session()->flash('success', 'El ancho del Modal Fue actualizado');
+      return redirect()->back();
+      // code...
+    }
     else {
       $contenido = $request->input('contenido');
       $button = $request->input('button');
@@ -54,7 +65,6 @@ class ModalController extends Controller
       $color = $request->input('color');
       $button_color_sec = $request->input('button_color_sec');
       $link = $request->input('link');
-      $width = $request->input('width');
       $back_color = $request->input('back_color');
       $opacity = $request->input('opacity');
 
@@ -65,7 +75,6 @@ class ModalController extends Controller
         'color' => $color,
         'button_color_sec' => $button_color_sec,
         'link' => $link,
-        'width' => $width,
         'back_color' => $back_color,
         'opacity' => $opacity
       );

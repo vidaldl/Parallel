@@ -5,7 +5,7 @@
 <div class="modal1 mfp-hide" id="myModal1">
 @if($modals[0]->content_style == 1)
 <div class="center">
-	<img class="img-fluid" src="{{'/storage/' . $modals[0]->image}}" alt="">
+	<img class="img-fluid col-md-{{$modals[0]->width}}" src="{{'/storage/' . $modals[0]->image}}" alt="">
 </div>
 
 @elseif($modals[0]->content_style == 0)
