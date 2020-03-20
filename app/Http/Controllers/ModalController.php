@@ -38,6 +38,15 @@ class ModalController extends Controller
     $data=array('image'=>$image);
     DB::table('modals')->where('id', $id)->update($data);
     }
+    elseif ($request->has('content_style')) {
+      $content_style = $request->input('content_style');
+
+      $data = array('content_style'=>$content_style);
+      DB::table('modals')->where('id', $id)->update($data);
+      // flash message
+      session()->flash('success', 'La sección ha sido actualizada!');
+      return redirect()->back();
+    }
     else {
       $contenido = $request->input('contenido');
       $button = $request->input('button');
@@ -46,6 +55,8 @@ class ModalController extends Controller
       $button_color_sec = $request->input('button_color_sec');
       $link = $request->input('link');
       $width = $request->input('width');
+      $back_color = $request->input('back_color');
+      $opacity = $request->input('opacity');
 
       $data = array(
         'contenido' => $contenido,
@@ -54,7 +65,9 @@ class ModalController extends Controller
         'color' => $color,
         'button_color_sec' => $button_color_sec,
         'link' => $link,
-        'width' => $width
+        'width' => $width,
+        'back_color' => $back_color,
+        'opacity' => $opacity
       );
 
       DB::table('modals')->where('id', $id)->update($data);

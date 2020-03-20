@@ -23,7 +23,7 @@ class DemoContentContenidoSectionFootersTableSeeder extends Seeder
                 'copy' => 'Parallel Inc.',
                 'logo' => 'content/footer/C7mS3XONiL8C889DjZ8725mWgqt0jIVD9hOvDjZW.png',
                 'social_title' => 'Conectate',
-                'acerca' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'acerca' => '<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa&nbsp;</p><p>qui officia deserunt mollit anim id est laborum.s&nbsp;</p>',
                 'style' => 2,
                 'line' => 2,
                 'line_style' => 1,

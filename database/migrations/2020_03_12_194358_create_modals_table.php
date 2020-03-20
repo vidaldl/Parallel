@@ -15,6 +15,7 @@ class CreateModalsTable extends Migration
     {
         Schema::create('modals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('content_style')->default(0);
             $table->text('contenido')->nullable();
             $table->string('image')->nullable();
             $table->string('button')->default('Haz Click Para Cerrar')->nullable();
@@ -23,6 +24,7 @@ class CreateModalsTable extends Migration
             $table->string('button_color_sec')->default('#AB350F')->nullable();
             $table->string('link')->nullable();
             $table->integer('width')->default(6);
+            $table->string('back_color')->default('#FFF')->nullable();
 
         });
     }

@@ -22,6 +22,30 @@
               <div class="form-group d-none d-sm-block d-md-block d-lg-none">
               </div>
               <div class="form-group">
+                <label for="content_style">Estilo</label>
+                <select onchange="this.form.submit()" class="" name="content_style">
+                @if($modal[0]->content_style == 0)
+                  <option value="0" selected>Contenido</option>
+                  <option value="1">Imagen</option>
+                @elseif($modal[0]->content_style == 1)
+                  <option value="0">Contenido</option>
+                  <option value="1" selected>Imagen</option>
+                @endif
+                </select>
+              </div>
+          </form>
+          <form class="form-group" action="{{route('modal.update', 1)}}" method="post">
+            @csrf
+              @if($modal[0]->content_style == 1)
+              <div class="form-group">
+                <label for="image" class="col-form-label">Imagen</label><br>
+                <div class="form-row">
+                  <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#modalScreenshot">Imagen de la Descripción &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+                  <a href="#" class="btn btn-warning ml-3"  data-toggle="modal" data-target="#deleteImg"><i class="fas fa-trash"></i></a>
+                </div>
+              </div>
+              @elseif($modal[0]->content_style == 0)
+              <div class="form-group">
                 <label for="width">Ancho del Modal</label>
                 <select onchange="this.form.submit()" name="width">
                   @foreach($modal as $item)
@@ -39,6 +63,10 @@
                     <option value="12" {{$item->width == 12 ? 'selected' : ''}}>100%</option>
                   @endforeach
                 </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="back_color">Color de Fondo:</label><br>
+                <input onchange="this.form.submit()" class="form-control" name="back_color" type="text" id="back_color" value="{{ $modal[0]->back_color }}">
               </div>
               <div class="form-group">
                 <label for="image" class="col-form-label">Imagen</label><br>
@@ -94,6 +122,7 @@
                 <input onchange="this.form.submit()" class="form-control" name="color" type="text" id="color" value="{{ $modal[0]->color }}">
               </div>
 
+              @endif
               <div class="form-group">
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
@@ -290,6 +319,17 @@ Dropzone.options.screenshot = {
   });
 
   $('#color').spectrum({
+    preferredFormat: "hex",
+   showInput: true,
+  });
+
+  $('#back_color').spectrum({
+    preferredFormat: "rgb",
+    showAlpha: true,
+    showInput: true,
+  });
+
+  $('#footer_color').spectrum({
     preferredFormat: "hex",
    showInput: true,
   });
