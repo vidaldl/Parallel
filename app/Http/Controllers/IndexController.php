@@ -76,7 +76,7 @@ class IndexController extends Controller
               $result = file_get_contents($url, false, $context);
               $resultJson = json_decode($result);
 
-      dd($resultJson);
+
       if ($resultJson->success != true) {
               return back()->withErrors(['captcha' => 'ReCaptcha Error']);
               }
