@@ -55,23 +55,52 @@ use App\Modal;
 class IndexController extends Controller
 {
 
-    public function mail() {
 
 
-      $data = request()->validate([
-        'name' => 'required',
-        'email' => 'required|email',
-        'number' => 'nullable',
-        'subject' => 'required',
-        'message' => 'required'
-      ]);
+    public function mail(Request $request) {
+      $url = 'https://www.google.com/recaptcha/api/siteverify';
+      $remoteip = $_SERVER['REMOTE_ADDR'];
+      $data = [
+              'secret' => config('services.recaptcha.secret'),
+              'response' => $request->get('recaptcha'),
+              'remoteip' => $remoteip
+            ];
+      $options = [
+              'http' => [
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
+                'content' => http_build_query($data)
+              ]
+          ];
+      $context = stream_context_create($options);
+              $result = file_get_contents($url, false, $context);
+              $resultJson = json_decode($result);
 
-      Mail::to('test@test.com')->send(new SolicitudDeContacto($data));
+      dd($resultJson);
+      if ($resultJson->success != true) {
+              return back()->withErrors(['captcha' => 'ReCaptcha Error']);
+              }
+      if ($resultJson->score >= 0.3) {
 
-      // flash message
-      session()->flash('success', 'Su mensaje a sido Enviado! Estaremos en contacto lo más rapido posible.');
-      //redirect user
-      return redirect('/#contact');
+        $data = request()->validate([
+          'name' => 'required',
+          'email' => 'required|email',
+          'number' => 'nullable',
+          'service' => 'required',
+          'subject' => 'required',
+          'message' => 'required'
+        ]);
+
+        Mail::to(env('EMAIL_ADDRESS'))->send(new SolicitudDeContacto($data));
+
+        // flash message
+        session()->flash('success', 'Su mensaje a sido Enviado! Estaremos en contacto lo más rapido posible.');
+        //redirect user
+        return redirect('/#contact');
+
+      } else {
+              return back()->withErrors(['captcha' => 'ReCaptcha Error']);
+      }
     }
 
 
