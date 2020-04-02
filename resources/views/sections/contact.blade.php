@@ -117,6 +117,19 @@
 			</div><!-- /.modal -->
 
       <div class="d-none d-md-block">
+        @if(session()->has('success'))
+        <div class="alert alert-success">
+          {{ session()->get('success') }}
+        </div>
+        @endif
+
+        <div id="errormessage">
+          @if(session()->has('error'))
+            <div class="alert alert-danger">
+              {{ session()->get('error') }}
+            </div>
+          @endif
+        </div>
         <form class="nobottommargin" action="{{route('send.contact')}}" method="POST">
           @csrf
           <div class="form-process"></div>

@@ -32,7 +32,7 @@
             <div class="alert alert-success">
               {{ session()->get('success') }}
             </div>
-          @endif
+            @endif
 
             <div id="errormessage">
               @if(session()->has('error'))
