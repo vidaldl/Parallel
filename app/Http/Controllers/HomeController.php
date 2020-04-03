@@ -29,6 +29,7 @@ use App\Properties\Feature;
 use App\Frase;
 use App\Font;
 use App\FontStyle;
+use App\File;
 class HomeController extends Controller
 {
     /**
@@ -709,29 +710,63 @@ class HomeController extends Controller
 
     /*SECTION 3 -------------------------------------------------------------------------------->*/
     public function section3Edit($id) {
-      return view('updateIndex/section3')->with('orders', Order::orderBy('order')->get())->with('contenidosection3s', ContenidoSection3::all());
+      return view('updateIndex/section3')
+      ->with('orders', Order::orderBy('order')->get())
+      ->with('contenidosection3s', ContenidoSection3::all())
+      ->with('files', File::all());
     }
 
     public function section3Update(Request $request, $id) {
-      $title = $request->input('title');
-      $contenido = $request->input('contenido');
-      $button = $request->input('button');
-      $background_color = $request->input('background_color');
-      $text_color = $request->input('text_color');
-      $link = $request->input('link');
+      $section3 = ContenidoSection3::find($id)->firstOrFail();
+      if($request->has('val')) {
+        $link_type = $request->input('val');
+        $data = array('link_type' => $link_type);
 
-      $data=array(
-        "title"=>$title,
-        "contenido"=>$contenido,
-        "button"=>$button,
-        "background_color"=>$background_color,
-        "text_color"=>$text_color,
-        "link"=>$link
-      );
-      DB::table('contenido_section3s')->where('id', $id)->update($data);
-      session()->flash('success', 'La sección fue actualizada');
-      //redirect
-      return redirect()->back();
+        DB::table('contenido_section3s')->where('id', $id)->update($data);
+      }else {
+        if ($section3->link_type == 0) {
+          $title = $request->input('title');
+          $contenido = $request->input('contenido');
+          $button = $request->input('button');
+          $background_color = $request->input('background_color');
+          $text_color = $request->input('text_color');
+          $link = $request->input('link');
+
+          $data=array(
+            "title"=>$title,
+            "contenido"=>$contenido,
+            "button"=>$button,
+            "background_color"=>$background_color,
+            "text_color"=>$text_color,
+            "link"=>$link
+          );
+          DB::table('contenido_section3s')->where('id', $id)->update($data);
+          session()->flash('success', 'La sección fue actualizada');
+          //redirect
+          return redirect()->back();
+        } else {
+          $title = $request->input('title');
+          $contenido = $request->input('contenido');
+          $button = $request->input('button');
+          $background_color = $request->input('background_color');
+          $text_color = $request->input('text_color');
+          $link = $request->input('file');
+
+          $data=array(
+            "title"=>$title,
+            "contenido"=>$contenido,
+            "button"=>$button,
+            "background_color"=>$background_color,
+            "text_color"=>$text_color,
+            "link"=>$link
+          );
+          DB::table('contenido_section3s')->where('id', $id)->update($data);
+          session()->flash('success', 'La sección fue actualizada');
+          //redirect
+          return redirect()->back();
+        }
+
+      }
     }
 
     public function section3Display(Request $request, $id) {

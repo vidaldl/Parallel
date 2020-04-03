@@ -18,6 +18,8 @@ class CreatePortfolioItemsTable extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->string('logo')->nullable();
+            $table->integer('logo_link')->default(0);
+            $table->string('logo_link_address')->nullable();
             $table->string('screenshot')->nullable();
             $table->text('contenido')->nullable();
             $table->string('author')->nullable();

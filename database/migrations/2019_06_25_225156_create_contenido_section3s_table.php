@@ -21,6 +21,7 @@ class CreateContenidoSection3sTable extends Migration
             $table->string('background_color')->default('#1ABC9C')->nullable();
             $table->string('text_color')->default('#EEE')->nullable();
             $table->string('link')->nullable();
+            $table->integer('link_type')->default(0);
 
         });
     }

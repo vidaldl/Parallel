@@ -3,8 +3,13 @@
 
 @section('css')
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
+<link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
+<link href="{{ asset('lib/flexdatalist/jquery.flexdatalist.min.css') }}" rel="stylesheet">
 <style>
 .note-editable { background-color: #3742FA!important; color: white; }
+.tgl-sw-swipe + .btn-switch {
+  background: #4e73df;
+}
 </style>
 @endsection
 @section('content')
@@ -115,15 +120,34 @@
                     </span>
                   @enderror
               </div>
-              <div class="form-group">
-                <label for="link" class="col-form-label">Enlace</label>
-                <input id="link" type="input" placeholder="Https://" name="link" class="form-control @error('link') is-invalid @enderror"  value="{{ $contenidosection3s[0]->link }}">
-                  @error('link')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
-              </div>
+
+              <!-- Link-FILE -->
+                <div class="form-group">
+                  <label for="media_type">Acción del Boton</label>
+                  <div id="media_type"></div>
+
+                  <div class="form-row mb-4">
+                    <div class="col-md-6" id="type_link">
+                      <label for="link" class="col-form-label">Enlace</label>
+                      <input id="link" type="input" placeholder="Https://" name="link" class="form-control flexdatalist @error('link') is-invalid @enderror"  value="{{ $contenidosection3s[0]->link }}">
+                    </div>
+                    <div class="col-md-6" id="type_file">
+                      <label class="col-form-label">Seleccionar Archivo:</label><br>
+                      <select name="file">
+                        <option value="">--Seleccionar Archivo--</option>
+                        @foreach($files as $file)
+                          @if($contenidosection3s[0]->link == 'storage/' . $file->file)
+                            <option value="{{'storage/' . $file->file}}" selected>{{$file->display_name}}</option>
+                          @elseif($contenidosection3s[0]->link != 'storage/' . $file->file)
+                            <option value="{{'storage/' . $file->file}}">{{$file->display_name}}</option>
+                          @endif
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              <!-- /Link-FILE -->
+
               <div class="form-group">
                 <label for="background_color" class="col-form-label">Color de Fondo</label>
                 <input id="background_color" type="input" name="background_color" class="form-control @error('background_color') is-invalid @enderror"  value="{{ $contenidosection3s[0]->background_color }}">
@@ -170,7 +194,63 @@ ClassicEditor.create( document.querySelector( '#contenido' ), {
 
 </script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
+<script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script type="text/javascript">
+$(document).ready(function() {
+  @if($contenidosection3s[0]->link_type == 1)
+  $('#type_link').hide();
+  @else
+  $('#type_file').hide();
+  @endif
+});
+
+$('#media_type').btnSwitch({
+Theme:'Swipe',
+OnText: "Link",
+OffText: "File",
+OnValue: '0',
+OnCallback: function(val) {
+  $('#type_file').hide();
+  $('#type_link').show();
+
+  $.ajax({
+         type:'POST',
+         dataType: 'json',
+         url:'/updatesection3/1',
+         data:{"_token": "{{ csrf_token() }}",
+         val:val
+        },
+         success:function(data){
+            alert(data.success);
+         }
+      });
+  },
+OffValue: '1',
+OffCallback: function (val) {
+  $('#type_link').hide();
+  $('#type_file').show();
+
+  $.ajax({
+         type:'POST',
+         dataType: 'json',
+         url:'/updatesection3/1',
+         data:{"_token": "{{ csrf_token() }}",
+         val:val
+        },
+         success:function(data){
+            alert(data.success);
+         }
+      });
+},
+@if($contenidosection3s[0]->link_type == 1)
+ToggleState: true
+@else
+ToggleState: false
+@endif
+});
+
+
+
   $('#background_color').spectrum({
     preferredFormat: "hex",
    showInput: true,

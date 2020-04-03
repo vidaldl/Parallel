@@ -104,7 +104,6 @@ Route::post('/delSecImgShop/{id}', 'ShopController@destroySecImg')->name('sec.im
 
 
 Route::middleware(['auth'])->group(function () {
-
 // ================================== Display ========================================
 Route::post('/display-portfolio-programs', 'DisplayController@portfolioprogramsDisplay');
 Route::post('/display-pricing', 'DisplayController@pricingDisplay');
@@ -124,6 +123,11 @@ Route::post('/display-catalog3', 'DisplayController@catalog3Display');
 Route::post('/display-shop', 'DisplayController@shopDisplay');
 Route::post('/display-modal', 'DisplayController@modalDisplay');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
+
+// ================================== FILES ========================================
+Route::get('/files', 'FileController@index')->name('files');
+Route::post('/files-store', 'FileController@store')->name('files.store');
+Route::post('/file-delete/{id}', 'FileController@delete')->name('files.delete');
 
 // ================================== Styles ========================================
 Route::post('/style-update/{id}', 'HomeController@styleUpdate')->name('style.update');

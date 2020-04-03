@@ -1,194 +1,92 @@
-<div class="row norightmargin align-items-stretch">
-  <div class="col-lg-5" style="min-height: 550px; padding-right: 0px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15134.439606309257!2d-69.96693295000001!3d18.5013211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8a2df55d5ea3%3A0xec8d5a80f329f5b8!2sPriceSmart!5e0!3m2!1ses-419!2sdo!4v1585673349011!5m2!1ses-419!2sdo" frameborder="0" style="border:0; height: 100%; width: 100%;" allowfullscreen=""></iframe>
-  </div>
-  <div class="col-lg-3" style="background-color: #E5E5E5;">
-    <div style="padding: 40px;">
-      <h4 class="font-body t600 ls1">Our Headquarters</h4>
 
-      <div style="font-size: 15px; line-height: 1.7;">
-        <address style="line-height: 1.7;">
-          <strong>North America:</strong><br>
-          795 Folsom Ave, Suite 600<br>
-          San Francisco, CA 94107.<br><br>
-          <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
-          <abbr title="Email Address"><strong>Email:</strong></abbr> real-estate@canvas.com
-        </address>
-
-        <div class="clear topmargin-sm"></div>
-
-        <h4 class="font-body t500" style="font-size: 17px; margin-bottom: 10px;">Working Hours:</h4>
-
-        <abbr title="Mondays to Fridays"><strong>Mon-Fri:</strong></abbr> 10AM to 6PM<br>
-        <abbr title="Saturday"><strong>Saturday:</strong></abbr> 11AM to 3PM<br>
-        <abbr title="Sunday"><strong>Sunday:</strong></abbr> Closed
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 bgcolor">
-    <div class="col-padding">
-      <!-- <a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-3d nomargin btn-block button-xlarge d-none d-md-block center">Click here to Send an Email</a> -->
-			<a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-large button-rounded nomargin btn-block d-block d-md-none center">Send an Email</a>
-
-      <!-- MODAL -->
-			<div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h4 class="modal-title" id="contactFormModalLabel">Send Us an Email</h4>
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						</div>
-						<div class="modal-body">
-
-							<div class="form-widget">
-								<div class="form-result"></div>
-								<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/form.php" method="post">
-
-									<div class="form-process"></div>
-
-									<div class="col_half">
-										<label for="template-contactform-name">Name <small>*</small></label>
-										<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
-									</div>
-
-									<div class="col_half col_last">
-										<label for="template-contactform-email">Email <small>*</small></label>
-										<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
-									</div>
-
-									<div class="clear"></div>
-
-									<div class="col_half">
-										<label for="template-contactform-phone">Phone</label>
-										<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
-									</div>
-
-									<div class="col_half col_last">
-										<label for="template-contactform-service">Services</label>
-										<select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
-											<option value="">-- Select One --</option>
-											<option value="Wordpress">Wordpress</option>
-											<option value="PHP / MySQL">PHP / MySQL</option>
-											<option value="HTML5 / CSS3">HTML5 / CSS3</option>
-											<option value="Graphic Design">Graphic Design</option>
-										</select>
-									</div>
-
-									<div class="clear"></div>
-
-									<div class="col_full">
-										<label for="template-contactform-subject">Subject <small>*</small></label>
-										<input type="text" id="template-contactform-subject" name="subject" value="" class="required sm-form-control" />
-									</div>
-
-									<div class="col_full">
-										<label for="template-contactform-message">Message <small>*</small></label>
-										<textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
-									</div>
-
-									<div class="col_full hidden">
-										<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-									</div>
-
-									<div class="col_full">
-
-										<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-										<div class="g-recaptcha" data-sitekey="6LfijgUTAAAAACPt-XfRbQszAKAJY0yZDjjhMUQT"></div>
-
-									</div>
-
-									<div class="col_full">
-										<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
-									</div>
-
-									<input type="hidden" name="prefix" value="template-contactform-">
-
-								</form>
-
-							</div>
-
-
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						</div>
-					</div><!-- /.modal-content -->
-				</div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
-
-      <div class="d-none d-md-block">
-        @if(session()->has('success'))
-        <div class="alert alert-success">
-          {{ session()->get('success') }}
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">{{$contenidosection5s[0]->title}}</h2>
         </div>
-        @endif
-
-        <div id="errormessage">
-          @if(session()->has('error'))
-            <div class="alert alert-danger">
-              {{ session()->get('error') }}
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker-alt"></i>
+              <p>{!! $contenidosection5s[0]->address !!}</p>
             </div>
-          @endif
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p>{!! $contenidosection5s[0]->email !!}</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>{!! $contenidosection5s[0]->number !!}</p>
+            </div>
+          </div>
         </div>
-        <form class="nobottommargin" action="{{route('send.contact')}}" method="POST">
-          @csrf
-          <div class="form-process"></div>
 
-          <div class="col_half">
-            <label for="name">Name <small>*</small></label>
-            <input type="text" id="name" name="name" value="" class="sm-form-control required" />
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            @if(session()->has('success'))
+            <div class="alert alert-success">
+              {{ session()->get('success') }}
+            </div>
+            @endif
+
+            <div id="errormessage">
+              @if(session()->has('error'))
+                <div class="alert alert-danger">
+                  {{ session()->get('error') }}
+                </div>
+              @endif
+            </div>
+            <form  action="{{ route('send.contact') }}" method="post" role="form" class="contactForm">
+              @csrf
+              <div class="form-group">
+                <input autocomplete="off" type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Full Name" data-rule="minlen:4" data-msg="Por favor introduzca por lo menos 4 carácteres" />
+                  @error('name')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <input autocomplete="off" type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="E-mail" data-rule="email" data-msg="Por favor entrar un email válido" />
+                  @error('email')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <input autocomplete="off" type="tel" class="form-control @error('number') is-invalid @enderror" name="number" id="number" placeholder="Phone Number"  data-msg="Por favor introduzca su número de teléfono" />
+                  @error('number')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <input autocomplete="off" type="text" class="form-control @error('subject') is-invalid @enderror" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Por favor introduzca el asunto" />
+                  @error('subject')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <textarea autocomplete="off" class="form-control @error('message') is-invalid @enderror" name="message" rows="5" data-rule="required" data-msg="Tell Us Something!" placeholder="Mensaje"></textarea>
+                  @error('message')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="text-center"><button class="button button-rounded button-reveal button-large button-border tright"><i class="fas fa-paper-plane"></i><span>Enviar</span></button></div>
+            </form>
           </div>
-
-          <div class="col_half col_last">
-            <label for="email">Email <small>*</small></label>
-            <input type="email" id="email" name="email" value="" class="required email sm-form-control" />
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="col_half">
-            <label for="number">Phone</label>
-            <input type="text" id="number" name="number" value="" class="sm-form-control" />
-          </div>
-
-          <div class="col_half col_last">
-            <label for="service">Services</label>
-            <select id="service" name="service" class="sm-form-control">
-              <option value="">-- Select One --</option>
-              <option value="Wordpress">Wordpress</option>
-              <option value="PHP / MySQL">PHP / MySQL</option>
-              <option value="HTML5 / CSS3">HTML5 / CSS3</option>
-              <option value="Graphic Design">Graphic Design</option>
-            </select>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="col_full">
-            <label for="subject">Subject <small>*</small></label>
-            <input type="text" id="subject" name="subject" value="" class="required sm-form-control" />
-          </div>
-
-          <div class="col_full">
-            <label for="message">Message <small>*</small></label>
-            <textarea class="required sm-form-control" id="message" name="message" rows="6" cols="30"></textarea>
-          </div>
-
-
-          <div class="col_full">
-            <input type="hidden" name="recaptcha" id="recaptcha">
-          </div>
-
-          <div class="col_full">
-            <button class="button button-3d nomargin" type="submit" value="submit">Send Message</button>
-          </div>
-
-
-
-        </form>
-
+        </div>
       </div>
-
     </div>
-  </div>
-</div>
+  </section>

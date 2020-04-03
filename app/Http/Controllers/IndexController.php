@@ -49,15 +49,33 @@ use App\Shop\ShopSection;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 use App\Modal;
+use App\File;
 
 
 
 class IndexController extends Controller
 {
 
+      public function mail() {
 
 
-    public function mail(Request $request) {
+       $data = request()->validate([
+         'name' => 'required',
+         'email' => 'required|email',
+         'number' => 'nullable',
+         'subject' => 'required',
+         'message' => 'required'
+       ]);
+
+       Mail::to('env('EMAIL_ADDRESS')')->send(new SolicitudDeContacto($data));
+
+       // flash message
+       session()->flash('success', 'Su mensaje a sido Enviado! Estaremos en contacto lo más rapido posible.');
+       //redirect user
+       return redirect('/#contact');
+     }
+
+    public function mailNew(Request $request) {
       $url = 'https://www.google.com/recaptcha/api/siteverify';
       $remoteip = $_SERVER['REMOTE_ADDR'];
       $data = [
@@ -82,11 +100,11 @@ class IndexController extends Controller
               }
       if ($resultJson->score >= 0.3) {
 
-        $data = request()->validate([
+        $data = $request->validate([
           'name' => 'required',
           'email' => 'required|email',
           'number' => 'nullable',
-          'service' => 'required',
+          'service' => 'nullable',
           'subject' => 'required',
           'message' => 'required'
         ]);
@@ -146,6 +164,7 @@ class IndexController extends Controller
       ->with('shop_sections', ShopSection::all())
       ->with('shop_items', ShopItem::all())
       ->with('modals', Modal::all())
+      ->with('files', File::all())
       ->with('users', User::all());
     }
 

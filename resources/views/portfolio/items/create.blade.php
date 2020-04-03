@@ -5,7 +5,12 @@
 <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
+<link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
 <style>
+.note-editable { background-color: #3742FA!important; color: white; }
+.tgl-sw-swipe + .btn-switch {
+  background: #4e73df;
+}
 .modal-dialog{
   position: relative;
   display: table;
@@ -168,6 +173,11 @@
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div class="form-group">
+              <label for="media_type">Acción del Boton</label>
+              <div id="logo_link"></div>
             </div>
 
           <!--Detalles-->
@@ -351,8 +361,52 @@
 @section('script')
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 <script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
+<script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script>
+@if(isset($portfolioItem))
+  $('#logo_link').btnSwitch({
+  Theme:'Swipe',
+  OnText: "Link",
+  OffText: "Default",
+  OnValue: '0',
+  OnCallback: function(val) {
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'/portfolioItem/{{$portfolioItem->id}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+    },
+  OffValue: '1',
+  OffCallback: function (val) {
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'/portfolioItem/{{$portfolioItem->id}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+  },
+  @if($contenidosection3s[0]->link_type == 1)
+  ToggleState: true
+  @else
+  ToggleState: false
+  @endif
+  });
+@endif
 $(document).ready(function() {
+
   $('.select').select2();
 
   $('.icp-dd1').iconpicker();
@@ -427,6 +481,7 @@ $(".ajButton").click(function(e){
 
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
+
 <script>
 // <!--Logo-->
     Dropzone.options.logo = {
@@ -569,7 +624,10 @@ $(".ajButton").click(function(e){
 <script src="{{asset('lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
+
 <script>
+
+
   $('.tabs').tabslet();
   $('#contenido').trumbowyg({
     btnsDef: {
