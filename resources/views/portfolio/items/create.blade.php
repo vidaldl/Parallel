@@ -172,6 +172,32 @@
                     <label for="media_type">Acción del Logo</label>
                     <div id="logo_link"></div>
                   </div>
+                  <div class="form-group enlace">
+
+                    <label for="media_type">Acción del Boton</label>
+                    <div id="media_type"></div>
+
+                    <div class="form-row mb-4">
+                      <div class="col-md-6" id="type_link">
+                        <label for="link_address" class="col-form-label">Enlace</label>
+                        <input id="link_address" type="input" placeholder="Https://" name="link_address" class="form-control flexdatalist @error('link_address') is-invalid @enderror"  value="{{ $portfolioItem->logo_link_address }}">
+                      </div>
+                      <div class="col-md-6" id="type_file">
+                        <label class="col-form-label">Seleccionar Archivo:</label><br>
+                        <select name="file" id="file">
+                          <option value="">--Seleccionar Archivo--</option>
+                          @foreach($files as $file)
+                            @if($portfolioItem->logo_link_address == 'storage/' . $file->file)
+                              <option value="{{'storage/' . $file->file}}" selected>{{$file->display_name}}</option>
+                            @elseif($portfolioItem->logo_link_address != 'storage/' . $file->file)
+                              <option value="{{'storage/' . $file->file}}">{{$file->display_name}}</option>
+                            @endif
+                          @endforeach
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
                   <div class="form-group">
                     <button class="ajButton btn btn-success float-right">Actualizar</button>
                   </div>
@@ -367,17 +393,17 @@
 @if(isset($portfolioItem))
   $('#logo_link').btnSwitch({
   Theme:'Swipe',
-  OnText: "Link",
-  OffText: "Default",
+  OnText: "Detail",
+  OffText: "Link",
   OnValue: '0',
   OnCallback: function(val) {
-
+    $('.enlace').hide();
     $.ajax({
            type:'POST',
            dataType: 'json',
            url:'/portfolioItem/{{$portfolioItem->id}}',
            data:{"_token": "{{ csrf_token() }}",
-           val:val
+           logoLink:val
           },
            success:function(data){
               alert(data.success);
@@ -386,13 +412,13 @@
     },
   OffValue: '1',
   OffCallback: function (val) {
-
+    $('.enlace').show();
     $.ajax({
            type:'POST',
            dataType: 'json',
            url:'/portfolioItem/{{$portfolioItem->id}}',
            data:{"_token": "{{ csrf_token() }}",
-           val:val
+           logoLink:val
           },
            success:function(data){
               alert(data.success);
@@ -405,8 +431,64 @@
   ToggleState: false
   @endif
   });
+
+
+
+//logo_link_type ==============================================
+  $('#media_type').btnSwitch({
+  Theme:'Swipe',
+  OnText: "Link",
+  OffText: "File",
+  OnValue: '0',
+  OnCallback: function(val) {
+    $('#type_file').hide();
+    $('#type_link').show();
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'/portfolioItem/{{$portfolioItem->id}}',
+           data:{"_token": "{{ csrf_token() }}",
+           logoLinkType:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+    },
+  OffValue: '1',
+  OffCallback: function (val) {
+    $('#type_link').hide();
+    $('#type_file').show();
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'/portfolioItem/{{$portfolioItem->id}}',
+           data:{"_token": "{{ csrf_token() }}",
+           logoLinkType:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+  },
+  @if($portfolioItem->logo_link_type == 1)
+  ToggleState: true
+  @else
+  ToggleState: false
+  @endif
+  });
 @endif
 $(document).ready(function() {
+  @if($portfolioItem->logo_link == 0)
+    $('.enlace').hide();
+  @endif
+  @if($portfolioItem->logo_link_type == 1)
+  $('#type_link').hide();
+  @else
+  $('#type_file').hide();
+  @endif
 
   $('.select').select2();
 
@@ -455,7 +537,8 @@ $(".ajButton").click(function(e){
    var button_text = $("#button_text").val();
    var button_icon = $("#button_icon").val();
    var link = $("#link").val();
-
+   var link_address = $('#link_address').val();
+   var file = $('#file').val();
 
    $.ajax({
           type:'POST',
@@ -471,7 +554,9 @@ $(".ajButton").click(function(e){
           link_title:link_title,
           button_text:button_text,
           button_icon:button_icon,
-          link:link
+          link:link,
+          link_address:link_address,
+          file:file
          },
           success:function(data){
              alert(data.success);

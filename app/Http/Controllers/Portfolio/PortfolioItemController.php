@@ -21,6 +21,7 @@ use App\MenuItem;
 use App\FooterLink;
 use App\Font;
 use App\FontStyle;
+use App\File;
 
 class PortfolioItemController extends Controller
 {
@@ -128,7 +129,10 @@ class PortfolioItemController extends Controller
      */
     public function edit(PortfolioItem $portfolioItem)
     {
-      return view('portfolio.items.create')->with('portfolioItem', $portfolioItem)->with('portfolioCategories', PortfolioCategory::all());
+      return view('portfolio.items.create')
+      ->with('portfolioItem', $portfolioItem)
+      ->with('portfolioCategories', PortfolioCategory::all())
+      ->with('files', File::all());
     }
 
     /**
@@ -141,22 +145,10 @@ class PortfolioItemController extends Controller
     public function update(Request $request, $id)
     {
       //Categories first
-      $categories = $request->input('categories');
+
       // dd($portfolio->title);
       // $portfolio->portfolio_category()->attach(2);
 
-    //PORTADA
-      $title = $request->input('title');
-      $subtitle = $request->input('subtitle');
-
-    //Detalle
-      $contenido = $request->input('contenido');
-      $author = $request->input('author');
-      $author_bio = $request->input('author_bio');
-      $link_title = $request->input('link_title');
-      $button_text = $request->input('button_text');
-      $button_icon = $request->input('button_icon');
-      $link = $request->input('link');
 
       $oldImage = DB::table('portfolio_items')->where('id', $id)->first();
 
@@ -188,21 +180,83 @@ class PortfolioItemController extends Controller
             $data=array('screenshot'=>$screenshot);
             DB::table('portfolio_items')->where('id', $id)->update($data);
 
-          } else {
+          } elseif ($request->has('logoLinkType')) {
+            $logo_link_type = $request->input('logoLinkType');
+            $data = array('logo_link_type' => $logo_link_type);
+
+            DB::table('portfolio_items')->where('id', $id)->update($data);
+
+          } elseif($request->has('logoLink')) {
+            $logo_link = $request->input('logoLink');
+            $data = array('logo_link' => $logo_link);
+
+            DB::table('portfolio_items')->where('id', $id)->update($data);
+
+          }else {
+            $categories = $request->input('categories');
             $portfolio = PortfolioItem::find($id);
+
+
+            if($portfolio->logo_link_type == 0){
+              $portfolio->portfolio_category()->sync($categories);
+            //PORTADA
+              $title = $request->input('title');
+              $subtitle = $request->input('subtitle');
+
+            //Detalle
+              $contenido = $request->input('contenido');
+              $author = $request->input('author');
+              $author_bio = $request->input('author_bio');
+              $link_title = $request->input('link_title');
+              $button_text = $request->input('button_text');
+              $button_icon = $request->input('button_icon');
+              $link = $request->input('link');
+              $link_address = $request->input('link_address');
+
+              $data = array(
+              'title'=>$title,
+              'subtitle'=>$subtitle,
+              'contenido'=>$contenido,
+              'author'=>$author,
+              'author_bio'=>$author_bio,
+              'link_title'=>$link_title,
+              'button_text'=>$button_text,
+              'button_icon'=>$button_icon,
+              'link'=>$link,
+              'logo_link_address' => $link_address
+              );
+              DB::table('portfolio_items')->where('id', $id)->update($data);
+            }
+          else {
             $portfolio->portfolio_category()->sync($categories);
-          $data = array(
-          'title'=>$title,
-          'subtitle'=>$subtitle,
-          'contenido'=>$contenido,
-          'author'=>$author,
-          'author_bio'=>$author_bio,
-          'link_title'=>$link_title,
-          'button_text'=>$button_text,
-          'button_icon'=>$button_icon,
-          'link'=>$link
-          );
-          DB::table('portfolio_items')->where('id', $id)->update($data);
+            //PORTADA
+              $title = $request->input('title');
+              $subtitle = $request->input('subtitle');
+
+            //Detalle
+              $contenido = $request->input('contenido');
+              $author = $request->input('author');
+              $author_bio = $request->input('author_bio');
+              $link_title = $request->input('link_title');
+              $button_text = $request->input('button_text');
+              $button_icon = $request->input('button_icon');
+              $link = $request->input('link');
+              $file = $request->input('file');
+
+              $data = array(
+              'title'=>$title,
+              'subtitle'=>$subtitle,
+              'contenido'=>$contenido,
+              'author'=>$author,
+              'author_bio'=>$author_bio,
+              'link_title'=>$link_title,
+              'button_text'=>$button_text,
+              'button_icon'=>$button_icon,
+              'link'=>$link,
+              'logo_link_address' => $file
+              );
+              DB::table('portfolio_items')->where('id', $id)->update($data);
+          }
         }
     }
 
