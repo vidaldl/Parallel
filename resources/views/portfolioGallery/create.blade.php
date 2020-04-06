@@ -188,6 +188,9 @@
                     <form method="POST" id="slide" class="dropzone" action="{{route('portfolioGalleryImage.create', $gallery_items->id)}}" enctype="multipart/form-data">
                       @csrf
                     </form>
+                    <label class="col-form-label">Tamaños de la Imagen:</label>
+                    <p>Resolución: 1770x990</p>
+                    <p>Aspect Ratio: 4:3</p>
                     @error('slide')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

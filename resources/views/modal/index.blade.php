@@ -150,6 +150,9 @@
               <form id="screenshot" method="POST" class="image dropzone" action="{{route('modal.update', 1)}}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 1920x1080</p>
+              <p>Aspect Ratio: Libre</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

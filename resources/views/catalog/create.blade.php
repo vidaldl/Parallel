@@ -218,6 +218,9 @@
               <form id="image" method="POST" class="image dropzone" action="{{ route('catalog.update', $catalog_items->id) }}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 945x675</p>
+              <p>Aspect Ratio: Horizontal 5:7 | Vertical: 3:2</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -260,6 +263,9 @@
                 @csrf
 
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 945x675</p>
+              <p>Aspect Ratio: Horizontal 5:7 | Vertical: 3:2</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -395,8 +401,8 @@ $('.icp').on('iconpickerSelected', function (e) {
           $(buttonConfirm).click(function() {
             // Get the canvas with image data from Cropper.js
              var canvas = cropper.getCroppedCanvas({
-               width: 675,
-               height: 945
+               width: 945,
+               height: 675
              });
              // Turn the canvas into a Blob (file object without a name)
              canvas.toBlob(function(blob) {
@@ -459,8 +465,8 @@ $('.icp').on('iconpickerSelected', function (e) {
           $(buttonConfirm).click(function() {
             // Get the canvas with image data from Cropper.js
              var canvas = cropper.getCroppedCanvas({
-               width: 675,
-               height: 945
+               width: 945,
+               height: 675
              });
              // Turn the canvas into a Blob (file object without a name)
              canvas.toBlob(function(blob) {

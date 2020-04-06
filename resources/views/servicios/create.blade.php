@@ -193,6 +193,9 @@
               <form id="icon" method="POST" class="icon dropzone" action="{{route('servicio.update', $servicio->id)}}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 720x720</p>
+              <p>Aspect Ratio: 1:1</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -233,6 +236,9 @@
               <form id="screenshot" method="POST" class="image dropzone" action="{{route('servicio.update', $servicio->id)}}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 1280x720</p>
+              <p>Aspect Ratio: 16:9</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

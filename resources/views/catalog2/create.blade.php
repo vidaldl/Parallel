@@ -218,6 +218,9 @@
               <form id="image" method="POST" class="image dropzone" action="{{ route('catalog2.update', $catalog_item2s->id) }}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 945x675</p>
+              <p>Aspect Ratio: Horizontal 5:7 | Vertical: 3:2</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -258,8 +261,10 @@
               <label for="logo" class="col-form-label">Imagen</label>
               <form id="image2" method="POST" class="image2 dropzone" action="{{route('catalog2.update', $catalog_item2s->id)}}" enctype="multipart/form-data">
                 @csrf
-
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 945x675</p>
+              <p>Aspect Ratio: Horizontal 5:7 | Vertical: 3:2</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

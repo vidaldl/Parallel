@@ -345,6 +345,9 @@
               <form id="image{{$pricing->id}}" method="POST" class="image dropzone" action="{{ route('pricing.update', $pricing->id) }}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 720x360</p>
+              <p>Aspect Ratio: 16/9</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

@@ -334,6 +334,9 @@
               <form id="favicon" method="POST" class="favicon dropzone" action="{{route('style.update', 1)}}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 32x32</p>
+              <p>Aspect Ratio: 1:1</p>
               </div>
             </div>
             <div class="col-md-8">

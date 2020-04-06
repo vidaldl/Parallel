@@ -284,6 +284,9 @@
                         <form id="logo{{ $contenidosection1s[0]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
                           @csrf
                         </form>
+                        <label class="col-form-label">Tamaños de la Imagen:</label>
+                        <p>Resolución: 1920x1080</p>
+                        <p>Aspect Ratio: libre</p>
                         @error('logo')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -323,6 +326,9 @@
                     <form id="background{{ $contenidosection1s[0]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[0]->id)}}" enctype="multipart/form-data">
                       @csrf
                     </form>
+                    <label class="col-form-label">Tamaños de la Imagen:</label>
+                    <p>Resolución: 1920x1080</p>
+                    <p>Aspect Ratio: 16/9</p>
                     @error('logo')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -489,6 +495,9 @@
                           <form id="logo{{ $contenidosection1s[1]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
                             @csrf
                           </form>
+                          <label class="col-form-label">Tamaños de la Imagen:</label>
+                          <p>Resolución: 1920x1080</p>
+                          <p>Aspect Ratio: libre</p>
                           @error('logo')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -528,6 +537,9 @@
                       <form id="background{{ $contenidosection1s[1]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[1]->id)}}" enctype="multipart/form-data">
                         @csrf
                       </form>
+                      <label class="col-form-label">Tamaños de la Imagen:</label>
+                      <p>Resolución: 1920x1080</p>
+                      <p>Aspect Ratio: 16/9</p>
                       @error('logo')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -660,6 +672,9 @@
                             <form id="logo{{ $contenidosection1s[2]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
                               @csrf
                             </form>
+                            <label class="col-form-label">Tamaños de la Imagen:</label>
+                            <p>Resolución: 1920x1080</p>
+                            <p>Aspect Ratio: Libre</p>
                             @error('logo')
                               <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -699,6 +714,9 @@
                         <form id="background{{ $contenidosection1s[2]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[2]->id)}}" enctype="multipart/form-data">
                           @csrf
                         </form>
+                        <label class="col-form-label">Tamaños de la Imagen:</label>
+                        <p>Resolución: 1920x1080</p>
+                        <p>Aspect Ratio: 16/9</p>
                         @error('logo')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -830,6 +848,9 @@
                             <form id="logo{{ $contenidosection1s[3]->id }}" method="POST" class="logo dropzone" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
                               @csrf
                             </form>
+                            <label class="col-form-label">Tamaños de la Imagen:</label>
+                            <p>Resolución: 1920x1080</p>
+                            <p>Aspect Ratio: Libre</p>
                             @error('logo')
                               <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -869,6 +890,9 @@
                         <form id="background{{ $contenidosection1s[3]->id }}" method="POST" class="dropzone" action="{{route('section1.update', $contenidosection1s[3]->id)}}" enctype="multipart/form-data">
                           @csrf
                         </form>
+                        <label class="col-form-label">Tamaños de la Imagen:</label>
+                        <p>Resolución: 1920x1080</p>
+                        <p>Aspect Ratio: 16/9</p>
                         @error('logo')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -978,8 +1002,8 @@
           $(buttonConfirm).click(function() {
             // Get the canvas with image data from Cropper.js
              var canvas = cropper.getCroppedCanvas({
-               width: 3840,
-               height: 2160
+               width: 1920,
+               height: 1080
              });
              // Turn the canvas into a Blob (file object without a name)
              canvas.toBlob(function(blob) {
@@ -1049,8 +1073,8 @@
          $(buttonConfirm).click(function() {
            // Get the canvas with image data from Cropper.js
             var canvas = cropper.getCroppedCanvas({
-              width: 3840,
-              height: 2160
+              width: 1920,
+              height: 1080
             });
             // Turn the canvas into a Blob (file object without a name)
             canvas.toBlob(function(blob) {

@@ -318,6 +318,9 @@
               <form id="logo" method="POST" class="logo dropzone" action="{{route('menuLogo.update', 1)}}" enctype="multipart/form-data">
                 @csrf
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 720x310</p>
+              <p>Aspect Ratio: Libre</p>
               </div>
             </div>
             <div class="col-md-8">

@@ -169,16 +169,17 @@
                     <a href="#" class="btn btn-primary {{isset($portfolioItem) ? '' : 'disabled'}}"  data-toggle="modal" data-target="#modalImage">Imagen &nbsp;&nbsp;<i class="fas fa-image"></i></a>
                   </div>
                   <div class="form-group">
+                    <label for="media_type">Acción del Logo</label>
+                    <div id="logo_link"></div>
+                  </div>
+                  <div class="form-group">
                     <button class="ajButton btn btn-success float-right">Actualizar</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="media_type">Acción del Boton</label>
-              <div id="logo_link"></div>
-            </div>
+
 
           <!--Detalles-->
             <div id="detalles" class="tabdiv {{isset($portfolioItem) ? '' : 'disabled'}}">
@@ -398,7 +399,7 @@
            }
         });
   },
-  @if($contenidosection3s[0]->link_type == 1)
+  @if($portfolioItem->logo_link == 1)
   ToggleState: true
   @else
   ToggleState: false

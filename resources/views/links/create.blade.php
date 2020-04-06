@@ -98,6 +98,9 @@
                   @method('PUT')
                 @endif
               </form>
+              <label class="col-form-label">Tamaños de la Imagen:</label>
+              <p>Resolución: 940.5x627</p>
+              <p>Aspect Ratio: 3:2</p>
               @error('image')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
