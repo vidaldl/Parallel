@@ -142,4 +142,12 @@ class DisplayController extends Controller
     session()->flash('success', 'La sección fué actualizada');
     return redirect()->back();
   }
+
+  public function textDisplay(Request $request) {
+    $display = $request->input('val');
+    $data = array('display'=>$display);
+    DB::table('orders')->where('section', 'text')->update($data);
+    session()->flash('success', 'La sección fué actualizada');
+    return redirect()->back();
+  }
 }

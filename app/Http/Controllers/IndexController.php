@@ -50,6 +50,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\SolicitudDeContacto;
 use App\Modal;
 use App\File;
+use App\Text;
 
 
 
@@ -165,6 +166,7 @@ class IndexController extends Controller
       ->with('shop_items', ShopItem::all())
       ->with('modals', Modal::all())
       ->with('files', File::all())
+      ->with('text', Text::find(1)->firstOrFail())
       ->with('users', User::all());
     }
 

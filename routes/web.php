@@ -122,7 +122,12 @@ Route::post('/display-catalog2', 'DisplayController@catalog2Display');
 Route::post('/display-catalog3', 'DisplayController@catalog3Display');
 Route::post('/display-shop', 'DisplayController@shopDisplay');
 Route::post('/display-modal', 'DisplayController@modalDisplay');
+Route::post('/display-text', 'DisplayController@textDisplay');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
+
+// ================================== Text ========================================
+Route::get('/text', 'TextController@index')->name('text');
+Route::post('/text-update', 'TextController@update')->name('text.update');
 
 // ================================== FILES ========================================
 Route::get('/files', 'FileController@index')->name('files');

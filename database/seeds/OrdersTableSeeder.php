@@ -255,6 +255,20 @@ class OrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'modal',
             ),
+            17 => 
+            array (
+                'id' => 19,
+                'section' => 'text',
+                'name' => 'Texto',
+                'order' => 17,
+                'display' => 1,
+                'line' => 0,
+                'line_style' => 1,
+                'container_style' => 1,
+                'menu_name' => 'Text',
+                'menu_display' => 1,
+                'edit_link' => 'text',
+            ),
         ));
         
         
