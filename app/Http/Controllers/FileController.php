@@ -39,6 +39,9 @@ class FileController extends Controller
     {
       $path = public_path().'/files/';
       $files = $request->file('file');
+      $request->validate([
+      'files' => 'max:10000'
+      ]);
       foreach($files as $file){
 
           $fileName = $file->getClientOriginalName();
