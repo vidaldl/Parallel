@@ -225,7 +225,7 @@ var truncate = function (fullStr, strLen, separator) {
 Dropzone.options.myDropzone = {
   autoProcessQueue: false,
   uploadMultiple: true,
-  maxFilezise: 45,
+  maxFilezise: 512,
   maxFiles: 5,
 
   init: function() {

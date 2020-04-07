@@ -64,9 +64,12 @@
 			<div class="container clearfix">
 				<h1>Pink Printed Dress</h1>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="#">Shop</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Shop Single</li>
+					<li class="breadcrumb-item"><a href="/#shop">{{$menu_item[0]->item_inicio}}</a></li>
+          @foreach($orders as $item)
+          @if($item->section == 'shop')
+					<li class="breadcrumb-item active" aria-current="page">{{$item->menu_name}}</li>
+          @endif
+          @endforeach
 				</ol>
 			</div>
 

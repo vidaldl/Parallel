@@ -1,4 +1,4 @@
-<div class="container clearfix" id="catalog">
+<div class="container clearfix" id="shop">
 	@if($shop_sections[0]->title)
 		<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
 			<div class="container clearfix">
