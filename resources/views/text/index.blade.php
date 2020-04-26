@@ -135,6 +135,7 @@ $('#back_color').spectrum({
 });
 $('#text').trumbowyg({
   btns: [
+    ['viewHTML'],
     ['fontfamily'],
     ['formatting'],
     ['fontsize'],

@@ -269,6 +269,7 @@
 <script>
 $('#desc').trumbowyg({
   btns: [
+    ['viewHTML'],
     ['fontsize'],
     ['fontfamily'],
     ['strong', 'em', 'del'],

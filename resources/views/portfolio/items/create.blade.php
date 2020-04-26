@@ -724,6 +724,7 @@ $(".ajButton").click(function(e){
         }
     },
     btns: [
+        ['viewHTML'],
         ['fontsize'],
         ['fontfamily'],
         ['viewHTML'],

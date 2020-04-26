@@ -324,6 +324,7 @@
 
   $('#contenido').trumbowyg({
     btns: [
+      ['viewHTML'],
       ['fontsize'],
       ['strong', 'em', 'del'],
       ['link'],
