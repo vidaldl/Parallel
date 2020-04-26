@@ -62,7 +62,7 @@
   <section id="page-title">
 
 			<div class="container clearfix">
-				<h1>Pink Printed Dress</h1>
+				<h1>{{$shop_item->title}}</h1>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/#shop">{{$menu_item[0]->item_inicio}}</a></li>
           @foreach($orders as $item)
@@ -92,16 +92,21 @@
               <!-- Product Single - Gallery
               ============================================= -->
               <div class="product-image">
-                <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
+                <div class="fslider" data-pagi="true" data-arrows="false" data-thumbs="false">
                   <div class="flexslider">
                     <div class="slider-wrap" data-lightbox="gallery">
-                      <div class="slide" data-thumb="images/shop/thumbs/dress/3.jpg"><a href="images/shop/dress/3.jpg" title="Pink Printed Dress - Front View" data-lightbox="gallery-item"><img src="images/shop/dress/3.jpg" alt="Pink Printed Dress"></a></div>
-                      <div class="slide" data-thumb="images/shop/thumbs/dress/3-1.jpg"><a href="images/shop/dress/3-1.jpg" title="Pink Printed Dress - Side View" data-lightbox="gallery-item"><img src="images/shop/dress/3-1.jpg" alt="Pink Printed Dress"></a></div>
-                      <div class="slide" data-thumb="images/shop/thumbs/dress/3-2.jpg"><a href="images/shop/dress/3-2.jpg" title="Pink Printed Dress - Back View" data-lightbox="gallery-item"><img src="images/shop/dress/3-2.jpg" alt="Pink Printed Dress"></a></div>
+                      @if($shop_item->img_primaria)
+                      <div class="slide"><a href="{{'/storage/' . $shop_item->img_primaria}}"  data-lightbox="gallery-item"><img src="{{'/storage/' . $shop_item->img_primaria}}" alt="{{$shop_item->title}}"></a></div>
+                      @endif
+                      @if($shop_item->img_secundaria)
+                      <div class="slide"><a href="{{'/storage/' . $shop_item->img_secundaria}}"  data-lightbox="gallery-item"><img src="{{'/storage/' . $shop_item->img_secundaria}}" alt="{{$shop_item->title}}"></a></div>
+                      @endif
                     </div>
                   </div>
                 </div>
-                <div class="sale-flash">Sale!</div>
+                @if($shop_item->destacado == 1)
+                <div class="sale-flash">{{$shop_item->destacado_title}}</div>
+                @endif
               </div><!-- Product Single - Gallery End -->
 
             </div>
@@ -110,8 +115,16 @@
 
               <!-- Product Single - Price
               ============================================= -->
-              <div class="product-price"><del>$39.99</del> <ins>$24.99</ins></div><!-- Product Single - Price End -->
-
+              @if($shop_item->precio)
+              <div class="product-price">
+                @if($shop_item->destacado == 1)
+                  <del>${{$shop_item->precio}}</del>
+                  <ins>${{$shop_item->precio_nuevo}}</ins>
+                @else
+                  ${{$shop_item->precio}}
+                @endif
+              </div><!-- Product Single - Price End -->
+              @endif
               <!-- Product Single - Rating
               ============================================= -->
               <!-- <div class="product-rating">
@@ -134,7 +147,7 @@
                   <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
                   <input type="button" value="+" class="plus">
                 </div>
-                <button type="submit" class="add-to-cart button nomargin">Add to cart</button>
+                <button type="submit" class="add-to-cart button nomargin">{{$shop_item->cart_btn}}</button>
               </form><!-- Product Single - Quantity & Cart Button End -->
 
               <div class="clear"></div>
@@ -142,8 +155,7 @@
 
               <!-- Product Single - Short Description
               ============================================= -->
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit id eaque ex quae laboriosam nulla optio doloribus! Perspiciatis, libero, neque, perferendis at nisi optio dolor!</p>
-              <p>Perspiciatis ad eveniet ea quasi debitis quos laborum eum reprehenderit eaque explicabo assumenda rem modi.</p>
+              {!!$shop_item->details!!}
               <!-- Product Single - Short Description End -->
 
               <!-- Product Single - Meta
@@ -153,9 +165,21 @@
                   <div class="si-share noborder clearfix">
                     <span>Share:</span>
                     <div>
-                      <a href="#" class="social-icon si-borderless si-facebook">
+                      <a href="https://www.facebook.com/sharer/sharer.php?u={{ Request::url() }}" class="social-icon si-borderless si-facebook">
                         <i class="icon-facebook"></i>
                         <i class="icon-facebook"></i>
+                      </a>
+                      <a href="https://twitter.com/home?status={{ Request::url() }}" class="social-icon si-borderless si-twitter">
+                        <i class="icon-twitter"></i>
+                        <i class="icon-twitter"></i>
+                      </a>
+                      <a href="https://pinterest.com/pin/create/button/?url={{ Request::url() }}" class="social-icon si-borderless si-pinterest">
+                        <i class="icon-pinterest"></i>
+                        <i class="icon-pinterest"></i>
+                      </a>
+                      <a href="mailto:info@example.com?&subject=&body={{ Request::url() }}" class="social-icon si-borderless si-email3">
+                        <i class="icon-email3"></i>
+                        <i class="icon-email3"></i>
                       </a>
                     </div>
                   </div>
@@ -175,7 +199,7 @@
               <div class="tabs clearfix nobottommargin" id="tab-1">
 
                 <ul class="tab-nav clearfix">
-                  <li><a><i class="icon-align-justify2"></i><span class="d-none d-md-inline-block"> Description</span></a></li>
+                  <li><a><i class="icon-align-justify2"></i><span class="d-none d-md-inline-block"> Descripción</span></a></li>
 
 
                 </ul>
@@ -183,8 +207,8 @@
                 <div class="tab-container">
 
                   <div class="tab-content clearfix" id="tabs-1">
-                    <p>Pink printed dress,  woven, round neck with a keyhole and buttoned closure at the back, sleeveless, concealed zip up at left side seam, belt loops along waist with slight gathers beneath, brand appliqu?? above left front hem, has an attached lining.</p>
-                    Comes with a white, slim synthetic belt that has a tang clasp.
+                    {!!$shop_item->description!!}
+                    
                   </div>
 
 
@@ -202,35 +226,61 @@
 
         <div class="col_full nobottommargin">
 
-          <h4>Related Products</h4>
+          <h4>Productos Relacionados</h4>
 
           <div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-margin="30" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
-
+          @foreach($shop_items as $item)
+          @if($shop_item->img_primaria != $item->img_primaria )
             <div class="oc-item">
+
               <div class="product iproduct clearfix">
                 <div class="product-image">
-                  <a href="#"><img src="images/shop/dress/1.jpg" alt="Checked Short Dress"></a>
-                  <a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
-                  <div class="sale-flash">50% Off*</div>
-                  <div class="product-overlay">
-                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                    <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                  @if($item->img_primaria)
+                  <a href="{{route('shop.show', $item->id)}}"><img src="{{'/storage/' . $item->img_primaria}}" alt="Checked Short Dress"></a>
+                  @endif
+                  @if($item->img_secundaria)
+                  <a href="{{route('shop.show', $item->id)}}"><img src="{{'/storage/' . $item->img_secundaria}}" alt="Checked Short Dress"></a>
+                  @endif
+                  @if($item->destacado == 1)
+                  <div class="sale-flash">{{$item->destacado_title}}</div>
+                  @endif
+                  <div class="product-overlay" data-lightbox="gallery">
+                    @if($item->img_primaria)
+                      <a href="{{'/storage/' . $item->img_primaria}}" class="add-to-cart" data-lightbox="gallery-item"><i class="{{$item->img_icon}}"></i><span>&nbsp;{{$item->img_btn}}</span></a>
+                    @endif
+                    @if($item->img_secundaria)
+                      <a href="{{'/storage/' . $item->img_secundaria}}" class="add-to-cart" data-lightbox="gallery-item"><i class="{{$item->img_icon}}"></i><span>&nbsp;{{$item->img_btn}}</span></a>
+                    @endif
                   </div>
                 </div>
                 <div class="product-desc center">
-                  <div class="product-title"><h3><a href="#">Checked Short Dress</a></h3></div>
-                  <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
-                  <div class="product-rating">
-                    <i class="icon-star3"></i>
-                    <i class="icon-star3"></i>
-                    <i class="icon-star3"></i>
-                    <i class="icon-star3"></i>
-                    <i class="icon-star-half-full"></i>
-                  </div>
+                  <div class="product-title"><h3><a href="{{route('shop.show', $item->id)}}">{{$item->title}}</a></h3></div>
+                    @if($item->precio)
+                      <div class="product-price">
+                        @if($item->destacado == 1)
+                        <del>${{$item->precio}}</del>
+
+                        <ins>${{$item->precio_nuevo}}</ins>
+                        @else
+                        ${{$item->precio}}
+                        @endif
+                      </div>
+                    @endif
+                    @if($item->button)
+                      <div class="product-rating">
+                        @if($item->link_code)
+                          <a href="{{$item->button_link}}?producto={{$item->link_code}}" target="_blank" class="catalog-button3 col-md-8 mx-auto center button button-small button-rounded button-reveal button-light button-catalog3 tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
+                        @else
+                          <a href="{{$item->button_link}}" target="_blank" class="catalog-button3 col-md-8 mx-auto center button button-small button-rounded button-reveal button-light button-catalog3 tright"><i class="{{$item->button_icon}}"></i><span>{{$item->button}}</span></a>
+                        @endif
+                      </div>
+                    @endif
                 </div>
               </div>
-            </div>
 
+            </div>
+          @endif
+          @endforeach
           </div>
 
         </div>

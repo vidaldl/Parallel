@@ -6023,8 +6023,8 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-overlay {
 
 .product-overlay a {
 	display: block;
-
-
+  width: 50%;
+  float: left;
 	font-size: 13px;
 	color: #333;
 	background-color: #F5F5F5;

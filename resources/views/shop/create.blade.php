@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
 <link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
-
+<link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.css')}}">
+<link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.min.css')}}">
+<link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/plugins/table/ui/trumbowyg.table.min.css')}}">
 <style>
 .modal-dialog{
   position: relative;
@@ -161,6 +163,26 @@
                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage2">Secundaria &nbsp;&nbsp;<i class="fas fa-image"></i></a>
               </div>
 
+              <div class="form-group">
+                <label for="details" class="col-form-label">Detalles del Producto</label>
+                <textarea id="details" name="details" class="form-control @error('details') is-invalid @enderror"  >{{isset($shop_items) ? $shop_items->details : ''}}</textarea>
+                  @error('details')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+
+              <div class="form-group">
+                <label for="description" class="col-form-label">Contenido Detalle</label>
+                <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror"  >{{isset($shop_items) ? $shop_items->description : ''}}</textarea>
+                  @error('description')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+
               <!-- <div class="input-group mb-3">
               <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage2">Secundaria &nbsp;&nbsp;<i class="fas fa-image"></i></a>
               <button id="clearImage" class="btn btn-danger ml-4" type="button"><i class="fas fa-trash"></i></button>
@@ -290,7 +312,79 @@
 @if(isset($shop_items))
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
 <script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/colors/trumbowyg.colors.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/base64/trumbowyg.base64.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/table/trumbowyg.table.min.js')}}"></script>
 <script>
+//TEXT EDITOR
+$('#details').trumbowyg({
+  btns: [
+    ['fontfamily'],
+    ['formatting'],
+    ['fontsize'],
+    ['foreColor', 'backColor'],
+    ['strong', 'em', 'del'],
+    ['link'],
+    ['base64'],
+    ['noembed'],
+    ['image'],
+    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+    ['unorderedList', 'orderedList'],
+    ['horizontalRule'],
+    ['removeformat'],
+    ['table'],
+    ['fullscreen']
+  ],
+  plugins: {
+      fontfamily: {
+          fontList: [
+            @foreach($font_styles as $font)
+            {name: '{{$font->name}}', family: '{{$font->name}}, sans-serif'},
+            @endforeach
+              {name: 'Arial', family: 'Arial, Helvetica, sans-serif'},
+              {name: 'Open Sans', family: '\'Open Sans\', sans-serif'}
+          ]
+      }
+  }
+});
+
+$('#description').trumbowyg({
+  btns: [
+    ['fontfamily'],
+    ['formatting'],
+    ['fontsize'],
+    ['foreColor', 'backColor'],
+    ['strong', 'em', 'del'],
+    ['link'],
+    ['base64'],
+    ['noembed'],
+    ['image'],
+    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+    ['unorderedList', 'orderedList'],
+    ['horizontalRule'],
+    ['removeformat'],
+    ['table'],
+    ['fullscreen']
+  ],
+  plugins: {
+      fontfamily: {
+          fontList: [
+            @foreach($font_styles as $font)
+            {name: '{{$font->name}}', family: '{{$font->name}}, sans-serif'},
+            @endforeach
+              {name: 'Arial', family: 'Arial, Helvetica, sans-serif'},
+              {name: 'Open Sans', family: '\'Open Sans\', sans-serif'}
+          ]
+      }
+  }
+});
+
+//DELETE IMAGE
 $('#clearImage').on('click', function() {
 
   $.ajax({

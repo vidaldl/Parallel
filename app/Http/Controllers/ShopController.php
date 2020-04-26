@@ -76,7 +76,9 @@ class ShopController extends Controller
      */
     public function create()
     {
-      return view('shop.create');
+      return view('shop.create')
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all());
     }
 
     /**
@@ -113,7 +115,8 @@ class ShopController extends Controller
       ->with('font_styles', FontStyle::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
       ->with('footer_links', FooterLink::all())
-      ->with('shop_items', ShopItem::find($id));
+      ->with('shop_items', ShopItem::all())
+      ->with('shop_item', ShopItem::find($id));
     }
 
     /**
@@ -126,7 +129,9 @@ class ShopController extends Controller
     {
       return view('shop.create')
       ->with('shop_sections', ShopSection::all())
-      ->with('shop_items', ShopItem::find($id));
+      ->with('shop_items', ShopItem::find($id))
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all());
     }
 
     /**
@@ -187,6 +192,8 @@ class ShopController extends Controller
         $button_link = $request->input('button_link');
         $button_icon = $request->input('button_icon');
         $link_code = $request->input('link_code');
+        $details = $request->input('details');
+        $description = $request->input('description');
 
         $data = array(
           'title' => $title,
@@ -198,7 +205,9 @@ class ShopController extends Controller
           'button' => $button,
           'button_link' => $button_link,
           'button_icon' => $button_icon,
-          'link_code' => $link_code
+          'link_code' => $link_code,
+          'details' => $details,
+          'description' => $description
         );
 
         DB::table('shop_items')->where('id', $id)->update($data);

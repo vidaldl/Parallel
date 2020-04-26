@@ -31,7 +31,7 @@ class ServicioController extends Controller
      */
     public function create()
     {
-        return view('servicios.create');
+        return view('servicios.create')->with('section2', ContenidoSection2::all());
     }
 
     /**

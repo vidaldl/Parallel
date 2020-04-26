@@ -265,6 +265,7 @@
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js')}}"></script>
 <script>
 $('#desc').trumbowyg({
   btns: [
@@ -273,6 +274,7 @@ $('#desc').trumbowyg({
     ['strong', 'em', 'del'],
     ['link'],
     ['image'],
+    ['insertAudio'],
     ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
     ['unorderedList', 'orderedList'],
     ['horizontalRule'],

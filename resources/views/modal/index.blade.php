@@ -281,6 +281,7 @@ Dropzone.options.screenshot = {
 <script src="{{asset('lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/base64/trumbowyg.base64.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js')}}"></script>
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
   <script type="text/javascript">
   $('#contenido').trumbowyg({
@@ -292,6 +293,7 @@ Dropzone.options.screenshot = {
       ['link'],
       ['base64'],
       ['noembed'],
+      ['insertAudio'],
       ['image'],
       ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
       ['unorderedList', 'orderedList'],

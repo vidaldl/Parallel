@@ -18,6 +18,7 @@ class CreateShopItemsTable extends Migration
             $table->string('title');
             $table->string('img_primaria')->nullable();
             $table->string('img_secundaria')->nullable();
+            $table->string('cart_btn')->default('Carrito')->nullable();
             $table->string('img_btn')->default('Acercar')->nullable();
             $table->string('img_icon')->default('fas fa-search-plus')->nullable();
             $table->float('precio')->nullable();
@@ -28,6 +29,8 @@ class CreateShopItemsTable extends Migration
             $table->string('button_icon')->default('fas fa-arrow-right')->nullable();
             $table->string('button_link')->default('#')->nullable();
             $table->string('link_code')->nullable();
+            $table->text('details')->nullable();
+            $table->text('description')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

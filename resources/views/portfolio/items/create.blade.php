@@ -710,7 +710,7 @@ $(".ajButton").click(function(e){
 <script src="{{asset('lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
-
+<script src="{{asset('lib/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js')}}"></script>
 <script>
 
 
@@ -730,6 +730,7 @@ $(".ajButton").click(function(e){
         ['formatting'],
         ['strong', 'em', 'del'],
         ['link'],
+        ['insertAudio'],
         ['image'],
         ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
         ['unorderedList', 'orderedList'],

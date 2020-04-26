@@ -33,12 +33,14 @@
               <div class="sale-flash">{{$item->destacado_title}}</div>
               @endif
               <div class="product-overlay" data-lightbox="gallery">
+								<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> {{$item->cart_btn}}</span></a>
                 @if($item->img_primaria)
-                  <a href="{{'/storage/' . $item->img_primaria}}" class="add-to-cart" data-lightbox="gallery-item"><i class="{{$item->img_icon}}"></i><span>&nbsp;{{$item->img_btn}}</span></a>
+                  <a href="{{'/storage/' . $item->img_primaria}}" class="item-quick-view" data-lightbox="gallery-item"><i class="{{$item->img_icon}}"></i><span>&nbsp;{{$item->img_btn}}</span></a>
                 @endif
                 @if($item->img_secundaria)
-                  <a href="{{'/storage/' . $item->img_secundaria}}" class="add-to-cart" data-lightbox="gallery-item"><i class="{{$item->img_icon}}"></i><span>&nbsp;{{$item->img_btn}}</span></a>
+                  <a href="{{'/storage/' . $item->img_secundaria}}" class="item-quick-view" data-lightbox="gallery-item"><i class="{{$item->img_icon}}"></i><span>&nbsp;{{$item->img_btn}}</span></a>
                 @endif
+
               </div>
             </div>
             <div class="product-desc center">
@@ -84,7 +86,7 @@
 						<a href="#"><img src="{{'/storage/' . $item->img_secundaria}}" alt="Checked Short Dress"></a>
 						@endif
 						@if($item->destacado == 1)
-						<div class="sale-flash">50% Off*</div>
+						<div class="sale-flash">{{$item->destacado_title}}</div>
 						@endif
 						<div class="product-overlay" data-lightbox="gallery">
 							@if($item->img_primaria)

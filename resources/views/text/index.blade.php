@@ -127,6 +127,7 @@
 <script src="{{asset('lib/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/base64/trumbowyg.base64.min.js')}}"></script>
 <script src="{{asset('lib/trumbowyg/dist/plugins/table/trumbowyg.table.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js')}}"></script>
 <script>
 $('#back_color').spectrum({
   preferredFormat: "hex",
@@ -142,6 +143,7 @@ $('#text').trumbowyg({
     ['link'],
     ['base64'],
     ['noembed'],
+    ['insertAudio'],
     ['image'],
     ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
     ['unorderedList', 'orderedList'],
