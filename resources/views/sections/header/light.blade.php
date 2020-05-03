@@ -44,7 +44,7 @@
         @endif
       <!-- Top Cart
   				============================================= -->
-  				<div id="top-cart">
+  				<!-- <div id="top-cart">
   					<a href="#" id="top-cart-trigger"><i style="font-size: 20px!important;" class="icon-shopping-cart"></i><span>5</span></a>
   					<div class="top-cart-content">
   						<div class="top-cart-title">
@@ -77,7 +77,7 @@
   							<button class="button button-3d button-small nomargin fright">View Cart</button>
   						</div>
   					</div>
-  				</div><!-- #top-cart end -->
+  				</div> -->
         </ul>
 
 
