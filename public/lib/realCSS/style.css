@@ -88,6 +88,13 @@
 	- Youtube Video Backgrounds
 
 ---------------------------------------------------------------- */
+/* RECAPTCHA */
+
+.grecaptcha-badge {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 
 /* FILE/PDF MODAL */
 
@@ -1870,7 +1877,7 @@ body.top-search-open #top-search a i.icon-line-cross {
 	font-size: 16px;
 }
 
-#top-cart > a:hover { color: #1ABC9C; }
+/* #top-cart > a:hover { color: #1ABC9C; } */
 
 #top-search form {
 	opacity: 0;
@@ -1955,7 +1962,7 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
 	height: 16px;
 	line-height: 16px;
 	text-align: center;
-	background-color: #1ABC9C;
+	/* background-color: #1ABC9C; */
 	border-radius: 50%;
 }
 
@@ -1967,7 +1974,7 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
 	background-color: #FFF;
 	box-shadow: 0px 20px 50px 10px rgba(0, 0, 0, 0.05);
 	border: 1px solid #EEE;
-	border-top: 2px solid #1ABC9C;
+	/* border-top: 2px solid #1ABC9C; */
 	top: 60px;
 	right: -15px;
 	left: auto;
@@ -1989,7 +1996,7 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
 
 .top-cart-title {
 	padding: 12px 15px;
-	border-bottom: 1px solid #EEE;
+	border-bottom: 1px solid #EEE !important;
 }
 
 .top-cart-title h4 {
@@ -2050,7 +2057,7 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
 	font-weight: 700;
 }
 
-.top-cart-item-desc a:hover { color: #1ABC9C !important; }
+/* .top-cart-item-desc a:hover { color: #1ABC9C !important; } */
 
 .top-cart-item-desc span.top-cart-item-price {
 	display: block;
@@ -2073,10 +2080,10 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
 	border-top: 1px solid #EEE;
 }
 
-.top-cart-action span.top-checkout-price {
+/* .top-cart-action span.top-checkout-price {
 	font-size: 20px;
 	color: #1ABC9C;
-}
+} */
 
 
 /* ----------------------------------------------------------------
@@ -5980,8 +5987,8 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-image > a {
 .product-title h3 a,
 .single-product .product-title h2 a { color: #333; }
 
-.product-title h3 a:hover,
-.single-product .product-title h2 a:hover { color: #1ABC9C; }
+/* .product-title h3 a:hover,
+.single-product .product-title h2 a:hover { color: #1ABC9C; } */
 
 .product-price {
 	font-size: 18px;
@@ -5998,7 +6005,7 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-image > a {
 
 .product-price ins {
 	text-decoration: none;
-	color: #1ABC9C;
+	/* color: #1ABC9C; */
 }
 
 .product-overlay {
@@ -6048,7 +6055,7 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-overlay a {
 }
 
 .product-overlay a:hover {
-	background-color: #333;
+	/* background-color: #333; */
 	color: #FFF;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
@@ -10846,7 +10853,7 @@ blockquote.float-right {
 }
 
 .owl-carousel .owl-nav [class*=owl-]:hover {
-	background-color: #1ABC9C !important;
+	/* background-color: #1ABC9C !important; */
 	color: #FFF !important;
 	text-decoration: none;
 }
@@ -11816,7 +11823,44 @@ body:not(.device-touch) #gotoTop {
 
 .stretched #gotoTop { bottom: 30px; }
 
-#gotoTop:hover { background-color: #1ABC9C; }
+/* #gotoTop:hover { background-color: #1ABC9C; } */
+
+
+
+/* ----------------------------------------------------------------
+	SHOPPING CART
+-----------------------------------------------------------------*/
+
+/*
+#shoppingCart {
+
+	z-index: 299;
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background-color: #333;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 20px;
+	line-height: 36px;
+	text-align: center;
+	color: #FFF;
+	bottom: auto;
+	left: auto;
+	right: 30px;
+	bottom: 50px;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+body:not(.device-touch) #shoppingCart {
+	transition: background-color .2s linear;
+	-webkit-transition: background-color .2s linear;
+	-o-transition: background-color .2s linear;
+}
+
+.stretched #shoppingCart { bottom: 30px; }*/
+
+/* #gotoTop:hover { background-color: #1ABC9C; } */
 
 
 /* ----------------------------------------------------------------

@@ -1,6 +1,43 @@
 <!-- FONT LINKS -->
 
 <style>
+/* SHOPPINGCART */
+.product-overlay a:hover {
+background-color: {{$styles[0]->button_primary}};
+}
+
+#top-cart > a > span {
+background-color: {{$styles[0]->button_secondary}};
+}
+#top-cart .top-cart-content {
+border-top: 2px solid {{$styles[0]->button_secondary}};
+}
+
+.top-cart-item-desc a:hover { color: {{$styles[0]->button_primary}} !important; }
+
+.top-cart-action span.top-checkout-price {
+	font-size: 20px;
+	color: {{$styles[0]->button_secondary}};
+}
+
+.button.button-3d:hover {
+	background-color: {{$styles[0]->button_secondary}} !important;
+}
+.product-price ins {
+color: {{$styles[0]->button_primary}};
+}
+
+#top-cart > a:hover { color: {{$styles[0]->button_secondary}}; }
+
+.owl-carousel .owl-nav [class*=owl-]:hover {
+background-color: {{$styles[0]->button_secondary}} !important;
+}
+
+.product-title h3 a:hover,
+.single-product .product-title h2 a:hover { color: {{$styles[0]->button_secondary}}; }
+
+/* /SHOPPINGCART */
+
 /* MODAL BUTTON */
 .modal-button {
 	color: {{$modals[0]->color}};
@@ -58,6 +95,8 @@ h6 {
 	color: {{$catalog_section3s[0]->button_text_color}} !important;
 }
 
+
+
 .catalog-button {
 	background-color: {{$catalog_sections[0]->button_primary}} !important;
 }
@@ -95,13 +134,16 @@ h6 {
 }
 
 .sale-flash {
-	background-color: {{$styles[0]->button_primary}};
+	background-color: {{$styles[0]->button_secondary}};
 }
 
 .portfolio-filter li a:hover {
     color: {{$styles[0]->button_secondary}};
 }
 
+/* GOTOTOP */
+#gotoTop:hover { background-color: {{$styles[0]->button_secondary}}; }
+/* /GOTOTOP */
 
 .button-green { background-color: {{$styles[0]->button_primary}}; }
 .button-green:hover,

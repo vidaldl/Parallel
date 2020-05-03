@@ -138,13 +138,13 @@ body #side-panel.dark { background-color: #383838; }
 .dark.overlay-menu #header-wrap:not(.not-dark) #primary-menu > #overlay-menu-close,
 .overlay-menu #primary-menu.dark > #overlay-menu-close,
 .dark #header-wrap:not(.not-dark) #top-search a,
-.dark #header-wrap:not(.not-dark) #top-cart a,
+/* .dark #header-wrap:not(.not-dark) #top-cart a, */
 .dark #header-wrap:not(.not-dark) #side-panel-trigger a,
 .dark #header-wrap:not(.not-dark) #top-account a,
-.dark #top-cart .top-cart-item-desc a,
+/* .dark #top-cart .top-cart-item-desc a, */
 body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 .dark #header-wrap:not(.not-dark) #top-search a:hover,
-.dark #header-wrap:not(.not-dark) #top-cart a:hover,
+/* .dark #header-wrap:not(.not-dark) #top-cart a:hover, */
 .dark #header-wrap:not(.not-dark) #side-panel-trigger a:hover,
 .dark #header-wrap:not(.not-dark) #top-account a:hover,
 .dark #header-wrap:not(.not-dark) #top-search form input {
@@ -257,13 +257,13 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 #primary-menu.dark.sub-title.style-2 > div > ul > li.current > a span { color: #EEE; }
 
 
-.dark #top-cart .top-cart-content {
+/* .dark #top-cart .top-cart-content {
 	background-color: #333;
 	border-color: #3F3F3F;
 	border-top-color: #1ABC9C;
-}
+} */
 
-.dark .top-cart-title { border-bottom-color: #3F3F3F; }
+/* .dark .top-cart-title { border-bottom-color: #3F3F3F; }
 
 .dark .top-cart-item { border-top-color: #3F3F3F; }
 
@@ -277,7 +277,7 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 
 .dark .top-cart-item-desc span.top-cart-item-quantity { color: #888; }
 
-.dark .top-cart-action { border-top-color: #3F3F3F; }
+.dark .top-cart-action { border-top-color: #3F3F3F; } */
 
 .dark .one-page-arrow,
 .one-page-arrow.dark { color: #FFF; }

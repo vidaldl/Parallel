@@ -16,7 +16,7 @@
   </div>
 </section> -->
 <section class="bottommargin" id="links">
-<h4 class="center">{{$link_sections[0]->title}}</h4>
+<h3 class="center">{{$link_sections[0]->title}}</h3>
   <div class="container clearfix">
     <ul class="clients-grid nobottommargin clearfix row justify-content-center">
       @foreach($links as $link)
