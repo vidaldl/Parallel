@@ -12,7 +12,7 @@
 						@if($info_slider_image3s->count() > 1)
 						<div class="fslider" data-arrows="true" data-speed="400" data-pause="4000">
 						@else
-						<!-- <div class="fslider" data-arrows="false" data-speed="400" data-pause="4000"> -->
+						<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
 						@endif
 	          <div class="flexslider">
 	            <div class="slider-wrap">
