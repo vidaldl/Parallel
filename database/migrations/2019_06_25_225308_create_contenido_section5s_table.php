@@ -15,6 +15,7 @@ class CreateContenidoSection5sTable extends Migration
     {
         Schema::create('contenido_section5s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('map')->default(1);
             $table->string('title')->nullable();
             $table->string('address')->nullable();
             $table->string('email')->nullable();
