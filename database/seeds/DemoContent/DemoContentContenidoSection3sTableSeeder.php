@@ -26,6 +26,7 @@ class DemoContentContenidoSection3sTableSeeder extends Seeder
                 'background_color' => '#d2d2d2',
                 'text_color' => '#464646',
                 'link' => 'https://google.com',
+                'link_type' => 0,
             ),
         ));
         
