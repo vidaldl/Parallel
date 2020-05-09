@@ -10,6 +10,7 @@ use App\Style;
 use App\Order;
 use App\Font;
 use App\FontStyle;
+use App\ContenidoSection5;
 
 use DB;
 use Illuminate\Support\Facades\Storage;
@@ -110,7 +111,8 @@ class PortfolioGalleryController extends Controller
       ->with('gallery_items', GalleryItem::find($id))
       ->with('paginate_items', GalleryItem::all())
       ->with(compact('item', 'previous', 'next'))
-      ->with('gallery_images', GalleryImages::all());
+      ->with('gallery_images', GalleryImages::all())
+      ->with('contenidosection5s', ContenidoSection5::all());
     }
 
     /**

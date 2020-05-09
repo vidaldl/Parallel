@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('css')
-  <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.min.css')}}">
+  <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/ui/trumbowyg.css')}}">
+  <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.min.css')}}">
+  <link rel="stylesheet" href="{{asset('lib/trumbowyg/dist/plugins/table/ui/trumbowyg.table.min.css')}}">
+  <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
+  <link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
+  <style media="screen">
+  .tgl-sw-swipe + .btn-switch {
+    background: #e74a3b;
+  }
+  </style>
 @endsection
 
 @section('content')
@@ -10,7 +19,7 @@
   <a href="{{route('home')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Secciones<span></a>
 </div>
   <div class="row justify-content-center">
-    <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"><iframe class="" src="/#contact"  width="100%" height="450"></iframe></div>
+    <div class="col-md-12 d-none d-sm-none d-md-none d-lg-block"></div>
     <div class="col-md-12">
     @foreach($orders as $item)
       @if($item->id == 8)
@@ -92,9 +101,39 @@
                   @enderror
               </div>
               <div class="form-group">
-                <label for="address" class="col-form-label">Dirección</label>
-                <input id="address" type="input" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ $contenidosection5s[0]->address }}">
-                  @error('address')
+                <label for="map" class="col-form-label">Mapa:</label>
+                <div id="map"></div>
+              </div>
+              <div class="form-group">
+                <label for="map_iframe" class="col-form-label">Embed de Google Maps:</label>
+                <input id="map_iframe" type="input" name="map_iframe" class="form-control @error('map_iframe') is-invalid @enderror"  value="{{ $contenidosection5s[0]->map_iframe }}">
+                  @error('map_iframe')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="info" class="col-form-label">Información de Contacto:</label>
+                <textarea id="info" type="input" name="info" class="form-control @error('info') is-invalid @enderror">{{ $contenidosection5s[0]->info }}</textarea>
+                  @error('info')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="back_color" class="col-form-label">Color de Fondo:</label>
+                <input id="back_color" type="input" name="back_color" class="form-control @error('back_color') is-invalid @enderror"  value="{{ $contenidosection5s[0]->back_color }}">
+              </div>
+              <div class="form-group">
+                <label for="back_form" class="col-form-label">Fondo del Formulário</label>
+                <input id="back_form" type="input" name="back_form" class="form-control @error('back_form') is-invalid @enderror"  value="{{ $contenidosection5s[0]->back_form }}">
+              </div>
+              <div class="form-group">
+                <label for="name" class="col-form-label">Name</label>
+                <input id="name" type="input" name="name" class="form-control @error('name') is-invalid @enderror"  value="{{ $contenidosection5s[0]->name }}">
+                  @error('name')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -110,18 +149,50 @@
                   @enderror
               </div>
               <div class="form-group">
-                <label for="number" class="col-form-label">Teléfono</label>
-                <textarea id="number" type="input" name="number" class="form-control @error('number') is-invalid @enderror">{{ $contenidosection5s[0]->number }}</textarea>
-                  @error('number')
+                <label for="phone" class="col-form-label">Phone</label>
+                <input id="phone" type="input" name="phone" class="form-control @error('phone') is-invalid @enderror"  value="{{ $contenidosection5s[0]->phone }}">
+                  @error('phone')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
                   @enderror
               </div>
-              <!-- <div class="form-group">
-                <label for="back_color">Color de Fondo</label><br>
-                <input onchange="this.form.submit()" class="form-control col-md-6"  name="back_color" type="text" id="back_color" value="{{ $contenidosection5s[0]->back_color }}">
-              </div> -->
+              <div class="form-group">
+                <label for="services" class="col-form-label">Services</label>
+                <input id="services" type="input" name="services" class="form-control @error('services') is-invalid @enderror"  value="{{ $contenidosection5s[0]->services }}">
+                  @error('services')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="subject" class="col-form-label">Subject</label>
+                <input id="subject" type="input" name="subject" class="form-control @error('subject') is-invalid @enderror"  value="{{ $contenidosection5s[0]->subject }}">
+                  @error('subject')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="message" class="col-form-label">Message</label>
+                <input id="message" type="input" name="message" class="form-control @error('message') is-invalid @enderror"  value="{{ $contenidosection5s[0]->message }}">
+                  @error('message')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="send_button" class="col-form-label">Botón de Enviar</label>
+                <input id="send_button" type="input" name="send_button" class="form-control @error('send_button') is-invalid @enderror"  value="{{ $contenidosection5s[0]->send_button }}">
+                  @error('send_button')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-success float-right">Actualizar</button>
               </div>
@@ -134,18 +205,103 @@
 </div>
 @endsection
 @section('script')
+<script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
+<script>
+$('#map').btnSwitch({
+  Theme:'Swipe',
+  OnText: "Si",
+  OffText: "No",
+  OnValue: '1',
+  OnCallback: function(val) {
+
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("section5.update", 1)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+    },
+  OffValue: '0',
+  OffCallback: function (val) {
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("section5.update", 1)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           val:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+  },
+  @if($contenidosection5s[0]->map == 1)
+  ToggleState: true
+  @else
+  ToggleState: false
+  @endif
+});
+</script>
+
 <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
 <script src="{{asset('lib/trumbowyg/dist/trumbowyg.min.js')}}"></script>
-<script src="{{asset('trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/colors/trumbowyg.colors.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/base64/trumbowyg.base64.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/table/trumbowyg.table.min.js')}}"></script>
+<script src="{{asset('lib/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js')}}"></script>
+
 <script>
-$('#number').trumbowyg({
+$('#back_color').spectrum({
+  preferredFormat: "hex",
+  showInput: true,
+});
+$('#back_form').spectrum({
+  preferredFormat: "hex",
+  showInput: true,
+});
+$('#info').trumbowyg({
   btns: [
+    ['viewHTML'],
+    ['fontfamily'],
+    ['formatting'],
+    ['fontsize'],
+    ['foreColor', 'backColor'],
+    ['strong', 'em', 'del'],
+    ['link'],
+    ['base64'],
+    ['noembed'],
+    ['insertAudio'],
+    ['image'],
+    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+    ['unorderedList', 'orderedList'],
+    ['horizontalRule'],
+    ['removeformat'],
+    ['table'],
     ['fullscreen']
-  ]
+  ],
+  plugins: {
+      fontfamily: {
+          fontList: [
+            @foreach($font_styles as $font)
+            {name: '{{$font->name}}', family: '{{$font->name}}, sans-serif'},
+            @endforeach
+              {name: 'Arial', family: 'Arial, Helvetica, sans-serif'},
+              {name: 'Open Sans', family: '\'Open Sans\', sans-serif'}
+          ]
+      }
+  }
 });
 
 </script>
-@endsection
-@section('css')
-<link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
 @endsection

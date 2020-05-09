@@ -809,21 +809,54 @@ class HomeController extends Controller
 
     /*SECTION 5 -------------------------------------------------------------------------------->*/
     public function section5Edit($id) {
-      return view('updateIndex/section5')->with('orders', Order::orderBy('order')->get())->with('contenidosection5s', ContenidoSection5::all());
+      return view('updateIndex/section5')
+      ->with('orders', Order::orderBy('order')->get())
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all())
+      ->with('contenidosection5s', ContenidoSection5::all());
     }
 
     public function section5Update(Request $request, $id) {
-      $title = $request->input('title');
-      $address = $request->input('address');
-      $email = $request->input('email');
-      $number = $request->input('number');
-      $back_color = $request->input('back_color');
+      if($request->has('val')) {
+        $map = $request->input('val');
 
-      $data=array("title"=>$title, "address"=>$address, "email"=>$email, "number"=>$number, "back_color"=>$back_color);
-      DB::table('contenido_section5s')->update($data);
-      session()->flash('success', 'La sección fue actualizada');
-      //redirect
-      return redirect()->back();
+        $data = array("map"=>$map);
+        DB::table('contenido_section5s')->update($data);
+      }
+      else{
+        $title = $request->input('title');
+        $map_iframe = $request->input('map_iframe');
+        $info = $request->input('info');
+        $back_color = $request->input('back_color');
+        $back_form = $request->input('back_form');
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $services = $request->input('services');
+        $subject = $request->input('subject');
+        $message = $request->input('message');
+        $send_button = $request->input('send_button');
+
+
+        $data=array(
+          "title"=>$title,
+          "map_iframe"=>$map_iframe,
+          "info"=>$info,
+          "back_color"=>$back_color,
+          "back_form"=>$back_form,
+          "name"=>$name,
+          "email"=>$email,
+          "phone"=>$phone,
+          "services"=>$services,
+          "subject"=>$subject,
+          "message"=>$message,
+          "send_button"=>$send_button
+        );
+        DB::table('contenido_section5s')->update($data);
+        session()->flash('success', 'La sección fue actualizada');
+        //redirect
+        return redirect()->back();
+      }
     }
 
     public function section5Display(Request $request, $id) {
