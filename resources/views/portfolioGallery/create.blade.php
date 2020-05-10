@@ -203,6 +203,7 @@
                   <div class="editorNew d-none" style="height:450px; width: 450px; background-color: #000;">
                   </div>
                   <button class="buttonConfirm btn btn-primary float-right mt-2 d-none">Confirmar</button>
+                  <button class="buttonConfirm2 btn btn-primary float-right mt-2 d-none">thumbnail</button>
                 </td>
               </tr>
 
@@ -405,25 +406,56 @@ $('#desc').trumbowyg({
 <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('lib/cropper/cropper.js')}}"></script>
 <script>
-
+$(document).ready(function() {
+$('.buttonConfirm2').hide();
+});
+  var a = 1;
+  var editor = $('.editorNew');
+  var buttonConfirm = $('.buttonConfirm');
+  var buttonConfirm2 = $('.buttonConfirm2');
+  var name = "slide";
 Dropzone.options.slide = {
-     paramName: "slide",
-
+     paramName: name,
      transformFile: function(file, done) {
+       if(a == 2) {
+
+         $(buttonConfirm).removeClass('d-block');
+         $(buttonConfirm).addClass('d-none');
+
+         $(buttonConfirm2).removeClass('d-none');
+         $(buttonConfirm2).addClass('d-block');
+       } else {
+         $(buttonConfirm).removeClass('d-none');
+         $(buttonConfirm).addClass('d-block');
+       }
         var myDropZone = this;
-        var editor = $('.editorNew');
+        // var editor = $('.editorNew');
         $(editor).removeClass('d-none');
         $(editor).addClass('d-block');
         // Create confirm button at the top left of the viewport
-        var buttonConfirm = $('.buttonConfirm');
-        $(buttonConfirm).removeClass('d-none');
-        $(buttonConfirm).addClass('d-block');
+
+
+
+          // Create an image node for Cropper.js
+         var image = new Image();
+
+         image.src = URL.createObjectURL(file);
+
+         // editor.appendChild(image);
+         $(image).appendTo(editor)
+         // Create Cropper.js
+         var cropper = new Cropper(image, { aspectRatio: 4/3 });
+
         $(buttonConfirm).click(function() {
+
+          // =======================================
+
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 1760,
-             height: 990
+             width: 1280,
+             height: 720
            });
+
            // Turn the canvas into a Blob (file object without a name)
            canvas.toBlob(function(blob) {
              // Create a new Dropzone file thumbnail
@@ -441,27 +473,70 @@ Dropzone.options.slide = {
                   done(blob);
               });
            });
+
+
+
           // Remove the editor from the view
           $(buttonConfirm).removeClass('d-block');
           $(buttonConfirm).addClass('d-none');
+          // $(buttonConfirm2).show();
+
         });
-        // Create an image node for Cropper.js
-       var image = new Image();
-       image.src = URL.createObjectURL(file);
-       // editor.appendChild(image);
-       $(image).appendTo(editor)
-       // Create Cropper.js
-       var cropper = new Cropper(image, { aspectRatio: 4/3 });
+
+        $(buttonConfirm2).click(function() {
+
+            // Get the canvas with image data from Cropper.js
+             var canvas = cropper.getCroppedCanvas({
+               width: 100,
+               height: 75
+             });
+
+             // Turn the canvas into a Blob (file object without a name)
+             canvas.toBlob(function(blob) {
+               // Create a new Dropzone file thumbnail
+                myDropZone.createThumbnail(
+                  blob,
+                  myDropZone.options.thumbnailWidth,
+                  myDropZone.options.thumbnailHeight,
+                  myDropZone.options.thumbnailMethod,
+                  false,
+                  function(dataURL) {
+
+                    // Update the Dropzone file thumbnail
+                    myDropZone.emit('thumbnail', file, dataURL);
+                    // Return the file to Dropzone
+                    done(blob);
+                });
+             });
+
+        });
+
+
    },
    init: function () {
+
       this.on("complete", function (file) {
+        alert(name);
+        editor.empty();
+        file.status = Dropzone.QUEUED;
+        a = a + 1;
+         console.log(a);
+        if(a > 2){
+          // setTimeout(
+          //   function()
+          //   {
+          //     location.reload();
+          //   }, 1500);
+          alert('reload');
+        }
+       // this.removeAllFiles(true);
         if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
 
-          setTimeout(
-            function()
-            {
-              location.reload();
-            }, 1500);
+          // setTimeout(
+          //   function()
+          //   {
+          //     location.reload();
+          //   }, 1500);
         }
       });
     }

@@ -199,10 +199,11 @@ class PortfolioGalleryController extends Controller
           'slide' => 'image|required|mimes:png,jpg,jpeg,svg'
        ]);
 
+       $img = $request->file('slide');
+       // dd($img);
 
       //upload it
       $image = $request->file('slide')->store('content/portfolioGallery');
-
       $data =array('image' => $image);
       DB::table('gallery_images')->insert($data);
       $latest = DB::getPdo('gallery_images')->lastInsertId();

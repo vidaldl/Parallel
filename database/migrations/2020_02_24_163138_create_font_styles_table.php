@@ -16,7 +16,7 @@ class CreateFontStylesTable extends Migration
         Schema::create('font_styles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('link');
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
