@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-         
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -227,6 +227,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         //Gravatar
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
+        //Intervention Image
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

@@ -409,32 +409,21 @@ $('#desc').trumbowyg({
 $(document).ready(function() {
 $('.buttonConfirm2').hide();
 });
-  var a = 1;
-  var editor = $('.editorNew');
-  var buttonConfirm = $('.buttonConfirm');
-  var buttonConfirm2 = $('.buttonConfirm2');
-  var name = "slide";
+
 Dropzone.options.slide = {
-     paramName: name,
+     paramName: "slide",
      transformFile: function(file, done) {
-       if(a == 2) {
 
-         $(buttonConfirm).removeClass('d-block');
-         $(buttonConfirm).addClass('d-none');
-
-         $(buttonConfirm2).removeClass('d-none');
-         $(buttonConfirm2).addClass('d-block');
-       } else {
+       var editor = $('.editorNew');
+       var buttonConfirm = $('.buttonConfirm');
          $(buttonConfirm).removeClass('d-none');
          $(buttonConfirm).addClass('d-block');
-       }
+
         var myDropZone = this;
         // var editor = $('.editorNew');
         $(editor).removeClass('d-none');
         $(editor).addClass('d-block');
         // Create confirm button at the top left of the viewport
-
-
 
           // Create an image node for Cropper.js
          var image = new Image();
@@ -448,12 +437,10 @@ Dropzone.options.slide = {
 
         $(buttonConfirm).click(function() {
 
-          // =======================================
-
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 1280,
-             height: 720
+             width: 1200,
+             height: 900
            });
 
            // Turn the canvas into a Blob (file object without a name)
@@ -473,9 +460,6 @@ Dropzone.options.slide = {
                   done(blob);
               });
            });
-
-
-
           // Remove the editor from the view
           $(buttonConfirm).removeClass('d-block');
           $(buttonConfirm).addClass('d-none');
@@ -483,55 +467,10 @@ Dropzone.options.slide = {
 
         });
 
-        $(buttonConfirm2).click(function() {
-
-            // Get the canvas with image data from Cropper.js
-             var canvas = cropper.getCroppedCanvas({
-               width: 100,
-               height: 75
-             });
-
-             // Turn the canvas into a Blob (file object without a name)
-             canvas.toBlob(function(blob) {
-               // Create a new Dropzone file thumbnail
-                myDropZone.createThumbnail(
-                  blob,
-                  myDropZone.options.thumbnailWidth,
-                  myDropZone.options.thumbnailHeight,
-                  myDropZone.options.thumbnailMethod,
-                  false,
-                  function(dataURL) {
-
-                    // Update the Dropzone file thumbnail
-                    myDropZone.emit('thumbnail', file, dataURL);
-                    // Return the file to Dropzone
-                    done(blob);
-                });
-             });
-
-        });
-
-
    },
    init: function () {
-
       this.on("complete", function (file) {
-        alert(name);
-        editor.empty();
-        file.status = Dropzone.QUEUED;
-        a = a + 1;
-         console.log(a);
-        if(a > 2){
-          // setTimeout(
-          //   function()
-          //   {
-          //     location.reload();
-          //   }, 1500);
-          alert('reload');
-        }
-       // this.removeAllFiles(true);
         if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-
           // setTimeout(
           //   function()
           //   {

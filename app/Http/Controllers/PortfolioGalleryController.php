@@ -12,6 +12,7 @@ use App\Font;
 use App\FontStyle;
 use App\ContenidoSection5;
 
+use Image;
 use DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -192,18 +193,38 @@ class PortfolioGalleryController extends Controller
 
     }
 
+    /**
+     * Create a thumbnail of specified size
+     *
+     * @param string $path path of thumbnail
+     * @param int $width
+     * @param int $height
+     */
+    public function createThumbnail($path, $width, $height)
+    {
+        $img = Image::make($path)->resize($width, $height, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $img->save($path);
+    }
+
     public function imageCreate(Request $request, $id) {
       $item = GalleryItem::find($id);
       if ($request->hasFile('slide')) {
       $this->validate($request, [
           'slide' => 'image|required|mimes:png,jpg,jpeg,svg'
        ]);
-
-       $img = $request->file('slide');
        // dd($img);
 
       //upload it
       $image = $request->file('slide')->store('content/portfolioGallery');
+      //Thumbnail
+      $thumbnail = $request->file('slide')->store('content/portfolioGallery/thumbnails');
+      // dd($thumbnail);
+      //create small thumbnail
+      $smallthumbnailpath = public_path('storage/'.$thumbnail);
+      $this->createThumbnail($smallthumbnailpath, 360, 270);
+
       $data =array('image' => $image);
       DB::table('gallery_images')->insert($data);
       $latest = DB::getPdo('gallery_images')->lastInsertId();
@@ -211,6 +232,7 @@ class PortfolioGalleryController extends Controller
       $item->gallery_images()->attach($latest);
     }
     }
+
 
     public function imageUpdate(Request $request, $id) {
       if ($request->hasFile('slide')) {
