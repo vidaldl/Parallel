@@ -28,10 +28,17 @@
             <a href="#">
               <img id="videoThumb{{$item->id}}" alt="Mac Sunglasses">
             </a>
+            @if($item->display_simple == 1)
+            <a id="video{{$item->id}}" href="{{$item->video}}" data-lightbox="iframe">
+            <div class="portfolio-overlay">
+            </div>
+            </a>
+            @else
             <div class="portfolio-overlay">
               <a id="video{{$item->id}}" href="{{$item->video}}" class="left-icon galBut{{$item->id}}" data-lightbox="iframe"><i class="icon-line-play"></i></a>
               <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
             </div>
+            @endif
           </div>
           <div class="portfolio-desc">
             <h3><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->title}}</a></h3>
@@ -47,17 +54,30 @@
                 <div class="flexslider">
                   <div class="slider-wrap">
                     @foreach($item->gallery_images as $image)
-                      <div class="slide"><a href="#"><img src="{{'/storage/' . $image->image}}" alt="Morning Dew"></a></div>
+                      <div class="slide"><a href="#"><img src="{{'/storage/' . $image->thumbnail}}" alt="Morning Dew"></a></div>
                     @endforeach
                   </div>
                 </div>
               </div>
+              @if($item->display_simple == 1)
+                <div data-lightbox="gallery">
+                @foreach($item->gallery_images as $image)
+                <a href="{{'/storage/' . $image->image}}" class="" data-lightbox="gallery-item">
+                @endforeach
+                <div class="portfolio-overlay" >
+                </div>
+                @foreach($item->gallery_images as $image)
+                </a>
+                @endforeach
+                </div>
+              @else
               <div class="portfolio-overlay" data-lightbox="gallery">
                 @foreach($item->gallery_images as $image)
                   <a href="{{'/storage/' . $image->image}}" class="left-icon galBut{{$item->id}}" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
                 @endforeach
                 <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
               </div>
+              @endif
             </div>
             <div class="portfolio-desc">
               <h3><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->title}}</a></h3>
@@ -70,15 +90,21 @@
             <div class="portfolio-image">
               <a href="#">
                 @foreach($item->gallery_images as $image)
-                  <img src="{{'/storage/' . $image->image}}" alt="Open Imagination">
+                  <img src="{{'/storage/' . $image->thumbnail}}" alt="Open Imagination">
                 @endforeach
               </a>
+              @if($item->display_simple == 1)
+              <a href="{{'/storage/' . $image->image}}" data-lightbox="image">
+              <div class="portfolio-overlay"></div>
+              </a>
+              @else
               <div class="portfolio-overlay">
                 @foreach($item->gallery_images as $image)
                   <a href="{{'/storage/' . $image->image}}" class="left-icon galBut{{$item->id}}" data-lightbox="image"><i class="fas fa-image"></i></a>
                   <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
                 @endforeach
               </div>
+              @endif
             </div>
             <div class="portfolio-desc">
               <h3><a href="{{route('portfolioGallery.show', $item->id)}}">{{$item->title}}</a></h3>

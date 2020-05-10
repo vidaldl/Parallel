@@ -186,7 +186,7 @@
                         <textarea class="required sm-form-control" id="message" name="message" rows="6" cols="30"></textarea>
                       </div>
 
-                    </form>
+
 
                   </div>
 
@@ -194,6 +194,7 @@
                 <div class="modal-footer">
                   <button class="button button-3d nomargin" type="submit" value="submit">{{$contenidosection5s[0]->send_button}}</button>
                 </div>
+                </form>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div> <!-- /.modal -->

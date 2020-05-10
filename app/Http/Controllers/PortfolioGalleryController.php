@@ -168,6 +168,12 @@ class PortfolioGalleryController extends Controller
       $data = array('video' => $video);
       DB::table('gallery_items')->where('id', $id)->update($data);
       return redirect()->back();
+    }elseif ($request->has('simple')) {
+      $display_simple = $request->input('simple');
+
+      $data = array('display_simple'=>$display_simple);
+      DB::table('gallery_items')->where('id', $id)->update($data);
+
     }else {
 
       $title = $request->input('title');
@@ -225,7 +231,7 @@ class PortfolioGalleryController extends Controller
       $smallthumbnailpath = public_path('storage/'.$thumbnail);
       $this->createThumbnail($smallthumbnailpath, 360, 270);
 
-      $data =array('image' => $image);
+      $data =array('image' => $image, 'thumbnail' => $thumbnail);
       DB::table('gallery_images')->insert($data);
       $latest = DB::getPdo('gallery_images')->lastInsertId();
 
@@ -242,9 +248,13 @@ class PortfolioGalleryController extends Controller
       $slideOld = DB::table('gallery_images')->where('id', $id)->first();
       //upload it
       $image = $request->file('slide')->store('content/portfolioGallery');
-      Storage::delete($slideOld->image);
+      //Thumbnail
+      $thumbnail = $request->file('slide')->store('content/portfolioGallery/thumbnails');
 
-      $data =array('image' => $image);
+      Storage::delete($slideOld->image);
+      Storage::delete($slideOld->thumbnail);
+
+      $data =array('image' => $image, 'thumbnail'=>$thumbnail);
       DB::table('gallery_images')->where('id', $id)->update($data);
 
       $latest = DB::getPdo('links')->lastInsertId();
@@ -259,6 +269,7 @@ class PortfolioGalleryController extends Controller
 
       $image = GalleryImages::where('id', $idDel)->first();
       Storage::delete($image->image);
+      Storage::delete($image->thumbnail);
       $image->delete();
 
       $item->gallery_images()->detach($idDel);

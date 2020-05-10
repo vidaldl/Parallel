@@ -24,6 +24,7 @@ class CreateGalleryItemsTable extends Migration
             $table->string('right_btn')->default('Más');
             $table->integer('display_tooltip')->default(1);
             $table->integer('display_type')->default(1);
+            $table->integer('display_simple')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

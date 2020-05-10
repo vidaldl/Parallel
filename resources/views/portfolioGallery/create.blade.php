@@ -96,9 +96,12 @@
                 </div>
               </div>
 <!--/IMAGEN -->
-
-
               <div class="form-group">
+                <label for="display_simple">Vista Simple:</label>
+                <div id="display_simple"></div>
+              </div>
+
+              <div class="form-group" id="tool-Tips">
                 <label for="media_type">Frase Encima de los Botones:</label>
                 <div id="tooltips"></div>
               <!-- BOTONES DE LA GALERÍA -->
@@ -295,6 +298,9 @@ $('#desc').trumbowyg({
     @else
       $('#type_video').hide();
     @endif
+    @if($gallery_items->display_simple == 1)
+      $('#tool-Tips').hide();
+    @endif
 
     $('.imageInput').hide();
     $('#addImage').click(function() {
@@ -335,7 +341,7 @@ $('#desc').trumbowyg({
       $.ajax({
              type:'POST',
              dataType: 'json',
-             url:'{{route('portfolioGallery.update', $gallery_items->id)}}',
+             url:'{{route("portfolioGallery.update", $gallery_items->id)}}',
              data:{"_token": "{{ csrf_token() }}",
              val:val
             },
@@ -352,6 +358,50 @@ $('#desc').trumbowyg({
       @endif
   });
 
+// Button DISPLAY Simple
+
+$('#display_simple').btnSwitch({
+  Theme:'Swipe',
+  OnText: "Si",
+  OffText: "No",
+  OnValue: '1',
+  OnCallback: function(val) {
+    $('#tool-Tips').hide();
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("portfolioGallery.update", $gallery_items->id)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           simple:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+    },
+  OffValue: '0',
+  OffCallback: function (val) {
+    $('#tool-Tips').show();
+    $.ajax({
+           type:'POST',
+           dataType: 'json',
+           url:'{{route("portfolioGallery.update", $gallery_items->id)}}',
+           data:{"_token": "{{ csrf_token() }}",
+           simple:val
+          },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+  },
+  @if($gallery_items->display_simple == 1)
+  ToggleState: true
+  @else
+  ToggleState: false
+  @endif
+});
 
 
 // BUTTON TOOLTIPS
@@ -367,7 +417,7 @@ $('#desc').trumbowyg({
       $.ajax({
              type:'POST',
              dataType: 'json',
-             url:'{{route('portfolioGallery.update', $gallery_items->id)}}',
+             url:'{{route("portfolioGallery.update", $gallery_items->id)}}',
              data:{"_token": "{{ csrf_token() }}",
              valBtn:val
             },
@@ -409,6 +459,12 @@ $('#desc').trumbowyg({
 $(document).ready(function() {
 $('.buttonConfirm2').hide();
 });
+
+
+
+
+// ======================IMAGES====================
+
 
 Dropzone.options.slide = {
      paramName: "slide",
@@ -471,11 +527,11 @@ Dropzone.options.slide = {
    init: function () {
       this.on("complete", function (file) {
         if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-          // setTimeout(
-          //   function()
-          //   {
-          //     location.reload();
-          //   }, 1500);
+          setTimeout(
+            function()
+            {
+              location.reload();
+            }, 1500);
         }
       });
     }
@@ -502,8 +558,8 @@ Dropzone.options.slide = {
               $(buttonConfirm).click(function() {
                 // Get the canvas with image data from Cropper.js
                  var canvas = cropper.getCroppedCanvas({
-                   width: 1760,
-                   height: 990
+                   width: 1200,
+                   height: 900
                  });
                  // Turn the canvas into a Blob (file object without a name)
                  canvas.toBlob(function(blob) {
