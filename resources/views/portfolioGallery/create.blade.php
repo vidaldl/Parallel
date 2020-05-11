@@ -170,7 +170,7 @@
                   </td>
                 <td class="editorTD{{ $images->id }}">
 
-                  <img style="height:200px; " class="img-thumbnail{{ $images->id }}" src="{{'/storage/' . $images->image}}">
+                  <img style="height:200px; " class="img-thumbnail{{ $images->id }}" src="{{'/storage/' . $images->thumbnail}}">
                   <div class="editor{{ $images->id }} d-none" style="height:450px; width: 450px; background-color: #000;">
                   </div>
                   <button class="buttonConfirm{{ $images->id }} btn btn-primary float-right mt-2 d-none">Confirmar</button>
@@ -495,8 +495,8 @@ Dropzone.options.slide = {
 
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 1200,
-             height: 900
+             width: 1280,
+             height: 720
            });
 
            // Turn the canvas into a Blob (file object without a name)
