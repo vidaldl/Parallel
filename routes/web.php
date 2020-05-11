@@ -54,7 +54,7 @@ Route::get('trashed-gallery', 'PortfolioGalleryController@trashed')->name('trash
 Route::put('restore-gallery/{link}', 'PortfolioGalleryController@restore')->name('restore-gallery');
 
   //Portfolio Images
-Route::post('/portfolioGalleryImageCreate/{id}', 'PortfolioGalleryController@imageCreate')->name('portfolioGalleryImage.create');
+Route::post('/portfolioGalleryImageCreate/{id}', 'PortfolioGalleryController@imageCreate')->name('portfolioGalleryImage.create')->middleware('optimizeImages');
 Route::post('/portfolioGalleryImageDestroy/{id}', 'PortfolioGalleryController@imageDestroy')->name('portfolioGalleryImage.destroy');
 Route::post('/portfolioGalleryImage/{id}', 'PortfolioGalleryController@imageUpdate')->name('portfolioGalleryImage.update');
 

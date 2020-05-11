@@ -12,6 +12,7 @@ use App\Font;
 use App\FontStyle;
 use App\ContenidoSection5;
 
+use ImageOptimizer;
 use Image;
 use DB;
 use Illuminate\Support\Facades\Storage;
@@ -224,6 +225,8 @@ class PortfolioGalleryController extends Controller
 
       //upload it
       $image = $request->file('slide')->store('content/portfolioGallery');
+      $imagePath = public_path('storage/'.$image);
+      ImageOptimizer::optimize($imagePath);
       //Thumbnail
       $thumbnail = $request->file('slide')->store('content/portfolioGallery/thumbnails');
       // dd($thumbnail);
@@ -248,8 +251,12 @@ class PortfolioGalleryController extends Controller
       $slideOld = DB::table('gallery_images')->where('id', $id)->first();
       //upload it
       $image = $request->file('slide')->store('content/portfolioGallery');
+      $imagePath = public_path('storage/'.$image);
+      ImageOptimizer::optimize($imagePath);
       //Thumbnail
       $thumbnail = $request->file('slide')->store('content/portfolioGallery/thumbnails');
+      $smallthumbnailpath = public_path('storage/'.$thumbnail);
+      $this->createThumbnail($smallthumbnailpath, 360, 270);
 
       Storage::delete($slideOld->image);
       Storage::delete($slideOld->thumbnail);
