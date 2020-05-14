@@ -62,7 +62,7 @@
               @if($item->display_simple == 1)
                 <div data-lightbox="gallery">
                 @foreach($item->gallery_images as $image)
-                <a href="{{'/storage/' . $image->thumbnail}}" class="" data-lightbox="gallery-item">
+                <a href="{{'/storage/' . $image->image}}" class="" data-lightbox="gallery-item">
                 @endforeach
                 <div class="portfolio-overlay" >
                 </div>
@@ -73,7 +73,7 @@
               @else
               <div class="portfolio-overlay" data-lightbox="gallery">
                 @foreach($item->gallery_images as $image)
-                  <a href="{{'/storage/' . $image->thumbnail}}" class="left-icon galBut{{$item->id}}" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                  <a href="{{'/storage/' . $image->image}}" class="left-icon galBut{{$item->id}}" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
                 @endforeach
                 <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
               </div>
@@ -94,13 +94,13 @@
                 @endforeach
               </a>
               @if($item->display_simple == 1)
-              <a href="{{'/storage/' . $image->thumbnail}}" data-lightbox="image">
+              <a href="{{'/storage/' . $image->image}}" data-lightbox="image">
               <div class="portfolio-overlay"></div>
               </a>
               @else
               <div class="portfolio-overlay">
                 @foreach($item->gallery_images as $image)
-                  <a href="{{'/storage/' . $image->thumbnail}}" class="left-icon galBut{{$item->id}}" data-lightbox="image"><i class="fas fa-image"></i></a>
+                  <a href="{{'/storage/' . $image->image}}" class="left-icon galBut{{$item->id}}" data-lightbox="image"><i class="fas fa-image"></i></a>
                   <a href="{{route('portfolioGallery.show', $item->id)}}" class="right-icon galButr{{$item->id}}"><i class="icon-line-ellipsis"></i></a>
                 @endforeach
               </div>
