@@ -62,7 +62,7 @@ use App\Text4;
 class IndexController extends Controller
 {
 
-      public function mail() {
+      public function mailOld() {
 
 
        $data = request()->validate([
@@ -81,7 +81,7 @@ class IndexController extends Controller
        return redirect('/#contact');
      }
 
-    public function mailNew(Request $request) {
+    public function mail(Request $request) {
       $url = 'https://www.google.com/recaptcha/api/siteverify';
       $remoteip = $_SERVER['REMOTE_ADDR'];
       $data = [
