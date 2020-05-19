@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Portfolio\PortfolioItem;
 use App\Portfolio\PortfolioCategory;
+use App\Portfolio\PortfolioSection;
 use App\Http\Requests\Portfolio\UpdatePortfolioItemsRequest;
 
 use App\Order;
@@ -32,6 +33,21 @@ class PortfolioItemController extends Controller
     }
 
 
+    public function section(Request $request) {
+      $title = $request->input('title');
+      $data = array('title' => $title);
+
+      DB::table('portfolio_sections')->where('id', 1)->update($data);
+      session()->flash('success', 'La sección fué actualizada');
+      return redirect()->back();
+    }
+
+    public function filter(Request $request) {
+      $filter = $request->input('val');
+      $data = array('filter' => $filter);
+      DB::table('portfolio_sections')->where('id', 1)->update($data);
+    }
+
 
     public function display(Request $request) {
       $portfolioDisplay = $request->input('portfolio-programs');
@@ -49,7 +65,11 @@ class PortfolioItemController extends Controller
      */
     public function index()
     {
-      return view('portfolio.items.index')->with('orders', Order::orderBy('order')->get())->with('portfolioItems', PortfolioItem::all())->with('portfolioCategories', PortfolioCategory::all());
+      return view('portfolio.items.index')
+      ->with('orders', Order::orderBy('order')->get())
+      ->with('portfolioItems', PortfolioItem::all())
+      ->with('portfolio_section', PortfolioSection::all())
+      ->with('portfolioCategories', PortfolioCategory::all());
     }
 
     /**
@@ -286,7 +306,9 @@ class PortfolioItemController extends Controller
 
     public function trashed() {
       $trashed = PortfolioItem::onlyTrashed()->get();
-      return view('portfolio.items.index')->with('portfolioItems', $trashed);
+      return view('portfolio.items.index')
+      ->with('orders', Order::all())
+      ->with('portfolioItems', $trashed);
     }
     public function restore($id) {
       $portfolioItems = PortfolioItem::withTrashed()->where('id', $id)->firstOrFail();

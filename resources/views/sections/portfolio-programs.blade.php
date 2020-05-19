@@ -1,9 +1,17 @@
 <div class="topmargin-sm"></div>
-<div id="portfolio-programs" class="container clearfix">
+<div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
+	<div class="container clearfix">
+		<div class="heading-block center nomargin">
+			<h3>{{$portfolio_section[0]->title}}</h3>
+		</div>
+	</div>
+</div>
+
+<div id="portfolio-programs" class="container clearfix  mt-2">
 
 	<div class="row">
 
-
+	@if($portfolio_section[0]->filter == 1)
 	<!-- Portfolio Filter
 	============================================= -->
 		<ul class="portfolio-filter clearfix" data-container="#portfolio">
@@ -14,9 +22,14 @@
         <li><a href="#" data-filter=".pf-{{str_replace(' ', '', $category->name)}}">{{$category->name}}</a></li>
 	    @endforeach
 		</ul><!-- #portfolio-filter end -->
+	@endif
 	</div>
 	<div class="portfolio-container">
+	@if($portfolio_section[0]->filter == 1)
 		<div id="portfolio" class="portfolio grid-container">
+	@else
+		<div id="portfolio" class="portfolio row justify-content-center">
+	@endif
       @foreach($portfolio_items as $item)
         <div class="item portfolio-item col-md-3 mt-5 @foreach($item->portfolio_category->pluck('name') as $ca)pf-{{str_replace(' ', '', $ca)}} @endforeach ">
 					<div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
@@ -39,7 +52,7 @@
 		<div class="row">
 		<div class="pagination-container mx-auto topmargin nobottommargin">
 			@if($portfolio_items->count() > 9)
-				<ul class="pagination nomargin"></ul>
+				<!-- <ul class="pagination nomargin"></ul> -->
 			@endif
 		</div>
 		</div>
@@ -95,9 +108,9 @@
 @endif
 @endforeach
 @endforeach
-@push('scripts')
+@section('script')
 
-<script>
+<!-- <script>
 //this will execute on page load(to be more specific when document ready event occurs)
 jQuery(document).ready(function($){
 
@@ -113,5 +126,5 @@ jQuery(document).ready(function($){
 			});
 
 		});
-</script>
-@endpush
+</script> -->
+@endsection

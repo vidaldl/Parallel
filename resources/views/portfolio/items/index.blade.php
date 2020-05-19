@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+@section('css')
+  <link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
+  <style media="screen">
+    .tgl-sw-swipe + .btn-switch {
+      background: #e74a3b;
+    }
+  </style>
+@endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Portfolio: Artículos</h1>
@@ -88,7 +95,27 @@
           </tr>
         </thead>
         <tbody class="table-striped">
+          <form  action="{{route('PortfolioSection.update')}}" method="POST">
+            @csrf
+            <div class="form-group">
+              <label for="title" class="col-form-label">Titulo de la Sección</label>
+              <input id="title"  type="input" name="title" class="form-control @error('title') is-invalid @enderror"  value="{{$portfolio_section[0]->title}}">
+                @error('title')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+            </div>
+            <div class="form-group">
+              <label for="filter">Filtro por Categoria</label>
+              <div id="filter"></div>
+            </div>
+            <div class="form-group row">
 
+                <button class="btn btn-success ml-auto mr-3" type="submit">Actualizar</button>
+
+            </div>
+          </form>
           @foreach($portfolioItems as $item)
           <tr>
               <td>
@@ -156,4 +183,51 @@
 
 </div>
 
+@endsection
+
+@section('script')
+<script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
+<script>
+  $('#filter').btnSwitch({
+    Theme:'Swipe',
+    OnText: "Si",
+    OffText: "No",
+    OnValue: '1',
+    OnCallback: function(val) {
+
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'{{route("PortfolioFilter.update")}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+
+      },
+    OffValue: '0',
+    OffCallback: function (val) {
+      $.ajax({
+             type:'POST',
+             dataType: 'json',
+             url:'{{route("PortfolioFilter.update")}}',
+             data:{"_token": "{{ csrf_token() }}",
+             val:val
+            },
+             success:function(data){
+                alert(data.success);
+             }
+          });
+
+    },
+    @if($portfolio_section[0]->filter == 1)
+    ToggleState: true
+    @else
+    ToggleState: false
+    @endif
+  });
+</script>
 @endsection

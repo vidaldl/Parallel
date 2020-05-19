@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Editar Seccion de Texto</h1>
+  <h1 class="h3 mb-0 text-gray-800">Editar Seccion de Texto 2</h1>
   <a href="{{route('home')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Secciones<span></a>
 </div>
   <div class="row justify-content-center">
@@ -18,8 +18,8 @@
     <div class="col-md-12">
       <!-- LINE/SPACE -->
       @foreach($orders as $item)
-        @if($item->id == 19)
-      <form method="POST" action="{{route('line.update', 19)}}">
+        @if($item->id == 20)
+      <form method="POST" action="{{route('line.update', 20)}}">
         @csrf
         <div class="line-space card col-md-8 offset-md-2 mt-4 mb-4">
           <a href="#" style="text-decoration: none">
@@ -81,7 +81,7 @@
     </div>
     <div class="card mt-3 col-md-8 mb-5">
         <div class="card-body">
-          <form action="{{route('text.update')}}" method="post">
+          <form action="{{route('text2.update')}}" method="post">
             @csrf
               <div class="form-group d-none d-sm-block d-md-block d-lg-none">
                 <img class="img-fluid px-3 px-sm-4" src="{{asset('img/sections/text.png')}}">

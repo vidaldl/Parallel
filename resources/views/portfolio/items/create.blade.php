@@ -716,18 +716,12 @@ $(".ajButton").click(function(e){
 
   $('.tabs').tabslet();
   $('#contenido').trumbowyg({
-    btnsDef: {
-        // Create a new dropdown
-        image: {
-            dropdown: ['insertImage', 'noembed'],
-            ico: 'insertImage'
-        }
-    },
     btns: [
         ['viewHTML'],
         ['fontsize'],
         ['fontfamily'],
-        ['viewHTML'],
+        ['insertImage'],
+        ['noembed'],
         ['formatting'],
         ['strong', 'em', 'del'],
         ['link'],

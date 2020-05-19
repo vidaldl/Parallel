@@ -37,6 +37,8 @@ Route::get('modal', 'ModalController@edit')->name('modal.edit');
 Route::post('modal/{id}', 'ModalController@update')->name('modal.update');
 Route::post('modalImg/{id}', 'ModalController@deleteImg')->name('modal.deleteImg');
 //Portfolio
+Route::post('/portfolio-section', 'Portfolio\PortfolioItemController@section')->name('PortfolioSection.update');
+Route::post('/portfolio-filter', 'Portfolio\PortfolioItemController@filter')->name('PortfolioFilter.update');
 Route::resource('portfolioCategories', 'Portfolio\PortfolioCategoryController');
 Route::resource('portfolioItems', 'Portfolio\PortfolioItemController', ['except' => ['update']]);
 Route::post('/portfolioItem/{id}', 'Portfolio\PortfolioItemController@update')->name('portfolioItems.update');
@@ -123,11 +125,26 @@ Route::post('/display-catalog3', 'DisplayController@catalog3Display');
 Route::post('/display-shop', 'DisplayController@shopDisplay');
 Route::post('/display-modal', 'DisplayController@modalDisplay');
 Route::post('/display-text', 'DisplayController@textDisplay');
+Route::post('/display-text2', 'DisplayController@text2Display');
+Route::post('/display-text3', 'DisplayController@text3Display');
+Route::post('/display-text4', 'DisplayController@text4Display');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
 // ================================== Text ========================================
 Route::get('/text', 'TextController@index')->name('text');
 Route::post('/text-update', 'TextController@update')->name('text.update');
+
+// ================================== Text2 ========================================
+Route::get('/text2', 'text2Controller@index')->name('text2');
+Route::post('/text2-update', 'Text2Controller@update')->name('text2.update');
+
+// ================================== Text3 ========================================
+Route::get('/text3', 'text3Controller@index')->name('text3');
+Route::post('/text3-update', 'Text3Controller@update')->name('text3.update');
+
+// ================================== Text4 ========================================
+Route::get('/text4', 'text4Controller@index')->name('text4');
+Route::post('/text4-update', 'Text4Controller@update')->name('text4.update');
 
 // ================================== FILES ========================================
 Route::get('/files', 'FileController@index')->name('files');

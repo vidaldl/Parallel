@@ -25,5 +25,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(ModalsTableSeeder::class);
         $this->call(TextsTableSeeder::class);
         $this->call(ContenidoSection5sTableSeeder::class);
+        $this->call(PortfolioSectionsTableSeeder::class);
+        $this->call(Text2sTableSeeder::class);
+        $this->call(Text3sTableSeeder::class);
+        $this->call(Text4sTableSeeder::class);
     }
 }

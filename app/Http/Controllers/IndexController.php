@@ -34,6 +34,7 @@ use App\PortfolioGallery\GalleryImages;
 use App\Frase;
 use App\Portfolio\PortfolioCategory;
 use App\Portfolio\PortfolioItem;
+use App\Portfolio\PortfolioSection;
 use App\MenuItem;
 use App\Catalog\CatalogItem;
 use App\Catalog\CatalogSection;
@@ -51,6 +52,9 @@ use App\Mail\SolicitudDeContacto;
 use App\Modal;
 use App\File;
 use App\Text;
+use App\Text2;
+use App\Text3;
+use App\Text4;
 
 
 
@@ -153,6 +157,7 @@ class IndexController extends Controller
       ->with('frases', Frase::all())
       ->with('portfolio_categories', $pCats)
       ->with('portfolio_items', PortfolioItem::all())
+      ->with('portfolio_section', PortfolioSection::all())
       ->with('catalog_items', CatalogItem::all())
       ->with('catalog_sections', CatalogSection::all())
       ->with('catalog_item2s', CatalogItem2::all())
@@ -167,6 +172,9 @@ class IndexController extends Controller
       ->with('modals', Modal::all())
       ->with('files', File::all())
       ->with('text', Text::find(1)->firstOrFail())
+      ->with('text2', Text2::find(1)->firstOrFail())
+      ->with('text3', Text3::find(1)->firstOrFail())
+      ->with('text4', Text4::find(1)->firstOrFail())
       ->with('users', User::all());
     }
 
