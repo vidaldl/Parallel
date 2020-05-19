@@ -123,7 +123,10 @@ class IndexController extends Controller
         return redirect('/#contact');
 
       } else {
-              return back()->withErrors(['captcha' => 'ReCaptcha Error']);
+        // flash message
+        session()->flash('success', 'Error');
+        //redirect user
+        return redirect('/#contact');
       }
     }
 
