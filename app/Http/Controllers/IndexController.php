@@ -103,6 +103,10 @@ class IndexController extends Controller
 
       if ($resultJson->success != true) {
               return back()->withErrors(['captcha' => 'ReCaptcha Error']);
+              // flash message
+              session()->flash('success', 'Error Json');
+              //redirect user
+              return redirect('/#contact');
               }
       if ($resultJson->score >= 0.3) {
 
