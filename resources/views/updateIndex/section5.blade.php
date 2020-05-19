@@ -167,6 +167,10 @@
                   @enderror
               </div>
               <div class="form-group">
+                <label for="servicios">Servicios Ofrecidos - Contacto</label><br>
+                <a href="{{route('contactCategories.index')}}" style="color: white" class="btn btn-primary"><i class="fal fa-edit"></i>&nbsp;Servicios</a>
+              </div>
+              <div class="form-group">
                 <label for="subject" class="col-form-label">Subject</label>
                 <input id="subject" type="input" name="subject" class="form-control @error('subject') is-invalid @enderror"  value="{{ $contenidosection5s[0]->subject }}">
                   @error('subject')

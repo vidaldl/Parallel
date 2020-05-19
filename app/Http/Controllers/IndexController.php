@@ -13,6 +13,7 @@ use App\ContenidoSection2;
 use App\ContenidoSection3;
 use App\ContenidoSection4;
 use App\ContenidoSection5;
+use App\ContactCategory;
 use App\ContenidoSectionFooter;
 use App\ContenidoAbout;
 use App\Style;
@@ -138,6 +139,7 @@ class IndexController extends Controller
       ->with('contenidosection3s', ContenidoSection3::all())
       ->with('contenidosection4s', ContenidoSection4::all())
       ->with('contenidosection5s', ContenidoSection5::all())
+      ->with('contact_categories', ContactCategory::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
       ->with('servicios', Servicio::all())
       ->with('pricings', Pricing::all())

@@ -264,6 +264,14 @@ Route::get('/editsection5/{id}', 'HomeController@section5Edit')->name('section5.
 Route::post('/updatesection5/{id}', 'HomeController@section5Update')->name('section5.update');
 
 
+//Contact Categories
+Route::get('/contact-categories', 'ContactController@categoriesIndex')->name('contactCategories.index');
+Route::get('/contact-categories-create', 'ContactController@categoriesCreate')->name('contactCategories.create');
+Route::post('/contact-categories-store', 'ContactController@categoriesStore')->name('contactCategories.store');
+Route::get('/contact-categories-edit/{id}', 'ContactController@categoriesEdit')->name('contactCategories.edit');
+Route::post('/contact-categories-update/{id}', 'ContactController@categoriesUpdate')->name('contactCategories.update');
+Route::post('/contact-categories-delete/{id}', 'ContactController@categoriesDelete')->name('contactCategories.delete');
+
 
 //Abut Page
 Route::get('/edit-about/{id}', 'HomeController@aboutEdit')->name('about.edit');

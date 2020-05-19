@@ -1,5 +1,5 @@
 @if($contenidosection5s[0]->map == 1)
-<div class="row norightmargin align-items-stretch">
+<div class="row norightmargin align-items-stretch" id="contact">
   <div class="col-lg-5" style="min-height: 550px; padding-right: 0px;">
     <iframe src="{{ $contenidosection5s[0]->map_iframe }}" frameborder="0" style="border:0; height: 100%; width: 100%;" allowfullscreen=""></iframe>
 
@@ -66,11 +66,10 @@
 									<div class="col_half col_last">
 										<label for="service">{{$contenidosection5s[0]->services}}</label>
 										<select id="service" name="service" class="sm-form-control">
-											<option value="">-- Select One --</option>
-											<option value="Wordpress">Wordpress</option>
-											<option value="PHP / MySQL">PHP / MySQL</option>
-											<option value="HTML5 / CSS3">HTML5 / CSS3</option>
-											<option value="Graphic Design">Graphic Design</option>
+											<option value="">-- Other --</option>
+                      @foreach($contact_categories as $category)
+                        <option value="{{$category->name}}">{{$category->name}}</option>
+                      @endforeach
 										</select>
 									</div>
 
@@ -136,11 +135,10 @@
           <div class="col_half col_last">
             <label for="service">{{$contenidosection5s[0]->services}}</label>
             <select id="service" name="service" class="sm-form-control">
-              <option value="">-- Select One --</option>
-              <option value="Wordpress">Wordpress</option>
-              <option value="PHP / MySQL">PHP / MySQL</option>
-              <option value="HTML5 / CSS3">HTML5 / CSS3</option>
-              <option value="Graphic Design">Graphic Design</option>
+              <option value="">-- Other --</option>
+              @foreach($contact_categories as $category)
+                <option value="{{$category->name}}">{{$category->name}}</option>
+              @endforeach
             </select>
           </div>
 
@@ -170,7 +168,7 @@
   </div>
 </div>
 @else
-<div class="row" style="background-color: #E5E5E5;">
+<div class="row" style="background-color: #E5E5E5;" id="contact">
 <div class="container">
 	<div class="row norightmargin align-items-stretch">
 	  <!-- <div class="col-lg-5" style="min-height: 550px; padding-right: 0px;">
@@ -239,11 +237,10 @@
     									<div class="col_half col_last">
     										<label for="service">{{$contenidosection5s[0]->services}}</label>
     										<select id="service" name="service" class="sm-form-control">
-    											<option value="">-- Select One --</option>
-    											<option value="Wordpress">Wordpress</option>
-    											<option value="PHP / MySQL">PHP / MySQL</option>
-    											<option value="HTML5 / CSS3">HTML5 / CSS3</option>
-    											<option value="Graphic Design">Graphic Design</option>
+    											<option value="">-- Other --</option>
+                          @foreach($contact_categories as $category)
+                            <option value="{{$category->name}}">{{$category->name}}</option>
+                          @endforeach
     										</select>
     									</div>
 
@@ -309,11 +306,10 @@
               <div class="col_half col_last">
                 <label for="service">{{$contenidosection5s[0]->services}}</label>
                 <select id="service" name="service" class="sm-form-control">
-                  <option value="">-- Select One --</option>
-                  <option value="Wordpress">Wordpress</option>
-                  <option value="PHP / MySQL">PHP / MySQL</option>
-                  <option value="HTML5 / CSS3">HTML5 / CSS3</option>
-                  <option value="Graphic Design">Graphic Design</option>
+                  <option value="">-- Other --</option>
+                  @foreach($contact_categories as $category)
+                    <option value="{{$category->name}}">{{$category->name}}</option>
+                  @endforeach
                 </select>
               </div>
 
