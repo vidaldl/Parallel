@@ -5,6 +5,7 @@
 <strong>Email</strong>: {{$data['email']}}<br>
 <strong>Número de Telefono</strong>: {{$data['number']}} <br>
 <strong>Asunto</strong>: {{$data['subject']}} <br>
+<strong>Servicio</strong>: {{$data['service']}} <br>
 <strong>Mensaje</strong>: <br>
 <p>{{$data['message']}}</p>
 
