@@ -48,6 +48,7 @@
 
 									<div class="col_half"  >
 										<label for="name">{{$contenidosection5s[0]->name}} <small>*</small></label>
+                    <input type="hidden" name="recaptcha" id="recaptchaModal">
 										<input type="text" id="name" name="name" value="" class="sm-form-control required" />
 									</div>
 
@@ -117,6 +118,7 @@
 
           <div class="col_half"  >
             <label for="name">{{$contenidosection5s[0]->name}} <small>*</small></label>
+            <input type="hidden" name="recaptcha" id="recaptcha">
             <input type="text" id="name" name="name" value="" class="sm-form-control required" />
           </div>
 
@@ -219,6 +221,7 @@
 
     									<div class="col_half"  >
     										<label for="name">{{$contenidosection5s[0]->name}} <small>*</small></label>
+                        <input type="hidden" name="recaptcha" id="recaptchaModal">
     										<input type="text" id="name" name="name" value="" class="sm-form-control required" />
     									</div>
 
@@ -288,6 +291,7 @@
 
               <div class="col_half"  >
                 <label for="name">{{$contenidosection5s[0]->name}} <small>*</small></label>
+                <input type="hidden" name="recaptcha" id="recaptcha">
                 <input type="text" id="name" name="name" value="" class="sm-form-control required" />
               </div>
 

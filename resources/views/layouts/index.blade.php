@@ -52,6 +52,14 @@
 				}
 		 });
  });
+
+ grecaptcha.ready(function() {
+		grecaptcha.execute('{{ config('services.recaptcha.sitekey') }}', {action: 'contact'}).then(function(token) {
+			 if (token) {
+				 document.getElementById('recaptchaModal').value = token;
+			 }
+		});
+});
 </script>
 <!-- Required JavaScript Libraries -->
 <script src="{{ asset('lib/realCSS/js/jquery.js') }}"></script>
