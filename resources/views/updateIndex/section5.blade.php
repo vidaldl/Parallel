@@ -101,6 +101,24 @@
                   @enderror
               </div>
               <div class="form-group">
+                <label for="success" class="col-form-label">Mensaje al enviar</label>
+                <input id="success" type="input" name="success" class="form-control @error('success') is-invalid @enderror"  value="{{ $contenidosection5s[0]->success }}">
+                  @error('success')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="errors" class="col-form-label">Mensaje de error</label>
+                <input id="errors" type="input" name="errors" class="form-control @error('errors') is-invalid @enderror"  value="{{ $contenidosection5s[0]->errors }}">
+                  @error('errors')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+              <div class="form-group">
                 <label for="map" class="col-form-label">Mapa:</label>
                 <div id="map"></div>
               </div>

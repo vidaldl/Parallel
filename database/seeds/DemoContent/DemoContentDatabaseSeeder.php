@@ -47,6 +47,7 @@ class DemoContentDatabaseSeeder extends Seeder
         $this->call(DemoContentPortfolioCategoriesTableSeeder::class);
         $this->call(DemoContentPortfolioCategoryPortfolioItemTableSeeder::class);
         $this->call(DemoContentPortfolioItemsTableSeeder::class);
+        $this->call(DemoContentPortfolioSectionsTableSeeder::class);
         $this->call(DemoContentPostTagTableSeeder::class);
         $this->call(DemoContentPostsTableSeeder::class);
         $this->call(DemoContentPricingItemsTableSeeder::class);
@@ -58,6 +59,9 @@ class DemoContentDatabaseSeeder extends Seeder
         $this->call(DemoContentShopSectionsTableSeeder::class);
         $this->call(DemoContentStylesTableSeeder::class);
         $this->call(DemoContentTagsTableSeeder::class);
+        $this->call(DemoContentText2sTableSeeder::class);
+        $this->call(DemoContentText3sTableSeeder::class);
+        $this->call(DemoContentText4sTableSeeder::class);
         $this->call(DemoContentTextsTableSeeder::class);
         $this->call(DemoContentUsersTableSeeder::class);
     }

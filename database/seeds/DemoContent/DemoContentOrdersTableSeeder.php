@@ -255,6 +255,62 @@ class DemoContentOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'modal',
             ),
+            17 => 
+            array (
+                'id' => 19,
+                'section' => 'text',
+                'name' => 'Text',
+                'order' => 16,
+                'display' => 0,
+                'line' => 2,
+                'line_style' => 1,
+                'container_style' => 1,
+                'menu_name' => 'Text',
+                'menu_display' => 0,
+                'edit_link' => 'text',
+            ),
+            18 => 
+            array (
+                'id' => 20,
+                'section' => 'text2',
+                'name' => 'Text2',
+                'order' => 18,
+                'display' => 0,
+                'line' => 2,
+                'line_style' => 1,
+                'container_style' => 1,
+                'menu_name' => 'Text2',
+                'menu_display' => 0,
+                'edit_link' => 'text2',
+            ),
+            19 => 
+            array (
+                'id' => 21,
+                'section' => 'text3',
+                'name' => 'Text3',
+                'order' => 19,
+                'display' => 0,
+                'line' => 2,
+                'line_style' => 1,
+                'container_style' => 1,
+                'menu_name' => 'Text3',
+                'menu_display' => 0,
+                'edit_link' => 'text3',
+            ),
+            20 => 
+            array (
+                'id' => 22,
+                'section' => 'text4',
+                'name' => 'Text4',
+                'order' => 20,
+                'display' => 0,
+                'line' => 2,
+                'line_style' => 1,
+                'container_style' => 1,
+                'menu_name' => 'Text4',
+                'menu_display' => 0,
+                'edit_link' => 'text4',
+            ),
         ));
         
         

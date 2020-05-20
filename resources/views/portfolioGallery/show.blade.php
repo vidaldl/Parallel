@@ -1,6 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
+@include('sections.header.topage')
 <div id="wrapper" class="clearfix">
 
 
@@ -36,7 +37,7 @@
 <!-- VIDEO -->
 @if($gallery_items->display_type == 1)
       	<div class="col_two_third portfolio-single-image nobottommargin">
-      		<iframe id="video" src="{{$gallery_items->video}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      		<iframe id="video" src="{{$gallery_items->video}}" width="500" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       	</div>
 @else
   @if($gallery_items->gallery_images->count() > 1)
@@ -148,6 +149,7 @@
 
                       <div class="col_half"  >
                         <label for="name">{{$contenidosection5s[0]->name}} <small>*</small></label>
+                        <input type="hidden" name="recaptcha" id="recaptcha">
                         <input type="text" id="name" name="name" value="" class="sm-form-control required" />
                       </div>
 
@@ -186,8 +188,6 @@
                         <textarea class="required sm-form-control" id="message" name="message" rows="6" cols="30"></textarea>
                       </div>
 
-
-
                   </div>
 
                 </div>
@@ -219,6 +219,7 @@
 
 @push('scripts')
 <script>
+
 $(document).ready(function() {
   function youtube_parser(url){
     var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;

@@ -825,6 +825,8 @@ class HomeController extends Controller
       }
       else{
         $title = $request->input('title');
+        $success = $request->input('success');
+        $errors = $request->input('errors');
         $map_iframe = $request->input('map_iframe');
         $info = $request->input('info');
         $back_color = $request->input('back_color');
@@ -840,6 +842,8 @@ class HomeController extends Controller
 
         $data=array(
           "title"=>$title,
+          "success"=>$success,
+          "errors"=>$errors,
           "map_iframe"=>$map_iframe,
           "info"=>$info,
           "back_color"=>$back_color,

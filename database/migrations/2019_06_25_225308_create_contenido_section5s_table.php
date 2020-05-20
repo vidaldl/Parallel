@@ -16,6 +16,8 @@ class CreateContenidoSection5sTable extends Migration
         Schema::create('contenido_section5s', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
+            $table->string('success')->default('success')->nullable();
+            $table->string('errors')->default('error')->nullable();
             $table->integer('map')->default(1);
             $table->text('map_iframe')->nullable();
             $table->text('info')->nullable();

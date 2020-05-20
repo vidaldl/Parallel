@@ -5,45 +5,7 @@
 
 @section('content')
 <!-- Header -->
-  <header id="header" class="transparent-header full-header " data-sticky-class="not-dark">
-    <div id="header-wrap">
-      <div class="container clearfix">
-        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-        <!-- Logo
-        ============================================= -->
-        <!-- <div id="logo">
-          <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
-          <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
-        </div>-->
-        <!-- Primary Navigation
-        ============================================= -->
-        <nav id="primary-menu" class="dark">
-          <ul>
-						<li><a href="/"><div>Inicio</div></a></li>
-            @foreach($orders as $item)
-              @if($item->display == 1 && $item->menu_display == 1)
-                <li><a href="{{'/#' . $item->section}}"><div>{{$item->menu_name}}</div></a></li>
-              @endif
-            @endforeach
-
-          </ul>
-          <ul style="border: none;">
-            <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_1}}">
-  						<a class="{{$styles[0]->show_link_1 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}} fa-2x"></i></a>
-  					</li>
-
-            <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_2}}">
-  						<a class="{{$styles[0]->show_link_2 == 0 ? 'd-none' : ''}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}} fa-2x"></i></a>
-  					</li>
-          </ul>
-
-
-							</div>
-						</div>
-        </nav><!-- #primary-menu end -->
-      </div>
-    </div>
-  </header><!-- #header end -->
+  @include('sections.header.topage')
   <!-- #header -->
 
 <!-- Page Title

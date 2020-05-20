@@ -11,6 +11,8 @@ use App\Order;
 use App\Font;
 use App\FontStyle;
 use App\ContenidoSection5;
+use App\MenuItem;
+
 
 use ImageOptimizer;
 use Image;
@@ -114,6 +116,8 @@ class PortfolioGalleryController extends Controller
       ->with('paginate_items', GalleryItem::all())
       ->with(compact('item', 'previous', 'next'))
       ->with('gallery_images', GalleryImages::all())
+      ->with('menu_item', MenuItem::all())
+      ->with('orders', Order::all())
       ->with('contenidosection5s', ContenidoSection5::all());
     }
 
