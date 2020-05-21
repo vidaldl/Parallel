@@ -82,6 +82,8 @@ class IndexController extends Controller
      }
 
     public function mail(Request $request) {
+      $section5 = ContenidoSection5::find(1);
+      
       $url = 'https://www.google.com/recaptcha/api/siteverify';
       $remoteip = $_SERVER['REMOTE_ADDR'];
       $data = [
@@ -122,13 +124,13 @@ class IndexController extends Controller
         Mail::to(env('EMAIL_ADDRESS'))->send(new SolicitudDeContacto($data));
 
         // flash message
-        session()->flash('success', 'Su mensaje a sido Enviado! Estaremos en contacto lo más rapido posible.');
+        session()->flash('success', $section5->success);
         //redirect user
         return redirect('/#contact');
 
       } else {
         // flash message
-        session()->flash('success', 'Error');
+        session()->flash('success', $section5->error);
         //redirect user
         return redirect('/#contact');
       }
