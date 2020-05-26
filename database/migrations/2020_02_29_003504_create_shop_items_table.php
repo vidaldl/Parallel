@@ -22,6 +22,8 @@ class CreateShopItemsTable extends Migration
             $table->string('img_btn')->default('Acercar')->nullable();
             $table->string('img_icon')->default('fas fa-search-plus')->nullable();
             $table->float('precio')->nullable();
+            $table->float('weight')->nullable();
+            $table->string('unit')->default('lb')->nullable();
             $table->integer('destacado')->default(0)->nullable();
             $table->string('destacado_title')->nullable();
             $table->string('precio_nuevo')->nullable();

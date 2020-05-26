@@ -25,6 +25,11 @@ Auth::routes(['verify' => true, 'register' => false]);
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('homeInactive', 'HomeController@indexInactive')->name('home.inactive');
 
+//SHOPPING ================================== SHOPPING ===================================
+Route::post('/cart/add', 'ShoppingController@add_to_cart')->name('cart.add');
+Route::get('/cart', 'ShoppingController@showCart')->name('cart');
+
+
 //Order Sections
 Route::post('/order', 'IndexController@order');
 // Contact Form

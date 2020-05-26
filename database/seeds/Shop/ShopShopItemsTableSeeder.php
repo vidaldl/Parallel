@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ShopItemsTableSeeder extends Seeder
+class ShopShopItemsTableSeeder extends Seeder
 {
 
     /**
@@ -27,8 +27,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 1600.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 1,
                 'destacado_title' => '%50 de Descuento',
                 'precio_nuevo' => '800',
@@ -52,8 +50,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 2000.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,
@@ -77,8 +73,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 5000.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 1,
                 'destacado_title' => '*Oferta',
                 'precio_nuevo' => '4500',
@@ -102,8 +96,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 3500.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,
@@ -127,8 +119,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 24999.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,
@@ -152,8 +142,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 12000.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,
@@ -177,8 +165,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 15999.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,
@@ -202,8 +188,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 11000.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,
@@ -227,8 +211,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 145000.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,
@@ -252,8 +234,6 @@ class ShopItemsTableSeeder extends Seeder
                 'img_btn' => 'Acercar',
                 'img_icon' => 'fas fa-search-plus',
                 'precio' => 500.0,
-                'weight' => 1.0,
-                'unit' => 'lb',
                 'destacado' => 0,
                 'destacado_title' => NULL,
                 'precio_nuevo' => NULL,

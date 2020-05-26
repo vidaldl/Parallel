@@ -1,60 +1,12 @@
 @extends('layouts.index')
 @section('style')
   @include('bladeStyles.shop')
+  @include('bladeStyles.cart')
 @endsection
 
 @section('content')
   <!-- Header -->
-  <header id="header" class="full-header" data-sticky-class="not-dark">
-    <div id="header-wrap">
-      <div class="container clearfix">
-        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-        <!-- Logo
-        ============================================= -->
-        <div id="logo">
-          <a href="/" class="standard-logo"><img src="{{'/storage/' . $menu_item[0]->logo}}"></a>
-          <a href="index.html" class="retina-logo"><img src="{{'/storage/' . $menu_item[0]->logo}}" alt="Logo"></a>
-        </div>
-        <!-- Primary Navigation
-        ============================================= -->
-        <nav id="primary-menu" class="dark">
-          <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
-            <li><a href="#" data-href="#slider" style="font-family: {{$fonts[1]->font_name}}"><div>{{$menu_item[0]->item_inicio}}</div></a></li>
-            @foreach($orders as $item)
-              @if($item->display == 1 && $item->menu_display == 1)
-                <li><a href="#" data-href="#{{$item->section}}" style="font-family: {{$fonts[1]->font_name}}"><div>{{$item->menu_name}}</div></a></li>
-              @endif
-            @endforeach
-
-          </ul>
-          <ul style="border: none;">
-          @if($styles[0]->show_link_1 == '1')
-            @if($styles[0]->link_mode_1 == '1')
-              <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_1}}">
-                <a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_1 !!}"><i class="{{$styles[0]->custom_icon_1}} fa-2x"></i></a>
-              </li>
-            @elseif($styles[0]->link_mode_1 == '2')
-              <li><a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_1 !!}"><div>{{$styles[0]->custom_link_text_1}}</div></a></li>
-            @endif
-          @endif
-          @if($styles[0]->show_link_2 == '1')
-            @if($styles[0]->link_mode_2 == '1')
-              <li data-toggle="tooltip" data-placement="bottom" title="{{$styles[0]->custom_link_text_2}}">
-                <a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_2 !!}"><i class="{{$styles[0]->custom_icon_2}} fa-2x"></i></a>
-              </li>
-            @elseif($styles[0]->link_mode_2 == '2')
-              <li><a style="font-family: {{$fonts[1]->font_name}}" href="{!! $styles[0]->custom_link_address_2 !!}"><div>{{$styles[0]->custom_link_text_2}}</div></a></li>
-            @endif
-          @endif
-          </ul>
-
-
-              </div>
-            </div>
-        </nav><!-- #primary-menu end -->
-      </div>
-    </div>
-  </header><!-- #header end -->
+  @include('sections.header.topage')
   <!-- #header -->
 
   <!-- Page Title
@@ -141,7 +93,9 @@
 
               <!-- Product Single - Quantity & Cart Button
               ============================================= -->
-              <form class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
+              <form action="{{route('cart.add')}}" class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
+                @csrf
+                <input type="hidden" name="pdt_id" value="{{$shop_item->id}}">
                 <div class="quantity clearfix">
                   <input type="button" value="-" class="minus">
                   <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
@@ -208,7 +162,7 @@
 
                   <div class="tab-content clearfix" id="tabs-1">
                     {!!$shop_item->description!!}
-                    
+
                   </div>
 
 

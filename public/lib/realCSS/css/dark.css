@@ -138,7 +138,7 @@ body #side-panel.dark { background-color: #383838; }
 .dark.overlay-menu #header-wrap:not(.not-dark) #primary-menu > #overlay-menu-close,
 .overlay-menu #primary-menu.dark > #overlay-menu-close,
 .dark #header-wrap:not(.not-dark) #top-search a,
-/* .dark #header-wrap:not(.not-dark) #top-cart a, */
+.dark #header-wrap:not(.not-dark) #top-cart a,
 .dark #header-wrap:not(.not-dark) #side-panel-trigger a,
 .dark #header-wrap:not(.not-dark) #top-account a,
 /* .dark #top-cart .top-cart-item-desc a, */

@@ -1,8 +1,6 @@
-@if($menu_item[0]->menu_sticky == 1)
-<header id="header" class="full-header" data-sticky-class="not-dark">
-@else
+
 <header id="header" class="full-header no-sticky" data-sticky-class="not-dark">
-@endif
+
   <div id="header-wrap">
     <div class="container-fluid clearfix" style="padding-left: {{$menu_item[0]->padding}}px; padding-right: {{$menu_item[0]->padding}}px;">
       <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
@@ -44,40 +42,37 @@
         @endif
       <!-- Top Cart
   				============================================= -->
-  				<!-- <div id="top-cart">
-  					<a href="#" id="top-cart-trigger"><i style="font-size: 20px!important;" class="icon-shopping-cart"></i><span>5</span></a>
+          <div id="top-cart">
+  					<a href="#" id="top-cart-trigger"><i style="font-size: 20px!important;" class="icon-shopping-cart"></i><span>{{Cart::content()->count()}}</span></a>
   					<div class="top-cart-content">
   						<div class="top-cart-title">
   							<h4 style="color: #444;">Shopping Cart</h4>
   						</div>
+
   						<div class="top-cart-items">
+                @foreach(Cart::content() as $item)
   							<div class="top-cart-item clearfix">
   								<div class="top-cart-item-image">
-  									<a href="#"><img src="images/shop/small/1.jpg" /></a>
+                    @foreach($shop_items as $it)
+                      @if($it->id == $item->id)
+						           <a href="#"><img src="{{'/storage/' . $it->img_primaria}}" /></a>
+                      @endif
+                    @endforeach
   								</div>
   								<div class="top-cart-item-desc">
-  									<a href="#">Blue Round-Neck Tshirt</a>
-  									<span class="top-cart-item-price">$19.99</span>
-  									<span class="top-cart-item-quantity">x 2</span>
+  									<a href="#">{{$item->name}}</a>
+  									<span class="top-cart-item-price">${{$item->price}}</span>
+  									<span class="top-cart-item-quantity">x {{$item->qty}}</span>
   								</div>
   							</div>
-  							<div class="top-cart-item clearfix">
-  								<div class="top-cart-item-image">
-  									<a href="#"><img src="images/shop/small/6.jpg" /></a>
-  								</div>
-  								<div class="top-cart-item-desc">
-  									<a href="#">Light Blue Denim Dress</a>
-  									<span class="top-cart-item-price">$24.99</span>
-  									<span class="top-cart-item-quantity">x 3</span>
-  								</div>
-  							</div>
+                @endforeach
   						</div>
   						<div class="top-cart-action clearfix">
   							<span class="fleft top-checkout-price">$114.95</span>
-  							<button class="button button-3d button-small nomargin fright">View Cart</button>
+  							<a href="{{route('cart')}}" style="color: white;" class="button button-3d button-small nomargin fright">View Cart</a>
   						</div>
   					</div>
-  				</div> -->
+  				</div>
         </ul>
 
 

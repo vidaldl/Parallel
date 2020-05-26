@@ -4,7 +4,7 @@
     <iframe src="{{ $contenidosection5s[0]->map_iframe }}" frameborder="0" style="border:0; height: 100%; width: 100%;" allowfullscreen=""></iframe>
 
   </div>
-  <div class="col-lg-3" style="background-color: #E5E5E5;">
+  <div class="col-lg-3" style="background-color: {{$contenidosection5s[0]->back_color}};">
     <div style="padding: 40px;">
       <h4 class="font-body t600 ls1">{{$contenidosection5s[0]->title}}</h4>
 
@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-4" style="background-color: #1ABC9C;">
+  <div class="col-lg-4" style="background-color: {{$contenidosection5s[0]->back_form}};">
     <div class="col-padding">
       <!-- <a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-3d nomargin btn-block button-xlarge d-none d-md-block center">Click here to Send an Email</a> -->
 			<a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-large button-rounded nomargin btn-block d-block d-md-none center">Send an Email</a>
@@ -171,7 +171,7 @@
   </div>
 </div>
 @else
-<div class="row" style="background-color: #E5E5E5;" id="contact">
+<div class="row" style="background-color: {{$contenidosection5s[0]->back_color}};" id="contact">
 <div class="container">
 	<div class="row norightmargin align-items-stretch">
 	  <!-- <div class="col-lg-5" style="min-height: 550px; padding-right: 0px;">
@@ -187,7 +187,7 @@
 		      </div>
 		    </div>
 		  </div>
-		  <div class="col-lg-7" style="background-color: #1ABC9C;">
+		  <div class="col-lg-7" style="background-color: {{$contenidosection5s[0]->back_form}}">
 		    <div class="col-padding">
 		      <!-- <a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-3d nomargin btn-block button-xlarge d-none d-md-block center">Click here to Send an Email</a> -->
 					<a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-large button-rounded nomargin btn-block d-block d-md-none center">Send an Email</a>

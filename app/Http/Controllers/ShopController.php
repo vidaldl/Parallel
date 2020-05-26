@@ -186,6 +186,8 @@ class ShopController extends Controller
         $img_btn = $request->input('img_btn');
         $img_icon = $request->input('img_icon');
         $precio = $request->input('precio');
+        $weight = $request->input('weight');
+        $unit = $request->input('unit');
         $destacado_title = $request->input('destacado_title');
         $precio_nuevo = $request->input('precio_nuevo');
         $button = $request->input('button');
@@ -200,6 +202,8 @@ class ShopController extends Controller
           'img_btn' => $img_btn,
           'img_icon' => $img_icon,
           'precio' => $precio,
+          'weight' => $weight,
+          'unit' => $unit,
           'destacado_title' => $destacado_title,
           'precio_nuevo' => $precio_nuevo,
           'button' => $button,

@@ -70,6 +70,35 @@
                  </div>
                 </div>
               </div>
+              <div class="form-row">
+                <div class="col-md-8">
+                  <label for="weight" class="col-md-12 col-form-label">Peso</label>
+                  <input id="weight" type="input" name="weight" class="form-control @error('weight') is-invalid @enderror" value="{{ $shop_items->weight }}">
+                    @error('weight')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+
+                <div class="col-md-4">
+                  <label for="unit" class="col-md-12 col-form-label">Unidad</label>
+                  <select id="unit" type="input" name="unit" class="form-control @error('unit') is-invalid @enderror">
+                    @if($shop_items->unit == 'lb')
+                    <option selected>lb</option>
+                    <option>kg</option>
+                    @else
+                    <option>lb</option>
+                    <option selected>kg</option>
+                    @endif
+                  </select>
+                    @error('unit')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                </div>
+              </div>
 
               <div class="form-group">
                 <label for="precio" class="col-md-12 col-form-label">Precio</label>
