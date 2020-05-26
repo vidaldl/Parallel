@@ -45,7 +45,10 @@
 
       <!-- Top Cart
   				============================================= -->
-  				<div id="top-cart">
+          @foreach($orders as $shop)
+          @if($shop->id == 17)
+          @if($shop->display == 1)
+          <div id="top-cart">
   					<a href="#" id="top-cart-trigger"><i style="font-size: 20px!important;" class="icon-shopping-cart"></i><span>{{Cart::content()->count()}}</span></a>
   					<div class="top-cart-content">
   						<div class="top-cart-title">
@@ -75,6 +78,9 @@
   						</div>
   					</div>
   				</div>
+          @endif
+          @endif
+          @endforeach
         </ul>
 
 
