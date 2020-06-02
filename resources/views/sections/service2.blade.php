@@ -41,7 +41,7 @@
 					@endif
 					<h3>{{ $servicio->title }}</h3>
 				@endif
-        <p class="short">{{ $servicio->contenido }}</p>
+        <p class="short">{!! $servicio->contenido !!}</p>
       </div>
     </div>
 		@endforeach
@@ -106,6 +106,12 @@
 @endforeach
 @push('scripts')
 <script src="{{asset('lib/featherlight/featherlight.js')}}"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.feature-box').children('p').addClass('short');
+		$('.feature-box').children('ul').addClass('short');
+	});
+</script>
 @endpush
 @push('styles')
 	<link rel="stylesheet" href="{{asset('lib/featherlight/featherlight.css')}}">

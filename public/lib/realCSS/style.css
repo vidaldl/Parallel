@@ -7645,6 +7645,11 @@ body:not(.device-touch) .button.button-full strong {
 	color: #999;
 }
 
+.feature-box ul {
+	margin: 8px 0 0 0;
+	color: #999;
+}
+
 .feature-box .before-heading { font-size: 14px; }
 
 
