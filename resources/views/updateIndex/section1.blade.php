@@ -1073,8 +1073,8 @@
          $(buttonConfirm).click(function() {
            // Get the canvas with image data from Cropper.js
             var canvas = cropper.getCroppedCanvas({
-              width: 1280,
-              height: 720
+              width: 1920,
+              height: 1080
             });
             // Turn the canvas into a Blob (file object without a name)
             canvas.toBlob(function(blob) {
