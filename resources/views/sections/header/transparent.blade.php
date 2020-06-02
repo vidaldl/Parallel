@@ -50,33 +50,7 @@
           @if($shop->display == 1)
           <div id="top-cart">
   					<a href="#" id="top-cart-trigger"><i style="font-size: 20px!important;" class="icon-shopping-cart"></i><span>{{Cart::content()->count()}}</span></a>
-  					<div class="top-cart-content">
-  						<div class="top-cart-title">
-  							<h4 style="color: #444;">Shopping Cart</h4>
-  						</div>
-  						<div class="top-cart-items">
-                @foreach(Cart::content() as $item)
-  							<div class="top-cart-item clearfix">
-  								<div class="top-cart-item-image">
-                    @foreach($shop_items as $it)
-                      @if($it->id == $item->id)
-						           <a href="#"><img src="{{'/storage/' . $it->img_primaria}}" /></a>
-                      @endif
-                    @endforeach
-  								</div>
-  								<div class="top-cart-item-desc">
-  									<a href="#">{{$item->name}}</a>
-  									<span class="top-cart-item-price">${{$item->price}}</span>
-  									<span class="top-cart-item-quantity">x {{$item->qty}}</span>
-  								</div>
-  							</div>
-                @endforeach
-  						</div>
-  						<div class="top-cart-action clearfix">
-  							<span class="fleft top-checkout-price">$114.95</span>
-  							<a href="{{route('cart')}}" style="color: white;" class="button button-3d button-small nomargin fright">View Cart</a>
-  						</div>
-  					</div>
+  					@include('shop.littlecart')
   				</div>
           @endif
           @endif

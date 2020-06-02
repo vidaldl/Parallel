@@ -28,6 +28,15 @@ Route::get('homeInactive', 'HomeController@indexInactive')->name('home.inactive'
 //SHOPPING ================================== SHOPPING ===================================
 Route::post('/cart/add', 'ShoppingController@add_to_cart')->name('cart.add');
 Route::get('/cart', 'ShoppingController@showCart')->name('cart');
+Route::get('/cart/delete/{id}', 'ShoppingController@cartDelete')->name('cart.delete');
+Route::post('/cart/qCart/{id}', 'ShoppingController@quantityCart')->name('quantity.cart');
+Route::get('/cart/{id}/incr/{qty}', 'ShoppingController@incr')->name('cart.incr');
+Route::get('/cart/{id}/decr/{qty}', 'ShoppingController@decr')->name('cart.decr');
+Route::get('/cart/quick/add/{id}', 'ShoppingController@quickAdd')->name('cart.quick.add');
+Route::post('/cart/qty/update/{id}', 'ShoppingController@qtyUpdate')->name('qty.update');
+
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::post('/checkout/pay', 'CheckoutController@pay')->name('checkout.pay');
 
 
 //Order Sections
@@ -134,6 +143,19 @@ Route::post('/display-text2', 'DisplayController@text2Display');
 Route::post('/display-text3', 'DisplayController@text3Display');
 Route::post('/display-text4', 'DisplayController@text4Display');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
+
+
+// ================================== Service2 ========================================
+Route::get('/service2-section/{id}', 'ServiceSectionController@service2Edit')->name('service2.section.edit');
+Route::post('/service2-section-update/{id}', 'ServiceSectionController@service2Update')->name('service2.section.update');
+
+// Servicios2 functionality
+Route::resource('servicios2', 'ServiceController', ['except' => ['update']]);
+Route::post('servicios2/{id}', 'ServiceController@update')->name('servicio2.update');
+Route::get('trashed-servicios2', 'ServiceController@trashed')->name('trashed-servicios2.index');
+Route::put('restore-servicios2/{servicio}', 'ServiceController@restore')->name('restore-servicios2');
+Route::get('/redirectServicio2', 'ServiceController@redirect')->name('servicio2.redirect');
+
 
 // ================================== Text ========================================
 Route::get('/text', 'TextController@index')->name('text');

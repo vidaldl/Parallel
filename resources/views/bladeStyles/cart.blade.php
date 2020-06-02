@@ -1,5 +1,10 @@
 <style>
 /* SHOPPINGCART */
+
+
+.button {
+    background-color: {{$styles[0]->button_primary}};
+}
 .cart-product-thumbnail img:hover {
   border-color: {{$styles[0]->button_primary}};
 }
@@ -104,5 +109,8 @@ background-color: {{$styles[0]->button_secondary}} !important;
 .colore {
     color: {{$styles[0]->button_primary}} !important;
 }
+
+
+
 
 </style>

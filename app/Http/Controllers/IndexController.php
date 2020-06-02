@@ -7,6 +7,8 @@ use App\Post;
 use App\Category;
 use App\Tag;
 use App\Servicio;
+use App\ServiceSection2;
+use App\Service2;
 use App\ContenidoSection1;
 use App\menu_item;
 use App\ContenidoSection2;
@@ -83,7 +85,7 @@ class IndexController extends Controller
 
     public function mail(Request $request) {
       $section5 = ContenidoSection5::find(1);
-      
+
       $url = 'https://www.google.com/recaptcha/api/siteverify';
       $remoteip = $_SERVER['REMOTE_ADDR'];
       $data = [
@@ -151,6 +153,8 @@ class IndexController extends Controller
       ->with('contact_categories', ContactCategory::all())
       ->with('contenidosectionfooters', ContenidoSectionFooter::all())
       ->with('servicios', Servicio::all())
+      ->with('service_section2s', ServiceSection2::all())
+      ->with('service2s', Service2::all())
       ->with('pricings', Pricing::all())
       ->with('pricing_sections', PricingSection::all())
       ->with('styles', Style::all())

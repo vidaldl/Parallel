@@ -88,6 +88,10 @@
 	- Youtube Video Backgrounds
 
 ---------------------------------------------------------------- */
+
+
+
+
 /* RECAPTCHA */
 
 .grecaptcha-badge {
@@ -6268,6 +6272,35 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-overlay a {
 .quantity .qty:focus,
 .quantity .plus:focus,
 .quantity .minus:focus {
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+.quantity .pluses,
+.quantity .minuses {
+	display: block;
+	float: left;
+	cursor: pointer;
+	border: 0px transparent;
+	padding: 0;
+	width: 36px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #EEE;
+  color: #1c1c1c;
+	font-size: 16px;
+	font-weight: bold;
+	transition: background-color .2s linear;
+	-webkit-transition: background-color .2s linear;
+	-o-transition: background-color .2s linear;
+}
+
+.quantity .pluses:hover,
+.quantity .minuses:hover { background-color: #DDD; }
+
+.quantity .pluses:focus,
+.quantity .minuses:focus {
 	box-shadow: none !important;
 	outline: 0 !important;
 }

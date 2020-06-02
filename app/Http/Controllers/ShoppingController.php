@@ -23,13 +23,15 @@ class ShoppingController extends Controller
       $pdt = ShopItem::find($id);
 
 
-      $cart = Cart::add([
+      $cartItem = Cart::add([
         'id' => $pdt->id,
         'name' => $pdt->title,
         'qty' => $request->quantity,
         'price' => $pdt->precio,
         'weight' => $pdt->weight
       ]);
+
+      Cart::associate($cartItem->rowId, 'App\Shop\ShopItem');
 
       return redirect()->route('cart');
       // dd(Cart::content());
@@ -38,6 +40,7 @@ class ShoppingController extends Controller
     }
 
     public function showCart() {
+
       return view('shop.cart')
       ->with('orders', Order::all())
       ->with('menu_item', MenuItem::all())
@@ -49,5 +52,48 @@ class ShoppingController extends Controller
       ->with('shop_items', ShopItem::all());
     }
 
+    public function cartDelete($id) {
+      Cart::remove($id);
 
+      return redirect()->back();
+    }
+
+    public function incr($id, $qty) {
+      Cart::update($id, $qty + 1);
+
+      return redirect()->back();
+    }
+
+    public function decr($id, $qty) {
+      Cart::update($id, $qty - 1);
+
+      return redirect()->back();
+    }
+
+    public function qtyUpdate(Request $request, $id) {
+      $qty = $request->input('quantity');
+
+      Cart::update($id, $qty);
+      return redirect()->back();
+    }
+
+    public function quickAdd($id) {
+      $pdt = ShopItem::find($id);
+
+
+      $cartItem = Cart::add([
+        'id' => $pdt->id,
+        'name' => $pdt->title,
+        'qty' => 1,
+        'price' => $pdt->precio,
+        'weight' => $pdt->weight
+      ]);
+
+      Cart::associate($cartItem->rowId, 'App\Shop\ShopItem');
+
+      return redirect('/#shop');
+      // dd(Cart::content());
+
+
+    }
 }

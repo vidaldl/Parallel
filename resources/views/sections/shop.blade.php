@@ -33,7 +33,7 @@
               <div class="sale-flash">{{$item->destacado_title}}</div>
               @endif
               <div class="product-overlay" data-lightbox="gallery">
-								<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> {{$item->cart_btn}}</span></a>
+								<a href="{{route('cart.quick.add', $item->id)}}" class="add-to-cart"><i class="icon-shopping-cart"></i><span> {{$item->cart_btn}}</span></a>
                 @if($item->img_primaria)
                   <a href="{{'/storage/' . $item->img_primaria}}" class="item-quick-view" data-lightbox="gallery-item"><i class="{{$item->img_icon}}"></i><span>&nbsp;{{$item->img_btn}}</span></a>
                 @endif

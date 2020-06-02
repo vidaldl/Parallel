@@ -164,7 +164,7 @@ class ServicioController extends Controller
 
   public function trashed() {
     $trashed = Servicio::onlyTrashed()->get();
-    return view('servicios.index')->with('servicios', $trashed);
+    return view('servicios.index')->with('servicios', $trashed)->with('contenido_section2s', ContenidoSection2::all());
   }
   public function restore($id) {
     $servicio = Servicio::withTrashed()->where('id', $id)->firstOrFail();

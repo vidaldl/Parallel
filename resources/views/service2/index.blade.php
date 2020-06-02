@@ -10,12 +10,13 @@
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Servicios</h1>
-  @if(Request::is('trashed-servicios'))
-    <a href="{{ route('servicios.index')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Servicios 2<span></a>
+  @if(Request::is('trashed-servicios2'))
+    <a href="{{ route('servicios2.index')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Servicios 2<span></a>
   @else
-    <a href="{{ route('trashed-servicios.index')}}" class="d-none d-sm-inline-block btn btn-danger btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-trash fa-sm "></i></span><span class="text"> &nbsp;Papelera<span></a>
+    <a href="{{ route('trashed-servicios2.index')}}" class="d-none d-sm-inline-block btn btn-danger btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-trash fa-sm "></i></span><span class="text"> &nbsp;Papelera<span></a>
   @endif
-    <a href="{{ route('servicios.create')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-plus fa-sm "></i></span><span class="text"> &nbsp;Nuevo Servicio<span></a>
+
+    <a href="{{ route('servicios2.create')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-plus fa-sm "></i></span><span class="text"> &nbsp;Nuevo Servicio<span></a>
 
 
 </div>
@@ -67,7 +68,7 @@
               <td>
                 <h4>{{ $servicio->title }}</h4>
               </td>
-                <form method="POST" action="{{ route('servicios.destroy', $servicio->id) }}">
+                <form method="POST" action="{{ route('servicios2.destroy', $servicio->id) }}">
                   @csrf
                   @method('DELETE')
               <td>
@@ -78,7 +79,7 @@
                       </button>
                     </form>
                     @if($servicio->trashed())
-                    <form class="float-right" action="{{ route('restore-servicios', $servicio->id) }}" method="POST">
+                    <form class="float-right" action="{{ route('restore-servicios2', $servicio->id) }}" method="POST">
                       @csrf
                       @method('PUT')
                       <button type="submit" class="btn btn-success btn-inverse" >
@@ -86,7 +87,7 @@
                       </button>
                     </form>
                     @else
-                    <a href="{{ route('servicios.edit', $servicio->id) }}" class="btn btn-success btn-inverse float-right" >
+                    <a href="{{ route('servicios2.edit', $servicio->id) }}" class="btn btn-success btn-inverse float-right" >
                       <i class="fas fa-edit"></i>&nbsp; Editar
                     </a>
                     @endif
@@ -126,7 +127,7 @@ $('#display').btnSwitch({
     $.ajax({
            type:'POST',
            dataType: 'json',
-           url:'{{route("section2.update", 1)}}',
+           url:'{{route("service2.section.update", 1)}}',
            data:{"_token": "{{ csrf_token() }}",
            val:val
           },
@@ -141,7 +142,7 @@ $('#display').btnSwitch({
     $.ajax({
            type:'POST',
            dataType: 'json',
-           url:'{{route("section2.update", 1)}}',
+           url:'{{route("service2.section.update", 1)}}',
            data:{"_token": "{{ csrf_token() }}",
            val:val
           },
@@ -168,7 +169,7 @@ $('#icon_style').btnSwitch({
     $.ajax({
            type:'POST',
            dataType: 'json',
-           url:'{{route("section2.update", 1)}}',
+           url:'{{route("service2.section.update", 1)}}',
            data:{"_token": "{{ csrf_token() }}",
            val1:val
           },
@@ -189,7 +190,7 @@ $('#icon_style').btnSwitch({
     $.ajax({
            type:'POST',
            dataType: 'json',
-           url:'{{route("section2.update", 1)}}',
+           url:'{{route("service2.section.update", 1)}}',
            data:{"_token": "{{ csrf_token() }}",
            val1:val
           },
