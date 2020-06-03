@@ -180,7 +180,7 @@
                     <div class="form-row mb-4">
                       <div class="col-md-6" id="type_link">
                         <label for="link_address" class="col-form-label">Enlace</label>
-                        <input id="link_address" type="input" placeholder="Https://" name="link_address" class="form-control flexdatalist @error('link_address') is-invalid @enderror"  value="{{ $portfolioItem->logo_link_address }}">
+                        <input id="link_address" type="input" placeholder="Https://" name="link_address" class="form-control flexdatalist @error('link_address') is-invalid @enderror"  value="{{isset($portfolioItem) ? $portfolioItem->logo_link_address : ''}}">
                       </div>
                       <div class="col-md-6" id="type_file">
                         <label class="col-form-label">Seleccionar Archivo:</label><br>
@@ -389,8 +389,9 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 <script src="{{asset('lib/iconpicker/js/fontawesome-iconpicker.js')}}"></script>
 <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
-<script>
 @if(isset($portfolioItem))
+<script>
+
   $('#logo_link').btnSwitch({
   Theme:'Swipe',
   OnText: "Detail",
@@ -479,7 +480,7 @@
   ToggleState: false
   @endif
   });
-@endif
+
 $(document).ready(function() {
   @if($portfolioItem->logo_link == 0)
     $('.enlace').hide();
@@ -498,7 +499,7 @@ $(document).ready(function() {
 });
 });
 </script>
-
+@endif
 
 <script>
 //Portada

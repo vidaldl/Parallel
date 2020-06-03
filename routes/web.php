@@ -117,6 +117,7 @@ Route::post('/shopUpdate/{id}', 'ShopController@update')->name('shop.update');
 Route::get('trashed-shop', 'ShopController@trashed')->name('trashed-shop.index');
 Route::put('restore-shop/{shop}', 'ShopController@restore')->name('restore-shop');
 Route::post('/delSecImgShop/{id}', 'ShopController@destroySecImg')->name('sec.img.shop');
+Route::post('/shop/receipt-info', 'ShopController@receiptInfo')->name('receipt.info');
 
 
 Route::middleware(['auth'])->group(function () {

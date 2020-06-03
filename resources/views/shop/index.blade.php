@@ -2,6 +2,8 @@
 @section('css')
   <link href="{{ asset('lib/spectrum/spectrum.css') }}" rel="stylesheet">
   <link href="{{ asset('lib/btnswitch/jquery.btnswitch.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('lib/dropzone/dropzone.css')}}">
+  <link rel="stylesheet" href="{{asset('lib/cropper/cropper.css')}}">
   <style media="screen">
   .tgl-sw-swipe + .btn-switch {
     background: #36b9cc;
@@ -11,7 +13,7 @@
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0 text-gray-800">Tienda de Productos</h1>
-  @if (\Request::is('trashed-shop'))
+  @if (Request::is('trashed-shop'))
     <a href="{{ route('shop.index')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-arrow-left fa-sm "></i></span><span class="text"> &nbsp;Artículos<span></a>
 </div>
 
@@ -19,70 +21,136 @@
     <a href="{{ route('shop.create')}}" class="d-none d-sm-inline-block btn btn-primary btn-icon-split shadow-sm"><span class="icon text-white-50"><i class="fas fa-plus fa-sm "></i></span><span class="text"> &nbsp;Nuevo Artículo<span></a>
 
 </div>
-<div class="col-md-12">
-  <!-- LINE/SPACE -->
-  @foreach($orders as $item)
-    @if($item->id == 14)
-  <form method="POST" action="{{route('line.update', 14)}}">
-    @csrf
-    <div class="line-space card col-md-8 offset-md-2 mt-4 mb-4">
-      <a href="#" style="text-decoration: none">
-        <div class="card-header py-3">
-        <div class="row">
-          <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Espacio entre:</h6></span>
-              @if($item->line == 0)
-                <select onchange="this.form.submit()" name="line-display-hidden" class="col-md-6  float-right">
-                  <option selected>Nada</option>
-                  <option value = "1">Línea</option>
-                  <option value = "2">Margen</option>
-                </select>
-              @endif
-        </div>
-      </div>
-      </a>
-      @if($item->line != 0)
-      <div id="collapse3">
-        <div class="card-body row">
-        <div class="col-md-6 offset-md-3">
+<div class="row">
+  <!-- =============================== Line ================================= -->
+  <div class="col-md-6">
+    <!-- LINE/SPACE -->
+    @foreach($orders as $item)
+      @if($item->id == 14)
+    <form method="POST" action="{{route('line.update', 14)}}">
+      @csrf
+      <div class="line-space card col-md-8 offset-md-2 mt-4 mb-4">
+        <a href="#" style="text-decoration: none">
+          <div class="card-header py-3">
           <div class="row">
-            <div class="col-md-6">
-              <label for="line-display">Espacio:</label>
-              <select name="line-display" onchange="this.form.submit()">
-                <option value="0">No Mostrar</option>
-              @if($item->line == 1)
-                <option value="1" selected>Línea</option>
-                <option value="2">Margen</option>
-                @elseif($item->line == 2)
-                <option value="1">Línea</option>
-                <option value="2" selected>Margen</option>
+            <span class="col-md-6"><h6 class="m-0 font-weight-bold text-primary">Espacio entre:</h6></span>
+                @if($item->line == 0)
+                  <select onchange="this.form.submit()" name="line-display-hidden" class="col-md-6  float-right">
+                    <option selected>Nada</option>
+                    <option value = "1">Línea</option>
+                    <option value = "2">Margen</option>
+                  </select>
                 @endif
-              </select>
-            </div>
-            <div class="col-md-6 {{$item->line == 2 ? 'd-none' : ''}}">
-
-                <label for="line-display">Estilo de Línea:</label>
-                <select name="line-style" onchange="this.form.submit()">
-                  @if($item->line_style == 1)
-                    <option value="1" selected>Parcial</option>
-                    <option value="2">Completo</option>
-                  @elseif($item->line_style == 2)
-                    <option value="1">Parcial</option>
-                    <option value="2" selected>Completo</option>
+          </div>
+        </div>
+        </a>
+        @if($item->line != 0)
+        <div id="collapse3">
+          <div class="card-body row">
+          <div class="col-md-6 offset-md-3">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="line-display">Espacio:</label>
+                <select name="line-display" onchange="this.form.submit()">
+                  <option value="0">No Mostrar</option>
+                @if($item->line == 1)
+                  <option value="1" selected>Línea</option>
+                  <option value="2">Margen</option>
+                  @elseif($item->line == 2)
+                  <option value="1">Línea</option>
+                  <option value="2" selected>Margen</option>
                   @endif
                 </select>
+              </div>
+              <div class="col-md-6 {{$item->line == 2 ? 'd-none' : ''}}">
 
+                  <label for="line-display">Estilo de Línea:</label>
+                  <select name="line-style" onchange="this.form.submit()">
+                    @if($item->line_style == 1)
+                      <option value="1" selected>Parcial</option>
+                      <option value="2">Completo</option>
+                    @elseif($item->line_style == 2)
+                      <option value="1">Parcial</option>
+                      <option value="2" selected>Completo</option>
+                    @endif
+                  </select>
+
+              </div>
             </div>
           </div>
         </div>
+        </div>
+        @endif
       </div>
-      </div>
+    </form>
       @endif
+    @endforeach
+    <!-- END LINE/SPACE -->
+  </div>
+
+  <!-- =============================== /Line ================================= -->
+
+  <!-- =============================== Informacion de la factura ================================= -->
+
+  <div class="col-md-6">
+    <div class="card mt-4 mb-4">
+      <div class="card-header">
+        <h6>Información de la factura:</h6>
+      </div>
+      <div class="card-body">
+        <form class="" action="{{route('receipt.info')}}" method="post">
+          @csrf
+          <div class="form-group">
+            <label for="image" class="col-form-label">Logo en la Factura</label><br>
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage">Principal &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+          </div>
+
+        </form>
+
+        <!--modal image-->
+        <div class="modal fade" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalBack" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color:#4066D4;">
+              <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                      <label for="logo" class="col-form-label">Imagen</label>
+                      <form id="image" method="POST" class="image dropzone" action="{{ route('receipt.info') }}" enctype="multipart/form-data">
+                        @csrf
+                      </form>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+
+                      <img style="width:100%;" src="{{'/storage/' . $receipt_info->image}}" class="logoThumb img-fluid img-thumbnail rounded">
+
+                      <div class="editador d-none" style="width:450px; height: 600px; background-color: #000;">
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="modal-footer ">
+                <button class="buttonConfirm btn btn-primary d-none">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal image -->
+      </div>
+
     </div>
-  </form>
-    @endif
-  @endforeach
-  <!-- END LINE/SPACE -->
+  </div>
+
+
+  <!-- =============================== /Informacion de la factura ================================= -->
 </div>
+
 <div class="card mb-5">
   <form method="POST" class="container" action="{{route('shop.section.update', 1)}}" enctype="multipart/form-data">
     @csrf
@@ -225,6 +293,7 @@
   <script src="{{ asset('lib/spectrum/spectrum.js') }}"></script>
   <script src="{{ asset('lib/btnswitch/jquery.btnswitch.js') }}"></script>
   <script type="text/javascript">
+
   @if($shop_sections[0]->style == 1)
     $('#rows').hide();
   @endif
@@ -326,5 +395,74 @@
       preferredFormat: "hex",
      showInput: true,
     });
+  </script>
+
+
+  <script src="{{asset('lib/dropzone/dropzone.js')}}"></script>
+  <script src="{{asset('lib/cropper/cropper.js')}}"></script>
+  <script>
+  Dropzone.options.image = {
+    paramName: "image",
+
+     transformFile: function(file, done) {
+        var myDropZone = this;
+        var editor = $('.editador');
+        var logoThumb = $('.logoThumb');
+        $(logoThumb).addClass('d-none');
+        $(editor).removeClass('d-none');
+        $(editor).addClass('d-block');
+        // Create confirm button at the top left of the viewport
+        var buttonConfirm = $('.buttonConfirm');
+        $(buttonConfirm).removeClass('d-none');
+        $(buttonConfirm).addClass('d-block');
+        $(buttonConfirm).click(function() {
+          // Get the canvas with image data from Cropper.js
+           var canvas = cropper.getCroppedCanvas({
+             width: 300,
+             height: 600
+           });
+           // Turn the canvas into a Blob (file object without a name)
+           canvas.toBlob(function(blob) {
+             // Create a new Dropzone file thumbnail
+              myDropZone.createThumbnail(
+                blob,
+                myDropZone.options.thumbnailWidth,
+                myDropZone.options.thumbnailHeight,
+                myDropZone.options.thumbnailMethod,
+                false,
+                function(dataURL) {
+
+                  // Update the Dropzone file thumbnail
+                  myDropZone.emit('thumbnail', file, dataURL);
+                  // Return the file to Dropzone
+                  done(blob);
+              });
+           });
+          // Remove the editor from the view
+          $(buttonConfirm).removeClass('d-block');
+          $(buttonConfirm).addClass('d-none');
+
+
+        });
+
+        // Create an image node for Cropper.js
+       var image = new Image();
+       image.src = URL.createObjectURL(file);
+       // editor.appendChild(image);
+       $(image).appendTo(editor)
+       // Create Cropper.js
+       var cropper = new Cropper(image, { aspectRatio: 1/2 });
+   },
+   init: function () {
+
+      this.on("complete", function (file) {
+        setTimeout(
+          function()
+          {
+            location.reload();
+          }, 1500);
+      });
+    }
+  };
   </script>
 @endsection

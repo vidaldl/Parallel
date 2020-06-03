@@ -12,6 +12,7 @@ use App\FooterLink;
 use App\Style;
 use App\MenuItem;
 use App\ContenidoSectionFooter;
+use App\ReceiptInfo;
 use DB;
 use Illuminate\Support\Facades\Storage;
 class ShopController extends Controller
@@ -66,7 +67,8 @@ class ShopController extends Controller
       return view('shop.index')
       ->with('shop_items', ShopItem::all())
       ->with('shop_sections', ShopSection::all())
-      ->with('orders', Order::orderBy('order')->get());
+      ->with('orders', Order::orderBy('order')->get())
+      ->with('receipt_info', ReceiptInfo::find(1));
     }
 
     /**

@@ -111,14 +111,8 @@
                             </td>
 
                             <td>
-                              @foreach($items as $item)
-                                Item 1 = {{$item->name}}
-                              @endforeach
-
-                              {{$charge['status']}}
-                                Invoice #: 123<br>
-                                Created: January 1, 2015<br>
-                                Due: February 1, 2015
+                                Factura #: 123<br>
+                                Fecha: {{$date}}<br>
                             </td>
                         </tr>
                     </table>
@@ -136,9 +130,8 @@
                             </td>
 
                             <td>
-                                Acme Corp.<br>
-                                John Doe<br>
-                                john@example.com
+                                {{$name}}<br>
+                                {{$email}}
                             </td>
                         </tr>
                     </table>
@@ -147,50 +140,53 @@
 
             <tr class="heading">
                 <td>
-                    Payment Method
+                    Método
                 </td>
 
                 <td>
-                    Check #
+                    {{$method}}
                 </td>
             </tr>
 
             <tr class="details">
                 <td>
-                    Check
+                    {{$cardtype}}
                 </td>
 
                 <td>
-                    1000
+                    **** **** **** {{$cardlast4}}
                 </td>
             </tr>
 
             <tr class="heading">
                 <td>
-                    Item
+                    Artículo
                 </td>
 
                 <td>
-                    Price
+                    Precio
                 </td>
             </tr>
-
+            @foreach($items as $item)
             <tr class="item">
                 <td>
-                    Website design
+                    {{$item->name}}
                 </td>
 
                 <td>
-                    $300.00
+                    ${{$item->price}}
                 </td>
             </tr>
-
-
+            @endforeach
+            <tr class="item">
+              <td><strong>Impuestos</strong></td>
+              <td>${{$tax}}</td>
+            </tr>
             <tr class="total">
                 <td></td>
 
                 <td>
-                   Total: $385.00
+                   Total: ${{$total}}
                 </td>
             </tr>
         </table>

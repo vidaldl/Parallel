@@ -79,7 +79,9 @@ class PortfolioItemController extends Controller
      */
     public function create()
     {
-      return view('portfolio.items.create')->with('portfolioCategories', PortfolioCategory::all());
+      return view('portfolio.items.create')
+      ->with('files', File::all())
+      ->with('portfolioCategories', PortfolioCategory::all());
     }
 
     /**
