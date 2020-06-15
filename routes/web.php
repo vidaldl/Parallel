@@ -124,10 +124,11 @@ Route::post('/delSecImgShop/{id}', 'ShopController@destroySecImg')->name('sec.im
 //Receipt Info ================================== Receipt Info ===================================
 Route::post('/shop/receipt-info', 'ReceiptController@receiptInfoUpdate')->name('receipt.info.update');
 
+
 //PShop Settings ================================== PShop Settings ===================================
 Route::get('/PShop/settings', 'PShopController@index')->name('pshop.index');
 Route::get('/receipt/{id}', 'PShopController@viewReceipt')->name('receipt.view');
-
+Route::get('/PDFreceipt/{id}','PShopController@PDFreceipt')->name('receipt.pdf');
 Route::middleware(['auth'])->group(function () {
 // ================================== Display ========================================
 Route::post('/display-portfolio-programs', 'DisplayController@portfolioprogramsDisplay');

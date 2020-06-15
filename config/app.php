@@ -167,6 +167,7 @@ return [
          */
         Intervention\Image\ImageServiceProvider::class,
         Spatie\LaravelImageOptimizer\ImageOptimizerServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -230,6 +231,8 @@ return [
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         //Intervention Image
         'Image' => Intervention\Image\Facades\Image::class,
+        //DomPDF
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];

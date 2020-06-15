@@ -107,7 +107,7 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="{{'/storage/' . $receipt_info->image}}" style="width:100%; max-width:300px;">
+                                <img src="{{public_path() . '/storage/' . $receipt_info->image}}" style="width:300px;">
                             </td>
 
                             <td>
@@ -174,7 +174,7 @@
                 </td>
 
                 <td>
-                    ${{$item->price}}
+                    ${{$item->precio}}
                 </td>
             </tr>
             @endforeach

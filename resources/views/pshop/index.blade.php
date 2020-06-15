@@ -141,7 +141,7 @@
               <td>
                   <span class="float-right">
 
-                    <a href="{{ route('receipt.view', $item->id) }}" class="btn btn-success btn-inverse float-right" >
+                    <a target="_blank" href="{{ route('receipt.pdf', $item->id) }}" class="btn btn-success btn-inverse float-right" >
                       <i class="fas fa-receipt"></i>&nbsp; Ver
                     </a>
 
