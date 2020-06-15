@@ -24,12 +24,13 @@ class PurchasedSuccessful extends Mailable
     public $method;
     public $cardtype;
     public $cardlast4;
+    public $receipt_info;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($charge, $email, $date, $receipt, $name, $items, $subtotal, $tax, $total, $method, $cardtype, $cardlast4)
+    public function __construct($charge, $email, $date, $receipt, $name, $items, $subtotal, $tax, $total, $method, $cardtype, $cardlast4, $receipt_info)
     {
         $this->charge = $charge;
         $this->email = $email;
@@ -43,6 +44,7 @@ class PurchasedSuccessful extends Mailable
         $this->method = $method;
         $this->cardtype = $cardtype;
         $this->cardlast4 = $cardlast4;
+        $this->receipt_info = $receipt_info;
     }
 
     /**
@@ -64,7 +66,8 @@ class PurchasedSuccessful extends Mailable
         'total'  => $this->total,
         'method'  => $this->method,
         'cardtype'  => $this->cardtype,
-        'cardlast4'  => $this->cardlast4
+        'cardlast4'  => $this->cardlast4,
+        'receipt_info' => $this->receipt_info
         ]);
     }
 }

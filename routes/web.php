@@ -25,6 +25,9 @@ Auth::routes(['verify' => true, 'register' => false]);
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('homeInactive', 'HomeController@indexInactive')->name('home.inactive');
 
+
+
+
 //SHOPPING ================================== SHOPPING ===================================
 Route::post('/cart/add', 'ShoppingController@add_to_cart')->name('cart.add');
 Route::get('/cart', 'ShoppingController@showCart')->name('cart');
@@ -110,15 +113,20 @@ Route::get('trashed-catalog3', 'CatalogController3@trashed')->name('trashed-cata
 Route::put('restore-catalog3/{catalog}', 'CatalogController3@restore')->name('restore-catalog3');
 Route::post('/delSecImg3/{id}', 'CatalogController3@destroySecImg')->name('sec.img.destroy3');
 
-//SHOP
+//pSHOP
 Route::post('/shopSection/{id}', 'ShopController@sectionUpdate')->name('shop.section.update');
 Route::resource('shop', 'ShopController', ['except' => ['update']]);
 Route::post('/shopUpdate/{id}', 'ShopController@update')->name('shop.update');
 Route::get('trashed-shop', 'ShopController@trashed')->name('trashed-shop.index');
 Route::put('restore-shop/{shop}', 'ShopController@restore')->name('restore-shop');
 Route::post('/delSecImgShop/{id}', 'ShopController@destroySecImg')->name('sec.img.shop');
-Route::post('/shop/receipt-info', 'ShopController@receiptInfo')->name('receipt.info');
 
+//Receipt Info ================================== Receipt Info ===================================
+Route::post('/shop/receipt-info', 'ReceiptController@receiptInfoUpdate')->name('receipt.info.update');
+
+//PShop Settings ================================== PShop Settings ===================================
+Route::get('/PShop/settings', 'PShopController@index')->name('pshop.index');
+Route::get('/receipt/{id}', 'PShopController@viewReceipt')->name('receipt.view');
 
 Route::middleware(['auth'])->group(function () {
 // ================================== Display ========================================

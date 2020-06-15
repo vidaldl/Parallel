@@ -107,12 +107,12 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="{{url('/') . '/storage/' . $receipt_info->image}}" style="width:100%; max-width:300px;">
+                                <img src="{{'/storage/' . $receipt_info->image}}" style="width:100%; max-width:300px;">
                             </td>
 
                             <td>
-                                Factura #: {{$receipt}}<br>
-                                Fecha: {{$date}}<br>
+                                Factura #: {{$receipt->receipt_number}}<br>
+                                Fecha: {{$receipt->date}}<br>
                             </td>
                         </tr>
                     </table>
@@ -130,8 +130,8 @@
                             </td>
 
                             <td>
-                                {{$name}}<br>
-                                {{$email}}
+                                {{$receipt->client_name}}<br>
+                                {{$receipt->client_email}}
                             </td>
                         </tr>
                     </table>
@@ -144,17 +144,17 @@
                 </td>
 
                 <td>
-                    {{$method}}
+                    {{$receipt->method}}
                 </td>
             </tr>
 
             <tr class="details">
                 <td>
-                    {{$cardtype}}
+                    {{$receipt->card_type}}
                 </td>
 
                 <td>
-                    **** **** **** {{$cardlast4}}
+                    **** **** **** {{$receipt->card_last4}}
                 </td>
             </tr>
 
@@ -167,10 +167,10 @@
                     Precio
                 </td>
             </tr>
-            @foreach($items as $item)
+            @foreach($receipt->shop_items as $item)
             <tr class="item">
                 <td>
-                    {{$item->name}}
+                    {{$item->title}}
                 </td>
 
                 <td>
@@ -180,13 +180,13 @@
             @endforeach
             <tr class="item">
               <td><strong>Impuestos</strong></td>
-              <td>${{$tax}}</td>
+              <td>${{$receipt->tax}}</td>
             </tr>
             <tr class="total">
                 <td></td>
 
                 <td>
-                   Total: ${{$total}}
+                   Total: ${{$receipt->total}}
                 </td>
             </tr>
         </table>

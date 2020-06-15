@@ -98,11 +98,44 @@
         <h6>Información de la factura:</h6>
       </div>
       <div class="card-body">
-        <form class="" action="{{route('receipt.info')}}" method="post">
+        <form class="" action="{{route('receipt.info.update')}}" method="post">
           @csrf
           <div class="form-group">
             <label for="image" class="col-form-label">Logo en la Factura</label><br>
             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalImage">Principal &nbsp;&nbsp;<i class="fas fa-image"></i></a>
+          </div>
+
+          <div class="form-group">
+            <label for="company_name">Nombre de la Compañía</label>
+            <input id="company_name" type="input" name="company_name" value="{{$receipt_info->company_name}}" class="form-control @error('company_name') is-invalid @enderror">
+            @error('company_name')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
+          </div>
+
+          <div class="form-group">
+            <label for="address_line_1">Dirección línea #1</label>
+            <input id="address_line_1" type="input" name="address_line_1" value="{{$receipt_info->address_line_1}}" class="form-control @error('address_line_1') is-invalid @enderror">
+            @error('address_line_1')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
+          </div>
+          <div class="form-group">
+            <label for="address_line_2">Dirección línea #2</label>
+            <input id="address_line_2" type="input" name="address_line_2" value="{{$receipt_info->address_line_2}}" class="form-control @error('address_line_2') is-invalid @enderror">
+            @error('address_line_2')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Actualizar</button>
           </div>
 
         </form>
@@ -121,7 +154,7 @@
                     <div class="col-md-4">
                       <div class="form-group">
                       <label for="logo" class="col-form-label">Imagen</label>
-                      <form id="image" method="POST" class="image dropzone" action="{{ route('receipt.info') }}" enctype="multipart/form-data">
+                      <form id="image" method="POST" class="image dropzone" action="{{ route('receipt.info.update') }}" enctype="multipart/form-data">
                         @csrf
                       </form>
                       </div>
@@ -418,8 +451,8 @@
         $(buttonConfirm).click(function() {
           // Get the canvas with image data from Cropper.js
            var canvas = cropper.getCroppedCanvas({
-             width: 300,
-             height: 600
+             width: 600,
+             height: 300
            });
            // Turn the canvas into a Blob (file object without a name)
            canvas.toBlob(function(blob) {
@@ -451,7 +484,7 @@
        // editor.appendChild(image);
        $(image).appendTo(editor)
        // Create Cropper.js
-       var cropper = new Cropper(image, { aspectRatio: 1/2 });
+       var cropper = new Cropper(image, { aspectRatio: 2/1 });
    },
    init: function () {
 

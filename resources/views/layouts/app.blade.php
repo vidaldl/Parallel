@@ -68,7 +68,7 @@
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
        Contenido
-     </div>
+      </div>
       <!-- <li class="nav-item active ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-newspaper"></i>
@@ -112,7 +112,20 @@
         </div>
       </li>
 
+      <!-- P Shop -->
+
       <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Modulos
+      </div>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{route('pshop.index')}}">
+          <i class="fas fa-fw fa-store"></i>
+          <span>PShop</span></a>
+      </li>
+      <hr class="sidebar-divider">
+
+      <!-- //P Shop -->
 
 
 

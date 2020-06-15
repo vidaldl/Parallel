@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Validator;
+use DB;
+
 use App\Shop\ShopItem;
 use Carbon;
 use Cart;
@@ -16,6 +20,8 @@ use App\FooterLink;
 use App\Style;
 use App\MenuItem;
 use App\ContenidoSectionFooter;
+use App\ReceiptInfo;
+use App\Receipt;
 
 class CheckoutController extends Controller
 {
@@ -32,56 +38,102 @@ class CheckoutController extends Controller
     }
 
     public function pay(Request $request) {
-      $price = Cart::total(null,null,'');
-      $pri = intval($price);
-      $email = "vidaldl@outlook.com";
-      $date = Carbon\Carbon::now()->format('d-m-Y');
-      $receipt = 1;
+      $validator = Validator::make($request->all(), [
+        'name' => 'required|string',
+        'email' => 'required|email'
+      ]);
 
-      $name =  "Leo";
+      if ($validator->fails()) {
+        session()->flash('error', $validator->messages()->first());
+        return redirect()->back()->withInput();
+       }
 
-      $items = Cart::content();
-      $subtotal = Cart::subtotal();
-      $tax = Cart::tax();
-      $total = Cart::total();
+       else {
+         $name = $request->input('name');
+         $email = $request->input('email');
 
-
-      Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-       $charge = Stripe\Charge::create ([
-               "amount" => $price * 100,
-               "currency" => "usd",
-               "source" => $request->stripeToken,
-               "description" => "Compra @" . env('APP_NAME'),
-               "receipt_email" => $email
-       ]);
-
-       $method = $charge->payment_method_details->type;
-       $cardtype = $charge->payment_method_details->card->brand;
-       $cardlast4 = $charge->payment_method_details->card->last4;
-
-       if($charge->status == "succeeded") {
-         Mail::to($email)->send(new \App\Mail\PurchasedSuccessful(
-           $charge,
-           $email,
-           $date,
-           $receipt,
-           $name,
-           $items,
-           $subtotal,
-           $tax,
-           $total,
-           $method,
-           $cardtype,
-           $cardlast4
-         ));
+         $price = Cart::total(null,null,'');
+         $pri = intval($price);
+         $date = Carbon\Carbon::now()->format('d-m-Y');
 
 
-         session()->flash('success', 'Compra Exitosa');
-         return redirect()->route('checkout');
+         $receipt = rand(0, 999999);
+         $rs = Receipt::all();
+         foreach($rs as $r) {
+           if($r->receipt_id == $receipt) {
+             $receipt = $receipt + 1;
+           }
+         }
 
-       } else {
-         session()->flash('error', 'Metodo de pago no aceptado');
-         return redirect()->route('checkout');
+
+         $items = Cart::content();
+         $subtotal = Cart::subtotal();
+         $tax = Cart::tax();
+         $total = Cart::total();
+         $receipt_info = ReceiptInfo::find(1);
+
+
+
+         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+          $charge = Stripe\Charge::create ([
+                  "amount" => $price * 100,
+                  "currency" => "usd",
+                  "source" => $request->stripeToken,
+                  "description" => "Compra @" . env('APP_NAME'),
+                  "receipt_email" => $email
+          ]);
+
+          $method = $charge->payment_method_details->type;
+          $cardtype = $charge->payment_method_details->card->brand;
+          $cardlast4 = $charge->payment_method_details->card->last4;
+
+          if($charge->status == "succeeded") {
+            Mail::to($email)->send(new \App\Mail\PurchasedSuccessful(
+              $charge,
+              $email,
+              $date,
+              $receipt,
+              $name,
+              $items,
+              $subtotal,
+              $tax,
+              $total,
+              $method,
+              $cardtype,
+              $cardlast4,
+              $receipt_info,
+            ));
+
+            $data = array(
+              'receipt_number' => $receipt,
+              'date' => $date,
+              'client_name' => $name,
+              'client_email' => $email,
+              'method' => $method,
+              'card_type' => $cardtype,
+              'card_last4' => $cardlast4,
+              'subtotal' => $subtotal,
+              'tax' => $tax,
+              'total' => $total
+            );
+
+            DB::table('receipts')->insert($data);
+            $latest = DB::getPdo('receipts')->lastInsertId();
+            $receipt = Receipt::find($latest);
+
+
+            foreach($items as $item) {
+              $receipt->shop_items()->attach($item->model);
+            }
+
+            session()->flash('success', 'Compra Exitosa');
+            return redirect()->route('checkout');
+
+          } else {
+            session()->flash('error', 'Metodo de pago no aceptado');
+            return redirect()->route('checkout');
+          }
+
        }
 
 

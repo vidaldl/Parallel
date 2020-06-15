@@ -15,7 +15,16 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->integer('receipt_number')->unique();
+            $table->string('date');
+            $table->string('client_name');
+            $table->string('client_email');
+            $table->string('method');
+            $table->string('card_type');
+            $table->string('card_last4');
+            $table->string('subtotal');
+            $table->string('tax');
+            $table->string('total');
         });
     }
 

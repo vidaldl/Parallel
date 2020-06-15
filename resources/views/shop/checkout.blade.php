@@ -194,6 +194,24 @@
 
             <div class="flex-column">
               <div class="form-group">
+                <label for="name">Nombre Completo <small>*</small></label>
+                <input type="name" id="name" name="name" class="required email sm-form-control @error('name') is-invalid @enderror" />
+                @error('name')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group">
+                <label for="email">Email <small>*</small></label>
+                <input type="email" id="email" name="email" class="required email sm-form-control @error('email') is-invalid @enderror" />
+                @error('email')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group">
                 <input type="hidden" name="total" value="{{Cart::total()}}">
                 <label for="card-element">
                   Credito o Débito
@@ -207,7 +225,7 @@
               </div>
             </div>
 
-            <button class="buttonesse button-3d notopmargin fleft">Pagar</button>
+            <button type="submit" class="buttonesse button-3d notopmargin fleft">Pagar</button>
           </form>
           <script>
 

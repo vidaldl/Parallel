@@ -5,6 +5,7 @@ namespace App\Shop;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
+use App\Receipt;
 
 class ShopItem extends Model
 {
@@ -20,5 +21,9 @@ class ShopItem extends Model
 
     Storage::delete($this->img_secundaria);
 
+  }
+
+  public function receipts() {
+    return $this->belongsToMany(Receipt::class);
   }
 }
