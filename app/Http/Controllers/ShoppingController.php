@@ -96,4 +96,24 @@ class ShoppingController extends Controller
 
 
     }
+
+    public function quickAddDetail($id) {
+      $pdt = ShopItem::find($id);
+
+
+      $cartItem = Cart::add([
+        'id' => $pdt->id,
+        'name' => $pdt->title,
+        'qty' => 1,
+        'price' => $pdt->precio,
+        'weight' => $pdt->weight
+      ]);
+
+      Cart::associate($cartItem->rowId, 'App\Shop\ShopItem');
+
+      return redirect()->back();
+      // dd(Cart::content());
+
+
+    }
 }

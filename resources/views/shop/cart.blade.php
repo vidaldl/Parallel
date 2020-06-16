@@ -80,32 +80,30 @@
             </tr>
             @endforeach
             <!-- /ITEMS -->
-            <tr class="cart_item">
+            <!-- <tr class="cart_item">
               <td colspan="6">
                 <div class="row clearfix">
-                  <div class="col-lg-4 col-4 nopadding">
+                  <div class="col-lg-4 col-4 offset-lg-7 nopadding">
                     <div class="row">
-                      <div class="col-lg-8 col-7">
+                      <div class="col-lg-8">
                         <input type="text" value="" class="sm-form-control" placeholder="Enter Coupon Code.." />
                       </div>
-                      <div class="col-lg-4 col-5">
+                      <div class="col-lg-4">
                         <a href="#" class="buttonesse button-3d button-black nomargin">Apply Coupon</a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-8 col-8 nopadding">
-                    <a href="{{route('checkout')}}" class="buttonesse button-3d notopmargin fright">Proceed to Checkout</a>
-                  </div>
+
                 </div>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
 
         </table>
       </div>
 
-      <div class="row clearfix">
-        <div class="col-lg-6 clearfix">
+      <div class="row clearfix ">
+        <!-- <div class="col-lg-6 clearfix">
           <h4>Calculate Shipping</h4>
           <form>
             <div class="col_full">
@@ -123,7 +121,7 @@
             </div>
             <a href="#" class="buttonesse button-3d nomargin button-black">Update Totals</a>
           </form>
-        </div>
+        </div> -->
 
         <div class="col-lg-6 clearfix">
           <h4>Cart Totals</h4>
@@ -140,15 +138,15 @@
                     <span class="amount">${{Cart::subtotal()}}</span>
                   </td>
                 </tr>
-                <tr class="cart_item">
+                <!-- <tr class="cart_item">
                   <td class="cart-product-name">
-                    <strong>Shipping</strong>
+                    <strong>Descuento</strong>
                   </td>
 
                   <td class="cart-product-name">
-                    <span class="amount">Free Delivery</span>
+                    <span class="amount">N/A</span>
                   </td>
-                </tr>
+                </tr> -->
                 <tr class="cart_item">
                   <td class="cart-product-name">
                     <strong>Impuestos</strong>
@@ -172,6 +170,15 @@
             </table>
           </div>
         </div>
+
+        <div class="col-lg-6 clearfix">
+            <div class="row" style="height: 100%">
+              <a href="{{route('checkout')}}" class="button button-xlarge button-border button-fill button-green mx-auto my-auto">
+                <span>Proceed to Checkout &nbsp;&nbsp;</span><i class="far fa-credit-card"></i>
+              </a>
+            </div>
+        </div>
+
       </div>
 
     </div>

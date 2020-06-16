@@ -17,7 +17,7 @@ class CreateReceiptShopItemTable extends Migration
             $table->bigIncrements('id');
             $table->integer('receipt_id');
             $table->integer('shop_item_id');
-            $table->timestamps();
+            $table->integer('item_qty');
         });
     }
 

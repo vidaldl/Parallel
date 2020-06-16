@@ -24,6 +24,6 @@ class ShopItem extends Model
   }
 
   public function receipts() {
-    return $this->belongsToMany(Receipt::class);
+    return $this->belongsToMany(Receipt::class)->withPivot('item_qty');
   }
 }

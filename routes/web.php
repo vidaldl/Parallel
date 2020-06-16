@@ -30,16 +30,21 @@ Route::get('homeInactive', 'HomeController@indexInactive')->name('home.inactive'
 
 //SHOPPING ================================== SHOPPING ===================================
 Route::post('/cart/add', 'ShoppingController@add_to_cart')->name('cart.add');
+Route::get('/cart/quick/add/{id}', 'ShoppingController@quickAdd')->name('cart.quick.add');
+Route::get('/cart/quick/addDetail/{id}', 'ShoppingController@quickAddDetail')->name('cart.quick.add.detail');
+
 Route::get('/cart', 'ShoppingController@showCart')->name('cart');
 Route::get('/cart/delete/{id}', 'ShoppingController@cartDelete')->name('cart.delete');
 Route::post('/cart/qCart/{id}', 'ShoppingController@quantityCart')->name('quantity.cart');
 Route::get('/cart/{id}/incr/{qty}', 'ShoppingController@incr')->name('cart.incr');
 Route::get('/cart/{id}/decr/{qty}', 'ShoppingController@decr')->name('cart.decr');
-Route::get('/cart/quick/add/{id}', 'ShoppingController@quickAdd')->name('cart.quick.add');
+
 Route::post('/cart/qty/update/{id}', 'ShoppingController@qtyUpdate')->name('qty.update');
 
 Route::get('/checkout', 'CheckoutController@index')->name('checkout');
 Route::post('/checkout/pay', 'CheckoutController@pay')->name('checkout.pay');
+
+Route::get('/checkout/success/{id}', 'CheckoutController@success')->name('checkout.success');
 
 
 //Order Sections

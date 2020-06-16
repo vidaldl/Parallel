@@ -67,6 +67,7 @@ class CheckoutController extends Controller
 
 
          $items = Cart::content();
+
          $subtotal = Cart::subtotal();
          $tax = Cart::tax();
          $total = Cart::total();
@@ -74,7 +75,7 @@ class CheckoutController extends Controller
 
 
 
-         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+         \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
           $charge = Stripe\Charge::create ([
                   "amount" => $price * 100,
                   "currency" => "usd",
@@ -119,15 +120,15 @@ class CheckoutController extends Controller
 
             DB::table('receipts')->insert($data);
             $latest = DB::getPdo('receipts')->lastInsertId();
-            $receipt = Receipt::find($latest);
+            $receiptlast = Receipt::find($latest);
 
 
             foreach($items as $item) {
-              $receipt->shop_items()->attach($item->model);
+              $receiptlast->shop_items()->attach($item->model, ['item_qty' => $item->qty]);
             }
-
+            Cart::destroy();
             session()->flash('success', 'Compra Exitosa');
-            return redirect()->route('checkout');
+            return redirect()->route('checkout.success', $latest);
 
           } else {
             session()->flash('error', 'Metodo de pago no aceptado');
@@ -138,5 +139,18 @@ class CheckoutController extends Controller
 
 
 
+    }
+
+    public function success($id) {
+      return view('shop.success')
+      ->with('orders', Order::all())
+      ->with('menu_item', MenuItem::all())
+      ->with('styles', Style::all())
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all())
+      ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('footer_links', FooterLink::all())
+      ->with('shop_items', ShopItem::all())
+      ->with('receipt', Receipt::find($id));
     }
 }
