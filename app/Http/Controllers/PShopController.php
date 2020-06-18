@@ -11,6 +11,13 @@ use App\Receipt;
 
 class PShopController extends Controller
 {
+
+  public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
    public function index() {
      return view('pshop.index')
      ->with('receipts', Receipt::all())

@@ -28,27 +28,13 @@ Route::get('homeInactive', 'HomeController@indexInactive')->name('home.inactive'
 
 
 
-//SHOPPING ================================== SHOPPING ===================================
-Route::post('/cart/add', 'ShoppingController@add_to_cart')->name('cart.add');
-Route::get('/cart/quick/add/{id}', 'ShoppingController@quickAdd')->name('cart.quick.add');
-Route::get('/cart/quick/addDetail/{id}', 'ShoppingController@quickAddDetail')->name('cart.quick.add.detail');
 
-Route::get('/cart', 'ShoppingController@showCart')->name('cart');
-Route::get('/cart/delete/{id}', 'ShoppingController@cartDelete')->name('cart.delete');
-Route::post('/cart/qCart/{id}', 'ShoppingController@quantityCart')->name('quantity.cart');
-Route::get('/cart/{id}/incr/{qty}', 'ShoppingController@incr')->name('cart.incr');
-Route::get('/cart/{id}/decr/{qty}', 'ShoppingController@decr')->name('cart.decr');
 
-Route::post('/cart/qty/update/{id}', 'ShoppingController@qtyUpdate')->name('qty.update');
 
-Route::get('/checkout', 'CheckoutController@index')->name('checkout');
-Route::post('/checkout/pay', 'CheckoutController@pay')->name('checkout.pay');
-
-Route::get('/checkout/success/{id}', 'CheckoutController@success')->name('checkout.success');
 
 
 //Order Sections
-Route::post('/order', 'IndexController@order');
+Route::post('/order', 'OrderController@order');
 // Contact Form
 Route::post('/cForm', 'IndexController@mail')->name('send.contact');
 
@@ -118,13 +104,27 @@ Route::get('trashed-catalog3', 'CatalogController3@trashed')->name('trashed-cata
 Route::put('restore-catalog3/{catalog}', 'CatalogController3@restore')->name('restore-catalog3');
 Route::post('/delSecImg3/{id}', 'CatalogController3@destroySecImg')->name('sec.img.destroy3');
 
-//pSHOP
+//SHOP
 Route::post('/shopSection/{id}', 'ShopController@sectionUpdate')->name('shop.section.update');
 Route::resource('shop', 'ShopController', ['except' => ['update']]);
 Route::post('/shopUpdate/{id}', 'ShopController@update')->name('shop.update');
 Route::get('trashed-shop', 'ShopController@trashed')->name('trashed-shop.index');
 Route::put('restore-shop/{shop}', 'ShopController@restore')->name('restore-shop');
 Route::post('/delSecImgShop/{id}', 'ShopController@destroySecImg')->name('sec.img.shop');
+
+
+//Checkout Stripe ================================== Checkout Stripe ===================================
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::post('/checkout/pay', 'CheckoutController@pay')->name('checkout.pay');
+
+Route::get('/checkout/success/{id}', 'CheckoutController@success')->name('checkout.success');
+
+
+//Checkout Paypal ================================== Checkout Paypal ===================================
+Route::get('payment', 'PayPalController@payment')->name('payment');
+Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
+Route::get('payment/success', 'PayPalController@success')->name('payment.success');
+
 
 //Receipt Info ================================== Receipt Info ===================================
 Route::post('/shop/receipt-info', 'ReceiptController@receiptInfoUpdate')->name('receipt.info.update');
@@ -134,6 +134,24 @@ Route::post('/shop/receipt-info', 'ReceiptController@receiptInfoUpdate')->name('
 Route::get('/PShop/settings', 'PShopController@index')->name('pshop.index');
 Route::get('/receipt/{id}', 'PShopController@viewReceipt')->name('receipt.view');
 Route::get('/PDFreceipt/{id}','PShopController@PDFreceipt')->name('receipt.pdf');
+
+//SHOPPING Cart ================================== SHOPPING Cart ===================================
+Route::post('/cart/add', 'ShoppingController@add_to_cart')->name('cart.add');
+Route::get('/cart/quick/add/{id}', 'ShoppingController@quickAdd')->name('cart.quick.add');
+Route::get('/cart/quick/addDetail/{id}', 'ShoppingController@quickAddDetail')->name('cart.quick.add.detail');
+
+Route::get('/cart', 'ShoppingController@showCart')->name('cart');
+Route::get('/cart/delete/{id}', 'ShoppingController@cartDelete')->name('cart.delete');
+Route::post('/cart/qCart/{id}', 'ShoppingController@quantityCart')->name('quantity.cart');
+Route::get('/cart/{id}/incr/{qty}', 'ShoppingController@incr')->name('cart.incr');
+Route::get('/cart/{id}/decr/{qty}', 'ShoppingController@decr')->name('cart.decr');
+
+Route::post('/cart/qty/update/{id}', 'ShoppingController@qtyUpdate')->name('qty.update');
+
+
+
+
+
 Route::middleware(['auth'])->group(function () {
 // ================================== Display ========================================
 Route::post('/display-portfolio-programs', 'DisplayController@portfolioprogramsDisplay');
@@ -157,6 +175,7 @@ Route::post('/display-text', 'DisplayController@textDisplay');
 Route::post('/display-text2', 'DisplayController@text2Display');
 Route::post('/display-text3', 'DisplayController@text3Display');
 Route::post('/display-text4', 'DisplayController@text4Display');
+Route::post('/display-service2', 'DisplayController@servicios2Display');
 // Route::post('/display-footer/{id}', 'HomeController@sectionFooterDisplay')->name('sectionFooter.display');
 
 

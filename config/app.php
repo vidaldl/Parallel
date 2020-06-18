@@ -168,6 +168,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Spatie\LaravelImageOptimizer\ImageOptimizerServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+         Srmklive\PayPal\Providers\PayPalServiceProvider::class,
         /*
          * Application Service Providers...
          */

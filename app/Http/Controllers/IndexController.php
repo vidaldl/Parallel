@@ -214,17 +214,7 @@ class IndexController extends Controller
     }
 
 
-    public function order(Request $request) {
-      $order = DB::table('orders')->orderBy('order')->get();
-      $itemID = $request->input('itemID');
-      $itemIndex = $request->input('itemIndex');
-
-      foreach ($order as $item) {
-        $data=array('order'=>$itemIndex);
-        return DB::table('orders')->where('id', '=', $itemID)->update($data);
-      }
-
-    }
+    
 
 
 

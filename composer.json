@@ -22,6 +22,7 @@
         "laravel/tinker": "^1.0",
         "orangehill/iseed": "^2.6",
         "spatie/laravel-image-optimizer": "1.5.1",
+        "srmklive/paypal": "^1.7",
         "stripe/stripe-php": "^7.36",
         "symfony/translation": "4.3.8",
         "thomaswelton/laravel-gravatar": "~1.0"

@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ReceiptController extends Controller
 {
+    public function __construct()  {
+          $this->middleware('auth');
+      }
+
     public function receiptInfoUpdate(Request $request) {
       if ($request->hasFile('image')) {
       $this->validate($request, [

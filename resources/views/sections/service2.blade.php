@@ -1,5 +1,5 @@
 
-<div id="service2s" class="clear"></div>
+<div id="service2" class="clear"></div>
 <div class="notopmargin nobottommargin nobottomborder" style="background-color: #fff">
 	<div class="container clearfix">
 		<div class="heading-block center nomargin">

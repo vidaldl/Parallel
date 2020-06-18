@@ -181,7 +181,7 @@
 
         <div class="col-lg-6 clearfix">
           <h4>PayPal</h4>
-
+          <a class="button" href="{{route('payment')}}">Paypal</a>
 
         </div>
 
