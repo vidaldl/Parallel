@@ -54,7 +54,7 @@
                 <div class="flexslider">
                   <div class="slider-wrap">
                     @foreach($item->gallery_images as $image)
-                      <div class="slide"><a href="#"><img src="{{'/storage/' . $image->image}}" alt="Morning Dew"></a></div>
+                      <div class="slide"><a href="#"><img src="{{'/storage/' . $image->thumbnail}}" alt="Morning Dew"></a></div>
                     @endforeach
                   </div>
                 </div>
@@ -90,7 +90,7 @@
             <div class="portfolio-image">
               <a href="#">
                 @foreach($item->gallery_images as $image)
-                  <img src="{{'/storage/' . $image->image}}" alt="Open Imagination">
+                  <img src="{{'/storage/' . $image->thumbnail}}" alt="Open Imagination">
                 @endforeach
               </a>
               @if($item->display_simple == 1)
