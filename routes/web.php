@@ -117,13 +117,16 @@ Route::post('/delSecImgShop/{id}', 'ShopController@destroySecImg')->name('sec.im
 Route::get('/checkout', 'CheckoutController@index')->name('checkout');
 Route::post('/checkout/pay', 'CheckoutController@pay')->name('checkout.pay');
 
+//Checkout Conditions ================================== Checkout Conditions ===================================
 Route::get('/checkout/success/{id}', 'CheckoutController@success')->name('checkout.success');
+Route::get('/checkout/canceled', 'CheckoutController@canceled')->name('checkout.canceled');
+Route::get('/checkout/error', 'CheckoutController@error')->name('checkout.error');
 
 
 //Checkout Paypal ================================== Checkout Paypal ===================================
-Route::get('payment', 'PayPalController@payment')->name('payment');
-Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
-Route::get('payment/success', 'PayPalController@success')->name('payment.success');
+Route::get('paypal/express-checkout', 'PaypalController@expressCheckout')->name('paypal.express-checkout');
+Route::get('paypal/express-checkout-success', 'PaypalController@expressCheckoutSuccess');
+Route::post('paypal/notify', 'PaypalController@notify');
 
 
 //Receipt Info ================================== Receipt Info ===================================

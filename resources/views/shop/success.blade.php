@@ -18,7 +18,7 @@
     <div class="row clearfix">
       <div class="col-lg-6 offset-lg-3 clearfix">
         <div class="row justify-content-center">
-          <img src="{{asset('img/shop/payment-success.png')}}" alt="">
+          <img src="{{asset('img/shop/payment-success.png')}}" class="col-md-6" alt="">
         </div>
         <h3 class="center mt-3">Payment Successful</h3>
         <p class="center">Su pago ha sido exitoso y está siendo procesado, en poco tiempo recibirá un email confirmando su compra.</p>

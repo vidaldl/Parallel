@@ -16,15 +16,19 @@ class CreateReceiptsTable extends Migration
         Schema::create('receipts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('receipt_number')->unique();
+            $table->string('description')->default('description');
             $table->string('date');
             $table->string('client_name');
             $table->string('client_email');
             $table->string('method');
-            $table->string('card_type');
-            $table->string('card_last4');
+            $table->string('card_type')->nullable();
+            $table->string('card_last4')->nullable();
             $table->string('subtotal');
             $table->string('tax');
             $table->string('total');
+            $table->string('payment_status')->nullable();
+            $table->string('recurring_id')->nullable();
+            $table->timestamps();
         });
     }
 

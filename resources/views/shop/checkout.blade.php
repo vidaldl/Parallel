@@ -181,7 +181,8 @@
 
         <div class="col-lg-6 clearfix">
           <h4>PayPal</h4>
-          <a class="button" href="{{route('payment')}}">Paypal</a>
+          <a href="{{route('paypal.express-checkout')}}" style="color:white;" class="button button-rounded button-reveal button-xlarge"><i class="fab fa-paypal"></i><span>Paypal</span></a>
+          <!-- ['recurring' => true] -->
 
         </div>
 

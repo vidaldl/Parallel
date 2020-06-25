@@ -57,13 +57,7 @@ class CheckoutController extends Controller
          $date = Carbon\Carbon::now()->format('d-m-Y');
 
 
-         $receipt = rand(0, 999999);
-         $rs = Receipt::all();
-         foreach($rs as $r) {
-           if($r->receipt_id == $receipt) {
-             $receipt = $receipt + 1;
-           }
-         }
+         $receipt = Receipt::count() + 1;
 
 
          $items = Cart::content();
@@ -80,13 +74,15 @@ class CheckoutController extends Controller
                   "amount" => $price * 100,
                   "currency" => "usd",
                   "source" => $request->stripeToken,
-                  "description" => "Compra @" . env('APP_NAME'),
+                  "description" => "Compra en Parallel Shop",
                   "receipt_email" => $email
           ]);
 
           $method = $charge->payment_method_details->type;
           $cardtype = $charge->payment_method_details->card->brand;
           $cardlast4 = $charge->payment_method_details->card->last4;
+
+
 
           if($charge->status == "succeeded") {
             Mail::to($email)->send(new \App\Mail\PurchasedSuccessful(
@@ -119,8 +115,7 @@ class CheckoutController extends Controller
             );
 
             DB::table('receipts')->insert($data);
-            $latest = DB::getPdo('receipts')->lastInsertId();
-            $receiptlast = Receipt::find($latest);
+            $receiptlast = Receipt::find($receipt);
 
 
             foreach($items as $item) {
@@ -128,11 +123,11 @@ class CheckoutController extends Controller
             }
             Cart::destroy();
             session()->flash('success', 'Compra Exitosa');
-            return redirect()->route('checkout.success', $latest);
+            return redirect()->route('checkout.success', $receipt);
 
           } else {
             session()->flash('error', 'Metodo de pago no aceptado');
-            return redirect()->route('checkout');
+            return redirect()->route('checkout.error');
           }
 
        }
@@ -152,5 +147,27 @@ class CheckoutController extends Controller
       ->with('footer_links', FooterLink::all())
       ->with('shop_items', ShopItem::all())
       ->with('receipt', Receipt::find($id));
+    }
+
+    public function canceled() {
+      return view('shop.canceled')
+      ->with('orders', Order::all())
+      ->with('menu_item', MenuItem::all())
+      ->with('styles', Style::all())
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all())
+      ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('footer_links', FooterLink::all());
+    }
+
+    public function error() {
+      return view('shop.error')
+      ->with('orders', Order::all())
+      ->with('menu_item', MenuItem::all())
+      ->with('styles', Style::all())
+      ->with('fonts', Font::all())
+      ->with('font_styles', FontStyle::all())
+      ->with('contenidosectionfooters', ContenidoSectionFooter::all())
+      ->with('footer_links', FooterLink::all());
     }
 }

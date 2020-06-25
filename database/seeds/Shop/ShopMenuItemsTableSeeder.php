@@ -26,7 +26,7 @@ class ShopMenuItemsTableSeeder extends Seeder
                 'padding' => 120,
                 'menu_style' => 1,
                 'menu_borders' => 0,
-                'menu_sticky' => 0,
+                'menu_sticky' => 1,
             ),
         ));
         

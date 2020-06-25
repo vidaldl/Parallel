@@ -311,6 +311,20 @@ class ShopOrdersTableSeeder extends Seeder
                 'menu_display' => 0,
                 'edit_link' => 'text4',
             ),
+            21 => 
+            array (
+                'id' => 23,
+                'section' => 'service2',
+                'name' => 'Servicios 2',
+                'order' => 2,
+                'display' => 1,
+                'line' => 2,
+                'line_style' => 1,
+                'container_style' => 1,
+                'menu_name' => 'Nosotros',
+                'menu_display' => 1,
+                'edit_link' => '/service2-section/1',
+            ),
         ));
         
         

@@ -5,6 +5,9 @@
 .button {
     background-color: {{$styles[0]->button_primary}};
 }
+.button:hover {
+    background-color: {{$styles[0]->button_secondary}};
+}
 .cart-product-thumbnail img:hover {
   border-color: {{$styles[0]->button_primary}};
 }

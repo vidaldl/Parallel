@@ -39,6 +39,7 @@ class ShopDatabaseSeeder extends Seeder
         $this->call(ShopInfoSliderText2sTableSeeder::class);
         $this->call(ShopInfoSliderText3sTableSeeder::class);
         $this->call(ShopInfoSliderTextsTableSeeder::class);
+        $this->call(ShopInvoicesTableSeeder::class);
         $this->call(ShopLinkSectionsTableSeeder::class);
         $this->call(ShopLinksTableSeeder::class);
         $this->call(ShopMenuItemsTableSeeder::class);
@@ -54,6 +55,11 @@ class ShopDatabaseSeeder extends Seeder
         $this->call(ShopPricingPricingItemTableSeeder::class);
         $this->call(ShopPricingSectionsTableSeeder::class);
         $this->call(ShopPricingsTableSeeder::class);
+        $this->call(ShopReceiptInfosTableSeeder::class);
+        $this->call(ShopReceiptShopItemTableSeeder::class);
+        $this->call(ShopReceiptsTableSeeder::class);
+        $this->call(ShopService2sTableSeeder::class);
+        $this->call(ShopServiceSection2sTableSeeder::class);
         $this->call(ShopServiciosTableSeeder::class);
         $this->call(ShopShopItemsTableSeeder::class);
         $this->call(ShopShopSectionsTableSeeder::class);

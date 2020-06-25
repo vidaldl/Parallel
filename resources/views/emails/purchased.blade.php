@@ -170,7 +170,7 @@
             @foreach($items as $item)
             <tr class="item">
                 <td>
-                    {{$item->name}}
+                    {{$item->name}} x 
                 </td>
 
                 <td>
