@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class LatestContenidoSection2sTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        
+
+        \DB::table('contenido_section2s')->delete();
+        
+        \DB::table('contenido_section2s')->insert(array (
+            0 => 
+            array (
+                'id' => '1',
+                'title' => 'Sobre nosotros',
+                'display' => '1',
+                'back_color' => '#ffffff',
+                'desc_link' => '0',
+            ),
+        ));
+        
+        
+    }
+}

@@ -8,3 +8,1089 @@
 [02-Jul-2019 03:43:31 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /home/rnnee251o8np/public_html/ghidalgo/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 138
 [02-Jul-2019 03:45:19 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /home/rnnee251o8np/public_html/ghidalgo/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 138
 [02-Jul-2019 03:45:51 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /home/rnnee251o8np/public_html/ghidalgo/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 138
+[07-Apr-2020 20:41:43 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:41:43 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:41:45 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:41:45 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:41:54 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:41:54 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:42:48 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:42:48 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:42:54 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:42:54 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:51:25 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:51:25 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:51:54 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:51:54 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:52:27 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:52:27 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:53:47 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 20:53:47 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 21:13:43 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 21:13:43 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 21:13:56 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 21:13:56 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 21:14:14 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[07-Apr-2020 21:14:14 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[09-Mar-2021 18:01:27 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 12:01:27 America/Chicago] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[09-Mar-2021 18:01:27 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php:40
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/composer/ClassLoader.php(444): include()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home3/cem/www1...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/helpers.php(471): spl_autoload_call('Illuminate\\Supp...')
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(403): collect(Array)
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(384): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#6 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 18:01:27 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php:40
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/composer/ClassLoader.php(444): include()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home3/cem/www1...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/helpers.php(471): spl_autoload_call('Illuminate\\Supp...')
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(403): collect(Array)
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(384): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#6 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 18:01:29 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 18:01:29 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 18:01:29 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 19:22:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 19:22:48 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 19:22:48 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 19:35:11 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 19:35:11 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 19:35:11 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 19:49:21 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 19:49:21 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 19:49:21 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 19:49:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 19:49:56 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 19:49:56 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 21:14:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 21:14:32 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 21:14:32 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 21:15:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 21:15:08 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 21:15:08 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 22:14:46 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 22:14:46 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 22:14:46 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 22:14:50 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 22:14:50 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 22:14:50 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[09-Mar-2021 22:24:50 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[09-Mar-2021 22:24:50 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[09-Mar-2021 22:24:50 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 01:38:16 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 01:38:16 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 01:38:16 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 01:38:29 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 01:38:29 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 01:38:29 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 04:52:39 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 04:52:39 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 04:52:39 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 05:07:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 05:07:07 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 05:07:07 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 05:07:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 05:07:08 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 05:07:08 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 05:09:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 05:09:43 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 05:09:43 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 05:23:46 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 05:23:46 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 05:23:46 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 08:31:50 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 08:31:50 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 08:31:50 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 09:34:34 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 09:34:34 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 09:34:34 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:17:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:17:35 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:17:35 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:17:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:17:36 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:17:36 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:17:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:17:43 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:17:43 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:17:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:17:44 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:17:44 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:17:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:17:54 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:17:54 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:17:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:17:55 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:17:55 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:33:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:33:59 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:33:59 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 12:41:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 12:41:52 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 12:41:52 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 15:58:46 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 15:58:46 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 15:58:46 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 17:52:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 17:52:48 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 17:52:48 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 18:02:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 18:02:28 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 18:02:28 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 18:30:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 18:30:49 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 18:30:49 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 19:49:15 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 19:49:15 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 19:49:15 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 20:04:12 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:04:12 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:04:12 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 20:19:29 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:19:29 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:19:29 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 20:19:33 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:19:33 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:19:33 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 20:19:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:19:37 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:19:37 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 20:19:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:19:42 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:19:42 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 20:20:39 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:20:39 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:20:39 UTC] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home3/cem/www1.caribbeanemedical.com/vendor/l in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[10-Mar-2021 20:20:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:20:58 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:20:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:25:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:25:36 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:25:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:25:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:25:55 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:25:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:30:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:30:07 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:30:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:30:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:30:10 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:30:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:30:15 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:30:15 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:30:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:30:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:30:32 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:30:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:33:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:33:42 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:33:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:34:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:34:54 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:34:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:34:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:34:57 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:34:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:35:01 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:35:01 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:35:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:35:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[10-Mar-2021 20:35:14 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:35:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:38:02 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:38:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:38:06 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:38:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:42:39 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:42:39 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:42:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:42:42 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:42:42 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:42:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:42:44 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:42:44 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:42:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:42:48 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:42:48 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:42:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:42:49 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:42:49 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:42:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:42:50 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:42:50 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:42:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:52:06 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:52:06 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:52:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:52:08 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:52:08 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:52:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:52:10 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:52:10 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:52:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:52:18 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:52:18 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:52:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 20:59:16 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 20:59:16 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 20:59:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:06 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:06 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:08 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:08 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:10 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:11 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:14 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:14 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:16 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:16 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:18 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:18 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:49 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:49 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:02:57 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:02:57 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:02:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:04:10 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:04:10 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:04:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:04:12 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:04:12 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:04:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:04:14 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:04:14 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:04:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:04:36 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:04:36 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:04:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:05:44 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:05:44 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:05:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:05:46 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:05:46 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:05:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:06:46 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:06:47 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:06:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:06:49 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:06:49 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:06:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:06:52 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:06:52 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:06:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:08:50 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:08:50 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:08:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:09:58 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:09:58 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:09:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:40:05 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:40:05 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:40:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:40:07 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:40:07 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:40:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:40:10 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:40:10 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:40:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[10-Mar-2021 21:40:18 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+[10-Mar-2021 21:40:18 UTC] PHP Fatal error:  Interface 'JsonSerializable' not found in /home3/cem/www1.caribbeanemedical.com/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[10-Mar-2021 21:40:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(568): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Cloner/ in /home3/cem/www1.caribbeanemedical.com/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162

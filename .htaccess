@@ -1,0 +1,8 @@
+# BEGIN custom php.ini PHP71
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath /home3/cem/www1.caribbeanemedical.com
+</IfModule>
+# END custom php.ini
+
+# Use PHP71 as default
+AddHandler application/x-httpd-php71 .php
