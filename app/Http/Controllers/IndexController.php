@@ -75,7 +75,7 @@ class IndexController extends Controller
          'message' => 'required'
        ]);
 
-       Mail::to(env('EMAIL_ADDRESS'))->send(new SolicitudDeContacto($data));
+       Mail::to("env('EMAIL_ADDRESS')")->send(new SolicitudDeContacto($data));
 
        // flash message
        session()->flash('success', 'Su mensaje a sido Enviado! Estaremos en contacto lo más rapido posible.');
@@ -123,7 +123,7 @@ class IndexController extends Controller
           'message' => 'required'
         ]);
 
-        Mail::to(env('EMAIL_ADDRESS'))->send(new SolicitudDeContacto($data));
+        Mail::to(env('EMAIL_ADDRESS'))->cc("dvidal32@gmail.com")->send(new SolicitudDeContacto($data));
 
         // flash message
         session()->flash('success', $section5->success);
